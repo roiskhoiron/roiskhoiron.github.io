@@ -1,12 +1,12 @@
 
   import { defineConfig } from 'vite';
   import react from '@vitejs/plugin-react-swc';
-  import ghPages from 'vite-plugin-gh-pages';
+  import { ghPages } from "vite-plugin-gh-pages";
   import path from 'path';
 
   export default defineConfig({
     base: '/roiskhoiron.github.io/',
-    plugins: [react()],
+    plugins: [react(), ghPages()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {
