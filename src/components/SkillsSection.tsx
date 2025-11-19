@@ -47,8 +47,8 @@ export function SkillsSection() {
     <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-10 w-96 h-96 bg-blue-500/10 dark:bg-blue-700/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-purple-500/10 dark:bg-purple-700/20 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto max-w-7xl relative z-10">
@@ -61,7 +61,7 @@ export function SkillsSection() {
           className="text-center mb-16 space-y-4"
         >
           <div className="inline-block">
-            <div className="flex items-center justify-center gap-2 text-cyan-600 mb-4">
+            <div className="flex items-center justify-center gap-2 text-cyan-600 dark:text-cyan-400 mb-4">
               <Code2 className="w-6 h-6" />
               <Blocks className="w-6 h-6" />
               <Zap className="w-6 h-6" />
@@ -70,8 +70,8 @@ export function SkillsSection() {
           <h2 className="text-4xl sm:text-5xl bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent">
             Keahlian Utama
           </h2>
-          <h3 className="text-2xl text-slate-500">Core Skills</h3>
-          <p className="text-slate-600 max-w-2xl mx-auto">
+          <h3 className="text-2xl text-slate-500 dark:text-slate-400">Core Skills</h3>
+          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             Tools dan teknologi yang saya gunakan untuk membangun aplikasi mobile yang powerful dan scalable
           </p>
         </motion.div>
