@@ -1,5 +1,5 @@
 
-  # Personal Portfolio Website Design
+  # CodingSkuy by Khoiron Rois
 
   This is a code bundle for Personal Portfolio Website Design. The original project is available at https://www.figma.com/design/eLU8156NoYnMAXQGuz3i2d/Personal-Portfolio-Website-Design.
 

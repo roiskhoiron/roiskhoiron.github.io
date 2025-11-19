@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChatHistoryState">
+    <option name="chatSessions" value="{&quot;46d9de97-4fad-4e45-af00-ce81a295bd69&quot;:{&quot;id&quot;:&quot;46d9de97-4fad-4e45-af00-ce81a295bd69&quot;,&quot;name&quot;:&quot;Menjalankan Secara Lokal, Perbaikan, Lalu Publish ke Master untuk Render di GitHub Pages&quot;,&quot;timestamp&quot;:1763528749871,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:[{&quot;type&quot;:&quot;text&quot;,&quot;text&quot;:&quot;\u003cuser_query\u003e\njalankan secara localhost dan perbaiki setelahnya publish ke master untuk bisa dirender dilaman https://roiskhoiron.github.io\n\u003c/user_query\u003e&quot;}]},{&quot;role&quot;:&quot;assistant&quot;,&quot;content&quot;:[]}]}}" />
+  </component>
+</project>
