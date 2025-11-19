@@ -71,7 +71,7 @@ export function PortfolioSection() {
   return (
     <section id="portfolio" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-50/50 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-50/50 dark:via-blue-950/30 to-transparent pointer-events-none" />
 
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Section Header */}
@@ -88,14 +88,14 @@ export function PortfolioSection() {
               transition={{ duration: 2, repeat: Infinity }}
               className="inline-block"
             >
-              <Sparkles className="w-8 h-8 text-purple-600 mx-auto mb-4" />
+              <Sparkles className="w-8 h-8 text-purple-600 dark:text-purple-400 mx-auto mb-4" />
             </motion.div>
           </div>
           <h2 className="text-4xl sm:text-5xl bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent">
             Portofolio Project
           </h2>
-          <h3 className="text-2xl text-slate-500">Selected Works</h3>
-          <p className="text-slate-600 max-w-2xl mx-auto">
+          <h3 className="text-2xl text-slate-500 dark:text-slate-400">Selected Works</h3>
+          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             Beberapa project mobile app yang sudah saya kerjakan dengan teknologi modern dan best practices
           </p>
         </motion.div>
@@ -200,7 +200,7 @@ export function PortfolioSection() {
           transition={{ delay: 0.5 }}
           className="text-center mt-16"
         >
-          <p className="text-slate-600 mb-6">
+          <p className="text-slate-600 dark:text-slate-400 mb-6">
             Tertarik untuk berkolaborasi atau melihat project lainnya?
           </p>
           <Button

@@ -24,9 +24,9 @@ export function ContactSection() {
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-cyan-50">
-        <div className="absolute top-20 left-20 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-cyan-50 dark:from-blue-950/50 dark:via-purple-950/50 dark:to-cyan-950/50">
+        <div className="absolute top-20 left-20 w-96 h-96 bg-blue-400/20 dark:bg-blue-600/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-400/20 dark:bg-purple-600/30 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto max-w-5xl relative z-10">
@@ -43,21 +43,21 @@ export function ContactSection() {
               animate={{ rotate: [0, 15, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              <Send className="w-8 h-8 text-blue-600" />
+              <Send className="w-8 h-8 text-blue-600 dark:text-cyan-400" />
             </motion.div>
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              <Sparkles className="w-8 h-8 text-purple-600" />
+              <Sparkles className="w-8 h-8 text-purple-600 dark:text-purple-400" />
             </motion.div>
           </div>
 
           <h2 className="text-4xl sm:text-5xl bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent">
             Hubungi Saya
           </h2>
-          <h3 className="text-2xl text-slate-500">Get in Touch</h3>
-          <p className="text-slate-600 max-w-2xl mx-auto">
+          <h3 className="text-2xl text-slate-500 dark:text-slate-400">Get in Touch</h3>
+          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             Punya project menarik atau ingin berkolaborasi? Jangan ragu untuk menghubungi saya!
           </p>
         </motion.div>
@@ -77,7 +77,7 @@ export function ContactSection() {
               scale: [1, 1.1, 1],
             }}
             transition={{ duration: 20, repeat: Infinity }}
-            className="absolute -top-12 -left-12 w-24 h-24 border-4 border-dashed border-cyan-500/30 rounded-full"
+            className="absolute -top-12 -left-12 w-24 h-24 border-4 border-dashed border-cyan-500/30 dark:border-cyan-400/30 rounded-full"
           />
           <motion.div
             animate={{
@@ -85,13 +85,13 @@ export function ContactSection() {
               scale: [1, 1.2, 1],
             }}
             transition={{ duration: 25, repeat: Infinity }}
-            className="absolute -bottom-12 -right-12 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl"
+            className="absolute -bottom-12 -right-12 w-32 h-32 bg-purple-500/10 dark:bg-purple-600/20 rounded-full blur-2xl"
           />
 
           {/* Form Card */}
-          <div className="bg-white rounded-3xl shadow-2xl border-4 border-white p-8 sm:p-12 relative overflow-hidden">
+          <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-2xl border-4 border-white dark:border-slate-700 p-8 sm:p-12 relative overflow-hidden">
             {/* Background Pattern */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-950/30 dark:to-purple-950/30" />
 
             {/* Floating Doodles */}
             <motion.div
@@ -100,9 +100,9 @@ export function ContactSection() {
                 rotate: [0, 5, 0],
               }}
               transition={{ duration: 3, repeat: Infinity }}
-              className="absolute top-8 right-8 opacity-20"
+              className="absolute top-8 right-8 opacity-20 dark:opacity-30"
             >
-              <MessageSquare className="w-16 h-16 text-cyan-500" />
+              <MessageSquare className="w-16 h-16 text-cyan-500 dark:text-cyan-400" />
             </motion.div>
 
             <motion.div
@@ -111,22 +111,22 @@ export function ContactSection() {
                 x: [0, 5, 0],
               }}
               transition={{ duration: 4, repeat: Infinity }}
-              className="absolute bottom-8 left-8 opacity-20"
+              className="absolute bottom-8 left-8 opacity-20 dark:opacity-30"
             >
-              <Mail className="w-12 h-12 text-purple-500" />
+              <Mail className="w-12 h-12 text-purple-500 dark:text-purple-400" />
             </motion.div>
 
             <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
               {/* Bilingual Header */}
               <div className="text-center mb-8">
-                <h3 className="text-2xl text-slate-800 mb-1">Kirim Pesan</h3>
-                <p className="text-slate-500">Send me a message</p>
+                <h3 className="text-2xl text-slate-800 dark:text-slate-100 mb-1">Kirim Pesan</h3>
+                <p className="text-slate-500 dark:text-slate-400">Send me a message</p>
               </div>
 
               {/* Name Field */}
               <div className="space-y-2">
-                <Label htmlFor="name" className="flex items-center gap-2 text-slate-700">
-                  <User className="w-4 h-4 text-blue-600" />
+                <Label htmlFor="name" className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                  <User className="w-4 h-4 text-blue-600 dark:text-cyan-400" />
                   Nama / Name
                 </Label>
                 <Input
@@ -136,14 +136,14 @@ export function ContactSection() {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="border-2 border-blue-200 focus:border-blue-500 rounded-xl py-6"
+                  className="border-2 border-blue-200 dark:border-blue-700 focus:border-blue-500 dark:focus:border-cyan-400 rounded-xl py-6 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100"
                 />
               </div>
 
               {/* Email Field */}
               <div className="space-y-2">
-                <Label htmlFor="email" className="flex items-center gap-2 text-slate-700">
-                  <Mail className="w-4 h-4 text-purple-600" />
+                <Label htmlFor="email" className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                  <Mail className="w-4 h-4 text-purple-600 dark:text-purple-400" />
                   Email
                 </Label>
                 <Input
@@ -153,14 +153,14 @@ export function ContactSection() {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
-                  className="border-2 border-purple-200 focus:border-purple-500 rounded-xl py-6"
+                  className="border-2 border-purple-200 dark:border-purple-700 focus:border-purple-500 dark:focus:border-purple-400 rounded-xl py-6 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100"
                 />
               </div>
 
               {/* Message Field */}
               <div className="space-y-2">
-                <Label htmlFor="message" className="flex items-center gap-2 text-slate-700">
-                  <MessageSquare className="w-4 h-4 text-cyan-600" />
+                <Label htmlFor="message" className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                  <MessageSquare className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
                   Pesan / Message
                 </Label>
                 <Textarea
@@ -170,7 +170,7 @@ export function ContactSection() {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
                   rows={6}
-                  className="border-2 border-cyan-200 focus:border-cyan-500 rounded-xl resize-none"
+                  className="border-2 border-cyan-200 dark:border-cyan-700 focus:border-cyan-500 dark:focus:border-cyan-400 rounded-xl resize-none bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100"
                 />
               </div>
 
@@ -188,11 +188,11 @@ export function ContactSection() {
 
               {/* Info Text */}
               <div className="text-center pt-4">
-                <p className="text-sm text-slate-500">
+                <p className="text-sm text-slate-500 dark:text-slate-400">
                   Atau hubungi langsung via email:{" "}
                   <a
                     href="mailto:rois.khoiron@gmail.com"
-                    className="text-blue-600 hover:text-blue-700 underline"
+                    className="text-blue-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-300 underline"
                   >
                     rois.khoiron@gmail.com
                   </a>
@@ -210,9 +210,9 @@ export function ContactSection() {
             rotate: [0, 45, 0],
           }}
           transition={{ duration: 8, repeat: Infinity }}
-          className="absolute top-1/4 right-0 opacity-30 pointer-events-none"
+          className="absolute top-1/4 right-0 opacity-30 dark:opacity-20 pointer-events-none"
         >
-          <Send className="w-16 h-16 text-blue-500" />
+          <Send className="w-16 h-16 text-blue-500 dark:text-cyan-400" />
         </motion.div>
       </div>
     </section>

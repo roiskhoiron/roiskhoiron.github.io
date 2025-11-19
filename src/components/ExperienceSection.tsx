@@ -81,7 +81,7 @@ const experiences = [
 
 export function ExperienceSection() {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-transparent via-purple-50/30 to-transparent">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-transparent via-purple-50/30 dark:via-purple-950/20 to-transparent">
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Section Header */}
         <motion.div
@@ -96,14 +96,14 @@ export function ExperienceSection() {
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              <Briefcase className="w-8 h-8 text-blue-600 mx-auto mb-4" />
+              <Briefcase className="w-8 h-8 text-blue-600 dark:text-cyan-400 mx-auto mb-4" />
             </motion.div>
           </div>
           <h2 className="text-4xl sm:text-5xl bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent">
             Pengalaman Kerja
           </h2>
-          <h3 className="text-2xl text-slate-500">Work Experience</h3>
-          <p className="text-slate-600 max-w-2xl mx-auto">
+          <h3 className="text-2xl text-slate-500 dark:text-slate-400">Work Experience</h3>
+          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             Perjalanan karir saya dalam dunia mobile development
           </p>
         </motion.div>
@@ -129,14 +129,14 @@ export function ExperienceSection() {
                 {/* Timeline Dot */}
                 <motion.div
                   whileHover={{ scale: 1.2 }}
-                  className={`hidden lg:block absolute left-1/2 top-1/2 w-6 h-6 bg-gradient-to-br ${exp.color} rounded-full border-4 border-white shadow-lg transform -translate-x-1/2 -translate-y-1/2 z-10`}
+                  className={`hidden lg:block absolute left-1/2 top-1/2 w-6 h-6 bg-gradient-to-br ${exp.color} rounded-full border-4 border-white dark:border-slate-900 shadow-lg transform -translate-x-1/2 -translate-y-1/2 z-10`}
                 />
 
                 {/* Card */}
                 <div className={`${index % 2 === 0 ? "lg:col-start-1" : "lg:col-start-2"}`}>
-                  <Card className="p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border-0 bg-white overflow-hidden group">
+                  <Card className="p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border-0 bg-white dark:bg-slate-800 overflow-hidden group">
                     {/* Decorative Background */}
-                    <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${exp.color} opacity-5 rounded-full -mr-32 -mt-32 group-hover:opacity-10 transition-opacity`} />
+                    <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${exp.color} opacity-5 dark:opacity-10 rounded-full -mr-32 -mt-32 group-hover:opacity-10 dark:group-hover:opacity-20 transition-opacity`} />
 
                     <div className="relative z-10 space-y-6">
                       {/* Company Header */}
@@ -144,10 +144,10 @@ export function ExperienceSection() {
                         <div className={`inline-block px-4 py-2 bg-gradient-to-r ${exp.color} rounded-lg mb-4`}>
                           <Briefcase className="w-6 h-6 text-white" />
                         </div>
-                        <h3 className="text-2xl text-slate-800 mb-2">
+                        <h3 className="text-2xl text-slate-800 dark:text-slate-100 mb-2">
                           {exp.company}
                         </h3>
-                        <div className="flex flex-wrap gap-4 text-sm text-slate-600">
+                        <div className="flex flex-wrap gap-4 text-sm text-slate-600 dark:text-slate-400">
                           <div className="flex items-center gap-2">
                             <MapPin className="w-4 h-4 text-slate-400" />
                             {exp.location}
@@ -157,19 +157,19 @@ export function ExperienceSection() {
                             <span>{exp.period}</span>
                           </div>
                         </div>
-                        <p className="text-sm text-slate-500 mt-2 italic">{exp.type}</p>
+                        <p className="text-sm text-slate-500 dark:text-slate-400 mt-2 italic">{exp.type}</p>
                       </div>
 
                       {/* Positions */}
                       {exp.positions.map((position, posIndex) => (
                         <div key={posIndex} className="space-y-3">
                           <div className="border-l-4 border-blue-500 pl-4">
-                            <h4 className="text-lg text-slate-800">
+                            <h4 className="text-lg text-slate-800 dark:text-slate-200">
                               {position.title}
                             </h4>
-                            <p className="text-sm text-slate-500">{position.titleEn}</p>
+                            <p className="text-sm text-slate-500 dark:text-slate-400">{position.titleEn}</p>
                             {position.period && (
-                              <p className="text-xs text-slate-400 mt-1">{position.period}</p>
+                              <p className="text-xs text-slate-400 dark:text-slate-500 mt-1">{position.period}</p>
                             )}
                           </div>
 
@@ -181,9 +181,9 @@ export function ExperienceSection() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: respIndex * 0.1 }}
-                                className="flex items-start gap-3 text-sm text-slate-600"
+                                className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300"
                               >
-                                <ChevronRight className="w-4 h-4 text-cyan-500 flex-shrink-0 mt-0.5" />
+                                <ChevronRight className="w-4 h-4 text-cyan-500 dark:text-cyan-400 flex-shrink-0 mt-0.5" />
                                 <span>{resp}</span>
                               </motion.li>
                             ))}
