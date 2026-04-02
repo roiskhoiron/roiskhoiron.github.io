@@ -4,6 +4,7 @@ import { SkillsSection } from "./components/SkillsSection";
 import { PortfolioSection } from "./components/PortfolioSection";
 import { ExperienceSection } from "./components/ExperienceSection";
 import { BrandingSection } from "./components/BrandingSection";
+import { CreatorSection } from "./components/CreatorSection";
 import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -20,6 +21,7 @@ export default function App() {
         <SkillsSection />
         <ExperienceSection />
         <BrandingSection />
+        <CreatorSection />
         <ContactSection />
         <Footer />
       </div>
