@@ -1,12 +1,15 @@
 import { motion } from "motion/react";
 import { Youtube, Sparkles, Users, PlayCircle, TrendingUp } from "lucide-react";
 import { Button } from "./ui/button";
+import { useState } from "react";
 import imgYouTubeCover from "figma:asset/f13190e76de5ebafdc579365a3f1ee2623769589.png";
 import imgCharacter1 from "../assets/hqdefault.png";
 import imgCharacter2 from "../assets/hqdefault2.png";
 import imgCharacter3 from "../assets/hqdefault3.png";
 
 export function CreatorSection() {
+  const [isPlaying, setIsPlaying] = useState(false);
+
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Animated Background */}
@@ -14,18 +17,12 @@ export function CreatorSection() {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djItMnpNNDQgNDR2Mi0yem0wLTMwdjItMnptLTIwLTIwdjItMnpNMiAydjItMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40" />
         
         <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 90, 0],
-          }}
+          animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
           transition={{ duration: 20, repeat: Infinity }}
           className="absolute top-20 left-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"
         />
         <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            rotate: [0, -90, 0],
-          }}
+          animate={{ scale: [1, 1.3, 1], rotate: [0, -90, 0] }}
           transition={{ duration: 25, repeat: Infinity }}
           className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
         />
@@ -48,22 +45,15 @@ export function CreatorSection() {
             <Youtube className="w-12 h-12 text-red-500 mx-auto mb-4" />
           </motion.div>
           
-          <h2 className="text-4xl sm:text-6xl text-white">
-            CodingSkuy!
-          </h2>
+          <h2 className="text-4xl sm:text-6xl text-white">CodingSkuy!</h2>
           
           <div className="space-y-3">
-            <p className="text-2xl sm:text-3xl text-cyan-400">
-              Belajar Coding Itu Seru!
-            </p>
-            <p className="text-xl sm:text-2xl text-purple-300">
-              Learning to Code Should Be Fun!
-            </p>
+            <p className="text-xl sm:text-2xl text-purple-300">Learning to Code Should Be Fun!</p>
           </div>
 
           <p className="text-slate-300 max-w-2xl mx-auto">
-            Channel YouTube edukatif yang membuat belajar programming jadi lebih menyenangkan 
-            dengan karakter lucu dan penjelasan yang mudah dipahami!
+            An educational YouTube channel that makes learning programming more fun
+            with cute characters and easy-to-understand explanations!
           </p>
         </motion.div>
 
@@ -75,38 +65,52 @@ export function CreatorSection() {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 group cursor-pointer">
-            <img
-              src={imgYouTubeCover}
-              alt="CodingSkuy YouTube Channel"
-              className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
-            />
-            
-            {/* Play Overlay */}
-            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors flex items-center justify-center">
-              <motion.div
-                whileHover={{ scale: 1.2 }}
-                className="w-24 h-24 bg-red-600 rounded-full flex items-center justify-center shadow-2xl"
-              >
-                <PlayCircle className="w-16 h-16 text-white fill-current" />
-              </motion.div>
-            </div>
+          <div
+            className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 group cursor-pointer"
+            onClick={() => setIsPlaying(true)}
+          >
+            {isPlaying ? (
+              <iframe
+                src="https://www.youtube.com/embed/s2OFRR2ZCPc?autoplay=1"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                className="w-full aspect-[9/16] sm:aspect-video"
+              />
+            ) : (
+              <>
+                <img
+                  src={imgYouTubeCover}
+                  alt="CodingSkuy YouTube Channel"
+                  className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
+                />
 
-            {/* Floating Sparkles */}
-            <motion.div
-              animate={{ y: [0, -20, 0], opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="absolute top-8 left-8"
-            >
-              <Sparkles className="w-8 h-8 text-yellow-400" />
-            </motion.div>
-            <motion.div
-              animate={{ y: [0, -20, 0], opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 2, delay: 0.5, repeat: Infinity }}
-              className="absolute top-8 right-8"
-            >
-              <Sparkles className="w-8 h-8 text-cyan-400" />
-            </motion.div>
+                {/* Play Overlay */}
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors flex items-center justify-center">
+                  <motion.div
+                    whileHover={{ scale: 1.2 }}
+                    className="w-24 h-24 bg-red-600 rounded-full flex items-center justify-center shadow-2xl"
+                  >
+                    <PlayCircle className="w-16 h-16 text-white fill-current" />
+                  </motion.div>
+                </div>
+
+                {/* Floating Sparkles */}
+                <motion.div
+                  animate={{ y: [0, -20, 0], opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="absolute top-8 left-8"
+                >
+                  <Sparkles className="w-8 h-8 text-yellow-400" />
+                </motion.div>
+                <motion.div
+                  animate={{ y: [0, -20, 0], opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 2, delay: 0.5, repeat: Infinity }}
+                  className="absolute top-8 right-8"
+                >
+                  <Sparkles className="w-8 h-8 text-cyan-400" />
+                </motion.div>
+              </>
+            )}
           </div>
         </motion.div>
 
@@ -128,9 +132,7 @@ export function CreatorSection() {
             >
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:border-white/40 transition-colors">
                 <motion.div
-                  animate={{
-                    y: [0, -15, 0],
-                  }}
+                  animate={{ y: [0, -15, 0] }}
                   transition={{ duration: 2 + index, repeat: Infinity }}
                 >
                   <img
@@ -192,14 +194,14 @@ export function CreatorSection() {
           className="text-center"
         >
           <p className="text-white mb-6 text-lg">
-            Join ribuan developer yang belajar bareng CodingSkuy!
+            Join thousands of developers who learn with Coding Skuy!
           </p>
-          <Button
-            size="lg"
-            className="bg-red-600 hover:bg-red-700 text-white group"
-          >
+          <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white group"
+            onClick={() =>
+            window.open("https://www.youtube.com/@codingskuy/videos", "_blank")
+          }>
             <Youtube className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-            Subscribe ke Channel
+            Subscribe to Channel
           </Button>
         </motion.div>
       </div>
