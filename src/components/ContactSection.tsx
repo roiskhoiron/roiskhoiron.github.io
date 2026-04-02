@@ -101,7 +101,9 @@ export function ContactSection() {
 
           {/* Primary CTA */}
           <motion.a
-            href="mailto:rois.khoiron@gmail.com"
+            href="https://wa.me/6282334626354?text=Halo%20Rois,%20saya%20tertarik%20berdiskusi%20tentang%20kolaborasi."
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm transition-colors shadow-lg shadow-blue-600/25 mb-4"
