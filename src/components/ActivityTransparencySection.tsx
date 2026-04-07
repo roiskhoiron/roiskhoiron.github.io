@@ -166,6 +166,231 @@ const STAGE_META: Record<StatusKey, {
   },
 };
 
+const GITHUB_GRAPHQL_ENDPOINT = "https://api.github.com/graphql";
+const GITHUB_OWNER = "roiskhoiron";
+const GITHUB_DISCUSSION_REPO = ".github";
+const GITHUB_PROJECT_NUMBER = 9;
+const GITHUB_READ_TOKEN = import.meta.env.VITE_GITHUB_READ_TOKEN as string | undefined;
+
+function toStatusKey(value: string) {
+  const raw = (value || "").trim().toLowerCase();
+  if (!raw) return "unknown";
+  if (raw.includes("backlog") || raw.includes("todo") || raw.includes("to do")) return "todo";
+  if (raw.includes("progress") || raw.includes("doing") || raw.includes("active")) return "in_progress";
+  if (raw.includes("review") || raw.includes("feedback")) return "review_feedback";
+  if (raw.includes("valid") || raw.includes("qa") || raw.includes("test")) return "ready_validation";
+  if (raw.includes("handover") || raw === "done" || raw.includes("complete") || raw.includes("release")) {
+    return "ready_handover";
+  }
+  return "unknown";
+}
+
+function buildFunnel(items: ActivityEntry[]): FunnelStage[] {
+  const counts: Record<StatusKey, number> = {
+    todo: 0,
+    in_progress: 0,
+    review_feedback: 0,
+    ready_validation: 0,
+    ready_handover: 0,
+    unknown: 0,
+  };
+
+  for (const item of items) counts[item.statusKey] += 1;
+
+  return [
+    { key: "todo", label: "Todo", count: counts.todo },
+    { key: "in_progress", label: "In Progress", count: counts.in_progress },
+    { key: "review_feedback", label: "Review/Feedback", count: counts.review_feedback },
+    { key: "ready_validation", label: "Ready to Validation", count: counts.ready_validation },
+    { key: "ready_handover", label: "Ready to Handover", count: counts.ready_handover },
+    { key: "unknown", label: "Unmapped", count: counts.unknown },
+  ];
+}
+
+async function fetchGithubGraphql<T>(token: string, query: string, variables: Record<string, unknown>) {
+  const response = await fetch(GITHUB_GRAPHQL_ENDPOINT, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+      "User-Agent": "rk-activity-ui",
+    },
+    body: JSON.stringify({ query, variables }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`GitHub API ${response.status}`);
+  }
+
+  const json = (await response.json()) as { data?: T; errors?: { message: string }[] };
+  if (json.errors?.length) {
+    throw new Error(json.errors.map((error) => error.message).join(" | "));
+  }
+  if (!json.data) throw new Error("GitHub API returned empty data");
+  return json.data;
+}
+
+function normalizeLiveProjectItem(item: any): ActivityEntry {
+  const statusField = item.fieldValues?.nodes?.find(
+    (node: any) => node?.__typename === "ProjectV2ItemFieldSingleSelectValue" && node?.field?.name?.toLowerCase() === "status",
+  );
+  const status = statusField?.name || "Unknown";
+  const content = item.content || {};
+  const title = content.title || item.fieldValues?.nodes?.find((n: any) => typeof n?.text === "string")?.text || "Untitled";
+
+  return {
+    id: item.id,
+    source: "project",
+    sourceType: content.__typename || "DraftIssue",
+    title,
+    url: content.url || `https://github.com/users/${GITHUB_OWNER}/projects/${GITHUB_PROJECT_NUMBER}`,
+    number: content.number || null,
+    state: content.state || "OPEN",
+    status,
+    statusKey: toStatusKey(status),
+    updatedAt: content.updatedAt || item.updatedAt || new Date().toISOString(),
+    repository: content.repository?.nameWithOwner || null,
+    labels: content.labels?.nodes?.map((label: any) => label.name) || [],
+  };
+}
+
+function normalizeLiveDiscussion(node: any): ActivityEntry {
+  return {
+    id: node.id,
+    source: "discussion",
+    sourceType: "Discussion",
+    title: node.title,
+    url: node.url,
+    number: node.number || null,
+    state: node.closed ? "CLOSED" : "OPEN",
+    status: node.category?.name || "Discussion",
+    statusKey: "review_feedback",
+    updatedAt: node.updatedAt,
+    repository: `${GITHUB_OWNER}/${GITHUB_DISCUSSION_REPO}`,
+    labels: node.labels?.nodes?.map((label: any) => label.name) || [],
+    comments: node.comments?.totalCount || 0,
+  };
+}
+
+async function loadSnapshotData(): Promise<ActivityPayload> {
+  const cacheBust = Math.floor(Date.now() / 60_000);
+  const response = await fetch(`/data/activity.json?v=${cacheBust}`, { cache: "no-store" });
+  if (!response.ok) throw new Error("Failed to load snapshot data");
+  return (await response.json()) as ActivityPayload;
+}
+
+async function loadLiveGithubData(token: string): Promise<ActivityPayload> {
+  const projectQuery = `
+    query ProjectData($owner: String!, $projectNumber: Int!) {
+      user(login: $owner) {
+        projectV2(number: $projectNumber) {
+          title
+          url
+          items(first: 100) {
+            nodes {
+              id
+              updatedAt
+              fieldValues(first: 20) {
+                nodes {
+                  __typename
+                  ... on ProjectV2ItemFieldSingleSelectValue {
+                    name
+                    field { ... on ProjectV2FieldCommon { name } }
+                  }
+                  ... on ProjectV2ItemFieldTextValue {
+                    text
+                    field { ... on ProjectV2FieldCommon { name } }
+                  }
+                }
+              }
+              content {
+                __typename
+                ... on Issue {
+                  number
+                  title
+                  url
+                  state
+                  updatedAt
+                  repository { nameWithOwner }
+                  labels(first: 10) { nodes { name } }
+                }
+                ... on PullRequest {
+                  number
+                  title
+                  url
+                  state
+                  updatedAt
+                  repository { nameWithOwner }
+                  labels(first: 10) { nodes { name } }
+                }
+                ... on DraftIssue {
+                  title
+                  body
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const projectData = await fetchGithubGraphql<any>(token, projectQuery, {
+    owner: GITHUB_OWNER,
+    projectNumber: GITHUB_PROJECT_NUMBER,
+  });
+
+  const projectNode = projectData?.user?.projectV2;
+  if (!projectNode) throw new Error(`Project ${GITHUB_PROJECT_NUMBER} not found`);
+
+  const projectItems = (projectNode.items?.nodes || []).map(normalizeLiveProjectItem);
+
+  let discussions: ActivityEntry[] = [];
+  try {
+    const discussionsQuery = `
+      query DiscussionData($owner: String!, $repo: String!) {
+        repository(owner: $owner, name: $repo) {
+          discussions(first: 20, orderBy: { field: UPDATED_AT, direction: DESC }) {
+            nodes {
+              id
+              number
+              title
+              url
+              updatedAt
+              closed
+              category { name }
+              labels(first: 10) { nodes { name } }
+              comments { totalCount }
+            }
+          }
+        }
+      }
+    `;
+    const discussionData = await fetchGithubGraphql<any>(token, discussionsQuery, {
+      owner: GITHUB_OWNER,
+      repo: GITHUB_DISCUSSION_REPO,
+    });
+    discussions = (discussionData?.repository?.discussions?.nodes || []).map(normalizeLiveDiscussion);
+  } catch {
+    discussions = [];
+  }
+
+  return {
+    generatedAt: new Date().toISOString(),
+    owner: GITHUB_OWNER,
+    discussionRepo: `${GITHUB_OWNER}/${GITHUB_DISCUSSION_REPO}`,
+    project: {
+      number: GITHUB_PROJECT_NUMBER,
+      title: projectNode.title || "Activity Board",
+      url: projectNode.url || `https://github.com/users/${GITHUB_OWNER}/projects/${GITHUB_PROJECT_NUMBER}`,
+    },
+    funnel: buildFunnel(projectItems),
+    projectItems,
+    discussions,
+    warnings: [],
+  };
+}
+
 function formatDate(dateString: string) {
   try {
     return new Date(dateString).toLocaleString("id-ID", {
@@ -195,14 +420,36 @@ export function ActivityTransparencySection() {
     let mounted = true;
 
     const loadData = async () => {
+      let snapshot: ActivityPayload | null = null;
       try {
-        const cacheBust = Math.floor(Date.now() / 60000);
-        const response = await fetch(`/data/activity.json?v=${cacheBust}`, { cache: "no-store" });
-        if (!response.ok) throw new Error("Failed to load activity data");
-        const json = (await response.json()) as ActivityPayload;
-        if (mounted) setData(json);
+        snapshot = await loadSnapshotData();
       } catch {
-        if (mounted) setData(FALLBACK_DATA);
+        snapshot = null;
+      }
+
+      try {
+        if (!GITHUB_READ_TOKEN) {
+          if (mounted) {
+            setData(
+              snapshot
+                ? { ...snapshot, warnings: ["VITE_GITHUB_READ_TOKEN tidak ditemukan, menggunakan snapshot build."] }
+                : FALLBACK_DATA,
+            );
+          }
+          return;
+        }
+
+        const live = await loadLiveGithubData(GITHUB_READ_TOKEN);
+        if (mounted) setData(live);
+      } catch (error) {
+        if (mounted) {
+          const message = error instanceof Error ? error.message : "Unknown error";
+          if (snapshot) {
+            setData({ ...snapshot, warnings: [`Live fetch gagal: ${message}`] });
+          } else {
+            setData({ ...FALLBACK_DATA, warnings: [`Live fetch gagal: ${message}`] });
+          }
+        }
       } finally {
         if (mounted) setLoading(false);
       }

@@ -35,6 +35,8 @@ jobs:
         run: npm run generate:activity
 
       - name: Build project
+        env:
+          VITE_GITHUB_READ_TOKEN: ${{ secrets.GH_ACTIVITY_TOKEN }}
         run: npm run build
 
       - name: Upload artifact

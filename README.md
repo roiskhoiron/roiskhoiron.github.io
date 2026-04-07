@@ -7,5 +7,7 @@
 
   Run `npm i` to install the dependencies.
 
+  Copy `.env.example` to `.env` and set `VITE_GITHUB_READ_TOKEN` if you want live GitHub fetch from frontend.
+
   Run `npm run dev` to start the development server.
   

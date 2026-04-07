@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-07T04:30:12.804Z",
+  "generatedAt": "2026-04-07T06:28:13.131Z",
   "owner": "roiskhoiron",
   "discussionRepo": "roiskhoiron/.github",
   "project": {
@@ -88,25 +88,6 @@
   ],
   "projectItems": [
     {
-      "id": "PVTI_lAHOAbNDHc4BTz6OzgpQQ9Q",
-      "source": "project",
-      "sourceType": "Issue",
-      "title": "Personal Engineering Labs on Workstation",
-      "url": "https://github.com/roiskhoiron/.github/issues/6",
-      "number": 6,
-      "state": "OPEN",
-      "status": "To Do",
-      "statusKey": "todo",
-      "updatedAt": "2026-04-07T03:20:49Z",
-      "repository": "roiskhoiron/.github",
-      "labels": [
-        "documentation",
-        "area:infrastructure",
-        "type:learning",
-        "type:maintenance"
-      ]
-    },
-    {
       "id": "PVTI_lAHOAbNDHc4BTz6OzgpMDBo",
       "source": "project",
       "sourceType": "Issue",
@@ -125,6 +106,25 @@
         "area:personal-brand",
         "type:learning",
         "platform:ibm"
+      ]
+    },
+    {
+      "id": "PVTI_lAHOAbNDHc4BTz6OzgpQQ9Q",
+      "source": "project",
+      "sourceType": "Issue",
+      "title": "Personal Engineering Labs on Workstation",
+      "url": "https://github.com/roiskhoiron/.github/issues/6",
+      "number": 6,
+      "state": "OPEN",
+      "status": "To Do",
+      "statusKey": "todo",
+      "updatedAt": "2026-04-07T03:20:49Z",
+      "repository": "roiskhoiron/.github",
+      "labels": [
+        "documentation",
+        "area:infrastructure",
+        "type:learning",
+        "type:maintenance"
       ]
     }
   ],
