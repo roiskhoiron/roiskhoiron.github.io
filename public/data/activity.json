@@ -1,21 +1,68 @@
 {
-  "generatedAt": "2026-04-07T04:16:07.385Z",
+  "generatedAt": "2026-04-07T04:30:12.804Z",
   "owner": "roiskhoiron",
   "discussionRepo": "roiskhoiron/.github",
   "project": {
     "number": 9,
-    "title": "Public Activity Board",
+    "title": "Growth - DailyLife powered by CodingSkuy",
     "url": "https://github.com/users/roiskhoiron/projects/9"
   },
-  "funnel": [
+  "projectColumns": [
     {
-      "key": "todo",
-      "label": "To Do",
+      "name": "Backlog",
+      "statusKey": "todo",
+      "count": 1
+    },
+    {
+      "name": "To Do",
+      "statusKey": "todo",
+      "count": 1
+    },
+    {
+      "name": "In progress",
+      "statusKey": "in_progress",
+      "count": 1
+    },
+    {
+      "name": "Review/Feedback",
+      "statusKey": "review_feedback",
       "count": 0
     },
     {
+      "name": "Ready for Validation",
+      "statusKey": "ready_validation",
+      "count": 0
+    },
+    {
+      "name": "Test In Progress",
+      "statusKey": "in_progress",
+      "count": 1
+    },
+    {
+      "name": "Test Passed",
+      "statusKey": "ready_validation",
+      "count": 0
+    },
+    {
+      "name": "Ready to Handover",
+      "statusKey": "ready_handover",
+      "count": 0
+    },
+    {
+      "name": "Done",
+      "statusKey": "ready_handover",
+      "count": 0
+    }
+  ],
+  "funnel": [
+    {
+      "key": "todo",
+      "label": "Todo",
+      "count": 1
+    },
+    {
       "key": "in_progress",
-      "label": "In progress",
+      "label": "In Progress",
       "count": 1
     },
     {
@@ -25,7 +72,7 @@
     },
     {
       "key": "ready_validation",
-      "label": "Ready for Validation",
+      "label": "Ready to Validation",
       "count": 0
     },
     {
@@ -41,43 +88,118 @@
   ],
   "projectItems": [
     {
-      "id": "demo-1",
+      "id": "PVTI_lAHOAbNDHc4BTz6OzgpQQ9Q",
       "source": "project",
       "sourceType": "Issue",
-      "title": "Publish daily sprint recap page",
-      "url": "https://github.com/users/roiskhoiron/projects/9",
-      "number": 1,
+      "title": "Personal Engineering Labs on Workstation",
+      "url": "https://github.com/roiskhoiron/.github/issues/6",
+      "number": 6,
       "state": "OPEN",
-      "status": "In Progress",
-      "statusKey": "in_progress",
-      "updatedAt": "2026-04-07T02:30:00.000Z",
-      "repository": "roiskhoiron/roiskhoiron.github.io",
+      "status": "To Do",
+      "statusKey": "todo",
+      "updatedAt": "2026-04-07T03:20:49Z",
+      "repository": "roiskhoiron/.github",
       "labels": [
-        "daily",
-        "public"
+        "documentation",
+        "area:infrastructure",
+        "type:learning",
+        "type:maintenance"
+      ]
+    },
+    {
+      "id": "PVTI_lAHOAbNDHc4BTz6OzgpMDBo",
+      "source": "project",
+      "sourceType": "Issue",
+      "title": "Belajar Skill AI di IBM SkillsBuild x Dicoding by PIJAK",
+      "url": "https://github.com/roiskhoiron/.github/issues/3",
+      "number": 3,
+      "state": "OPEN",
+      "status": "In progress",
+      "statusKey": "in_progress",
+      "updatedAt": "2026-04-07T02:47:23Z",
+      "repository": "roiskhoiron/.github",
+      "labels": [
+        "documentation",
+        "area:hard-skill",
+        "area:soft-skill",
+        "area:personal-brand",
+        "type:learning",
+        "platform:ibm"
       ]
     }
   ],
   "discussions": [
     {
-      "id": "discussion-demo-1",
+      "id": "D_kwDOR6yWbs4AlhsK",
       "source": "discussion",
       "sourceType": "Discussion",
-      "title": "What activity detail do you want to see every day?",
-      "url": "https://github.com/roiskhoiron/.github/discussions",
-      "number": 1,
+      "title": "Personal Engineering Labs on Workstation",
+      "url": "https://github.com/roiskhoiron/.github/discussions/5",
+      "number": 5,
       "state": "OPEN",
-      "status": "Ideas",
+      "status": "Projects & Issues",
       "statusKey": "review_feedback",
-      "updatedAt": "2026-04-07T02:00:00.000Z",
+      "updatedAt": "2026-04-07T03:20:12Z",
       "repository": "roiskhoiron/.github",
       "labels": [
-        "feedback"
+        "documentation",
+        "area:infrastructure",
+        "type:learning",
+        "type:maintenance"
       ],
-      "comments": 3
+      "comments": 2
+    },
+    {
+      "id": "D_kwDOR6yWbs4AlhCb",
+      "source": "discussion",
+      "sourceType": "Discussion",
+      "title": "Pengen belajar Mobile Security Engineering",
+      "url": "https://github.com/roiskhoiron/.github/discussions/4",
+      "number": 4,
+      "state": "OPEN",
+      "status": "Mobile",
+      "statusKey": "review_feedback",
+      "updatedAt": "2026-04-06T15:37:12Z",
+      "repository": "roiskhoiron/.github",
+      "labels": [],
+      "comments": 1
+    },
+    {
+      "id": "D_kwDOR6yWbs4AlgaR",
+      "source": "discussion",
+      "sourceType": "Discussion",
+      "title": "Peluang Belajar Skill AI di IBM SkillsBuild x Dicoding by PIJAK",
+      "url": "https://github.com/roiskhoiron/.github/discussions/2",
+      "number": 2,
+      "state": "OPEN",
+      "status": "Discovery Learning",
+      "statusKey": "review_feedback",
+      "updatedAt": "2026-04-06T08:09:36Z",
+      "repository": "roiskhoiron/.github",
+      "labels": [
+        "documentation",
+        "area:hard-skill",
+        "type:learning",
+        "type:building",
+        "platform:ibm"
+      ],
+      "comments": 1
+    },
+    {
+      "id": "D_kwDOR6yWbs4AlgZX",
+      "source": "discussion",
+      "sourceType": "Discussion",
+      "title": "🧭 Welcome to life.dotdev Discussions — My Reflection Hub",
+      "url": "https://github.com/roiskhoiron/.github/discussions/1",
+      "number": 1,
+      "state": "OPEN",
+      "status": "Announcements",
+      "statusKey": "review_feedback",
+      "updatedAt": "2026-04-06T05:42:29Z",
+      "repository": "roiskhoiron/.github",
+      "labels": [],
+      "comments": 0
     }
   ],
-  "warnings": [
-    "Live fetch failed, using existing snapshot: Argument 'field' on InputObject 'ProjectV2ItemOrder' has an invalid value (UPDATED_AT). Expected type 'ProjectV2ItemOrderField!'."
-  ]
+  "warnings": []
 }

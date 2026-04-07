@@ -20,11 +20,11 @@ const STAGES = [
 function toStatusKey(value) {
   const raw = (value || "").trim().toLowerCase();
   if (!raw) return "unknown";
-  if (raw.includes("todo") || raw.includes("to do") || raw.includes("backlog")) return "todo";
+  if (raw.includes("backlog") || raw.includes("todo") || raw.includes("to do")) return "todo";
   if (raw.includes("progress") || raw.includes("doing") || raw.includes("active")) return "in_progress";
   if (raw.includes("review") || raw.includes("feedback")) return "review_feedback";
   if (raw.includes("valid") || raw.includes("qa") || raw.includes("test")) return "ready_validation";
-  if (raw.includes("handover") || raw.includes("done") || raw.includes("complete") || raw.includes("release")) {
+  if (raw.includes("handover") || raw === "done" || raw.includes("complete") || raw.includes("release")) {
     return "ready_handover";
   }
   return "unknown";
@@ -32,7 +32,7 @@ function toStatusKey(value) {
 
 function normalizeProjectItem(item) {
   const statusField = item.fieldValues?.nodes?.find(
-    (node) => node?.field?.name?.toLowerCase() === "status" && node?.name,
+    (node) => node?.__typename === "ProjectV2ItemFieldSingleSelectValue" && node?.field?.name?.toLowerCase() === "status",
   );
 
   const statusName = statusField?.name || "Unknown";
@@ -82,14 +82,31 @@ function buildFunnel(items) {
     return acc;
   }, {});
 
-  for (const item of items) {
-    counts[item.statusKey] = (counts[item.statusKey] || 0) + 1;
-  }
+  for (const item of items) counts[item.statusKey] = (counts[item.statusKey] || 0) + 1;
 
-  return STAGES.map((stage) => ({
-    key: stage.key,
-    label: stage.label,
-    count: counts[stage.key] || 0,
+  return STAGES.map((stage) => ({ key: stage.key, label: stage.label, count: counts[stage.key] || 0 }));
+}
+
+function buildProjectColumns(items, statusOptions) {
+  const knownColumns = (statusOptions || [])
+    .map((option) => ({ name: option.name, key: toStatusKey(option.name) }))
+    .filter((option) => option.key !== "unknown");
+
+  const fallbackColumns = [
+    { name: "Backlog", key: "todo" },
+    { name: "To Do", key: "todo" },
+    { name: "In progress", key: "in_progress" },
+    { name: "Review/Feedback", key: "review_feedback" },
+    { name: "Ready for Validation", key: "ready_validation" },
+    { name: "Ready to Handover", key: "ready_handover" },
+  ];
+
+  const columns = knownColumns.length > 0 ? knownColumns : fallbackColumns;
+
+  return columns.map((column) => ({
+    name: column.name,
+    statusKey: column.key,
+    count: items.filter((item) => toStatusKey(item.status) === column.key).length,
   }));
 }
 
@@ -106,14 +123,11 @@ async function runGraphqlQuery(token, query, variables = {}) {
 
   if (!response.ok) {
     const body = await response.text();
-    throw new Error(`GraphQL HTTP ${response.status}: ${body.slice(0, 500)}`);
+    throw new Error(`GraphQL HTTP ${response.status}: ${body.slice(0, 400)}`);
   }
 
   const json = await response.json();
-  if (json.errors?.length) {
-    throw new Error(json.errors.map((error) => error.message).join(" | "));
-  }
-
+  if (json.errors?.length) throw new Error(json.errors.map((error) => error.message).join(" | "));
   return json.data;
 }
 
@@ -126,103 +140,163 @@ async function readExistingFallback() {
   }
 }
 
-async function main() {
-  const token = process.env.GH_ACTIVITY_TOKEN || process.env.GITHUB_TOKEN;
-  const warnings = [];
-  const existingSnapshot = await readExistingFallback();
-
-  const query = `
-    query ActivityData($owner: String!, $repo: String!, $projectNumber: Int!) {
-      repository(owner: $owner, name: $repo) {
-        discussions(first: 20, orderBy: { field: UPDATED_AT, direction: DESC }) {
+const PROJECT_QUERY = `
+  query ProjectData($owner: String!, $projectNumber: Int!) {
+    user(login: $owner) {
+      projectV2(number: $projectNumber) {
+        title
+        url
+        fields(first: 30) {
           nodes {
-            id
-            number
-            title
-            url
-            updatedAt
-            closed
-            category { name }
-            labels(first: 10) { nodes { name } }
-            comments { totalCount }
+            __typename
+            ... on ProjectV2SingleSelectField {
+              name
+              options {
+                id
+                name
+              }
+            }
           }
         }
-      }
-      user(login: $owner) {
-        projectV2(number: $projectNumber) {
-          title
-          url
-          items(first: 50, orderBy: { field: UPDATED_AT, direction: DESC }) {
-            nodes {
-              id
-              updatedAt
-              fieldValues(first: 20) {
-                nodes {
-                  ... on ProjectV2ItemFieldSingleSelectValue {
-                    name
-                    field { ... on ProjectV2FieldCommon { name } }
-                  }
-                  ... on ProjectV2ItemFieldTextValue {
-                    text
-                    field { ... on ProjectV2FieldCommon { name } }
-                  }
+        items(first: 100) {
+          nodes {
+            id
+            updatedAt
+            fieldValues(first: 20) {
+              nodes {
+                __typename
+                ... on ProjectV2ItemFieldSingleSelectValue {
+                  name
+                  optionId
+                  field { ... on ProjectV2FieldCommon { name } }
+                }
+                ... on ProjectV2ItemFieldTextValue {
+                  text
+                  field { ... on ProjectV2FieldCommon { name } }
                 }
               }
-              content {
-                __typename
-                ... on Issue {
-                  number
-                  title
-                  url
-                  state
-                  updatedAt
-                  repository { nameWithOwner }
-                  labels(first: 10) { nodes { name } }
-                }
-                ... on PullRequest {
-                  number
-                  title
-                  url
-                  state
-                  updatedAt
-                  repository { nameWithOwner }
-                  labels(first: 10) { nodes { name } }
-                }
-                ... on DraftIssue {
-                  title
-                  body
-                }
+            }
+            content {
+              __typename
+              ... on Issue {
+                number
+                title
+                url
+                state
+                updatedAt
+                repository { nameWithOwner }
+                labels(first: 10) { nodes { name } }
+              }
+              ... on PullRequest {
+                number
+                title
+                url
+                state
+                updatedAt
+                repository { nameWithOwner }
+                labels(first: 10) { nodes { name } }
+              }
+              ... on DraftIssue {
+                title
+                body
               }
             }
           }
         }
       }
     }
-  `;
+  }
+`;
 
-  let data = null;
-  if (!token) {
-    warnings.push("No token found, using existing snapshot data.");
-    data = existingSnapshot;
-  } else {
-    try {
-      data = await runGraphqlQuery(token, query, {
-        owner: OWNER,
-        repo: DISCUSSION_REPO,
-        projectNumber: PROJECT_NUMBER,
-      });
-    } catch (error) {
-      if (existingSnapshot) {
-        warnings.push(`Live fetch failed, using existing snapshot: ${error.message}`);
-        data = existingSnapshot;
-      } else {
-        throw error;
+const DISCUSSIONS_QUERY = `
+  query DiscussionData($owner: String!, $repo: String!) {
+    repository(owner: $owner, name: $repo) {
+      discussions(first: 20, orderBy: { field: UPDATED_AT, direction: DESC }) {
+        nodes {
+          id
+          number
+          title
+          url
+          updatedAt
+          closed
+          category { name }
+          labels(first: 10) { nodes { name } }
+          comments { totalCount }
+        }
       }
     }
   }
+`;
 
-  const discussions = data?.repository?.discussions?.nodes?.map(normalizeDiscussion) || data?.discussions || [];
-  const projectItems = data?.user?.projectV2?.items?.nodes?.map(normalizeProjectItem) || data?.projectItems || [];
+async function main() {
+  const token = process.env.GH_ACTIVITY_TOKEN || process.env.GITHUB_TOKEN;
+  const warnings = [];
+  const existingSnapshot = await readExistingFallback();
+
+  if (!token) {
+    if (!existingSnapshot) throw new Error("No token found and no local snapshot available.");
+    warnings.push("No token found, using existing snapshot data.");
+
+    const snapshotItems = existingSnapshot.projectItems || [];
+    const payload = {
+      ...existingSnapshot,
+      generatedAt: new Date().toISOString(),
+      funnel: existingSnapshot.funnel || buildFunnel(snapshotItems),
+      projectColumns: existingSnapshot.projectColumns || buildProjectColumns(snapshotItems, []),
+      warnings,
+    };
+
+    await mkdir(path.dirname(OUTPUT_PATH), { recursive: true });
+    await writeFile(OUTPUT_PATH, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
+    console.log(`Activity data generated from snapshot: ${payload.projectItems?.length || 0} items`);
+    return;
+  }
+
+  let projectData;
+  try {
+    projectData = await runGraphqlQuery(token, PROJECT_QUERY, {
+      owner: OWNER,
+      projectNumber: PROJECT_NUMBER,
+    });
+  } catch (error) {
+    if (!existingSnapshot) throw error;
+    warnings.push(`Project fetch failed, using snapshot: ${error.message}`);
+
+    const snapshotItems = existingSnapshot.projectItems || [];
+    const payload = {
+      ...existingSnapshot,
+      generatedAt: new Date().toISOString(),
+      funnel: existingSnapshot.funnel || buildFunnel(snapshotItems),
+      projectColumns: existingSnapshot.projectColumns || buildProjectColumns(snapshotItems, []),
+      warnings,
+    };
+
+    await mkdir(path.dirname(OUTPUT_PATH), { recursive: true });
+    await writeFile(OUTPUT_PATH, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
+    console.log(`Activity data generated from snapshot: ${payload.projectItems?.length || 0} items`);
+    return;
+  }
+
+  const projectNode = projectData?.user?.projectV2;
+  if (!projectNode) throw new Error(`Project #${PROJECT_NUMBER} not found for user ${OWNER}.`);
+
+  let discussions = [];
+  try {
+    const discussionData = await runGraphqlQuery(token, DISCUSSIONS_QUERY, {
+      owner: OWNER,
+      repo: DISCUSSION_REPO,
+    });
+    discussions = discussionData?.repository?.discussions?.nodes?.map(normalizeDiscussion) || [];
+  } catch (error) {
+    warnings.push(`Discussion fetch skipped: ${error.message}`);
+    discussions = existingSnapshot?.discussions || [];
+  }
+
+  const projectItems = projectNode.items?.nodes?.map(normalizeProjectItem) || [];
+  const statusField = projectNode.fields?.nodes?.find(
+    (field) => field?.__typename === "ProjectV2SingleSelectField" && field?.name?.toLowerCase() === "status",
+  );
+  const statusOptions = statusField?.options || [];
 
   const payload = {
     generatedAt: new Date().toISOString(),
@@ -230,12 +304,10 @@ async function main() {
     discussionRepo: `${OWNER}/${DISCUSSION_REPO}`,
     project: {
       number: PROJECT_NUMBER,
-      title: data?.user?.projectV2?.title || data?.project?.title || "Activity Board",
-      url:
-        data?.user?.projectV2?.url ||
-        data?.project?.url ||
-        `https://github.com/users/${OWNER}/projects/${PROJECT_NUMBER}`,
+      title: projectNode.title || "Activity Board",
+      url: projectNode.url || `https://github.com/users/${OWNER}/projects/${PROJECT_NUMBER}`,
     },
+    projectColumns: buildProjectColumns(projectItems, statusOptions),
     funnel: buildFunnel(projectItems),
     projectItems,
     discussions,
