@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { MapPin, Calendar, Layers, TrendingUp } from "lucide-react";
-import imgProfile from "figma:asset/4b819441208d57e40fee6dee2a89f1597026d00b.png";
+import imgProfile from "../assets/image.png";
 
 const highlights = [
   {
