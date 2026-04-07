@@ -196,7 +196,8 @@ export function ActivityTransparencySection() {
 
     const loadData = async () => {
       try {
-        const response = await fetch("/data/activity.json", { cache: "no-store" });
+        const cacheBust = Math.floor(Date.now() / 60000);
+        const response = await fetch(`/data/activity.json?v=${cacheBust}`, { cache: "no-store" });
         if (!response.ok) throw new Error("Failed to load activity data");
         const json = (await response.json()) as ActivityPayload;
         if (mounted) setData(json);
