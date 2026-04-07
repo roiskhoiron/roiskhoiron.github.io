@@ -1,0 +1,83 @@
+{
+  "generatedAt": "2026-04-07T04:16:07.385Z",
+  "owner": "roiskhoiron",
+  "discussionRepo": "roiskhoiron/.github",
+  "project": {
+    "number": 9,
+    "title": "Public Activity Board",
+    "url": "https://github.com/users/roiskhoiron/projects/9"
+  },
+  "funnel": [
+    {
+      "key": "todo",
+      "label": "To Do",
+      "count": 0
+    },
+    {
+      "key": "in_progress",
+      "label": "In progress",
+      "count": 1
+    },
+    {
+      "key": "review_feedback",
+      "label": "Review/Feedback",
+      "count": 0
+    },
+    {
+      "key": "ready_validation",
+      "label": "Ready for Validation",
+      "count": 0
+    },
+    {
+      "key": "ready_handover",
+      "label": "Ready to Handover",
+      "count": 0
+    },
+    {
+      "key": "unknown",
+      "label": "Unmapped",
+      "count": 0
+    }
+  ],
+  "projectItems": [
+    {
+      "id": "demo-1",
+      "source": "project",
+      "sourceType": "Issue",
+      "title": "Publish daily sprint recap page",
+      "url": "https://github.com/users/roiskhoiron/projects/9",
+      "number": 1,
+      "state": "OPEN",
+      "status": "In Progress",
+      "statusKey": "in_progress",
+      "updatedAt": "2026-04-07T02:30:00.000Z",
+      "repository": "roiskhoiron/roiskhoiron.github.io",
+      "labels": [
+        "daily",
+        "public"
+      ]
+    }
+  ],
+  "discussions": [
+    {
+      "id": "discussion-demo-1",
+      "source": "discussion",
+      "sourceType": "Discussion",
+      "title": "What activity detail do you want to see every day?",
+      "url": "https://github.com/roiskhoiron/.github/discussions",
+      "number": 1,
+      "state": "OPEN",
+      "status": "Ideas",
+      "statusKey": "review_feedback",
+      "updatedAt": "2026-04-07T02:00:00.000Z",
+      "repository": "roiskhoiron/.github",
+      "labels": [
+        "feedback"
+      ],
+      "comments": 3
+    }
+  ],
+  "warnings": [
+    "Live fetch failed, using existing snapshot: Argument 'field' on InputObject 'ProjectV2ItemOrder' has an invalid value (UPDATED_AT). Expected type 'ProjectV2ItemOrderField!'."
+  ]
+}

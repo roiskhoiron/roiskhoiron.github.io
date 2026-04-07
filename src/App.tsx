@@ -9,6 +9,7 @@ import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { NavBar } from "./components/NavBar";
+import { ActivityTransparencySection } from "./components/ActivityTransparencySection";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <HeroSection />
         <AboutSection />
         <PortfolioSection />
+        <ActivityTransparencySection />
         <SkillsSection />
         <ExperienceSection />
         <BrandingSection />

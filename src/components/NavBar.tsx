@@ -6,6 +6,7 @@ import { ThemeToggle } from "./ThemeToggle";
 const navLinks = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
+  { href: "#activity", label: "Activity" },
   { href: "#philosophy", label: "Philosophy" },
   { href: "#timeline", label: "Timeline" },
   { href: "#chefgenie", label: "Products & Content" },
