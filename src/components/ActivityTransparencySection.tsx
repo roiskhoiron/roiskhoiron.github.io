@@ -515,11 +515,10 @@ export function ActivityTransparencySection() {
             Live Activity Flow
           </span>
           <h2 className="mt-3 text-4xl sm:text-5xl tracking-tight text-slate-900 dark:text-white">
-            Timeline transparansi kerja
+            Today's Activity Timeline
           </h2>
           <p className="mt-3 max-w-3xl text-slate-600 dark:text-slate-400">
-            Desain timeline ini mengikuti format slide klasik: node di garis tengah, callout bergantian atas-bawah,
-            dan interaksi hover untuk membuka detail item per langkah.
+            I open my journey as an IT developer to the public — sharing what I learn, build, and explore — so people can know me beyond titles, through real work, real progress, and real impact.
           </p>
         </motion.div>
 

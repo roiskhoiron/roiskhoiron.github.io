@@ -36,7 +36,7 @@ jobs:
 
       - name: Build project
         env:
-          VITE_GITHUB_READ_TOKEN: ${{ secrets.GH_ACTIVITY_TOKEN }}
+          VITE_GITHUB_READ_TOKEN: ${{ secrets.VITE_GITHUB_READ_TOKEN }}
         run: npm run build
 
       - name: Upload artifact
