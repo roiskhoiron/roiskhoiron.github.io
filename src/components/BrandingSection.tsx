@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { ChefHat, Sparkles, Cpu, Map, ArrowRight, Check } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useLanguage, type Language } from "../contexts/LanguageContext";
+import imgDemo from "../assets/ai_vision.png";
 
 const copy: Record<Language, {
   tag: string;
@@ -172,7 +173,7 @@ export function BrandingSection() {
             {/* Left — Image */}
             <div className="lg:col-span-2 relative min-h-[300px] lg:min-h-0">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1681264368290-13171e3bb4d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFydCUyMGtpdGNoZW4lMjBjb29raW5nJTIwYWklMjBhc3Npc3RhbnQlMjBhcHB8ZW58MXx8fHwxNzc1MTExODc5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                src={imgDemo}
                 alt={text.imageAlt}
                 className="w-full h-full object-cover min-h-[300px]"
               />
