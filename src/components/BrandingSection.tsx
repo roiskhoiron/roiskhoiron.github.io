@@ -120,11 +120,19 @@ export function BrandingSection() {
   return (
     <section id="chefgenie" className="py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-slate-50/60 dark:bg-white/[0.01]" />
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-white/[0.06] to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-white/[0.06] to-transparent" />
-        <div className="absolute right-0 top-1/2 w-[500px] h-[500px] bg-emerald-500/5 dark:bg-emerald-600/6 rounded-full blur-[120px] -translate-y-1/2" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-cyan-900">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djItMnpNNDQgNDR2Mi0yem0wLTMwdjItMnptLTIwLTIwdjItMnpNMiAydjItMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40" />
+        
+        <motion.div
+          animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
+          transition={{ duration: 20, repeat: Infinity }}
+          className="absolute top-20 left-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{ scale: [1, 1.3, 1], rotate: [0, -90, 0] }}
+          transition={{ duration: 25, repeat: Infinity }}
+          className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
+        />
       </div>
 
       <div className="container mx-auto max-w-7xl relative z-10">
@@ -143,11 +151,11 @@ export function BrandingSection() {
             <div className="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center">
               <ChefHat className="w-5 h-5 text-orange-500" />
             </div>
-            <h2 className="text-4xl sm:text-5xl tracking-tight text-slate-900 dark:text-white">
+            <h2 className="text-4xl sm:text-5xl tracking-tight text-orange-300 dark:text-white">
               ChefGenie
             </h2>
           </div>
-          <p className="text-slate-500 dark:text-slate-500 mt-3 max-w-lg">
+          <p className="text-slate-500 dark:text-blue-100 mt-3 max-w-lg ">
             {text.description}
           </p>
         </motion.div>

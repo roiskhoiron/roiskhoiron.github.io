@@ -12,21 +12,23 @@ import { NavBar } from "./components/NavBar";
 import { ActivityTransparencySection } from "./components/ActivityTransparencySection";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { MediumArticlesSection } from "./components/MediumArticlesSection";
+import { ScrollSmoother } from "./components/ScrollSmoother";
 
 export default function App() {
   return (
     <LanguageProvider>
       <ThemeProvider>
         <div className="min-h-screen bg-white dark:bg-[#080811] text-slate-900 dark:text-white transition-colors duration-300">
+          <ScrollSmoother />
           <NavBar />
           <HeroSection />
           <AboutSection />
-          <PortfolioSection />
-          <SkillsSection />
           <ExperienceSection />
+          <PortfolioSection />
+          <BrandingSection />
+          <SkillsSection />
           <ActivityTransparencySection />
           <MediumArticlesSection />
-          <BrandingSection />
           <CreatorSection />
           <ContactSection />
           <Footer />
