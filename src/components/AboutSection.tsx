@@ -1,29 +1,86 @@
 import { motion } from "motion/react";
 import { MapPin, Calendar, Layers, TrendingUp } from "lucide-react";
 import imgProfile from "../assets/image.png";
+import { useLanguage, type Language } from "../contexts/LanguageContext";
 
-const highlights = [
-  {
-    icon: Calendar,
-    value: "5+ Years",
-    label: "Mobile Engineering",
-    sub: "From junior dev to Head of Mobile",
+const copy: Record<Language, {
+  location: string;
+  sectionLabel: string;
+  titleTop: string;
+  titleBottom: string;
+  paragraphs: string[];
+  highlights: Array<{ icon: typeof Calendar; value: string; label: string; sub: string }>;
+}> = {
+  id: {
+    location: "Jakarta, Indonesia",
+    sectionLabel: "Pernyataan Posisi",
+    titleTop: "Merekayasa untuk",
+    titleBottom: "era AI",
+    paragraphs: [
+      "Dengan pengalaman lebih dari 5 tahun membangun aplikasi mobile — dari Android Native hingga Flutter dan SwiftUI — saya menyaksikan transformasi besar dalam pengembangan mobile.",
+      "Saya berkembang menuju pembangunan aplikasi AI-native: menanamkan kecerdasan langsung ke dalam produk mobile, bukan sebagai fitur tambahan, melainkan fondasi cara produk berpikir dan merespons.",
+      "Saat ini saya berperan sebagai Head of Mobile Developer di PT. Digital Sekuriti Indonesia, menjembatani product thinking dengan eksekusi engineering pada aplikasi yang kritikal.",
+    ],
+    highlights: [
+      { icon: Calendar, value: "5+ Tahun", label: "Mobile Engineering", sub: "Dari junior dev ke Head of Mobile" },
+      { icon: Layers, value: "50+ Aplikasi", label: "Produk Dirilis", sub: "Skala startup hingga enterprise" },
+      { icon: TrendingUp, value: "AI-Native", label: "Arah Saat Ini", sub: "Integrasi AI dunia nyata" },
+    ],
   },
-  {
-    icon: Layers,
-    value: "50+ Apps",
-    label: "Products Shipped",
-    sub: "Startup to enterprise scale",
+  en: {
+    location: "Jakarta, Indonesia",
+    sectionLabel: "Position Statement",
+    titleTop: "Engineering for",
+    titleBottom: "the AI Era",
+    paragraphs: [
+      "With over 5 years building mobile applications — from Android Native to Flutter and SwiftUI — I've watched mobile development transform.",
+      "I'm evolving toward AI-native application building: embedding intelligence directly into mobile products, not as a feature toggle, but as the foundation of how they think and respond.",
+      "Currently serving as Head of Mobile Developer at PT. Digital Sekuriti Indonesia, bridging product thinking with engineering execution across a team building security-critical applications.",
+    ],
+    highlights: [
+      { icon: Calendar, value: "5+ Years", label: "Mobile Engineering", sub: "From junior dev to Head of Mobile" },
+      { icon: Layers, value: "50+ Apps", label: "Products Shipped", sub: "Startup to enterprise scale" },
+      { icon: TrendingUp, value: "AI-Native", label: "Current Direction", sub: "Real-world AI integration" },
+    ],
   },
-  {
-    icon: TrendingUp,
-    value: "AI-Native",
-    label: "Current Direction",
-    sub: "Real-world AI integration",
+  zh: {
+    location: "雅加达，印度尼西亚",
+    sectionLabel: "定位陈述",
+    titleTop: "为",
+    titleBottom: "AI 时代而构建",
+    paragraphs: [
+      "我有 5 年以上移动应用开发经验，从 Android Native 到 Flutter 和 SwiftUI，亲历了移动开发的演进。",
+      "我正在向 AI-native 应用构建转型：把智能作为产品底层能力，而不是可选功能。",
+      "目前担任 PT. Digital Sekuriti Indonesia 的移动开发负责人，在团队中连接产品思维与工程落地。",
+    ],
+    highlights: [
+      { icon: Calendar, value: "5+ 年", label: "移动工程", sub: "从初级开发到移动负责人" },
+      { icon: Layers, value: "50+ 应用", label: "已交付产品", sub: "覆盖初创到企业规模" },
+      { icon: TrendingUp, value: "AI-Native", label: "当前方向", sub: "真实场景 AI 集成" },
+    ],
   },
-];
+  ja: {
+    location: "ジャカルタ、インドネシア",
+    sectionLabel: "ポジションステートメント",
+    titleTop: "AI 時代に向けた",
+    titleBottom: "エンジニアリング",
+    paragraphs: [
+      "Android Native から Flutter、SwiftUI まで、5年以上モバイルアプリ開発に携わり、変化を現場で見てきました。",
+      "私は AI-native なアプリ開発へ進化しています。AI を追加機能ではなく、製品の思考と応答の基盤として組み込みます。",
+      "現在は PT. Digital Sekuriti Indonesia で Head of Mobile Developer として、プロダクト思考と実装をつないでいます。",
+    ],
+    highlights: [
+      { icon: Calendar, value: "5+ 年", label: "モバイルエンジニアリング", sub: "ジュニアから責任者へ" },
+      { icon: Layers, value: "50+ アプリ", label: "リリース実績", sub: "スタートアップからエンタープライズまで" },
+      { icon: TrendingUp, value: "AI-Native", label: "現在の方向性", sub: "実運用での AI 統合" },
+    ],
+  },
+};
 
 export function AboutSection() {
+  const { language } = useLanguage();
+  const text = copy[language];
+
   return (
     <section id="about" className="py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Subtle background */}
@@ -60,7 +117,7 @@ export function AboutSection() {
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg">
                     <MapPin className="w-3.5 h-3.5 text-cyan-400" />
-                    <span className="text-sm text-white">Jakarta, Indonesia</span>
+                    <span className="text-sm text-white">{text.location}</span>
                   </div>
                 </div>
               </div>
@@ -90,44 +147,34 @@ export function AboutSection() {
             {/* Section label */}
             <div>
               <span className="text-xs uppercase tracking-[0.15em] text-blue-500 dark:text-blue-400">
-                Position Statement
+                {text.sectionLabel}
               </span>
             </div>
 
             {/* Headline */}
             <h2 className="text-4xl sm:text-5xl tracking-tight text-slate-900 dark:text-white leading-tight">
-              Engineering for
+              {text.titleTop}
               <span className="block bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent">
-                the AI Era
+                {text.titleBottom}
               </span>
             </h2>
 
             {/* Narrative paragraphs */}
             <div className="space-y-5">
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                With over 5 years building mobile applications — from Android
-                Native to Flutter and SwiftUI — I've watched mobile development
-                transform. What once required cloud round-trips now runs at the
-                edge. What once needed teams of specialists now ships with a
-                single AI-augmented engineer.
+                {text.paragraphs[0]}
               </p>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                I'm evolving toward AI-native application building: embedding
-                intelligence directly into mobile products, not as a feature
-                toggle, but as the foundation of how they think and respond. My
-                focus is grounded in real-world problem solving — not the hype
-                cycle.
+                {text.paragraphs[1]}
               </p>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                Currently serving as Head of Mobile Developer at PT. Digital
-                Sekuriti Indonesia, bridging product thinking with engineering
-                execution across a team building security-critical applications.
+                {text.paragraphs[2]}
               </p>
             </div>
 
             {/* Highlight cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-              {highlights.map((item, i) => (
+              {text.highlights.map((item, i) => (
                 <motion.div
                   key={item.value}
                   initial={{ opacity: 0, y: 16 }}

@@ -1,36 +1,108 @@
 import { motion } from "motion/react";
 import { Mail, Github, Linkedin, Youtube, ArrowRight, Zap } from "lucide-react";
+import { useLanguage, type Language } from "../contexts/LanguageContext";
 
-const contactLinks = [
+const baseContactLinks = [
   {
     icon: Mail,
-    label: "Email",
+    key: "email",
     value: "rois.khoiron@gmail.com",
     href: "mailto:rois.khoiron@gmail.com",
     color: "blue",
   },
   {
     icon: Linkedin,
-    label: "LinkedIn",
+    key: "linkedin",
     value: "linkedin.com/in/rois-khoiron",
     href: "https://linkedin.com/in/rois-khoiron",
     color: "blue",
   },
   {
     icon: Github,
-    label: "GitHub",
+    key: "github",
     value: "github.com/roiskhoiron",
     href: "https://github.com/roiskhoiron",
     color: "slate",
   },
   {
     icon: Youtube,
-    label: "YouTube",
+    key: "youtube",
     value: "CodingSkuy!",
     href: "https://youtube.com/@codingskuy",
     color: "rose",
   },
-];
+] as const;
+
+const copy: Record<Language, {
+  availability: string;
+  titleTop: string;
+  titleBottom: string;
+  description: string;
+  cta: string;
+  response: string;
+  labels: Record<string, string>;
+}> = {
+  id: {
+    availability: "Tersedia untuk kolaborasi",
+    titleTop: "Siap Membangun",
+    titleBottom: "Sesuatu yang Cerdas?",
+    description:
+      "Saya terbuka untuk kolaborasi produk mobile AI-native, konsultasi arsitektur mobile, atau membangun eksperimen AI bersama.",
+    cta: "Mulai Percakapan",
+    response: "Biasanya merespons dalam 24 jam · Jakarta, Indonesia (WIB / UTC+7)",
+    labels: {
+      email: "Email",
+      linkedin: "LinkedIn",
+      github: "GitHub",
+      youtube: "YouTube",
+    },
+  },
+  en: {
+    availability: "Available for collaboration",
+    titleTop: "Ready to Build",
+    titleBottom: "Something Intelligent?",
+    description:
+      "I'm open to collaborating on AI-native mobile products, advising on mobile architecture, or building experimental AI tools together.",
+    cta: "Start a Conversation",
+    response: "Typically responds within 24 hours · Jakarta, Indonesia (WIB / UTC+7)",
+    labels: {
+      email: "Email",
+      linkedin: "LinkedIn",
+      github: "GitHub",
+      youtube: "YouTube",
+    },
+  },
+  zh: {
+    availability: "可合作中",
+    titleTop: "准备一起打造",
+    titleBottom: "更智能的产品？",
+    description:
+      "我愿意合作 AI-native 移动产品、提供移动架构建议，或一起构建 AI 实验型工具。",
+    cta: "开始交流",
+    response: "通常 24 小时内回复 · 雅加达，印度尼西亚 (WIB / UTC+7)",
+    labels: {
+      email: "邮箱",
+      linkedin: "LinkedIn",
+      github: "GitHub",
+      youtube: "YouTube",
+    },
+  },
+  ja: {
+    availability: "コラボ募集中",
+    titleTop: "一緒に",
+    titleBottom: "インテリジェントなものを作りませんか？",
+    description:
+      "AI-native なモバイルプロダクトの共同開発、モバイルアーキテクチャの相談、実験的な AI ツール開発に対応しています。",
+    cta: "会話を始める",
+    response: "通常24時間以内に返信 · ジャカルタ、インドネシア (WIB / UTC+7)",
+    labels: {
+      email: "メール",
+      linkedin: "LinkedIn",
+      github: "GitHub",
+      youtube: "YouTube",
+    },
+  },
+};
 
 const colorStyles: Record<string, { bg: string; text: string; border: string }> = {
   blue: {
@@ -51,6 +123,13 @@ const colorStyles: Record<string, { bg: string; text: string; border: string }> 
 };
 
 export function ContactSection() {
+  const { language } = useLanguage();
+  const text = copy[language];
+  const contactLinks = baseContactLinks.map((link) => ({
+    ...link,
+    label: text.labels[link.key],
+  }));
+
   return (
     <section id="contact" className="py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background */}
@@ -83,20 +162,18 @@ export function ContactSection() {
             transition={{ duration: 3, repeat: Infinity }}
           >
             <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" />
-            <span className="text-sm text-blue-600 dark:text-blue-400">Available for collaboration</span>
+            <span className="text-sm text-blue-600 dark:text-blue-400">{text.availability}</span>
           </motion.div>
 
           <h2 className="text-4xl sm:text-5xl lg:text-6xl tracking-tight text-slate-900 dark:text-white leading-tight mb-6">
-            Ready to Build
+            {text.titleTop}
             <span className="block bg-gradient-to-r from-blue-500 via-cyan-400 to-violet-500 bg-clip-text text-transparent">
-              Something Intelligent?
+              {text.titleBottom}
             </span>
           </h2>
 
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
-            I'm open to collaborating on AI-native mobile products, advising on
-            mobile architecture, or building experimental AI tools together. If
-            you're working on something ambitious — let's talk.
+            {text.description}
           </p>
 
           {/* Primary CTA */}
@@ -109,7 +186,7 @@ export function ContactSection() {
             className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm transition-colors shadow-lg shadow-blue-600/25 mb-4"
           >
             <Zap className="w-4 h-4" />
-            Start a Conversation
+            {text.cta}
             <ArrowRight className="w-4 h-4" />
           </motion.a>
         </motion.div>
@@ -158,7 +235,7 @@ export function ContactSection() {
           transition={{ delay: 0.5 }}
           className="text-center text-xs text-slate-400 dark:text-slate-600 mt-10"
         >
-          Typically responds within 24 hours · Jakarta, Indonesia (WIB / UTC+7)
+          {text.response}
         </motion.p>
       </div>
     </section>

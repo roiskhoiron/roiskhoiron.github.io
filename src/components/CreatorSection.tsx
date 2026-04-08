@@ -2,12 +2,77 @@ import { motion } from "motion/react";
 import { Youtube, Sparkles, Users, PlayCircle, TrendingUp } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState } from "react";
+import { useLanguage, type Language } from "../contexts/LanguageContext";
 import imgYouTubeCover from "figma:asset/f13190e76de5ebafdc579365a3f1ee2623769589.png";
 import imgCharacter1 from "../assets/hqdefault.png";
 import imgCharacter2 from "../assets/hqdefault2.png";
 import imgCharacter3 from "../assets/hqdefault3.png";
 
+const copy: Record<Language, {
+  sectionTitle: string;
+  subtitle: string;
+  description: string;
+  subscribers: string;
+  videos: string;
+  views: string;
+  joinText: string;
+  subscribe: string;
+  coverAlt: string;
+  characterAlt: string;
+}> = {
+  id: {
+    sectionTitle: "CodingSkuy!",
+    subtitle: "Belajar Ngoding Harus Seru!",
+    description: "Channel YouTube edukasi yang membuat belajar pemrograman lebih menyenangkan dengan karakter lucu dan penjelasan yang mudah dipahami.",
+    subscribers: "Subscriber",
+    videos: "Video Tutorial",
+    views: "Total Tayangan",
+    joinText: "Gabung bersama ribuan developer yang belajar bersama CodingSkuy!",
+    subscribe: "Subscribe ke Channel",
+    coverAlt: "Channel YouTube CodingSkuy",
+    characterAlt: "Karakter CodingSkuy",
+  },
+  en: {
+    sectionTitle: "CodingSkuy!",
+    subtitle: "Learning to Code Should Be Fun!",
+    description: "An educational YouTube channel that makes learning programming more fun with cute characters and easy-to-understand explanations!",
+    subscribers: "Subscribers",
+    videos: "Tutorial Videos",
+    views: "Total Views",
+    joinText: "Join thousands of developers who learn with Coding Skuy!",
+    subscribe: "Subscribe to Channel",
+    coverAlt: "CodingSkuy YouTube Channel",
+    characterAlt: "CodingSkuy Character",
+  },
+  zh: {
+    sectionTitle: "CodingSkuy!",
+    subtitle: "学编程也可以很有趣！",
+    description: "一个教育向 YouTube 频道，用可爱角色和易懂讲解让编程学习更轻松。",
+    subscribers: "订阅者",
+    videos: "教程视频",
+    views: "总播放量",
+    joinText: "加入上千位在 CodingSkuy 学习的开发者！",
+    subscribe: "订阅频道",
+    coverAlt: "CodingSkuy YouTube 频道",
+    characterAlt: "CodingSkuy 角色",
+  },
+  ja: {
+    sectionTitle: "CodingSkuy!",
+    subtitle: "コーディング学習はもっと楽しく！",
+    description: "かわいいキャラクターとわかりやすい解説で、プログラミング学習を楽しくする教育系YouTubeチャンネルです。",
+    subscribers: "登録者",
+    videos: "チュートリアル動画",
+    views: "総再生数",
+    joinText: "CodingSkuyで学ぶ何千人もの開発者の仲間に加わろう！",
+    subscribe: "チャンネル登録",
+    coverAlt: "CodingSkuy YouTubeチャンネル",
+    characterAlt: "CodingSkuy キャラクター",
+  },
+};
+
 export function CreatorSection() {
+  const { language } = useLanguage();
+  const text = copy[language];
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
@@ -45,15 +110,14 @@ export function CreatorSection() {
             <Youtube className="w-12 h-12 text-red-500 mx-auto mb-4" />
           </motion.div>
           
-          <h2 className="text-4xl sm:text-6xl text-white">CodingSkuy!</h2>
+          <h2 className="text-4xl sm:text-6xl text-white">{text.sectionTitle}</h2>
           
           <div className="space-y-3">
-            <p className="text-xl sm:text-2xl text-purple-300">Learning to Code Should Be Fun!</p>
+            <p className="text-xl sm:text-2xl text-purple-300">{text.subtitle}</p>
           </div>
 
           <p className="text-slate-300 max-w-2xl mx-auto">
-            An educational YouTube channel that makes learning programming more fun
-            with cute characters and easy-to-understand explanations!
+            {text.description}
           </p>
         </motion.div>
 
@@ -72,6 +136,7 @@ export function CreatorSection() {
             {isPlaying ? (
               <iframe
                 src="https://www.youtube.com/embed/s2OFRR2ZCPc?autoplay=1"
+                title={text.coverAlt}
                 allow="autoplay; encrypted-media"
                 allowFullScreen
                 className="w-full aspect-[9/16] sm:aspect-video"
@@ -80,7 +145,7 @@ export function CreatorSection() {
               <>
                 <img
                   src={imgYouTubeCover}
-                  alt="CodingSkuy YouTube Channel"
+                  alt={text.coverAlt}
                   className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
                 />
 
@@ -137,7 +202,7 @@ export function CreatorSection() {
                 >
                   <img
                     src={character.img}
-                    alt={`CodingSkuy Character ${index + 1}`}
+                    alt={`${text.characterAlt} ${index + 1}`}
                     className="w-full h-auto drop-shadow-2xl"
                   />
                 </motion.div>
@@ -157,7 +222,7 @@ export function CreatorSection() {
           >
             <Users className="w-10 h-10 text-cyan-400 mx-auto mb-3" />
             <p className="text-3xl text-white mb-1">10K+</p>
-            <p className="text-slate-300">Subscribers</p>
+            <p className="text-slate-300">{text.subscribers}</p>
           </motion.div>
 
           <motion.div
@@ -169,7 +234,7 @@ export function CreatorSection() {
           >
             <PlayCircle className="w-10 h-10 text-purple-400 mx-auto mb-3" />
             <p className="text-3xl text-white mb-1">100+</p>
-            <p className="text-slate-300">Tutorial Videos</p>
+            <p className="text-slate-300">{text.videos}</p>
           </motion.div>
 
           <motion.div
@@ -181,7 +246,7 @@ export function CreatorSection() {
           >
             <TrendingUp className="w-10 h-10 text-yellow-400 mx-auto mb-3" />
             <p className="text-3xl text-white mb-1">50K+</p>
-            <p className="text-slate-300">Total Views</p>
+            <p className="text-slate-300">{text.views}</p>
           </motion.div>
         </div>
 
@@ -194,14 +259,14 @@ export function CreatorSection() {
           className="text-center"
         >
           <p className="text-white mb-6 text-lg">
-            Join thousands of developers who learn with Coding Skuy!
+            {text.joinText}
           </p>
           <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white group"
             onClick={() =>
             window.open("https://www.youtube.com/@codingskuy/videos", "_blank")
           }>
             <Youtube className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-            Subscribe to Channel
+            {text.subscribe}
           </Button>
         </motion.div>
       </div>

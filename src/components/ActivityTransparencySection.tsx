@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ExternalLink, MessageCircle, RefreshCw, ShieldCheck, Sparkles } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
+import { useLanguage, type Language } from "../contexts/LanguageContext";
 
 type StatusKey =
   | "todo"
@@ -172,6 +173,143 @@ const GITHUB_DISCUSSION_REPO = ".github";
 const GITHUB_PROJECT_NUMBER = 9;
 const GITHUB_READ_TOKEN = import.meta.env.VITE_GITHUB_READ_TOKEN as string | undefined;
 
+const copy: Record<Language, {
+  funnel: Record<StatusKey, string>;
+  liveFlow: string;
+  title: string;
+  description: string;
+  sync: string;
+  viewProject: string;
+  joinDiscussion: string;
+  step: string;
+  itemsSuffix: string;
+  noStageItems: string;
+  publicBoard: string;
+  audienceSignal: string;
+  audienceSubtitle: string;
+  noDiscussions: string;
+  comments: string;
+  openCollab: string;
+  collabDescription: string;
+  missingTokenWarning: string;
+  liveFetchFailed: string;
+}> = {
+  id: {
+    funnel: {
+      todo: "To Do",
+      in_progress: "Sedang Dikerjakan",
+      review_feedback: "Review/Feedback",
+      ready_validation: "Siap Validasi",
+      ready_handover: "Siap Handover",
+      unknown: "Belum Dipetakan",
+    },
+    liveFlow: "Alur Aktivitas Langsung",
+    title: "Timeline Aktivitas Hari Ini",
+    description:
+      "Saya membuka perjalanan saya sebagai developer IT ke publik agar orang mengenal saya lewat proses kerja, progres nyata, dan dampak yang bisa diukur.",
+    sync: "Sinkronisasi",
+    viewProject: "Lihat Project",
+    joinDiscussion: "Ikut Diskusi",
+    step: "Tahap",
+    itemsSuffix: "Item",
+    noStageItems: "Belum ada item pada tahap ini.",
+    publicBoard: "Papan publik",
+    audienceSignal: "Sinyal Audiens",
+    audienceSubtitle: "Diskusi terbuka terbaru dari publik.",
+    noDiscussions: "Belum ada diskusi terbuka.",
+    comments: "komentar",
+    openCollab: "Kolaborasi Terbuka",
+    collabDescription: "Alur kerja publik ini dibuat agar siapa pun bisa memberi feedback langsung di tiap tahap.",
+    missingTokenWarning: "VITE_GITHUB_READ_TOKEN tidak ditemukan, menggunakan snapshot build.",
+    liveFetchFailed: "Live fetch gagal",
+  },
+  en: {
+    funnel: {
+      todo: "Todo",
+      in_progress: "In Progress",
+      review_feedback: "Review/Feedback",
+      ready_validation: "Ready to Validation",
+      ready_handover: "Ready to Handover",
+      unknown: "Unmapped",
+    },
+    liveFlow: "Live Activity Flow",
+    title: "Today's Activity Timeline",
+    description:
+      "I open my journey as an IT developer to the public, so people can know me through real work, real progress, and real impact.",
+    sync: "Sync",
+    viewProject: "View Project",
+    joinDiscussion: "Join Discussion",
+    step: "Step",
+    itemsSuffix: "Items",
+    noStageItems: "There are no items in this stage yet.",
+    publicBoard: "Public board",
+    audienceSignal: "Audience Signal",
+    audienceSubtitle: "Latest open discussions from the community.",
+    noDiscussions: "No open discussions yet.",
+    comments: "comments",
+    openCollab: "Open Collaboration",
+    collabDescription: "This public workflow is designed so everyone can share feedback at each stage.",
+    missingTokenWarning: "VITE_GITHUB_READ_TOKEN is missing, using snapshot build.",
+    liveFetchFailed: "Live fetch failed",
+  },
+  zh: {
+    funnel: {
+      todo: "待办",
+      in_progress: "进行中",
+      review_feedback: "评审/反馈",
+      ready_validation: "待验证",
+      ready_handover: "待交付",
+      unknown: "未映射",
+    },
+    liveFlow: "实时活动流",
+    title: "今日活动时间线",
+    description: "我公开自己的开发过程，让大家通过真实工作、真实进度与真实影响了解我。",
+    sync: "同步",
+    viewProject: "查看项目",
+    joinDiscussion: "参与讨论",
+    step: "步骤",
+    itemsSuffix: "条目",
+    noStageItems: "该阶段暂无条目。",
+    publicBoard: "公开看板",
+    audienceSignal: "受众信号",
+    audienceSubtitle: "来自社区的最新公开讨论。",
+    noDiscussions: "暂无公开讨论。",
+    comments: "条评论",
+    openCollab: "开放协作",
+    collabDescription: "这个公开流程便于任何人在每个阶段直接反馈。",
+    missingTokenWarning: "未找到 VITE_GITHUB_READ_TOKEN，已使用快照数据。",
+    liveFetchFailed: "实时拉取失败",
+  },
+  ja: {
+    funnel: {
+      todo: "未着手",
+      in_progress: "進行中",
+      review_feedback: "レビュー/フィードバック",
+      ready_validation: "検証待ち",
+      ready_handover: "引き渡し準備完了",
+      unknown: "未分類",
+    },
+    liveFlow: "ライブアクティビティフロー",
+    title: "本日のアクティビティタイムライン",
+    description: "実際の仕事、進捗、成果を通じて知ってもらえるように、開発の流れを公開しています。",
+    sync: "同期",
+    viewProject: "プロジェクトを見る",
+    joinDiscussion: "ディスカッションに参加",
+    step: "ステップ",
+    itemsSuffix: "項目",
+    noStageItems: "このステージにはまだ項目がありません。",
+    publicBoard: "公開ボード",
+    audienceSignal: "オーディエンスシグナル",
+    audienceSubtitle: "コミュニティの最新オープンディスカッションです。",
+    noDiscussions: "オープンなディスカッションはまだありません。",
+    comments: "コメント",
+    openCollab: "オープンコラボレーション",
+    collabDescription: "この公開ワークフローは、各段階で誰でも直接フィードバックできるように設計されています。",
+    missingTokenWarning: "VITE_GITHUB_READ_TOKEN が見つからないため、スナップショットを使用します。",
+    liveFetchFailed: "ライブ取得に失敗しました",
+  },
+};
+
 function toStatusKey(value: string) {
   const raw = (value || "").trim().toLowerCase();
   if (!raw) return "unknown";
@@ -185,7 +323,8 @@ function toStatusKey(value: string) {
   return "unknown";
 }
 
-function buildFunnel(items: ActivityEntry[]): FunnelStage[] {
+function buildFunnel(items: ActivityEntry[], language: Language): FunnelStage[] {
+  const labels = copy[language].funnel;
   const counts: Record<StatusKey, number> = {
     todo: 0,
     in_progress: 0,
@@ -198,12 +337,12 @@ function buildFunnel(items: ActivityEntry[]): FunnelStage[] {
   for (const item of items) counts[item.statusKey] += 1;
 
   return [
-    { key: "todo", label: "Todo", count: counts.todo },
-    { key: "in_progress", label: "In Progress", count: counts.in_progress },
-    { key: "review_feedback", label: "Review/Feedback", count: counts.review_feedback },
-    { key: "ready_validation", label: "Ready to Validation", count: counts.ready_validation },
-    { key: "ready_handover", label: "Ready to Handover", count: counts.ready_handover },
-    { key: "unknown", label: "Unmapped", count: counts.unknown },
+    { key: "todo", label: labels.todo, count: counts.todo },
+    { key: "in_progress", label: labels.in_progress, count: counts.in_progress },
+    { key: "review_feedback", label: labels.review_feedback, count: counts.review_feedback },
+    { key: "ready_validation", label: labels.ready_validation, count: counts.ready_validation },
+    { key: "ready_handover", label: labels.ready_handover, count: counts.ready_handover },
+    { key: "unknown", label: labels.unknown, count: counts.unknown },
   ];
 }
 
@@ -384,16 +523,23 @@ async function loadLiveGithubData(token: string): Promise<ActivityPayload> {
       title: projectNode.title || "Activity Board",
       url: projectNode.url || `https://github.com/users/${GITHUB_OWNER}/projects/${GITHUB_PROJECT_NUMBER}`,
     },
-    funnel: buildFunnel(projectItems),
+    funnel: buildFunnel(projectItems, "en"),
     projectItems,
     discussions,
     warnings: [],
   };
 }
 
-function formatDate(dateString: string) {
+function formatDate(dateString: string, language: Language) {
+  const localeByLanguage: Record<Language, string> = {
+    id: "id-ID",
+    en: "en-US",
+    zh: "zh-CN",
+    ja: "ja-JP",
+  };
+
   try {
-    return new Date(dateString).toLocaleString("id-ID", {
+    return new Date(dateString).toLocaleString(localeByLanguage[language], {
       day: "2-digit",
       month: "short",
       hour: "2-digit",
@@ -404,14 +550,16 @@ function formatDate(dateString: string) {
   }
 }
 
-function sourceLabel(item: ActivityEntry) {
-  if (item.sourceType === "Issue") return "Issue";
-  if (item.sourceType === "PullRequest") return "Pull Request";
-  if (item.sourceType === "DraftIssue") return "Draft";
+function sourceLabel(item: ActivityEntry, language: Language) {
+  if (item.sourceType === "Issue") return language === "id" ? "Isu" : language === "zh" ? "问题" : language === "ja" ? "課題" : "Issue";
+  if (item.sourceType === "PullRequest") return language === "id" ? "Pull Request" : language === "zh" ? "拉取请求" : language === "ja" ? "プルリクエスト" : "Pull Request";
+  if (item.sourceType === "DraftIssue") return language === "id" ? "Draft" : language === "zh" ? "草稿" : language === "ja" ? "下書き" : "Draft";
   return item.sourceType;
 }
 
 export function ActivityTransparencySection() {
+  const { language } = useLanguage();
+  const text = copy[language];
   const [data, setData] = useState<ActivityPayload>(FALLBACK_DATA);
   const [loading, setLoading] = useState(true);
   const [activeStage, setActiveStage] = useState<StatusKey>("todo");
@@ -432,7 +580,7 @@ export function ActivityTransparencySection() {
           if (mounted) {
             setData(
               snapshot
-                ? { ...snapshot, warnings: ["VITE_GITHUB_READ_TOKEN tidak ditemukan, menggunakan snapshot build."] }
+                ? { ...snapshot, warnings: [text.missingTokenWarning] }
                 : FALLBACK_DATA,
             );
           }
@@ -445,9 +593,9 @@ export function ActivityTransparencySection() {
         if (mounted) {
           const message = error instanceof Error ? error.message : "Unknown error";
           if (snapshot) {
-            setData({ ...snapshot, warnings: [`Live fetch gagal: ${message}`] });
+            setData({ ...snapshot, warnings: [`${text.liveFetchFailed}: ${message}`] });
           } else {
-            setData({ ...FALLBACK_DATA, warnings: [`Live fetch gagal: ${message}`] });
+            setData({ ...FALLBACK_DATA, warnings: [`${text.liveFetchFailed}: ${message}`] });
           }
         }
       } finally {
@@ -459,7 +607,7 @@ export function ActivityTransparencySection() {
     return () => {
       mounted = false;
     };
-  }, []);
+  }, [text.liveFetchFailed, text.missingTokenWarning]);
 
   const stageEntries = useMemo(() => {
     const map = new Map<StatusKey, ActivityEntry[]>();
@@ -480,11 +628,11 @@ export function ActivityTransparencySection() {
     () =>
       STATUS_ORDER.map((key) => ({
         key,
-        label: data.funnel.find((stage) => stage.key === key)?.label || key,
-        count: data.funnel.find((stage) => stage.key === key)?.count || 0,
+        label: text.funnel[key],
+        count: stageEntries.get(key)?.length || 0,
         items: stageEntries.get(key) || [],
       })),
-    [data.funnel, stageEntries],
+    [stageEntries, text.funnel],
   );
 
   useEffect(() => {
@@ -493,7 +641,7 @@ export function ActivityTransparencySection() {
   }, [timelineStages]);
 
   const activeItems = stageEntries.get(activeStage) || [];
-  const activeLabel = timelineStages.find((stage) => stage.key === activeStage)?.label || "Stage";
+  const activeLabel = timelineStages.find((stage) => stage.key === activeStage)?.label || text.step;
   const openDiscussions = data.discussions.filter((discussion) => discussion.state === "OPEN").slice(0, 4);
 
   return (
@@ -512,21 +660,21 @@ export function ActivityTransparencySection() {
         >
           <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-teal-600 dark:text-teal-300">
             <ShieldCheck className="h-3.5 w-3.5" />
-            Live Activity Flow
+            {text.liveFlow}
           </span>
           <h2 className="mt-3 text-4xl sm:text-5xl tracking-tight text-slate-900 dark:text-white">
-            Today's Activity Timeline
+            {text.title}
           </h2>
           <p className="mt-3 max-w-3xl text-slate-600 dark:text-slate-400">
-            I open my journey as an IT developer to the public — sharing what I learn, build, and explore — so people can know me beyond titles, through real work, real progress, and real impact.
+            {text.description}
           </p>
         </motion.div>
 
         <div className="rounded-3xl border border-slate-200 dark:border-white/[0.08] bg-white/85 dark:bg-[#090d1a]/80 backdrop-blur-sm p-5 md:p-7">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-6">
             <div>
-              <p className="text-xs uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">Sync</p>
-              <p className="text-sm text-slate-700 dark:text-slate-300">{formatDate(data.generatedAt)}</p>
+              <p className="text-xs uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">{text.sync}</p>
+              <p className="text-sm text-slate-700 dark:text-slate-300">{formatDate(data.generatedAt, language)}</p>
             </div>
             <div className="flex flex-wrap items-center gap-2">
               <a
@@ -535,7 +683,7 @@ export function ActivityTransparencySection() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border border-slate-300/70 dark:border-white/[0.12] px-3 py-1.5 text-xs text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-colors"
               >
-                Lihat Project <ExternalLink className="w-3.5 h-3.5" />
+                {text.viewProject} <ExternalLink className="w-3.5 h-3.5" />
               </a>
               <a
                 href={`https://github.com/${data.discussionRepo}/discussions`}
@@ -543,7 +691,7 @@ export function ActivityTransparencySection() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg bg-teal-600 hover:bg-teal-500 px-3 py-1.5 text-xs text-white transition-colors"
               >
-                Ikut Diskusi <MessageCircle className="w-3.5 h-3.5" />
+                {text.joinDiscussion} <MessageCircle className="w-3.5 h-3.5" />
               </a>
             </div>
           </div>
@@ -606,7 +754,7 @@ export function ActivityTransparencySection() {
                       transition={{ duration: 0.35, delay: index * 0.07 + 0.05 }}
                     >
                       <p className="text-[11px] uppercase tracking-[0.14em] text-slate-500 dark:text-slate-400">
-                        Step {index + 1}
+                        {text.step} {index + 1}
                       </p>
                       <p className={`mt-1 text-lg leading-none ${meta.text}`}>{stage.count}</p>
                       <p className="mt-1 text-sm text-slate-900 dark:text-white leading-tight">{stage.label}</p>
@@ -630,7 +778,7 @@ export function ActivityTransparencySection() {
                     isActive ? "bg-white dark:bg-white/[0.07]" : "bg-slate-50 dark:bg-white/[0.02]"
                   }`}
                 >
-                  <p className="text-[11px] text-slate-500 dark:text-slate-400">Step {index + 1}</p>
+                  <p className="text-[11px] text-slate-500 dark:text-slate-400">{text.step} {index + 1}</p>
                   <p className="text-sm text-slate-900 dark:text-white">{stage.label}</p>
                   <p className={`text-lg ${meta.text}`}>{stage.count}</p>
                 </button>
@@ -647,13 +795,13 @@ export function ActivityTransparencySection() {
               className="rounded-2xl border border-slate-200 dark:border-white/[0.08] bg-slate-50/70 dark:bg-slate-900/30 p-4 md:p-5"
             >
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg text-slate-900 dark:text-white tracking-tight">{activeLabel} Items</h3>
+                <h3 className="text-lg text-slate-900 dark:text-white tracking-tight">{activeLabel} {text.itemsSuffix}</h3>
                 {loading && <RefreshCw className="w-4 h-4 text-slate-400 animate-spin" />}
               </div>
 
               <div className="space-y-2.5">
                 {activeItems.length === 0 && (
-                  <p className="text-sm text-slate-500 dark:text-slate-400">Belum ada item pada stage ini.</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">{text.noStageItems}</p>
                 )}
                 {activeItems.map((item) => {
                   const meta = STAGE_META[item.statusKey] || STAGE_META.unknown;
@@ -671,12 +819,12 @@ export function ActivityTransparencySection() {
                             {item.title}
                           </p>
                           <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                            {item.repository || "Public board"}
-                            {item.number ? ` • #${item.number}` : ""} • {formatDate(item.updatedAt)}
+                            {item.repository || text.publicBoard}
+                            {item.number ? ` • #${item.number}` : ""} • {formatDate(item.updatedAt, language)}
                           </p>
                         </div>
                         <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] ${meta.chip}`}>
-                          {sourceLabel(item)}
+                          {sourceLabel(item, language)}
                         </span>
                       </div>
                     </a>
@@ -686,12 +834,12 @@ export function ActivityTransparencySection() {
             </motion.div>
 
             <aside className="rounded-2xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-white/[0.02] p-4 md:p-5">
-              <h3 className="text-lg text-slate-900 dark:text-white tracking-tight">Audience Signal</h3>
-              <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">Diskusi terbuka terbaru dari publik.</p>
+              <h3 className="text-lg text-slate-900 dark:text-white tracking-tight">{text.audienceSignal}</h3>
+              <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">{text.audienceSubtitle}</p>
 
               <div className="mt-4 space-y-2.5">
                 {openDiscussions.length === 0 && (
-                  <p className="text-sm text-slate-500 dark:text-slate-400">Belum ada diskusi open.</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">{text.noDiscussions}</p>
                 )}
                 {openDiscussions.map((discussion) => (
                   <a
@@ -705,7 +853,7 @@ export function ActivityTransparencySection() {
                       {discussion.title}
                     </p>
                     <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                      {discussion.comments || 0} komentar • {formatDate(discussion.updatedAt)}
+                      {discussion.comments || 0} {text.comments} • {formatDate(discussion.updatedAt, language)}
                     </p>
                   </a>
                 ))}
@@ -714,10 +862,10 @@ export function ActivityTransparencySection() {
               <div className="mt-4 rounded-xl border border-cyan-200/80 dark:border-cyan-500/30 bg-gradient-to-br from-cyan-50 to-emerald-50 dark:from-cyan-500/10 dark:to-emerald-500/10 p-3">
                 <p className="text-xs uppercase tracking-[0.12em] text-cyan-700 dark:text-cyan-300 flex items-center gap-1.5">
                   <Sparkles className="h-3.5 w-3.5" />
-                  Open Collaboration
+                  {text.openCollab}
                 </p>
                 <p className="mt-1 text-sm text-slate-700 dark:text-slate-200">
-                  Alur kerja publik ini sengaja dibuat agar siapa pun bisa memberi feedback langsung di setiap tahapan.
+                  {text.collabDescription}
                 </p>
               </div>
             </aside>

@@ -1,5 +1,68 @@
 import { motion } from "motion/react";
 import { ArrowRight, ArrowDown, Cpu, Smartphone, Brain, Layers } from "lucide-react";
+import { useLanguage, type Language } from "../contexts/LanguageContext";
+
+const copy: Record<Language, {
+  badge: string;
+  titleLines: [string, string, string, string];
+  subtitle: string;
+  ctaProjects: string;
+  ctaCollaborate: string;
+  stats: { value: string; label: string }[];
+}> = {
+  id: {
+    badge: "Mobile Product Engineer → AI-Driven Builder",
+    titleLines: ["Membangun", "Pengalaman", "Mobile", "Cerdas"],
+    subtitle:
+      "Ahli di Mobile Engineering, integrasi AI, dan sistem produk. Menjembatani teknologi AI mutakhir dengan aplikasi mobile dunia nyata.",
+    ctaProjects: "Lihat Proyek",
+    ctaCollaborate: "Mari Kolaborasi",
+    stats: [
+      { value: "5+", label: "Tahun Mobile Engineering" },
+      { value: "50+", label: "Aplikasi Dirilis" },
+      { value: "AI-Native", label: "Fokus Saat Ini" },
+    ],
+  },
+  en: {
+    badge: "Mobile Product Engineer → AI-Driven Builder",
+    titleLines: ["Building", "Intelligent", "Mobile", "Experiences"],
+    subtitle:
+      "Expert in Mobile Engineering, AI Integration, and Product Systems. Bridging cutting-edge AI with real-world mobile applications.",
+    ctaProjects: "View Projects",
+    ctaCollaborate: "Let's Collaborate",
+    stats: [
+      { value: "5+", label: "Years Mobile Engineering" },
+      { value: "50+", label: "Apps Shipped" },
+      { value: "AI-Native", label: "Current Focus" },
+    ],
+  },
+  zh: {
+    badge: "移动产品工程师 → AI 驱动构建者",
+    titleLines: ["打造", "智能化", "移动端", "体验"],
+    subtitle:
+      "专注移动工程、AI 集成与产品系统，将前沿 AI 与真实移动应用场景连接起来。",
+    ctaProjects: "查看项目",
+    ctaCollaborate: "一起合作",
+    stats: [
+      { value: "5+", label: "年移动工程经验" },
+      { value: "50+", label: "已发布应用" },
+      { value: "AI-Native", label: "当前重点" },
+    ],
+  },
+  ja: {
+    badge: "モバイルプロダクトエンジニア → AI 駆動ビルダー",
+    titleLines: ["つくる", "インテリジェントな", "モバイル", "体験"],
+    subtitle:
+      "モバイル開発、AI 統合、プロダクトシステムを軸に、最先端 AI を実用的なモバイル体験へ橋渡しします。",
+    ctaProjects: "プロジェクトを見る",
+    ctaCollaborate: "コラボする",
+    stats: [
+      { value: "5+", label: "モバイル開発経験" },
+      { value: "50+", label: "リリースしたアプリ" },
+      { value: "AI-Native", label: "現在の注力領域" },
+    ],
+  },
+};
 
 function NeuralOrb() {
   const floatingLabels = [
@@ -84,6 +147,9 @@ function NeuralOrb() {
 }
 
 export function HeroSection() {
+  const { language } = useLanguage();
+  const text = copy[language];
+
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -91,11 +157,7 @@ export function HeroSection() {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const stats = [
-    { value: "5+", label: "Years Mobile Engineering" },
-    { value: "50+", label: "Apps Shipped" },
-    { value: "AI-Native", label: "Current Focus" },
-  ];
+  const stats = text.stats;
 
   return (
     <section
@@ -137,30 +199,29 @@ export function HeroSection() {
             >
               <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" />
               <span className="text-sm text-blue-600 dark:text-blue-400 tracking-tight">
-                Mobile Product Engineer → AI-Driven Builder
+                {text.badge}
               </span>
             </motion.div>
 
             {/* Main headline */}
             <div className="space-y-1">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-tight leading-[1.05] text-slate-900 dark:text-white">
-                Building
+                {text.titleLines[0]}
               </h1>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-tight leading-[1.05] bg-gradient-to-r from-blue-500 via-cyan-400 to-violet-500 bg-clip-text text-transparent">
-                Intelligent
+                {text.titleLines[1]}
               </h1>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-tight leading-[1.05] text-slate-900 dark:text-white">
-                Mobile
+                {text.titleLines[2]}
               </h1>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-tight leading-[1.05] text-slate-900 dark:text-white">
-                Experiences
+                {text.titleLines[3]}
               </h1>
             </div>
 
             {/* Subheadline */}
             <p className="text-lg text-slate-600 dark:text-slate-400 max-w-md leading-relaxed">
-              Expert in Mobile Engineering, AI Integration, and Product Systems.
-              Bridging cutting-edge AI with real-world mobile applications.
+              {text.subtitle}
             </p>
 
             {/* CTAs */}
@@ -171,7 +232,7 @@ export function HeroSection() {
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm transition-colors shadow-lg shadow-blue-600/20"
               >
-                View Projects
+                {text.ctaProjects}
                 <ArrowRight className="w-4 h-4" />
               </motion.button>
               <motion.button
@@ -180,7 +241,7 @@ export function HeroSection() {
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-white/[0.06] dark:hover:bg-white/[0.1] border border-slate-200 dark:border-white/[0.1] text-slate-800 dark:text-white rounded-xl text-sm transition-colors"
               >
-                Let's Collaborate
+                {text.ctaCollaborate}
               </motion.button>
             </div>
 

@@ -1,44 +1,188 @@
 import { motion } from "motion/react";
 import { Smartphone, Layers, Brain, ArrowRight } from "lucide-react";
+import { useLanguage, type Language } from "../contexts/LanguageContext";
 
-const stages = [
-  {
-    era: "2019 – 2022",
-    phase: "01",
-    role: "Mobile Developer",
-    subtitle: "Foundation & Craft",
-    icon: Smartphone,
-    color: "blue",
-    description:
-      "Started with Android Native (XML, MVVM), quickly moving into Kotlin, REST API integration, and Clean Architecture. Progressed from Junior to Senior Developer across multiple product domains.",
-    skills: ["Android Native", "Kotlin", "MVVM", "REST APIs", "Clean Architecture", "Agile/Scrum"],
-    milestone: "Shipped trade-in system used across 200+ retail outlets",
+const copy: Record<Language, { tag: string; titleTop: string; titleBottom: string; milestone: string }> = {
+  id: {
+    tag: "Evolusi Tech Stack",
+    titleTop: "Dari Mobile Native",
+    titleBottom: "ke AI-Driven Builder",
+    milestone: "Pencapaian Utama",
   },
-  {
-    era: "2022 – 2024",
-    phase: "02",
-    role: "Product Engineer",
-    subtitle: "Scale & Leadership",
-    icon: Layers,
-    color: "violet",
-    description:
-      "Elevated from Senior Developer to Head of Mobile, leading cross-functional teams. Adopted Flutter for cross-platform delivery, established CI/CD pipelines, and aligned mobile roadmaps with product strategy.",
-    skills: ["Flutter", "Jetpack Compose", "SwiftUI", "CI/CD", "Team Leadership", "Product Roadmap"],
-    milestone: "Built and managed mobile engineering team of 8+ developers",
+  en: {
+    tag: "Tech Stack Evolution",
+    titleTop: "From Mobile Native",
+    titleBottom: "to AI-Driven Builder",
+    milestone: "Key Milestone",
   },
-  {
-    era: "2024 �� Present",
-    phase: "03",
-    role: "AI-Driven Builder",
-    subtitle: "Intelligence & Automation",
-    icon: Brain,
-    color: "cyan",
-    description:
-      "Evolving focus toward AI-native mobile applications — integrating LLMs, on-device ML, and multimodal capabilities. Bridging product thinking with applied AI to build systems that reason, adapt, and improve.",
-    skills: ["LLM Integration", "TFLite / Edge ML", "Prompt Engineering", "AI Product Design", "Flutter AI", "System Architecture"],
-    milestone: "Developing ChefGenie: AI-assisted kitchen decision system",
+  zh: {
+    tag: "技术栈演进",
+    titleTop: "从原生移动开发",
+    titleBottom: "到 AI 驱动构建",
+    milestone: "关键里程碑",
   },
-];
+  ja: {
+    tag: "技術スタックの進化",
+    titleTop: "モバイルネイティブから",
+    titleBottom: "AI駆動ビルダーへ",
+    milestone: "主なマイルストーン",
+  },
+};
+
+type Stage = {
+  era: string;
+  phase: string;
+  role: string;
+  subtitle: string;
+  icon: typeof Smartphone;
+  color: string;
+  description: string;
+  skills: string[];
+  milestone: string;
+};
+
+const stageData: Record<Language, Stage[]> = {
+  id: [
+    {
+      era: "2019 – 2022",
+      phase: "01",
+      role: "Mobile Developer",
+      subtitle: "Fondasi & Craft",
+      icon: Smartphone,
+      color: "blue",
+      description: "Memulai dari Android Native (XML, MVVM), lalu berkembang ke Kotlin, integrasi REST API, dan Clean Architecture.",
+      skills: ["Android Native", "Kotlin", "MVVM", "REST APIs", "Clean Architecture", "Agile/Scrum"],
+      milestone: "Merilis sistem trade-in yang dipakai di 200+ outlet retail",
+    },
+    {
+      era: "2022 – 2024",
+      phase: "02",
+      role: "Product Engineer",
+      subtitle: "Skala & Kepemimpinan",
+      icon: Layers,
+      color: "violet",
+      description: "Naik dari Senior Developer menjadi Head of Mobile, memimpin tim lintas fungsi dan menata delivery lintas platform.",
+      skills: ["Flutter", "Jetpack Compose", "SwiftUI", "CI/CD", "Team Leadership", "Product Roadmap"],
+      milestone: "Membangun dan mengelola tim mobile engineering berisi 8+ developer",
+    },
+    {
+      era: "2024 – Sekarang",
+      phase: "03",
+      role: "AI-Driven Builder",
+      subtitle: "Intelligence & Automation",
+      icon: Brain,
+      color: "cyan",
+      description: "Berfokus ke aplikasi mobile AI-native dengan integrasi LLM, on-device ML, dan kemampuan multimodal.",
+      skills: ["LLM Integration", "TFLite / Edge ML", "Prompt Engineering", "AI Product Design", "Flutter AI", "System Architecture"],
+      milestone: "Mengembangkan ChefGenie sebagai sistem keputusan dapur berbasis AI",
+    },
+  ],
+  en: [
+    {
+      era: "2019 – 2022",
+      phase: "01",
+      role: "Mobile Developer",
+      subtitle: "Foundation & Craft",
+      icon: Smartphone,
+      color: "blue",
+      description: "Started with Android Native (XML, MVVM), then grew into Kotlin, REST API integration, and Clean Architecture.",
+      skills: ["Android Native", "Kotlin", "MVVM", "REST APIs", "Clean Architecture", "Agile/Scrum"],
+      milestone: "Shipped a trade-in system used across 200+ retail outlets",
+    },
+    {
+      era: "2022 – 2024",
+      phase: "02",
+      role: "Product Engineer",
+      subtitle: "Scale & Leadership",
+      icon: Layers,
+      color: "violet",
+      description: "Moved from Senior Developer to Head of Mobile, leading cross-functional teams and multi-platform delivery.",
+      skills: ["Flutter", "Jetpack Compose", "SwiftUI", "CI/CD", "Team Leadership", "Product Roadmap"],
+      milestone: "Built and managed a mobile engineering team of 8+ developers",
+    },
+    {
+      era: "2024 – Present",
+      phase: "03",
+      role: "AI-Driven Builder",
+      subtitle: "Intelligence & Automation",
+      icon: Brain,
+      color: "cyan",
+      description: "Focused on AI-native mobile apps by integrating LLMs, on-device ML, and multimodal experiences.",
+      skills: ["LLM Integration", "TFLite / Edge ML", "Prompt Engineering", "AI Product Design", "Flutter AI", "System Architecture"],
+      milestone: "Developing ChefGenie as an AI-assisted kitchen decision system",
+    },
+  ],
+  zh: [
+    {
+      era: "2019 – 2022",
+      phase: "01",
+      role: "移动开发工程师",
+      subtitle: "基础与打磨",
+      icon: Smartphone,
+      color: "blue",
+      description: "从 Android Native（XML、MVVM）起步，逐步深入 Kotlin、REST API 集成与整洁架构。",
+      skills: ["Android Native", "Kotlin", "MVVM", "REST APIs", "Clean Architecture", "Agile/Scrum"],
+      milestone: "交付覆盖 200+ 零售网点的 trade-in 系统",
+    },
+    {
+      era: "2022 – 2024",
+      phase: "02",
+      role: "产品工程师",
+      subtitle: "规模与领导力",
+      icon: Layers,
+      color: "violet",
+      description: "从高级开发晋升为移动负责人，带领跨职能团队推进跨平台交付。",
+      skills: ["Flutter", "Jetpack Compose", "SwiftUI", "CI/CD", "Team Leadership", "Product Roadmap"],
+      milestone: "搭建并管理 8+ 人移动工程团队",
+    },
+    {
+      era: "2024 – 至今",
+      phase: "03",
+      role: "AI 驱动构建者",
+      subtitle: "智能与自动化",
+      icon: Brain,
+      color: "cyan",
+      description: "聚焦 AI 原生移动应用，整合 LLM、端侧 ML 与多模态能力。",
+      skills: ["LLM Integration", "TFLite / Edge ML", "Prompt Engineering", "AI Product Design", "Flutter AI", "System Architecture"],
+      milestone: "正在开发 ChefGenie 智能厨房决策系统",
+    },
+  ],
+  ja: [
+    {
+      era: "2019 – 2022",
+      phase: "01",
+      role: "モバイル開発者",
+      subtitle: "基礎と実践",
+      icon: Smartphone,
+      color: "blue",
+      description: "Android Native（XML、MVVM）から始め、Kotlin、REST API統合、クリーンアーキテクチャへ拡張。",
+      skills: ["Android Native", "Kotlin", "MVVM", "REST APIs", "Clean Architecture", "Agile/Scrum"],
+      milestone: "200以上の小売拠点で使われるトレードインシステムをリリース",
+    },
+    {
+      era: "2022 – 2024",
+      phase: "02",
+      role: "プロダクトエンジニア",
+      subtitle: "拡張とリーダーシップ",
+      icon: Layers,
+      color: "violet",
+      description: "シニア開発者からモバイル責任者へ。クロスファンクショナルチームを率いて開発を推進。",
+      skills: ["Flutter", "Jetpack Compose", "SwiftUI", "CI/CD", "Team Leadership", "Product Roadmap"],
+      milestone: "8名以上のモバイルエンジニアチームを構築・運営",
+    },
+    {
+      era: "2024 – 現在",
+      phase: "03",
+      role: "AI駆動ビルダー",
+      subtitle: "知能と自動化",
+      icon: Brain,
+      color: "cyan",
+      description: "LLM、オンデバイスML、マルチモーダルを統合したAIネイティブなモバイル開発に注力。",
+      skills: ["LLM Integration", "TFLite / Edge ML", "Prompt Engineering", "AI Product Design", "Flutter AI", "System Architecture"],
+      milestone: "AI支援キッチン判断システム ChefGenie を開発中",
+    },
+  ],
+};
 
 const colorStyles: Record<string, {
   accent: string;
@@ -79,6 +223,10 @@ const colorStyles: Record<string, {
 };
 
 export function ExperienceSection() {
+  const { language } = useLanguage();
+  const text = copy[language];
+  const stages = stageData[language];
+
   return (
     <section id="timeline" className="py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background */}
@@ -96,12 +244,12 @@ export function ExperienceSection() {
           className="mb-16"
         >
           <span className="text-xs uppercase tracking-[0.15em] text-blue-500 dark:text-blue-400">
-            Tech Stack Evolution
+            {text.tag}
           </span>
           <h2 className="text-4xl sm:text-5xl tracking-tight text-slate-900 dark:text-white mt-3 leading-tight">
-            From Mobile Native
+            {text.titleTop}
             <span className="block bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
-              to AI-Driven Builder
+              {text.titleBottom}
             </span>
           </h2>
         </motion.div>
@@ -193,7 +341,7 @@ export function ExperienceSection() {
                 {/* Milestone */}
                 <div className={`border-t border-slate-100 dark:border-white/[0.05] pt-4`}>
                   <p className="text-xs text-slate-400 dark:text-slate-600 uppercase tracking-wider mb-1">
-                    Key Milestone
+                    {text.milestone}
                   </p>
                   <p className={`text-sm ${styles.accent}`}>{stage.milestone}</p>
                 </div>

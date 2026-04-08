@@ -1,40 +1,164 @@
 import { motion } from "motion/react";
 import { GitBranch, Users, Brain, BarChart2 } from "lucide-react";
+import { useLanguage, type Language } from "../contexts/LanguageContext";
 
-const pillars = [
-  {
-    icon: GitBranch,
-    color: "blue",
-    title: "System Thinking",
-    description:
-      "Designing software as interconnected systems — not isolated features. Understanding how data flows, services communicate, and user behaviors compound across the entire product.",
-    principles: ["Clean Architecture", "Modular Design", "Dependency Management", "Scalable Patterns"],
+const copy: Record<Language, { tag: string; titleTop: string; titleBottom: string; description: string }> = {
+  id: {
+    tag: "Filosofi Engineering",
+    titleTop: "Prinsip yang",
+    titleBottom: "Mengarahkan Setiap Build",
+    description: "Model berpikir yang saya gunakan di setiap produk, dari UI mobile hingga desain sistem AI.",
   },
-  {
-    icon: Brain,
-    color: "violet",
-    title: "Human-Centered AI",
-    description:
-      "AI should serve human goals, not optimize for metrics in isolation. Every AI capability I ship is evaluated on its contribution to real user outcomes — clarity, trust, and control.",
-    principles: ["Explainable Outputs", "Progressive Disclosure", "Fallback Gracefully", "Privacy by Default"],
+  en: {
+    tag: "Engineering Philosophy",
+    titleTop: "Principles That",
+    titleBottom: "Guide Every Build",
+    description: "The mental models I apply across every product — from mobile UI to AI system design.",
   },
-  {
-    icon: Users,
-    color: "cyan",
-    title: "Clean Architecture",
-    description:
-      "Separation of concerns isn't just a principle — it's the difference between code that evolves and code that rots. Testability, independence, and clarity are non-negotiable.",
-    principles: ["Domain-Driven Design", "SOLID Principles", "Test Coverage", "Decoupled Layers"],
+  zh: {
+    tag: "工程理念",
+    titleTop: "指导每次构建的",
+    titleBottom: "核心原则",
+    description: "我在每个产品中使用的思维模型，从移动 UI 到 AI 系统设计。",
   },
-  {
-    icon: BarChart2,
-    color: "emerald",
-    title: "Data-Driven Decisions",
-    description:
-      "Intuition informs hypotheses; data validates them. From A/B testing mobile UX patterns to evaluating model performance, I let evidence shape direction — not assumptions.",
-    principles: ["Hypothesis Testing", "Model Evaluation", "UX Analytics", "Feedback Loops"],
+  ja: {
+    tag: "エンジニアリング哲学",
+    titleTop: "すべての構築を導く",
+    titleBottom: "原則",
+    description: "モバイルUIからAIシステム設計まで、私が一貫して適用する思考モデルです。",
   },
-];
+};
+
+type Pillar = {
+  icon: typeof GitBranch;
+  color: string;
+  title: string;
+  description: string;
+  principles: string[];
+};
+
+const pillarData: Record<Language, Pillar[]> = {
+  id: [
+    {
+      icon: GitBranch,
+      color: "blue",
+      title: "System Thinking",
+      description: "Saya merancang software sebagai sistem yang saling terhubung, bukan fitur yang berdiri sendiri.",
+      principles: ["Clean Architecture", "Modular Design", "Dependency Management", "Scalable Patterns"],
+    },
+    {
+      icon: Brain,
+      color: "violet",
+      title: "Human-Centered AI",
+      description: "AI harus melayani tujuan manusia. Setiap kapabilitas AI saya ukur dari dampaknya pada kejelasan, kepercayaan, dan kontrol pengguna.",
+      principles: ["Explainable Outputs", "Progressive Disclosure", "Graceful Fallback", "Privacy by Default"],
+    },
+    {
+      icon: Users,
+      color: "cyan",
+      title: "Arsitektur Bersih",
+      description: "Pemisahan concern adalah fondasi agar kode tetap sehat, testable, dan mudah berkembang.",
+      principles: ["Domain-Driven Design", "SOLID Principles", "Test Coverage", "Decoupled Layers"],
+    },
+    {
+      icon: BarChart2,
+      color: "emerald",
+      title: "Keputusan Berbasis Data",
+      description: "Intuisi memunculkan hipotesis, data memvalidasi arah. Saya gunakan evidence untuk menentukan prioritas produk.",
+      principles: ["Hypothesis Testing", "Model Evaluation", "UX Analytics", "Feedback Loops"],
+    },
+  ],
+  en: [
+    {
+      icon: GitBranch,
+      color: "blue",
+      title: "System Thinking",
+      description: "Designing software as interconnected systems, not isolated features.",
+      principles: ["Clean Architecture", "Modular Design", "Dependency Management", "Scalable Patterns"],
+    },
+    {
+      icon: Brain,
+      color: "violet",
+      title: "Human-Centered AI",
+      description: "AI should serve human goals. Every AI capability is measured by clarity, trust, and user control.",
+      principles: ["Explainable Outputs", "Progressive Disclosure", "Graceful Fallback", "Privacy by Default"],
+    },
+    {
+      icon: Users,
+      color: "cyan",
+      title: "Clean Architecture",
+      description: "Separation of concerns keeps code testable, independent, and sustainable for long-term growth.",
+      principles: ["Domain-Driven Design", "SOLID Principles", "Test Coverage", "Decoupled Layers"],
+    },
+    {
+      icon: BarChart2,
+      color: "emerald",
+      title: "Data-Driven Decisions",
+      description: "Intuition informs hypotheses; data validates direction across UX and model performance decisions.",
+      principles: ["Hypothesis Testing", "Model Evaluation", "UX Analytics", "Feedback Loops"],
+    },
+  ],
+  zh: [
+    {
+      icon: GitBranch,
+      color: "blue",
+      title: "系统思维",
+      description: "将软件视为彼此联动的系统，而不是孤立功能的堆叠。",
+      principles: ["整洁架构", "模块化设计", "依赖管理", "可扩展模式"],
+    },
+    {
+      icon: Brain,
+      color: "violet",
+      title: "以人为中心的 AI",
+      description: "AI 应服务于人的目标，每项能力都要提升清晰度、信任感与可控性。",
+      principles: ["可解释输出", "渐进式披露", "平滑降级", "默认隐私保护"],
+    },
+    {
+      icon: Users,
+      color: "cyan",
+      title: "整洁架构",
+      description: "关注点分离是代码可演进、可测试、可维护的基础。",
+      principles: ["领域驱动设计", "SOLID 原则", "测试覆盖", "解耦分层"],
+    },
+    {
+      icon: BarChart2,
+      color: "emerald",
+      title: "数据驱动决策",
+      description: "直觉提出假设，数据验证方向，让产品与模型迭代更可靠。",
+      principles: ["假设检验", "模型评估", "UX 数据分析", "反馈闭环"],
+    },
+  ],
+  ja: [
+    {
+      icon: GitBranch,
+      color: "blue",
+      title: "システム思考",
+      description: "機能単体ではなく、相互接続されたシステムとしてソフトウェアを設計します。",
+      principles: ["クリーンアーキテクチャ", "モジュラー設計", "依存関係管理", "スケーラブルパターン"],
+    },
+    {
+      icon: Brain,
+      color: "violet",
+      title: "人間中心の AI",
+      description: "AI は人の目的に貢献すべきです。明確さ・信頼・制御性への寄与で評価します。",
+      principles: ["説明可能な出力", "段階的開示", "安全なフォールバック", "プライバシー・バイ・デフォルト"],
+    },
+    {
+      icon: Users,
+      color: "cyan",
+      title: "クリーンアーキテクチャ",
+      description: "関心の分離は、コードを長期的に進化可能にするための前提です。",
+      principles: ["ドメイン駆動設計", "SOLID原則", "テストカバレッジ", "疎結合レイヤー"],
+    },
+    {
+      icon: BarChart2,
+      color: "emerald",
+      title: "データ駆動の意思決定",
+      description: "仮説は直感から、方向性の確証はデータから。証拠ベースで優先順位を決めます。",
+      principles: ["仮説検証", "モデル評価", "UX分析", "フィードバックループ"],
+    },
+  ],
+};
 
 const colorStyles: Record<string, { icon: string; border: string; tag: string; line: string }> = {
   blue: {
@@ -64,6 +188,10 @@ const colorStyles: Record<string, { icon: string; border: string; tag: string; l
 };
 
 export function SkillsSection() {
+  const { language } = useLanguage();
+  const text = copy[language];
+  const pillars = pillarData[language];
+
   return (
     <section id="philosophy" className="py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background tint */}
@@ -81,16 +209,16 @@ export function SkillsSection() {
           className="mb-16"
         >
           <span className="text-xs uppercase tracking-[0.15em] text-blue-500 dark:text-blue-400">
-            Engineering Philosophy
+            {text.tag}
           </span>
           <h2 className="text-4xl sm:text-5xl tracking-tight text-slate-900 dark:text-white mt-3 leading-tight">
-            Principles That
+            {text.titleTop}
             <span className="block bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent">
-              Guide Every Build
+              {text.titleBottom}
             </span>
           </h2>
           <p className="text-slate-500 dark:text-slate-500 mt-4 max-w-xl">
-            The mental models I apply across every product — from mobile UI to AI system design.
+            {text.description}
           </p>
         </motion.div>
 

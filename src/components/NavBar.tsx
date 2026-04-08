@@ -2,18 +2,50 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useLanguage, type Language } from "../contexts/LanguageContext";
 
-const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#activity", label: "Activity" },
-  { href: "#philosophy", label: "Philosophy" },
-  { href: "#timeline", label: "Timeline" },
-  { href: "#chefgenie", label: "Products & Content" },
-  { href: "#contact", label: "Contact" },
-];
+const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }>> = {
+  id: [
+    { href: "#about", label: "Tentang" },
+    { href: "#projects", label: "Proyek" },
+    { href: "#activity", label: "Aktivitas" },
+    { href: "#philosophy", label: "Filosofi" },
+    { href: "#timeline", label: "Perjalanan" },
+    { href: "#chefgenie", label: "Produk & Konten" },
+    { href: "#contact", label: "Kontak" },
+  ],
+  en: [
+    { href: "#about", label: "About" },
+    { href: "#projects", label: "Projects" },
+    { href: "#activity", label: "Activity" },
+    { href: "#philosophy", label: "Philosophy" },
+    { href: "#timeline", label: "Timeline" },
+    { href: "#chefgenie", label: "Products & Content" },
+    { href: "#contact", label: "Contact" },
+  ],
+  zh: [
+    { href: "#about", label: "关于" },
+    { href: "#projects", label: "项目" },
+    { href: "#activity", label: "动态" },
+    { href: "#philosophy", label: "理念" },
+    { href: "#timeline", label: "历程" },
+    { href: "#chefgenie", label: "产品与内容" },
+    { href: "#contact", label: "联系" },
+  ],
+  ja: [
+    { href: "#about", label: "概要" },
+    { href: "#projects", label: "プロジェクト" },
+    { href: "#activity", label: "アクティビティ" },
+    { href: "#philosophy", label: "哲学" },
+    { href: "#timeline", label: "歩み" },
+    { href: "#chefgenie", label: "製品とコンテンツ" },
+    { href: "#contact", label: "連絡先" },
+  ],
+};
 
 export function NavBar() {
+  const { language } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -22,6 +54,8 @@ export function NavBar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navLinks = navLinksByLanguage[language];
 
   const scrollToSection = (href: string) => {
     setMenuOpen(false);
@@ -40,10 +74,12 @@ export function NavBar() {
     >
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <motion.a
             href="#"
-            onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
             className="flex items-center gap-2.5 group"
             whileHover={{ scale: 1.02 }}
           >
@@ -55,7 +91,6 @@ export function NavBar() {
             </span>
           </motion.a>
 
-          {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <button
@@ -68,8 +103,8 @@ export function NavBar() {
             ))}
           </div>
 
-          {/* Right Controls */}
           <div className="flex items-center gap-2">
+            <LanguageSwitcher className="hidden sm:block" />
             <ThemeToggle />
             <button
               onClick={() => setMenuOpen(!menuOpen)}
@@ -80,7 +115,6 @@ export function NavBar() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
           {menuOpen && (
             <motion.div
@@ -90,6 +124,9 @@ export function NavBar() {
               className="md:hidden overflow-hidden border-t border-slate-200/60 dark:border-white/[0.06]"
             >
               <div className="py-3 space-y-1">
+                <div className="px-3 pb-2">
+                  <LanguageSwitcher className="w-full" />
+                </div>
                 {navLinks.map((link) => (
                   <button
                     key={link.href}

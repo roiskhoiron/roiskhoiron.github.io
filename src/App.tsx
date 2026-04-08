@@ -10,23 +10,26 @@ import { Footer } from "./components/Footer";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { NavBar } from "./components/NavBar";
 import { ActivityTransparencySection } from "./components/ActivityTransparencySection";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <div className="min-h-screen bg-white dark:bg-[#080811] text-slate-900 dark:text-white transition-colors duration-300">
-        <NavBar />
-        <HeroSection />
-        <AboutSection />
-        <PortfolioSection />
-        <ActivityTransparencySection />
-        <SkillsSection />
-        <ExperienceSection />
-        <BrandingSection />
-        <CreatorSection />
-        <ContactSection />
-        <Footer />
-      </div>
-    </ThemeProvider>
+    <LanguageProvider>
+      <ThemeProvider>
+        <div className="min-h-screen bg-white dark:bg-[#080811] text-slate-900 dark:text-white transition-colors duration-300">
+          <NavBar />
+          <HeroSection />
+          <AboutSection />
+          <PortfolioSection />
+          <ActivityTransparencySection />
+          <SkillsSection />
+          <ExperienceSection />
+          <BrandingSection />
+          <CreatorSection />
+          <ContactSection />
+          <Footer />
+        </div>
+      </ThemeProvider>
+    </LanguageProvider>
   );
 }

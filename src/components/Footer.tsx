@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Github, Linkedin, Youtube, Mail } from "lucide-react";
+import { useLanguage, type Language } from "../contexts/LanguageContext";
 
 const socialLinks = [
   {
@@ -24,16 +25,69 @@ const socialLinks = [
   },
 ];
 
-const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#philosophy", label: "Philosophy" },
-  { href: "#timeline", label: "Timeline" },
-  { href: "#chefgenie", label: "ChefGenie" },
-  { href: "#contact", label: "Contact" },
-];
+const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }>> = {
+  id: [
+    { href: "#about", label: "Tentang" },
+    { href: "#projects", label: "Proyek" },
+    { href: "#philosophy", label: "Filosofi" },
+    { href: "#timeline", label: "Perjalanan" },
+    { href: "#chefgenie", label: "ChefGenie" },
+    { href: "#contact", label: "Kontak" },
+  ],
+  en: [
+    { href: "#about", label: "About" },
+    { href: "#projects", label: "Projects" },
+    { href: "#philosophy", label: "Philosophy" },
+    { href: "#timeline", label: "Timeline" },
+    { href: "#chefgenie", label: "ChefGenie" },
+    { href: "#contact", label: "Contact" },
+  ],
+  zh: [
+    { href: "#about", label: "关于" },
+    { href: "#projects", label: "项目" },
+    { href: "#philosophy", label: "理念" },
+    { href: "#timeline", label: "历程" },
+    { href: "#chefgenie", label: "ChefGenie" },
+    { href: "#contact", label: "联系" },
+  ],
+  ja: [
+    { href: "#about", label: "概要" },
+    { href: "#projects", label: "プロジェクト" },
+    { href: "#philosophy", label: "哲学" },
+    { href: "#timeline", label: "歩み" },
+    { href: "#chefgenie", label: "ChefGenie" },
+    { href: "#contact", label: "連絡先" },
+  ],
+};
+
+const copy: Record<Language, { tagline: string; rights: string; quote: string }> = {
+  id: {
+    tagline: "Mobile Product Engineer yang membangun pengalaman AI-native.",
+    rights: "Hak cipta dilindungi",
+    quote: "\"Mengirim kecerdasan nyata, bukan sekadar demo AI.\"",
+  },
+  en: {
+    tagline: "Mobile Product Engineer building AI-native experiences.",
+    rights: "All rights reserved",
+    quote: "\"Shipping real intelligence, not just demo AI.\"",
+  },
+  zh: {
+    tagline: "专注打造 AI-native 体验的移动产品工程师。",
+    rights: "保留所有权利",
+    quote: "\"交付真实智能，而不只是 AI 演示。\"",
+  },
+  ja: {
+    tagline: "AI-native 体験を形にするモバイルプロダクトエンジニア。",
+    rights: "無断転載を禁じます",
+    quote: "\"デモAIではなく、実用的な知性を届ける。\"",
+  },
+};
 
 export function Footer() {
+  const { language } = useLanguage();
+  const text = copy[language];
+  const navLinks = navLinksByLanguage[language];
+
   const scrollTo = (href: string) => {
     const id = href.replace("#", "");
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -54,7 +108,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-xs text-slate-500 dark:text-slate-600 max-w-[200px]">
-              Mobile Product Engineer building AI-native experiences.
+              {text.tagline}
             </p>
           </div>
 
@@ -93,10 +147,10 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-8 pt-6 border-t border-slate-200 dark:border-white/[0.04] flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-slate-400 dark:text-slate-600">
-            © {new Date().getFullYear()} Rois Khoiron · All rights reserved
+            © {new Date().getFullYear()} Rois Khoiron · {text.rights}
           </p>
           <p className="text-xs text-slate-400 dark:text-slate-600 italic">
-            "Shipping real intelligence, not just demo AI."
+            {text.quote}
           </p>
         </div>
       </div>
