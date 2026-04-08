@@ -13,6 +13,7 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
     { href: "#philosophy", label: "Filosofi" },
     { href: "#timeline", label: "Perjalanan" },
     { href: "#chefgenie", label: "Produk & Konten" },
+    { href: "#writing", label: "Tulisan" },
     { href: "#contact", label: "Kontak" },
   ],
   en: [
@@ -22,6 +23,7 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
     { href: "#philosophy", label: "Philosophy" },
     { href: "#timeline", label: "Timeline" },
     { href: "#chefgenie", label: "Products & Content" },
+    { href: "#writing", label: "Writing" },
     { href: "#contact", label: "Contact" },
   ],
   zh: [
@@ -31,6 +33,7 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
     { href: "#philosophy", label: "理念" },
     { href: "#timeline", label: "历程" },
     { href: "#chefgenie", label: "产品与内容" },
+    { href: "#writing", label: "写作" },
     { href: "#contact", label: "联系" },
   ],
   ja: [
@@ -40,6 +43,7 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
     { href: "#philosophy", label: "哲学" },
     { href: "#timeline", label: "歩み" },
     { href: "#chefgenie", label: "製品とコンテンツ" },
+    { href: "#writing", label: "執筆" },
     { href: "#contact", label: "連絡先" },
   ],
 };
