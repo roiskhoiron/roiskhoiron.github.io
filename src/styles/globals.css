@@ -187,3 +187,22 @@
 html {
   font-size: var(--font-size);
 }
+
+@keyframes creator-marquee-x {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.creator-infinite-track {
+  display: flex;
+  width: max-content;
+  animation: creator-marquee-x 38s linear infinite;
+}
+
+.creator-infinite-track:hover {
+  animation-play-state: paused;
+}

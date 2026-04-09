@@ -2,8 +2,7 @@ import { motion } from "motion/react";
 import { ExternalLink, MessageCircle, RefreshCw, ShieldCheck, Sparkles } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { useLanguage, type Language } from "../contexts/LanguageContext";
-import { IframeDialog } from "./IframeDialog";
-import { isFrameLikelyBlocked, openPseudoFloatingWindow } from "../utils/webViewer";
+import { ContentDialog } from "./ContentDialog";
 
 type StatusKey =
   | "todo"
@@ -27,6 +26,7 @@ type ActivityEntry = {
   repository: string | null;
   labels: string[];
   comments?: number;
+  body?: string;
 };
 
 type FunnelStage = {
@@ -195,7 +195,7 @@ const copy: Record<Language, {
   collabDescription: string;
   missingTokenWarning: string;
   liveFetchFailed: string;
-  previewLoading: string;
+  detailEmpty: string;
   openInTab: string;
 }> = {
   id: {
@@ -226,7 +226,7 @@ const copy: Record<Language, {
     collabDescription: "Alur kerja publik ini dibuat agar siapa pun bisa memberi feedback langsung di tiap tahap.",
     missingTokenWarning: "VITE_GITHUB_READ_TOKEN tidak ditemukan, menggunakan snapshot build.",
     liveFetchFailed: "Live fetch gagal",
-    previewLoading: "Memuat halaman...",
+    detailEmpty: "Belum ada detail konten.",
     openInTab: "Buka Tab",
   },
   en: {
@@ -257,7 +257,7 @@ const copy: Record<Language, {
     collabDescription: "This public workflow is designed so everyone can share feedback at each stage.",
     missingTokenWarning: "VITE_GITHUB_READ_TOKEN is missing, using snapshot build.",
     liveFetchFailed: "Live fetch failed",
-    previewLoading: "Loading page...",
+    detailEmpty: "Detail content is not available.",
     openInTab: "Open Tab",
   },
   zh: {
@@ -287,7 +287,7 @@ const copy: Record<Language, {
     collabDescription: "这个公开流程便于任何人在每个阶段直接反馈。",
     missingTokenWarning: "未找到 VITE_GITHUB_READ_TOKEN，已使用快照数据。",
     liveFetchFailed: "实时拉取失败",
-    previewLoading: "正在加载页面...",
+    detailEmpty: "暂无可显示的详情内容。",
     openInTab: "新标签打开",
   },
   ja: {
@@ -317,7 +317,7 @@ const copy: Record<Language, {
     collabDescription: "この公開ワークフローは、各段階で誰でも直接フィードバックできるように設計されています。",
     missingTokenWarning: "VITE_GITHUB_READ_TOKEN が見つからないため、スナップショットを使用します。",
     liveFetchFailed: "ライブ取得に失敗しました",
-    previewLoading: "ページを読み込み中...",
+    detailEmpty: "表示できる詳細コンテンツがありません。",
     openInTab: "新しいタブで開く",
   },
 };
@@ -402,6 +402,7 @@ function normalizeLiveProjectItem(item: any): ActivityEntry {
     updatedAt: content.updatedAt || item.updatedAt || new Date().toISOString(),
     repository: content.repository?.nameWithOwner || null,
     labels: content.labels?.nodes?.map((label: any) => label.name) || [],
+    body: content.body || "",
   };
 }
 
@@ -420,6 +421,7 @@ function normalizeLiveDiscussion(node: any): ActivityEntry {
     repository: `${GITHUB_OWNER}/${GITHUB_DISCUSSION_REPO}`,
     labels: node.labels?.nodes?.map((label: any) => label.name) || [],
     comments: node.comments?.totalCount || 0,
+    body: node.body || "",
   };
 }
 
@@ -460,6 +462,7 @@ async function loadLiveGithubData(token: string): Promise<ActivityPayload> {
                   number
                   title
                   url
+                  body
                   state
                   updatedAt
                   repository { nameWithOwner }
@@ -469,6 +472,7 @@ async function loadLiveGithubData(token: string): Promise<ActivityPayload> {
                   number
                   title
                   url
+                  body
                   state
                   updatedAt
                   repository { nameWithOwner }
@@ -507,6 +511,7 @@ async function loadLiveGithubData(token: string): Promise<ActivityPayload> {
               number
               title
               url
+              body
               updatedAt
               closed
               category { name }
@@ -575,15 +580,7 @@ export function ActivityTransparencySection() {
   const [data, setData] = useState<ActivityPayload>(FALLBACK_DATA);
   const [loading, setLoading] = useState(true);
   const [activeStage, setActiveStage] = useState<StatusKey>("todo");
-  const [previewItem, setPreviewItem] = useState<{ title: string; description: string; url: string } | null>(null);
-
-  const openItemViewer = (item: { title: string; description: string; url: string }) => {
-    if (isFrameLikelyBlocked(item.url)) {
-      openPseudoFloatingWindow(item.url);
-      return;
-    }
-    setPreviewItem(item);
-  };
+  const [detailItem, setDetailItem] = useState<{ title: string; description: string; content: string; url: string } | null>(null);
 
   useEffect(() => {
     let mounted = true;
@@ -831,9 +828,10 @@ export function ActivityTransparencySection() {
                       type="button"
                       key={item.id}
                       onClick={() =>
-                        openItemViewer({
+                        setDetailItem({
                           title: item.title,
                           description: `${item.repository || text.publicBoard}${item.number ? ` • #${item.number}` : ""} • ${formatDate(item.updatedAt, language)}`,
+                          content: item.body || text.detailEmpty,
                           url: item.url,
                         })
                       }
@@ -872,9 +870,10 @@ export function ActivityTransparencySection() {
                     type="button"
                     key={discussion.id}
                     onClick={() =>
-                      openItemViewer({
+                      setDetailItem({
                         title: discussion.title,
                         description: `${discussion.comments || 0} ${text.comments} • ${formatDate(discussion.updatedAt, language)}`,
+                        content: discussion.body || text.detailEmpty,
                         url: discussion.url,
                       })
                     }
@@ -910,16 +909,16 @@ export function ActivityTransparencySection() {
         )}
       </div>
 
-      <IframeDialog
-        open={Boolean(previewItem)}
+      <ContentDialog
+        open={Boolean(detailItem)}
         onOpenChange={(nextOpen) => {
-          if (!nextOpen) setPreviewItem(null);
+          if (!nextOpen) setDetailItem(null);
         }}
-        title={previewItem?.title || ""}
-        description={previewItem?.description}
-        url={previewItem?.url || "about:blank"}
+        title={detailItem?.title || ""}
+        description={detailItem?.description}
+        content={detailItem?.content || ""}
+        externalUrl={detailItem?.url}
         openLabel={text.openInTab}
-        loadingLabel={text.previewLoading}
       />
     </section>
   );

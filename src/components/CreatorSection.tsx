@@ -274,7 +274,7 @@ async function fetchLatestVideos(uploadsPlaylistId: string): Promise<CreatorVide
   const data = await ytFetch<YtPlaylistResponse>("playlistItems", {
     part: "snippet,contentDetails",
     playlistId: uploadsPlaylistId,
-    maxResults: "8",
+    maxResults: "20",
   });
 
   const fallbackImages = [imgCharacter1, imgCharacter2, imgCharacter3, imgCharacter1];
@@ -351,12 +351,16 @@ export function CreatorSection() {
   const featuredVideo = videos[0] || FALLBACK_VIDEOS[0];
 
   const showcaseVideos = useMemo(() => {
-    const fromLatest = videos.slice(1, 4);
-    if (fromLatest.length === 3) return fromLatest;
-
-    const needed = 3 - fromLatest.length;
+    const fromLatest = videos.slice(1);
+    if (fromLatest.length >= 4) return fromLatest;
+    const needed = Math.max(4 - fromLatest.length, 0);
     return [...fromLatest, ...FALLBACK_VIDEOS.slice(0, needed)];
   }, [videos]);
+
+  const infiniteShowcaseVideos = useMemo(
+    () => [...showcaseVideos, ...showcaseVideos],
+    [showcaseVideos],
+  );
 
   return (
     <section id="content" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -456,17 +460,18 @@ export function CreatorSection() {
           </button>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {showcaseVideos.map((video, index) => (
+        <div className="mb-16 overflow-hidden">
+          <div className="creator-infinite-track">
+            {infiniteShowcaseVideos.map((video, index) => (
             <motion.button
               type="button"
-              key={`${video.id}-${index}`}
+              key={`${video.id}-${index}-loop`}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 0.4, delay: Math.min(index, 6) * 0.05 }}
               whileHover={{ y: -10 }}
-              className="relative text-left"
+              className="relative text-left shrink-0 w-[290px] sm:w-[330px] mx-3"
               onClick={() =>
                 setActiveVideo({
                   title: video.title,
@@ -493,7 +498,8 @@ export function CreatorSection() {
                 </div>
               </div>
             </motion.button>
-          ))}
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
