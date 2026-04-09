@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import { motion } from "motion/react";
 import { BookOpenText, ExternalLink, CalendarDays, RefreshCw } from "lucide-react";
 import { useLanguage, type Language } from "../contexts/LanguageContext";
+import { IframeDialog } from "./IframeDialog";
+import { isFrameLikelyBlocked, openPseudoFloatingWindow } from "../utils/webViewer";
 
 type MediumItem = {
   title: string;
@@ -39,6 +41,8 @@ const copy: Record<Language, {
   loading: string;
   empty: string;
   failed: string;
+  openInTab: string;
+  previewLoading: string;
 }> = {
   id: {
     tag: "Karya Tulis",
@@ -50,6 +54,8 @@ const copy: Record<Language, {
     loading: "Memuat artikel terbaru...",
     empty: "Belum ada artikel yang bisa ditampilkan saat ini.",
     failed: "Gagal memuat artikel. Silakan buka profil Medium saya langsung.",
+    openInTab: "Buka Tab",
+    previewLoading: "Memuat artikel...",
   },
   en: {
     tag: "Writing",
@@ -61,6 +67,8 @@ const copy: Record<Language, {
     loading: "Loading latest articles...",
     empty: "No articles are available to display right now.",
     failed: "Failed to load articles. Please visit my Medium profile directly.",
+    openInTab: "Open Tab",
+    previewLoading: "Loading article...",
   },
   zh: {
     tag: "写作",
@@ -72,6 +80,8 @@ const copy: Record<Language, {
     loading: "正在加载最新文章...",
     empty: "当前没有可展示的文章。",
     failed: "文章加载失败，请直接访问我的 Medium 主页。",
+    openInTab: "新标签打开",
+    previewLoading: "正在加载文章...",
   },
   ja: {
     tag: "執筆",
@@ -83,6 +93,8 @@ const copy: Record<Language, {
     loading: "最新記事を読み込み中...",
     empty: "現在表示できる記事がありません。",
     failed: "記事の読み込みに失敗しました。Mediumプロフィールをご覧ください。",
+    openInTab: "新しいタブで開く",
+    previewLoading: "記事を読み込み中...",
   },
 };
 
@@ -109,6 +121,15 @@ export function MediumArticlesSection() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
   const [failed, setFailed] = useState(false);
+  const [previewArticle, setPreviewArticle] = useState<Article | null>(null);
+
+  const openArticle = (article: Article) => {
+    if (isFrameLikelyBlocked(article.link)) {
+      openPseudoFloatingWindow(article.link);
+      return;
+    }
+    setPreviewArticle(article);
+  };
 
   useEffect(() => {
     let mounted = true;
@@ -200,13 +221,15 @@ export function MediumArticlesSection() {
         {!loading && articles.length > 0 && (
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
             {articles.map((article, index) => (
-              <motion.article
+              <motion.button
+                type="button"
                 key={article.link}
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.07 }}
-                className="rounded-2xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-white/[0.02] overflow-hidden flex flex-col"
+                className="rounded-2xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-white/[0.02] overflow-hidden flex flex-col text-left hover:border-blue-300 dark:hover:border-blue-500/40 transition-colors"
+                onClick={() => openArticle(article)}
               >
                 {article.thumbnail ? (
                   <img src={article.thumbnail} alt={article.title} className="w-full h-44 object-cover" />
@@ -246,17 +269,12 @@ export function MediumArticlesSection() {
                     </div>
                   )}
 
-                  <a
-                    href={article.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-auto inline-flex items-center gap-1.5 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 transition-colors"
-                  >
+                  <span className="mt-auto inline-flex items-center gap-1.5 text-sm text-blue-600 dark:text-blue-400">
                     {text.readArticle}
                     <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
+                  </span>
                 </div>
-              </motion.article>
+              </motion.button>
             ))}
           </div>
         )}
@@ -273,6 +291,22 @@ export function MediumArticlesSection() {
           </a>
         </div>
       </div>
+
+      <IframeDialog
+        open={Boolean(previewArticle)}
+        onOpenChange={(nextOpen) => {
+          if (!nextOpen) setPreviewArticle(null);
+        }}
+        title={previewArticle?.title || ""}
+        description={previewArticle ? new Date(previewArticle.date).toLocaleDateString(locale, {
+          year: "numeric",
+          month: "short",
+          day: "2-digit",
+        }) : ""}
+        url={previewArticle?.link || "about:blank"}
+        openLabel={text.openInTab}
+        loadingLabel={text.previewLoading}
+      />
     </section>
   );
 }

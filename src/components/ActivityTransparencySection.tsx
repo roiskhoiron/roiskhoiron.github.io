@@ -2,6 +2,8 @@ import { motion } from "motion/react";
 import { ExternalLink, MessageCircle, RefreshCw, ShieldCheck, Sparkles } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { useLanguage, type Language } from "../contexts/LanguageContext";
+import { IframeDialog } from "./IframeDialog";
+import { isFrameLikelyBlocked, openPseudoFloatingWindow } from "../utils/webViewer";
 
 type StatusKey =
   | "todo"
@@ -193,6 +195,8 @@ const copy: Record<Language, {
   collabDescription: string;
   missingTokenWarning: string;
   liveFetchFailed: string;
+  previewLoading: string;
+  openInTab: string;
 }> = {
   id: {
     funnel: {
@@ -222,6 +226,8 @@ const copy: Record<Language, {
     collabDescription: "Alur kerja publik ini dibuat agar siapa pun bisa memberi feedback langsung di tiap tahap.",
     missingTokenWarning: "VITE_GITHUB_READ_TOKEN tidak ditemukan, menggunakan snapshot build.",
     liveFetchFailed: "Live fetch gagal",
+    previewLoading: "Memuat halaman...",
+    openInTab: "Buka Tab",
   },
   en: {
     funnel: {
@@ -251,6 +257,8 @@ const copy: Record<Language, {
     collabDescription: "This public workflow is designed so everyone can share feedback at each stage.",
     missingTokenWarning: "VITE_GITHUB_READ_TOKEN is missing, using snapshot build.",
     liveFetchFailed: "Live fetch failed",
+    previewLoading: "Loading page...",
+    openInTab: "Open Tab",
   },
   zh: {
     funnel: {
@@ -279,6 +287,8 @@ const copy: Record<Language, {
     collabDescription: "这个公开流程便于任何人在每个阶段直接反馈。",
     missingTokenWarning: "未找到 VITE_GITHUB_READ_TOKEN，已使用快照数据。",
     liveFetchFailed: "实时拉取失败",
+    previewLoading: "正在加载页面...",
+    openInTab: "新标签打开",
   },
   ja: {
     funnel: {
@@ -307,6 +317,8 @@ const copy: Record<Language, {
     collabDescription: "この公開ワークフローは、各段階で誰でも直接フィードバックできるように設計されています。",
     missingTokenWarning: "VITE_GITHUB_READ_TOKEN が見つからないため、スナップショットを使用します。",
     liveFetchFailed: "ライブ取得に失敗しました",
+    previewLoading: "ページを読み込み中...",
+    openInTab: "新しいタブで開く",
   },
 };
 
@@ -563,6 +575,15 @@ export function ActivityTransparencySection() {
   const [data, setData] = useState<ActivityPayload>(FALLBACK_DATA);
   const [loading, setLoading] = useState(true);
   const [activeStage, setActiveStage] = useState<StatusKey>("todo");
+  const [previewItem, setPreviewItem] = useState<{ title: string; description: string; url: string } | null>(null);
+
+  const openItemViewer = (item: { title: string; description: string; url: string }) => {
+    if (isFrameLikelyBlocked(item.url)) {
+      openPseudoFloatingWindow(item.url);
+      return;
+    }
+    setPreviewItem(item);
+  };
 
   useEffect(() => {
     let mounted = true;
@@ -806,11 +827,16 @@ export function ActivityTransparencySection() {
                 {activeItems.map((item) => {
                   const meta = STAGE_META[item.statusKey] || STAGE_META.unknown;
                   return (
-                    <a
+                    <button
+                      type="button"
                       key={item.id}
-                      href={item.url}
-                      target="_blank"
-                      rel="noreferrer"
+                      onClick={() =>
+                        openItemViewer({
+                          title: item.title,
+                          description: `${item.repository || text.publicBoard}${item.number ? ` • #${item.number}` : ""} • ${formatDate(item.updatedAt, language)}`,
+                          url: item.url,
+                        })
+                      }
                       className="group block rounded-xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-white/[0.03] p-3 hover:border-cyan-300 dark:hover:border-cyan-500/40 transition-colors"
                     >
                       <div className="flex items-start justify-between gap-3">
@@ -827,7 +853,7 @@ export function ActivityTransparencySection() {
                           {sourceLabel(item, language)}
                         </span>
                       </div>
-                    </a>
+                    </button>
                   );
                 })}
               </div>
@@ -842,11 +868,16 @@ export function ActivityTransparencySection() {
                   <p className="text-sm text-slate-500 dark:text-slate-400">{text.noDiscussions}</p>
                 )}
                 {openDiscussions.map((discussion) => (
-                  <a
+                  <button
+                    type="button"
                     key={discussion.id}
-                    href={discussion.url}
-                    target="_blank"
-                    rel="noreferrer"
+                    onClick={() =>
+                      openItemViewer({
+                        title: discussion.title,
+                        description: `${discussion.comments || 0} ${text.comments} • ${formatDate(discussion.updatedAt, language)}`,
+                        url: discussion.url,
+                      })
+                    }
                     className="group block rounded-xl border border-slate-200 dark:border-white/[0.08] bg-slate-50/70 dark:bg-slate-900/30 p-3 hover:border-teal-300 dark:hover:border-teal-500/40 transition-colors"
                   >
                     <p className="text-sm text-slate-900 dark:text-white group-hover:text-teal-700 dark:group-hover:text-teal-300 transition-colors leading-snug">
@@ -855,7 +886,7 @@ export function ActivityTransparencySection() {
                     <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
                       {discussion.comments || 0} {text.comments} • {formatDate(discussion.updatedAt, language)}
                     </p>
-                  </a>
+                  </button>
                 ))}
               </div>
 
@@ -878,6 +909,18 @@ export function ActivityTransparencySection() {
           </div>
         )}
       </div>
+
+      <IframeDialog
+        open={Boolean(previewItem)}
+        onOpenChange={(nextOpen) => {
+          if (!nextOpen) setPreviewItem(null);
+        }}
+        title={previewItem?.title || ""}
+        description={previewItem?.description}
+        url={previewItem?.url || "about:blank"}
+        openLabel={text.openInTab}
+        loadingLabel={text.previewLoading}
+      />
     </section>
   );
 }

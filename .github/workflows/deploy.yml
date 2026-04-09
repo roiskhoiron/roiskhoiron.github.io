@@ -37,6 +37,8 @@ jobs:
       - name: Build project
         env:
           VITE_GITHUB_READ_TOKEN: ${{ secrets.VITE_GITHUB_READ_TOKEN }}
+          VITE_YOUTUBE_API_KEY: ${{ secrets.VITE_YOUTUBE_API_TOKEN }}
+          VITE_YOUTUBE_CHANNEL_HANDLE: ${{ secrets.VITE_YOUTUBE_CHANNEL_HANDLE }}
         run: npm run build
 
       - name: Upload artifact
