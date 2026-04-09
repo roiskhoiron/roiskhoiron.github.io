@@ -188,21 +188,31 @@ html {
   font-size: var(--font-size);
 }
 
-@keyframes creator-marquee-x {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+.creator-manual-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
 }
 
-.creator-infinite-track {
-  display: flex;
-  width: max-content;
-  animation: creator-marquee-x 38s linear infinite;
+.creator-manual-scroll::-webkit-scrollbar {
+  display: none;
 }
 
-.creator-infinite-track:hover {
-  animation-play-state: paused;
+.creator-manual-scroll.is-dragging {
+  cursor: grabbing;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.inertial-y {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
 }

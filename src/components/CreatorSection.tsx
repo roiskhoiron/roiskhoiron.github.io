@@ -1,7 +1,8 @@
 import { motion } from "motion/react";
 import { Youtube, Sparkles, Users, PlayCircle, TrendingUp } from "lucide-react";
 import { Button } from "./ui/button";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import type { PointerEvent as ReactPointerEvent } from "react";
 import { useLanguage, type Language } from "../contexts/LanguageContext";
 import { IframeDialog } from "./IframeDialog";
 import imgCharacter1 from "../assets/hqdefault.png";
@@ -307,6 +308,14 @@ export function CreatorSection() {
     views: "50K+",
   });
   const [activeVideo, setActiveVideo] = useState<{ title: string; embedUrl: string; watchUrl: string } | null>(null);
+  const trackRef = useRef<HTMLDivElement | null>(null);
+  const dragStateRef = useRef<{ isDown: boolean; startX: number; scrollLeft: number; moved: boolean }>({
+    isDown: false,
+    startX: 0,
+    scrollLeft: 0,
+    moved: false,
+  });
+  const suppressClickUntilRef = useRef(0);
 
   useEffect(() => {
     let mounted = true;
@@ -357,10 +366,38 @@ export function CreatorSection() {
     return [...fromLatest, ...FALLBACK_VIDEOS.slice(0, needed)];
   }, [videos]);
 
-  const infiniteShowcaseVideos = useMemo(
-    () => [...showcaseVideos, ...showcaseVideos],
-    [showcaseVideos],
-  );
+  const onTrackPointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    const el = trackRef.current;
+    if (!el) return;
+    dragStateRef.current = {
+      isDown: true,
+      startX: event.clientX,
+      scrollLeft: el.scrollLeft,
+      moved: false,
+    };
+    el.setPointerCapture(event.pointerId);
+    el.classList.add("is-dragging");
+  };
+
+  const onTrackPointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
+    const el = trackRef.current;
+    const drag = dragStateRef.current;
+    if (!el || !drag.isDown) return;
+    const delta = event.clientX - drag.startX;
+    if (Math.abs(delta) > 6) dragStateRef.current.moved = true;
+    el.scrollLeft = drag.scrollLeft - delta;
+  };
+
+  const onTrackPointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
+    const el = trackRef.current;
+    if (!el) return;
+    if (dragStateRef.current.moved) {
+      suppressClickUntilRef.current = Date.now() + 140;
+    }
+    dragStateRef.current.isDown = false;
+    el.releasePointerCapture(event.pointerId);
+    el.classList.remove("is-dragging");
+  };
 
   return (
     <section id="content" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -460,45 +497,55 @@ export function CreatorSection() {
           </button>
         </motion.div>
 
-        <div className="mb-16 overflow-hidden">
-          <div className="creator-infinite-track">
-            {infiniteShowcaseVideos.map((video, index) => (
-            <motion.button
-              type="button"
-              key={`${video.id}-${index}-loop`}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: Math.min(index, 6) * 0.05 }}
-              whileHover={{ y: -10 }}
-              className="relative text-left shrink-0 w-[290px] sm:w-[330px] mx-3"
-              onClick={() =>
-                setActiveVideo({
-                  title: video.title,
-                  embedUrl: toYouTubeEmbedUrl(video.videoId),
-                  watchUrl: toYouTubeWatchUrl(video.videoId),
-                })
-              }
-            >
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 hover:border-white/40 transition-colors h-full">
-                <div className="relative overflow-hidden rounded-xl">
-                  <img
-                    src={video.thumbnail}
-                    alt={`${text.characterAlt} ${index + 1}`}
-                    className="w-full h-auto min-h-[180px] object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
-                  <div className="absolute left-3 right-3 bottom-3 flex items-center justify-between gap-2">
-                    <p className="text-sm text-white line-clamp-2 leading-snug">{video.title}</p>
-                    <span className="inline-flex items-center gap-1 rounded-full border border-white/30 bg-black/40 px-2 py-1 text-[11px] text-white shrink-0">
-                      <PlayCircle className="w-3.5 h-3.5" />
-                      {text.watchNow}
-                    </span>
+        <div className="mb-16">
+          <div
+            ref={trackRef}
+            className="overflow-x-auto pb-3 creator-manual-scroll snap-x snap-mandatory cursor-grab select-none"
+            onPointerDown={onTrackPointerDown}
+            onPointerMove={onTrackPointerMove}
+            onPointerUp={onTrackPointerUp}
+            onPointerCancel={onTrackPointerUp}
+          >
+            <div className="flex w-max gap-0">
+              {showcaseVideos.map((video, index) => (
+                <motion.button
+                  type="button"
+                  key={`${video.id}-${index}`}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: Math.min(index, 6) * 0.05 }}
+                  whileHover={{ y: -10 }}
+                  className="relative text-left shrink-0 w-[290px] sm:w-[330px] mx-3 snap-start"
+                  onClick={() => {
+                    if (Date.now() < suppressClickUntilRef.current) return;
+                    setActiveVideo({
+                      title: video.title,
+                      embedUrl: toYouTubeEmbedUrl(video.videoId),
+                      watchUrl: toYouTubeWatchUrl(video.videoId),
+                    });
+                  }}
+                >
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 hover:border-white/40 transition-colors h-full">
+                    <div className="relative overflow-hidden rounded-xl">
+                      <img
+                        src={video.thumbnail}
+                        alt={`${text.characterAlt} ${index + 1}`}
+                        className="w-full h-auto min-h-[180px] object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
+                      <div className="absolute left-3 right-3 bottom-3 flex items-center justify-between gap-2">
+                        <p className="text-sm text-white line-clamp-2 leading-snug">{video.title}</p>
+                        <span className="inline-flex items-center gap-1 rounded-full border border-white/30 bg-black/40 px-2 py-1 text-[11px] text-white shrink-0">
+                          <PlayCircle className="w-3.5 h-3.5" />
+                          {text.watchNow}
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </motion.button>
-            ))}
+                </motion.button>
+              ))}
+            </div>
           </div>
         </div>
 

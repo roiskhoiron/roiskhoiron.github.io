@@ -42,6 +42,8 @@ const copy: Record<Language, {
   empty: string;
   failed: string;
   openInTab: string;
+  dialogPrompt: string;
+  readMoreCta: string;
 }> = {
   id: {
     tag: "Karya Tulis",
@@ -53,7 +55,9 @@ const copy: Record<Language, {
     loading: "Memuat artikel terbaru...",
     empty: "Belum ada artikel yang bisa ditampilkan saat ini.",
     failed: "Gagal memuat artikel. Silakan buka profil Medium saya langsung.",
-    openInTab: "Buka Tab",
+    openInTab: "Buka Artikel",
+    dialogPrompt: "Kalau suka gaya pembahasannya, lanjutkan diskusi atau bagikan artikel ini ke teman developer Anda.",
+    readMoreCta: "Baca Selengkapnya",
   },
   en: {
     tag: "Writing",
@@ -65,7 +69,9 @@ const copy: Record<Language, {
     loading: "Loading latest articles...",
     empty: "No articles are available to display right now.",
     failed: "Failed to load articles. Please visit my Medium profile directly.",
-    openInTab: "Open Tab",
+    openInTab: "Open Article",
+    dialogPrompt: "If this article is useful, continue the discussion or share it with your developer friends.",
+    readMoreCta: "Read Full Article",
   },
   zh: {
     tag: "写作",
@@ -77,7 +83,9 @@ const copy: Record<Language, {
     loading: "正在加载最新文章...",
     empty: "当前没有可展示的文章。",
     failed: "文章加载失败，请直接访问我的 Medium 主页。",
-    openInTab: "新标签打开",
+    openInTab: "打开文章",
+    dialogPrompt: "如果这篇文章对你有帮助，欢迎继续讨论或分享给开发者朋友。",
+    readMoreCta: "阅读全文",
   },
   ja: {
     tag: "執筆",
@@ -89,12 +97,28 @@ const copy: Record<Language, {
     loading: "最新記事を読み込み中...",
     empty: "現在表示できる記事がありません。",
     failed: "記事の読み込みに失敗しました。Mediumプロフィールをご覧ください。",
-    openInTab: "新しいタブで開く",
+    openInTab: "記事を開く",
+    dialogPrompt: "役に立ったら、ぜひ感想を共有したり開発者仲間にシェアしてください。",
+    readMoreCta: "続きを読む",
   },
 };
 
 function stripHtml(value: string) {
   return value.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function htmlToReadableText(value: string | undefined) {
+  const html = value || "";
+  return html
+    .replace(/<\s*br\s*\/?>/gi, "\n")
+    .replace(/<\/p>/gi, "\n\n")
+    .replace(/<li>/gi, "- ")
+    .replace(/<\/li>/gi, "\n")
+    .replace(/<[^>]*>/g, " ")
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .replace(/\s{2,}/g, " ")
+    .trim();
 }
 
 function toExcerpt(html: string | undefined, max = 150) {
@@ -135,7 +159,7 @@ export function MediumArticlesSection() {
           link: item.link,
           thumbnail: item.thumbnail || null,
           excerpt: toExcerpt(item.description, 170),
-          content: stripHtml(item.description || ""),
+          content: htmlToReadableText(item.description || ""),
           categories: (item.categories || []).slice(0, 3),
         }));
 
@@ -294,6 +318,10 @@ export function MediumArticlesSection() {
         content={previewArticle?.content || ""}
         externalUrl={previewArticle?.link}
         openLabel={text.openInTab}
+        variant="reading"
+        meta={previewArticle?.categories || []}
+        prompt={text.dialogPrompt}
+        ctaLabel={text.readMoreCta}
       />
     </section>
   );

@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ExternalLink, MessageCircle, RefreshCw, ShieldCheck, Sparkles } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import type { PointerEvent as ReactPointerEvent, WheelEvent as ReactWheelEvent } from "react";
 import { useLanguage, type Language } from "../contexts/LanguageContext";
 import { ContentDialog } from "./ContentDialog";
 
@@ -197,6 +198,7 @@ const copy: Record<Language, {
   liveFetchFailed: string;
   detailEmpty: string;
   openInTab: string;
+  dialogPrompt: string;
 }> = {
   id: {
     funnel: {
@@ -228,6 +230,7 @@ const copy: Record<Language, {
     liveFetchFailed: "Live fetch gagal",
     detailEmpty: "Belum ada detail konten.",
     openInTab: "Buka Tab",
+    dialogPrompt: "Punya ide, masukan, atau sudut pandang berbeda? Ayo lanjutkan diskusi di GitHub.",
   },
   en: {
     funnel: {
@@ -259,6 +262,7 @@ const copy: Record<Language, {
     liveFetchFailed: "Live fetch failed",
     detailEmpty: "Detail content is not available.",
     openInTab: "Open Tab",
+    dialogPrompt: "Have ideas, feedback, or another perspective? Join the discussion on GitHub.",
   },
   zh: {
     funnel: {
@@ -289,6 +293,7 @@ const copy: Record<Language, {
     liveFetchFailed: "实时拉取失败",
     detailEmpty: "暂无可显示的详情内容。",
     openInTab: "新标签打开",
+    dialogPrompt: "如果你有想法、建议或不同视角，欢迎到 GitHub 继续讨论。",
   },
   ja: {
     funnel: {
@@ -319,6 +324,7 @@ const copy: Record<Language, {
     liveFetchFailed: "ライブ取得に失敗しました",
     detailEmpty: "表示できる詳細コンテンツがありません。",
     openInTab: "新しいタブで開く",
+    dialogPrompt: "アイデアやフィードバックがあれば、GitHub でぜひ議論に参加してください。",
   },
 };
 
@@ -581,6 +587,16 @@ export function ActivityTransparencySection() {
   const [loading, setLoading] = useState(true);
   const [activeStage, setActiveStage] = useState<StatusKey>("todo");
   const [detailItem, setDetailItem] = useState<{ title: string; description: string; content: string; url: string } | null>(null);
+  const audienceListRef = useRef<HTMLDivElement | null>(null);
+  const audienceAutoPausedRef = useRef(false);
+  const audienceAutoResumeRef = useRef<number | null>(null);
+  const audienceDragRef = useRef<{ isDown: boolean; startY: number; scrollTop: number; moved: boolean }>({
+    isDown: false,
+    startY: 0,
+    scrollTop: 0,
+    moved: false,
+  });
+  const audienceSuppressClickUntilRef = useRef(0);
 
   useEffect(() => {
     let mounted = true;
@@ -660,7 +676,100 @@ export function ActivityTransparencySection() {
 
   const activeItems = stageEntries.get(activeStage) || [];
   const activeLabel = timelineStages.find((stage) => stage.key === activeStage)?.label || text.step;
-  const openDiscussions = data.discussions.filter((discussion) => discussion.state === "OPEN").slice(0, 4);
+  const openDiscussions = data.discussions.filter((discussion) => discussion.state === "OPEN");
+
+  useEffect(() => {
+    const container = audienceListRef.current;
+    if (!container || openDiscussions.length <= 1) return;
+
+    let rafId = 0;
+    let lastTs = 0;
+
+    const speedPxPerSec = 12;
+    const step = (ts: number) => {
+      if (!lastTs) lastTs = ts;
+      const delta = ts - lastTs;
+      lastTs = ts;
+
+      const max = container.scrollHeight - container.clientHeight;
+      if (!audienceAutoPausedRef.current && max > 0) {
+        const next = container.scrollTop - (speedPxPerSec * delta) / 1000;
+        container.scrollTop = next <= 0 ? max : next;
+      }
+
+      rafId = window.requestAnimationFrame(step);
+    };
+
+    rafId = window.requestAnimationFrame(step);
+
+    const maxInitial = container.scrollHeight - container.clientHeight;
+    if (maxInitial > 0) {
+      container.scrollTop = maxInitial;
+    }
+
+    return () => {
+      window.cancelAnimationFrame(rafId);
+      if (audienceAutoResumeRef.current) {
+        window.clearTimeout(audienceAutoResumeRef.current);
+      }
+    };
+  }, [openDiscussions.length]);
+
+  const pauseAudienceAutoScroll = () => {
+    audienceAutoPausedRef.current = true;
+    if (audienceAutoResumeRef.current) {
+      window.clearTimeout(audienceAutoResumeRef.current);
+    }
+    audienceAutoResumeRef.current = window.setTimeout(() => {
+      audienceAutoPausedRef.current = false;
+    }, 1400);
+  };
+
+  const onAudiencePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    const el = audienceListRef.current;
+    if (!el) return;
+    audienceAutoPausedRef.current = true;
+    audienceDragRef.current = {
+      isDown: true,
+      startY: event.clientY,
+      scrollTop: el.scrollTop,
+      moved: false,
+    };
+    el.setPointerCapture(event.pointerId);
+  };
+
+  const onAudiencePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
+    const el = audienceListRef.current;
+    const drag = audienceDragRef.current;
+    if (!el || !drag.isDown) return;
+    const deltaY = event.clientY - drag.startY;
+    if (Math.abs(deltaY) > 4) drag.moved = true;
+    el.scrollTop = drag.scrollTop - deltaY;
+  };
+
+  const onAudiencePointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
+    const el = audienceListRef.current;
+    if (!el) return;
+    if (audienceDragRef.current.moved) {
+      audienceSuppressClickUntilRef.current = Date.now() + 180;
+    }
+    audienceDragRef.current.isDown = false;
+    try {
+      el.releasePointerCapture(event.pointerId);
+    } catch {
+      // no-op
+    }
+    pauseAudienceAutoScroll();
+  };
+
+  const onAudienceWheel = (event: ReactWheelEvent<HTMLDivElement>) => {
+    const el = audienceListRef.current;
+    if (!el) return;
+    el.scrollTop += event.deltaY;
+    pauseAudienceAutoScroll();
+    event.preventDefault();
+    event.stopPropagation();
+  };
 
   return (
     <section id="activity" className="py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -817,7 +926,13 @@ export function ActivityTransparencySection() {
                 {loading && <RefreshCw className="w-4 h-4 text-slate-400 animate-spin" />}
               </div>
 
-              <div className="space-y-2.5">
+              <div
+                className={`space-y-2.5 ${
+                  activeStage === "ready_validation"
+                    ? "max-h-[420px] overflow-y-auto pr-1 no-scrollbar inertial-y"
+                    : ""
+                }`}
+              >
                 {activeItems.length === 0 && (
                   <p className="text-sm text-slate-500 dark:text-slate-400">{text.noStageItems}</p>
                 )}
@@ -837,19 +952,30 @@ export function ActivityTransparencySection() {
                       }
                       className="group block rounded-xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-white/[0.03] p-3 hover:border-cyan-300 dark:hover:border-cyan-500/40 transition-colors"
                     >
-                      <div className="flex items-start justify-between gap-3">
-                        <div>
-                          <p className="text-sm text-slate-900 dark:text-white leading-snug group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors">
-                            {item.title}
-                          </p>
-                          <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                            {item.repository || text.publicBoard}
-                            {item.number ? ` • #${item.number}` : ""} • {formatDate(item.updatedAt, language)}
-                          </p>
+                      <div className="text-left">
+                        <p className="text-sm text-slate-900 dark:text-white leading-snug group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors">
+                          {item.title}
+                        </p>
+                        <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                          {item.repository || text.publicBoard}
+                          {item.number ? ` • #${item.number}` : ""} • {formatDate(item.updatedAt, language)}
+                        </p>
+                        <div className="mt-2 flex flex-wrap gap-1.5">
+                          <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] ${meta.chip}`}>
+                            {sourceLabel(item, language)}
+                          </span>
+                          <span className="inline-flex items-center rounded-full border border-slate-300/70 dark:border-white/[0.12] px-2 py-0.5 text-[11px] text-slate-600 dark:text-slate-300">
+                            {item.status}
+                          </span>
+                          {item.labels.slice(0, 4).map((label) => (
+                            <span
+                              key={`${item.id}-${label}`}
+                              className="inline-flex items-center rounded-full border border-slate-300/70 dark:border-white/[0.12] px-2 py-0.5 text-[11px] text-slate-600 dark:text-slate-300"
+                            >
+                              {label}
+                            </span>
+                          ))}
                         </div>
-                        <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] ${meta.chip}`}>
-                          {sourceLabel(item, language)}
-                        </span>
                       </div>
                     </button>
                   );
@@ -861,7 +987,27 @@ export function ActivityTransparencySection() {
               <h3 className="text-lg text-slate-900 dark:text-white tracking-tight">{text.audienceSignal}</h3>
               <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">{text.audienceSubtitle}</p>
 
-              <div className="mt-4 space-y-2.5">
+              <div
+                ref={audienceListRef}
+                onMouseEnter={() => {
+                  audienceAutoPausedRef.current = true;
+                }}
+                onMouseLeave={() => {
+                  audienceAutoPausedRef.current = false;
+                }}
+                onPointerDown={onAudiencePointerDown}
+                onPointerMove={onAudiencePointerMove}
+                onPointerUp={onAudiencePointerUp}
+                onPointerCancel={onAudiencePointerUp}
+                onTouchStart={() => {
+                  audienceAutoPausedRef.current = true;
+                }}
+                onTouchEnd={() => {
+                  pauseAudienceAutoScroll();
+                }}
+                onWheel={onAudienceWheel}
+                className="mt-4 space-y-2.5 max-h-[420px] overflow-y-auto pr-1 no-scrollbar inertial-y touch-none"
+              >
                 {openDiscussions.length === 0 && (
                   <p className="text-sm text-slate-500 dark:text-slate-400">{text.noDiscussions}</p>
                 )}
@@ -869,22 +1015,38 @@ export function ActivityTransparencySection() {
                   <button
                     type="button"
                     key={discussion.id}
-                    onClick={() =>
+                    onClick={() => {
+                      if (Date.now() < audienceSuppressClickUntilRef.current) return;
                       setDetailItem({
                         title: discussion.title,
                         description: `${discussion.comments || 0} ${text.comments} • ${formatDate(discussion.updatedAt, language)}`,
                         content: discussion.body || text.detailEmpty,
                         url: discussion.url,
-                      })
-                    }
+                      });
+                    }}
                     className="group block rounded-xl border border-slate-200 dark:border-white/[0.08] bg-slate-50/70 dark:bg-slate-900/30 p-3 hover:border-teal-300 dark:hover:border-teal-500/40 transition-colors"
                   >
-                    <p className="text-sm text-slate-900 dark:text-white group-hover:text-teal-700 dark:group-hover:text-teal-300 transition-colors leading-snug">
-                      {discussion.title}
-                    </p>
-                    <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                      {discussion.comments || 0} {text.comments} • {formatDate(discussion.updatedAt, language)}
-                    </p>
+                    <div className="text-left">
+                      <p className="text-sm text-slate-900 dark:text-white group-hover:text-teal-700 dark:group-hover:text-teal-300 transition-colors leading-snug">
+                        {discussion.title}
+                      </p>
+                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                        {discussion.comments || 0} {text.comments} • {formatDate(discussion.updatedAt, language)}
+                      </p>
+                      <div className="mt-2 flex flex-wrap gap-1.5">
+                        <span className="inline-flex items-center rounded-full border border-teal-500/25 bg-teal-500/10 px-2 py-0.5 text-[11px] text-teal-700 dark:text-teal-300">
+                          {discussion.status}
+                        </span>
+                        {discussion.labels.slice(0, 4).map((label) => (
+                          <span
+                            key={`${discussion.id}-${label}`}
+                            className="inline-flex items-center rounded-full border border-slate-300/70 dark:border-white/[0.12] px-2 py-0.5 text-[11px] text-slate-600 dark:text-slate-300"
+                          >
+                            {label}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </button>
                 ))}
               </div>
@@ -919,6 +1081,8 @@ export function ActivityTransparencySection() {
         content={detailItem?.content || ""}
         externalUrl={detailItem?.url}
         openLabel={text.openInTab}
+        variant="discussion"
+        prompt={text.dialogPrompt}
       />
     </section>
   );
