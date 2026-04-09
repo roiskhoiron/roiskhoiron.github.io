@@ -207,6 +207,17 @@ html {
   cursor: grabbing !important;
 }
 
+.dragging-cursor,
+.dragging-cursor * {
+  cursor: grabbing !important;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.audience-drag-zone {
+  touch-action: none;
+}
+
 .no-scrollbar {
   scrollbar-width: none;
 }

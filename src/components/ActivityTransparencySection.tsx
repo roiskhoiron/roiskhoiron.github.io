@@ -590,13 +590,13 @@ export function ActivityTransparencySection() {
   const audienceListRef = useRef<HTMLDivElement | null>(null);
   const audienceAutoPausedRef = useRef(false);
   const audienceAutoResumeRef = useRef<number | null>(null);
-  const audienceDragRef = useRef<{ isDown: boolean; startY: number; scrollTop: number; moved: boolean }>({
+  const audienceDragRef = useRef<{ isDown: boolean; startY: number; scrollTop: number; moved: boolean; maxDelta: number }>({
     isDown: false,
     startY: 0,
     scrollTop: 0,
     moved: false,
+    maxDelta: 0,
   });
-  const audienceSuppressClickUntilRef = useRef(0);
 
   useEffect(() => {
     let mounted = true;
@@ -677,15 +677,26 @@ export function ActivityTransparencySection() {
   const activeItems = stageEntries.get(activeStage) || [];
   const activeLabel = timelineStages.find((stage) => stage.key === activeStage)?.label || text.step;
   const openDiscussions = data.discussions.filter((discussion) => discussion.state === "OPEN");
+  const audienceRows = useMemo(() => {
+    if (openDiscussions.length === 0) return [] as { discussion: ActivityEntry; key: string }[];
+    const minRows = 10;
+    const loops = Math.max(1, Math.ceil(minRows / openDiscussions.length));
+    return Array.from({ length: loops }).flatMap((_, loopIndex) =>
+      openDiscussions.map((discussion, index) => ({
+        discussion,
+        key: `${discussion.id}-loop-${loopIndex}-${index}`,
+      })),
+    );
+  }, [openDiscussions]);
 
   useEffect(() => {
     const container = audienceListRef.current;
-    if (!container || openDiscussions.length <= 1) return;
+    if (!container || audienceRows.length <= 1) return;
 
     let rafId = 0;
     let lastTs = 0;
 
-    const speedPxPerSec = 12;
+    const speedPxPerSec = 13;
     const step = (ts: number) => {
       if (!lastTs) lastTs = ts;
       const delta = ts - lastTs;
@@ -713,7 +724,7 @@ export function ActivityTransparencySection() {
         window.clearTimeout(audienceAutoResumeRef.current);
       }
     };
-  }, [openDiscussions.length]);
+  }, [audienceRows.length]);
 
   const pauseAudienceAutoScroll = () => {
     audienceAutoPausedRef.current = true;
@@ -728,15 +739,18 @@ export function ActivityTransparencySection() {
   const onAudiencePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
     const el = audienceListRef.current;
     if (!el) return;
+    event.preventDefault();
     audienceAutoPausedRef.current = true;
-    el.classList.add("is-dragging-y");
+    event.currentTarget.classList.add("is-dragging-y", "dragging-cursor");
+    document.body.classList.add("dragging-cursor");
     audienceDragRef.current = {
       isDown: true,
       startY: event.clientY,
       scrollTop: el.scrollTop,
       moved: false,
+      maxDelta: 0,
     };
-    el.setPointerCapture(event.pointerId);
+    event.currentTarget.setPointerCapture(event.pointerId);
   };
 
   const onAudiencePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
@@ -744,23 +758,23 @@ export function ActivityTransparencySection() {
     const drag = audienceDragRef.current;
     if (!el || !drag.isDown) return;
     const deltaY = event.clientY - drag.startY;
-    if (Math.abs(deltaY) > 4) drag.moved = true;
+    drag.maxDelta = Math.max(drag.maxDelta, Math.abs(deltaY));
+    if (drag.maxDelta > 10) {
+      drag.moved = true;
+      event.preventDefault();
+    }
     el.scrollTop = drag.scrollTop - deltaY;
   };
 
   const onAudiencePointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
-    const el = audienceListRef.current;
-    if (!el) return;
-    if (audienceDragRef.current.moved) {
-      audienceSuppressClickUntilRef.current = Date.now() + 180;
-    }
     audienceDragRef.current.isDown = false;
     try {
-      el.releasePointerCapture(event.pointerId);
+      event.currentTarget.releasePointerCapture(event.pointerId);
     } catch {
       // no-op
     }
-    el.classList.remove("is-dragging-y");
+    event.currentTarget.classList.remove("is-dragging-y", "dragging-cursor");
+    document.body.classList.remove("dragging-cursor");
     pauseAudienceAutoScroll();
   };
 
@@ -988,47 +1002,41 @@ export function ActivityTransparencySection() {
             <aside className="rounded-2xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-white/[0.02] p-4 md:p-5">
               <h3 className="text-lg text-slate-900 dark:text-white tracking-tight">{text.audienceSignal}</h3>
               <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">{text.audienceSubtitle}</p>
-
-              <div
-                ref={audienceListRef}
-                onMouseEnter={() => {
-                  audienceAutoPausedRef.current = true;
-                }}
-                onMouseLeave={() => {
-                  audienceAutoPausedRef.current = false;
-                }}
-                onPointerDown={onAudiencePointerDown}
-                onPointerMove={onAudiencePointerMove}
-                onPointerUp={onAudiencePointerUp}
-                onPointerCancel={onAudiencePointerUp}
-                onTouchStart={() => {
-                  audienceAutoPausedRef.current = true;
-                }}
-                onTouchEnd={() => {
-                  pauseAudienceAutoScroll();
-                }}
-                onWheel={onAudienceWheel}
-                className="mt-4 space-y-2.5 max-h-[420px] overflow-y-auto pr-1 no-scrollbar inertial-y touch-none cursor-grab"
-              >
-                {openDiscussions.length === 0 && (
-                  <p className="text-sm text-slate-500 dark:text-slate-400">{text.noDiscussions}</p>
-                )}
-                {openDiscussions.map((discussion) => (
-                  <button
-                    type="button"
-                    key={discussion.id}
-                    onClick={() => {
-                      if (Date.now() < audienceSuppressClickUntilRef.current) return;
-                      setDetailItem({
-                        title: discussion.title,
-                        description: `${discussion.comments || 0} ${text.comments} • ${formatDate(discussion.updatedAt, language)}`,
-                        content: discussion.body || text.detailEmpty,
-                        url: discussion.url,
-                      });
-                    }}
-                    className="group block rounded-xl border border-slate-200 dark:border-white/[0.08] bg-slate-50/70 dark:bg-slate-900/30 p-3 hover:border-teal-300 dark:hover:border-teal-500/40 transition-colors"
-                  >
-                    <div className="text-left">
+              <div className="mt-3 flex items-stretch gap-2">
+                <div
+                  ref={audienceListRef}
+                  onTouchStart={() => {
+                    audienceAutoPausedRef.current = true;
+                  }}
+                  onTouchEnd={() => {
+                    pauseAudienceAutoScroll();
+                  }}
+                  onMouseEnter={() => {
+                    audienceAutoPausedRef.current = true;
+                  }}
+                  onMouseLeave={() => {
+                    pauseAudienceAutoScroll();
+                  }}
+                  onWheel={onAudienceWheel}
+                  className="flex-1 space-y-2.5 max-h-[420px] overflow-y-auto pr-1 no-scrollbar inertial-y touch-pan-y"
+                >
+                  {openDiscussions.length === 0 && (
+                    <p className="text-sm text-slate-500 dark:text-slate-400">{text.noDiscussions}</p>
+                  )}
+                  {audienceRows.map(({ discussion, key }) => (
+                    <button
+                      type="button"
+                      key={key}
+                      onClick={() => {
+                        setDetailItem({
+                          title: discussion.title,
+                          description: `${discussion.comments || 0} ${text.comments} • ${formatDate(discussion.updatedAt, language)}`,
+                          content: discussion.body || text.detailEmpty,
+                          url: discussion.url,
+                        });
+                      }}
+                      className="group block w-full rounded-xl border border-slate-200 dark:border-white/[0.08] bg-slate-50/70 dark:bg-slate-900/30 p-3 text-left hover:border-teal-300 dark:hover:border-teal-500/40 transition-colors"
+                    >
                       <p className="text-sm text-slate-900 dark:text-white group-hover:text-teal-700 dark:group-hover:text-teal-300 transition-colors leading-snug">
                         {discussion.title}
                       </p>
@@ -1048,9 +1056,22 @@ export function ActivityTransparencySection() {
                           </span>
                         ))}
                       </div>
-                    </div>
-                  </button>
-                ))}
+                    </button>
+                  ))}
+                </div>
+
+                <div
+                  onPointerDown={onAudiencePointerDown}
+                  onPointerMove={onAudiencePointerMove}
+                  onPointerUp={onAudiencePointerUp}
+                  onPointerCancel={onAudiencePointerUp}
+                  className="audience-drag-zone max-h-[420px] w-9 shrink-0 rounded-xl border border-slate-300/70 dark:border-white/[0.12] bg-slate-100/70 dark:bg-white/[0.03] cursor-grab select-none flex flex-col items-center justify-center gap-2"
+                  aria-label="Drag area for Audience Signal list"
+                  role="presentation"
+                >
+                  <span className="h-12 w-1.5 rounded-full bg-slate-400/70 dark:bg-slate-500/70" />
+                  <span className="h-12 w-1.5 rounded-full bg-slate-400/45 dark:bg-slate-500/45" />
+                </div>
               </div>
 
               <div className="mt-4 rounded-xl border border-cyan-200/80 dark:border-cyan-500/30 bg-gradient-to-br from-cyan-50 to-emerald-50 dark:from-cyan-500/10 dark:to-emerald-500/10 p-3">
