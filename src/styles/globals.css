@@ -203,6 +203,10 @@ html {
   cursor: grabbing;
 }
 
+.is-dragging-y {
+  cursor: grabbing !important;
+}
+
 .no-scrollbar {
   scrollbar-width: none;
 }

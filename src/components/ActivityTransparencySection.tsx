@@ -729,6 +729,7 @@ export function ActivityTransparencySection() {
     const el = audienceListRef.current;
     if (!el) return;
     audienceAutoPausedRef.current = true;
+    el.classList.add("is-dragging-y");
     audienceDragRef.current = {
       isDown: true,
       startY: event.clientY,
@@ -759,6 +760,7 @@ export function ActivityTransparencySection() {
     } catch {
       // no-op
     }
+    el.classList.remove("is-dragging-y");
     pauseAudienceAutoScroll();
   };
 
@@ -1006,7 +1008,7 @@ export function ActivityTransparencySection() {
                   pauseAudienceAutoScroll();
                 }}
                 onWheel={onAudienceWheel}
-                className="mt-4 space-y-2.5 max-h-[420px] overflow-y-auto pr-1 no-scrollbar inertial-y touch-none"
+                className="mt-4 space-y-2.5 max-h-[420px] overflow-y-auto pr-1 no-scrollbar inertial-y touch-none cursor-grab"
               >
                 {openDiscussions.length === 0 && (
                   <p className="text-sm text-slate-500 dark:text-slate-400">{text.noDiscussions}</p>
