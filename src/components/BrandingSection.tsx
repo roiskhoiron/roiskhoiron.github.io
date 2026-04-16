@@ -285,7 +285,7 @@ export function BrandingSection() {
                   </div>
                 </div>
                 <motion.a
-                  href="/chefgenie"
+                  href="#/chefgenie"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="inline-flex items-center gap-1.5 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 transition-colors"

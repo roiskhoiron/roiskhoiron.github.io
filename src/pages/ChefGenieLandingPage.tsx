@@ -725,7 +725,7 @@ export function ChefGenieLandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <motion.a
-              href="/#chefgenie"
+              href="#/"
               className="flex items-center gap-2.5"
               whileHover={{ scale: 1.02 }}
             >
@@ -1034,7 +1034,7 @@ export function ChefGenieLandingPage() {
             <span className="text-sm font-bold text-slate-900 dark:text-white">ChefGenie</span>
           </div>
           <p className="text-xs text-slate-400 dark:text-white/20 font-medium">© {new Date().getFullYear()} ChefGenie · Developed by Rois Khoiron</p>
-          <a href="/#chefgenie" className="text-xs font-bold text-slate-400 dark:text-white/20 hover:text-slate-900 dark:hover:text-white transition-colors uppercase tracking-wider">{t.nav.back}</a>
+          <a href="#/" className="text-xs font-bold text-slate-400 dark:text-white/20 hover:text-slate-900 dark:hover:text-white transition-colors uppercase tracking-wider">{t.nav.back}</a>
         </div>
       </footer>
     </main>
