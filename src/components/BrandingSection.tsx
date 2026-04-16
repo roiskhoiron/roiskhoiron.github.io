@@ -284,13 +284,14 @@ export function BrandingSection() {
                     ))}
                   </div>
                 </div>
-                <motion.button
+                <motion.a
+                  href="/chefgenie"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="inline-flex items-center gap-1.5 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 transition-colors"
                 >
                   {text.learnMore} <ArrowRight className="w-3.5 h-3.5" />
-                </motion.button>
+                </motion.a>
               </div>
             </div>
           </div>
