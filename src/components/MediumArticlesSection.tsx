@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "motion/react";
-import { BookOpenText, ExternalLink, CalendarDays, RefreshCw } from "lucide-react";
+import { BookOpenText, ExternalLink, CalendarDays, RefreshCw, Search } from "lucide-react";
 import { useLanguage, type Language } from "../contexts/LanguageContext";
 import { ContentDialog } from "./ContentDialog";
 
@@ -44,6 +44,8 @@ const copy: Record<Language, {
   openInTab: string;
   dialogPrompt: string;
   readMoreCta: string;
+  searchPlaceholder: string;
+  searchEmpty: string;
 }> = {
   id: {
     tag: "Karya Tulis",
@@ -58,6 +60,8 @@ const copy: Record<Language, {
     openInTab: "Buka Artikel",
     dialogPrompt: "Kalau suka gaya pembahasannya, lanjutkan diskusi atau bagikan artikel ini ke teman developer Anda.",
     readMoreCta: "Baca Selengkapnya",
+    searchPlaceholder: "Cari artikel...",
+    searchEmpty: "Artikel tidak ditemukan.",
   },
   en: {
     tag: "Writing",
@@ -72,6 +76,8 @@ const copy: Record<Language, {
     openInTab: "Open Article",
     dialogPrompt: "If this article is useful, continue the discussion or share it with your developer friends.",
     readMoreCta: "Read Full Article",
+    searchPlaceholder: "Search articles...",
+    searchEmpty: "No articles found.",
   },
   zh: {
     tag: "写作",
@@ -86,6 +92,8 @@ const copy: Record<Language, {
     openInTab: "打开文章",
     dialogPrompt: "如果这篇文章对你有帮助，欢迎继续讨论或分享给开发者朋友。",
     readMoreCta: "阅读全文",
+    searchPlaceholder: "搜索文章...",
+    searchEmpty: "未找到文章。",
   },
   ja: {
     tag: "執筆",
@@ -100,6 +108,8 @@ const copy: Record<Language, {
     openInTab: "記事を開く",
     dialogPrompt: "役に立ったら、ぜひ感想を共有したり開発者仲間にシェアしてください。",
     readMoreCta: "続きを読む",
+    searchPlaceholder: "記事を検索...",
+    searchEmpty: "記事が見つかりません。",
   },
 };
 
@@ -141,6 +151,7 @@ export function MediumArticlesSection() {
   const [loading, setLoading] = useState(true);
   const [failed, setFailed] = useState(false);
   const [previewArticle, setPreviewArticle] = useState<Article | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     let mounted = true;
@@ -185,6 +196,17 @@ export function MediumArticlesSection() {
 
   const locale = useMemo(() => localeByLanguage(language), [language]);
 
+  const filteredArticles = useMemo(() => {
+    if (!searchQuery) return articles;
+    const lowerQ = searchQuery.toLowerCase();
+    return articles.filter(
+      (a) =>
+        a.title.toLowerCase().includes(lowerQ) ||
+        a.excerpt.toLowerCase().includes(lowerQ) ||
+        a.categories.some((c) => c.toLowerCase().includes(lowerQ))
+    );
+  }, [articles, searchQuery]);
+
   return (
     <section id="writing" className="py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
@@ -213,6 +235,23 @@ export function MediumArticlesSection() {
           <p className="text-slate-500 dark:text-slate-500 mt-4 max-w-2xl">{text.description}</p>
         </motion.div>
 
+        {!loading && !failed && articles.length > 0 && (
+          <div className="mb-6">
+            <div className="relative max-w-md">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <Search className="h-4 w-4 text-slate-400" />
+              </div>
+              <input
+                type="text"
+                className="block w-full pl-10 pr-3 py-2 border border-slate-200 dark:border-white/[0.12] rounded-xl leading-5 bg-white/50 dark:bg-[#0d1424]/50 text-slate-900 dark:text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 sm:text-sm transition-colors"
+                placeholder={text.searchPlaceholder}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+          </div>
+        )}
+
         {loading && (
           <div className="rounded-2xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-white/[0.02] p-6 text-sm text-slate-600 dark:text-slate-400 inline-flex items-center gap-2">
             <RefreshCw className="w-4 h-4 animate-spin" />
@@ -230,9 +269,13 @@ export function MediumArticlesSection() {
           </div>
         )}
 
-        {!loading && articles.length > 0 && (
+        {!loading && !failed && articles.length > 0 && filteredArticles.length === 0 && (
+          <p className="text-sm text-slate-500 dark:text-slate-400">{text.searchEmpty}</p>
+        )}
+
+        {!loading && filteredArticles.length > 0 && (
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
-            {articles.map((article, index) => (
+            {filteredArticles.map((article, index) => (
               <motion.button
                 type="button"
                 key={article.link}

@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ExternalLink, MessageCircle, RefreshCw, ShieldCheck, Sparkles } from "lucide-react";
+import { ExternalLink, MessageCircle, RefreshCw, ShieldCheck, Sparkles, Search } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { PointerEvent as ReactPointerEvent, WheelEvent as ReactWheelEvent } from "react";
 import { useLanguage, type Language } from "../contexts/LanguageContext";
@@ -199,6 +199,7 @@ const copy: Record<Language, {
   detailEmpty: string;
   openInTab: string;
   dialogPrompt: string;
+  searchPlaceholder: string;
 }> = {
   id: {
     funnel: {
@@ -212,7 +213,7 @@ const copy: Record<Language, {
     liveFlow: "Alur Aktivitas Langsung",
     title: "Timeline Aktivitas Hari Ini",
     description:
-      "Saya membuka perjalanan saya sebagai developer IT ke publik agar orang mengenal saya lewat proses kerja, progres nyata, dan dampak yang bisa diukur.",
+      "Saya membuka perjalanan saya sebagai developer IT ke publik agar orang mengenal saya lewat proses kerja, progres nyata, dan dampak yang bisa diukur. Momen-momen kecil inilah yang merangkai segalanya menjadi lebih bernilai.",
     sync: "Sinkronisasi",
     viewProject: "Lihat Project",
     joinDiscussion: "Ikut Diskusi",
@@ -231,6 +232,7 @@ const copy: Record<Language, {
     detailEmpty: "Belum ada detail konten.",
     openInTab: "Buka Tab",
     dialogPrompt: "Punya ide, masukan, atau sudut pandang berbeda? Ayo lanjutkan diskusi di GitHub.",
+    searchPlaceholder: "Cari aktivitas atau diskusi...",
   },
   en: {
     funnel: {
@@ -244,7 +246,7 @@ const copy: Record<Language, {
     liveFlow: "Live Activity Flow",
     title: "Today's Activity Timeline",
     description:
-      "I open my journey as an IT developer to the public, so people can know me through real work, real progress, and real impact.",
+      "I open my journey as an IT developer to the public, so people can know me through real work, real progress, and real impact. Small moments are what weave everything together into something more valuable.",
     sync: "Sync",
     viewProject: "View Project",
     joinDiscussion: "Join Discussion",
@@ -263,6 +265,7 @@ const copy: Record<Language, {
     detailEmpty: "Detail content is not available.",
     openInTab: "Open Tab",
     dialogPrompt: "Have ideas, feedback, or another perspective? Join the discussion on GitHub.",
+    searchPlaceholder: "Search activities or discussions...",
   },
   zh: {
     funnel: {
@@ -275,7 +278,7 @@ const copy: Record<Language, {
     },
     liveFlow: "实时活动流",
     title: "今日活动时间线",
-    description: "我公开自己的开发过程，让大家通过真实工作、真实进度与真实影响了解我。",
+    description: "我公开自己的开发过程，让大家通过真实工作、真实进度与真实影响了解我。正是这些小小的瞬间，将一切串联起来，使其变得更有价值。",
     sync: "同步",
     viewProject: "查看项目",
     joinDiscussion: "参与讨论",
@@ -294,6 +297,7 @@ const copy: Record<Language, {
     detailEmpty: "暂无可显示的详情内容。",
     openInTab: "新标签打开",
     dialogPrompt: "如果你有想法、建议或不同视角，欢迎到 GitHub 继续讨论。",
+    searchPlaceholder: "搜索活动或讨论...",
   },
   ja: {
     funnel: {
@@ -306,7 +310,7 @@ const copy: Record<Language, {
     },
     liveFlow: "ライブアクティビティフロー",
     title: "本日のアクティビティタイムライン",
-    description: "実際の仕事、進捗、成果を通じて知ってもらえるように、開発の流れを公開しています。",
+    description: "実際の仕事、進捗、成果を通じて知ってもらえるように、開発の流れを公開しています。こうした小さな瞬間こそが、すべてを紡ぎ合わせ、より価値のあるものにするのです。",
     sync: "同期",
     viewProject: "プロジェクトを見る",
     joinDiscussion: "ディスカッションに参加",
@@ -325,6 +329,7 @@ const copy: Record<Language, {
     detailEmpty: "表示できる詳細コンテンツがありません。",
     openInTab: "新しいタブで開く",
     dialogPrompt: "アイデアやフィードバックがあれば、GitHub でぜひ議論に参加してください。",
+    searchPlaceholder: "アクティビティやディスカッションを検索...",
   },
 };
 
@@ -586,6 +591,7 @@ export function ActivityTransparencySection() {
   const [data, setData] = useState<ActivityPayload>(FALLBACK_DATA);
   const [loading, setLoading] = useState(true);
   const [activeStage, setActiveStage] = useState<StatusKey>("todo");
+  const [searchQuery, setSearchQuery] = useState("");
   const [detailItem, setDetailItem] = useState<{ title: string; description: string; content: string; url: string } | null>(null);
   const audienceListRef = useRef<HTMLDivElement | null>(null);
   const audienceAutoPausedRef = useRef(false);
@@ -674,20 +680,37 @@ export function ActivityTransparencySection() {
     setActiveStage(firstWithData);
   }, [timelineStages]);
 
-  const activeItems = stageEntries.get(activeStage) || [];
+  const activeItems = (stageEntries.get(activeStage) || []).filter((item) => {
+    if (!searchQuery) return true;
+    const lowerQ = searchQuery.toLowerCase();
+    return (
+      item.title.toLowerCase().includes(lowerQ) ||
+      (item.body && item.body.toLowerCase().includes(lowerQ)) ||
+      item.labels.some((l) => l.toLowerCase().includes(lowerQ))
+    );
+  });
   const activeLabel = timelineStages.find((stage) => stage.key === activeStage)?.label || text.step;
-  const openDiscussions = data.discussions.filter((discussion) => discussion.state === "OPEN");
+  const filteredDiscussions = data.discussions.filter((discussion) => {
+    if (discussion.state !== "OPEN") return false;
+    if (!searchQuery) return true;
+    const lowerQ = searchQuery.toLowerCase();
+    return (
+      discussion.title.toLowerCase().includes(lowerQ) ||
+      (discussion.body && discussion.body.toLowerCase().includes(lowerQ)) ||
+      discussion.labels.some((l) => l.toLowerCase().includes(lowerQ))
+    );
+  });
   const audienceRows = useMemo(() => {
-    if (openDiscussions.length === 0) return [] as { discussion: ActivityEntry; key: string }[];
+    if (filteredDiscussions.length === 0) return [] as { discussion: ActivityEntry; key: string }[];
     const minRows = 10;
-    const loops = Math.max(1, Math.ceil(minRows / openDiscussions.length));
+    const loops = Math.max(1, Math.ceil(minRows / filteredDiscussions.length));
     return Array.from({ length: loops }).flatMap((_, loopIndex) =>
-      openDiscussions.map((discussion, index) => ({
+      filteredDiscussions.map((discussion, index) => ({
         discussion,
         key: `${discussion.id}-loop-${loopIndex}-${index}`,
       })),
     );
-  }, [openDiscussions]);
+  }, [filteredDiscussions]);
 
   useEffect(() => {
     const container = audienceListRef.current;
@@ -929,6 +952,21 @@ export function ActivityTransparencySection() {
             })}
           </div>
 
+          <div className="mb-6">
+            <div className="relative max-w-md">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <Search className="h-4 w-4 text-slate-400" />
+              </div>
+              <input
+                type="text"
+                className="block w-full pl-10 pr-3 py-2 border border-slate-200 dark:border-white/[0.12] rounded-xl leading-5 bg-white/50 dark:bg-[#0d1424]/50 text-slate-900 dark:text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-teal-500/50 sm:text-sm transition-colors"
+                placeholder={text.searchPlaceholder}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+          </div>
+
           <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-4">
             <motion.div
               key={activeStage}
@@ -1020,7 +1058,7 @@ export function ActivityTransparencySection() {
                   onWheel={onAudienceWheel}
                   className="flex-1 space-y-2.5 max-h-[420px] overflow-y-auto pr-1 no-scrollbar inertial-y touch-pan-y"
                 >
-                  {openDiscussions.length === 0 && (
+                  {filteredDiscussions.length === 0 && (
                     <p className="text-sm text-slate-500 dark:text-slate-400">{text.noDiscussions}</p>
                   )}
                   {audienceRows.map(({ discussion, key }) => (

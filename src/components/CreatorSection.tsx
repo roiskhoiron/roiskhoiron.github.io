@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Youtube, Sparkles, Users, PlayCircle, TrendingUp } from "lucide-react";
+import { Youtube, Sparkles, Users, PlayCircle, TrendingUp, Search } from "lucide-react";
 import { Button } from "./ui/button";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { PointerEvent as ReactPointerEvent } from "react";
@@ -94,6 +94,8 @@ const copy: Record<Language, {
   watchNow: string;
   loadingVideo: string;
   openInTab: string;
+  searchPlaceholder: string;
+  searchEmpty: string;
 }> = {
   id: {
     sectionTitle: "CodingSkuy!",
@@ -109,6 +111,8 @@ const copy: Record<Language, {
     watchNow: "Tonton Sekarang",
     loadingVideo: "Memuat video...",
     openInTab: "Buka Tab",
+    searchPlaceholder: "Cari video...",
+    searchEmpty: "Video tidak ditemukan.",
   },
   en: {
     sectionTitle: "CodingSkuy!",
@@ -124,6 +128,8 @@ const copy: Record<Language, {
     watchNow: "Watch Now",
     loadingVideo: "Loading video...",
     openInTab: "Open Tab",
+    searchPlaceholder: "Search videos...",
+    searchEmpty: "No videos found.",
   },
   zh: {
     sectionTitle: "CodingSkuy!",
@@ -139,6 +145,8 @@ const copy: Record<Language, {
     watchNow: "立即观看",
     loadingVideo: "正在加载视频...",
     openInTab: "新标签打开",
+    searchPlaceholder: "搜索视频...",
+    searchEmpty: "未找到视频。",
   },
   ja: {
     sectionTitle: "CodingSkuy!",
@@ -154,6 +162,8 @@ const copy: Record<Language, {
     watchNow: "今すぐ見る",
     loadingVideo: "動画を読み込み中...",
     openInTab: "新しいタブで開く",
+    searchPlaceholder: "動画を検索...",
+    searchEmpty: "動画が見つかりません。",
   },
 };
 
@@ -307,6 +317,7 @@ export function CreatorSection() {
     videos: "100+",
     views: "50K+",
   });
+  const [searchQuery, setSearchQuery] = useState("");
   const [activeVideo, setActiveVideo] = useState<{ title: string; embedUrl: string; watchUrl: string } | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
   const dragStateRef = useRef<{ isDown: boolean; startX: number; scrollLeft: number; moved: boolean }>({
@@ -357,14 +368,21 @@ export function CreatorSection() {
     };
   }, [language]);
 
-  const featuredVideo = videos[0] || FALLBACK_VIDEOS[0];
+  const filteredVideos = useMemo(() => {
+    if (!searchQuery) return videos;
+    const lowerQ = searchQuery.toLowerCase();
+    return videos.filter((v) => v.title.toLowerCase().includes(lowerQ));
+  }, [videos, searchQuery]);
+
+  const featuredVideo = filteredVideos[0] || FALLBACK_VIDEOS[0];
 
   const showcaseVideos = useMemo(() => {
-    const fromLatest = videos.slice(1);
+    const fromLatest = filteredVideos.slice(1);
+    if (searchQuery) return fromLatest;
     if (fromLatest.length >= 4) return fromLatest;
     const needed = Math.max(4 - fromLatest.length, 0);
     return [...fromLatest, ...FALLBACK_VIDEOS.slice(0, needed)];
-  }, [videos]);
+  }, [filteredVideos, searchQuery]);
 
   const onTrackPointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
     const el = trackRef.current;
@@ -443,13 +461,35 @@ export function CreatorSection() {
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-16"
-        >
+        {videos.length > 0 && (
+          <div className="mb-12 flex justify-center">
+            <div className="relative w-full max-w-lg">
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <Search className="h-5 w-5 text-white/50" />
+              </div>
+              <input
+                type="text"
+                className="block w-full pl-12 pr-4 py-3 border border-white/20 rounded-full bg-white/10 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-colors backdrop-blur-sm"
+                placeholder={text.searchPlaceholder}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+          </div>
+        )}
+
+        {filteredVideos.length === 0 && searchQuery && (
+          <p className="text-center text-slate-300 mb-16">{text.searchEmpty}</p>
+        )}
+
+        {filteredVideos.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-16"
+          >
           <button
             type="button"
             className="w-full relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 group cursor-pointer"
@@ -496,8 +536,10 @@ export function CreatorSection() {
             </motion.div>
           </button>
         </motion.div>
+        )}
 
-        <div className="mb-16">
+        {showcaseVideos.length > 0 && (
+          <div className="mb-16">
           <div
             ref={trackRef}
             className="overflow-x-auto pb-3 creator-manual-scroll snap-x snap-mandatory cursor-grab select-none"
@@ -548,6 +590,7 @@ export function CreatorSection() {
             </div>
           </div>
         </div>
+        )}
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
           <motion.div
