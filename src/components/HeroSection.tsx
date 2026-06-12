@@ -25,7 +25,7 @@ const copy: Record<Language, {
   },
   en: {
     badge: "Software Engineer | Mobile, Backend & AI Integration",
-    titleLines: ["Engineering", "Intelligent", "Software", "Systems"],
+    titleLines: ["Building", "Intelligent", "Software", "Systems"],
     subtitle:
       "Software Engineer with 5+ years building mobile applications, backend APIs, and AI-powered products. Bridging engineering excellence with real-world impact.",
     ctaProjects: "View Projects",
