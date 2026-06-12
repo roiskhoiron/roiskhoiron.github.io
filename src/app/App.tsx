@@ -20,7 +20,7 @@ import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     let link = document.querySelector<HTMLLinkElement>('link[rel="icon"]');
