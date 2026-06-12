@@ -26,7 +26,10 @@ function Root() {
   const [currentPath, setCurrentPath] = useState(getCurrentPath);
 
   useEffect(() => {
-    const syncRoute = () => setCurrentPath(getCurrentPath());
+    const syncRoute = () => {
+      setCurrentPath(getCurrentPath());
+      window.scrollTo(0, 0);
+    };
     window.addEventListener("hashchange", syncRoute);
     window.addEventListener("popstate", syncRoute);
     return () => {
