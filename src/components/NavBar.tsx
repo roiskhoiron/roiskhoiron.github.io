@@ -4,6 +4,7 @@ import { ChevronDown, Menu, X, ExternalLink } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useLanguage, type Language } from "../contexts/LanguageContext";
+import logo from "../assets/ic_logo.jpeg";
 
 const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }>> = {
   id: [
@@ -176,8 +177,8 @@ export function NavBar() {
             className="flex items-center gap-2.5 group"
             whileHover={{ scale: 1.02 }}
           >
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-violet-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/20">
-              <span className="text-white text-xs tracking-tight">RK</span>
+            <div className="w-8 h-8 rounded-lg overflow-hidden shadow-lg shadow-blue-500/20">
+              <img src={logo} alt="Rois Khoiron" className="w-full h-full object-cover" />
             </div>
             <span className="text-slate-800 dark:text-white hidden sm:block text-sm tracking-tight">
               Rois Khoiron

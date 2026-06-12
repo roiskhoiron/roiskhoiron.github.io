@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Navbar } from "./components/Navbar";
 import { ScrollSmoother } from "../components/ScrollSmoother";
+import logo from "../assets/ic_logo_codingskuy.png";
 import { HeroSection } from "./components/HeroSection";
 import { ShowcaseSection } from "./components/ShowcaseSection";
 import { AboutSection } from "./components/AboutSection";
@@ -20,6 +21,16 @@ import { Footer } from "./components/Footer";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(true);
+
+  useEffect(() => {
+    let link = document.querySelector<HTMLLinkElement>('link[rel="icon"]');
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "icon";
+      document.head.appendChild(link);
+    }
+    link.href = logo;
+  }, []);
 
   useEffect(() => {
     if (darkMode) {

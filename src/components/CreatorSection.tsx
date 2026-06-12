@@ -630,24 +630,156 @@ export function CreatorSection() {
           </motion.div>
         </div>
 
+        {/* === SPECTACULAR CTA CARD === */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="text-center"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative mt-24"
         >
-          <p className="text-white mb-6 text-lg">
-            {text.joinText}
-          </p>
-          <Button
-            size="lg"
-            className="bg-red-600 hover:bg-red-700 text-white group"
-            onClick={() => window.open(channelUrl, "_blank")}
-          >
-            <Youtube className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-            {text.subscribe}
-          </Button>
+          {/* Soft fluid glow backdrop — no hard edges */}
+          <motion.div
+            animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.8, 0.5] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -inset-16 rounded-full bg-gradient-to-r from-purple-600/20 via-cyan-500/20 to-pink-500/20 blur-3xl"
+          />
+          <motion.div
+            animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.6, 0.3] }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute -inset-20 rounded-full bg-gradient-to-l from-indigo-500/15 via-fuchsia-500/15 to-cyan-400/15 blur-[80px]"
+          />
+          <div className="relative rounded-[2rem] bg-gradient-to-br from-slate-900/90 via-[#0a1628]/90 to-slate-900/90 backdrop-blur-sm border border-white/[0.06] p-10 sm:p-16">
+            {/* Floating particles */}
+            {[...Array(6)].map((_, i) => (
+              <motion.div
+                key={i}
+                animate={{
+                  y: [0, -30 - i * 10, 0],
+                  x: [0, (i % 2 === 0 ? 1 : -1) * 15, 0],
+                  opacity: [0.3, 1, 0.3],
+                }}
+                transition={{ duration: 3 + i * 0.5, repeat: Infinity, delay: i * 0.3 }}
+                className="absolute w-2 h-2 rounded-full"
+                style={{
+                  background: ["#6366f1", "#06b6d4", "#a855f7", "#ec4899", "#f59e0b", "#10b981"][i],
+                  top: `${15 + i * 12}%`,
+                  left: `${10 + (i % 2 === 0 ? 1 : -1) * 20 + i * 5}%`,
+                  boxShadow: `0 0 12px 4px ${["#6366f1", "#06b6d4", "#a855f7", "#ec4899", "#f59e0b", "#10b981"][i]}66`,
+                }}
+              />
+            ))}
+
+            {/* Sparkle decorations */}
+            <motion.div
+              animate={{ scale: [1, 1.4, 1], rotate: [0, 180, 360], opacity: [0.4, 1, 0.4] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+              className="absolute top-6 right-12 text-3xl"
+            >
+              ✦
+            </motion.div>
+            <motion.div
+              animate={{ scale: [1, 1.3, 1], rotate: [0, -180, -360], opacity: [0.4, 1, 0.4] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "linear", delay: 1 }}
+              className="absolute bottom-8 left-10 text-2xl"
+            >
+              ✦
+            </motion.div>
+
+            <div className="relative z-10 text-center space-y-8">
+              {/* Shimmer headline */}
+              <motion.h3
+                initial={{ backgroundPosition: "200% center" }}
+                animate={{ backgroundPosition: "-200% center" }}
+                transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                className="text-3xl sm:text-5xl font-extrabold bg-clip-text text-transparent bg-[linear-gradient(90deg,#6366f1,#06b6d4,#a855f7,#ec4899,#6366f1)] bg-[length:300%_auto]"
+              >
+                🔥 Want the Full Experience?
+              </motion.h3>
+
+              <p className="text-slate-300 text-lg sm:text-xl max-w-xl mx-auto leading-relaxed">
+                This is just a taste — the real <span className="text-cyan-300 font-semibold">CodingSkuy</span> platform has interactive tutorials, live code editors, progress tracking, and so much more.
+              </p>
+
+              {/* Divider */}
+              <div className="flex items-center justify-center gap-3">
+                <div className="h-px w-16 bg-gradient-to-r from-transparent to-cyan-500/50" />
+                <span className="text-cyan-400 text-sm font-semibold tracking-widest uppercase">Launch Platform</span>
+                <div className="h-px w-16 bg-gradient-to-l from-transparent to-purple-500/50" />
+              </div>
+
+              {/* Big CTA button group */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Button
+                  size="lg"
+                  className="bg-red-600 hover:bg-red-700 text-white group"
+                  onClick={() => window.open(channelUrl, "_blank")}
+                >
+                  <Youtube className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                  {text.subscribe}
+                </Button>
+
+                <motion.a
+                  href="/#/codingskuy"
+                  whileHover={{ scale: 1.06 }}
+                  whileTap={{ scale: 0.96 }}
+                  className="relative inline-flex items-center gap-3 px-8 py-4 rounded-xl text-lg font-bold text-white overflow-hidden group cursor-pointer"
+                >
+                  {/* Pulsing background layers */}
+                  <motion.span
+                    animate={{ scale: [1, 1.15, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-500 to-cyan-500"
+                  />
+                  <motion.span
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
+                    className="absolute inset-0 rounded-xl bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 opacity-60 blur-md"
+                  />
+                  {/* Glow ring */}
+                  <motion.span
+                    animate={{ opacity: [0, 1, 0], scale: [0.95, 1.05, 0.95] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                    className="absolute inset-0 rounded-xl ring-2 ring-purple-400/60"
+                  />
+                  {/* Content */}
+                  <span className="relative z-10 flex items-center gap-3">
+                    <motion.span
+                      animate={{ rotate: [0, 20, -20, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                      className="inline-block text-2xl"
+                    >
+                      🚀
+                    </motion.span>
+                    <span className="relative">
+                      Explore CodingSkuy
+                      <motion.span
+                        animate={{ width: ["0%", "100%"] }}
+                        transition={{ duration: 0.8, repeat: Infinity, repeatDelay: 1.5 }}
+                        className="absolute -bottom-1 left-0 h-0.5 bg-white rounded-full"
+                      />
+                    </span>
+                    <motion.span
+                      animate={{ x: [0, 6, 0] }}
+                      transition={{ duration: 1, repeat: Infinity }}
+                    >
+                      →
+                    </motion.span>
+                  </span>
+                </motion.a>
+              </div>
+
+              {/* Social proof microcopy */}
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="text-sm text-slate-500"
+              >
+                ⚡ Join thousands of learners — no sign-up required
+              </motion.p>
+            </div>
+          </div>
         </motion.div>
       </div>
 

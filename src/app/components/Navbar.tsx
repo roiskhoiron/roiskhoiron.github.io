@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Moon, Sun, Code2 } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import logo from "../../assets/ic_logo_codingskuy.png";
 
 interface NavbarProps {
   darkMode: boolean;
@@ -52,8 +53,8 @@ export function Navbar({ darkMode, toggleDark }: NavbarProps) {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#top" onClick={(e) => { e.preventDefault(); scrollToSection("#top"); }} className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0055ff] to-[#00d4ff] flex items-center justify-center shadow-lg shadow-[#0055ff]/30 group-hover:shadow-[#0055ff]/50 transition-shadow">
-              <Code2 size={18} className="text-white" />
+            <div className="w-9 h-9 rounded-xl overflow-hidden shadow-lg shadow-[#0055ff]/30 group-hover:shadow-[#0055ff]/50 transition-shadow">
+              <img src={logo} alt="CodingSkuy" className="w-full h-full object-cover" />
             </div>
               <div className="flex flex-col -gap-0.5">
                 <span className="text-sm font-bold leading-tight" style={{ color: "#3d8bff" }}>
