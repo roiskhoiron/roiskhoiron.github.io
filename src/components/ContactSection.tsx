@@ -47,7 +47,7 @@ const copy: Record<Language, {
     titleTop: "Siap Membangun",
     titleBottom: "Sesuatu yang Cerdas?",
     description:
-      "Saya terbuka untuk kolaborasi produk mobile AI-native, konsultasi arsitektur mobile, atau membangun eksperimen AI bersama.",
+      "Saya terbuka untuk kolaborasi produk berbasis AI, konsultasi arsitektur software, atau membangun eksperimen AI bersama.",
     cta: "Mulai Percakapan",
     response: "Biasanya merespons dalam 24 jam · Jakarta, Indonesia (WIB / UTC+7)",
     labels: {
@@ -62,7 +62,7 @@ const copy: Record<Language, {
     titleTop: "Ready to Build",
     titleBottom: "Something Intelligent?",
     description:
-      "I'm open to collaborating on AI-native mobile products, advising on mobile architecture, or building experimental AI tools together.",
+      "I'm open to collaborating on AI-powered products, advising on software architecture, or building experimental AI tools together.",
     cta: "Start a Conversation",
     response: "Typically responds within 24 hours · Jakarta, Indonesia (WIB / UTC+7)",
     labels: {
@@ -77,7 +77,7 @@ const copy: Record<Language, {
     titleTop: "准备一起打造",
     titleBottom: "更智能的产品？",
     description:
-      "我愿意合作 AI-native 移动产品、提供移动架构建议，或一起构建 AI 实验型工具。",
+      "我愿意合作 AI 产品、提供软件架构建议，或一起构建 AI 实验型工具。",
     cta: "开始交流",
     response: "通常 24 小时内回复 · 雅加达，印度尼西亚 (WIB / UTC+7)",
     labels: {
@@ -92,7 +92,7 @@ const copy: Record<Language, {
     titleTop: "一緒に",
     titleBottom: "インテリジェントなものを作りませんか？",
     description:
-      "AI-native なモバイルプロダクトの共同開発、モバイルアーキテクチャの相談、実験的な AI ツール開発に対応しています。",
+      "AI プロダクトの共同開発、ソフトウェアアーキテクチャの相談、実験的な AI ツール開発に対応しています。",
     cta: "会話を始める",
     response: "通常24時間以内に返信 · ジャカルタ、インドネシア (WIB / UTC+7)",
     labels: {

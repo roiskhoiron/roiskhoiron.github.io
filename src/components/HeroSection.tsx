@@ -11,54 +11,54 @@ const copy: Record<Language, {
   stats: { value: string; label: string }[];
 }> = {
   id: {
-    badge: "Mobile Product Engineer → AI-Driven Builder",
-    titleLines: ["Membangun", "Pengalaman", "Mobile", "Cerdas"],
+    badge: "Software Engineer | Mobile, Backend & Integrasi AI",
+    titleLines: ["Membangun", "Perangkat", "Lunak", "Cerdas"],
     subtitle:
-      "Ahli di Mobile Engineering, integrasi AI, dan sistem produk. Menjembatani teknologi AI mutakhir dengan aplikasi mobile dunia nyata.",
+      "Software Engineer dengan 5+ tahun pengalaman membangun aplikasi mobile, backend API, dan produk berbasis AI. Menjembatani rekayasa sistem dengan dampak nyata.",
     ctaProjects: "Lihat Proyek",
     ctaCollaborate: "Mari Kolaborasi",
     stats: [
-      { value: "5+", label: "Tahun Mobile Engineering" },
-      { value: "50+", label: "Aplikasi Dirilis" },
+      { value: "5+", label: "Tahun Software Engineering" },
+      { value: "50+", label: "Produk Dirilis" },
       { value: "AI-Native", label: "Fokus Saat Ini" },
     ],
   },
   en: {
-    badge: "Mobile Product Engineer → AI-Driven Builder",
-    titleLines: ["Building", "Intelligent", "Mobile", "Experiences"],
+    badge: "Software Engineer | Mobile, Backend & AI Integration",
+    titleLines: ["Engineering", "Intelligent", "Software", "Systems"],
     subtitle:
-      "Expert in Mobile Engineering, AI Integration, and Product Systems. Bridging cutting-edge AI with real-world mobile applications.",
+      "Software Engineer with 5+ years building mobile applications, backend APIs, and AI-powered products. Bridging engineering excellence with real-world impact.",
     ctaProjects: "View Projects",
     ctaCollaborate: "Let's Collaborate",
     stats: [
-      { value: "5+", label: "Years Mobile Engineering" },
-      { value: "50+", label: "Apps Shipped" },
+      { value: "5+", label: "Years Software Engineering" },
+      { value: "50+", label: "Products Shipped" },
       { value: "AI-Native", label: "Current Focus" },
     ],
   },
   zh: {
-    badge: "移动产品工程师 → AI 驱动构建者",
-    titleLines: ["打造", "智能化", "移动端", "体验"],
+    badge: "软件工程师 | 移动、后端与 AI 集成",
+    titleLines: ["构建", "智能", "软件", "系统"],
     subtitle:
-      "专注移动工程、AI 集成与产品系统，将前沿 AI 与真实移动应用场景连接起来。",
+      "具备 5 年以上软件工程经验，涵盖移动应用、后端 API 与 AI 产品。将工程卓越与真实影响力结合。",
     ctaProjects: "查看项目",
     ctaCollaborate: "一起合作",
     stats: [
-      { value: "5+", label: "年移动工程经验" },
-      { value: "50+", label: "已发布应用" },
+      { value: "5+", label: "年软件工程经验" },
+      { value: "50+", label: "已发布产品" },
       { value: "AI-Native", label: "当前重点" },
     ],
   },
   ja: {
-    badge: "モバイルプロダクトエンジニア → AI 駆動ビルダー",
-    titleLines: ["つくる", "インテリジェントな", "モバイル", "体験"],
+    badge: "ソフトウェアエンジニア | モバイル、バックエンド & AI 統合",
+    titleLines: ["つくる", "インテリジェントな", "システム", "体験"],
     subtitle:
-      "モバイル開発、AI 統合、プロダクトシステムを軸に、最先端 AI を実用的なモバイル体験へ橋渡しします。",
+      "モバイルアプリ、バックエンドAPI、AIプロダクトに5年以上従事。エンジニアリングの卓越性を現実のインパクトへとつなぐ。",
     ctaProjects: "プロジェクトを見る",
     ctaCollaborate: "コラボする",
     stats: [
-      { value: "5+", label: "モバイル開発経験" },
-      { value: "50+", label: "リリースしたアプリ" },
+      { value: "5+", label: "年のソフトウェア開発経験" },
+      { value: "50+", label: "リリースしたプロダクト" },
       { value: "AI-Native", label: "現在の注力領域" },
     ],
   },
@@ -66,10 +66,10 @@ const copy: Record<Language, {
 
 function NeuralOrb() {
   const floatingLabels = [
-    { label: "On-Device ML", x: "8%", y: "20%", delay: 0 },
+    { label: "System Design", x: "8%", y: "20%", delay: 0 },
     { label: "LLM APIs", x: "68%", y: "8%", delay: 0.6 },
-    { label: "Flutter AI", x: "75%", y: "72%", delay: 1.2 },
-    { label: "Edge Inference", x: "2%", y: "68%", delay: 1.8 },
+    { label: "Backend APIs", x: "75%", y: "72%", delay: 1.2 },
+    { label: "AI Integration", x: "2%", y: "68%", delay: 1.8 },
     { label: "TFLite", x: "40%", y: "88%", delay: 0.9 },
   ];
 

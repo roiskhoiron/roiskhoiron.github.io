@@ -27,7 +27,7 @@ const copy: Record<Language, {
     sectionTag: "Proyek AI-Native",
     titleTop: "Saat Mobile Bertemu",
     titleBottom: "Kecerdasan Terapan",
-    description: "Eksplorasi AI on-device, integrasi LLM, dan UX mobile berpusat pada manusia.",
+    description: "Eksplorasi AI on-device, integrasi LLM, dan UX mobile berpusat pada manusia dalam konteks software engineering.",
     problem: "Masalah",
     approach: "Pendekatan",
     capability: "Kemampuan AI",
