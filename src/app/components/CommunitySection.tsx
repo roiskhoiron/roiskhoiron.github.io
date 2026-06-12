@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Users, ArrowRight } from "lucide-react";
-import { CodingSkuyMascot } from "./CodingSkuyMascot";
+import mascotSvg from "@/assets/vectorized-mascot.svg";
+
 
 interface CommunitySectionProps {
   darkMode: boolean;
@@ -123,7 +124,12 @@ export function CommunitySection({ darkMode }: CommunitySectionProps) {
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               >
-                <CodingSkuyMascot variant="celebrate" size={200} />
+                {/* <CodingSkuyMascot variant="celebrate" size={200} /> */}
+                <img
+                                  src={mascotSvg} 
+                                  alt="CodingSkuy Mascot"
+                                  className="w-40 h-40 sm:w-80 sm:h-80 object-contain"
+                                />
               </motion.div>
             </div>
           </motion.div>

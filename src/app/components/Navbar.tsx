@@ -10,12 +10,11 @@ interface NavbarProps {
 
 const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Content", href: "#content" },
-  { label: "CodingSkuy", href: "#media" },
   { label: "Learning", href: "#learning" },
-  { label: "AI Lab", href: "#ailab" },
-  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#portfolio" },
+  { label: "Media Hub", href: "#media" },
+  { label: "AI Labs", href: "#ailab" },
+  { label: "Community", href: "#community" },
 ];
 
 export function Navbar({ darkMode, toggleDark }: NavbarProps) {

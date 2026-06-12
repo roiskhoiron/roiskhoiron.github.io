@@ -55,20 +55,20 @@ export default function App() {
 
       <main>
         <HeroSection darkMode={darkMode} />
-        <ShowcaseSection darkMode={darkMode} />
         <AboutSection darkMode={darkMode} />
-        <MetricsSection darkMode={darkMode} />
-        <ExpertiseSection darkMode={darkMode} />
-        <PortfolioSection darkMode={darkMode} />
-        <MediaHubSection darkMode={darkMode} />
         <LearningPathsSection darkMode={darkMode} />
+        <ShowcaseSection darkMode={darkMode} />
+        <MetricsSection darkMode={darkMode} />
+        <PortfolioSection darkMode={darkMode} />
+        {/* <ExperienceSection darkMode={darkMode} /> */}
+        {/* <ExpertiseSection darkMode={darkMode} /> */} 
+        <MediaHubSection darkMode={darkMode} />
         <ContentLibrarySection darkMode={darkMode} />
         <AILabSection darkMode={darkMode} />
-        <OpenSourceSection darkMode={darkMode} />
-        <ExperienceSection darkMode={darkMode} />
         <CommunitySection darkMode={darkMode} />
+        <OpenSourceSection darkMode={darkMode} />
         <NewsletterSection darkMode={darkMode} />
-        <ContactSection darkMode={darkMode} />
+        {/* <ContactSection darkMode={darkMode} /> */}
       </main>
 
       <Footer darkMode={darkMode} />
