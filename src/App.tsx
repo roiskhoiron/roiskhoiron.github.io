@@ -36,10 +36,10 @@ export default function App() {
           <HeroSection />
           <AboutSection />
           <ExperienceSection />
-          <PortfolioSection />
-          <BrandingSection />
-          <SkillsSection />
           <ActivityTransparencySection />
+          <SkillsSection />
+          <BrandingSection />
+          <PortfolioSection />
           <MediumArticlesSection />
           <CreatorSection />
           <ContactSection />

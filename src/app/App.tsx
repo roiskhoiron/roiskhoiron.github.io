@@ -53,10 +53,10 @@ export default function App() {
       <ScrollSmoother />
       <Navbar darkMode={darkMode} toggleDark={toggleDark} />
 
-<main>
-          <HeroSection darkMode={darkMode} />
-          <ShowcaseSection darkMode={darkMode} />
-          <AboutSection darkMode={darkMode} />
+      <main>
+        <HeroSection darkMode={darkMode} />
+        <ShowcaseSection darkMode={darkMode} />
+        <AboutSection darkMode={darkMode} />
         <MetricsSection darkMode={darkMode} />
         <ExpertiseSection darkMode={darkMode} />
         <PortfolioSection darkMode={darkMode} />

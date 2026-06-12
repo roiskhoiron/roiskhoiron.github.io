@@ -10,9 +10,9 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
   id: [
     { href: "#about", label: "Tentang" },
     { href: "#timeline", label: "Perjalanan" },
-    { href: "#projects", label: "Proyek" },
-    { href: "#philosophy", label: "Filosofi" },
     { href: "#activity", label: "Aktivitas" },
+    { href: "#philosophy", label: "Filosofi" },
+    { href: "#chefgenie", label: "Portofolio" },
     { href: "#writing", label: "Tulisan" },
     { href: "#content", label: "Konten" },
     { href: "#contact", label: "Kontak" },
@@ -20,9 +20,9 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
   en: [
     { href: "#about", label: "About" },
     { href: "#timeline", label: "Timeline" },
-    { href: "#projects", label: "Projects" },
-    { href: "#philosophy", label: "Philosophy" },
     { href: "#activity", label: "Activity" },
+    { href: "#philosophy", label: "Philosophy" },
+    { href: "#chefgenie", label: "Portfolio" },
     { href: "#writing", label: "Writing" },
     { href: "#content", label: "Content" },
     { href: "#contact", label: "Contact" },
@@ -30,9 +30,9 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
   zh: [
     { href: "#about", label: "关于" },
     { href: "#timeline", label: "历程" },
-    { href: "#projects", label: "项目" },
     { href: "#activity", label: "动态" },
     { href: "#philosophy", label: "理念" },
+    { href: "#chefgenie", label: "作品集" },
     { href: "#writing", label: "写作" },
     { href: "#content", label: "内容" },
     { href: "#contact", label: "联系" },
@@ -40,9 +40,9 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
   ja: [
     { href: "#about", label: "概要" },
     { href: "#timeline", label: "歩み" },
-    { href: "#projects", label: "プロジェクト" },
-    { href: "#philosophy", label: "哲学" },
     { href: "#activity", label: "アクティビティ" },
+    { href: "#philosophy", label: "哲学" },
+    { href: "#chefgenie", label: "ポートフォリオ" },
     { href: "#writing", label: "執筆" },
     { href: "#content", label: "コンテンツ" },
     { href: "#contact", label: "連絡先" },
@@ -200,7 +200,6 @@ export function NavBar() {
                 {link.label}
               </button>
             ))}
-            <ProjectDropdown label={dropdownLabel[language]} />
           </div>
 
           <div className="flex items-center gap-2">
