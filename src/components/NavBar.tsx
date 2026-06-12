@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X, ExternalLink } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useLanguage, type Language } from "../contexts/LanguageContext";
@@ -10,7 +10,6 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
     { href: "#about", label: "Tentang" },
     { href: "#timeline", label: "Perjalanan" },
     { href: "#projects", label: "Proyek" },
-    { href: "#chefgenie", label: "ChefGenie" },
     { href: "#philosophy", label: "Filosofi" },
     { href: "#activity", label: "Aktivitas" },
     { href: "#writing", label: "Tulisan" },
@@ -21,7 +20,6 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
     { href: "#about", label: "About" },
     { href: "#timeline", label: "Timeline" },
     { href: "#projects", label: "Projects" },
-    { href: "#chefgenie", label: "ChefGenie" },
     { href: "#philosophy", label: "Philosophy" },
     { href: "#activity", label: "Activity" },
     { href: "#writing", label: "Writing" },
@@ -32,7 +30,6 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
     { href: "#about", label: "关于" },
     { href: "#timeline", label: "历程" },
     { href: "#projects", label: "项目" },
-    { href: "#chefgenie", label: "ChefGenie" },
     { href: "#activity", label: "动态" },
     { href: "#philosophy", label: "理念" },
     { href: "#writing", label: "写作" },
@@ -43,7 +40,6 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
     { href: "#about", label: "概要" },
     { href: "#timeline", label: "歩み" },
     { href: "#projects", label: "プロジェクト" },
-    { href: "#chefgenie", label: "ChefGenie" },
     { href: "#philosophy", label: "哲学" },
     { href: "#activity", label: "アクティビティ" },
     { href: "#writing", label: "執筆" },
@@ -51,6 +47,76 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
     { href: "#contact", label: "連絡先" },
   ],
 };
+
+const dropdownLabel: Record<Language, string> = {
+  id: "Karya",
+  en: "Projects",
+  zh: "项目",
+  ja: "プロジェクト",
+};
+
+function ProjectDropdown({ label }: { label: string }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const onPointerDown = (e: PointerEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, []);
+
+  const navigate = (route: string) => {
+    setOpen(false);
+    window.location.hash = route;
+  };
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        onClick={() => setOpen(!open)}
+        className={`flex items-center gap-1 px-3 py-1.5 text-sm rounded-lg transition-all duration-150 ${
+          open
+            ? 'text-slate-900 dark:text-white bg-slate-200/70 dark:bg-white/[0.1] font-medium'
+            : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/[0.05]'
+        }`}
+      >
+        {label}
+        <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
+      </button>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -6, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -6, scale: 0.95 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
+            className="absolute right-0 mt-2 w-48 rounded-xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-[#0d0d1a] shadow-xl shadow-black/5 overflow-hidden origin-top-right"
+          >
+            <button onClick={() => navigate("/chefgenie")} className="flex items-center gap-3 w-full px-4 py-3 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-colors text-left">
+              <span className="w-6 h-6 bg-gradient-to-br from-orange-500 to-amber-500 rounded-md flex items-center justify-center text-[10px] text-white font-bold shrink-0">CG</span>
+              <div className="flex-1 min-w-0">
+                <p className="font-medium">ChefGenie</p>
+                <p className="text-[10px] text-slate-400 dark:text-slate-500 truncate">AI Kitchen Companion</p>
+              </div>
+              <ExternalLink className="w-3 h-3 text-slate-300 dark:text-slate-600 shrink-0" />
+            </button>
+            <div className="h-px bg-slate-100 dark:bg-white/[0.06] mx-3" />
+            <button onClick={() => navigate("/codingskuy")} className="flex items-center gap-3 w-full px-4 py-3 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-colors text-left">
+              <span className="w-6 h-6 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-md flex items-center justify-center text-[10px] text-white font-bold shrink-0">CS</span>
+              <div className="flex-1 min-w-0">
+                <p className="font-medium">CodingSkuy</p>
+                <p className="text-[10px] text-slate-400 dark:text-slate-500 truncate">Learning Technology Should Be Fun</p>
+              </div>
+              <ExternalLink className="w-3 h-3 text-slate-300 dark:text-slate-600 shrink-0" />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
 
 export function NavBar() {
   const { language } = useLanguage();
@@ -133,6 +199,7 @@ export function NavBar() {
                 {link.label}
               </button>
             ))}
+            <ProjectDropdown label={dropdownLabel[language]} />
           </div>
 
           <div className="flex items-center gap-2">
@@ -173,6 +240,21 @@ export function NavBar() {
                     {link.label}
                   </button>
                 ))}
+                <div className="pt-2 mt-2 border-t border-slate-100 dark:border-white/[0.06]">
+                  <p className="px-3 pb-1 text-[10px] font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500">{dropdownLabel[language]}</p>
+                  <button onClick={() => { setMenuOpen(false); window.location.hash = "/chefgenie"; }}
+                    className="flex items-center gap-3 w-full px-3 py-2 text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/[0.05] rounded-lg transition-all"
+                  >
+                    <span className="w-5 h-5 bg-gradient-to-br from-orange-500 to-amber-500 rounded flex items-center justify-center text-[8px] text-white font-bold shrink-0">CG</span>
+                    ChefGenie
+                  </button>
+                  <button onClick={() => { setMenuOpen(false); window.location.hash = "/codingskuy"; }}
+                    className="flex items-center gap-3 w-full px-3 py-2 text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/[0.05] rounded-lg transition-all"
+                  >
+                    <span className="w-5 h-5 bg-gradient-to-br from-blue-500 to-cyan-400 rounded flex items-center justify-center text-[8px] text-white font-bold shrink-0">CS</span>
+                    CodingSkuy
+                  </button>
+                </div>
               </div>
             </motion.div>
           )}

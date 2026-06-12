@@ -31,7 +31,6 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
     { href: "#projects", label: "Proyek" },
     { href: "#philosophy", label: "Filosofi" },
     { href: "#timeline", label: "Perjalanan" },
-    { href: "#chefgenie", label: "ChefGenie" },
     { href: "#writing", label: "Tulisan" },
     { href: "#contact", label: "Kontak" },
   ],
@@ -40,7 +39,6 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
     { href: "#projects", label: "Projects" },
     { href: "#philosophy", label: "Philosophy" },
     { href: "#timeline", label: "Timeline" },
-    { href: "#chefgenie", label: "ChefGenie" },
     { href: "#writing", label: "Writing" },
     { href: "#contact", label: "Contact" },
   ],
@@ -49,7 +47,6 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
     { href: "#projects", label: "项目" },
     { href: "#philosophy", label: "理念" },
     { href: "#timeline", label: "历程" },
-    { href: "#chefgenie", label: "ChefGenie" },
     { href: "#writing", label: "写作" },
     { href: "#contact", label: "联系" },
   ],
@@ -58,7 +55,6 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
     { href: "#projects", label: "プロジェクト" },
     { href: "#philosophy", label: "哲学" },
     { href: "#timeline", label: "歩み" },
-    { href: "#chefgenie", label: "ChefGenie" },
     { href: "#writing", label: "執筆" },
     { href: "#contact", label: "連絡先" },
   ],
@@ -127,6 +123,20 @@ export function Footer() {
                 {link.label}
               </button>
             ))}
+            <div className="flex gap-3 ml-2 pl-3 border-l border-slate-200 dark:border-white/[0.08]">
+              <button onClick={() => { window.location.hash = "/chefgenie"; }}
+                className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-500 hover:text-orange-500 dark:hover:text-orange-400 transition-colors"
+              >
+                <span className="w-4 h-4 bg-gradient-to-br from-orange-500 to-amber-500 rounded flex items-center justify-center text-[6px] text-white font-bold">CG</span>
+                ChefGenie
+              </button>
+              <button onClick={() => { window.location.hash = "/codingskuy"; }}
+                className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-500 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+              >
+                <span className="w-4 h-4 bg-gradient-to-br from-blue-500 to-cyan-400 rounded flex items-center justify-center text-[6px] text-white font-bold">CS</span>
+                CodingSkuy
+              </button>
+            </div>
           </nav>
 
           {/* Social links */}
