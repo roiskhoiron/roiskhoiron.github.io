@@ -27,6 +27,17 @@ export function Navbar({ darkMode, toggleDark }: NavbarProps) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const scrollToSection = (href: string) => {
+    setMobileOpen(false);
+    const id = href.replace("#", "");
+    if (id === "top" || id === "") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -40,7 +51,7 @@ export function Navbar({ darkMode, toggleDark }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#top" className="flex items-center gap-2.5 group">
+          <a href="#top" onClick={(e) => { e.preventDefault(); scrollToSection("#top"); }} className="flex items-center gap-2.5 group">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0055ff] to-[#00d4ff] flex items-center justify-center shadow-lg shadow-[#0055ff]/30 group-hover:shadow-[#0055ff]/50 transition-shadow">
               <Code2 size={18} className="text-white" />
             </div>
@@ -60,6 +71,10 @@ export function Navbar({ darkMode, toggleDark }: NavbarProps) {
               <a
                 key={link.href}
                 href={link.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(link.href);
+                }}
                 className={`px-3 py-1.5 rounded-lg text-sm transition-all duration-200 hover:bg-[#3d8bff]/10 hover:text-[#3d8bff] ${
                   darkMode ? "text-[#7c8db5]" : "text-[#64748b]"
                 }`}
@@ -83,6 +98,10 @@ export function Navbar({ darkMode, toggleDark }: NavbarProps) {
 
             <a
               href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("#contact");
+              }}
               className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold bg-gradient-to-r from-[#0055ff] to-[#00d4ff] text-white shadow-lg shadow-[#0055ff]/25 hover:shadow-[#0055ff]/40 hover:scale-105 transition-all duration-200"
             >
               Hire Me
@@ -115,7 +134,10 @@ export function Navbar({ darkMode, toggleDark }: NavbarProps) {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(link.href);
+                  }}
                   className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all hover:bg-[#3d8bff]/10 hover:text-[#3d8bff] ${
                     darkMode ? "text-[#7c8db5]" : "text-[#64748b]"
                   }`}
@@ -125,7 +147,10 @@ export function Navbar({ darkMode, toggleDark }: NavbarProps) {
               ))}
               <a
                 href="#contact"
-                onClick={() => setMobileOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("#contact");
+                }}
                 className="mt-2 px-4 py-2.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-[#0055ff] to-[#00d4ff] text-white text-center"
               >
                 Hire Me

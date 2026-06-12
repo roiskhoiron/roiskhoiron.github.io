@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Navbar } from "./components/Navbar";
+import { ScrollSmoother } from "../components/ScrollSmoother";
 import { HeroSection } from "./components/HeroSection";
 import { ShowcaseSection } from "./components/ShowcaseSection";
 import { AboutSection } from "./components/AboutSection";
@@ -38,6 +39,7 @@ export default function App() {
         fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
       }}
     >
+      <ScrollSmoother />
       <Navbar darkMode={darkMode} toggleDark={toggleDark} />
 
 <main>
