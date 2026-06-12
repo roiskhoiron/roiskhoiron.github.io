@@ -56,6 +56,7 @@ export function NavBar() {
   const { language } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeHref, setActiveHref] = useState<string>('');
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -63,10 +64,27 @@ export function NavBar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveHref(`#${entry.target.id}`);
+          }
+        }
+      },
+      { rootMargin: '-40% 0px -55% 0px' }
+    );
+    const sections = navLinksByLanguage.en.map((l) => document.getElementById(l.href.replace('#', ''))).filter(Boolean);
+    sections.forEach((s) => s && observer.observe(s));
+    return () => observer.disconnect();
+  }, [language]);
+
   const navLinks = navLinksByLanguage[language];
 
   const scrollToSection = (href: string) => {
     setMenuOpen(false);
+    setActiveHref(href);
     const id = href.replace("#", "");
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -88,6 +106,7 @@ export function NavBar() {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
+            aria-label="Rois Khoiron — Kembali ke atas"
             className="flex items-center gap-2.5 group"
             whileHover={{ scale: 1.02 }}
           >
@@ -104,7 +123,12 @@ export function NavBar() {
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="px-3 py-1.5 text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white rounded-lg hover:bg-slate-100 dark:hover:bg-white/[0.05] transition-all duration-150"
+                aria-current={activeHref === link.href ? 'true' : undefined}
+                className={`px-3 py-1.5 text-sm rounded-lg transition-all duration-150 ${
+                  activeHref === link.href
+                    ? 'text-slate-900 dark:text-white bg-slate-200/70 dark:bg-white/[0.1] font-medium'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/[0.05]'
+                }`}
               >
                 {link.label}
               </button>
@@ -139,7 +163,12 @@ export function NavBar() {
                   <button
                     key={link.href}
                     onClick={() => scrollToSection(link.href)}
-                    className="block w-full text-left px-3 py-2 text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/[0.05] rounded-lg transition-all"
+                    aria-current={activeHref === link.href ? 'true' : undefined}
+                    className={`block w-full text-left px-3 py-2 text-sm rounded-lg transition-all ${
+                      activeHref === link.href
+                        ? 'text-slate-900 dark:text-white bg-slate-200/70 dark:bg-white/[0.1] font-medium'
+                        : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/[0.05]'
+                    }`}
                   >
                     {link.label}
                   </button>

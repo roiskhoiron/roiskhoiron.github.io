@@ -188,6 +188,24 @@ html {
   font-size: var(--font-size);
 }
 
+@media (max-width: 640px) {
+  html {
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 1.6rem !important;
+  }
+  h2 {
+    font-size: 1.25rem !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  html {
+    font-size: 15.5px;
+  }
+}
+
 .creator-manual-scroll {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
