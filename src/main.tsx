@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { useEffect, useState } from "react";
 import App from "./App.tsx";
 import { ChefGenieLandingPage } from "./pages/ChefGenieLandingPage.tsx";
+import { CodingSkuyLandingPage } from "./pages/CodingSkuyLandingPage.tsx";
 import { ThemeProvider } from "./contexts/ThemeContext.tsx";
 import { LanguageProvider } from "./contexts/LanguageContext.tsx";
 import "./index.css";
@@ -39,6 +40,16 @@ function Root() {
       <LanguageProvider>
         <ThemeProvider>
           <ChefGenieLandingPage />
+        </ThemeProvider>
+      </LanguageProvider>
+    );
+  }
+
+  if (currentPath === "/codingskuy") {
+    return (
+      <LanguageProvider>
+        <ThemeProvider>
+          <CodingSkuyLandingPage />
         </ThemeProvider>
       </LanguageProvider>
     );
