@@ -2,12 +2,14 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { Send, CheckCircle2 } from "lucide-react";
 import mascotSvg from "@/assets/vectorized-mascot.svg";
+import { useT } from "../../hooks/useT";
 
 interface NewsletterSectionProps {
   darkMode: boolean;
 }
 
 export function NewsletterSection({ darkMode }: NewsletterSectionProps) {
+  const t = useT();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -69,17 +71,16 @@ export function NewsletterSection({ darkMode }: NewsletterSectionProps) {
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-8 h-1 rounded-full bg-gradient-to-r from-[#ff6b35] to-[#ffd700]" />
                 <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: "#ff6b35" }}>
-                  Weekly Insights
+                  {t.newsletter.title}
                 </span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-black mb-3" style={{ color: textMain }}>
-                Update{" "}
                 <span className="bg-gradient-to-r from-[#ff6b35] to-[#ffd700] bg-clip-text text-transparent">
-                  Mingguan
+                  {t.newsletter.heading}
                 </span>
               </h2>
               <p className="mb-6 leading-relaxed text-sm" style={{ color: textMuted }}>
-                Dapatkan insight terbaru seputar software engineering, AI, Flutter, backend, dan eksperimen teknologi — langsung ke inbox kamu, setiap minggu.
+                {t.newsletter.desc}
               </p>
 
               {submitted ? (
@@ -114,7 +115,7 @@ export function NewsletterSection({ darkMode }: NewsletterSectionProps) {
                   />
                   <input
                     type="email"
-                    placeholder="Email kamu"
+                    placeholder={t.newsletter.placeholder}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
@@ -133,7 +134,7 @@ export function NewsletterSection({ darkMode }: NewsletterSectionProps) {
                       boxShadow: "0 8px 20px rgba(255,107,53,0.3)",
                     }}
                   >
-                    <Send size={15} /> Subscribe
+                    <Send size={15} /> {t.newsletter.button}
                   </button>
                 </form>
               )}

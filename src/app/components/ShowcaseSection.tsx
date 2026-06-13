@@ -1,12 +1,14 @@
 import { motion } from "motion/react";
 import { Play, Film } from "lucide-react";
 import showcaseVideo from "@/assets/codingskuy_banner_background_video.mp4";
+import { useT } from "../../hooks/useT";
 
 interface ShowcaseSectionProps {
   darkMode: boolean;
 }
 
 export function ShowcaseSection({ darkMode }: ShowcaseSectionProps) {
+  const t = useT();
   const textMuted = darkMode ? "#7c8db5" : "#64748b";
   const textMain = darkMode ? "#e8f0ff" : "#0d1117";
 
@@ -32,19 +34,17 @@ export function ShowcaseSection({ darkMode }: ShowcaseSectionProps) {
             <div className="w-8 h-1 rounded-full bg-gradient-to-r from-[#3d8bff] to-[#8b5cf6]" />
             <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: "#3d8bff" }}>
               <Film size={14} className="inline mr-1.5" />
-              CodingSkuy Showcase
+              {t.showcase.title}
             </span>
             <div className="w-8 h-1 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#3d8bff]" />
           </div>
           <h2 className="text-4xl sm:text-5xl font-black mb-4" style={{ color: textMain }}>
-            See{" "}
             <span className="bg-gradient-to-r from-[#3d8bff] to-[#8b5cf6] bg-clip-text text-transparent">
-              CodingSkuy
-            </span>{" "}
-            in Action
+              {t.showcase.heading}
+            </span>
           </h2>
           <p className="text-base max-w-xl mx-auto" style={{ color: textMuted }}>
-            A glimpse into the platform, community, and ecosystem built for Indonesian developers.
+            {t.showcase.desc}
           </p>
         </motion.div>
 

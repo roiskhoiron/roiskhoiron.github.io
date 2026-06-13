@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Star, GitFork, ExternalLink, CircleDot } from "lucide-react";
+import { useT } from "../../hooks/useT";
 
 interface OpenSourceSectionProps {
   darkMode: boolean;
@@ -81,6 +82,7 @@ const repos = [
 ];
 
 export function OpenSourceSection({ darkMode }: OpenSourceSectionProps) {
+  const t = useT();
   const cardBg = darkMode ? "#0d1629" : "#ffffff";
   const borderColor = darkMode ? "rgba(61,139,255,0.15)" : "rgba(0,85,255,0.1)";
   const textMuted = darkMode ? "#7c8db5" : "#64748b";
@@ -100,13 +102,12 @@ export function OpenSourceSection({ darkMode }: OpenSourceSectionProps) {
             <div className="flex items-center gap-3 mb-3">
               <div className="w-8 h-1 rounded-full bg-gradient-to-r from-[#00d4ff] to-[#3d8bff]" />
               <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: "#00d4ff" }}>
-                Open Source
+                {t.openSource.title}
               </span>
             </div>
             <h2 className="text-4xl sm:text-5xl font-black" style={{ color: textMain }}>
-              Projects for{" "}
               <span className="bg-gradient-to-r from-[#00d4ff] to-[#3d8bff] bg-clip-text text-transparent">
-                Developers
+                {t.openSource.heading}
               </span>
             </h2>
           </div>

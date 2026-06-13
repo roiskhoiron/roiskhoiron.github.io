@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ExternalLink, Github, Star } from "lucide-react";
+import { useT } from "../../hooks/useT";
 
 interface PortfolioSectionProps {
   darkMode: boolean;
@@ -84,6 +85,7 @@ const projects = [
 ];
 
 export function PortfolioSection({ darkMode }: PortfolioSectionProps) {
+  const t = useT();
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filtered = activeCategory === "All" ? projects : projects.filter((p) => p.category === activeCategory);
@@ -107,13 +109,12 @@ export function PortfolioSection({ darkMode }: PortfolioSectionProps) {
             <div className="flex items-center gap-3 mb-3">
               <div className="w-8 h-1 rounded-full bg-gradient-to-r from-[#3d8bff] to-[#00d4ff]" />
               <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: "#3d8bff" }}>
-                Selected Works
+                {t.portfolio.title}
               </span>
             </div>
             <h2 className="text-4xl sm:text-5xl font-black" style={{ color: textMain }}>
-              Portofolio{" "}
               <span className="bg-gradient-to-r from-[#ff6b35] to-[#ffd700] bg-clip-text text-transparent">
-                Pilihan
+                {t.portfolio.heading}
               </span>
             </h2>
           </div>

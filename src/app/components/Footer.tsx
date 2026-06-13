@@ -2,31 +2,11 @@ import { motion } from "motion/react";
 import { Github, Youtube, Linkedin, Twitter, Code2, Heart } from "lucide-react";
 import { CodingSkuyMascot } from "./CodingSkuyMascot";
 import logoBg from "@/assets/simple_landsacape_logo.jpeg";
+import { useT } from "../../hooks/useT";
 
 interface FooterProps {
   darkMode: boolean;
 }
-
-const footerLinks = {
-  Personal: [
-    { label: "About Me", href: "#about" },
-    { label: "Portfolio", href: "#portfolio" },
-    { label: "Experience", href: "#experience" },
-    { label: "Contact", href: "#contact" },
-  ],
-  CodingSkuy: [
-    { label: "Articles", href: "#media" },
-    { label: "Tutorials", href: "#media" },
-    { label: "Learning Paths", href: "#learning" },
-    { label: "Community", href: "#community" },
-  ],
-  "Research & OS": [
-    { label: "AI Lab", href: "#ailab" },
-    { label: "Open Source", href: "#opensource" },
-    { label: "GitHub Projects", href: "#" },
-    { label: "Newsletter", href: "#newsletter" },
-  ],
-};
 
 const socials = [
   { icon: Github, href: "#", label: "GitHub", color: "#e8f0ff" },
@@ -36,9 +16,31 @@ const socials = [
 ];
 
 export function Footer({ darkMode }: FooterProps) {
+  const t = useT();
   const borderColor = darkMode ? "rgba(61,139,255,0.12)" : "rgba(0,85,255,0.08)";
   const textMuted = darkMode ? "#4a5f8a" : "#94a3b8";
   const textMain = darkMode ? "#e8f0ff" : "#0d1117";
+
+  const footerLinks: Record<string, { label: string; href: string }[]> = {
+    [t.footer.personal]: [
+      { label: t.footer.aboutMe, href: "#about" },
+      { label: t.footer.portfolio, href: "#portfolio" },
+      { label: t.footer.experience, href: "#experience" },
+      { label: t.footer.contact, href: "#contact" },
+    ],
+    [t.footer.codingskuy]: [
+      { label: t.footer.articles, href: "#media" },
+      { label: t.footer.tutorials, href: "#media" },
+      { label: t.footer.learningPaths, href: "#learning" },
+      { label: t.footer.community_, href: "#community" },
+    ],
+    [t.footer.research]: [
+      { label: t.footer.aiLab_, href: "#ailab" },
+      { label: t.footer.openSource, href: "#opensource" },
+      { label: t.footer.githubProjects, href: "#" },
+      { label: t.footer.newsletter_, href: "#newsletter" },
+    ],
+  };
 
   return (
     <footer
@@ -88,7 +90,7 @@ export function Footer({ darkMode }: FooterProps) {
               </div>
             </div>
             <p className="text-sm leading-relaxed mb-6" style={{ color: textMuted }}>
-              Platform belajar, media teknologi, AI lab, dan komunitas untuk developer Indonesia. Learning Technology Should Be Fun.
+              {t.footer.tagline}
             </p>
             {/* Socials */}
             <div className="flex gap-2">
@@ -138,8 +140,8 @@ export function Footer({ darkMode }: FooterProps) {
         {/* Bottom — mascot + copyright */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8" style={{ borderTop: `1px solid ${borderColor}` }}>
           <p className="text-xs text-center sm:text-left" style={{ color: textMuted }}>
-            © 2024 CodingSkuy! by Rois Khoiron — Made with{" "}
-            <Heart size={11} className="inline text-[#ff6b35]" fill="currentColor" /> for Indonesian Developers
+            {t.footer.copyright} — {t.footer.madeWith}{" "}
+            <Heart size={11} className="inline text-[#ff6b35]" fill="currentColor" />
           </p>
 
           {/* Mini mascot waving */}
@@ -151,9 +153,9 @@ export function Footer({ darkMode }: FooterProps) {
           </motion.div>
 
           <div className="flex gap-4 text-xs" style={{ color: textMuted }}>
-            <a href="#" className="hover:text-[#3d8bff] transition-colors">Privacy</a>
-            <a href="#" className="hover:text-[#3d8bff] transition-colors">Terms</a>
-            <a href="#" className="hover:text-[#3d8bff] transition-colors">Sitemap</a>
+            <a href="#" className="hover:text-[#3d8bff] transition-colors">{t.footer.privacy}</a>
+            <a href="#" className="hover:text-[#3d8bff] transition-colors">{t.footer.terms}</a>
+            <a href="#" className="hover:text-[#3d8bff] transition-colors">{t.footer.sitemap}</a>
           </div>
         </div>
       </div>

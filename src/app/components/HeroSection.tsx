@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { ArrowRight, Star, Zap, Github, Youtube, Linkedin } from "lucide-react";
 import { DoodleBolt, DoodleBracket, DoodleCode, DoodleSpark, DoodleRocket } from "./CodingSkuyMascot";
 import mascotSvg from "@/assets/hero-skuy.jpeg";
+import { useT } from "../../hooks/useT";
 
 interface HeroSectionProps { 
   darkMode: boolean;
@@ -10,6 +11,7 @@ interface HeroSectionProps {
 const techPills = ["Flutter", "Dart", "Kotlin", "Python", "FastAPI", "PostgreSQL", "LLM", "MCP"];
 
 export function HeroSection({ darkMode }: HeroSectionProps) {
+  const t = useT();
   return (
     <section
       id="top"
@@ -104,8 +106,7 @@ export function HeroSection({ darkMode }: HeroSectionProps) {
                 className="mt-4 text-xl sm:text-2xl font-semibold leading-snug"
                 style={{ color: darkMode ? "#7c8db5" : "#475569" }}
               >
-                Learning Technology{" "}
-                <span style={{ color: "#ff6b35" }}>Should Be Fun</span>
+                {t.hero.titleSub}
               </p>
             </div>
 
@@ -114,8 +115,7 @@ export function HeroSection({ darkMode }: HeroSectionProps) {
               className="text-base leading-relaxed max-w-lg"
               style={{ color: darkMode ? "#5a6f9a" : "#64748b" }}
             >
-              Platform belajar, konten teknologi, eksperimen AI, dan komunitas developer — dibangun oleh{" "}
-              <strong style={{ color: "#3d8bff" }}>Rois Khoiron</strong> untuk membantu developer Indonesia belajar, membangun, dan berbagi.
+              {t.hero.desc}
             </p>
 
             {/* CTA */}
@@ -124,7 +124,7 @@ export function HeroSection({ darkMode }: HeroSectionProps) {
                 href="#content"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-sm bg-gradient-to-r from-[#0055ff] to-[#00d4ff] text-white shadow-xl shadow-[#0055ff]/25 hover:shadow-[#0055ff]/40 hover:scale-105 transition-all duration-200"
               >
-                Jelajahi Konten <ArrowRight size={16} />
+                {t.hero.ctaStart} <ArrowRight size={16} />
               </a>
               <a
                 href="#community"
@@ -134,14 +134,14 @@ export function HeroSection({ darkMode }: HeroSectionProps) {
                     : "border-[#0055ff]/30 text-[#0055ff] hover:bg-[#0055ff]/5"
                 }`}
               >
-                Gabung Komunitas
+                {t.hero.ctaExplore}
               </a>
             </div>
 
             {/* Social links */}
             <div className="flex items-center gap-4 pt-2">
               <span className="text-xs font-medium" style={{ color: darkMode ? "#4a5f8a" : "#94a3b8" }}>
-                Ikuti:
+                {t.hero.follow}
               </span>
               {[
                 { icon: Github, href: "https://github.com/codingskuy", label: "GitHub" },
@@ -285,7 +285,7 @@ export function HeroSection({ darkMode }: HeroSectionProps) {
           animate={{ y: [0, 8, 0], opacity: [0.4, 0.7, 0.4] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <span className="text-xs font-mono" style={{ color: darkMode ? "#3d8bff" : "#0055ff" }}>scroll</span>
+          <span className="text-xs font-mono" style={{ color: darkMode ? "#3d8bff" : "#0055ff" }}>{t.hero.scroll}</span>
           <div className="w-px h-8 bg-gradient-to-b from-[#3d8bff] to-transparent" />
         </motion.div>
       </div>

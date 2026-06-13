@@ -1,19 +1,21 @@
 import { motion } from "motion/react";
 import { MapPin, Mail, Smartphone, Server, Brain, PenTool, Users } from "lucide-react";
+import { useT } from "../../hooks/useT";
 
 interface AboutSectionProps {
   darkMode: boolean;
 }
 
-const highlights = [
-  { icon: Smartphone, label: "Mobile Dev", color: "#3d8bff", desc: "Flutter & Android native" },
-  { icon: Server, label: "Backend", color: "#00d4ff", desc: "REST API & Cloud services" },
-  { icon: Brain, label: "AI Exploration", color: "#8b5cf6", desc: "LLM, MCP & Agents" },
-  { icon: PenTool, label: "Tech Writing", color: "#ff6b35", desc: "Articles & tutorials" },
-  { icon: Users, label: "Community", color: "#ffd700", desc: "Building together" },
+const highlights: { icon: any; color: string; key: "mobileDev" | "backend" | "aiExploration" | "techWriting" | "community" }[] = [
+  { icon: Smartphone, color: "#3d8bff", key: "mobileDev" },
+  { icon: Server, color: "#00d4ff", key: "backend" },
+  { icon: Brain, color: "#8b5cf6", key: "aiExploration" },
+  { icon: PenTool, color: "#ff6b35", key: "techWriting" },
+  { icon: Users, color: "#ffd700", key: "community" },
 ];
 
 export function AboutSection({ darkMode }: AboutSectionProps) {
+  const t = useT();
   const cardBg = darkMode ? "#0d1629" : "#ffffff";
   const borderColor = darkMode ? "rgba(61,139,255,0.15)" : "rgba(0,85,255,0.1)";
   const textMuted = darkMode ? "#7c8db5" : "#64748b";
@@ -31,7 +33,7 @@ export function AboutSection({ darkMode }: AboutSectionProps) {
         >
           <div className="w-8 h-1 rounded-full bg-gradient-to-r from-[#3d8bff] to-[#00d4ff]" />
           <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: "#3d8bff" }}>
-            Tentang CodingSkuy
+            {t.about.title}
           </span>
         </motion.div>
 
@@ -64,20 +66,20 @@ export function AboutSection({ darkMode }: AboutSectionProps) {
                 {/* Name overlay */}
                 <div className="absolute bottom-4 left-4">
                   <p className="text-white font-bold text-xl">Rois Khoiron</p>
-                  <p className="text-[#00d4ff] text-sm font-medium">Software Engineer & Educator</p>
+                  <p className="text-[#00d4ff] text-sm font-medium">{t.about.role}</p>
                 </div>
               </div>
 
               {/* Info chips */}
               <div className="p-5 flex flex-wrap gap-2">
                 <span className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full" style={{ background: darkMode ? "#131e38" : "#e8edff", color: textMuted }}>
-                  <MapPin size={11} /> Bandung, Indonesia
+                  <MapPin size={11} /> {t.about.location}
                 </span>
                 <span className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full" style={{ background: darkMode ? "#131e38" : "#e8edff", color: textMuted }}>
-                  <Mail size={11} /> rois@codingskuy.com
+                  <Mail size={11} /> {t.about.email}
                 </span>
                 <span className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full" style={{ background: "rgba(0,212,255,0.1)", color: "#00d4ff", border: "1px solid rgba(0,212,255,0.2)" }}>
-                  ✅ Open to Work
+                  {t.about.status}
                 </span>
               </div>
             </div>
@@ -92,26 +94,22 @@ export function AboutSection({ darkMode }: AboutSectionProps) {
           >
             <div>
               <h2 className="text-4xl sm:text-5xl font-black mb-4" style={{ color: textMain }}>
-                Cerita{" "}
+                {t.about.subtitle}{" "}
                 <span className="bg-gradient-to-r from-[#3d8bff] to-[#00d4ff] bg-clip-text text-transparent">
                   CodingSkuy
                 </span>
               </h2>
               <div className="flex flex-col gap-4" style={{ color: textMuted }}>
-                <p className="leading-relaxed">
-                  <strong style={{ color: "#3d8bff" }}>CodingSkuy!</strong> adalah platform belajar teknologi yang dibangun dari keprihatinan — betapa sulitnya menemukan konten berkualitas berbahasa Indonesia untuk belajar coding. Semuanya dimulai dari catatan kecil Rois Khoiron saat belajar otodidak, berkembang menjadi media dengan 150+ artikel, puluhan video tutorial, dan ribuan anggota komunitas.
-                </p>
-                <p className="leading-relaxed">
-                  Misi kami sederhana: membuat belajar teknologi jadi menyenangkan, praktis, dan accessible untuk semua developer Indonesia — melalui artikel, video, learning paths, eksperimen AI, dan komunitas yang saling mendukung.
-                </p>
+                <p className="leading-relaxed">{t.about.story1}</p>
+                <p className="leading-relaxed">{t.about.story2}</p>
               </div>
             </div>
 
             {/* Highlights grid */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {highlights.map(({ icon: Icon, label, color, desc }) => (
+              {highlights.map(({ icon: Icon, color, key }) => (
                 <motion.div
-                  key={label}
+                  key={key}
                   whileHover={{ y: -3, scale: 1.02 }}
                   className="p-4 rounded-2xl cursor-default transition-all duration-200"
                   style={{
@@ -123,8 +121,8 @@ export function AboutSection({ darkMode }: AboutSectionProps) {
                   <div className="w-8 h-8 rounded-xl flex items-center justify-center mb-2" style={{ background: `${color}15` }}>
                     <Icon size={16} style={{ color }} />
                   </div>
-                  <p className="text-sm font-semibold mb-0.5" style={{ color: textMain }}>{label}</p>
-                  <p className="text-xs leading-snug" style={{ color: textMuted }}>{desc}</p>
+                  <p className="text-sm font-semibold mb-0.5" style={{ color: textMain }}>{t.about.highlights[key].label}</p>
+                  <p className="text-xs leading-snug" style={{ color: textMuted }}>{t.about.highlights[key].desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -138,9 +136,9 @@ export function AboutSection({ darkMode }: AboutSectionProps) {
               }}
             >
               <p className="text-sm italic leading-relaxed" style={{ color: textMuted }}>
-                "CodingSkuy lahir dari pengalaman pahit-belajar coding dari sumber berbahasa Inggris yang tidak selalu mudah dipahami. Sekarang kami hadir dengan 150+ konten berkualitas dalam bahasa Indonesia — dan baru memulai."
+                {t.about.quote}
               </p>
-              <p className="text-xs font-semibold mt-3" style={{ color: "#3d8bff" }}>— Rois Khoiron, Founder</p>
+              <p className="text-xs font-semibold mt-3" style={{ color: "#3d8bff" }}>— {t.about.founder}</p>
             </div>
           </motion.div>
         </div>

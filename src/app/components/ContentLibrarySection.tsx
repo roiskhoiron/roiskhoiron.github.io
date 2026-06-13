@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Search, Clock, BookOpen, Video, Layers, Code2, Brain, ArrowRight } from "lucide-react";
 import { CodingSkuyMascot } from "./CodingSkuyMascot";
+import { useT } from "../../hooks/useT";
 
 interface ContentLibrarySectionProps {
   darkMode: boolean;
@@ -28,6 +29,7 @@ const allContent = [
 const filterOptions = ["All", "Articles", "Tutorials", "Videos", "AI", "Flutter", "Backend", "Career"];
 
 export function ContentLibrarySection({ darkMode }: ContentLibrarySectionProps) {
+  const t = useT();
   const [search, setSearch] = useState("");
   const [activeFilter, setActiveFilter] = useState("All");
 
@@ -67,18 +69,17 @@ export function ContentLibrarySection({ darkMode }: ContentLibrarySectionProps) 
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-1 rounded-full bg-gradient-to-r from-[#00d4ff] to-[#3d8bff]" />
             <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: "#00d4ff" }}>
-              Content Library
+              {t.contentLibrary.title}
             </span>
             <div className="w-8 h-1 rounded-full bg-gradient-to-r from-[#3d8bff] to-[#00d4ff]" />
           </div>
           <h2 className="text-4xl sm:text-5xl font-black mb-4" style={{ color: textMain }}>
-            Perpustakaan{" "}
             <span className="bg-gradient-to-r from-[#00d4ff] to-[#3d8bff] bg-clip-text text-transparent">
-              Konten
+              {t.contentLibrary.heading}
             </span>
           </h2>
           <p className="text-base max-w-2xl mx-auto" style={{ color: textMuted }}>
-            150+ artikel, tutorial, dan video tentang Flutter, Backend, AI, dan Career Development — semuanya gratis.
+            {t.contentLibrary.desc}
           </p>
         </motion.div>
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Terminal, Cpu, Bot, Workflow, FlaskConical, ExternalLink } from "lucide-react";
+import { useT } from "../../hooks/useT";
 
 interface AILabSectionProps {
   darkMode: boolean;
@@ -105,6 +106,7 @@ Most read: "MCP vs Function Calling"
 ];
 
 export function AILabSection({ darkMode }: AILabSectionProps) {
+  const t = useT();
   const [activeId, setActiveId] = useState("mcp");
   const active = experiments.find((e) => e.id === activeId)!;
 
@@ -137,18 +139,17 @@ export function AILabSection({ darkMode }: AILabSectionProps) {
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-1 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#ff6b35]" />
             <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: "#8b5cf6" }}>
-              AI Lab
+              {t.aiLab.title}
             </span>
             <div className="w-8 h-1 rounded-full bg-gradient-to-r from-[#ff6b35] to-[#8b5cf6]" />
           </div>
           <h2 className="text-4xl sm:text-5xl font-black mb-4" style={{ color: textMain }}>
-            Experiments &{" "}
             <span className="bg-gradient-to-r from-[#8b5cf6] to-[#ff6b35] bg-clip-text text-transparent">
-              Research
+              {t.aiLab.heading}
             </span>
           </h2>
           <p className="text-base max-w-xl mx-auto" style={{ color: textMuted }}>
-            Exploring the frontier of AI-assisted software engineering — one experiment at a time.
+            {t.aiLab.desc}
           </p>
         </motion.div>
 

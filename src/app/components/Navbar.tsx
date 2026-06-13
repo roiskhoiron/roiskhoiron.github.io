@@ -2,24 +2,26 @@ import { useState, useEffect } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import logo from "../../assets/ic_logo_codingskuy.png";
+import { useT } from "../../hooks/useT";
 
 interface NavbarProps {
   darkMode: boolean;
   toggleDark: () => void;
 }
 
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Learning", href: "#learning" },
-  { label: "Projects", href: "#portfolio" },
-  { label: "Media Hub", href: "#media" },
-  { label: "AI Labs", href: "#ailab" },
-  { label: "Community", href: "#community" },
-];
-
 export function Navbar({ darkMode, toggleDark }: NavbarProps) {
+  const t = useT();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navLinks = [
+    { label: t.nav.about, href: "#about" },
+    { label: t.nav.learning, href: "#learning" },
+    { label: t.nav.projects, href: "#portfolio" },
+    { label: t.nav.media, href: "#media" },
+    { label: t.nav.ailab, href: "#ailab" },
+    { label: t.nav.community, href: "#community" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -104,7 +106,7 @@ export function Navbar({ darkMode, toggleDark }: NavbarProps) {
               }}
               className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold bg-gradient-to-r from-[#0055ff] to-[#00d4ff] text-white shadow-lg shadow-[#0055ff]/25 hover:shadow-[#0055ff]/40 hover:scale-105 transition-all duration-200"
             >
-              Hire Me
+              {t.nav.hireMe}
             </a>
 
             <button
@@ -153,7 +155,7 @@ export function Navbar({ darkMode, toggleDark }: NavbarProps) {
                 }}
                 className="mt-2 px-4 py-2.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-[#0055ff] to-[#00d4ff] text-white text-center"
               >
-                Hire Me
+                {t.nav.hireMe}
               </a>
             </nav>
           </motion.div>

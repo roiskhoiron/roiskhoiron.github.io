@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { useT } from "../../hooks/useT";
 
 interface MetricsSectionProps {
   darkMode: boolean;
@@ -14,6 +15,7 @@ const metrics = [
 ];
 
 export function MetricsSection({ darkMode }: MetricsSectionProps) {
+  const t = useT();
   const cardBg = darkMode ? "#0d1629" : "#ffffff";
   const borderColor = darkMode ? "rgba(61,139,255,0.15)" : "rgba(0,85,255,0.1)";
   const textMuted = darkMode ? "#7c8db5" : "#64748b";
@@ -42,14 +44,13 @@ export function MetricsSection({ darkMode }: MetricsSectionProps) {
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-1 rounded-full bg-gradient-to-r from-[#3d8bff] to-[#00d4ff]" />
             <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: "#3d8bff" }}>
-              CodingSkuy Impact
+              {t.metrics.title}
             </span>
             <div className="w-8 h-1 rounded-full bg-gradient-to-r from-[#00d4ff] to-[#8b5cf6]" />
           </div>
           <h2 className="text-4xl sm:text-5xl font-black" style={{ color: textMain }}>
-            Pencapaian{" "}
             <span className="bg-gradient-to-r from-[#ff6b35] to-[#ffd700] bg-clip-text text-transparent">
-              dalam Angka
+              {t.metrics.heading}
             </span>
           </h2>
         </motion.div>

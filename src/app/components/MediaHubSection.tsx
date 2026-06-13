@@ -7,6 +7,7 @@ import { IframeDialog } from "../../components/IframeDialog";
 import imgCharacter1 from "../../assets/hqdefault.png";
 import imgCharacter2 from "../../assets/hqdefault2.png";
 import imgCharacter3 from "../../assets/hqdefault3.png";
+import { useT } from "../../hooks/useT";
 
 interface MediaHubSectionProps {
   darkMode: boolean;
@@ -176,6 +177,7 @@ const featured = [
 ];
 
 export function MediaHubSection({ darkMode }: MediaHubSectionProps) {
+  const t = useT();
   const cardBg = darkMode ? "#0d1629" : "#ffffff";
   const borderColor = darkMode ? "rgba(61,139,255,0.15)" : "rgba(0,85,255,0.1)";
   const textMuted = darkMode ? "#7c8db5" : "#64748b";
@@ -374,15 +376,13 @@ export function MediaHubSection({ darkMode }: MediaHubSectionProps) {
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-8 h-1 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#ff6b35]" />
                 <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: "#8b5cf6" }}>
-                  CodingSkuy Media
+                  {t.mediaHub.title}
                 </span>
               </div>
               <h2 className="text-4xl sm:text-5xl font-black" style={{ color: textMain }}>
-                Learn,{" "}
                 <span className="bg-gradient-to-r from-[#8b5cf6] to-[#ff6b35] bg-clip-text text-transparent">
-                  Build,
-                </span>{" "}
-                Share
+                  {t.mediaHub.heading}
+                </span>
               </h2>
             </div>
           </div>

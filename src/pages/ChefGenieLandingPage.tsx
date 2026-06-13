@@ -41,6 +41,8 @@ import imgWelcome1 from "../assets/chefgenie/img_welcome_to_chefgenie_1.png";
 import imgChat from "../assets/chefgenie/img_panduan_memasak_ai_chat.png";
 import imgIdeMenu from "../assets/chefgenie/img_ide_menu_bisnis_chefgenie.png";
 
+import { LanguageSwitcher } from "../components/LanguageSwitcher";
+
 export function ChefGenieLandingPage() {
   const { language } = useLanguage();
   const { theme } = useTheme();
@@ -68,7 +70,11 @@ export function ChefGenieLandingPage() {
   };
 
   return (
-    <main className="min-h-screen bg-white dark:bg-[#080808] text-slate-900 dark:text-white overflow-x-hidden transition-colors duration-300">
+    <>
+      <div className="fixed top-4 right-4 z-[100]">
+        <LanguageSwitcher />
+      </div>
+      <main className="min-h-screen bg-white dark:bg-[#080808] text-slate-900 dark:text-white overflow-x-hidden transition-colors duration-300">
       <div
         className="fixed inset-0 -z-10 pointer-events-none opacity-[0.015] dark:opacity-[0.02]"
         style={{
@@ -315,5 +321,6 @@ export function ChefGenieLandingPage() {
         </div>
       </footer>
     </main>
+    </>
   );
 }

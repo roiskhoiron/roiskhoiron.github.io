@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Users, ArrowRight } from "lucide-react";
 import mascotSvg from "@/assets/vectorized-mascot.svg";
+import { useT } from "../../hooks/useT";
 
 
 interface CommunitySectionProps {
@@ -56,6 +57,7 @@ const platforms = [
 ];
 
 export function CommunitySection({ darkMode }: CommunitySectionProps) {
+  const t = useT();
   const cardBg = darkMode ? "#0d1629" : "#ffffff";
   const borderColor = darkMode ? "rgba(61,139,255,0.15)" : "rgba(0,85,255,0.1)";
   const textMuted = darkMode ? "#7c8db5" : "#64748b";
@@ -84,18 +86,17 @@ export function CommunitySection({ darkMode }: CommunitySectionProps) {
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-1 rounded-full bg-gradient-to-r from-[#3d8bff] to-[#8b5cf6]" />
             <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: "#3d8bff" }}>
-              Komunitas CodingSkuy
+              {t.community.title}
             </span>
             <div className="w-8 h-1 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#3d8bff]" />
           </div>
           <h2 className="text-4xl sm:text-5xl font-black mb-4" style={{ color: textMain }}>
-            Join The{" "}
             <span className="bg-gradient-to-r from-[#3d8bff] to-[#8b5cf6] bg-clip-text text-transparent">
-              Community
+              {t.community.heading}
             </span>
           </h2>
           <p className="text-base max-w-xl mx-auto mb-8" style={{ color: textMuted }}>
-            Bergabung dengan ribuan developer Indonesia yang belajar dan berkembang bersama.
+            {t.community.desc}
           </p>
           {/* Total count */}
           <div

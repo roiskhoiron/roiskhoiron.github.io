@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight, CheckCircle2, Circle } from "lucide-react";
+import { useT } from "../../hooks/useT";
 
 interface LearningPathsSectionProps {
   darkMode: boolean;
@@ -75,6 +76,7 @@ const paths = [
 ];
 
 export function LearningPathsSection({ darkMode }: LearningPathsSectionProps) {
+  const t = useT();
   const cardBg = darkMode ? "#0d1629" : "#ffffff";
   const borderColor = darkMode ? "rgba(61,139,255,0.15)" : "rgba(0,85,255,0.1)";
   const textMuted = darkMode ? "#7c8db5" : "#64748b";
@@ -93,18 +95,17 @@ export function LearningPathsSection({ darkMode }: LearningPathsSectionProps) {
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-1 rounded-full bg-gradient-to-r from-[#ff6b35] to-[#ffd700]" />
             <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: "#ff6b35" }}>
-              Learning Paths
+              {t.learning.title}
             </span>
             <div className="w-8 h-1 rounded-full bg-gradient-to-r from-[#ffd700] to-[#ff6b35]" />
           </div>
           <h2 className="text-4xl sm:text-5xl font-black mb-4" style={{ color: textMain }}>
-            Jalur{" "}
             <span className="bg-gradient-to-r from-[#ff6b35] to-[#ffd700] bg-clip-text text-transparent">
-              Belajar
+              {t.learning.heading}
             </span>
           </h2>
           <p className="text-base max-w-xl mx-auto" style={{ color: textMuted }}>
-            Kurikulum terstruktur dari expert. Belajar dengan roadmap yang jelas dan terukur.
+            {t.learning.desc}
           </p>
         </motion.div>
 
