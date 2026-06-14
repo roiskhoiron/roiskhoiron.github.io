@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Users, ArrowRight } from "lucide-react";
 import mascotSvg from "@/assets/vectorized-mascot.svg";
-import { useT } from "../../hooks/useT";
+import { useT } from "@/hooks/useT";
 
 
 interface CommunitySectionProps {

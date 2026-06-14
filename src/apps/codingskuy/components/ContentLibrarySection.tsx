@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Search, Clock, BookOpen, Video, Layers, Code2, Brain, ArrowRight } from "lucide-react";
 import { CodingSkuyMascot } from "./CodingSkuyMascot";
-import { useT } from "../../hooks/useT";
+import { useT } from "@/hooks/useT";
 
 interface ContentLibrarySectionProps {
   darkMode: boolean;

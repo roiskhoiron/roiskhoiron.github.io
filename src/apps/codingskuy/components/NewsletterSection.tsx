@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { Send, CheckCircle2 } from "lucide-react";
 import mascotSvg from "@/assets/vectorized-mascot.svg";
-import { useT } from "../../hooks/useT";
+import { useT } from "@/hooks/useT";
 
 interface NewsletterSectionProps {
   darkMode: boolean;

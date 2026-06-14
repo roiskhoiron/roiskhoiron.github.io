@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Play, Film } from "lucide-react";
 import showcaseVideo from "@/assets/codingskuy_banner_background_video.mp4";
-import { useT } from "../../hooks/useT";
+import { useT } from "@/hooks/useT";
 
 interface ShowcaseSectionProps {
   darkMode: boolean;

@@ -1,8 +1,6 @@
-import "../codingskuy.css";
-import CodingSkuyApp from "../app/App";
-
-
-import { LanguageSwitcher } from "../components/LanguageSwitcher";
+import "@/codingskuy.css";
+import CodingSkuyApp from "@/apps/codingskuy/App";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 export function CodingSkuyLandingPage() {
   return (

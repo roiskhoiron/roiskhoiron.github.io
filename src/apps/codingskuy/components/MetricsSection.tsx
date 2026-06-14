@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { useT } from "../../hooks/useT";
+import { useT } from "@/hooks/useT";
 
 interface MetricsSectionProps {
   darkMode: boolean;

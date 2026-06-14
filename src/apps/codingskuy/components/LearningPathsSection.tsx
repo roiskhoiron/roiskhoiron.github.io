@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight, CheckCircle2, Circle } from "lucide-react";
-import { useT } from "../../hooks/useT";
+import { useT } from "@/hooks/useT";
 
 interface LearningPathsSectionProps {
   darkMode: boolean;

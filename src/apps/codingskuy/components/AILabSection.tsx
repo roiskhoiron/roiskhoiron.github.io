@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Terminal, Cpu, Bot, Workflow, FlaskConical, ExternalLink } from "lucide-react";
-import { useT } from "../../hooks/useT";
+import { useT } from "@/hooks/useT";
 
 interface AILabSectionProps {
   darkMode: boolean;

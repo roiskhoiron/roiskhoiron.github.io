@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { MapPin, Mail, Smartphone, Server, Brain, PenTool, Users } from "lucide-react";
-import { useT } from "../../hooks/useT";
+import { useT } from "@/hooks/useT";
 
 interface AboutSectionProps {
   darkMode: boolean;

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import logo from "../../assets/ic_logo_codingskuy.png";
-import { useT } from "../../hooks/useT";
+import logo from "@/assets/ic_logo_codingskuy.png";
+import { useT } from "@/hooks/useT";
 
 interface NavbarProps {
   darkMode: boolean;

@@ -3,11 +3,11 @@ import type { PointerEvent as ReactPointerEvent } from "react";
 import { motion } from "motion/react";
 import { BookOpen, Video, Layers, ArrowRight, Clock, Youtube, Sparkles, Users, PlayCircle, TrendingUp, Search } from "lucide-react";
 import { CodingSkuyMascot } from "./CodingSkuyMascot";
-import { IframeDialog } from "../../components/IframeDialog";
-import imgCharacter1 from "../../assets/hqdefault.png";
-import imgCharacter2 from "../../assets/hqdefault2.png";
-import imgCharacter3 from "../../assets/hqdefault3.png";
-import { useT } from "../../hooks/useT";
+import { IframeDialog } from "@/components/IframeDialog";
+import imgCharacter1 from "@/assets/hqdefault.png";
+import imgCharacter2 from "@/assets/hqdefault2.png";
+import imgCharacter3 from "@/assets/hqdefault3.png";
+import { useT } from "@/hooks/useT";
 
 interface MediaHubSectionProps {
   darkMode: boolean;

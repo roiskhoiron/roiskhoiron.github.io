@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ExternalLink, Github, Star } from "lucide-react";
-import { useT } from "../../hooks/useT";
+import { useT } from "@/hooks/useT";
 
 interface PortfolioSectionProps {
   darkMode: boolean;

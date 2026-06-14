@@ -1,4 +1,4 @@
-import type { Language } from "../../contexts/LanguageContext";
+import type { Language } from "@/contexts/LanguageContext";
 
 export const translations: Record<Language, any> = {
   id: {

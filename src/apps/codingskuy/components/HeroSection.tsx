@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { ArrowRight, Star, Zap, Github, Youtube, Linkedin } from "lucide-react";
 import { DoodleBolt, DoodleBracket, DoodleCode, DoodleSpark, DoodleRocket } from "./CodingSkuyMascot";
 import mascotSvg from "@/assets/hero-skuy.jpeg";
-import { useT } from "../../hooks/useT";
+import { useT } from "@/hooks/useT";
 
 interface HeroSectionProps { 
   darkMode: boolean;

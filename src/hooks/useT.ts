@@ -1,5 +1,5 @@
-import { useLanguage } from "../contexts/LanguageContext";
-import { translations, type Translations } from "../pages/codingskuy/translations";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations, type Translations } from "@/apps/codingskuy/components/translations";
 
 export function useT(): Translations {
   const { language } = useLanguage();

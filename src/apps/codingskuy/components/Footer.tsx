@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { Github, Youtube, Linkedin, Twitter, Code2, Heart } from "lucide-react";
 import { CodingSkuyMascot } from "./CodingSkuyMascot";
 import logoBg from "@/assets/simple_landsacape_logo.jpeg";
-import { useT } from "../../hooks/useT";
+import { useT } from "@/hooks/useT";
 
 interface FooterProps {
   darkMode: boolean;

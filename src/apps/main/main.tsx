@@ -2,11 +2,11 @@
 import { createRoot } from "react-dom/client";
 import { useEffect, useState } from "react";
 import App from "./App.tsx";
-import { ChefGenieLandingPage } from "./pages/ChefGenieLandingPage.tsx";
-import { CodingSkuyLandingPage } from "./pages/CodingSkuyLandingPage.tsx";
-import { ThemeProvider } from "./contexts/ThemeContext.tsx";
-import { LanguageProvider } from "./contexts/LanguageContext.tsx";
-import "./index.css";
+import { ChefGenieLandingPage } from "@/apps/chefgenie/pages";
+import { CodingSkuyLandingPage } from "@/apps/codingskuy/pages";
+import { ThemeProvider } from "@/contexts/ThemeContext";
+import { LanguageProvider } from "@/contexts/LanguageContext";
+import "@/index.css";
 
 const normalizePath = (path: string) => {
   const cleaned = path.replace(/\/+$/, "");

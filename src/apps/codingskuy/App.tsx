@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Navbar } from "./components/Navbar";
-import { ScrollSmoother } from "../components/ScrollSmoother";
-import logo from "../assets/ic_logo_codingskuy.png";
+import { ScrollSmoother } from "@/components/ScrollSmoother";
+import logo from "@/assets/ic_logo_codingskuy.png";
 import { HeroSection } from "./components/HeroSection";
 import { ShowcaseSection } from "./components/ShowcaseSection";
 import { AboutSection } from "./components/AboutSection";

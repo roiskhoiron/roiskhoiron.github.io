@@ -19,29 +19,29 @@ import {
   Apple,
 } from "lucide-react";
 import { useEffect, useState } from "react";
-import { ThemeToggle } from "../components/ThemeToggle";
-import { useLanguage } from "../contexts/LanguageContext";
-import { useTheme } from "../contexts/ThemeContext";
-import { translations } from "./chefgenie/translations";
-import { PhoneMockup } from "./chefgenie/PhoneMockup";
-import { SectionLabel } from "./chefgenie/SectionLabel";
-import { FeatureRow } from "./chefgenie/FeatureRow";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useTheme } from "@/contexts/ThemeContext";
+import { translations } from "@/apps/chefgenie/components/translations";
+import { PhoneMockup } from "@/apps/chefgenie/components/PhoneMockup";
+import { SectionLabel } from "@/apps/chefgenie/components/SectionLabel";
+import { FeatureRow } from "@/apps/chefgenie/components/FeatureRow";
 
-import imgMeet from "../assets/chefgenie/img_meet_chefgenie_your_ai_assistant.png";
-import imgDashboard from "../assets/chefgenie/img_dashboard_utama_chefgenie.png";
-import imgVision from "../assets/chefgenie/img_panduan_memasak_ai_vision.png";
-import imgFinance from "../assets/chefgenie/img_keuangan_dapur_bisnis_chefgenie.png";
-import imgWorld from "../assets/chefgenie/img_realistic_cartoon_food_world.png";
-import imgVendorPeek from "../assets/chefgenie/img_vendor_peek_light_mode.png";
-import imgCreator from "../assets/chefgenie/img_tampilan_konten_memasak_chefgenie.png";
-import imgExplore from "../assets/chefgenie/img_jelajahi_chefgenie.png";
-import imgNutrition from "../assets/chefgenie/img_saran_menu_untuk_ibu_rumah_tangga.png";
-import imgBusiness from "../assets/chefgenie/img_dasbor_toko_online_bisnis.png";
-import imgWelcome1 from "../assets/chefgenie/img_welcome_to_chefgenie_1.png";
-import imgChat from "../assets/chefgenie/img_panduan_memasak_ai_chat.png";
-import imgIdeMenu from "../assets/chefgenie/img_ide_menu_bisnis_chefgenie.png";
+import imgMeet from "@/assets/chefgenie/img_meet_chefgenie_your_ai_assistant.png";
+import imgDashboard from "@/assets/chefgenie/img_dashboard_utama_chefgenie.png";
+import imgVision from "@/assets/chefgenie/img_panduan_memasak_ai_vision.png";
+import imgFinance from "@/assets/chefgenie/img_keuangan_dapur_bisnis_chefgenie.png";
+import imgWorld from "@/assets/chefgenie/img_realistic_cartoon_food_world.png";
+import imgVendorPeek from "@/assets/chefgenie/img_vendor_peek_light_mode.png";
+import imgCreator from "@/assets/chefgenie/img_tampilan_konten_memasak_chefgenie.png";
+import imgExplore from "@/assets/chefgenie/img_jelajahi_chefgenie.png";
+import imgNutrition from "@/assets/chefgenie/img_saran_menu_untuk_ibu_rumah_tangga.png";
+import imgBusiness from "@/assets/chefgenie/img_dasbor_toko_online_bisnis.png";
+import imgWelcome1 from "@/assets/chefgenie/img_welcome_to_chefgenie_1.png";
+import imgChat from "@/assets/chefgenie/img_panduan_memasak_ai_chat.png";
+import imgIdeMenu from "@/assets/chefgenie/img_ide_menu_bisnis_chefgenie.png";
 
-import { LanguageSwitcher } from "../components/LanguageSwitcher";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 export function ChefGenieLandingPage() {
   const { language } = useLanguage();
