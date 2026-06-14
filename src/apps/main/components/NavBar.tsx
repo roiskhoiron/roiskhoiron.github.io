@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown, Menu, X, ExternalLink } from "lucide-react";
-import { ThemeToggle } from "./ThemeToggle";
-import { LanguageSwitcher } from "./LanguageSwitcher";
-import { useLanguage, type Language } from "../contexts/LanguageContext";
-import logo from "../assets/ic_logo.jpeg";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { useLanguage, type Language } from "@/contexts/LanguageContext";
+import logo from "@/assets/ic_logo.jpeg";
 
 const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }>> = {
   id: [

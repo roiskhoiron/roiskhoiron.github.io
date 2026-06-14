@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Github, Linkedin, Youtube, Mail } from "lucide-react";
-import { useLanguage, type Language } from "../contexts/LanguageContext";
+import { useLanguage, type Language } from "@/contexts/LanguageContext";
 
 const socialLinks = [
   {

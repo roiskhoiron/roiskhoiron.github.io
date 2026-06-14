@@ -1,13 +1,13 @@
 import { motion } from "motion/react";
 import { Youtube, Sparkles, Users, PlayCircle, TrendingUp, Search } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { PointerEvent as ReactPointerEvent } from "react";
-import { useLanguage, type Language } from "../contexts/LanguageContext";
-import { IframeDialog } from "./IframeDialog";
-import imgCharacter1 from "../assets/hqdefault.png";
-import imgCharacter2 from "../assets/hqdefault2.png";
-import imgCharacter3 from "../assets/hqdefault3.png";
+import { useLanguage, type Language } from "@/contexts/LanguageContext";
+import { IframeDialog } from "@/components/IframeDialog";
+import imgCharacter1 from "@/assets/hqdefault.png";
+import imgCharacter2 from "@/assets/hqdefault2.png";
+import imgCharacter3 from "@/assets/hqdefault3.png";
 
 type CreatorVideo = {
   id: string;

@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
 import { ChefHat, Sparkles, Cpu, Map, ArrowRight, Check } from "lucide-react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { useLanguage, type Language } from "../contexts/LanguageContext";
-import imgDemo from "../assets/ai_vision.png";
+import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
+import { useLanguage, type Language } from "@/contexts/LanguageContext";
+import imgDemo from "@/assets/ai_vision.png";
 
 const copy: Record<Language, {
   tag: string;

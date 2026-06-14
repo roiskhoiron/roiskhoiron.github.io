@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { MapPin, Calendar, Layers, TrendingUp } from "lucide-react";
-import imgProfile from "../assets/image.png";
-import { useLanguage, type Language } from "../contexts/LanguageContext";
+import imgProfile from "@/assets/image.png";
+import { useLanguage, type Language } from "@/contexts/LanguageContext";
 
 const copy: Record<Language, {
   location: string;

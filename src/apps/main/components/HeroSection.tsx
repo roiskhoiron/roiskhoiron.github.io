@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight, ArrowDown, Cpu, Smartphone, Brain, Layers } from "lucide-react";
-import { useLanguage, type Language } from "../contexts/LanguageContext";
+import { useLanguage, type Language } from "@/contexts/LanguageContext";
 
 const copy: Record<Language, {
   badge: string;

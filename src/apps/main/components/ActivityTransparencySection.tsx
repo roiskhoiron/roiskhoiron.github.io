@@ -2,8 +2,8 @@ import { motion } from "motion/react";
 import { ExternalLink, MessageCircle, RefreshCw, ShieldCheck, Sparkles, Search } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { PointerEvent as ReactPointerEvent, WheelEvent as ReactWheelEvent } from "react";
-import { useLanguage, type Language } from "../contexts/LanguageContext";
-import { ContentDialog } from "./ContentDialog";
+import { useLanguage, type Language } from "@/contexts/LanguageContext";
+import { ContentDialog } from "@/components/ContentDialog";
 
 type StatusKey =
   | "todo"

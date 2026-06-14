@@ -9,7 +9,7 @@ import {
   ArrowRight,
   ChevronRight,
 } from "lucide-react";
-import { useLanguage, type Language } from "../contexts/LanguageContext";
+import { useLanguage, type Language } from "@/contexts/LanguageContext";
 
 const copy: Record<Language, {
   sectionTag: string;

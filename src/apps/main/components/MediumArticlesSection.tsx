@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "motion/react";
 import { BookOpenText, ExternalLink, CalendarDays, RefreshCw, Search } from "lucide-react";
-import { useLanguage, type Language } from "../contexts/LanguageContext";
-import { ContentDialog } from "./ContentDialog";
+import { useLanguage, type Language } from "@/contexts/LanguageContext";
+import { ContentDialog } from "@/components/ContentDialog";
 
 type MediumItem = {
   title: string;

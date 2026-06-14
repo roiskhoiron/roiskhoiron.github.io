@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Smartphone, Layers, Brain, ArrowRight } from "lucide-react";
-import { useLanguage, type Language } from "../contexts/LanguageContext";
+import { useLanguage, type Language } from "@/contexts/LanguageContext";
 
 const copy: Record<Language, { tag: string; titleTop: string; titleBottom: string; milestone: string }> = {
   id: {
