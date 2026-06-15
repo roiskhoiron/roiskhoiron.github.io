@@ -3,6 +3,7 @@
 /build/
 /dist/
 .env
+*.log
 slides/node_modules/
 slides/dist/
 slides/*/dist/
