@@ -1,0 +1,246 @@
+/* ============================================
+   CodingSkuy Brand Theme for Starlight
+   Matches the visual identity of roishoiron.github.io
+   - Blue accent: #0055ff (light) / #3d8bff (dark)
+   - Background: #f0f4ff (light) / #060b18 (dark)
+   - Font: Plus Jakarta Sans + Inter
+   ============================================ */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* --- Starlight Font Overrides --- */
+:root {
+  --sl-font: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --sl-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* ─── Dark Mode (default) ─── */
+  /* Page background */
+  --sl-color-black: #060b18;
+  /* Sidebar / surfaces */
+  --sl-color-gray-7: #080811;
+  --sl-color-gray-6: #0d1629;
+  --sl-color-gray-5: #131e38;
+  /* Borders / dividers */
+  --sl-color-gray-4: #1a2747;
+  /* Disabled / subtle text */
+  --sl-color-gray-3: #4a5f8a;
+  /* Secondary text */
+  --sl-color-gray-2: #5a6f9a;
+  --sl-color-gray-1: #7c8db5;
+  /* Primary text */
+  --sl-color-white: #e8f0ff;
+
+  /* Blue accent (matches #3d8bff) */
+  --sl-color-accent-low: hsl(217, 91%, 18%);
+  --sl-color-accent: hsl(217, 91%, 60%);
+  --sl-color-accent-high: hsl(217, 91%, 80%);
+
+  /* Semantic: orange (warning/info) */
+  --sl-hue-orange: 23;
+  --sl-color-orange-low: hsl(23, 50%, 22%);
+  --sl-color-orange: hsl(23, 90%, 76%);
+  --sl-color-orange-high: hsl(23, 100%, 76%);
+
+  /* Semantic: green (success) */
+  --sl-hue-green: 115;
+  --sl-color-green-low: hsl(115, 30%, 22%);
+  --sl-color-green: hsl(115, 50%, 76%);
+  --sl-color-green-high: hsl(115, 70%, 76%);
+
+  /* Semantic: blue (info) */
+  --sl-hue-blue: 217;
+  --sl-color-blue-low: hsl(217, 40%, 22%);
+  --sl-color-blue: hsl(217, 80%, 76%);
+  --sl-color-blue-high: hsl(217, 95%, 76%);
+
+  /* Semantic: purple (accent secondary) */
+  --sl-hue-purple: 267;
+  --sl-color-purple-low: hsl(267, 40%, 22%);
+  --sl-color-purple: hsl(267, 70%, 76%);
+  --sl-color-purple-high: hsl(267, 85%, 76%);
+
+  /* Semantic: red (danger/error) */
+  --sl-hue-red: 343;
+  --sl-color-red-low: hsl(343, 40%, 22%);
+  --sl-color-red: hsl(343, 70%, 76%);
+  --sl-color-red-high: hsl(343, 85%, 76%);
+
+  color-scheme: dark;
+}
+
+/* ─── Light Mode ─── */
+:root[data-theme='light'] {
+  /* Page background */
+  --sl-color-black: #f0f4ff;
+  /* Sidebar / surfaces */
+  --sl-color-gray-7: #f0f4ff;
+  --sl-color-gray-6: #e8edff;
+  --sl-color-gray-5: #e2e8f0;
+  /* Borders / dividers */
+  --sl-color-gray-4: #cbd5e1;
+  /* Disabled / subtle text */
+  --sl-color-gray-3: #94a3b8;
+  /* Secondary text */
+  --sl-color-gray-2: #64748b;
+  --sl-color-gray-1: #475569;
+  /* Primary text */
+  --sl-color-white: #0d1117;
+
+  /* Blue accent (matches #0055ff) */
+  --sl-color-accent-low: hsl(217, 91%, 85%);
+  --sl-color-accent: hsl(217, 91%, 45%);
+  --sl-color-accent-high: hsl(217, 91%, 32%);
+
+  /* Semantic: orange */
+  --sl-hue-orange: 23;
+  --sl-color-orange-low: hsl(23, 80%, 80%);
+  --sl-color-orange: hsl(23, 90%, 50%);
+  --sl-color-orange-high: hsl(23, 100%, 32%);
+
+  /* Semantic: green */
+  --sl-hue-green: 115;
+  --sl-color-green-low: hsl(115, 50%, 80%);
+  --sl-color-green: hsl(115, 60%, 40%);
+  --sl-color-green-high: hsl(115, 80%, 22%);
+
+  /* Semantic: blue */
+  --sl-hue-blue: 217;
+  --sl-color-blue-low: hsl(217, 60%, 80%);
+  --sl-color-blue: hsl(217, 80%, 45%);
+  --sl-color-blue-high: hsl(217, 95%, 28%);
+
+  /* Semantic: purple */
+  --sl-hue-purple: 267;
+  --sl-color-purple-low: hsl(267, 50%, 80%);
+  --sl-color-purple: hsl(267, 70%, 50%);
+  --sl-color-purple-high: hsl(267, 85%, 32%);
+
+  /* Semantic: red */
+  --sl-hue-red: 343;
+  --sl-color-red-low: hsl(343, 50%, 80%);
+  --sl-color-red: hsl(343, 70%, 45%);
+  --sl-color-red-high: hsl(343, 85%, 28%);
+
+  color-scheme: light;
+}
+
+/* ============================================
+   Extra Visual Polish
+   ============================================ */
+
+/* Smooth theme transition */
+html,
+html *,
+html *::before,
+html *::after {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease;
+}
+/* But exclude transitions on transform/opacity (prevent animation issues) */
+html *,
+html *::before,
+html *::after {
+  transition-property: background-color, border-color, color;
+}
+
+/* Make the sidebar header / site title pop with brand gradient */
+.site-title {
+  background: linear-gradient(135deg, #0055ff, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+:root[data-theme='dark'] .site-title {
+  background: linear-gradient(135deg, #3d8bff, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Accent links inside article content */
+.sl-markdown-content a {
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--sl-color-accent);
+  transition: opacity 0.2s ease;
+}
+.sl-markdown-content a:hover {
+  opacity: 0.8;
+}
+
+/* Code blocks — subtle border & consistent radius */
+.expressive-code {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+.sl-markdown-content :not(pre) > code {
+  font-size: 0.85em;
+  padding: 0.2em 0.4em;
+  border-radius: 6px;
+  background: var(--sl-color-gray-6);
+  border: 1px solid var(--sl-color-gray-5);
+}
+
+/* Starlight right-side table of contents — brand accent */
+.starlight-toc a[aria-current='true'] {
+  border-left-color: var(--sl-color-accent);
+  color: var(--sl-color-accent);
+}
+
+/* Sidebar styling enhancements */
+.sidebar-content a[aria-current='page'],
+.sidebar-content a[aria-current='true'] {
+  background: var(--sl-color-accent-low);
+  border-right: 2px solid var(--sl-color-accent);
+  font-weight: 600;
+}
+
+/* Header search button */
+.search-button {
+  border-radius: 0.625rem;
+  border: 1px solid var(--sl-color-gray-5);
+}
+.search-button:hover {
+  border-color: var(--sl-color-accent);
+}
+
+/* Mobile menu hamburger brand color */
+@media (max-width: 50rem) {
+  .mobile-nav-toggle {
+    color: var(--sl-color-accent);
+  }
+}
+
+/* Brand gradient on the social link hover */
+.social-icons a:hover {
+  color: var(--sl-color-accent) !important;
+}
+
+/* Page title gradient on article pages */
+.content-panel h1 {
+  background: linear-gradient(135deg, var(--sl-color-accent), var(--sl-color-accent-high));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Table of contents thin scrollbar */
+.starlight-toc {
+  scrollbar-width: thin;
+  scrollbar-color: var(--sl-color-gray-5) transparent;
+}
+
+/* Footer tweaks — matching brand */
+.sl-footer a:hover {
+  color: var(--sl-color-accent) !important;
+}
+
+/* Pagination / prev-next links */
+.pagination-links a {
+  border-radius: 0.75rem;
+  border-color: var(--sl-color-gray-5);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.pagination-links a:hover {
+  border-color: var(--sl-color-accent);
+  background: var(--sl-color-accent-low);
+}

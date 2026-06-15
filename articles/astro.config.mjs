@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-import starlightCatppuccin from "@catppuccin/starlight";
 
 export default defineConfig({
   site: "https://roishoiron.github.io",
@@ -12,12 +11,7 @@ export default defineConfig({
     starlight({
       title: "CodingSkuy",
       social: [{ icon: "github", label: "GitHub", href: "https://github.com/roishoiron" }],
-      plugins: [
-        starlightCatppuccin({
-          dark: { flavor: "mocha", accent: "mauve" },
-          light: { flavor: "latte", accent: "mauve" },
-        }),
-      ],
+      customCss: ["./src/styles/theme.css"],
       sidebar: [
         {
           label: "Articles",
