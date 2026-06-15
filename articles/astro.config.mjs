@@ -21,11 +21,11 @@ export default defineConfig({
       sidebar: [
         {
           label: "Articles",
-          items: [{ autogenerate: { directory: "docs/articles" } }],
+          items: [{ autogenerate: { directory: "articles" } }],
         },
         {
           label: "Tutorials",
-          items: [{ autogenerate: { directory: "docs/tutorials" } }],
+          items: [{ autogenerate: { directory: "tutorials" } }],
         },
       ],
     }),
