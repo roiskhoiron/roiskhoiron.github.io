@@ -1,0 +1,18 @@
+{
+  "name": "slides",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:flutter": "slidev flutter-null-safety/slides.md",
+    "dev:mcp": "slidev mcp-server/slides.md",
+    "dev:ai": "slidev ai-agent/slides.md",
+    "build:flutter": "slidev build flutter-null-safety/slides.md --out dist/flutter-null-safety",
+    "build:mcp": "slidev build mcp-server/slides.md --out dist/mcp-server",
+    "build:ai": "slidev build ai-agent/slides.md --out dist/ai-agent",
+    "build": "npm run build:flutter && npm run build:mcp && npm run build:ai"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^0.49.0",
+    "@slidev/theme-default": "^0.21.0"
+  }
+}
