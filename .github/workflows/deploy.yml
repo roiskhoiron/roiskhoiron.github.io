@@ -4,8 +4,12 @@ on:
   push:
     branches: [ master ]
   schedule:
-    - cron: '0 0 * * *' # every day at midnight
+    - cron: "*/10 * * * *"
   workflow_dispatch:
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 permissions:
   contents: write
