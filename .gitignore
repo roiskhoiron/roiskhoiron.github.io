@@ -5,4 +5,6 @@
 .env
 slides/node_modules/
 slides/dist/
+slides/*/dist/
+slides/package-lock.json
 slides/.slidev/
