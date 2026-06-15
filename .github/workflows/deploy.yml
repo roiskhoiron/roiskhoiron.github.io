@@ -42,15 +42,19 @@ jobs:
         run: npm run build
 
       - name: Install Astro dependencies
-        run: cd articles && npm install
+        run: cd articles && npm install --legacy-peer-deps
 
       - name: Build Astro (articles + tutorials)
-        run: cd articles && npm run build
+        run: cd articles && npm run build 2>&1
+
+      - name: Debug Astro output
+        run: ls -la articles/dist/ || echo "articles/dist/ not found"
 
       - name: Merge Astro output into build/
         run: |
           mkdir -p build/articles
           cp -R articles/dist/* build/articles/
+          ls -la build/articles/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
