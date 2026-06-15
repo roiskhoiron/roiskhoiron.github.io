@@ -7,7 +7,7 @@ interface LearningPathsSectionProps {
 }
 
 const DEV = typeof window !== "undefined" && window.location.hostname === "localhost";
-const ARTICLES_BASE = DEV ? "http://localhost:4322/articles" : "https://roishoiron.github.io/articles";
+const ARTICLES_BASE = DEV ? "http://localhost:4322/articles" : "https://roiskhoiron.github.io/articles";
 
 const getArticleLink = (id: string) => {
   const map: Record<string, string> = {
