@@ -6,6 +6,21 @@ interface LearningPathsSectionProps {
   darkMode: boolean;
 }
 
+const DEV = typeof window !== "undefined" && window.location.hostname === "localhost";
+const ARTICLES_BASE = DEV ? "http://localhost:4322/articles" : "https://roishoiron.github.io/articles";
+
+const getArticleLink = (id: string) => {
+  const map: Record<string, string> = {
+    flutter: `${ARTICLES_BASE}/docs/tutorials/flutter/`,
+    android: `${ARTICLES_BASE}/docs/tutorials/android/`,
+    backend: `${ARTICLES_BASE}/docs/tutorials/backend/`,
+    python: `${ARTICLES_BASE}/docs/tutorials/python/`,
+    ai: `${ARTICLES_BASE}/docs/tutorials/ai/`,
+    career: `${ARTICLES_BASE}/docs/articles/career/`,
+  };
+  return map[id] || `${ARTICLES_BASE}/`;
+};
+
 const paths = [
   {
     id: "flutter",
@@ -75,7 +90,7 @@ const paths = [
   },
 ];
 
-export function LearningPathsSection({ darkMode }: LearningPathsSectionProps) {
+export function LearningPathsSection({ darkMode = false }: LearningPathsSectionProps) {
   const t = useT();
   const cardBg = darkMode ? "#0d1629" : "#ffffff";
   const borderColor = darkMode ? "rgba(61,139,255,0.15)" : "rgba(0,85,255,0.1)";
@@ -185,21 +200,23 @@ export function LearningPathsSection({ darkMode }: LearningPathsSectionProps) {
                 ))}
               </div>
 
-              {/* CTA */}
-              <button
-                className="w-full py-2.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-all hover:opacity-90"
-                style={{
-                  background: path.progress > 0
-                    ? `linear-gradient(135deg, ${path.color}, ${path.color}99)`
-                    : "transparent",
-                  color: path.progress > 0 ? "white" : path.color,
-                  border: `1px solid ${path.color}40`,
-                  boxShadow: path.progress > 0 ? `0 4px 12px ${path.color}30` : "none",
-                }}
-              >
-                {path.progress > 0 ? "Lanjutkan Belajar" : "Mulai Sekarang"}
-                <ArrowRight size={15} />
-              </button>
+               {/* CTA */}
+               <a
+                 href={getArticleLink(path.id)}
+                 target="_self"
+                 className="w-full py-2.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-all hover:opacity-90"
+                 style={{
+                   background: path.progress > 0
+                     ? `linear-gradient(135deg, ${path.color}, ${path.color}99)`
+                     : "transparent",
+                   color: path.progress > 0 ? "white" : path.color,
+                   border: `1px solid ${path.color}40`,
+                   boxShadow: path.progress > 0 ? `0 4px 12px ${path.color}30` : "none",
+                 }}
+               >
+                 {path.progress > 0 ? "Lanjutkan Belajar" : "Mulai Sekarang"}
+                 <ArrowRight size={15} />
+               </a>
             </motion.div>
           ))}
         </div>
