@@ -1,14 +1,20 @@
 title: Belajar Programming di Era AI untuk Anak SD & SMP
 category: education
+path:
+  article: mulai/belajar-programming-di-era-ai
+  slide: belajar-programming-ai-anak
+  content: content/belajar-programming-ai-anak
 tags:
   - programming
   - AI
   - anak
   - SD
   - SMP
+  - edukasi
+  - coding
 status:
-  article: draft
-  slide: draft
+  article: published
+  slide: published
   tutorial: planned
   playground: planned
   faq: planned
