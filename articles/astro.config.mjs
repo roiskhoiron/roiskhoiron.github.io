@@ -15,6 +15,13 @@ export default defineConfig({
       sidebar: [
         { label: "🏠 Beranda", link: "/" },
         {
+          label: "🧠 Learning Hub",
+          collapsed: true,
+          items: [
+            { label: "💙 Flutter Null Safety", link: "/content/flutter/" },
+          ],
+        },
+        {
           label: "📖 Mulai Belajar",
           items: [{ autogenerate: { directory: "mulai" } }],
         },

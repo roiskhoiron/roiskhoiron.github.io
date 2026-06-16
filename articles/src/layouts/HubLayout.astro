@@ -1,0 +1,185 @@
+---
+// HubLayout.astro — Learning Hub wrapper
+// Props: { title, description, slug }
+// Styling konsisten dengan brand CodingSkuy (#0055ff / #3d8bff)
+---
+
+<div class="hub-container">
+  <article class="hub-content">
+    <slot />
+  </article>
+</div>
+
+<style is:global>
+  .hub-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  .hub-content h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+  .hub-content .hub-subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  .hub-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 768px) {
+    .hub-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .hub-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .hub-card:hover {
+    border-color: #3d8bff;
+    box-shadow: 0 4px 20px rgba(61, 139, 255, 0.12);
+    transform: translateY(-2px);
+  }
+  .hub-card-disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+  .hub-card-disabled:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: #e2e8f0;
+  }
+  .hub-card-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .hub-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 0.25rem;
+  }
+  .hub-card-desc {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.5;
+    flex: 1;
+  }
+  .hub-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.75rem 0;
+  }
+  .hub-badge {
+    display: inline-block;
+    background: #eef2ff;
+    color: #3d8bff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+  }
+  .hub-btn {
+    display: inline-block;
+    background: #3d8bff;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.6rem 1.25rem;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.2s;
+    margin-top: auto;
+  }
+  .hub-btn:hover {
+    background: #0055ff;
+    color: #ffffff !important;
+    text-decoration: none !important;
+  }
+  .hub-btn-secondary {
+    background: #f1f5f9;
+    color: #64748b;
+    cursor: default;
+  }
+  .hub-related {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .hub-tag {
+    display: inline-block;
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .hub-tag:hover {
+    background: #eef2ff;
+    color: #3d8bff;
+    text-decoration: none !important;
+  }
+  .hub-section {
+    margin-top: 2.5rem;
+  }
+  .hub-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eef2ff;
+  }
+  .hub-section-content {
+    max-width: 780px;
+    line-height: 1.8;
+    font-size: 1rem;
+    color: #334155;
+  }
+  .hub-section-content h2 {
+    border-bottom: none;
+  }
+  .hub-section-content h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-top: 1.5rem;
+  }
+  .hub-section-content p {
+    margin: 0.75rem 0;
+  }
+  .hub-section-content code {
+    background: #f1f5f9;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.875em;
+    color: #e11d48;
+  }
+  .hub-section-content pre {
+    background: #1a1a2e;
+    color: #e2e8f0;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+</style>

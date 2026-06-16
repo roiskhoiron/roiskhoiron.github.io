@@ -1,9 +1,22 @@
 title: Belajar Programming di Era AI untuk Anak SD & SMP
+slug: belajar-programming-ai-anak
 category: education
-path:
-  article: mulai/belajar-programming-di-era-ai
-  slide: belajar-programming-ai-anak
-  content: content/belajar-programming-ai-anak
+description: Panduan lengkap cara memperkenalkan programming dan AI literacy kepada anak usia 6-15 tahun.
+paths:
+  read:
+    enabled: true
+    duration: "15 min"
+  practice:
+    enabled: false
+    duration: null
+  watch:
+    enabled: true
+    duration: "12 slide"
+  play:
+    enabled: false
+    duration: null
+related:
+  - flutter
 tags:
   - programming
   - AI
@@ -12,9 +25,4 @@ tags:
   - SMP
   - edukasi
   - coding
-status:
-  article: published
-  slide: published
-  tutorial: planned
-  playground: planned
-  faq: planned
+  - pemula

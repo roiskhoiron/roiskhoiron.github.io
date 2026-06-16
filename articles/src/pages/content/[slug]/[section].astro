@@ -1,0 +1,134 @@
+---
+// articles/src/pages/content/[slug]/[section].astro
+// Section page — renders Read, Practice, Watch, or Play content
+import HubLayout from '../../../layouts/HubLayout.astro';
+import yaml from 'js-yaml';
+import { readFile, readdir } from 'node:fs/promises';
+import path from 'node:path';
+import { Marked } from 'marked';
+
+export async function getStaticPaths() {
+  const contentDir = path.resolve('..', '..', 'content');
+  let entries;
+  try {
+    entries = await readdir(contentDir, { withFileTypes: true });
+  } catch {
+    return [];
+  }
+
+  const validSections = ['read', 'practice', 'watch', 'play'];
+  const paths = [];
+  
+  for (const entry of entries) {
+    if (!entry.isDirectory() || entry.name.startsWith('.')) continue;
+    const slug = entry.name;
+    
+    // Check meta.yaml for enabled sections
+    try {
+      const metaPath = path.resolve(contentDir, slug, 'meta.yaml');
+      const raw = await readFile(metaPath, 'utf-8');
+      const meta = yaml.load(raw);
+      
+      for (const section of validSections) {
+        if (meta.paths?.[section]?.enabled) {
+          paths.push({ params: { slug, section } });
+        }
+      }
+    } catch {
+      // Include as read-only fallback
+      paths.push({ params: { slug, section: 'read' } });
+    }
+  }
+  
+  return paths;
+}
+
+const { slug, section } = Astro.params;
+const baseContentDir = path.resolve('..', '..', 'content');
+
+// Load meta
+let meta = { title: slug, description: '' };
+try {
+  const metaPath = path.resolve(baseContentDir, slug, 'meta.yaml');
+  meta = yaml.load(await readFile(metaPath, 'utf-8'));
+} catch {}
+
+// Determine which files to read
+const sectionDir = path.resolve(baseContentDir, slug, section);
+const topicId = meta.slug || slug;
+
+let content = '';
+
+try {
+  if (section === 'read') {
+    // Find any .mdx or .md files in the read directory
+    const { readdir } = await import('node:fs/promises');
+    const files = (await readdir(sectionDir)).filter(f => f.endsWith('.mdx') || f.endsWith('.md'));
+    for (const file of files) {
+      const rawContent = await readFile(path.join(sectionDir, file), 'utf-8');
+      // Strip frontmatter
+      content += rawContent.replace(/^---[\s\S]*?---\n*/, '') + '\n\n';
+    }
+  } else if (section === 'practice') {
+    // Concatenate intro + exercise + project
+    const parts = ['intro.mdx', 'exercise.mdx', 'project.mdx'];
+    for (const part of parts) {
+      try {
+        const rawContent = await readFile(path.join(sectionDir, topicId, part), 'utf-8');
+        content += rawContent.replace(/^---[\s\S]*?---\n*/, '') + '\n\n---\n\n';
+      } catch {
+        // Try alternate name
+        try {
+          const rawContent = await readFile(path.join(sectionDir, part), 'utf-8');
+          content += rawContent.replace(/^---[\s\S]*?---\n*/, '') + '\n\n---\n\n';
+        } catch {}
+      }
+    }
+  } else if (section === 'watch') {
+    try {
+      const rawContent = await readFile(path.join(sectionDir, topicId, 'slides.md'), 'utf-8');
+      content += rawContent.replace(/^---[\s\S]*?---\n*/, '');
+    } catch {
+      try {
+        const rawContent = await readFile(path.join(sectionDir, 'slides.md'), 'utf-8');
+        content += rawContent.replace(/^---[\s\S]*?---\n*/, '');
+      } catch {}
+    }
+  } else if (section === 'play') {
+    try {
+      const rawContent = await readFile(path.join(sectionDir, topicId, 'playground.md'), 'utf-8');
+      content += rawContent.replace(/^---[\s\S]*?---\n*/, '');
+    } catch {}
+  }
+} catch (e) {
+  content = `> *Konten untuk bagian **${section}** belum tersedia.*`;
+}
+
+// Render markdown to HTML
+const marked = new Marked({ gfm: true });
+const renderedContent = await marked.parse(content);
+
+// Section display names
+const sectionNames = {
+  read: { icon: '📖', title: 'Read', backLabel: 'Kembali ke Hub' },
+  practice: { icon: '🎯', title: 'Practice', backLabel: 'Kembali ke Hub' },
+  watch: { icon: '🎬', title: 'Watch', backLabel: 'Kembali ke Hub' },
+  play: { icon: '🎮', title: 'Play', backLabel: 'Kembali ke Hub' },
+};
+const info = sectionNames[section] || { icon: '📄', title: section, backLabel: 'Kembali' };
+---
+
+<HubLayout title={`${info.icon} ${meta.title || slug} — ${info.title}`} description={meta.description} slug={slug}>
+  <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
+    <a href={`/articles/content/${slug}/`} class="hub-btn" style="background:transparent;color:#3d8bff;border:1px solid #3d8bff;padding:0.4rem 1rem;">
+      ← {info.backLabel}
+    </a>
+    <span class="hub-badge" style="font-size:0.85rem;padding:0.3rem 0.8rem;">
+      {info.icon} {info.title}
+    </span>
+  </div>
+
+  <div class="hub-section-content">
+    <Fragment set:html={renderedContent} />
+  </div>
+</HubLayout>
