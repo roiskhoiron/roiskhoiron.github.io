@@ -16,34 +16,10 @@ export default defineConfig({
         { label: "🏠 Beranda", link: "/" },
         {
           label: "🧠 Learning Hub",
-          collapsed: true,
           items: [
             { label: "💙 Flutter Null Safety", link: "/content/flutter/" },
+            { label: "🤖 Belajar Programming AI", link: "/content/belajar-programming-ai-anak/" },
           ],
-        },
-        {
-          label: "📖 Mulai Belajar",
-          items: [{ autogenerate: { directory: "mulai" } }],
-        },
-        {
-          label: "💙 Flutter",
-          collapsed: true,
-          items: [{ autogenerate: { directory: "flutter" } }],
-        },
-        {
-          label: "🤖 AI",
-          collapsed: true,
-          items: [{ autogenerate: { directory: "ai" } }],
-        },
-        {
-          label: "💼 Karir",
-          collapsed: true,
-          items: [{ autogenerate: { directory: "karir" } }],
-        },
-        {
-          label: "🎯 Tutorial",
-          collapsed: true,
-          items: [{ autogenerate: { directory: "tutorial" } }],
         },
       ],
     }),
