@@ -1,6 +1,10 @@
 ---
 theme: default
 title: Belajar Programming di Era AI untuk Anak SD & SMP
+transition: slide-left
+fonts:
+  sans: 'Plus Jakarta Sans, Inter'
+  mono: 'JetBrains Mono'
 ---
 
 # Belajar Programming di Era AI
@@ -13,152 +17,264 @@ title: Belajar Programming di Era AI untuk Anak SD & SMP
 layout: section
 ---
 
-# Kenapa Coding di Era AI?
+# Kenapa Programming di Era AI?
 
 ---
 layout: fact
 ---
 
-# "AI tidak menggantikan programmer. AI menggantikan orang yang *tidak* paham teknologi."
+# AI mengubah alat, bukan cara berpikir.
+
+**Compiler → Copilot**  
+**Stack Overflow → ChatGPT**  
+
+Fundasi logical thinking tetap sama.
 
 ---
 layout: default
 ---
 
-# Yang Dipelajari Anak dari Coding
+# 5 Kompetensi Utama
 
-| **Skill** | **Dampak** |
-|---|---|
-| **Logical Thinking** | Memecah masalah → langkah kecil |
-| **Problem Solving** | Mencari solusi, bukan menghafal |
-| **Kreativitas** | Bikin game, cerita, animasi |
-| **Resilience** | Bangkit dari error |
-| **AI Literacy** | Paham cara AI bekerja |
-
----
-layout: section
----
-
-# Pendekatan per Usia
-
----
-layout: default
----
-
-# 🧒 SD Kelas 1–3 (6–8 Tahun)
-
-**Fokus: Logika tanpa layar + visual**
-
-- **Unplugged** — Kartu, puzzle, algoritma "bikin sandwich"
-- **ScratchJr** — Drag & drop blok di tablet
-- **Robot Edukasi** — Botley, Code-a-Pillar
-
-> 🎯 Target: Bikin cerita interaktif dalam 15 blok
-
----
-layout: default
----
-
-# 🧒 SD Kelas 4–6 (9–12 Tahun)
-
-**Fokus: Proyek kreatif + kolaborasi**
-
-- **Scratch** — Game, animasi, simulasi
-- **Roblox Studio / Minecraft Education**
-- **Micro:bit / Arduino** — Coding fisik
-- **Teachable Machine** — Latih AI sendiri
-
-> 🎯 Target: Game sederhana + paham AI dasar
-
----
-layout: default
----
-
-# 🧑 SMP (13–15 Tahun)
-
-**Fokus: Transisi ke bahasa teks + proyek nyata**
-
-| **Aktivitas** | **Tools** |
-|---|---|
-| Python pertama | Replit, Google Colab |
-| Bot chat, kalkulator, game tebak angka | Python |
-| AI-assisted coding | Cursor, Copilot |
-| Micro-proyek | Langsung di browser |
-
-> 🎯 Target: Program Python fungsional dengan bantuan AI
-
----
-layout: section
----
-
-# Tools Rekomendasi
-
----
-layout: default
----
-
-# Pilihan Tools
-
-| **Usia** | **Tools** | **Platform** |
+| | Skill | Dampak untuk Anak |
 |---|---|---|
-| 6–8 thn | ScratchJr, Botley | Tablet / offline |
-| 9–12 thn | Scratch, Micro:bit, Roblox | Web / laptop |
-| 13–15 thn | Python, Replit, Cursor, Copilot | Laptop |
+| 🧠 | **Logical Thinking** | Memecah masalah → langkah kecil |
+| 🔍 | **Problem Solving** | Debug → Learn → Improve |
+| 🎨 | **Creativity** | Kode sebagai media ekspresi |
+| 💪 | **Resilience** | Bangkit dari error |
+| 🤖 | **AI Literacy** | Paham data, model, inference |
+
+**Fakta**: Anak yang bisa coding di era AI **bukan digantikan** — mereka justru yang paling bisa memanfaatkan AI.
 
 ---
 layout: section
 ---
 
-# Peran AI dalam Belajar
+# Pendekatan Berdasarkan Usia
 
 ---
 layout: default
 ---
 
-# AI Bisa Membantu...
+## 🧒 SD Kelas 1‑3 (6‑8 Tahun)
 
-- ✅ Menjelaskan konsep dengan analogi
-- ✅ Debugging kode
-- ✅ Generate contoh latihan
-- ✅ Pair programming
-- ✅ Personalized learning
+**Fokus: Logika tanpa layar + eksplorasi visual**
+
+| Aktivitas | Tools | Konsep |
+|---|---|---|
+| Algoritma "Membuat Sandwich" | Kartu bergambar | Sequencing |
+| Animasi robot | ScratchJr | Loop, event |
+| Robot gerak | Botley / Code‑a‑Pillar | Instruksi berurutan |
+
+```
+🚶 → 🔄 → 🧱 → ✅  
+  (start) (repeat 4) (move 10) (done)
+```
+
+> 🎯 **Target**: Cerita interaktif dalam ≤15 blok
 
 ---
 layout: default
 ---
 
-# ...Tapi Manusia Tetap Dibutuhkan
+## 🧒 SD Kelas 4‑6 (9‑12 Tahun)
 
-- ❤️ **Kreativitas & imajinasi** — *Apa yang mau dibuat?*
-- 🧠 **Pemahaman fundamental** — *Kenapa ini bekerja?*
-- ⚖️ **Etika & tanggung jawab** — *Kapan pakai AI?*
-- 🤝 **Kolaborasi & komunikasi** — *Coding itu tim*
+**Fokus: Proyek kreatif + integrasi AI**
+
+- **Scratch** — Game "Catch the Star" (variabel + broadcast)
+- **Micro:bit** — Sensor cahaya + LED
+- **Roblox Studio / Minecraft Education** — Lingkungan familiar
+- **Teachable Machine** — Latih model AI dengan gambar/suara
+
+**Konsep yang dipelajari**:  
+`variable` → `loop` → `condition` → `event` → `AI inference`
+
+> 🎯 **Target**: Game sederhana + chatbot AI mini
+
+---
+layout: default
+---
+
+## 🧑 SMP (13‑15 Tahun)
+
+**Fokus: Bahasa teks + AI‑assisted coding**
+
+| Aktivitas | Tools |
+|---|---|
+| Python dasar (functions, modules) | Replit, Google Colab |
+| Quiz Bot dengan OpenAI | Python + OpenAI API |
+| AI‑assisted coding | Cursor / GitHub Copilot |
+| Unit Testing | pytest |
+| Version Control | Git + GitHub |
+
+```
+┌─ Input ──────┐     ┌─ AI ──────────┐     ┌─ Output ─────┐
+│ "Buat soal    │────>│ GPT-3.5 turbo  │────>│ Pilihan ganda │
+│  tentang loop"│     │ (via Copilot)  │     │ coding SMP    │
+└───────────────┘     └───────────────┘     └──────────────┘
+```
+
+> 🎯 **Target**: Program Python fungsional + kolaborasi dengan AI
 
 ---
 layout: section
+---
+
+# Studi Kasus Langsung
+
+---
+layout: default
+---
+
+## Studi Kasus: *Chatbot "Teman Belajar"*
+
+**Target**: SD Kelas 4‑6 | **Tools**: Teachable Machine + Python
+
+### Langkah 1 — Kumpulkan Data
+```
+["Halo", "Hai", "Apa kabar"]  → intent: sapaan
+["Bye", "Dah", "Sampai nanti"] → intent: perpisahan
+```
+
+### Langkah 2 — Latih Model
+Upload ke teachablemachine.withgoogle.com  
+→ Export `model.json`
+
+### Langkah 3 — Python
+```python
+model = tf.keras.models.load_model('model.json')
+text = recognizer(audio)  # speech → text
+pred = model.predict(vectorizer([text]))
+print("🤖 Hai!" if np.argmax(pred)==0 else "🤖 Dah!")
+```
+
+---
+
+<v-click>
+
+### 📌 Poin Belajar:
+- **Data** → **Model** → **Inference** cycle
+- AI tidak sempurna ➜ *cek akurasi*
+- Bisa ditambah intent baru
+
+</v-click>
+
+---
+layout: default
+---
+
+## Studi Kasus: *Quiz Bot* (SMP)
+
+**Target**: SMP Kelas 7‑9 | **Tools**: Python + OpenAI API
+
+```python {all|2|4-8|10-14}
+import os, openai
+openai.api_key = os.getenv('OPENAI_API_KEY')
+
+def ask_question(topic):
+    resp = openai.ChatCompletion.create(
+        model='gpt-3.5-turbo',
+        messages=[{'role':'system',
+          'content':'Buat soal pilihan ganda coding.'},
+          {'role':'user','content':topic}])
+    return resp['choices'][0]['message']['content']
+
+while True:
+    q = input('Topik: ')
+    if q == 'exit': break
+    print(ask_question(q))
+```
+
+<v-click>
+
+### 🎯 Latihan Tambahan:
+- Tambahkan **pytest** untuk validasi output
+- Simpan history ke file JSON
+- Gunakan **streaming** output
+
+</v-click>
+
+---
+layout: section
+---
+
+# Deep‑Dive AI Literacy
+
+---
+layout: default
+---
+
+# Siklus AI: Data → Training → Inference
+
+```mermaid
+graph LR
+    D[Data] -->|labeling| T[Training]
+    T -->|model| M[(Model)]
+    M -->|prediction| I[Inference]
+    I -->|feedback| D
+```
+
+<v-clicks>
+
+- **Data** → Kumpulan contoh (gambar/suara/teks)
+- **Training** → Model mencari pola dari data
+- **Inference** → Model memprediksi data baru
+- **Feedback** → Data baru memperbaiki model
+
+</v-clicks>
+
+---
+layout: default
+---
+
+# Memahami Bias pada AI
+
+**Kasus**: Model hanya dilatih foto kucing anggora  
+→ Gagal mengenali kucing kampung 🐈
+
+| Dampak | Solusi |
+|---|---|
+| Model tidak adil | Data beragam |
+| Akurasi rendah | Data augmentation |
+| Overfitting | Validation set |
+
+**Aktivitas**: Coba deteksi bias di Teachable Machine sendiri!
+
+> 🔑 **Pelajaran**: AI secerdas data yang kita berikan.
+
+---
+layout: section
+---
+
+# FAQ & Tips
+
+---
+layout: default
+---
+
+## FAQ Cepat
+
+| Pertanyaan | Jawaban |
+|---|---|
+| Copilot gratis? | ✅ Free tier 60 menit/bulan |
+| Python untuk anak 10 tahun? | ✅ Replit + guided exercises |
+| Token API aman? | ✅ `.env` + gitignore |
+| Model tidak akurat? | Cek data & label konsisten |
+| Anak malas debugging? | Jadikan *game* — tebak errornya! |
+
+---
+layout: default
 ---
 
 # Tips untuk Orang Tua
 
----
-layout: default
----
-
-# ✅ Lakukan
-
-- Biarkan anak bereksplorasi
-- Rayakan progress kecil
-- Coding bersama sebagai bonding
-- Tanya "apa yang kamu buat hari ini?"
-- Gunakan AI sebagai alat bantu
-
-# ❌ Hindari
-
-- Paksa target terlalu tinggi
-- Bandingkan dengan anak lain
-- Biarkan sendiri terus
-- Hanya tanya "sudah sampai mana?"
-- Biarkan AI mengerjakan semuanya
+| ✅ Lakukan | ❌ Hindari |
+|---|---|
+| Biarkan eksplorasi | Target terlalu tinggi |
+| Rayakan progress kecil | Bandingkan dengan anak lain |
+| Coding bersama = bonding | Biarkan sendiri terus |
+| Tanya "Apa yang kamu buat?" | Hanya tanya "Sudah sampai mana?" |
+| AI sebagai alat bantu | AI kerjakan semuanya |
 
 ---
 layout: quote
@@ -169,11 +285,27 @@ layout: quote
 — **Seymour Papert**
 
 ---
+layout: default
+---
+
+# Roadmap 3 Bulan
+
+| Bulan | Fokus | Tools | Artefak |
+|---|---|---|---|
+| **1** | Logika + Visual | ScratchJr, Botley | Storyboard |
+| **2** | AI + Proyek | Scratch, Teachable Machine | Game + Chatbot Mini |
+| **3** | Python + AI‑Assisted | Replit, Copilot, OpenAI | Quiz Bot + Tests |
+
+**Checkpoint tiap minggu**: Presentasi 3 menit dari slide ini.
+
+---
 layout: cover
 ---
 
 # Mulai Sekarang!
 
-## codingkuy.com
+[roiskhoiron.github.io/articles](https://roiskhoiron.github.io/articles)
+
+---
 
 **CodingSkuy** — Belajar Coding untuk Anak Indonesia 🇮🇩
