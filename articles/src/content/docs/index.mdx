@@ -1,66 +1,80 @@
 ---
 title: CodingSkuy — Belajar Coding Seru untuk Anak Indonesia 🇮🇩
-description: Selamat datang di CodingSkuy! Tempat belajar coding, AI, dan teknologi paling seru untuk anak SD dan SMP Indonesia.
-template: splash
-hero:
-  title: "🚀 **CodingSkuy**"
-  tagline: "Belajar Coding & AI paling seru untuk anak Indonesia 🇮🇩"
-  actions:
-    - text: Mulai Belajar
-      link: /articles/mulai/
-      variant: primary
-    - text: Cari Tutorial
-      link: /articles/tutorial/
-      variant: secondary
+description: Tempat belajar coding, AI, dan teknologi paling seru untuk anak SD dan SMP Indonesia.
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card } from '@astrojs/starlight/components';
 
-## 🎮 **Hai, Calon Programmer Cilik!**
+# CodingSkuy 🚀
 
-Selamat datang di **CodingSkuy** — tempatnya anak Indonesia belajar coding, AI, dan teknologi dengan cara yang **seru, gampang, dan pastinya asyik!**
+**Selamat datang di CodingSkuy!** Tempat belajar coding, AI, dan teknologi paling seru untuk anak Indonesia.
 
-Di sini kamu bisa:
+<blockquote>
+✨ <strong>Satu Topik. Banyak Cara Belajar.</strong><br />
+Pilih topik yang kamu minati, lalu pilih cara belajarmu: 📖 Baca, 🎯 Praktek, 🎬 Tonton, atau 🎮 Main.
+</blockquote>
 
-<CardGrid>
-  <Card title="📖 Mulai Belajar" icon="open-book">
-    Baru pertama kali coding? Tenang! Mulai dari sini — dijamin gampang dan menyenangkan.
-  </Card>
-  <Card title="💙 Flutter" icon="star">
-    Mau bikin aplikasi HP keren? Flutter jawabannya! Bikin app Android & iOS dalam satu bahasa.
-  </Card>
-  <Card title="🤖 AI" icon="rocket">
-    Penasaran sama AI, ChatGPT, atau robot pintar? Yuk, kenalan sama kecerdasan buatan!
-  </Card>
-  <Card title="💼 Karir" icon="briefcase">
-    Mau jadi software engineer atau AI scientist? Lihat roadmap karirnya di sini!
-  </Card>
-  <Card title="🎯 Tutorial" icon="pencil">
-    Langsung praktek! Tutorial step-by-step bikin kamu jago coding dalam waktu singkat.
-  </Card>
-</CardGrid>
+## Mulai Petualanganmu
 
----
+<div class="home-grid">
+  <a href="/articles/mulai/apa-itu-pemrograman/" class="home-card">
+    <span class="home-emoji">🌱</span>
+    <span class="home-label">Mulai Belajar</span>
+    <span class="home-desc">Dari nol sampai bisa coding</span>
+  </a>
+  <a href="/articles/flutter/null-safety/" class="home-card">
+    <span class="home-emoji">📱</span>
+    <span class="home-label">Flutter</span>
+    <span class="home-desc">Bikin aplikasi HP keren</span>
+  </a>
+  <a href="/articles/ai/ai-fundamentals/" class="home-card">
+    <span class="home-emoji">🤖</span>
+    <span class="home-label">AI</span>
+    <span class="home-desc">Kenalan sama Artificial Intelligence</span>
+  </a>
+  <a href="/articles/backend/rest-api/" class="home-card">
+    <span class="home-emoji">🏗️</span>
+    <span class="home-label">Backend</span>
+    <span class="home-desc">Server, API, database</span>
+  </a>
+  <a href="/articles/karir/menjadi-mobile-developer/" class="home-card">
+    <span class="home-emoji">💼</span>
+    <span class="home-label">Karir</span>
+    <span class="home-desc">Jadi developer profesional</span>
+  </a>
+  <a href="/articles/playground/" class="home-card">
+    <span class="home-emoji">🧪</span>
+    <span class="home-label">Playground</span>
+    <span class="home-desc">Eksperimen coding langsung</span>
+  </a>
+</div>
 
-## 🧭 **Panduan Cepat**
+<style>
+  .home-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .home-card {
+    display: flex; flex-direction: column; align-items: center;
+    background: #fff; border: 1px solid #e2e8f0; border-radius: 12px;
+    padding: 1.25rem 1rem;
+    text-decoration: none !important; color: inherit !important;
+    transition: all 0.2s;
+  }
+  .home-card:hover {
+    border-color: #3d8bff; box-shadow: 0 4px 16px rgba(61,139,255,0.1);
+    transform: translateY(-2px);
+  }
+  .home-emoji { font-size: 2rem; margin-bottom: 0.5rem; }
+  .home-label { font-weight: 700; font-size: 1rem; color: #1a1a2e; }
+  .home-desc { font-size: 0.8rem; color: #64748b; text-align: center; margin-top: 0.2rem; }
+</style>
 
-| Kamu siapa? | Mulai dari sini 👇 |
-|---|---|
-| 🧒 **SD Kelas 1-3** (6-8 thn) | [Mulai Belajar →](/articles/mulai/) — Logika & ScratchJr |
-| 🧒 **SD Kelas 4-6** (9-12 thn) | [Mulai Belajar →](/articles/mulai/) — Scratch & AI pertama |
-| 🧑 **SMP** (13-15 thn) | [Python Tutorial →](/articles/tutorial/python/) — Coding beneran! |
-| 👨‍🏫 **Orang Tua / Guru** | [Panduan Orang Tua →](/articles/mulai/belajar-programming-di-era-ai/) |
+## Kenapa CodingSkuy?
 
----
-
-## ✨ **Yang Membuat CodingSkuy Spesial**
-
-- ✅ **Bahasa Indonesia** — Semua materi pake bahasa kita
-- ✅ **Gratis** — Akses semua konten tanpa bayar
-- ✅ **Kids Friendly** — Dibuat khusus buat anak SD & SMP
-- ✅ **Praktek Langsung** — Bukan cuma teori, tapi beneran bikin project
-- ✅ **AI Ready** — Belajar pake AI, bukan cuma belajar tentang AI
-
----
-
-**CodingSkuy** — *Belajar Coding untuk Anak Indonesia 🇮🇩*
+| 🎯 | **Praktek Langsung** — Bukan cuma teori, kamu beneran bikin project |
+| 🧠 | **Belajar dengan Cara Sendiri** — Pilih yang paling nyaman: baca, praktek, tonton, atau main |
+| 🇮🇩 | **Bahasa Indonesia** — Semua materi pakai bahasa yang gampang dipahami |
+| 🆓 | **Gratis** — Semua materi bisa diakses gratis! |

@@ -1,0 +1,332 @@
+---
+// articles/src/components/Hub.astro
+// Learning Hub component — "One Topic. Multiple Ways to Learn."
+// Props: category (folder name), topic (folder name)
+// Reads from: content/[category]/[topic]/meta.yaml + content files
+// Renders: 4 learning mode cards + inline content sections
+// Styling: brand CodingSkuy (#0055ff / #3d8bff), playful & clean
+
+import yaml from 'js-yaml';
+import { readFile, readdir } from 'node:fs/promises';
+import path from 'node:path';
+import { Marked } from 'marked';
+
+const { category, topic } = Astro.props;
+const contentDir = path.resolve('..', '..', 'content', category, topic);
+
+// ── Load meta.yaml ──────────────────────────────────────
+let meta = {
+  title: '',
+  description: '',
+  paths: { read: {}, practice: {}, watch: {}, play: {} },
+  related: [],
+  tags: [],
+};
+try {
+  meta = yaml.load(await readFile(path.join(contentDir, 'meta.yaml'), 'utf-8'));
+} catch (e) {
+  console.warn(`Hub: no meta.yaml at ${contentDir}`, e.message);
+}
+
+const topicSlug = meta.slug || topic;
+const marked = new Marked({ gfm: true });
+
+// ── Load content per section ────────────────────────────
+const sections = { read: '', practice: '', watch: '', play: '' };
+
+// 📖 READ
+if (meta.paths?.read?.enabled) {
+  try {
+    const files = (await readdir(path.join(contentDir, 'read')))
+      .filter(f => f.endsWith('.mdx') || f.endsWith('.md'))
+      .sort();
+    for (const file of files) {
+      const raw = await readFile(path.join(contentDir, 'read', file), 'utf-8');
+      sections.read += raw.replace(/^---[\s\S]*?---\n*/, '') + '\n\n';
+    }
+  } catch {}
+}
+
+// 🎯 PRACTICE
+if (meta.paths?.practice?.enabled) {
+  try {
+    const parts = ['intro.mdx', 'exercise.mdx', 'project.mdx'];
+    const practiceDir = path.join(contentDir, 'practice', topicSlug);
+    for (const part of parts) {
+      try {
+        const raw = await readFile(path.join(practiceDir, part), 'utf-8');
+        sections.practice += raw.replace(/^---[\s\S]*?---\n*/, '') + '\n\n---\n\n';
+      } catch {
+        // try flat
+        try {
+          const raw = await readFile(path.join(contentDir, 'practice', part), 'utf-8');
+          sections.practice += raw.replace(/^---[\s\S]*?---\n*/, '') + '\n\n---\n\n';
+        } catch {}
+      }
+    }
+  } catch {}
+}
+
+// 🎬 WATCH
+if (meta.paths?.watch?.enabled) {
+  try {
+    const slideContent = await readFile(path.join(contentDir, 'watch', topicSlug, 'slides.md'), 'utf-8');
+    sections.watch += slideContent.replace(/^---[\s\S]*?---\n*/, '');
+  } catch {
+    try {
+      const slideContent = await readFile(path.join(contentDir, 'watch', 'slides.md'), 'utf-8');
+      sections.watch += slideContent.replace(/^---[\s\S]*?---\n*/, '');
+    } catch {}
+  }
+}
+
+// 🎮 PLAY
+if (meta.paths?.play?.enabled) {
+  try {
+    const playContent = await readFile(path.join(contentDir, 'play', topicSlug, 'playground.md'), 'utf-8');
+    sections.play += playContent.replace(/^---[\s\S]*?---\n*/, '');
+  } catch {
+    try {
+      const playContent = await readFile(path.join(contentDir, 'play', 'playground.md'), 'utf-8');
+      sections.play += playContent.replace(/^---[\s\S]*?---\n*/, '');
+    } catch {}
+  }
+}
+
+// ── Render markdown to HTML ─────────────────────────────
+const rendered = {};
+for (const [key, md] of Object.entries(sections)) {
+  rendered[key] = md ? await marked.parse(md) : '';
+}
+
+// ── Learning mode configs ──────────────────────────────
+const modes = [
+  {
+    id: 'read',
+    icon: '📖',
+    title: 'Baca',
+    desc: 'Pahami konsep dan teori dengan artikel mendalam.',
+    duration: meta.paths?.read?.duration,
+    enabled: meta.paths?.read?.enabled,
+    btnLabel: 'Mulai Membaca',
+  },
+  {
+    id: 'practice',
+    icon: '🎯',
+    title: 'Praktek',
+    desc: 'Bangun project mini dengan panduan langkah demi langkah.',
+    duration: meta.paths?.practice?.duration,
+    enabled: meta.paths?.practice?.enabled,
+    btnLabel: 'Mulai Praktek',
+  },
+  {
+    id: 'watch',
+    icon: '🎬',
+    title: 'Tonton',
+    desc: 'Penjelasan visual lewat slide presentasi.',
+    duration: meta.paths?.watch?.duration,
+    enabled: meta.paths?.watch?.enabled,
+    btnLabel: 'Tonton Slide',
+  },
+  {
+    id: 'play',
+    icon: '🎮',
+    title: 'Main',
+    desc: 'Eksperimen kode secara interaktif.',
+    duration: meta.paths?.play?.duration || 'Coming Soon',
+    enabled: meta.paths?.play?.enabled,
+    btnLabel: 'Segera Hadir',
+  },
+];
+---
+
+<div class="hub">
+  <!-- Hero section -->
+  <div class="hub-hero">
+    <h1 class="hub-title">{meta.title || `${category}/${topic}`}</h1>
+    <p class="hub-subtitle">{meta.description || 'Setiap developer belajar dengan cara berbeda.'}</p>
+    <p class="hub-tagline">
+      Setiap developer belajar dengan cara berbeda.<br />
+      Pilih cara yang paling nyaman buatmu.
+    </p>
+  </div>
+
+  <!-- Learning mode cards -->
+  <div class="hub-grid">
+    {modes.map(m => (
+      <a href={m.enabled ? `#${m.id}` : undefined}
+        class:list={['hub-card', !m.enabled && 'hub-card-disabled']}
+        style={m.enabled ? 'text-decoration:none;color:inherit;' : undefined}
+      >
+        <div class="hub-card-icon">{m.icon}</div>
+        <div class="hub-card-body">
+          <div class="hub-card-title">{m.title}</div>
+          <div class="hub-card-desc">{m.desc}</div>
+          {m.duration && (
+            <div class="hub-card-meta">
+              <span class:list={['hub-badge', !m.enabled && 'hub-badge-disabled']}>
+                {m.duration}
+              </span>
+            </div>
+          )}
+        </div>
+        <span class:list={['hub-btn', !m.enabled && 'hub-btn-disabled']}>
+          {m.btnLabel} →
+        </span>
+      </a>
+    ))}
+  </div>
+
+  <!-- Inline content sections -->
+  {modes.filter(m => m.enabled && rendered[m.id]).map(m => (
+    <div class="hub-content-section" id={m.id}>
+      <h2 class="hub-section-title">
+        {m.icon} {m.title}
+      </h2>
+      <div class="hub-section-content">
+        <Fragment set:html={rendered[m.id]} />
+      </div>
+    </div>
+  ))}
+
+  <!-- Related topics -->
+  {meta.related?.length > 0 && (
+    <div class="hub-related-section">
+      <h3>🔗 Topik Terkait</h3>
+      <div class="hub-related-list">
+        {meta.related.map(r => {
+          // Try to extract category from related slug
+          const relatedSlug = r.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+          return <a href={`/${category}/${r}/`} class="hub-tag">{relatedSlug}</a>;
+        })}
+      </div>
+    </div>
+  )}
+
+  <!-- Tags -->
+  {meta.tags?.length > 0 && (
+    <div class="hub-tags-section">
+      <div class="hub-tags-list">
+        {meta.tags.map(t => <span class="hub-tag hub-tag-static">#{t}</span>)}
+      </div>
+    </div>
+  )}
+</div>
+
+<style is:global>
+  /* ── Container ── */
+  .hub { max-width: 780px; margin: 0 auto; padding: 1rem 0 3rem; }
+
+  /* ── Hero ── */
+  .hub-hero { margin-bottom: 2rem; }
+  .hub-title { font-size: 2rem; font-weight: 800; color: #1a1a2e; margin: 0 0 0.25rem; }
+  .hub-subtitle { font-size: 1rem; color: #64748b; margin: 0 0 0.5rem; }
+  .hub-tagline {
+    font-size: 0.95rem; color: #64748b; line-height: 1.6;
+    border-left: 3px solid #3d8bff; padding-left: 1rem;
+    margin: 0.75rem 0 0;
+  }
+
+  /* ── Cards Grid ── */
+  .hub-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+  @media (max-width: 600px) {
+    .hub-grid { grid-template-columns: 1fr; }
+  }
+
+  .hub-card {
+    display: flex; flex-direction: column;
+    background: #fff; border: 1px solid #e2e8f0; border-radius: 14px;
+    padding: 1.25rem; transition: all 0.2s ease;
+  }
+  .hub-card:hover {
+    border-color: #3d8bff; box-shadow: 0 4px 16px rgba(61,139,255,0.1);
+    transform: translateY(-2px);
+  }
+  .hub-card-disabled { opacity: 0.55; pointer-events: none; }
+  .hub-card-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+  .hub-card-body { flex: 1; }
+  .hub-card-title { font-size: 1.1rem; font-weight: 700; color: #1a1a2e; }
+  .hub-card-desc { font-size: 0.85rem; color: #64748b; line-height: 1.5; margin-top: 0.2rem; }
+  .hub-card-meta { margin-top: 0.5rem; }
+  .hub-badge {
+    display: inline-block; background: #eef2ff; color: #3d8bff;
+    font-size: 0.75rem; font-weight: 600; padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+  }
+  .hub-badge-disabled { background: #f1f5f9; color: #94a3b8; }
+
+  .hub-btn {
+    display: inline-block; width: 100%; text-align: center;
+    background: #3d8bff; color: #fff !important; text-decoration: none !important;
+    font-size: 0.85rem; font-weight: 600; padding: 0.6rem 1rem;
+    border-radius: 8px; transition: background 0.2s; margin-top: 0.75rem;
+  }
+  .hub-btn:hover { background: #0055ff; color: #fff !important; }
+  .hub-btn-disabled { background: #e2e8f0; color: #94a3b8 !important; }
+
+  /* ── Content Sections ── */
+  .hub-content-section {
+    margin: 2.5rem 0; padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+  }
+  .hub-section-title {
+    font-size: 1.4rem; font-weight: 700; color: #1a1a2e;
+    margin-bottom: 1rem;
+  }
+
+  .hub-section-content { line-height: 1.8; font-size: 1rem; color: #334155; }
+  .hub-section-content h2 { font-size: 1.3rem; font-weight: 700; color: #1a1a2e; margin-top: 1.5rem; }
+  .hub-section-content h3 { font-size: 1.1rem; font-weight: 600; color: #1a1a2e; margin-top: 1.25rem; }
+  .hub-section-content p { margin: 0.75rem 0; }
+  .hub-section-content ul, .hub-section-content ol { margin: 0.5rem 0; padding-left: 1.5rem; }
+  .hub-section-content li { margin: 0.3rem 0; }
+  .hub-section-content code {
+    background: #f1f5f9; padding: 0.15rem 0.4rem; border-radius: 4px;
+    font-size: 0.875em; color: #e11d48;
+  }
+  .hub-section-content pre {
+    background: #0f172a; color: #e2e8f0; padding: 1rem; border-radius: 8px;
+    overflow-x: auto; font-size: 0.85rem; line-height: 1.6;
+  }
+  .hub-section-content pre code {
+    background: transparent; color: inherit; padding: 0;
+  }
+  .hub-section-content blockquote {
+    border-left: 3px solid #3d8bff; padding-left: 1rem; margin: 1rem 0;
+    color: #475569; background: #f8fafc; border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+  }
+  .hub-section-content hr {
+    border: none; border-top: 1px solid #e2e8f0; margin: 1.5rem 0;
+  }
+  .hub-section-content table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+  .hub-section-content th, .hub-section-content td {
+    border: 1px solid #e2e8f0; padding: 0.5rem 0.75rem; text-align: left;
+  }
+  .hub-section-content th { background: #f8fafc; font-weight: 600; }
+  .hub-section-content a { color: #3d8bff; text-decoration: underline; }
+  .hub-section-content img { max-width: 100%; border-radius: 8px; margin: 1rem 0; }
+
+  /* ── Related & Tags ── */
+  .hub-related-section, .hub-tags-section {
+    margin: 2rem 0; padding-top: 1rem; border-top: 1px solid #e2e8f0;
+  }
+  .hub-related-section h3 { font-size: 1.1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.75rem; }
+  .hub-related-list, .hub-tags-list {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+  }
+  .hub-tag {
+    display: inline-block; background: #f1f5f9; color: #475569;
+    font-size: 0.8rem; padding: 0.3rem 0.75rem; border-radius: 999px;
+    text-decoration: none; transition: all 0.15s;
+  }
+  .hub-tag:hover { background: #eef2ff; color: #3d8bff; text-decoration: none !important; }
+  .hub-tag-static { cursor: default; }
+  .hub-tag-static:hover { background: #f1f5f9; color: #475569; }
+</style>
