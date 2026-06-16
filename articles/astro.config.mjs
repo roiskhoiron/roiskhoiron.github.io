@@ -16,27 +16,27 @@ export default defineConfig({
         { label: "🏠 Beranda", link: "/" },
         {
           label: "📖 Mulai Belajar",
-          autogenerate: { directory: "mulai" },
+          items: [{ autogenerate: { directory: "mulai" } }],
         },
         {
           label: "💙 Flutter",
           collapsed: true,
-          autogenerate: { directory: "flutter" },
+          items: [{ autogenerate: { directory: "flutter" } }],
         },
         {
           label: "🤖 AI",
           collapsed: true,
-          autogenerate: { directory: "ai" },
+          items: [{ autogenerate: { directory: "ai" } }],
         },
         {
           label: "💼 Karir",
           collapsed: true,
-          autogenerate: { directory: "karir" },
+          items: [{ autogenerate: { directory: "karir" } }],
         },
         {
           label: "🎯 Tutorial",
           collapsed: true,
-          autogenerate: { directory: "tutorial" },
+          items: [{ autogenerate: { directory: "tutorial" } }],
         },
       ],
     }),
