@@ -1,0 +1,33 @@
+title: Python Developer
+slug: python-developer
+category: python
+description: Panduan lengkap menjadi Python developer produktif — dari environment, typing, sampai packaging.
+experiences:
+  article:
+    enabled: true
+    duration: "8 min"
+    path: article.mdx
+  slide:
+    enabled: true
+    slides: 12
+    path: slide/slides.md
+  playground:
+    enabled: true
+    type: python-repl
+    path: playground/index.mdx
+  tutorial:
+    enabled: true
+    chapters: 4
+    path: tutorial/
+  quiz:
+    enabled: true
+    questions: 5
+    path: quiz/questions.mdx
+related:
+  - dasar-python
+  - python-typing
+tags:
+  - python
+  - developer
+  - beginner
+  - environment

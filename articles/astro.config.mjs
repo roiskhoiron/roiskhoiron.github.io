@@ -34,6 +34,12 @@ export default defineConfig({
           ],
         },
         {
+          label: "🐍 Python",
+          items: [
+            { label: "Python Developer", link: "/python/developer/" },
+          ],
+        },
+        {
           label: "🤖 AI",
           items: [
             { label: "AI Fundamentals", link: "/ai/ai-fundamentals/" },

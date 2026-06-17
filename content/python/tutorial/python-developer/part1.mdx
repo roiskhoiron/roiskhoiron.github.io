@@ -1,0 +1,53 @@
+---
+title: Tutorial Python Developer — Part 1: Virtual Environment
+description: Belajar setup virtual environment dan package management.
+---
+
+# Part 1: Virtual Environment
+
+## Bikin Project Baru
+
+```bash
+mkdir python_dev_demo
+cd python_dev_demo
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+## Install Package
+
+```bash
+pip install requests pytest
+```
+
+## Simpan Dependensi
+
+```bash
+pip freeze > requirements.txt
+```
+
+## Cek File `requirements.txt`
+
+```
+certifi==2025.1.0
+charset-normalizer==3.4.1
+idna==3.10
+iniconfig==2.1.0
+packaging==24.2
+pluggy==1.5.0
+pytest==8.3.5
+requests==2.32.3
+urllib3==2.3.0
+```
+
+## Yang Perlu Diingat
+
+| Perintah | Fungsi |
+|---|---|
+| `python -m venv .venv` | Bikin environment |
+| `source .venv/bin/activate` | Aktifkan environment |
+| `deactivate` | Nonaktifkan |
+| `pip freeze` | Lihat package terinstall |
+| `pip freeze > requirements.txt` | Simpan dependensi |
+
+Lanjut ke **[Part 2](/articles/python/developer/tutorial/python-developer/part2)** — Type Hints 👇

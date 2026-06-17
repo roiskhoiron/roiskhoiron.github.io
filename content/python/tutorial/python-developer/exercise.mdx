@@ -1,0 +1,43 @@
+---
+title: Tutorial Python Developer — Exercises
+description: Latihan Python Developer dari level mudah sampai expert.
+---
+
+# 🏋️ Latihan Python Developer
+
+## Level 1: Mudah 🟢
+
+Buat script Python yang:
+- Bikin virtual environment `belajar_env`
+- Install package `requests`
+- Export ke `requirements.txt`
+- Tampilkan daftar package dengan `pip list`
+
+**Pake command-line, bukan kode Python ya!**
+
+## Level 2: Sedang 🟡
+
+Buat fungsi dengan type hints:
+
+```python
+def filter_angka(angka: list[int], batas: int) -> list[int]:
+    """Return angka yang > batas dari list."""
+    # TODO: implementasi
+```
+
+- Tambahkan docstring
+- Test manual dengan print
+
+## Level 3: Expert 🔴
+
+Buat class `BukuPerpustakaan`:
+
+- `judul: str`, `penulis: str`, `tahun: int`
+- `status: bool` — `True` = tersedia, `False` = dipinjam
+- Method `pinjam() -> bool` — ubah status, return False kalau sudah dipinjam
+- Method `kembalikan() -> None`
+- **Pake type hints untuk semua method**
+
+---
+
+Kalo udah selesai, lanjut ke **[Project Mini →](/articles/python/developer/tutorial/python-developer/project)** 💪

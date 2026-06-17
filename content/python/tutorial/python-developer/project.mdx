@@ -1,0 +1,78 @@
+---
+title: Tutorial Python Developer — Project Mini
+description: Bikin To-Do List CLI dengan Python dan type hints.
+---
+
+# 🏗️ Project Mini: To-Do List CLI
+
+Bikin aplikasi To-Do List lewat terminal!
+
+## Spesifikasi
+
+```python
+# todo.py
+from typing import List, Optional
+
+class TodoItem:
+    def __init__(self, judul: str) -> None:
+        self.judul: str = judul
+        self.selesai: bool = False
+
+    def tandai_selesai(self) -> None:
+        self.selesai = True
+
+    def __str__(self) -> str:
+        status = "✅" if self.selesai else "⬜"
+        return f"{status} {self.judul}"
+
+
+class TodoList:
+    def __init__(self) -> None:
+        self.items: List[TodoItem] = []
+
+    def tambah(self, judul: str) -> None:
+        self.items.append(TodoItem(judul))
+
+    def tampilkan(self) -> None:
+        if not self.items:
+            print("📭 Tidak ada tugas.")
+            return
+        for i, item in enumerate(self.items, 1):
+            print(f"{i}. {item}")
+
+    def selesai(self, index: int) -> bool:
+        if 0 <= index < len(self.items):
+            self.items[index].tandai_selesai()
+            return True
+        return False
+
+
+def main() -> None:
+    todo = TodoList()
+    todo.tambah("Belajar type hints Python")
+    todo.tambah("Buat virtual environment")
+    todo.tambah("Baca artikel CodingSkuy")
+
+    print("📋 Daftar Tugas:")
+    todo.tampilkan()
+
+    print("\nTandai tugas pertama selesai:")
+    todo.selesai(0)
+    todo.tampilkan()
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## Challenge Tambahan 🔥
+
+1. **Simpan data ke file JSON** — pake `json` module
+2. **Bisa hapus item** — method `hapus(index: int) -> bool`
+3. **Pake `argparse`** — tambah tugas lewat command line
+
+---
+
+Selamat! 🎉 Kamu udah menyelesaikan tutorial Python Developer!
+
+Lanjut ke **[Quiz →](/articles/python/developer/quiz)** buat uji pemahaman.

@@ -1,0 +1,75 @@
+---
+title: Tutorial Python Developer — Part 2: Type Hints
+description: Belajar type hints di Python untuk kode yang lebih jelas dan aman.
+---
+
+# Part 2: Type Hints
+
+## Kenapa Type Hints?
+
+```python
+# Tanpa type — bingung
+def proses(data):
+    pass  # data apa? return apa?
+
+# Dengan type — jelas
+def proses(data: list[dict]) -> bool:
+    pass
+```
+
+## Tipe Dasar
+
+```python
+nama: str = "Budi"
+umur: int = 17
+tinggi: float = 165.5
+aktif: bool = True
+
+# Function
+def sapa(nama: str) -> str:
+    return f"Halo, {nama}"
+```
+
+## Tipe Collection
+
+```python
+from typing import List, Dict, Optional, Union
+
+# List
+nilai: list[int] = [90, 85, 95]
+
+# Dict
+user: dict[str, str | int] = {"nama": "Budi", "umur": 17}
+
+# Optional — bisa None
+def cari(id: int) -> Optional[str]:
+    return None
+
+# Union — multiple types
+def proses(angka: int | float) -> float:
+    return float(angka)
+```
+
+## Class dengan Type Hints
+
+```python
+class Mahasiswa:
+    nama: str
+    umur: int
+    nilai: list[float]
+
+    def __init__(self, nama: str, umur: int) -> None:
+        self.nama = nama
+        self.umur = umur
+        self.nilai = []
+
+    def tambah_nilai(self, n: float) -> None:
+        self.nilai.append(n)
+
+    def rata_rata(self) -> float:
+        if not self.nilai:
+            return 0.0
+        return sum(self.nilai) / len(self.nilai)
+```
+
+Lanjut ke **[Latihan](/articles/python/developer/tutorial/python-developer/exercise)** 👇
