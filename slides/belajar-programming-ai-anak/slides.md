@@ -3,7 +3,7 @@ theme: default
 title: Belajar Programming di Era AI untuk Anak SD & SMP
 transition: slide-left
 fonts:
-  sans: 'Plus Jakarta Sans, Inter'
+  sans: 'Nunito, Plus Jakarta Sans, Inter'
   mono: 'JetBrains Mono'
 ---
 
@@ -44,7 +44,7 @@ layout: default
 | 💪 | **Resilience** | Bangkit dari error |
 | 🤖 | **AI Literacy** | Paham data, model, inference |
 
-**Fakta**: Anak yang bisa coding di era AI **bukan digantikan** — mereka justru yang paling bisa memanfaatkan AI.
+**Fakta Penting**: Anak yang bisa coding di era AI **bukan digantikan** — mereka justru yang paling cerdas memanfaatkan AI sebagai teman belajar! 🤖✨
 
 ---
 layout: section
@@ -66,7 +66,7 @@ layout: default
 | Animasi robot | ScratchJr | Loop, event |
 | Robot gerak | Botley / Code‑a‑Pillar | Instruksi berurutan |
 
-```
+```text
 🚶 → 🔄 → 🧱 → ✅  
   (start) (repeat 4) (move 10) (done)
 ```
@@ -107,7 +107,7 @@ layout: default
 | Unit Testing | pytest |
 | Version Control | Git + GitHub |
 
-```
+```text
 ┌─ Input ──────┐     ┌─ AI ──────────┐     ┌─ Output ─────┐
 │ "Buat soal    │────>│ GPT-3.5 turbo  │────>│ Pilihan ganda │
 │  tentang loop"│     │ (via Copilot)  │     │ coding SMP    │
@@ -131,7 +131,7 @@ layout: default
 **Target**: SD Kelas 4‑6 | **Tools**: Teachable Machine + Python
 
 ### Langkah 1 — Kumpulkan Data
-```
+```text
 ["Halo", "Hai", "Apa kabar"]  → intent: sapaan
 ["Bye", "Dah", "Sampai nanti"] → intent: perpisahan
 ```
@@ -195,7 +195,76 @@ while True:
 </v-click>
 
 ---
+layout: default
+---
+
+# 🎮 Cek Pemahaman — Siklus AI
+
+Klik jawaban yang benar!
+
+<QuizCoding
+  :soal="{
+    pertanyaan: 'Apa urutan yang benar dalam siklus AI?',
+    pilihan: [
+      'Training → Data → Inference',
+      'Data → Training → Inference',
+      'Inference → Data → Training',
+      'Model → Data → Training'
+    ],
+    jawabanBenar: 1,
+    feedbackBenar: 'Urutan Data → Training → Inference adalah fondasi AI! 🎯',
+    feedbackSalah: 'Ingat: AI belajar dari Data, lalu Training, lalu Inference.'
+  }"
+  @next=""
+/>
+
+---
+layout: default
+---
+
+# 🎮 Cek Pemahaman — Bias AI
+
+<QuizCoding
+  :soal="{
+    pertanyaan: 'Apa yang terjadi jika AI hanya dilatih dengan foto kucing anggora?',
+    pilihan: [
+      'AI akan mengenali semua kucing dengan sempurna',
+      'AI akan gagal mengenali kucing kampung',
+      'AI tidak akan bisa membedakan kucing dan anjing',
+      'Tidak ada dampak apapun'
+    ],
+    jawabanBenar: 1,
+    feedbackBenar: 'Tepat! AI akan bias karena datanya tidak beragam. 🐈',
+    feedbackSalah: 'Data yang tidak beragam menyebabkan AI bias — coba tebak lagi!'
+  }"
+  @next=""
+/>
+
+---
+layout: default
+---
+
+# 🎮 Cek Pemahaman — Programming
+
+<QuizCoding
+  :soal="{
+    pertanyaan: 'Apa fungsi utama dari variabel dalam coding?',
+    pilihan: [
+      'Menyimpan data seperti angka atau teks',
+      'Mengulang perintah terus menerus',
+      'Menggambar lingkaran di layar',
+      'Menyalakan lampu LED'
+    ],
+    jawabanBenar: 0,
+    feedbackBenar: 'Betul! Variabel menyimpan data yang bisa dipakai ulang. 🗂️',
+    feedbackSalah: 'Hampir! Variabel digunakan untuk menyimpan data.'
+  }"
+  @next=""
+/>
+
+---
 layout: section
+transition: slide-up
 ---
 
 # Deep‑Dive AI Literacy
@@ -225,6 +294,7 @@ graph LR
 
 ---
 layout: default
+transition: fade
 ---
 
 # Memahami Bias pada AI
@@ -278,6 +348,7 @@ layout: default
 
 ---
 layout: quote
+transition: fade
 ---
 
 # "The role of the computer is not to replace the teacher, but to provide a new kind of environment for learning."
