@@ -2,24 +2,32 @@ title: Flutter Null Safety
 slug: flutter-null-safety
 category: flutter
 description: Hindari NullPointerException dan bangun aplikasi Flutter yang lebih aman dengan Null Safety.
-paths:
-  read:
+experiences:
+  article:
     enabled: true
-    duration: "8 min"
-  practice:
+    duration: "8 min"
+    path: article.mdx
+  slide:
     enabled: true
-    duration: "30 min"
-  watch:
+    slides: 10
+    path: slide/slides.md
+  playground:
     enabled: true
-    duration: "10 slide"
-  play:
-    enabled: false
-    duration: null
+    type: dartpad
+    path: playground/index.mdx
+  tutorial:
+    enabled: true
+    chapters: 3
+    path: tutorial/
+  quiz:
+    enabled: true
+    questions: 5
+    path: quiz/questions.mdx
 related:
   - flutter-state-management
-  - dart-fundamentals
+  - dart-null-safety
 tags:
   - flutter
   - dart
   - safety
-  - pemula
+  - beginner

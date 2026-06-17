@@ -1,0 +1,40 @@
+---
+title: Tutorial Null Safety — Exercises
+description: Latihan Null Safety dari level mudah sampai expert.
+---
+
+# Latihan Null Safety 🏋️
+
+## Level 1: Mudah 🟢
+
+Buat fungsi `getPanjangNama` yang menerima `String?` dan return `int?`:
+
+- Kalau `nama` tidak null → return `nama.length`
+- Kalau `nama` null → return `null`
+- **Pake `?.` ya!**
+
+## Level 2: Sedang 🟡
+
+Buat class `Product`:
+
+- `nama` (String, wajib)
+- `harga` (double, wajib)
+- `diskon` (double?, opsional)
+- Method `getHargaFinal()`:
+  - Kalau diskon null → return harga asli
+  - Kalau diskon ada → return harga - diskon
+- **Pake `??` di methodnya!**
+
+## Level 3: Expert 🔴
+
+Buat class `UserRepository` yang pake `late`:
+
+- Field `_users` (`List<User>`, late)
+- Method `loadUsers()` — isi `_users` dari API (simulasi aja)
+- Method `findUser(String nama)` — cari user di `_users`
+- Method `getUserCount()` — return jumlah user
+- **Pastikan `loadUsers()` dipanggil duluan!**
+
+---
+
+Kalo udah selesai, lanjut ke **[Project Mini →](/articles/flutter/null-safety/tutorial/null-safety/project)** 💪
