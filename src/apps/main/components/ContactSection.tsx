@@ -43,11 +43,11 @@ const copy: Record<Language, {
   labels: Record<string, string>;
 }> = {
   id: {
-    availability: "Tersedia untuk kolaborasi",
+    availability: "Bersedia direkrut atau kolaborasi",
     titleTop: "Siap Membangun",
     titleBottom: "Sesuatu yang Cerdas?",
     description:
-      "Saya terbuka untuk kolaborasi produk berbasis AI, konsultasi arsitektur software, atau membangun eksperimen AI bersama.",
+      "Saya terbuka untuk peluang Full-time dan konsultasi AI, selain kolaborasi produk berbasis AI.",
     cta: "Mulai Percakapan",
     response: "Biasanya merespons dalam 24 jam · Jakarta, Indonesia (WIB / UTC+7)",
     labels: {
@@ -58,11 +58,11 @@ const copy: Record<Language, {
     },
   },
   en: {
-    availability: "Available for collaboration",
+    availability: "Open for recruitment or collaboration",
     titleTop: "Ready to Build",
     titleBottom: "Something Intelligent?",
     description:
-      "I'm open to collaborating on AI-powered products, advising on software architecture, or building experimental AI tools together.",
+      "I'm open to Full-time opportunities and AI consulting, in addition to AI-powered product collaborations.",
     cta: "Start a Conversation",
     response: "Typically responds within 24 hours · Jakarta, Indonesia (WIB / UTC+7)",
     labels: {
@@ -73,11 +73,11 @@ const copy: Record<Language, {
     },
   },
   zh: {
-    availability: "可合作中",
+    availability: "开放招聘或合作",
     titleTop: "准备一起打造",
     titleBottom: "更智能的产品？",
     description:
-      "我愿意合作 AI 产品、提供软件架构建议，或一起构建 AI 实验型工具。",
+      "我开放全职机会和AI咨询服务，同时也接受AI产品合作。",
     cta: "开始交流",
     response: "通常 24 小时内回复 · 雅加达，印度尼西亚 (WIB / UTC+7)",
     labels: {
@@ -88,11 +88,11 @@ const copy: Record<Language, {
     },
   },
   ja: {
-    availability: "コラボ募集中",
+    availability: "採用・コラボ募集中",
     titleTop: "一緒に",
     titleBottom: "インテリジェントなものを作りませんか？",
     description:
-      "AI プロダクトの共同開発、ソフトウェアアーキテクチャの相談、実験的な AI ツール開発に対応しています。",
+      "フルタイムの機会やAIコンサルティングに加え、AIプロダクトの共同開発も歓迎します。",
     cta: "会話を始める",
     response: "通常24時間以内に返信 · ジャカルタ、インドネシア (WIB / UTC+7)",
     labels: {
