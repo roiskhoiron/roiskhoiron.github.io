@@ -1010,7 +1010,7 @@ export function PortfolioSection() {
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 layout
                 className={`group relative rounded-2xl border border-slate-200 dark:border-white/[0.07] ${colors.border} bg-white dark:bg-white/[0.02] p-6 cursor-pointer transition-all duration-200 hover:shadow-lg dark:hover:shadow-none hover:-translate-y-0.5`}
-                onClick={() => setExpanded(isExpanded ? null : project.id)}
+                onClick={() => window.open("https://www.linkedin.com/in/rois-khoiron/details/projects/", "_blank")}
               >
                 {/* Category tag */}
                 <div className="flex items-center justify-between mb-4">
