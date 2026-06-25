@@ -3,6 +3,7 @@ import { Menu, X, Moon, Sun } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import logo from "@/assets/ic_logo_codingskuy.png";
 import { useT } from "@/hooks/useT";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 interface NavbarProps {
   darkMode: boolean;
@@ -90,6 +91,8 @@ export function Navbar({ darkMode, toggleDark }: NavbarProps) {
 
           {/* Right side */}
           <div className="flex items-center gap-3">
+            <LanguageSwitcher className="hidden md:block" />
+
             <button
               onClick={toggleDark}
               className={`p-2 rounded-lg transition-all hover:scale-110 ${
@@ -110,6 +113,8 @@ export function Navbar({ darkMode, toggleDark }: NavbarProps) {
             >
               {t.nav.hireMe}
             </a>
+
+            <LanguageSwitcher className="md:hidden" />
 
             <button
               className={`md:hidden p-2 rounded-lg ${darkMode ? "text-[#e8f0ff]" : "text-[#0d1117]"}`}

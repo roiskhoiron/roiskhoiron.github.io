@@ -71,9 +71,7 @@ export function ChefGenieLandingPage() {
 
   return (
     <>
-      <div className="fixed top-4 right-4 z-[100]">
-        <LanguageSwitcher />
-      </div>
+
       <main className="min-h-screen bg-white dark:bg-[#080808] text-slate-900 dark:text-white overflow-x-hidden transition-colors duration-300">
       <div
         className="fixed inset-0 -z-10 pointer-events-none opacity-[0.015] dark:opacity-[0.02]"
@@ -107,6 +105,7 @@ export function ChefGenieLandingPage() {
             <div className="flex items-center gap-2 sm:gap-4">
               <div className="hidden sm:flex items-center gap-3 pr-2 border-r border-slate-200 dark:border-white/10">
                 <ThemeToggle />
+                <LanguageSwitcher />
               </div>
               <a href="#download" onClick={(e) => { e.preventDefault(); scrollTo("#download"); }}
                 className="inline-flex items-center gap-1.5 px-4 py-2 bg-orange-500 hover:bg-orange-400 text-white text-sm font-medium rounded-xl shadow-lg shadow-orange-500/25 transition-colors"
@@ -132,6 +131,7 @@ export function ChefGenieLandingPage() {
                   <div className="px-3 py-2 flex items-center justify-between border-b border-slate-100 dark:border-white/[0.05] mb-2">
                     <span className="text-xs text-slate-400 uppercase tracking-widest font-semibold">Settings</span>
                     <ThemeToggle />
+                    <LanguageSwitcher />
                   </div>
                   <button onClick={() => scrollTo("#fitur")} className="block w-full text-left px-3 py-2.5 text-sm text-slate-600 dark:text-white/50 hover:bg-slate-50 dark:hover:bg-white/[0.05] rounded-lg">{t.nav.fitur}</button>
                   <button onClick={() => scrollTo("#path")} className="block w-full text-left px-3 py-2.5 text-sm text-slate-600 dark:text-white/50 hover:bg-slate-50 dark:hover:bg-white/[0.05] rounded-lg">{t.nav.journey}</button>
