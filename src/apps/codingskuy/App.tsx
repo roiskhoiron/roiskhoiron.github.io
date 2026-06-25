@@ -35,7 +35,6 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("codingskuy-theme", darkMode ? "dark" : "light");
     if (darkMode) {
       document.documentElement.classList.add("dark");
     } else {
@@ -59,11 +58,11 @@ export default function App() {
       <main>
         <HeroSection darkMode={darkMode} />
         <AboutSection darkMode={darkMode} />
-        <ActivityTransparencySection darkMode={darkMode} />
+        <ActivityTransparencySection darkMode={darkMode}/>
         <LearningPathsSection darkMode={darkMode} />
         <ShowcaseSection darkMode={darkMode} />
         <MetricsSection darkMode={darkMode} />
-        <PhilosophySection darkMode={darkMode} />
+        <PhilosophySection darkMode={darkMode}/>
         <PortfolioSection darkMode={darkMode} />
         <MediaHubSection darkMode={darkMode} />
         <ContentLibrarySection darkMode={darkMode} />
