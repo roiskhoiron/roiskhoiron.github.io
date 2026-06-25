@@ -2,10 +2,10 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import {
   Mic,
-  Sparkles,
   Zap,
-  MessageSquare,
   Layers,
+  ShoppingCart,
+  Code2,
   ArrowRight,
   ChevronRight,
 } from "lucide-react";
@@ -21,60 +21,61 @@ const copy: Record<Language, {
   capability: string;
   impact: string;
   details: string;
-  hint: string;
+  tabs: { production: string; openSource: string; research: string };
 }> = {
   id: {
-    sectionTag: "Proyek AI-Native",
-    titleTop: "Saat Mobile Bertemu",
-    titleBottom: "Kecerdasan Terapan",
-    description: "Eksplorasi AI on-device, integrasi LLM, dan UX mobile berpusat pada manusia dalam konteks software engineering.",
+    sectionTag: "Proyek & Portofolio",
+    titleTop: "Produksi, Open Source,",
+    titleBottom: "& Riset",
+    description: "Dari sistem produksi yang melayani pengguna nyata, kontribusi open source, hingga eksplorasi teknologi masa depan.",
     problem: "Masalah",
     approach: "Pendekatan",
     capability: "Kemampuan AI",
     impact: "Dampak Pengguna",
     details: "Detail",
-    hint: "Klik kartu untuk melihat Masalah → Pendekatan → Kemampuan AI → Dampak",
+    tabs: { production: "Produksi", openSource: "Open Source", research: "Riset" },
   },
   en: {
-    sectionTag: "AI-Native Projects",
-    titleTop: "Where Mobile Meets",
-    titleBottom: "Applied Intelligence",
-    description: "Industry-direction projects exploring the intersection of on-device AI, LLM integration, and human-centered mobile UX.",
+    sectionTag: "Projects & Portfolio",
+    titleTop: "Production, Open Source,",
+    titleBottom: "& Research",
+    description: "From production systems serving real users to open source contributions and technology exploration.",
     problem: "Problem",
     approach: "Approach",
     capability: "AI Capability",
     impact: "User Impact",
     details: "Details",
-    hint: "Click any card to explore Problem → Approach → AI Capability → Impact",
+    tabs: { production: "Production", openSource: "Open Source", research: "Research" },
   },
   zh: {
-    sectionTag: "AI 原生项目",
-    titleTop: "当移动端遇见",
-    titleBottom: "可落地智能",
-    description: "探索端侧 AI、LLM 集成与以人为中心的移动 UX。",
+    sectionTag: "项目与作品集",
+    titleTop: "生产、开源",
+    titleBottom: "与研究",
+    description: "从服务真实用户的生产系统，到开源贡献与技术探索。",
     problem: "问题",
     approach: "方案",
     capability: "AI 能力",
     impact: "用户影响",
     details: "详情",
-    hint: "点击卡片查看 问题 → 方案 → AI 能力 → 影响",
+    tabs: { production: "生产", openSource: "开源", research: "研究" },
   },
   ja: {
-    sectionTag: "AIネイティブプロジェクト",
-    titleTop: "モバイルと",
-    titleBottom: "実践知能の交点",
-    description: "オンデバイスAI、LLM統合、人間中心のモバイルUXを探るプロジェクト。",
+    sectionTag: "プロジェクト & ポートフォリオ",
+    titleTop: "本番、オープンソース、",
+    titleBottom: "＆研究",
+    description: "実際のユーザーを支える本番システムから、オープンソース貢献、技術探求まで。",
     problem: "課題",
     approach: "アプローチ",
     capability: "AI能力",
     impact: "ユーザー影響",
     details: "詳細",
-    hint: "カードをクリックして 課題 → アプローチ → AI能力 → 影響 を確認",
+    tabs: { production: "本番", openSource: "オープンソース", research: "研究" },
   },
 };
 
 type ProjectItem = {
   id: number;
+  category: "production" | "openSource" | "research";
   tag: string;
   icon: typeof Mic;
   color: string;
@@ -82,7 +83,7 @@ type ProjectItem = {
   subtitle: string;
   problem: string;
   approach: string;
-  aiCapability: string;
+  aiCapability?: string;
   impact: string;
   tags: string[];
 };
@@ -91,6 +92,46 @@ const projectData: Record<Language, ProjectItem[]> = {
   id: [
     {
       id: 1,
+      category: "production",
+      tag: "Android Native",
+      icon: ShoppingCart,
+      color: "blue",
+      title: "Sistem Trade-In Retail",
+      subtitle: "Platform tukar tambah untuk 200+ outlet",
+      problem: "Proses trade-in manual tidak efisien dan rawan error di ratusan outlet.",
+      approach: "Membangun sistem Android end-to-end dengan integrasi REST API, validasi otomatis, dan dashboard monitoring.",
+      impact: "Diimplementasikan di 200+ outlet ritel nasional",
+      tags: ["Android", "Kotlin", "REST API", "Clean Architecture", "Room DB"],
+    },
+    {
+      id: 2,
+      category: "production",
+      tag: "Mobile Platform",
+      icon: Layers,
+      color: "violet",
+      title: "Platform Mobile Multi-Produk",
+      subtitle: "Arsitektur dan kepemimpinan tim 8+ engineer",
+      problem: "Pengembangan lintas platform yang tidak terkoordinasi menyebabkan duplikasi dan inkonsistensi.",
+      approach: "Menstandardisasi arsitektur, membangun shared component library, dan memimpin roadmap delivery.",
+      impact: "Tim 8+ developer, delivery multi-platform yang konsisten",
+      tags: ["Flutter", "Jetpack Compose", "SwiftUI", "CI/CD", "Riverpod"],
+    },
+    {
+      id: 3,
+      category: "production",
+      tag: "Keamanan",
+      icon: Code2,
+      color: "emerald",
+      title: "Aplikasi Keamanan Kritikal",
+      subtitle: "Produksi untuk keamanan digital",
+      problem: "Kebutuhan aplikasi mobile yang memenuhi standar keamanan tinggi dan kepatuhan regulasi.",
+      approach: "Mengembangkan aplikasi dengan arsitektur aman, enkripsi data, dan audit keamanan berkala.",
+      impact: "Produksi aktif melayani pengguna enterprise",
+      tags: ["Flutter", "Firebase", "Security", "Product Strategy"],
+    },
+    {
+      id: 4,
+      category: "research",
       tag: "AI On-Device",
       icon: Mic,
       color: "blue",
@@ -103,20 +144,8 @@ const projectData: Record<Language, ProjectItem[]> = {
       tags: ["TFLite", "Flutter", "On-Device NLP"],
     },
     {
-      id: 2,
-      tag: "UX Personal",
-      icon: Sparkles,
-      color: "violet",
-      title: "StyleSense",
-      subtitle: "Mesin personalisasi visual untuk e-commerce",
-      problem: "Aplikasi fashion sering memberi rekomendasi generik yang tidak mengikuti perubahan selera pengguna.",
-      approach: "Computer vision + pelacakan perilaku untuk membangun profil preferensi real-time.",
-      aiCapability: "Model kemiripan visual, pembelajaran preferensi, behavioral AI",
-      impact: "Konversi 3× lebih tinggi dibanding rekomendasi berbasis rule",
-      tags: ["ML Kit", "Android Compose", "Behavioral AI"],
-    },
-    {
-      id: 3,
+      id: 5,
+      category: "research",
       tag: "Edge Inference",
       icon: Zap,
       color: "cyan",
@@ -129,35 +158,62 @@ const projectData: Record<Language, ProjectItem[]> = {
       tags: ["TFLite", "NNAPI", "Model Optimization"],
     },
     {
-      id: 4,
-      tag: "Asisten Tertanam",
-      icon: MessageSquare,
-      color: "emerald",
-      title: "ContextBot",
-      subtitle: "Asisten AI sadar konteks aplikasi untuk menekan beban support",
-      problem: "Pengguna sering meninggalkan aplikasi saat menemui friksi atau kebingungan di momen kritis.",
-      approach: "Asisten berbasis LLM yang memahami state aplikasi dan journey pengguna secara mendalam.",
-      aiCapability: "Integrasi LLM, context injection, panduan berbasis retrieval",
-      impact: "Volume tiket support turun 45% setelah peluncuran",
-      tags: ["OpenAI API", "Flutter", "RAG", "State-Aware AI"],
-    },
-    {
-      id: 5,
-      tag: "Interaksi Multimodal",
-      icon: Layers,
-      color: "rose",
-      title: "MultiSense",
-      subtitle: "Lapisan input terpadu: suara + teks + visual",
-      problem: "Input tunggal membatasi aksesibilitas dan menambah friksi pada workflow mobile yang kompleks.",
-      approach: "Pipeline multimodal terpadu yang memproses suara, teks, dan kamera secara bersamaan.",
-      aiCapability: "Vision-language model, pemrosesan audio, multimodal fusion",
-      impact: "Task completion pengguna aksesibilitas naik 60%",
-      tags: ["Gemini API", "Flutter", "Camera ML", "Whisper"],
+      id: 6,
+      category: "openSource",
+      tag: "Komunitas",
+      icon: Code2,
+      color: "violet",
+      title: "CodingSkuy",
+      subtitle: "Platform dokumentasi pembelajaran engineering",
+      problem: "Kurangnya sumber belajar pemrograman yang terstruktur dan relevan dengan industri di Indonesia.",
+      approach: "Membangun repositori pengetahuan terbuka yang berisi tutorial, code snippet, dan best practice engineering.",
+      impact: "10K+ subscriber, 100+ konten tutorial",
+      tags: ["Flutter", "Open Source", "Community", "Documentation"],
     },
   ],
   en: [
     {
       id: 1,
+      category: "production",
+      tag: "Android Native",
+      icon: ShoppingCart,
+      color: "blue",
+      title: "Retail Trade-In System",
+      subtitle: "Trade-in platform for 200+ outlets",
+      problem: "Manual trade-in process was inefficient and error-prone across hundreds of outlets.",
+      approach: "Built an end-to-end Android system with REST API integration, automated validation, and monitoring dashboard.",
+      impact: "Deployed across 200+ retail outlets nationwide",
+      tags: ["Android", "Kotlin", "REST API", "Clean Architecture", "Room DB"],
+    },
+    {
+      id: 2,
+      category: "production",
+      tag: "Mobile Platform",
+      icon: Layers,
+      color: "violet",
+      title: "Multi-Product Mobile Platform",
+      subtitle: "Architecture & leadership for 8+ engineer team",
+      problem: "Uncoordinated cross-platform development caused duplication and inconsistency.",
+      approach: "Standardized architecture, built shared component library, and led delivery roadmap.",
+      impact: "Team of 8+ developers, consistent multi-platform delivery",
+      tags: ["Flutter", "Jetpack Compose", "SwiftUI", "CI/CD", "Riverpod"],
+    },
+    {
+      id: 3,
+      category: "production",
+      tag: "Security",
+      icon: Code2,
+      color: "emerald",
+      title: "Security-Critical Application",
+      subtitle: "Production app for digital security",
+      problem: "Need for mobile applications meeting high security standards and regulatory compliance.",
+      approach: "Developed secure architecture with data encryption, regular security audits, and compliance.",
+      impact: "In production serving enterprise users",
+      tags: ["Flutter", "Firebase", "Security", "Product Strategy"],
+    },
+    {
+      id: 4,
+      category: "research",
       tag: "On-Device AI",
       icon: Mic,
       color: "blue",
@@ -170,20 +226,8 @@ const projectData: Record<Language, ProjectItem[]> = {
       tags: ["TFLite", "Flutter", "On-Device NLP"],
     },
     {
-      id: 2,
-      tag: "Personalized UX",
-      icon: Sparkles,
-      color: "violet",
-      title: "StyleSense",
-      subtitle: "Visual personalization engine for e-commerce",
-      problem: "Fashion apps serve generic recommendations that ignore individual taste evolution.",
-      approach: "Computer vision + behavioral tracking to build real-time preference profiles.",
-      aiCapability: "Visual similarity models, preference learning, behavioral AI",
-      impact: "3× higher conversion rate vs. rule-based recommendations",
-      tags: ["ML Kit", "Android Compose", "Behavioral AI"],
-    },
-    {
-      id: 3,
+      id: 5,
+      category: "research",
       tag: "Edge Inference",
       icon: Zap,
       color: "cyan",
@@ -196,35 +240,62 @@ const projectData: Record<Language, ProjectItem[]> = {
       tags: ["TFLite", "NNAPI", "Model Optimization"],
     },
     {
-      id: 4,
-      tag: "Embedded Assistant",
-      icon: MessageSquare,
-      color: "emerald",
-      title: "ContextBot",
-      subtitle: "App-aware AI assistant that reduces support burden",
-      problem: "Users abandon apps at critical moments when they encounter friction or confusion.",
-      approach: "LLM-powered assistant with deep awareness of current app state and user journey.",
-      aiCapability: "LLM integration, context injection, retrieval-augmented guidance",
-      impact: "45% reduction in support ticket volume post-launch",
-      tags: ["OpenAI API", "Flutter", "RAG", "State-Aware AI"],
-    },
-    {
-      id: 5,
-      tag: "Multimodal Interaction",
-      icon: Layers,
-      color: "rose",
-      title: "MultiSense",
-      subtitle: "Unified voice + text + vision input layer",
-      problem: "Single-modal input limits accessibility and increases friction for complex mobile workflows.",
-      approach: "Unified multimodal processing pipeline that interprets voice, text, and camera inputs together.",
-      aiCapability: "Vision-language models, audio processing, multimodal fusion",
-      impact: "60% increase in task completion rate for accessibility users",
-      tags: ["Gemini API", "Flutter", "Camera ML", "Whisper"],
+      id: 6,
+      category: "openSource",
+      tag: "Community",
+      icon: Code2,
+      color: "violet",
+      title: "CodingSkuy",
+      subtitle: "Engineering learning documentation platform",
+      problem: "Lack of structured, industry-relevant programming resources in Indonesia.",
+      approach: "Built an open knowledge repository with tutorials, code snippets, and engineering best practices.",
+      impact: "10K+ subscribers, 100+ tutorial contents",
+      tags: ["Flutter", "Open Source", "Community", "Documentation"],
     },
   ],
   zh: [
     {
       id: 1,
+      category: "production",
+      tag: "Android 原生",
+      icon: ShoppingCart,
+      color: "blue",
+      title: "零售以旧换新系统",
+      subtitle: "覆盖 200+ 门店的交易平台",
+      problem: "人工以旧换新流程在数百家门店中效率低下且易出错。",
+      approach: "构建端到端 Android 系统，集成 REST API、自动验证与监控面板。",
+      impact: "在全国 200+ 零售门店部署",
+      tags: ["Android", "Kotlin", "REST API", "Clean Architecture", "Room DB"],
+    },
+    {
+      id: 2,
+      category: "production",
+      tag: "移动平台",
+      icon: Layers,
+      color: "violet",
+      title: "多产品移动平台",
+      subtitle: "8+ 人工程团队的架构与领导",
+      problem: "跨平台开发缺乏协调，导致重复工作与不一致。",
+      approach: "统一架构，构建共享组件库，主导交付路线图。",
+      impact: "管理 8+ 人开发团队，多平台一致交付",
+      tags: ["Flutter", "Jetpack Compose", "SwiftUI", "CI/CD", "Riverpod"],
+    },
+    {
+      id: 3,
+      category: "production",
+      tag: "安全",
+      icon: Code2,
+      color: "emerald",
+      title: "安全关键型应用",
+      subtitle: "面向数字安全的产业应用",
+      problem: "需要满足高安全标准与法规合规的移动应用。",
+      approach: "采用安全架构开发，包含数据加密、定期安全审计与合规检查。",
+      impact: "已投产，服务于企业用户",
+      tags: ["Flutter", "Firebase", "Security", "Product Strategy"],
+    },
+    {
+      id: 4,
+      category: "research",
       tag: "端侧 AI",
       icon: Mic,
       color: "blue",
@@ -237,20 +308,8 @@ const projectData: Record<Language, ProjectItem[]> = {
       tags: ["TFLite", "Flutter", "On-Device NLP"],
     },
     {
-      id: 2,
-      tag: "个性化 UX",
-      icon: Sparkles,
-      color: "violet",
-      title: "StyleSense",
-      subtitle: "电商视觉个性化引擎",
-      problem: "时尚应用常给出通用推荐，无法反映用户口味变化。",
-      approach: "结合计算机视觉与行为追踪，实时构建偏好画像。",
-      aiCapability: "视觉相似模型、偏好学习、行为智能",
-      impact: "转化率较规则推荐提升 3 倍",
-      tags: ["ML Kit", "Android Compose", "Behavioral AI"],
-    },
-    {
-      id: 3,
+      id: 5,
+      category: "research",
       tag: "边缘推理",
       icon: Zap,
       color: "cyan",
@@ -263,35 +322,62 @@ const projectData: Record<Language, ProjectItem[]> = {
       tags: ["TFLite", "NNAPI", "Model Optimization"],
     },
     {
-      id: 4,
-      tag: "内嵌助手",
-      icon: MessageSquare,
-      color: "emerald",
-      title: "ContextBot",
-      subtitle: "感知应用上下文的 AI 助手，降低支持压力",
-      problem: "用户在关键环节遇到阻碍时，往往直接放弃应用。",
-      approach: "构建具备应用状态与用户路径感知能力的 LLM 助手。",
-      aiCapability: "LLM 集成、上下文注入、检索增强引导",
-      impact: "上线后支持工单量下降 45%",
-      tags: ["OpenAI API", "Flutter", "RAG", "State-Aware AI"],
-    },
-    {
-      id: 5,
-      tag: "多模态交互",
-      icon: Layers,
-      color: "rose",
-      title: "MultiSense",
-      subtitle: "统一语音 + 文本 + 视觉输入层",
-      problem: "单一输入模式限制可访问性，并增加复杂流程中的操作阻力。",
-      approach: "统一多模态处理管线，同时解析语音、文本与相机输入。",
-      aiCapability: "视觉语言模型、音频处理、多模态融合",
-      impact: "可访问性用户任务完成率提升 60%",
-      tags: ["Gemini API", "Flutter", "Camera ML", "Whisper"],
+      id: 6,
+      category: "openSource",
+      tag: "社区",
+      icon: Code2,
+      color: "violet",
+      title: "CodingSkuy",
+      subtitle: "工程学习文档平台",
+      problem: "缺乏结构化的、与行业相关的编程学习资源。",
+      approach: "构建开放知识库，包含教程、代码片段与工程最佳实践。",
+      impact: "10K+ 订阅者，100+ 教程内容",
+      tags: ["Flutter", "Open Source", "Community", "Documentation"],
     },
   ],
   ja: [
     {
       id: 1,
+      category: "production",
+      tag: "Android ネイティブ",
+      icon: ShoppingCart,
+      color: "blue",
+      title: "小売トレードインシステム",
+      subtitle: "200+ 拠点に対応するプラットフォーム",
+      problem: "手動による下取りプロセスは非効率でエラーが発生しやすい。",
+      approach: "REST API 統合、自動検証、モニタリングダッシュボードを備えたエンドツーエンドの Android システムを構築。",
+      impact: "全国 200+ の小売店舗で導入",
+      tags: ["Android", "Kotlin", "REST API", "Clean Architecture", "Room DB"],
+    },
+    {
+      id: 2,
+      category: "production",
+      tag: "モバイルプラットフォーム",
+      icon: Layers,
+      color: "violet",
+      title: "マルチプロダクトモバイル基盤",
+      subtitle: "8 名以上のエンジニアチームを統率",
+      problem: "調整不足のクロスプラットフォーム開発が重複と不整合を生んでいた。",
+      approach: "アーキテクチャを標準化し、共通コンポーネントライブラリを構築、デリバリーロードマップを主導。",
+      impact: "8 名以上の開発者チームを統率、一貫したマルチプラットフォーム提供",
+      tags: ["Flutter", "Jetpack Compose", "SwiftUI", "CI/CD", "Riverpod"],
+    },
+    {
+      id: 3,
+      category: "production",
+      tag: "セキュリティ",
+      icon: Code2,
+      color: "emerald",
+      title: "セキュリティ重視のアプリケーション",
+      subtitle: "デジタルセキュリティの本番アプリ",
+      problem: "高いセキュリティ基準と規制コンプライアンスを満たすモバイルアプリが必要。",
+      approach: "データ暗号化、定期セキュリティ監査、コンプライアンス対応を含むセキュアなアーキテクチャで開発。",
+      impact: "本番稼働中、エンタープライズユーザーに提供",
+      tags: ["Flutter", "Firebase", "Security", "Product Strategy"],
+    },
+    {
+      id: 4,
+      category: "research",
       tag: "オンデバイス AI",
       icon: Mic,
       color: "blue",
@@ -304,20 +390,8 @@ const projectData: Record<Language, ProjectItem[]> = {
       tags: ["TFLite", "Flutter", "On-Device NLP"],
     },
     {
-      id: 2,
-      tag: "パーソナライズ UX",
-      icon: Sparkles,
-      color: "violet",
-      title: "StyleSense",
-      subtitle: "EC向けビジュアルパーソナライズエンジン",
-      problem: "ファッションアプリの汎用推薦は、個々の嗜好変化を捉えきれません。",
-      approach: "画像認識と行動トラッキングで、リアルタイムに嗜好プロファイルを生成。",
-      aiCapability: "視覚類似モデル、嗜好学習、行動AI",
-      impact: "ルールベース推薦比でCVR 3倍",
-      tags: ["ML Kit", "Android Compose", "Behavioral AI"],
-    },
-    {
-      id: 3,
+      id: 5,
+      category: "research",
       tag: "エッジ推論",
       icon: Zap,
       color: "cyan",
@@ -330,30 +404,17 @@ const projectData: Record<Language, ProjectItem[]> = {
       tags: ["TFLite", "NNAPI", "Model Optimization"],
     },
     {
-      id: 4,
-      tag: "組み込みアシスタント",
-      icon: MessageSquare,
-      color: "emerald",
-      title: "ContextBot",
-      subtitle: "アプリ文脈を理解するAIアシスタント",
-      problem: "ユーザーは重要な場面で迷うと、アプリを離脱しやすくなります。",
-      approach: "アプリ状態とユーザージャーニーを深く理解するLLMアシスタントを実装。",
-      aiCapability: "LLM統合、コンテキスト注入、検索拡張ガイダンス",
-      impact: "リリース後のサポートチケットを 45% 削減",
-      tags: ["OpenAI API", "Flutter", "RAG", "State-Aware AI"],
-    },
-    {
-      id: 5,
-      tag: "マルチモーダル",
-      icon: Layers,
-      color: "rose",
-      title: "MultiSense",
-      subtitle: "音声 + テキスト + 画像の統合入力レイヤー",
-      problem: "単一モード入力はアクセシビリティを下げ、複雑な操作で摩擦を生みます。",
-      approach: "音声・テキスト・カメラ入力を同時解釈する統合マルチモーダル処理を構築。",
-      aiCapability: "視覚言語モデル、音声処理、マルチモーダル融合",
-      impact: "アクセシビリティ利用者の完了率が 60% 向上",
-      tags: ["Gemini API", "Flutter", "Camera ML", "Whisper"],
+      id: 6,
+      category: "openSource",
+      tag: "コミュニティ",
+      icon: Code2,
+      color: "violet",
+      title: "CodingSkuy",
+      subtitle: "エンジニアリング学習ドキュメントプラットフォーム",
+      problem: "構造化された業界関連のプログラミング学習リソースが不足している。",
+      approach: "チュートリアル、コードスニペット、ベストプラクティスを備えた公開ナレッジリポジトリを構築。",
+      impact: "10K+ 登録者、100+ チュートリアル",
+      tags: ["Flutter", "Open Source", "Community", "Documentation"],
     },
   ],
 };
@@ -401,6 +462,10 @@ export function PortfolioSection() {
   const text = copy[language];
   const projects = projectData[language];
   const [expanded, setExpanded] = useState<number | null>(null);
+  const [activeTab, setActiveTab] = useState<"production" | "openSource" | "research">("production");
+
+  const filteredProjects = projects.filter((p) => p.category === activeTab);
+  const tabKeys: Array<"production" | "openSource" | "research"> = ["production", "openSource", "research"];
 
   return (
     <section id="projects" className="py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -423,7 +488,7 @@ export function PortfolioSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-10"
         >
           <span className="text-xs uppercase tracking-[0.15em] text-blue-500 dark:text-blue-400">
             {text.sectionTag}
@@ -439,9 +504,28 @@ export function PortfolioSection() {
           </p>
         </motion.div>
 
+        {/* Category tabs */}
+        <div className="flex gap-2 mb-10">
+          {tabKeys.map((key) => (
+            <motion.button
+              key={key}
+              onClick={() => { setActiveTab(key); setExpanded(null); }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className={`px-4 py-2 rounded-xl text-sm transition-all duration-200 ${
+                activeTab === key
+                  ? "bg-blue-600 text-white shadow-lg shadow-blue-600/20"
+                  : "bg-slate-100 dark:bg-white/[0.05] text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-white/[0.08] hover:border-blue-300 dark:hover:border-blue-500/30"
+              }`}
+            >
+              {text.tabs[key]}
+            </motion.button>
+          ))}
+        </div>
+
         {/* Project grid */}
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
-          {projects.map((project, i) => {
+          {filteredProjects.map((project, i) => {
             const colors = colorMap[project.color];
             const isExpanded = expanded === project.id;
 
@@ -453,9 +537,7 @@ export function PortfolioSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 layout
-                className={`group relative rounded-2xl border border-slate-200 dark:border-white/[0.07] ${colors.border} bg-white dark:bg-white/[0.02] p-6 cursor-pointer transition-all duration-200 hover:shadow-lg dark:hover:shadow-none hover:-translate-y-0.5 ${
-                  i === 4 ? "md:col-span-2 xl:col-span-1" : ""
-                }`}
+                className={`group relative rounded-2xl border border-slate-200 dark:border-white/[0.07] ${colors.border} bg-white dark:bg-white/[0.02] p-6 cursor-pointer transition-all duration-200 hover:shadow-lg dark:hover:shadow-none hover:-translate-y-0.5`}
                 onClick={() => setExpanded(isExpanded ? null : project.id)}
               >
                 {/* Category tag */}
@@ -511,12 +593,14 @@ export function PortfolioSection() {
                       </p>
                       <p className="text-sm text-slate-600 dark:text-slate-400">{project.approach}</p>
                     </div>
-                    <div>
-                      <p className="text-xs uppercase tracking-wider text-slate-400 dark:text-slate-600 mb-1">
-                        {text.capability}
-                      </p>
-                      <p className="text-sm text-slate-600 dark:text-slate-400">{project.aiCapability}</p>
-                    </div>
+                    {project.aiCapability && (
+                      <div>
+                        <p className="text-xs uppercase tracking-wider text-slate-400 dark:text-slate-600 mb-1">
+                          {text.capability}
+                        </p>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">{project.aiCapability}</p>
+                      </div>
+                    )}
                     <div>
                       <p className="text-xs uppercase tracking-wider text-slate-400 dark:text-slate-600 mb-1">
                         {text.impact}
@@ -550,10 +634,6 @@ export function PortfolioSection() {
             );
           })}
         </div>
-
-        <p className="text-center text-xs text-slate-400 dark:text-slate-600 mt-8">
-          {text.hint}
-        </p>
       </div>
     </section>
   );
