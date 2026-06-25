@@ -99,71 +99,71 @@ const copy: Record<Language, {
 }> = {
   id: {
     sectionTitle: "CodingSkuy!",
-    subtitle: "Belajar Ngoding Harus Seru!",
-    description: "Channel YouTube edukasi yang membuat belajar pemrograman lebih menyenangkan dengan karakter lucu dan penjelasan yang mudah dipahami.",
-    subscribers: "Subscriber",
-    videos: "Video Tutorial",
+    subtitle: "Dokumentasi & Repositori Pembelajaran Engineering",
+    description: "CodingSkuy bukanlah fokus bisnis utama atau startup komersial. Platform ini murni merupakan jurnal engineering pribadi dan kontribusi komunitas gratis untuk mendokumentasikan proses belajar, menulis tutorial, serta membagikan keputusan engineering agar mudah dipahami.",
+    subscribers: "Pembelajar",
+    videos: "Catatan Jurnal",
     views: "Total Tayangan",
-    joinText: "Gabung bersama ribuan developer yang belajar bersama CodingSkuy!",
-    subscribe: "Subscribe ke Channel",
-    coverAlt: "Channel YouTube CodingSkuy",
+    joinText: "Bergabung dengan ribuan developer yang belajar bersama repositori terbuka ini!",
+    subscribe: "Kunjungi Jurnal Video",
+    coverAlt: "Jurnal Pembelajaran CodingSkuy",
     characterAlt: "Karakter CodingSkuy",
-    watchNow: "Tonton Sekarang",
-    loadingVideo: "Memuat video...",
+    watchNow: "Tonton Catatan",
+    loadingVideo: "Memuat jurnal...",
     openInTab: "Buka Tab",
-    searchPlaceholder: "Cari video...",
-    searchEmpty: "Video tidak ditemukan.",
+    searchPlaceholder: "Cari topik...",
+    searchEmpty: "Topik tidak ditemukan.",
   },
   en: {
     sectionTitle: "CodingSkuy!",
-    subtitle: "Learning to Code Should Be Fun!",
-    description: "An educational YouTube channel that makes learning programming more fun with cute characters and easy-to-understand explanations!",
-    subscribers: "Subscribers",
-    videos: "Tutorial Videos",
+    subtitle: "Engineering Learning Journal & Knowledge Hub",
+    description: "CodingSkuy is not a startup or commercial side-hustle. It is purely an open engineering journal and free community contribution built to document my learning process, write technical tutorials, and share design decisions in an approachable way.",
+    subscribers: "Learners",
+    videos: "Journal Records",
     views: "Total Views",
-    joinText: "Join thousands of developers who learn with Coding Skuy!",
-    subscribe: "Subscribe to Channel",
-    coverAlt: "CodingSkuy YouTube Channel",
+    joinText: "Join thousands of developers learning with this open knowledge hub!",
+    subscribe: "Visit Video Journal",
+    coverAlt: "CodingSkuy Learning Journal",
     characterAlt: "CodingSkuy Character",
-    watchNow: "Watch Now",
-    loadingVideo: "Loading video...",
+    watchNow: "Watch Record",
+    loadingVideo: "Loading journal...",
     openInTab: "Open Tab",
-    searchPlaceholder: "Search videos...",
-    searchEmpty: "No videos found.",
+    searchPlaceholder: "Search topics...",
+    searchEmpty: "No topics found.",
   },
   zh: {
     sectionTitle: "CodingSkuy!",
-    subtitle: "学编程也可以很有趣！",
-    description: "一个教育向 YouTube 频道，用可爱角色和易懂讲解让编程学习更轻松。",
-    subscribers: "订阅者",
-    videos: "教程视频",
-    views: "总播放量",
-    joinText: "加入上千位在 CodingSkuy 学习的开发者！",
-    subscribe: "订阅频道",
-    coverAlt: "CodingSkuy YouTube 频道",
+    subtitle: "工程学习日志与知识库",
+    description: "CodingSkuy 不是商业项目或创业公司。它纯粹是一个开放的工程日志和免费的社区贡献，旨在记录我的学习过程、编写技术教程并以通俗易懂的方式分享设计决策。",
+    subscribers: "学习者",
+    videos: "日志视频",
+    views: "总观看量",
+    joinText: "与上千名开发者一起在这个开放知识库中共同学习！",
+    subscribe: "访问视频日志",
+    coverAlt: "CodingSkuy 学习日志",
     characterAlt: "CodingSkuy 角色",
-    watchNow: "立即观看",
-    loadingVideo: "正在加载视频...",
+    watchNow: "观看记录",
+    loadingVideo: "正在加载日志...",
     openInTab: "新标签打开",
-    searchPlaceholder: "搜索视频...",
-    searchEmpty: "未找到视频。",
+    searchPlaceholder: "搜索主题...",
+    searchEmpty: "未找到主题。",
   },
   ja: {
     sectionTitle: "CodingSkuy!",
-    subtitle: "コーディング学習はもっと楽しく！",
-    description: "かわいいキャラクターとわかりやすい解説で、プログラミング学習を楽しくする教育系YouTubeチャンネルです。",
-    subscribers: "登録者",
-    videos: "チュートリアル動画",
+    subtitle: "エンジニアリング学習ジャーナル & ナレッジハブ",
+    description: "CodingSkuy はスタートアップや商用サイドビジネスではありません。自身の学習プロセスのドキュメント化、技術チュートリアルの執筆、設計上の意思決定を分かりやすく共有するための、完全なオープンエンジニアリングジャーナルであり無料のコミュニティ貢献活動です。",
+    subscribers: "学習者",
+    videos: "ジャーナル記録",
     views: "総再生数",
-    joinText: "CodingSkuyで学ぶ何千人もの開発者の仲間に加わろう！",
-    subscribe: "チャンネル登録",
-    coverAlt: "CodingSkuy YouTubeチャンネル",
+    joinText: "このオープンナレッジハブを通じて何千人もの開発者と共に学ぼう！",
+    subscribe: "ビデオジャーナルを見る",
+    coverAlt: "CodingSkuy 学習ジャーナル",
     characterAlt: "CodingSkuy キャラクター",
-    watchNow: "今すぐ見る",
-    loadingVideo: "動画を読み込み中...",
+    watchNow: "記録を再生",
+    loadingVideo: "ジャーナルを読み込み中...",
     openInTab: "新しいタブで開く",
-    searchPlaceholder: "動画を検索...",
-    searchEmpty: "動画が見つかりません。",
+    searchPlaceholder: "トピックを検索...",
+    searchEmpty: "トピックが見つかりません。",
   },
 };
 
@@ -694,17 +694,17 @@ export function CreatorSection() {
                 transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
                 className="text-3xl sm:text-5xl font-extrabold bg-clip-text text-transparent bg-[linear-gradient(90deg,#6366f1,#06b6d4,#a855f7,#ec4899,#6366f1)] bg-[length:300%_auto]"
               >
-                🔥 Want the Full Experience?
+                📚 Why CodingSkuy Exists
               </motion.h3>
 
               <p className="text-slate-300 text-lg sm:text-xl max-w-xl mx-auto leading-relaxed">
-                This is just a taste — the real <span className="text-cyan-300 font-semibold">CodingSkuy</span> platform has interactive tutorials, live code editors, progress tracking, and so much more.
+                CodingSkuy exists purely as an engineering documentation playground. It is an open-source hub where I solidify my learning by teaching others, documenting real-world software architecture, and contributing back to the developer community.
               </p>
 
               {/* Divider */}
               <div className="flex items-center justify-center gap-3">
                 <div className="h-px w-16 bg-gradient-to-r from-transparent to-cyan-500/50" />
-                <span className="text-cyan-400 text-sm font-semibold tracking-widest uppercase">Launch Platform</span>
+                <span className="text-cyan-400 text-sm font-semibold tracking-widest uppercase">Engineering Journal</span>
                 <div className="h-px w-16 bg-gradient-to-l from-transparent to-purple-500/50" />
               </div>
 
@@ -776,7 +776,7 @@ export function CreatorSection() {
                 viewport={{ once: true }}
                 className="text-sm text-slate-500"
               >
-                ⚡ Join thousands of learners — no sign-up required
+                ⚡ Open journal — free & accessible to everyone
               </motion.p>
             </div>
           </div>
