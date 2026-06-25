@@ -13,55 +13,55 @@ const copy: Record<Language, {
   stats: { value: string; label: string }[];
 }> = {
   id: {
-    badge: "Software Engineer | Mobile, Backend & Integrasi AI",
-    titleLines: ["Membangun", "Perangkat", "Lunak", "Cerdas"],
+    badge: "Mobile & Product Engineer | Mobile, Backend & System Design",
+    titleLines: ["Product", "Engineer", "Mobile", "& Full-Stack"],
     subtitle:
-      "Software Engineer dengan 5+ tahun pengalaman membangun aplikasi mobile, backend API, dan produk berbasis AI. Menjembatani rekayasa sistem dengan dampak nyata.",
+      "Mobile & Product Engineer dengan 5+ tahun pengalaman membangun produk nyata — dari aplikasi mobile hingga backend system — dan mendokumentasikan proses engineering di sepanjang perjalanan.",
     ctaProjects: "Lihat Proyek",
     ctaCollaborate: "Unduh CV",
     stats: [
       { value: "5+", label: "Tahun Software Engineering" },
       { value: "50+", label: "Produk Dirilis" },
-      { value: "AI-Native", label: "Fokus Saat Ini" },
+      { value: "End-to-End", label: "Mobile + Backend + Arsitektur" },
     ],
   },
   en: {
-    badge: "Software Engineer | Mobile, Backend & AI Integration",
-    titleLines: ["Building", "Intelligent", "Software", "Systems"],
+    badge: "Mobile & Product Engineer | Mobile, Backend & System Design",
+    titleLines: ["Product", "Engineer", "Mobile", "& Full-Stack"],
     subtitle:
-      "Software Engineer with 5+ years building mobile applications, backend APIs, and AI-powered products. Bridging engineering excellence with real-world impact.",
+      "Mobile & Product Engineer with 5+ years building real products — from mobile apps to backend systems — and documenting the engineering journey along the way.",
     ctaProjects: "View Projects",
     ctaCollaborate: "Download CV",
     stats: [
       { value: "5+", label: "Years Software Engineering" },
       { value: "50+", label: "Products Shipped" },
-      { value: "AI-Native", label: "Current Focus" },
+      { value: "End-to-End", label: "Mobile + Backend + Architecture" },
     ],
   },
   zh: {
-    badge: "软件工程师 | 移动、后端与 AI 集成",
-    titleLines: ["构建", "智能", "软件", "系统"],
+    badge: "移动与产品工程师 | 移动、后端与系统设计",
+    titleLines: ["产品", "工程师", "移动", "与全栈"],
     subtitle:
-      "具备 5 年以上软件工程经验，涵盖移动应用、后端 API 与 AI 产品。将工程卓越与真实影响力结合。",
+      "拥有 5 年以上产品工程经验，构建从移动应用到后端系统的真实产品，并记录整个工程过程。",
     ctaProjects: "查看项目",
     ctaCollaborate: "下载 CV",
     stats: [
       { value: "5+", label: "年软件工程经验" },
       { value: "50+", label: "已发布产品" },
-      { value: "AI-Native", label: "当前重点" },
+      { value: "端到端", label: "移动 + 后端 + 架构" },
     ],
   },
   ja: {
-    badge: "ソフトウェアエンジニア | モバイル、バックエンド & AI 統合",
-    titleLines: ["つくる", "インテリジェントな", "システム", "体験"],
+    badge: "モバイル & プロダクトエンジニア | モバイル、バックエンド & システム設計",
+    titleLines: ["プロダクト", "エンジニア", "モバイル", "& フルスタック"],
     subtitle:
-      "モバイルアプリ、バックエンドAPI、AIプロダクトに5年以上従事。エンジニアリングの卓越性を現実のインパクトへとつなぐ。",
+      "モバイルアプリからバックエンドシステムまで、5年以上にわたり実際のプロダクトを構築し、そのエンジニアリングの過程を記録してきたプロダクトエンジニアです。",
     ctaProjects: "プロジェクトを見る",
     ctaCollaborate: "CVをダウンロード",
     stats: [
       { value: "5+", label: "年のソフトウェア開発経験" },
       { value: "50+", label: "リリースしたプロダクト" },
-      { value: "AI-Native", label: "現在の注力領域" },
+      { value: "エンドツーエンド", label: "モバイル + バックエンド + アーキテクチャ" },
     ],
   },
 };
@@ -69,10 +69,10 @@ const copy: Record<Language, {
 function NeuralOrb() {
   const floatingLabels = [
     { label: "System Design", x: "8%", y: "20%", delay: 0 },
-    { label: "LLM APIs", x: "68%", y: "8%", delay: 0.6 },
+    { label: "Mobile Architecture", x: "68%", y: "8%", delay: 0.6 },
     { label: "Backend APIs", x: "75%", y: "72%", delay: 1.2 },
-    { label: "AI Integration", x: "2%", y: "68%", delay: 1.8 },
-    { label: "TFLite", x: "40%", y: "88%", delay: 0.9 },
+    { label: "Product Strategy", x: "2%", y: "68%", delay: 1.8 },
+    { label: "Cross-Platform", x: "40%", y: "88%", delay: 0.9 },
   ];
 
   return (
