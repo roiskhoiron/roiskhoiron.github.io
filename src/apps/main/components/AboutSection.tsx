@@ -9,7 +9,7 @@ const copy: Record<Language, {
   titleTop: string;
   titleBottom: string;
   paragraphs: string[];
-  highlights: Array<{ icon: typeof Calendar; value: string; label: string; sub: string }>;
+  highlights: Array<{ icon: typeof Calendar; value: string; label: string; sub: string; link?: string }>;
 }> = {
   id: {
     location: "Jakarta, Indonesia",
@@ -22,9 +22,9 @@ const copy: Record<Language, {
       "Saat ini saya berperan sebagai Mobile Developer di PT. Digital Sekuriti Indonesia, menjembatani product thinking dengan eksekusi engineering pada aplikasi yang kritikal.",
     ],
     highlights: [
-      { icon: Calendar, value: "5+ Tahun", label: "Software Engineering", sub: "Dari junior dev ke Mobile" },
-      { icon: Layers, value: "50+ Produk", label: "Dirilis", sub: "Skala startup hingga enterprise" },
-      { icon: TrendingUp, value: "AI-Native", label: "Arah Saat Ini", sub: "Integrasi AI di dunia nyata" },
+      { icon: Calendar, value: "5+ Tahun", label: "Software Engineering", sub: "Dari junior dev ke Mobile", link: "https://www.linkedin.com/in/rois-khoiron/details/experience/" },
+      { icon: Layers, value: "20+ Produk", label: "Dirilis", sub: "Skala startup hingga enterprise", link: "https://www.linkedin.com/in/rois-khoiron/details/projects/" },
+      { icon: TrendingUp, value: "30+ Sertifikat", label: "Pembelajaran Berkelanjutan", sub: "Kompetensi teknis yang terverifikasi", link: "https://www.linkedin.com/in/rois-khoiron/details/certifications/" },
     ],
   },
   en: {
@@ -38,9 +38,9 @@ const copy: Record<Language, {
       "Currently serving as Mobile Developer at PT. Digital Sekuriti Indonesia, bridging product thinking with engineering execution across a team building security-critical applications.",
     ],
     highlights: [
-      { icon: Calendar, value: "5+ Years", label: "Software Engineering", sub: "From junior dev to Mobile" },
-      { icon: Layers, value: "50+ Products", label: "Shipped", sub: "Startup to enterprise scale" },
-      { icon: TrendingUp, value: "AI-Native", label: "Current Direction", sub: "Real-world AI integration" },
+      { icon: Calendar, value: "5+ Years", label: "Software Engineering", sub: "From junior dev to Mobile", link: "https://www.linkedin.com/in/rois-khoiron/details/experience/" },
+      { icon: Layers, value: "20+ Products", label: "Shipped", sub: "Startup to enterprise scale", link: "https://www.linkedin.com/in/rois-khoiron/details/projects/" },
+      { icon: TrendingUp, value: "30+ Certificates", label: "Continuous Learning", sub: "Verified technical competencies", link: "https://www.linkedin.com/in/rois-khoiron/details/certifications/" },
     ],
   },
   zh: {
@@ -54,9 +54,9 @@ const copy: Record<Language, {
       "目前担任 PT. Digital Sekuriti Indonesia 的移动开发负责人，在团队中连接产品思维与工程落地。",
     ],
     highlights: [
-      { icon: Calendar, value: "5+ 年", label: "软件工程", sub: "从初级开发到移动负责人" },
-      { icon: Layers, value: "50+ 产品", label: "已交付", sub: "覆盖初创到企业规模" },
-      { icon: TrendingUp, value: "AI-Native", label: "当前方向", sub: "真实场景 AI 集成" },
+      { icon: Calendar, value: "5+ 年", label: "软件工程", sub: "从初级开发到移动负责人", link: "https://www.linkedin.com/in/rois-khoiron/details/experience/" },
+      { icon: Layers, value: "20+ 产品", label: "已交付", sub: "覆盖初创到企业规模", link: "https://www.linkedin.com/in/rois-khoiron/details/projects/" },
+      { icon: TrendingUp, value: "30+ 证书", label: "持续学习", sub: "已验证的技术能力", link: "https://www.linkedin.com/in/rois-khoiron/details/certifications/" },
     ],
   },
   ja: {
@@ -70,9 +70,9 @@ const copy: Record<Language, {
       "現在は PT. Digital Sekuriti Indonesia で Mobile Developer として、プロダクト思考と実装をつないでいます。",
     ],
     highlights: [
-      { icon: Calendar, value: "5+ 年", label: "ソフトウェアエンジニアリング", sub: "ジュニアから責任者へ" },
-      { icon: Layers, value: "50+ プロダクト", label: "リリース実績", sub: "スタートアップからエンタープライズまで" },
-      { icon: TrendingUp, value: "AI-Native", label: "現在の方向性", sub: "実運用での AI 統合" },
+      { icon: Calendar, value: "5+ 年", label: "ソフトウェアエンジニアリング", sub: "ジュニアから責任者へ", link: "https://www.linkedin.com/in/rois-khoiron/details/experience/" },
+      { icon: Layers, value: "20+ プロダクト", label: "リリース実績", sub: "スタートアップからエンタープライズまで", link: "https://www.linkedin.com/in/rois-khoiron/details/projects/" },
+      { icon: TrendingUp, value: "30+ 認定資格", label: "継続的な学習", sub: "検証済みの技術力", link: "https://www.linkedin.com/in/rois-khoiron/details/certifications/" },
     ],
   },
 };
@@ -175,14 +175,17 @@ export function AboutSection() {
             {/* Highlight cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
               {text.highlights.map((item, i) => (
-                <motion.div
+                <motion.button
                   key={item.value}
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  whileHover={{ y: -2 }}
-                  className="p-4 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06] hover:border-blue-300 dark:hover:border-blue-500/30 transition-all duration-200"
+                  whileHover={{ y: -2, scale: item.link ? 1.02 : 1 }}
+                  className="p-4 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.06] hover:border-blue-300 dark:hover:border-blue-500/30 transition-all duration-200 text-left"
+                  onClick={() => {
+                    if (item.link) window.open(item.link, "_blank");
+                  }}
                 >
                   <item.icon className="w-4 h-4 text-blue-500 dark:text-blue-400 mb-3" />
                   <p className="text-lg text-slate-900 dark:text-white tracking-tight">
@@ -194,7 +197,7 @@ export function AboutSection() {
                   <p className="text-xs text-slate-400 dark:text-slate-600 mt-1">
                     {item.sub}
                   </p>
-                </motion.div>
+                </motion.button>
               ))}
             </div>
           </motion.div>
