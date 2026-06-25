@@ -19,10 +19,10 @@ const copy: Record<Language, {
     paragraphs: [
       "Dengan pengalaman lebih dari 5 tahun sebagai Software Engineer — dari aplikasi mobile hingga backend API dan arsitektur sistem — saya membangun produk di seluruh spektrum pengiriman software modern.",
       "Saya berkembang menuju pembangunan aplikasi AI-native: menanamkan kecerdasan langsung ke dalam produk, bukan sebagai fitur tambahan, melainkan fondasi cara produk berpikir dan merespons.",
-      "Saat ini saya berperan sebagai Head of Mobile Developer di PT. Digital Sekuriti Indonesia, menjembatani product thinking dengan eksekusi engineering pada aplikasi yang kritikal.",
+      "Saat ini saya berperan sebagai Mobile Developer di PT. Digital Sekuriti Indonesia, menjembatani product thinking dengan eksekusi engineering pada aplikasi yang kritikal.",
     ],
     highlights: [
-      { icon: Calendar, value: "5+ Tahun", label: "Software Engineering", sub: "Dari junior dev ke Head of Mobile" },
+      { icon: Calendar, value: "5+ Tahun", label: "Software Engineering", sub: "Dari junior dev ke Mobile" },
       { icon: Layers, value: "50+ Produk", label: "Dirilis", sub: "Skala startup hingga enterprise" },
       { icon: TrendingUp, value: "AI-Native", label: "Arah Saat Ini", sub: "Integrasi AI di dunia nyata" },
     ],
@@ -35,10 +35,10 @@ const copy: Record<Language, {
     paragraphs: [
       "With over 5 years of software engineering experience — from mobile applications to backend APIs and system architecture — I've built products across the full stack of modern software delivery.",
       "I'm evolving toward AI-native application building: embedding intelligence directly into products, not as a feature toggle, but as the foundation of how they think and respond.",
-      "Currently serving as Head of Mobile Developer at PT. Digital Sekuriti Indonesia, bridging product thinking with engineering execution across a team building security-critical applications.",
+      "Currently serving as Mobile Developer at PT. Digital Sekuriti Indonesia, bridging product thinking with engineering execution across a team building security-critical applications.",
     ],
     highlights: [
-      { icon: Calendar, value: "5+ Years", label: "Software Engineering", sub: "From junior dev to Head of Mobile" },
+      { icon: Calendar, value: "5+ Years", label: "Software Engineering", sub: "From junior dev to Mobile" },
       { icon: Layers, value: "50+ Products", label: "Shipped", sub: "Startup to enterprise scale" },
       { icon: TrendingUp, value: "AI-Native", label: "Current Direction", sub: "Real-world AI integration" },
     ],
@@ -67,7 +67,7 @@ const copy: Record<Language, {
     paragraphs: [
       "Android ネイティブから Flutter、バックエンド API、システム設計まで、5 年以上のソフトウェアエンジニアリング経験があります。",
       "私は AI-native なアプリ開発へ進化しています。AI を追加機能ではなく、製品の思考と応答の基盤として組み込みます。",
-      "現在は PT. Digital Sekuriti Indonesia で Head of Mobile Developer として、プロダクト思考と実装をつないでいます。",
+      "現在は PT. Digital Sekuriti Indonesia で Mobile Developer として、プロダクト思考と実装をつないでいます。",
     ],
     highlights: [
       { icon: Calendar, value: "5+ 年", label: "ソフトウェアエンジニアリング", sub: "ジュニアから責任者へ" },
