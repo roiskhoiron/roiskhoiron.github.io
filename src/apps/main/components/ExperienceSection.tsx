@@ -38,6 +38,7 @@ type Stage = {
   color: string;
   description: string;
   skills: string[];
+  coreSkills: string[];
   milestone: string;
 };
 
@@ -52,6 +53,7 @@ const stageData: Record<Language, Stage[]> = {
       color: "blue",
       description: "Memulai dari Android Native (XML, MVVM), lalu berkembang ke Kotlin, integrasi REST API, database design, dan Clean Architecture — fondasi kuat dalam software engineering.",
       skills: ["Android Native", "Kotlin", "REST APIs", "Clean Architecture", "MVVM", "Agile/Scrum"],
+      coreSkills: ["Android", "Kotlin", "Java", "REST API", "SQLite", "Room DB", "MVVM", "Clean Architecture", "Git", "JIRA", "Firebase", "Material Design"],
       milestone: "Merilis sistem trade-in yang dipakai di 200+ outlet retail",
     },
     {
@@ -63,6 +65,7 @@ const stageData: Record<Language, Stage[]> = {
       color: "violet",
       description: "Naik dari Senior Developer menjadi Mobile, memimpin tim lintas fungsi, menata delivery lintas platform, dan membuat keputusan arsitektur sistem.",
       skills: ["Flutter", "Jetpack Compose", "SwiftUI", "CI/CD", "Team Leadership", "Product Roadmap", "System Design"],
+      coreSkills: ["Flutter", "Dart", "Jetpack Compose", "SwiftUI", "CI/CD", "Fastlane", "Firebase", "Riverpod", "Bloc", "Product Strategy", "Team Management", "Code Review"],
       milestone: "Membangun dan mengelola tim mobile engineering berisi 8+ developer",
     },
     {
@@ -74,6 +77,7 @@ const stageData: Record<Language, Stage[]> = {
       color: "cyan",
       description: "Berfokus ke produk AI-native dengan integrasi LLM, on-device ML, sistem rekomendasi, dan pipeline multimodal.",
       skills: ["LLM Integration", "TFLite / Edge ML", "Prompt Engineering", "AI Product Design", "System Architecture", "Backend APIs"],
+      coreSkills: ["OpenAI API", "Claude API", "Prompt Engineering", "RAG", "Vector DB", "TFLite", "MediaPipe", "Python", "FastAPI", "System Design", "Cloud (GCP/AWS)", "AI Agents"],
       milestone: "Mengembangkan ChefGenie sebagai sistem keputusan dapur berbasis AI",
     },
   ],
@@ -87,6 +91,7 @@ const stageData: Record<Language, Stage[]> = {
       color: "blue",
       description: "Started with Android Native (XML, MVVM), expanding into Kotlin, REST API integration, database design, and Clean Architecture — building strong software engineering fundamentals.",
       skills: ["Android Native", "Kotlin", "REST APIs", "Clean Architecture", "MVVM", "Agile/Scrum"],
+      coreSkills: ["Android", "Kotlin", "Java", "REST API", "SQLite", "Room DB", "MVVM", "Clean Architecture", "Git", "JIRA", "Firebase", "Material Design"],
       milestone: "Shipped a trade-in system used across 200+ retail outlets",
     },
     {
@@ -98,6 +103,7 @@ const stageData: Record<Language, Stage[]> = {
       color: "violet",
       description: "Evolved from Senior Developer to Mobile, leading cross-functional teams, driving multi-platform delivery, and making system architecture decisions.",
       skills: ["Flutter", "Jetpack Compose", "SwiftUI", "CI/CD", "Team Leadership", "Product Roadmap", "System Design"],
+      coreSkills: ["Flutter", "Dart", "Jetpack Compose", "SwiftUI", "CI/CD", "Fastlane", "Firebase", "Riverpod", "Bloc", "Product Strategy", "Team Management", "Code Review"],
       milestone: "Built and managed a mobile engineering team of 8+ developers",
     },
     {
@@ -109,6 +115,7 @@ const stageData: Record<Language, Stage[]> = {
       color: "cyan",
       description: "Focused on AI-native products by integrating LLMs, on-device ML, recommendation systems, and multimodal pipelines.",
       skills: ["LLM Integration", "TFLite / Edge ML", "Prompt Engineering", "AI Product Design", "System Architecture", "Backend APIs"],
+      coreSkills: ["OpenAI API", "Claude API", "Prompt Engineering", "RAG", "Vector DB", "TFLite", "MediaPipe", "Python", "FastAPI", "System Design", "Cloud (GCP/AWS)", "AI Agents"],
       milestone: "Developing ChefGenie as an AI-assisted kitchen decision system",
     },
   ],
@@ -122,6 +129,7 @@ const stageData: Record<Language, Stage[]> = {
       color: "blue",
       description: "从 Android Native（XML、MVVM）起步，逐步深入 Kotlin、REST API 集成、数据库设计与整洁架构。",
       skills: ["Android Native", "Kotlin", "REST APIs", "Clean Architecture", "MVVM", "Agile/Scrum"],
+      coreSkills: ["Android", "Kotlin", "Java", "REST API", "SQLite", "Room DB", "MVVM", "Clean Architecture", "Git", "JIRA", "Firebase", "Material Design"],
       milestone: "交付覆盖 200+ 零售网点的 trade-in 系统",
     },
     {
@@ -133,6 +141,7 @@ const stageData: Record<Language, Stage[]> = {
       color: "violet",
       description: "从高级开发晋升为移动负责人，带领跨职能团队推进跨平台交付和系统架构决策。",
       skills: ["Flutter", "Jetpack Compose", "SwiftUI", "CI/CD", "Team Leadership", "Product Roadmap", "System Design"],
+      coreSkills: ["Flutter", "Dart", "Jetpack Compose", "SwiftUI", "CI/CD", "Fastlane", "Firebase", "Riverpod", "Bloc", "Product Strategy", "Team Management", "Code Review"],
       milestone: "搭建并管理 8+ 人移动工程团队",
     },
     {
@@ -144,6 +153,7 @@ const stageData: Record<Language, Stage[]> = {
       color: "cyan",
       description: "聚焦 AI 原生产品，整合 LLM、端侧 ML、推荐系统与多模态管线。",
       skills: ["LLM Integration", "TFLite / Edge ML", "Prompt Engineering", "AI Product Design", "System Architecture", "Backend APIs"],
+      coreSkills: ["OpenAI API", "Claude API", "Prompt Engineering", "RAG", "Vector DB", "TFLite", "MediaPipe", "Python", "FastAPI", "System Design", "Cloud (GCP/AWS)", "AI Agents"],
       milestone: "正在开发 ChefGenie 智能厨房决策系统",
     },
   ],
@@ -157,6 +167,7 @@ const stageData: Record<Language, Stage[]> = {
       color: "blue",
       description: "Android Native（XML、MVVM）から Kotlin、REST API 統合、データベース設計、クリーンアーキテクチャへと拡張。",
       skills: ["Android Native", "Kotlin", "REST APIs", "Clean Architecture", "MVVM", "Agile/Scrum"],
+      coreSkills: ["Android", "Kotlin", "Java", "REST API", "SQLite", "Room DB", "MVVM", "Clean Architecture", "Git", "JIRA", "Firebase", "Material Design"],
       milestone: "200以上の小売拠点で使われるトレードインシステムをリリース",
     },
     {
@@ -168,6 +179,7 @@ const stageData: Record<Language, Stage[]> = {
       color: "violet",
       description: "シニア開発者からモバイル責任者へ。クロスファンクショナルチームを率い、マルチプラットフォーム開発とシステム設計を推進。",
       skills: ["Flutter", "Jetpack Compose", "SwiftUI", "CI/CD", "Team Leadership", "Product Roadmap", "System Design"],
+      coreSkills: ["Flutter", "Dart", "Jetpack Compose", "SwiftUI", "CI/CD", "Fastlane", "Firebase", "Riverpod", "Bloc", "Product Strategy", "Team Management", "Code Review"],
       milestone: "8名以上のモバイルエンジニアチームを構築・運営",
     },
     {
@@ -179,6 +191,7 @@ const stageData: Record<Language, Stage[]> = {
       color: "cyan",
       description: "LLM、オンデバイスML、レコメンドシステム、マルチモーダルパイプラインを統合したAIネイティブプロダクトに注力。",
       skills: ["LLM Integration", "TFLite / Edge ML", "Prompt Engineering", "AI Product Design", "System Architecture", "Backend APIs"],
+      coreSkills: ["OpenAI API", "Claude API", "Prompt Engineering", "RAG", "Vector DB", "TFLite", "MediaPipe", "Python", "FastAPI", "System Design", "Cloud (GCP/AWS)", "AI Agents"],
       milestone: "AI支援キッチン判断システム ChefGenie を開発中",
     },
   ],
@@ -325,6 +338,23 @@ export function ExperienceSection() {
                 <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-5">
                   {stage.description}
                 </p>
+
+                {/* Core Skills */}
+                <div className="mb-5">
+                  <p className="text-xs text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2">
+                    Core Skills
+                  </p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {stage.coreSkills.map((skill) => (
+                      <span
+                        key={skill}
+                        className={`text-[11px] px-2 py-0.5 rounded-md border ${styles.tag}`}
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
 
                 {/* Skills */}
                 <div className="flex flex-wrap gap-1.5 mb-5">
