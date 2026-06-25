@@ -4,28 +4,28 @@ import { useLanguage, type Language } from "@/contexts/LanguageContext";
 
 const copy: Record<Language, { tag: string; titleTop: string; titleBottom: string; description: string }> = {
   id: {
-    tag: "Filosofi Engineering",
+    tag: "Filosofi Belajar",
     titleTop: "Prinsip yang",
-    titleBottom: "Mengarahkan Setiap Build",
-    description: "Model berpikir yang saya gunakan di setiap produk, dari UI mobile hingga desain sistem AI.",
+    titleBottom: "Mengarahkan Setiap Pembelajaran",
+    description: "Pendekatan belajar yang saya terapkan di setiap langkah — dari memahami konsep dasar hingga membangun proyek nyata.",
   },
   en: {
-    tag: "Engineering Philosophy",
+    tag: "Learning Philosophy",
     titleTop: "Principles That",
-    titleBottom: "Guide Every Build",
-    description: "The mental models I apply across every product — from mobile UI to AI system design.",
+    titleBottom: "Guide Every Learning",
+    description: "The learning approach I apply at every step — from understanding core concepts to building real projects.",
   },
   zh: {
-    tag: "工程理念",
-    titleTop: "指导每次构建的",
+    tag: "学习理念",
+    titleTop: "指导每次学习的",
     titleBottom: "核心原则",
-    description: "我在每个产品中使用的思维模型，从移动 UI 到 AI 系统设计。",
+    description: "我从理解基础概念到构建真实项目的每一步都遵循的学习方法。",
   },
   ja: {
-    tag: "エンジニアリング哲学",
-    titleTop: "すべての構築を導く",
+    tag: "学習理念",
+    titleTop: "すべての学習を導く",
     titleBottom: "原則",
-    description: "モバイルUIからAIシステム設計まで、私が一貫して適用する思考モデルです。",
+    description: "基本概念の理解から実際のプロジェクト構築まで、あらゆる段階で適用する学習アプローチです。",
   },
 };
 
@@ -42,120 +42,120 @@ const pillarData: Record<Language, Pillar[]> = {
     {
       icon: GitBranch,
       color: "blue",
-      title: "System Thinking",
-      description: "Saya merancang software sebagai sistem yang saling terhubung, bukan fitur yang berdiri sendiri.",
-      principles: ["Clean Architecture", "Modular Design", "Dependency Management", "Scalable Patterns"],
+      title: "Belajar Sistematis",
+      description: "Saya memandang belajar seperti merancang sistem — setiap konsep saling terhubung dan dibangun di atas fondasi yang kokoh.",
+      principles: ["Belajar Bertahap", "Pemahaman Fondasi", "Latihan Konsisten", "Proyek Nyata"],
     },
     {
       icon: Brain,
       color: "violet",
-      title: "Human-Centered AI",
-      description: "AI harus melayani tujuan manusia. Setiap kapabilitas AI saya ukur dari dampaknya pada kejelasan, kepercayaan, dan kontrol pengguna.",
-      principles: ["Explainable Outputs", "Progressive Disclosure", "Graceful Fallback", "Privacy by Default"],
+      title: "Belajar Aktif",
+      description: "Belajar bukan hanya membaca, tapi mempraktikkan. Setiap teori harus diuji dalam proyek nyata untuk membangun pemahaman mendalam.",
+      principles: ["Learning by Doing", "Eksperimen", "Dokumentasi", "Diskusi & Review"],
     },
     {
       icon: Users,
       color: "cyan",
-      title: "Arsitektur Bersih",
-      description: "Pemisahan concern adalah fondasi agar kode tetap sehat, testable, dan mudah berkembang.",
-      principles: ["Domain-Driven Design", "SOLID Principles", "Test Coverage", "Decoupled Layers"],
+      title: "Knowledge Architecture",
+      description: "Pengetahuan harus terstruktur agar mudah diakses, dihubungkan, dan dikembangkan seiring waktu.",
+      principles: ["Catatan Terstruktur", "Mind Mapping", "Spaced Repetition", "Cross-Referensi"],
     },
     {
       icon: BarChart2,
       color: "emerald",
-      title: "Keputusan Berbasis Data",
-      description: "Intuisi memunculkan hipotesis, data memvalidasi arah. Saya gunakan evidence untuk menentukan prioritas produk.",
-      principles: ["Hypothesis Testing", "Model Evaluation", "UX Analytics", "Feedback Loops"],
+      title: "Pertumbuhan Berkelanjutan",
+      description: "Kemajuan diukur bukan dari seberapa banyak yang dihafal, tapi dari seberapa mampu menerapkan dan mengajarkan kembali.",
+      principles: ["Progress Tracking", "Portofolio", "Mengajar Orang Lain", "Umpan Balik"],
     },
   ],
   en: [
     {
       icon: GitBranch,
       color: "blue",
-      title: "System Thinking",
-      description: "Designing software as interconnected systems, not isolated features.",
-      principles: ["Clean Architecture", "Modular Design", "Dependency Management", "Scalable Patterns"],
+      title: "Systematic Learning",
+      description: "I approach learning like designing a system — each concept connects and builds on a solid foundation.",
+      principles: ["Step-by-Step", "Foundation First", "Consistent Practice", "Real Projects"],
     },
     {
       icon: Brain,
       color: "violet",
-      title: "Human-Centered AI",
-      description: "AI should serve human goals. Every AI capability is measured by clarity, trust, and user control.",
-      principles: ["Explainable Outputs", "Progressive Disclosure", "Graceful Fallback", "Privacy by Default"],
+      title: "Active Learning",
+      description: "Learning isn't just reading — it's doing. Every theory must be tested in real projects to build deep understanding.",
+      principles: ["Learning by Doing", "Experimentation", "Documentation", "Discussion & Review"],
     },
     {
       icon: Users,
       color: "cyan",
-      title: "Clean Architecture",
-      description: "Separation of concerns keeps code testable, independent, and sustainable for long-term growth.",
-      principles: ["Domain-Driven Design", "SOLID Principles", "Test Coverage", "Decoupled Layers"],
+      title: "Knowledge Architecture",
+      description: "Knowledge must be structured so it's easy to access, connect, and grow over time.",
+      principles: ["Structured Notes", "Mind Mapping", "Spaced Repetition", "Cross-References"],
     },
     {
       icon: BarChart2,
       color: "emerald",
-      title: "Data-Driven Decisions",
-      description: "Intuition informs hypotheses; data validates direction across UX and model performance decisions.",
-      principles: ["Hypothesis Testing", "Model Evaluation", "UX Analytics", "Feedback Loops"],
+      title: "Continuous Growth",
+      description: "Progress is measured not by how much you memorize, but by how well you can apply and teach it back.",
+      principles: ["Progress Tracking", "Portfolio Building", "Teaching Others", "Feedback Loops"],
     },
   ],
   zh: [
     {
       icon: GitBranch,
       color: "blue",
-      title: "系统思维",
-      description: "将软件视为彼此联动的系统，而不是孤立功能的堆叠。",
-      principles: ["整洁架构", "模块化设计", "依赖管理", "可扩展模式"],
+      title: "系统化学习",
+      description: "我把学习视为设计系统——每个概念相互关联，建立在坚实基础之上。",
+      principles: ["循序渐进", "打好基础", "持续练习", "真实项目"],
     },
     {
       icon: Brain,
       color: "violet",
-      title: "以人为中心的 AI",
-      description: "AI 应服务于人的目标，每项能力都要提升清晰度、信任感与可控性。",
-      principles: ["可解释输出", "渐进式披露", "平滑降级", "默认隐私保护"],
+      title: "主动学习",
+      description: "学习不只是阅读，而是实践。每个理论都必须在真实项目中测试，以建立深入理解。",
+      principles: ["做中学", "实验探索", "记录总结", "讨论评审"],
     },
     {
       icon: Users,
       color: "cyan",
-      title: "整洁架构",
-      description: "关注点分离是代码可演进、可测试、可维护的基础。",
-      principles: ["领域驱动设计", "SOLID 原则", "测试覆盖", "解耦分层"],
+      title: "知识架构",
+      description: "知识必须结构化，才能便于访问、连接和随时间发展。",
+      principles: ["结构化笔记", "思维导图", "间隔重复", "交叉引用"],
     },
     {
       icon: BarChart2,
       color: "emerald",
-      title: "数据驱动决策",
-      description: "直觉提出假设，数据验证方向，让产品与模型迭代更可靠。",
-      principles: ["假设检验", "模型评估", "UX 数据分析", "反馈闭环"],
+      title: "持续成长",
+      description: "进步不是看你记住了多少，而是看你能否应用和教会他人。",
+      principles: ["进度追踪", "作品积累", "教别人", "反馈循环"],
     },
   ],
   ja: [
     {
       icon: GitBranch,
       color: "blue",
-      title: "システム思考",
-      description: "機能単体ではなく、相互接続されたシステムとしてソフトウェアを設計します。",
-      principles: ["クリーンアーキテクチャ", "モジュラー設計", "依存関係管理", "スケーラブルパターン"],
+      title: "システム的な学習",
+      description: "学習をシステム設計のように捉え、各概念がつながり、強固な基盤の上に構築されます。",
+      principles: ["段階的学習", "基礎を固める", "継続的な練習", "実践プロジェクト"],
     },
     {
       icon: Brain,
       color: "violet",
-      title: "人間中心の AI",
-      description: "AI は人の目的に貢献すべきです。明確さ・信頼・制御性への寄与で評価します。",
-      principles: ["説明可能な出力", "段階的開示", "安全なフォールバック", "プライバシー・バイ・デフォルト"],
+      title: "アクティブラーニング",
+      description: "学ぶことは読むことではなく、実践すること。理論を実際のプロジェクトで試して深い理解を得ます。",
+      principles: ["実践で学ぶ", "実験", "記録", "議論とレビュー"],
     },
     {
       icon: Users,
       color: "cyan",
-      title: "クリーンアーキテクチャ",
-      description: "関心の分離は、コードを長期的に進化可能にするための前提です。",
-      principles: ["ドメイン駆動設計", "SOLID原則", "テストカバレッジ", "疎結合レイヤー"],
+      title: "知識のアーキテクチャ",
+      description: "知識はアクセス、接続、成長が容易になるよう構造化されるべきです。",
+      principles: ["構造化ノート", "マインドマップ", "間隔反復", "相互参照"],
     },
     {
       icon: BarChart2,
       color: "emerald",
-      title: "データ駆動の意思決定",
-      description: "仮説は直感から、方向性の確証はデータから。証拠ベースで優先順位を決めます。",
-      principles: ["仮説検証", "モデル評価", "UX分析", "フィードバックループ"],
+      title: "継続的な成長",
+      description: "進歩は暗記量ではなく、応用し教えられる能力で測られます。",
+      principles: ["進捗トラッキング", "ポートフォリオ", "他者に教える", "フィードバック"],
     },
   ],
 };
@@ -187,7 +187,7 @@ const colorStyles: Record<string, { icon: string; border: string; tag: string; l
   },
 };
 
-export function SkillsSection() {
+export function PhilosophySection({ darkMode }: { darkMode: boolean }) {
   const { language } = useLanguage();
   const text = copy[language];
   const pillars = pillarData[language];
@@ -195,7 +195,7 @@ export function SkillsSection() {
   return (
     <section id="philosophy" className="py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background tint */}
-      <div className="absolute inset-0 bg-slate-50/50 dark:bg-white/[0.015] pointer-events-none" />
+      <div className={`absolute inset-0 pointer-events-none ${darkMode ? "bg-white/[0.015]" : ""}`} />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-white/[0.06] to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-white/[0.06] to-transparent" />
 
@@ -217,7 +217,7 @@ export function SkillsSection() {
               {text.titleBottom}
             </span>
           </h2>
-          <p className="text-slate-500 dark:text-slate-500 mt-4 max-w-xl">
+          <p className="text-slate-600 dark:text-slate-400 mt-4 max-w-xl">
             {text.description}
           </p>
         </motion.div>
@@ -234,7 +234,7 @@ export function SkillsSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 whileHover={{ y: -3 }}
-                className={`group relative p-6 rounded-2xl bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/[0.07] ${styles.border} transition-all duration-200 hover:shadow-md dark:hover:shadow-none`}
+                className={`group relative p-6 rounded-2xl bg-white/85 dark:bg-[#090d1a]/80 border border-slate-200 dark:border-white/[0.08] ${styles.border} transition-all duration-200 hover:shadow-md dark:hover:shadow-none`}
               >
                 {/* Top line accent */}
                 <div className={`absolute top-0 left-6 right-6 h-[2px] ${styles.line} rounded-b-full opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />

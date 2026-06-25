@@ -3,7 +3,7 @@ import type { Language } from "../../contexts/LanguageContext";
 export type Translations = {
   nav: {
     about: string; learning: string; projects: string; media: string;
-    ailab: string; community: string; hireMe: string;
+    ailab: string; community: string; activity: string; philosophy: string; hireMe: string;
   };
   hero: {
     badge: string; titleMain: string; titleSub: string;
@@ -47,7 +47,7 @@ export const translations: Record<Language, Translations> = {
   id: {
     nav: {
       about: "Tentang", learning: "Pembelajaran", projects: "Proyek",
-      media: "Media", ailab: "AI Lab", community: "Komunitas", hireMe: "Hubungi Saya",
+      media: "Media", ailab: "AI Lab", community: "Komunitas", activity: "Aktivitas", philosophy: "Filosofi", hireMe: "Hubungi Saya",
     },
     hero: {
       badge: "CodingSkuy!", titleMain: "CodingSkuy!", titleSub: "Belajar Teknologi Harus Menyenangkan",
@@ -162,7 +162,7 @@ export const translations: Record<Language, Translations> = {
   en: {
     nav: {
       about: "About", learning: "Learning", projects: "Projects",
-      media: "Media", ailab: "AI Lab", community: "Community", hireMe: "Hire Me",
+      media: "Media", ailab: "AI Lab", community: "Community", activity: "Activity", philosophy: "Philosophy", hireMe: "Hire Me",
     },
     hero: {
       badge: "CodingSkuy!", titleMain: "CodingSkuy!", titleSub: "Learning Technology Should Be Fun",
@@ -277,7 +277,7 @@ export const translations: Record<Language, Translations> = {
   zh: {
     nav: {
       about: "关于", learning: "学习", projects: "项目",
-      media: "媒体", ailab: "AI实验室", community: "社区", hireMe: "联系我",
+      media: "媒体", ailab: "AI实验室", community: "社区", activity: "动态", philosophy: "理念", hireMe: "联系我",
     },
     hero: {
       badge: "CodingSkuy!", titleMain: "CodingSkuy!", titleSub: "学习技术应该很有趣",
@@ -392,7 +392,7 @@ export const translations: Record<Language, Translations> = {
   ja: {
     nav: {
       about: "概要", learning: "学習", projects: "プロジェクト",
-      media: "メディア", ailab: "AIラボ", community: "コミュニティ", hireMe: "お問い合わせ",
+      media: "メディア", ailab: "AIラボ", community: "コミュニティ", activity: "アクティビティ", philosophy: "哲学", hireMe: "お問い合わせ",
     },
     hero: {
       badge: "CodingSkuy!", titleMain: "CodingSkuy!", titleSub: "テクノロジー学習は楽しくあるべき",

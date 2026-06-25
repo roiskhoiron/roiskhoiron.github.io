@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Navbar } from "./components/Navbar";
+import { ActivityTransparencySection } from "./components/ActivityTransparencySection";
+import { PhilosophySection } from "./components/PhilosophySection";
 import { ScrollSmoother } from "@/components/ScrollSmoother";
 import logo from "@/assets/ic_logo_codingskuy.png";
 import { HeroSection } from "./components/HeroSection";
@@ -33,6 +35,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    localStorage.setItem("codingskuy-theme", darkMode ? "dark" : "light");
     if (darkMode) {
       document.documentElement.classList.add("dark");
     } else {
@@ -56,12 +59,12 @@ export default function App() {
       <main>
         <HeroSection darkMode={darkMode} />
         <AboutSection darkMode={darkMode} />
+        <ActivityTransparencySection darkMode={darkMode} />
         <LearningPathsSection darkMode={darkMode} />
         <ShowcaseSection darkMode={darkMode} />
         <MetricsSection darkMode={darkMode} />
+        <PhilosophySection darkMode={darkMode} />
         <PortfolioSection darkMode={darkMode} />
-        {/* <ExperienceSection darkMode={darkMode} /> */}
-        {/* <ExpertiseSection darkMode={darkMode} /> */} 
         <MediaHubSection darkMode={darkMode} />
         <ContentLibrarySection darkMode={darkMode} />
         <AILabSection darkMode={darkMode} />

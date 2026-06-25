@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { HeroSection } from "@/apps/main/components/HeroSection";
 import { AboutSection } from "@/apps/main/components/AboutSection";
-import { SkillsSection } from "@/apps/main/components/SkillsSection";
+
 import { PortfolioSection } from "@/apps/main/components/PortfolioSection";
 import { ExperienceSection } from "@/apps/main/components/ExperienceSection";
 import { BrandingSection } from "@/apps/main/components/BrandingSection";
@@ -10,7 +10,7 @@ import { ContactSection } from "@/apps/main/components/ContactSection";
 import { Footer } from "@/apps/main/components/Footer";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { NavBar } from "@/apps/main/components/NavBar";
-import { ActivityTransparencySection } from "@/apps/main/components/ActivityTransparencySection";
+
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { MediumArticlesSection } from "@/apps/main/components/MediumArticlesSection";
 import { ScrollSmoother } from "@/components/ScrollSmoother";
@@ -36,8 +36,7 @@ export default function App() {
           <HeroSection />
           <AboutSection />
           <ExperienceSection />
-          <ActivityTransparencySection />
-          <SkillsSection />
+
           <BrandingSection />
           <PortfolioSection />
           <MediumArticlesSection />

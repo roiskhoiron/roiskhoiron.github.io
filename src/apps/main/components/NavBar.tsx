@@ -10,8 +10,8 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
   id: [
     { href: "#about", label: "Tentang" },
     { href: "#timeline", label: "Perjalanan" },
-    { href: "#activity", label: "Aktivitas" },
-    { href: "#philosophy", label: "Filosofi" },
+
+
     { href: "#chefgenie", label: "Portofolio" },
     { href: "#writing", label: "Tulisan" },
     { href: "#content", label: "Konten" },
@@ -20,8 +20,8 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
   en: [
     { href: "#about", label: "About" },
     { href: "#timeline", label: "Timeline" },
-    { href: "#activity", label: "Activity" },
-    { href: "#philosophy", label: "Philosophy" },
+
+
     { href: "#chefgenie", label: "Portfolio" },
     { href: "#writing", label: "Writing" },
     { href: "#content", label: "Content" },
@@ -30,8 +30,8 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
   zh: [
     { href: "#about", label: "关于" },
     { href: "#timeline", label: "历程" },
-    { href: "#activity", label: "动态" },
-    { href: "#philosophy", label: "理念" },
+
+
     { href: "#chefgenie", label: "作品集" },
     { href: "#writing", label: "写作" },
     { href: "#content", label: "内容" },
@@ -40,8 +40,8 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
   ja: [
     { href: "#about", label: "概要" },
     { href: "#timeline", label: "歩み" },
-    { href: "#activity", label: "アクティビティ" },
-    { href: "#philosophy", label: "哲学" },
+
+
     { href: "#chefgenie", label: "ポートフォリオ" },
     { href: "#writing", label: "執筆" },
     { href: "#content", label: "コンテンツ" },

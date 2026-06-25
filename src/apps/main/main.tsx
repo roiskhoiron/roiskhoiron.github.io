@@ -51,9 +51,7 @@ function Root() {
   if (currentPath === "/codingskuy") {
     return (
       <LanguageProvider>
-        <ThemeProvider>
-          <CodingSkuyLandingPage />
-        </ThemeProvider>
+        <CodingSkuyLandingPage />
       </LanguageProvider>
     );
   }

@@ -16,7 +16,9 @@ export function Navbar({ darkMode, toggleDark }: NavbarProps) {
 
   const navLinks = [
     { label: t.nav.about, href: "#about" },
+    { label: t.nav.activity, href: "#activity" },
     { label: t.nav.learning, href: "#learning" },
+    { label: t.nav.philosophy, href: "#philosophy" },
     { label: t.nav.projects, href: "#portfolio" },
     { label: t.nav.media, href: "#media" },
     { label: t.nav.ailab, href: "#ailab" },
