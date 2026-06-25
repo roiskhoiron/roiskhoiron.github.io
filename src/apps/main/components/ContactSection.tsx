@@ -43,11 +43,11 @@ const copy: Record<Language, {
   labels: Record<string, string>;
 }> = {
   id: {
-    availability: "Bersedia direkrut atau kolaborasi",
+    availability: "Fokus pada peluang Full-time",
     titleTop: "Siap Membangun",
     titleBottom: "Sesuatu yang Cerdas?",
     description:
-      "Saya terbuka untuk peluang Full-time dan konsultasi AI, selain kolaborasi produk berbasis AI.",
+      "Saya mencari tantangan Full-time di mana metodologi belajar cepat dan adaptasi AI saya dapat langsung berdampak pada stabilitas produk perusahaan Anda.",
     cta: "Mulai Percakapan",
     response: "Biasanya merespons dalam 24 jam · Jakarta, Indonesia (WIB / UTC+7)",
     labels: {
@@ -58,11 +58,11 @@ const copy: Record<Language, {
     },
   },
   en: {
-    availability: "Open for recruitment or collaboration",
+    availability: "Focused on Full-time opportunities",
     titleTop: "Ready to Build",
     titleBottom: "Something Intelligent?",
     description:
-      "I'm open to Full-time opportunities and AI consulting, in addition to AI-powered product collaborations.",
+      "I'm seeking a Full-time challenge where my rapid learning methodology and AI adaptation can directly impact your company's product stability.",
     cta: "Start a Conversation",
     response: "Typically responds within 24 hours · Jakarta, Indonesia (WIB / UTC+7)",
     labels: {
@@ -73,11 +73,11 @@ const copy: Record<Language, {
     },
   },
   zh: {
-    availability: "开放招聘或合作",
+    availability: "专注于全职机会",
     titleTop: "准备一起打造",
     titleBottom: "更智能的产品？",
     description:
-      "我开放全职机会和AI咨询服务，同时也接受AI产品合作。",
+      "我正在寻找全职挑战，让我的快速学习方法和AI适应能力直接影响贵公司产品的稳定性。",
     cta: "开始交流",
     response: "通常 24 小时内回复 · 雅加达，印度尼西亚 (WIB / UTC+7)",
     labels: {
@@ -88,11 +88,11 @@ const copy: Record<Language, {
     },
   },
   ja: {
-    availability: "採用・コラボ募集中",
+    availability: "フルタイムの機会に集中",
     titleTop: "一緒に",
     titleBottom: "インテリジェントなものを作りませんか？",
     description:
-      "フルタイムの機会やAIコンサルティングに加え、AIプロダクトの共同開発も歓迎します。",
+      "私は、迅速な学習方法論とAI適応力が貴社の製品安定性に直接貢献できるフルタイムの挑戦を求めています。",
     cta: "会話を始める",
     response: "通常24時間以内に返信 · ジャカルタ、インドネシア (WIB / UTC+7)",
     labels: {
