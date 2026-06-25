@@ -1,6 +1,8 @@
 import { motion } from "motion/react";
-import { ArrowRight, ArrowDown, Cpu, Smartphone, Brain, Layers } from "lucide-react";
+import { ArrowRight, ArrowDown, Cpu } from "lucide-react";
 import { useLanguage, type Language } from "@/contexts/LanguageContext";
+import cvIdn from "@/assets/CV_IDN.pdf";
+import cvEng from "@/assets/CV_ENG.pdf";
 
 const copy: Record<Language, {
   badge: string;
@@ -16,7 +18,7 @@ const copy: Record<Language, {
     subtitle:
       "Software Engineer dengan 5+ tahun pengalaman membangun aplikasi mobile, backend API, dan produk berbasis AI. Menjembatani rekayasa sistem dengan dampak nyata.",
     ctaProjects: "Lihat Proyek",
-    ctaCollaborate: "Mari Kolaborasi",
+    ctaCollaborate: "Unduh CV",
     stats: [
       { value: "5+", label: "Tahun Software Engineering" },
       { value: "50+", label: "Produk Dirilis" },
@@ -29,7 +31,7 @@ const copy: Record<Language, {
     subtitle:
       "Software Engineer with 5+ years building mobile applications, backend APIs, and AI-powered products. Bridging engineering excellence with real-world impact.",
     ctaProjects: "View Projects",
-    ctaCollaborate: "Let's Collaborate",
+    ctaCollaborate: "Download CV",
     stats: [
       { value: "5+", label: "Years Software Engineering" },
       { value: "50+", label: "Products Shipped" },
@@ -42,7 +44,7 @@ const copy: Record<Language, {
     subtitle:
       "具备 5 年以上软件工程经验，涵盖移动应用、后端 API 与 AI 产品。将工程卓越与真实影响力结合。",
     ctaProjects: "查看项目",
-    ctaCollaborate: "一起合作",
+    ctaCollaborate: "下载 CV",
     stats: [
       { value: "5+", label: "年软件工程经验" },
       { value: "50+", label: "已发布产品" },
@@ -55,7 +57,7 @@ const copy: Record<Language, {
     subtitle:
       "モバイルアプリ、バックエンドAPI、AIプロダクトに5年以上従事。エンジニアリングの卓越性を現実のインパクトへとつなぐ。",
     ctaProjects: "プロジェクトを見る",
-    ctaCollaborate: "コラボする",
+    ctaCollaborate: "CVをダウンロード",
     stats: [
       { value: "5+", label: "年のソフトウェア開発経験" },
       { value: "50+", label: "リリースしたプロダクト" },
@@ -153,10 +155,6 @@ export function HeroSection() {
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   const stats = text.stats;
 
   return (
@@ -235,14 +233,16 @@ export function HeroSection() {
                 {text.ctaProjects}
                 <ArrowRight className="w-4 h-4" />
               </motion.button>
-              <motion.button
-                onClick={scrollToContact}
+              <motion.a
+                href={language === "id" ? cvIdn : cvEng}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-white/[0.06] dark:hover:bg-white/[0.1] border border-slate-200 dark:border-white/[0.1] text-slate-800 dark:text-white rounded-xl text-sm transition-colors"
               >
                 {text.ctaCollaborate}
-              </motion.button>
+              </motion.a>
             </div>
 
             {/* Stats */}
