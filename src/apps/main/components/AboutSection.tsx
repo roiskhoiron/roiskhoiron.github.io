@@ -18,7 +18,7 @@ const copy: Record<Language, {
     titleBottom: "era AI",
     paragraphs: [
       "Dengan pengalaman lebih dari 5 tahun sebagai Software Engineer — dari aplikasi mobile hingga backend API dan arsitektur sistem — saya membangun produk di seluruh spektrum pengiriman software modern.",
-      "Saya berkembang menuju pembangunan aplikasi AI-native: menanamkan kecerdasan langsung ke dalam produk, bukan sebagai fitur tambahan, melainkan fondasi cara produk berpikir dan merespons.",
+      "Saya berkembang menuju pembangunan aplikasi AI-native: menanamkan kecerdasan langsung ke dalam produk, bukan sebagai fitur tambahan, melainkan fondasi cara produk berpikir dan merespons. Saya memiliki gelar S.Kom. dalam Informatika dari Universitas Teknologi Yogyakarta.",
       "Saat ini saya berperan sebagai Mobile Developer di PT. Digital Sekuriti Indonesia, menjembatani product thinking dengan eksekusi engineering pada aplikasi yang kritikal.",
     ],
     highlights: [
@@ -34,7 +34,7 @@ const copy: Record<Language, {
     titleBottom: "the AI Era",
     paragraphs: [
       "With over 5 years of software engineering experience — from mobile applications to backend APIs and system architecture — I've built products across the full stack of modern software delivery.",
-      "I'm evolving toward AI-native application building: embedding intelligence directly into products, not as a feature toggle, but as the foundation of how they think and respond.",
+      "I'm evolving toward AI-native application building: embedding intelligence directly into products, not as a feature toggle, but as the foundation of how they think and respond. I hold a B.S. in Informatics from Universitas Teknologi Yogyakarta.",
       "Currently serving as Mobile Developer at PT. Digital Sekuriti Indonesia, bridging product thinking with engineering execution across a team building security-critical applications.",
     ],
     highlights: [
@@ -50,7 +50,7 @@ const copy: Record<Language, {
     titleBottom: "AI 时代而构建",
     paragraphs: [
       "我有 5 年以上软件工程经验，涵盖移动应用、后端 API 与系统架构，经历了完整的软件交付流程。",
-      "我正在向 AI-native 应用构建转型：把智能作为产品底层能力，而不是可选功能。",
+      "我正在向 AI-native 应用构建转型：把智能作为产品底层能力，而不是可选功能。拥有日惹科技大学的计算机科学学士学位。",
       "目前担任 PT. Digital Sekuriti Indonesia 的移动开发负责人，在团队中连接产品思维与工程落地。",
     ],
     highlights: [
@@ -66,7 +66,7 @@ const copy: Record<Language, {
     titleBottom: "エンジニアリング",
     paragraphs: [
       "Android ネイティブから Flutter、バックエンド API、システム設計まで、5 年以上のソフトウェアエンジニアリング経験があります。",
-      "私は AI-native なアプリ開発へ進化しています。AI を追加機能ではなく、製品の思考と応答の基盤として組み込みます。",
+      "私は AI-native なアプリ開発へ進化しています。AI を追加機能ではなく、製品の思考と応答の基盤として組み込みます。Universitas Teknologi Yogyakarta で情報学の学士号を取得。",
       "現在は PT. Digital Sekuriti Indonesia で Mobile Developer として、プロダクト思考と実装をつないでいます。",
     ],
     highlights: [
