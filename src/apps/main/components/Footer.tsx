@@ -62,24 +62,24 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
 
 const copy: Record<Language, { tagline: string; rights: string; quote: string }> = {
   id: {
-    tagline: "Software Engineer yang membangun produk mobile, backend, dan AI.",
+    tagline: "Software Engineer yang membangun produk mobile, backend, dan sistem nyata.",
     rights: "Hak cipta dilindungi",
-    quote: "\"Mengirim kecerdasan nyata, bukan sekadar demo AI.\"",
+    quote: "\"Membangun nilai produk yang nyata, bukan sekadar demo.\"",
   },
   en: {
-    tagline: "Software Engineer building mobile, backend & AI-powered products.",
+    tagline: "Software Engineer building mobile, backend & real-world products.",
     rights: "All rights reserved",
-    quote: "\"Shipping real intelligence, not just demo AI.\"",
+    quote: "\"Shipping real product value, not just demos.\"",
   },
   zh: {
-    tagline: "专注构建移动、后端与 AI 产品的软件工程师。",
+    tagline: "专注构建移动、后端与真实世界产品的软件工程师。",
     rights: "保留所有权利",
-    quote: "\"交付真实智能，而不只是 AI 演示。\"",
+    quote: "\"交付真实的产品价值，而不只是演示。\"",
   },
   ja: {
-    tagline: "モバイル、バックエンド、AI製品を開発するソフトウェアエンジニア。",
+    tagline: "モバイル、バックエンド、実世界の製品を開発するソフトウェアエンジニア。",
     rights: "無断転載を禁じます",
-    quote: "\"デモAIではなく、実用的な知性を届ける。\"",
+    quote: "\"デモではなく、本物のプロダクト価値を届ける。\"",
   },
 };
 
