@@ -12,7 +12,7 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
     { href: "#timeline", label: "Perjalanan" },
 
 
-    { href: "#chefgenie", label: "Portofolio" },
+    { href: "#projects", label: "Portofolio" },
     { href: "#writing", label: "Tulisan" },
     { href: "#content", label: "Konten" },
     { href: "#contact", label: "Kontak" },
@@ -22,7 +22,7 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
     { href: "#timeline", label: "Timeline" },
 
 
-    { href: "#chefgenie", label: "Portfolio" },
+    { href: "#projects", label: "Portfolio" },
     { href: "#writing", label: "Writing" },
     { href: "#content", label: "Content" },
     { href: "#contact", label: "Contact" },
@@ -32,7 +32,7 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
     { href: "#timeline", label: "历程" },
 
 
-    { href: "#chefgenie", label: "作品集" },
+    { href: "#projects", label: "作品集" },
     { href: "#writing", label: "写作" },
     { href: "#content", label: "内容" },
     { href: "#contact", label: "联系" },
@@ -42,7 +42,7 @@ const navLinksByLanguage: Record<Language, Array<{ href: string; label: string }
     { href: "#timeline", label: "歩み" },
 
 
-    { href: "#chefgenie", label: "ポートフォリオ" },
+    { href: "#projects", label: "ポートフォリオ" },
     { href: "#writing", label: "執筆" },
     { href: "#content", label: "コンテンツ" },
     { href: "#contact", label: "連絡先" },
