@@ -44,10 +44,10 @@ const copy: Record<Language, {
 }> = {
   id: {
     availability: "Fokus pada peluang Full-time",
-    titleTop: "Siap Membangun",
-    titleBottom: "Sesuatu yang Cerdas?",
+    titleTop: "Siap Membangun Produk",
+    titleBottom: "Yang Memberi Dampak Nyata?",
     description:
-      "Saya mencari tantangan Full-time di mana metodologi belajar cepat dan adaptasi AI saya dapat langsung berdampak pada stabilitas produk perusahaan Anda.",
+      "Saya mencari tantangan Full-time sebagai Product & Mobile Engineer di mana pengalaman membangun sistem end-to-end (mobile, backend, arsitektur) dan eksplorasi AI saya dapat langsung berdampak pada stabilitas produk serta kebutuhan bisnis perusahaan Anda.",
     cta: "Mulai Percakapan",
     response: "Biasanya merespons dalam 24 jam · Jakarta, Indonesia (WIB / UTC+7)",
     labels: {
@@ -59,10 +59,10 @@ const copy: Record<Language, {
   },
   en: {
     availability: "Focused on Full-time opportunities",
-    titleTop: "Ready to Build",
-    titleBottom: "Something Intelligent?",
+    titleTop: "Ready to Build Products",
+    titleBottom: "That Deliver Real Impact?",
     description:
-      "I'm seeking a Full-time challenge where my rapid learning methodology and AI adaptation can directly impact your company's product stability.",
+      "I'm seeking a Full-time challenge as a Product & Mobile Engineer where my end-to-end product experience (mobile, backend, architecture) and AI exploration can directly contribute to your company's product stability and business needs.",
     cta: "Start a Conversation",
     response: "Typically responds within 24 hours · Jakarta, Indonesia (WIB / UTC+7)",
     labels: {
@@ -75,9 +75,9 @@ const copy: Record<Language, {
   zh: {
     availability: "专注于全职机会",
     titleTop: "准备一起打造",
-    titleBottom: "更智能的产品？",
+    titleBottom: "有真实影响的产品？",
     description:
-      "我正在寻找全职挑战，让我的快速学习方法和AI适应能力直接影响贵公司产品的稳定性。",
+      "我正在寻找全职挑战，作为产品与移动工程师，利用我的端到端产品经验（移动端、后端、架构）和 AI 探索，直接为贵公司的产品稳定性与业务需求做出贡献。",
     cta: "开始交流",
     response: "通常 24 小时内回复 · 雅加达，印度尼西亚 (WIB / UTC+7)",
     labels: {
@@ -90,9 +90,9 @@ const copy: Record<Language, {
   ja: {
     availability: "フルタイムの機会に集中",
     titleTop: "一緒に",
-    titleBottom: "インテリジェントなものを作りませんか？",
+    titleBottom: "真に影響を与えるプロダクトを作りませんか？",
     description:
-      "私は、迅速な学習方法論とAI適応力が貴社の製品安定性に直接貢献できるフルタイムの挑戦を求めています。",
+      "私は、エンドツーエンドのプロダクト経験（モバイル、バックエンド、アーキテクチャ）と AI 探索を活かし、貴社のプロダクト安定性とビジネスニーズに直接貢献できるフルタイムのプロダクト・モバイルエンジニアとしての挑戦を求めています。",
     cta: "会話を始める",
     response: "通常24時間以内に返信 · ジャカルタ、インドネシア (WIB / UTC+7)",
     labels: {
@@ -178,7 +178,7 @@ export function ContactSection() {
 
           {/* Primary CTA */}
           <motion.a
-            href="https://wa.me/6282334626354?text=Halo%20Rois,%20saya%20tertarik%20berdiskusi%20tentang%20kolaborasi."
+            href="https://wa.me/6282334626354?text=Halo%20Rois,%20saya%20minat%20mendiskusikan%20peluang%20bekerja%20bersama."
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.03 }}
