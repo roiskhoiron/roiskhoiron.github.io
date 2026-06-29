@@ -7,11 +7,13 @@
     "dev:mcp": "slidev mcp-server/slides.md",
     "dev:ai": "slidev ai-agent/slides.md",
     "dev:programming": "slidev belajar-programming-ai-anak/slides.md",
+    "dev:journey": "slidev codingskuy-journey/slides.md",
     "build:flutter": "slidev build flutter-null-safety/slides.md --out ../dist/flutter-null-safety --base /slides/flutter-null-safety/",
     "build:mcp": "slidev build mcp-server/slides.md --out ../dist/mcp-server --base /slides/mcp-server/",
     "build:ai": "slidev build ai-agent/slides.md --out ../dist/ai-agent --base /slides/ai-agent/",
     "build:programming": "slidev build belajar-programming-ai-anak/slides.md --out ../dist/belajar-programming-ai-anak --base /slides/belajar-programming-ai-anak/",
-    "build": "npm run build:flutter && npm run build:mcp && npm run build:ai && npm run build:programming"
+    "build:journey": "slidev build codingskuy-journey/slides.md --out ../dist/codingskuy-journey --base /slides/codingskuy-journey/",
+    "build": "npm run build:flutter && npm run build:mcp && npm run build:ai && npm run build:programming && npm run build:journey"
   },
   "devDependencies": {
     "@slidev/cli": "^0.49.0",
