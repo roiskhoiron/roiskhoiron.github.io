@@ -87,7 +87,8 @@ Bukan tentang `Hello World`
 
 ---
 layout: image-right
-image: /articles/images/journey/01-wired-remote-car.jpeg
+image: /images/journey/01-wired-remote-car.jpeg
+backgroundSize: contain
 ---
 
 # 🚗 Semuanya Berawal dari Mainan
@@ -109,7 +110,8 @@ image: /articles/images/journey/01-wired-remote-car.jpeg
 
 ---
 layout: image-right
-image: /articles/images/journey/02-ps1-gaming.jpeg
+image: /images/journey/02-ps1-gaming.jpeg
+backgroundSize: contain
 ---
 
 # 🎮 Menjadi Consumer
@@ -130,7 +132,8 @@ image: /articles/images/journey/02-ps1-gaming.jpeg
 
 ---
 layout: image-right
-image: /articles/images/journey/03-tape-cd-player.jpeg
+image: /images/journey/03-tape-cd-player.jpeg
+backgroundSize: contain
 ---
 
 # 🎵 Musik yang Berisi Data
@@ -151,7 +154,8 @@ image: /articles/images/journey/03-tape-cd-player.jpeg
 
 ---
 layout: image-right
-image: /articles/images/journey/04-first-netboo.jpeg
+image: /images/journey/04-first-netboo.jpeg
+backgroundSize: contain
 ---
 
 # 💻 Jendela Menuju Dunia Baru
@@ -172,7 +176,8 @@ image: /articles/images/journey/04-first-netboo.jpeg
 
 ---
 layout: image-right
-image: /articles/images/journey/05-network-topology.jpeg
+image: /images/journey/05-network-topology.jpeg
+backgroundSize: contain
 ---
 
 # 🌐 Dunia Jaringan
@@ -194,7 +199,8 @@ image: /articles/images/journey/05-network-topology.jpeg
 
 ---
 layout: image-right
-image: /articles/images/journey/06-turbo-pascal-ide.jpeg
+image: /images/journey/06-turbo-pascal-ide.jpeg
+backgroundSize: contain
 ---
 
 # 💡 Pertama Kali Bertemu Kode
@@ -235,7 +241,8 @@ Menerjemahkan cara berpikir manusia menjadi instruksi yang dipahami komputer
 
 ---
 layout: image-right
-image: /articles/images/journey/07-web-tech-stack.jpeg
+image: /images/journey/07-web-tech-stack.jpeg
+backgroundSize: contain
 ---
 
 # 🌐 Bahasa Web
@@ -256,7 +263,8 @@ image: /articles/images/journey/07-web-tech-stack.jpeg
 
 ---
 layout: image-right
-image: /articles/images/journey/08-android-eclipse-adt.jpeg
+image: /images/journey/08-android-eclipse-adt.jpeg
+backgroundSize: contain
 ---
 
 # 📱 Era Smartphone
@@ -278,7 +286,8 @@ image: /articles/images/journey/08-android-eclipse-adt.jpeg
 
 ---
 layout: image-right
-image: /articles/images/journey/09-university-math-algorithms.jpeg
+image: /images/journey/09-university-math-algorithms.jpeg
+backgroundSize: contain
 ---
 
 # 🎓 Kampus Mengajarkan Berpikir
@@ -303,7 +312,8 @@ Melatih **cara berpikir sistematis**
 
 ---
 layout: image-right
-image: /articles/images/journey/10-dicoding-bootcamp.jpeg
+image: /images/journey/10-dicoding-bootcamp.jpeg
+backgroundSize: contain
 ---
 
 # 🏭 Standar Industri
@@ -326,7 +336,8 @@ Membuat aplikasi ≠ hanya membuat tampilan
 
 ---
 layout: image-right
-image: /articles/images/journey/11-laravel-education-dashboard.jpeg
+image: /images/journey/11-laravel-education-dashboard.jpeg
+backgroundSize: contain
 ---
 
 # 🛠️ Proyek Nyata
@@ -349,7 +360,8 @@ bukan karena teknologinya keren
 
 ---
 layout: image-right
-image: /articles/images/journey/12-professional-team-collaboration.jpeg
+image: /images/journey/12-professional-team-collaboration.jpeg
+backgroundSize: contain
 ---
 
 # 💼 Dunia Profesional
@@ -418,7 +430,7 @@ Pertanyaan sederhana ini mengubah:
 
 ---
 layout: image
-image: /articles/images/journey/13-journey-transformation.jpeg
+image: /images/journey/13-journey-transformation.jpeg
 backgroundSize: contain
 ---
 
