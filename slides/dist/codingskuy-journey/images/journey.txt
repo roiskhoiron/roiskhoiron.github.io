@@ -1,0 +1,13 @@
+01-wired-remote-car.jpeg
+02-ps1-gaming.jpeg
+03-tape-cd-player.jpeg
+04-first-netboo.jpeg
+05-network-topology.jpeg
+06-turbo-pascal-ide.jpeg
+07-web-tech-stack.jpeg
+08-android-eclipse-adt.jpeg
+09-university-math-algorithms.jpeg
+10-dicoding-bootcamp.jpeg
+11-laravel-education-dashboard.jpeg
+12-professional-team-collaboration.jpeg
+13-journey-transformation.jpeg
