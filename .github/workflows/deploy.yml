@@ -66,15 +66,15 @@ jobs:
       - name: Build Slidev decks
         run: cd slides && npm run build 2>&1
 
-      - name: Merge Slidev output into build/
-        run: |
-          for deck in flutter-null-safety mcp-server ai-agent belajar-programming-ai-anak; do
-            if [ -d "slides/dist/$deck" ]; then
-              mkdir -p "build/slides/$deck"
-              cp -R "slides/dist/$deck/"* "build/slides/$deck/"
-            fi
-          done
-          ls -la build/slides/ || echo "No slides built"
+       - name: Merge Slidev output into build/
+         run: |
+           for deck in flutter-null-safety mcp-server ai-agent belajar-programming-ai-anak codingskuy-journey; do
+             if [ -d "slides/dist/$deck" ]; then
+               mkdir -p "build/slides/$deck"
+               cp -R "slides/dist/$deck/"* "build/slides/$deck/"
+             fi
+           done
+           ls -la build/slides/ || echo "No slides built"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
