@@ -60,26 +60,26 @@ jobs:
           cp -R articles/dist/* build/articles/
           ls -la build/articles/
 
-       - name: Install Slidev dependencies
-         run: cd slides && npm install --legacy-peer-deps
+      - name: Install Slidev dependencies
+        run: cd slides && npm install --legacy-peer-deps
 
-       - name: Build Slidev decks
-         run: cd slides && npm run build 2>&1
+      - name: Build Slidev decks
+        run: cd slides && npm run build 2>&1
 
-       - name: Copy journey images to dist
-         run: |
-           mkdir -p slides/dist/codingskuy-journey/images/journey
-           cp -r slides/codingskuy-journey/images/journey/* slides/dist/codingskuy-journey/images/journey/
+      - name: Copy journey images to dist
+        run: |
+          mkdir -p slides/dist/codingskuy-journey/images/journey
+          cp -r slides/codingskuy-journey/images/journey/* slides/dist/codingskuy-journey/images/journey/
 
-       - name: Merge Slidev output into build/
-         run: |
-           for deck in flutter-null-safety mcp-server ai-agent belajar-programming-ai-anak codingskuy-journey; do
-             if [ -d "slides/dist/$deck" ]; then
-               mkdir -p "build/slides/$deck"
-               cp -R "slides/dist/$deck/"* "build/slides/$deck/"
-             fi
-           done
-           ls -la build/slides/ || echo "No slides built"
+      - name: Merge Slidev output into build/
+        run: |
+          for deck in flutter-null-safety mcp-server ai-agent belajar-programming-ai-anak codingskuy-journey; do
+            if [ -d "slides/dist/$deck" ]; then
+              mkdir -p "build/slides/$deck"
+              cp -R "slides/dist/$deck/"* "build/slides/$deck/"
+            fi
+          done
+          ls -la build/slides/ || echo "No slides built"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
