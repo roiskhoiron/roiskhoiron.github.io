@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { MapPin, Mail, Smartphone, Server, Brain, PenTool, Users } from "lucide-react";
 import { useT } from "@/hooks/useT";
+import mascotSvg from "@/assets/13-journey-transformation.jpeg";
 
 interface AboutSectionProps {
   darkMode: boolean;
@@ -57,7 +58,7 @@ export function AboutSection({ darkMode }: AboutSectionProps) {
               {/* Photo */}
               <div className="aspect-[4/3] relative overflow-hidden">
                 <img
-                  src="https://media.licdn.com/dms/image/v2/D5603AQGOE-f4m7IIDQ/profile-displayphoto-crop_800_800/B56ZpCgsUyIsAI-/0/1762052459433?e=1782950400&v=beta&t=qAA8WLRc4lCQu0JgH4EIJjZ3tXgJijh-vfa2kZAkjJo"
+                  src={mascotSvg}
                   alt="Rois Khoiron — Software Engineer"
                   className="w-full h-full object-cover"
                 />
