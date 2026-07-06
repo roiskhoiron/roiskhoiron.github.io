@@ -1,0 +1,3 @@
+http://localhost:5173
+http://localhost:5173/codingskuy
+http://localhost:8080
