@@ -1,14 +1,54 @@
 ---
 title: Common Anti Pattern
-description: Belajar tentang Common Anti Pattern — CodingSkuy
+description: "Anti-pattern yang sering muncul di code review — dan cara memperbaikinya — CodingSkuy"
 ---
 
 # Common Anti Pattern
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Pola buruk tidak muncul tiba-tiba. Mereka muncul dari keputusan kecil yang terakumulasi.""
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Anti-pattern adalah solusi yang terlihat benar di permukaan, tapi bermasalah dalam jangka panjang.
+
+Berikut yang paling sering saya temui:
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### 1. God Class
+
+Satu kelas melakukan semuanya: logic, UI, network, database.
+
+**Tanda:** Kelas >500 baris, susah di-test, perubahan kecil berdampak besar.
+
+**Solusi:** Pisah berdasarkan tanggung jawab (Single Responsibility Principle).
+
+### 2. Copy-Paste Programming
+
+Kode yang sama ada di beberapa tempat dengan sedikit variasi.
+
+**Tanda:** Bug ditemukan di satu tempat, tapi ternyata ada di 3 file lain.
+
+**Solusi:** Ekstrak ke fungsi atau kelas yang bisa dipakai ulang.
+
+### 3. Golden Hammer
+
+Semua masalah diselesaikan dengan tools yang sama.
+
+**Tanda:** Pakai database NoSQL untuk aplikasi yang butuh relasi kompleks. Pake microservice untuk aplikasi 2 fitur.
+
+**Solusi:** Pilih tools berdasarkan kebutuhan, bukan kebiasaan.
+
+### 4. Premature Optimization
+
+Optimasi dilakukan sebelum masalah terbukti ada.
+
+**Tanda:** Kode kompleks dengan cache di setiap layer, padahal traffic masih 100 user/hari.
+
+**Solusi:** Buat dulu yang sederhana, ukur, baru optimasi yang terbukti lambat.
+
+### 5. Fear of Removing Code
+
+Takut hapus kode meski sudah tidak dipakai.
+
+**Tanda:** File dengan komentar "TODO: remove this", fungsi mati yang tidak dipanggil.
+
+**Solusi:** Kalau tidak dipakai, hapus. Git menyimpan sejarah.

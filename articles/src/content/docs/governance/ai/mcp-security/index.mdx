@@ -1,14 +1,62 @@
 ---
 title: MCP Security
-description: Belajar tentang MCP Security — CodingSkuy
+description: "Keamanan Model Context Protocol — CodingSkuy"
 ---
 
 # MCP Security
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"MCP memberi AI akses ke tools eksternal. Akses itu harus dijaga."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Model Context Protocol (MCP) adalah protokol yang memungkinkan AI agent berinteraksi dengan tools dan data eksternal. Dengan kekuatan ini datang tanggung jawab keamanan.
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Ancaman
+
+| Ancaman | Deskripsi |
+|---------|-----------|
+| **Tool Hijacking** | Attacker memanipulasi agent untuk menjalankan tool tidak semestinya |
+| **Data Exfiltration** | Agent membaca dan membocorkan data sensitif melalui tools |
+| **Resource Exhaustion** | Agent memanggil tool secara berlebihan (DoS) |
+| **Privilege Escalation** | Agent mendapat akses lebih dari yang seharusnya |
+
+---
+
+### Mitigasi
+
+**1. Tool Authentication**
+
+Setiap tool yang dipanggil melalui MCP harus terautentikasi. Jangan expose tool internal tanpa autentikasi.
+
+**2. Rate Limiting**
+
+Batasi frekuensi pemanggilan tool untuk mencegah penyalahgunaan.
+
+**3. Input Validation**
+
+Semua input dari agent ke tool harus divalidasi — sama seperti input dari user.
+
+**4. Audit Trail**
+
+Log setiap interaksi MCP:
+- Tool apa yang dipanggil
+- Siapa yang memicu
+- Parameter apa yang dikirim
+- Hasil apa yang dikembalikan
+
+**5. Scoped Permissions**
+
+Setiap koneksi MCP harus punya scope terbatas:
+- Read-only vs read-write
+- Data apa yang bisa diakses
+- Tool apa yang bisa dipanggil
+
+---
+
+### Best Practices
+
+- Jangan expose MCP endpoint ke publik tanpa autentikasi
+- Gunakan transport terenkripsi
+- Validasi toolkit hanya berisi tool yang diperlukan
+- Monitor penggunaan untuk anomali
+- Regular security review pada MCP configuration

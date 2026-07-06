@@ -1,14 +1,61 @@
 ---
 title: Bias Awareness
-description: Belajar tentang Bias Awareness — CodingSkuy
+description: "Mengenali dan mengurangi bias dalam model AI — CodingSkuy"
 ---
 
 # Bias Awareness
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
-
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+> *"AI tidak lahir bias — bias berasal dari data dan manusia yang membuatnya."*
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Sumber Bias
+
+| Sumber | Contoh |
+|--------|--------|
+| **Data bias** | Data training tidak representatif |
+| **Labeling bias** | Anotator punya preferensi subjektif |
+| **Selection bias** | Hanya data tertentu yang dikumpulkan |
+| **Confirmation bias** | Model disesuaikan untuk membuktikan hipotesis |
+| **Deployment bias** | Pengguna di lapangan berbeda dengan data training |
+
+---
+
+### Cara Mendeteksi
+
+**1. Analisis Demografi**
+
+Uji performa model di berbagai kelompok:
+- Gender
+- Rentang usia
+- Wilayah geografis
+- Bahasa
+
+**2. Confusion Matrix by Group**
+
+Lihat apakah false positive/negative berbeda signifikan antar kelompok.
+
+**3. Fairness Metrics**
+
+- **Demographic Parity** — tingkat prediksi positif sama antar kelompok
+- **Equal Opportunity** — true positive rate sama antar kelompok
+- **Equalized Odds** — false positive/negative rate sama antar kelompok
+
+---
+
+### Mitigasi
+
+- **Pre-processing** — seimbangkan data training
+- **In-processing** — tambahkan fairness constraint di training
+- **Post-processing** — sesuaikan threshold keputusan per kelompok
+- **Monitoring** — pantau bias setelah deployment
+
+---
+
+### Checklist
+
+- [ ] Data training representatif?
+- [ ] Model diuji di berbagai kelompok demografi?
+- [ ] Fairness metrics dimonitor?
+- [ ] Ada proses audit berkala?
+- [ ] Pengguna bisa melaporkan hasil yang tidak adil?

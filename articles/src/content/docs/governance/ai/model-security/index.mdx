@@ -1,14 +1,54 @@
 ---
 title: Model Security
-description: Belajar tentang Model Security — CodingSkuy
+description: "Melindungi model AI dari serangan dan manipulasi — CodingSkuy"
 ---
 
 # Model Security
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
-
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+> *"Model AI yang tidak diamankan adalah celah yang menunggu untuk dieksploitasi."*
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Ancaman
+
+**1. Adversarial Attacks**
+
+Input yang sengaja dimanipulasi untuk menipu model.
+
+Contoh: Stiker kecil di rambu STOP yang membuat model mobil otonom membaca sebagai rambu 60 km/jam.
+
+**Mitigasi:** Adversarial training, input preprocessing, ensemble models.
+
+**2. Model Inversion**
+
+Attacker mengekstrak data training dari model.
+
+Contoh: Dari model rekomendasi film, attacker bisa menyimpulkan film apa yang ditonton user tertentu.
+
+**Mitigasi:** Differential privacy, regularisasi, batasi output detail.
+
+**3. Model Stealing**
+
+Attacker meniru model dengan query berulang.
+
+Contoh: Ribuan query ke API model prediksi harga untuk merekonstruksi model serupa.
+
+**Mitigasi:** Rate limiting, watermarking, query monitoring.
+
+**4. Backdoor Attack**
+
+Attacker menyisipkan trigger rahasia di training data.
+
+Contoh: Model yang akurat secara normal, tapi menghasilkan output spesifik ketika diberi trigger tertentu.
+
+**Mitigasi:** Input validation, training data audit, anomaly detection.
+
+---
+
+### Praktik
+
+- **Access control** — model cuma bisa diakses via API terautentikasi
+- **Rate limiting** — batasi jumlah query per user
+- **Monitoring** — deteksi pola query mencurigakan
+- **Version control** — simpan versi model untuk rollback
+- **Secure storage** — enkripsi model file, jangan expose di public bucket

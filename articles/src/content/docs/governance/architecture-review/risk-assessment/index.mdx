@@ -1,14 +1,41 @@
 ---
 title: Technical Risk Assessment
-description: Belajar tentang Technical Risk Assessment — CodingSkuy
+description: "Menilai risiko teknis sebelum keputusan arsitektur diambil — CodingSkuy"
 ---
 
 # Technical Risk Assessment
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Setiap keputusan arsitektur mengandung risiko. Tugas kita bukan menghindarinya, tapi mengukurnya."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Risk assessment dalam arsitektur adalah proses mengevaluasi dampak potensial dari keputusan teknis sebelum diimplementasikan.
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Aspek yang Dinilai
+
+| Aspek | Pertanyaan |
+|-------|-----------|
+| **Scalability** | Apakah keputusan ini bertahan ketika traffic 10x lipat? |
+| **Maintainability** | Seberapa mudah kode ini dipahami tim baru? |
+| **Security** | Apakah ini membuka celah keamanan? |
+| **Cost** | Berapa biaya infrastruktur dan pengembangan? |
+| **Tim** | Apakah tim punya kapasitas untuk ini? |
+
+---
+
+### Level Risiko
+
+- **Low** — dampak terbatas, mudah di-revert
+- **Medium** — berdampak pada modul tertentu, perlu migrasi
+- **High** — perubahan fundamental, butuh persiapan matang
+- **Critical** — bisa menghentikan operasional jika gagal
+
+---
+
+### Output
+
+Setiap risk assessment harus menghasilkan:
+1. **Identifikasi risiko** — apa yang bisa salah
+2. **Mitigasi** — apa yang dilakukan untuk mengurangi risiko
+3. **Contingency plan** — apa yang dilakukan jika risiko terjadi
+4. **Decision** — apakah tetap lanjut, tunda, atau cari alternatif

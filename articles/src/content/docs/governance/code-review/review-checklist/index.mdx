@@ -1,14 +1,53 @@
 ---
 title: Review Checklist
-description: Belajar tentang Review Checklist — CodingSkuy
+description: "Checklist code review untuk memastikan kualitas kode — CodingSkuy"
 ---
 
 # Review Checklist
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Checklist tidak membuatmu jadi reviewer yang baik. Tapi mencegahmu melewatkan hal-hal penting."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Berikut checklist yang saya pakai saat code review:
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Fungsional
+
+- [ ] Apakah kode sesuai dengan spesifikasi?
+- [ ] Apakah ada edge case yang tidak ditangani?
+- [ ] Apakah error handling sudah memadai?
+- [ ] Apakah ada regression risk?
+
+### Struktur
+
+- [ ] Apakah kode mengikuti arsitektur yang sudah disepakati?
+- [ ] Apakah ada duplikasi kode yang tidak perlu?
+- [ ] Apakah nama fungsi/variabel jelas?
+- [ ] Apakah kompleksitas sirkuit (cyclomatic) masih wajar?
+
+### Testing
+
+- [ ] Apakah ada unit test untuk logic baru?
+- [ ] Apakah test yang ada masih passing?
+- [ ] Apakah edge case tertest?
+
+### Security
+
+- [ ] Apakah ada input yang tidak divalidasi?
+- [ ] Apakah ada hardcoded credential?
+- [ ] Apakah ada potensi injection?
+
+### Performance
+
+- [ ] Apakah ada N+1 query?
+- [ ] Apakah ada operasi berat di main thread?
+- [ ] Apakah resource (gambar, file) di-load efisien?
+
+---
+
+### Cara Pakai
+
+1. Checklist ini panduan, bukan hukum
+2. Prioritaskan finding berdasarkan dampak
+3. Jangan request perubahan kecil yang tidak berdampak signifikan (typo, formatting) — cukup comment saja
+4. Kalau checklist terasa panjang untuk PR kecil, gunakan judgment

@@ -1,14 +1,47 @@
 ---
 title: Data Protection
-description: Belajar tentang Data Protection — CodingSkuy
+description: "Melindungi data pengguna di aplikasi kamu — CodingSkuy"
 ---
 
 # Data Protection
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
-
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+> *"Data adalah aset paling berharga. Jaga seperti kamu menjaga milikmu sendiri."*
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Klasifikasi Data
+
+| Level | Contoh | Proteksi |
+|-------|--------|----------|
+| **Public** | Nama produk, halaman blog | Standar |
+| **Internal** | Kode sumber, dokumentasi | Akses terbatas |
+| **Confidential** | Data pengguna, financial | Enkripsi + akses ketat |
+| **Restricted** | Password, token, Kunci API | Enkripsi kuat + audit |
+
+---
+
+### Enkripsi
+
+**In Transit:**
+- Wajib HTTPS (TLS 1.2+)
+- HSTS header
+- Certificate pinning untuk mobile app
+
+**At Rest:**
+- Enkripsi database (AES-256)
+- Enkripsi file upload
+- Jangan simpan sensitive data di log
+
+### Praktik
+
+- **Minimalisasi** — hanya kumpulkan data yang benar-benar dibutuhkan
+- **Anonimisasi** — hapus PII dari data analytics
+- **Retensi** — tentukan berapa lama data disimpan, hapus setelah tidak diperlukan
+- **Backup** — backup terenkripsi dengan disaster recovery plan
+
+### Regulasi
+
+Pahami regulasi yang relevan:
+- **UU PDP** (Indonesia) — wajib untuk aplikasi dengan pengguna Indonesia
+- **GDPR** — jika ada pengguna Eropa
+- **HIPAA** — jika berurusan dengan data kesehatan (AS)

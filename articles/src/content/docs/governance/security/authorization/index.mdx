@@ -1,14 +1,60 @@
 ---
 title: Authorization
-description: Belajar tentang Authorization — CodingSkuy
+description: "Otorisasi: siapa boleh apa di sistem kamu — CodingSkuy"
 ---
 
 # Authorization
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
-
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+> *"Autentikasi tahu siapa kamu. Otorisasi tahu apa yang boleh kamu lakukan."*
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Model Otorisasi
+
+**1. RBAC (Role-Based Access Control)**
+
+User diberi role, role punya permission.
+
+Contoh:
+- `admin` → CRUD semua data
+- `editor` → CRUD konten, tidak bisa manage user
+- `viewer` → read-only
+
+**Cocok untuk:** Aplikasi dengan hierarki peran yang jelas.
+
+**2. ABAC (Attribute-Based Access Control)**
+
+Akses ditentukan oleh atribut: user, resource, environment.
+
+Contoh: *"Dosen bisa nilai mahasiswanya sendiri, bukan dosen lain."*
+
+**Cocok untuk:** Sistem kompleks dengan aturan akses granular.
+
+**3. ACL (Access Control List)**
+
+Setiap resource punya daftar user/role yang boleh mengaksesnya.
+
+**Cocok untuk:** Dokumen/file system.
+
+---
+
+### Implementasi
+
+**Backend:**
+- Middleware untuk check permission di setiap endpoint
+- Jangan percaya request dari client — selalu verifikasi di server
+- Gunakan policy/guard pattern untuk isolasi logic authorization
+
+**Frontend:**
+- Sembunyikan UI yang tidak accessible (tapi jangan andalkan ini sebagai security)
+- Handle 403 response dengan graceful
+
+---
+
+### Checklist
+
+- [ ] Default deny — semua akses ditolak kecuali diizinkan eksplisit
+- [ ] Principle of least privilege — user hanya punya akses minimum
+- [ ] Separation of duties — operasi kritis butuh approval lebih dari satu orang
+- [ ] Audit log — catat siapa mengakses apa
+- [ ] Review berkala — permission yang tidak dipakai harus dicabut

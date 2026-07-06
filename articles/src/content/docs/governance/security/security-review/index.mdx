@@ -1,14 +1,63 @@
 ---
 title: Security Review
-description: Belajar tentang Security Review — CodingSkuy
+description: "Proses review keamanan untuk menangkap celah sebelum production — CodingSkuy"
 ---
 
 # Security Review
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
-
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+> *"Security review bukan blocking, tapi safety net."*
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Kapan Review?
+
+- **Setiap fitur baru** yang melibatkan data pengguna
+- **Setiap perubahan** di autentikasi/otorisasi
+- **Setiap dependency baru** (library eksternal)
+- **Sebelum rilis major** (major version)
+- **Setelah incident keamanan**
+
+---
+
+### Scope Review
+
+**1. Input Validation**
+
+Apakah input dari user divalidasi? SQL injection? XSS? Command injection?
+
+**2. Authentication & Session**
+
+Apakah session management aman? Token expiry? Rate limiting?
+
+**3. Data Exposure**
+
+Apakah ada data sensitif yang bocor di response API, log, atau error message?
+
+**4. Configuration**
+
+Apakah ada credential hardcoded? Debug mode di production?
+
+**5. Third-party**
+
+Apakah dependency punya known vulnerability? Apakah API eksternal aman?
+
+---
+
+### Tools
+
+| Tools | Fungsi |
+|-------|--------|
+| **SAST (Static Analysis)** | Snyk, SonarQube, Semgrep |
+| **DAST (Dynamic Analysis)** | OWASP ZAP, Burp Suite |
+| **Dependency Scanner** | Dependabot, Renovate |
+| **Secret Scanner** | GitLeaks, TruffleHog |
+
+---
+
+### Output
+
+Setiap security review harus menghasilkan:
+1. **Findings** — apa yang ditemukan
+2. **Severity** — critical/high/medium/low
+3. **Recommendation** — bagaimana memperbaiki
+4. **Timeline** — kapan harus diperbaiki

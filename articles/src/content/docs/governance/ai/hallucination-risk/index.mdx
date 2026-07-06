@@ -1,14 +1,64 @@
 ---
 title: Hallucination Risk
-description: Belajar tentang Hallucination Risk — CodingSkuy
+description: "Mengelola risiko halusinasi pada LLM dan generative AI — CodingSkuy"
 ---
 
 # Hallucination Risk
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"LLM tidak tahu mana fakta dan mana fiksi. Mereka hanya pandai merangkai kata yang terlihat meyakinkan."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Hallucination adalah ketika model AI menghasilkan output yang terdengar masuk akal tapi faktanya salah.
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Tipe Halusinasi
+
+| Tipe | Contoh |
+|------|--------|
+| **Factual** | Menyebutkan peristiwa yang tidak pernah terjadi |
+| **Contextual** | Menjawab di luar konteks pertanyaan |
+| **Logical** | Argumen yang inkonsisten secara logika |
+| **Source** | Mengutip sumber yang tidak ada |
+
+---
+
+### Penyebab
+
+- Model tidak tahu batas pengetahuannya (tidak bisa bilang "saya tidak tahu")
+- Training data mengandung informasi yang salah
+- Prompt yang ambigu atau menyesatkan
+- Tidak ada grounding ke sumber tepercaya
+
+---
+
+### Mitigasi
+
+**1. Grounding — RAG (Retrieval-Augmented Generation)**
+
+Hubungkan model ke knowledge base eksternal. Setiap jawaban harus didasarkan pada dokumen yang di-retrieve, bukan hanya parameter model.
+
+**2. Prompt Engineering**
+
+- Instruksi eksplisit: *"Jika tidak tahu, katakan tidak tahu"*
+- Batasi output ke format tertentu
+- Minta model menyertakan sumber
+
+**3. Human-in-the-Loop**
+
+Untuk use case kritis (medis, hukum, finansial), selalu ada review manusia.
+
+**4. Validation**
+
+- Cross-check fakta dengan sumber eksternal
+- Gunakan model kedua untuk verifikasi
+- Confidence threshold — jangan tampilkan jawaban dengan confidence rendah
+
+---
+
+### Checklist
+
+- [ ] Model terhubung ke knowledge base (RAG)?
+- [ ] Ada disclaimer bahwa AI bisa salah?
+- [ ] Use case kritis punya human review?
+- [ ] Output divalidasi sebelum ditampilkan?
+- [ ] Ada mekanisme feedback untuk laporan error?

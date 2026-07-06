@@ -1,14 +1,62 @@
 ---
 title: Technical Specification
-description: Belajar tentang Technical Specification — CodingSkuy
+description: "Menulis spesifikasi teknis yang jelas sebelum mulai ngoding — CodingSkuy"
 ---
 
 # Technical Specification
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Spesifikasi teknis yang baik menghemat waktu debugging yang tidak perlu."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Technical spec adalah jembatan antara ide dan implementasi. Di sinilah kamu memikirkan detail sebelum menulis kode.
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Kenapa Perlu?
+
+| Tanpa Technical Spec | Dengan Technical Spec |
+|---------------------|---------------------|
+| Mulai coding langsung, berubah arah di tengah | Semua sudah direncanakan, eksekusi lebih mulus |
+| Scope creep tidak terkontrol | Scope jelas dari awal |
+| Estimasi meleset | Estimasi lebih akurat |
+| Testing dadakan | Testing sudah direncanakan |
+
+---
+
+### Format Sederhana
+
+**1. Tujuan**
+
+Fitur ini mau menyelesaikan masalah apa?
+
+**2. Data Flow**
+
+Bagaimana data mengalir dari user ke database dan kembali?
+
+**3. API Design**
+
+Endpoint, request, response.
+
+**4. Database Changes**
+
+Table baru, kolom baru, migration.
+
+**5. UI Components**
+
+Komponen apa yang perlu dibuat/dimodifikasi.
+
+**6. Testing Plan**
+
+Apa yang perlu di-test? Unit test, widget test, integration test?
+
+**7. Risks**
+
+Apa yang bisa salah? Mitigasi?
+
+---
+
+### Tips Menulis
+
+- **Mulai dari high-level** — gambaran besar dulu, lalu detail
+- **Gunakan diagram** — flowchart, sequence diagram lebih mudah dipahami dari teks panjang
+- **Libatkan tim** — minta review dari engineer lain sebelum implementasi
+- **Update jika berubah** — spesifikasi adalah living document

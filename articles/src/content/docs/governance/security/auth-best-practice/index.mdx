@@ -1,14 +1,46 @@
 ---
 title: Authentication Best Practice
-description: Belajar tentang Authentication Best Practice — CodingSkuy
+description: "Praktik terbaik autentikasi untuk aplikasi modern — CodingSkuy"
 ---
 
 # Authentication Best Practice
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
-
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+> *"Autentikasi adalah gerbang pertama keamanan aplikasi. Jangan buat gerbangnya mudah didobrak."*
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Praktik Dasar
+
+**1. Password**
+
+- Hash dengan bcrypt/argon2 (jangan MD5/SHA1)
+- Minimal 8 karakter, kombinasi huruf + angka
+- Jangan batasi karakter spesial secara berlebihan
+- Wajib ada rate limiting setelah 5 percobaan gagal
+
+**2. JWT (JSON Web Token)**
+
+- Gunakan access token (short-lived, 15 menit) + refresh token (long-lived, 7 hari)
+- Jangan simpan JWT di localStorage — gunakan httpOnly cookie
+- Verifikasi signature di setiap request
+- Blacklist token yang di-revoke
+
+**3. OAuth 2.0**
+
+- Selalu gunakan PKCE (Proof Key for Code Exchange)
+- Validasi redirect URI
+- Jangan pernah gunakan Implicit Grant (deprecated)
+- Simpan client secret di server, bukan di client
+
+---
+
+### Checklist
+
+- [ ] Password di-hash dengan algorithm modern
+- [ ] Rate limiting di endpoint login
+- [ ] Session timeout setelah periode tidak aktif
+- [ ] MFA sebagai opsi
+- [ ] Log semua percobaan login (berhasil & gagal)
+- [ ] Notifikasi untuk login dari perangkat baru
+- [ ] Revoke token saat logout
+- [ ] Secure cookie (httpOnly, secure, sameSite)

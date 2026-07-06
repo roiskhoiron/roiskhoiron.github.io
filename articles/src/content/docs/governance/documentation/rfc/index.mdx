@@ -1,14 +1,69 @@
 ---
 title: RFC (Request For Comments)
-description: Belajar tentang RFC (Request For Comments) — CodingSkuy
+description: "RFC: proses kolaboratif untuk keputusan teknis yang melibatkan seluruh tim — CodingSkuy"
 ---
 
 # RFC (Request For Comments)
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"RFC mengubah keputusan sepihak menjadi keputusan kolektif."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+RFC adalah dokumen yang diajukan untuk mendapat masukan dari tim sebelum keputusan besar diambil.
+
+Berbeda dengan ADR yang mencatat keputusan setelah diambil, RFC adalah **proses sebelum keputusan.**
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Kapan Pakai RFC?
+
+- Perubahan arsitektur besar
+- Migrasi teknologi
+- Perubahan proses yang berdampak ke seluruh tim
+- Proposal fitur yang kompleks
+
+---
+
+### Format RFC
+
+```
+# RFC: [Judul]
+
+## Meta
+- Author: [nama]
+- Status: [Draft/Review/Approved/Rejected]
+- Date: [tanggal]
+
+## Problem
+Apa masalah yang ingin diselesaikan?
+
+## Proposed Solution
+Bagaimana solusi yang diusulkan?
+
+## Alternatives
+Apa alternatif yang dipertimbangkan?
+Kenapa tidak dipilih?
+
+## Impact
+Apa dampak ke sistem dan tim?
+
+## Timeline
+Kapan mulai dan selesai?
+```
+
+---
+
+### Proses RFC
+
+1. **Draft** — penulis menulis proposal
+2. **Review** — tim memberi masukan (biasanya 3-7 hari)
+3. **Iterate** — penulis merevisi berdasarkan masukan
+4. **Decision** — maintainer memutuskan (Accepted/Rejected)
+5. **Archive** — RFC disimpan sebagai referensi
+
+---
+
+### Tips
+
+- RFC tidak boleh >1 halaman untuk hal sederhana
+- Fokus pada problem, bukan solusi detail
+- Ajak diskusi, bukan debat
+- Kalau sudah mentok, tech lead yang putuskan

@@ -1,14 +1,57 @@
 ---
 title: Architecture Guidelines
-description: Belajar tentang Architecture Guidelines — CodingSkuy
+description: "Panduan arsitektur untuk menjaga konsistensi antar modul — CodingSkuy"
 ---
 
 # Architecture Guidelines
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Arsitektur yang baik membuat engineer baru bisa produktif dalam 3 hari, bukan 3 minggu."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Architecture guidelines adalah kesepakatan tim tentang bagaimana kode diorganisir. Bukan aturan kaku, tapi kompas yang memastikan semua orang bergerak ke arah yang sama.
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Prinsip Dasar
+
+**1. Separation of Concerns**
+
+Setiap lapisan punya tanggung jawab yang jelas:
+- **Presentation** — UI, state management
+- **Domain** — logic bisnis, use case
+- **Data** — repository, data source
+
+**2. Dependency Rule**
+
+Dependensi mengarah ke dalam: Presentation → Domain ← Data. Domain tidak tahu apa-apa tentang framework atau database.
+
+**3. Testability**
+
+Setiap komponen harus bisa di-test tanpa komponen lain. Kalau susah di-test, ada yang salah dengan arsitektur.
+
+---
+
+### Struktur Folder
+
+```
+lib/
+├── core/          # shared utilities, constants
+├── feature_a/
+│   ├── data/
+│   ├── domain/
+│   └── presentation/
+├── feature_b/
+│   ├── data/
+│   ├── domain/
+│   └── presentation/
+└── main.dart
+```
+
+---
+
+### Pedoman
+
+- Satu file jangan >300 baris
+- Satu fungsi jangan >30 baris
+- Satu kelas jangan >5 method publik
+- Hindari circular dependency
+- Gunakan abstraksi (interface/abstract class) untuk batas antar layer

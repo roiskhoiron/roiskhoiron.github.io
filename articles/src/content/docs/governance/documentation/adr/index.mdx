@@ -1,14 +1,68 @@
 ---
 title: ADR (Architecture Decision Record)
-description: Belajar tentang ADR (Architecture Decision Record) — CodingSkuy
+description: "Mendokumentasikan keputusan arsitektur agar tidak hilang ditelan waktu — CodingSkuy"
 ---
 
 # ADR (Architecture Decision Record)
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Keputusan arsitektur yang tidak didokumentasi adalah keputusan yang tidak pernah terjadi."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+ADR adalah dokumen singkat yang mencatat keputusan arsitektur penting: konteks, opsi yang dipertimbangkan, dan alasan keputusan akhir.
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Kenapa ADR Penting?
+
+- Tim baru bisa memahami kenapa sistem dirancang seperti ini
+- Mencegah diskusi yang sama terulang setiap tahun
+- Memberi konteks saat keputusan perlu dievaluasi ulang
+- Dokumentasi histori untuk post-mortem
+
+---
+
+### Format ADR Sederhana
+
+```
+# ADR-001: Pemilihan Database
+
+## Status
+Accepted
+
+## Context
+Kita perlu memilih database untuk sistem manajemen konten.
+Data bersifat relasional (user, post, comment).
+Traffic diperkirakan 10.000 request/hari.
+
+## Options
+1. PostgreSQL — SQL, mature, open source
+2. MongoDB — NoSQL, flexible schema
+3. Firebase — managed, real-time
+
+## Decision
+Pilih PostgreSQL.
+
+## Rationale
+- Data sangat relasional
+- Tim sudah熟悉 SQL
+- Tidak perlu real-time sync
+- Budget terbatas (Firebase mahal untuk skala besar)
+
+## Consequences
+- (+) ACID compliance, data integrity terjamin
+- (-) Scaling horizontal lebih kompleks
+```
+
+---
+
+### Kapan Membuat ADR?
+
+- Perubahan arsitektur signifikan
+- Pemilihan teknologi baru
+- Perubahan pola desain yang berdampak luas
+- Setiap keputusan yang mungkin ditanyakan lagi tahun depan
+
+### Kapan Tidak Perlu?
+
+- Perubahan internal yang tidak berdampak ke modul lain
+- Implementasi detail yang bisa berubah kapan saja
+- Keputusan yang sudah mentok karena constraint teknis

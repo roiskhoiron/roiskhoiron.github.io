@@ -1,14 +1,68 @@
 ---
 title: Review Etiquette
-description: Belajar tentang Review Etiquette — CodingSkuy
+description: "Etika code review: memberi kritik tanpa menyakiti, menerima kritik tanpa defensif — CodingSkuy"
 ---
 
 # Review Etiquette
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Code review bukan ajang pamer siapa yang paling pintar. Tapi proses bersama untuk membuat kode lebih baik."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Saya ingat pertama kali kode saya di-review di Dicoding. Komentarnya: *"Fungsi ini terlalu panjang."*
+
+Reaksi pertama saya? Bertahan. Saya pikir kode saya sudah baik.
+
+Tapi setelah mentor menjelaskan *mengapa* — readability, testability, maintainability — saya paham. Ini bukan kritik. Ini investasi.
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Untuk Reviewer
+
+**1. Kritik kode, bukan orangnya**
+
+Bukan: *"Kamu kok bikin fungsi panjang begini?"*
+Tapi: *"Fungsi ini bisa dipisah jadi dua untuk readability."*
+
+**2. Jelaskan "kenapa"**
+
+Bukan hanya *"Ini kurang baik"*, tapi *"Ini kurang baik karena..."*
+
+**3. Tawarkan alternatif, bukan hanya masalah**
+
+Kalau kamu melihat masalah, usulkan solusi. Atau minimal arahkan ke referensi.
+
+**4. Gunakan "Nitpick" untuk hal kecil**
+
+Label comment dengan "nit:" untuk hal sepele (typo, formatting) agar penulis tahu ini bukan blocker.
+
+**5. Hargai usaha**
+
+Mulai review dengan mengapresiasi apa yang baik. Bukan basa-basi, tapi genuine.
+
+---
+
+### Untuk Penulis
+
+**1. Anggap review sebagai bantuan, bukan serangan**
+
+Reviewer meluangkan waktu untuk membuat kodemu lebih baik. Hargai itu.
+
+**2. Jangan defensif**
+
+Kalau ada komentar yang kamu tidak setuju, tanyakan. Bukan dengan "ini sudah benar", tapi dengan "kenapa menurutmu ini perlu diubah?"
+
+**3. Terima dan perbaiki**
+
+Kalau komentarnya masuk akal, terima dan perbaiki. Tidak perlu berdebat untuk hal kecil.
+
+**4. Ucapkan terima kasih**
+
+Reviewer tidak punya kewajiban untuk mereview kodemu. Luangkan waktu untuk berterima kasih.
+
+---
+
+### Yang Tidak Boleh Terjadi
+
+- Review yang molor >24 jam untuk PR sederhana
+- Review yang isinya cuma "LGTM" tanpa baca
+- Diskusi yang berlarut-larut di comment PR
+- Review yang menyalahkan penulis secara personal

@@ -1,14 +1,62 @@
 ---
 title: Security Assessment
-description: Belajar tentang Security Assessment — CodingSkuy
+description: "Menilai keamanan dependency sebelum masuk ke production — CodingSkuy"
 ---
 
 # Security Assessment
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
-
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+> *"Dependency yang tidak diaudit adalah celah keamanan yang menunggu waktu.""
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Sumber Ancaman
+
+| Sumber | Contoh |
+|--------|--------|
+| **Known vulnerability** | CVE yang sudah dipublikasi |
+| **Supply chain attack** | Maintainer diganti aktor jahat |
+| **Malicious package** | Package dengan nama mirip (typosquatting) |
+| **License violation** | Lisensi tidak kompatibel |
+
+---
+
+### Langkah Assessment
+
+**1. Cek Known Vulnerability**
+
+Gunakan tools otomatis:
+- `npm audit`, `dart pub outdated`, `safety` (Python)
+- GitHub Dependabot
+- Snyk, Sonatype
+
+**2. Review Changelog**
+
+Sebelum update, baca changelog. Perhatikan:
+- Apakah ada security fix?
+- Apakah ada breaking changes?
+- Apakah ada perubahan di transitive dependencies?
+
+**3. Cek Reputasi**
+
+- Apakah maintainer dikenal?
+- Apakah ada red flag di issue tracker?
+- Apakah ada review keamanan sebelumnya?
+
+**4. Minimalisasi Dependency**
+
+Setiap dependency tambahan adalah:
+- +1 potensi vulnerability
+- +1 maintenance burden
+- +1 ukuran bundle
+
+Tanya: *"Apakah kita benar-benar perlu library ini, atau bisa ditulis sendiri?"*
+
+---
+
+### Praktik Baik
+
+- **Lock version** — jangan pakai range untuk dependency kritis
+- **Audit rutin** — jadwalkan dependency audit bulanan
+- **Monitor** — subscribe ke security advisory untuk library yang dipakai
+- **Update terjadwal** — jangan update semua dependency sekaligus tanpa test
+- **Deprecation plan** — siapkan rencana migrasi untuk library yang deprecate

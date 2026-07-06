@@ -1,14 +1,42 @@
 ---
 title: Coding Standards
-description: Belajar tentang Coding Standards — CodingSkuy
+description: "Standar penulisan kode yang konsisten untuk seluruh tim — CodingSkuy"
 ---
 
 # Coding Standards
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
-
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+> *"Kode yang baik adalah kode yang terlihat seperti ditulis oleh satu orang, meskipun dikerjakan oleh 10 orang."*
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Formatting
+
+- **Indentasi** — 2 spasi (Dart/JS), 4 spasi (Java/PHP)
+- **Line length** — maksimal 80-120 karakter
+- **Curly braces** — di baris yang sama (Egyptian style)
+- **Trailing comma** — wajib untuk daftar parameter/items (Dart)
+
+### Naming
+
+| Elemen | Convention | Contoh |
+|--------|-----------|--------|
+| Kelas | PascalCase | `UserService` |
+| Fungsi | camelCase | `getUserById()` |
+| Variabel | camelCase | `userName` |
+| Konstanta | UPPER_SNAKE | `MAX_RETRY` |
+| File | snake_case | `user_service.dart` |
+
+### Komentar
+
+- Komentar untuk **why**, bukan **what**
+- Hindari komentar yang hanya mengulangi kode
+- TODO harus punya issue tracker reference
+- Jangan comment out kode — hapus saja
+
+### Best Practices
+
+- Hindari magic number — gunakan konstanta
+- Setiap `if` harus punya `else` (meskipun kosong dengan komentar)
+- Handle semua error, jangan `catch (e)` kosong
+- Validasi input di layer terluar
+- Hindari `null` — gunakan Optional/Option/Maybe pattern

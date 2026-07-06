@@ -1,14 +1,67 @@
 ---
 title: Threat Modeling
-description: Belajar tentang Threat Modeling — CodingSkuy
+description: "Memikirkan skenario serangan sebelum terjadi — CodingSkuy"
 ---
 
 # Threat Modeling
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Threat modeling adalah latihan 'bagaimana jika' untuk keamanan aplikasi."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Threat modeling adalah proses sistematis untuk mengidentifikasi, mengkategorikan, dan memprioritaskan potensi ancaman keamanan.
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Framework: STRIDE
+
+| Threat | Contoh |
+|--------|--------|
+| **S**poofing | Orang berpura-pura jadi user lain |
+| **T**ampering | Data diubah di tengah perjalanan |
+| **R**epudiation | User menyangkal melakukan transaksi |
+| **I**nformation Disclosure | Data bocor ke pihak tidak berwenang |
+| **D**enial of Service | Server dibanjiri request |
+| **E**levation of Privilege | User biasa bisa akses admin |
+
+---
+
+### Proses
+
+**1. Identifikasi Aset**
+
+Data apa yang paling berharga? (password, data pengguna, API key)
+
+**2. Identifikasi Threat**
+
+Untuk setiap aset, apa yang bisa salah? (gunakan STRIDE)
+
+**3. Analisis Dampak**
+
+Apa yang terjadi jika threat ini terealisasi? Seberapa parah?
+
+**4. Prioritaskan**
+
+| Dampak \ Kemungkinan | Rendah | Tinggi |
+|----------------------|--------|--------|
+| **Tinggi** | Medium | **Critical** |
+| **Rendah** | Low | Medium |
+
+**5. Mitigasi**
+
+Apa yang dilakukan untuk mengurangi risiko?
+
+---
+
+### Tools
+
+- **OWASP Threat Dragon** — diagram ancaman visual
+- **Microsoft Threat Modeling Tool** — untuk aplikasi Windows
+- **Draw.io** — untuk diagram sederhana
+
+---
+
+### Prinsip
+
+- Libatkan seluruh tim, bukan hanya security engineer
+- Lakukan sejak tahap desain, bukan setelah jadi
+- Update ketika ada perubahan signifikan
+- Jangan terjebak analisis berlarut — lebih baik threat modeling sederhana daripada tidak sama sekali

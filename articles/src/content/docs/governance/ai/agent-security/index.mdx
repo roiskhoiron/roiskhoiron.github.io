@@ -1,14 +1,61 @@
 ---
 title: Agent Security
-description: Belajar tentang Agent Security — CodingSkuy
+description: "Keamanan AI agent: menjaga agent agar tidak disalahgunakan — CodingSkuy"
 ---
 
 # Agent Security
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
-
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+> *"AI agent punya akses ke tools dan data. Pastikan akses itu tidak disalahgunakan."*
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Ancaman
+
+| Ancaman | Contoh |
+|---------|--------|
+| **Tool Misuse** | Agent menjalankan tool tanpa izin |
+| **Prompt Injection** | Input pengguna memanipulasi agent |
+| **Data Leakage** | Agent membocorkan data internal |
+| **Excessive Agency** | Agent melakukan aksi di luar batas |
+
+---
+
+### Mitigasi
+
+**1. Human-in-the-Loop**
+
+Aksi berisiko tinggi butuh persetujuan manusia:
+- Eksekusi kode
+- Hapus data
+- Transaksi finansial
+- Share data eksternal
+
+**2. Sandboxing**
+
+Jalankan agent di lingkungan terisolasi:
+- Container terbatas
+- Tidak ada akses ke sistem internal
+- Network terbatas
+
+**3. Permission Scoping**
+
+Setiap tool harus punya permission eksplisit:
+- Agent A: bisa baca file, tidak bisa hapus
+- Agent B: bisa query database read-only
+- Agent C: bisa kirim email, tidak bisa akses database
+
+**4. Monitoring & Logging**
+
+- Log setiap aksi agent
+- Alert untuk aksi mencurigakan
+- Audit trail untuk investigasi
+
+---
+
+### Checklist
+
+- [ ] Setiap tool punya permission terbatas
+- [ ] Aksi berisiko butuh human approval
+- [ ] Input divalidasi terhadap prompt injection
+- [ ] Agent berjalan di sandbox
+- [ ] Semua aksi tercatat di log

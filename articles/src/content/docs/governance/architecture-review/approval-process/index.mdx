@@ -1,14 +1,43 @@
 ---
 title: Architecture Approval Process
-description: Belajar tentang Architecture Approval Process — CodingSkuy
+description: "Proses persetujuan arsitektur: menjaga konsistensi tanpa memperlambat tim — CodingSkuy"
 ---
 
 # Architecture Approval Process
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Arsitektur yang baik bukan hasil dari satu orang jenius. Tapi hasil dari proses review yang sehat."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Setiap keputusan arsitektur adalah investasi jangka panjang. Salah pilih hari ini, tim bisa membayar bunganya selama bertahun-tahun.
+
+Tapi di sisi lain, kalau setiap keputusan harus melalui birokrasi yang panjang, tim tidak akan pernah bergerak cepat.
+
+Arsitektur approval process menjembatani keduanya: **menjaga kualitas tanpa mengorbankan kecepatan.**
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Kapan Approval Diperlukan?
+
+Tidak semua keputusan perlu approval. Bedakan:
+
+| Level Keputusan | Contoh | Perlu Approval? |
+|----------------|--------|----------------|
+| **Strategis** | Pilih database, pilih arsitektur utama | ✅ Ya, oleh tech lead/architect |
+| **Taktis** | Pilih library, desain modul tertentu | ⚠️ Kadang, tergantung dampak |
+| **Operasional** | Implementasi fitur harian | ❌ Tidak, cukup code review |
+
+---
+
+### Alur Approval Sederhana
+
+1. **RFC (Request for Comments)** — tulis proposal, jelaskan konteks, opsi, dan rekomendasi
+2. **Review** — tim memberikan masukan dalam periode tertentu
+3. **Decision** — tech lead/architect memutuskan, dengan mempertimbangkan masukan
+4. **ADR (Architecture Decision Record)** — dokumentasikan keputusan dan alasannya
+
+---
+
+### Prinsip
+
+- **Batas waktu jelas** — review tidak boleh molor tak terbatas
+- **Alasan, bukan wewenang** — keputusan didasarkan pada argumen, bukan jabatan
+- **Dokumentasi wajib** — keputusan tanpa dokumentasi adalah keputusan yang tidak pernah ada

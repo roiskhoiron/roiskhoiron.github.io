@@ -1,14 +1,54 @@
 ---
 title: Naming Conventions
-description: Belajar tentang Naming Conventions — CodingSkuy
+description: "Konsistensi penamaan: bahasa universal yang dipahami seluruh tim — CodingSkuy"
 ---
 
 # Naming Conventions
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Nama yang baik adalah dokumentasi paling murah."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Penamaan yang konsisten membuat kode mudah dibaca tanpa perlu komentar panjang.
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Package/Module
+
+| Package | Convention | Contoh |
+|---------|-----------|--------|
+| Flutter/Dart | snake_case | `user_profile.dart` |
+| Java/Kotlin | snake_case | `user_profile.dart` |
+| PHP (Laravel) | snake_case | `user_profile.php` |
+| JavaScript | kebab-case | `user-profile.js` |
+| Python | snake_case | `user_profile.py` |
+
+### Folder
+
+- Gunakan snake_case untuk semua folder
+- Hindari singkatan yang tidak jelas (`utils/` vs `helpers/`)
+- Jangan gunakan angka di awal nama folder
+
+### Database
+
+| Elemen | Convention | Contoh |
+|--------|-----------|--------|
+| Table | snake_case (plural) | `users` |
+| Column | snake_case | `created_at` |
+| Index | `idx_[table]_[column]` | `idx_users_email` |
+| Foreign Key | `fk_[table]_[ref]` | `fk_posts_user_id` |
+
+### API
+
+| Elemen | Convention | Contoh |
+|--------|-----------|--------|
+| Endpoint | kebab-case | `/api/user-profiles` |
+| Query param | camelCase | `?sortBy=name` |
+| JSON field | camelCase | `"userName": "rois"` |
+
+---
+
+### Prinsip
+
+- **Konsisten** — lebih penting konsisten dengan yang salah daripada tidak konsisten
+- **Eksplisit** — `getUserByEmail()` lebih baik dari `fetchUser()`
+- **Kontekstual** — di dalam kelas `User`, field `name` cukup. Di global, butuh `userName`
+- **Hindari ambiguitas** — `data` tidak jelas, `userData` lebih baik

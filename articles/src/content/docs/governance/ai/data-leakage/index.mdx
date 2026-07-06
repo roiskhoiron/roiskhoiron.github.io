@@ -1,14 +1,56 @@
 ---
 title: Data Leakage
-description: Belajar tentang Data Leakage — CodingSkuy
+description: "Mencegah kebocoran data di pipeline AI — CodingSkuy"
 ---
 
 # Data Leakage
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Data leakage adalah ketika model 'mencontek' saat ujian — performa ujian bagus, performa nyata jelek."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Data leakage terjadi ketika informasi dari test set bocor ke training set, membuat model terlihat lebih akurat dari kenyataan.
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Bentuk Data Leakage
+
+**1. Temporal Leakage**
+
+Menggunakan data masa depan untuk memprediksi masa lalu.
+
+Contoh: Training model prediksi saham dengan data 2020-2023, tapi test set juga di 2020-2023.
+
+**Solusi:** Pisahkan data berdasarkan waktu (time-based split).
+
+**2. Feature Leakage**
+
+Fitur yang mengandung informasi dari target.
+
+Contoh: Memprediksi penyakit dengan fitur "hasil tes" yang sebenarnya baru diketahui setelah diagnosis.
+
+**Solusi:** Hanya gunakan fitur yang tersedia saat prediksi dilakukan.
+
+**3. Duplicate Leakage**
+
+Data yang sama muncul di training dan test set.
+
+Contoh: Gambar yang sama digunakan untuk training dan testing.
+
+**Solusi:** Deduplikasi data sebelum split.
+
+**4. Scaling Leakage**
+
+Menggunakan statistik dari seluruh dataset (termasuk test) untuk scaling.
+
+Contoh: MinMaxScaler dijalankan sebelum split.
+
+**Solusi:** Fit scaler hanya pada training set, lalu transform test set.
+
+---
+
+### Pencegahan
+
+- **Split data sebelum preprocessing** — scaling, encoding, imputasi dilakukan setelah split
+- **Time-based split** — untuk data deret waktu
+- **Group-based split** — pastikan data dari entitas yang sama tidak terpisah di train dan test
+- **Cross-validation yang benar** — gunakan purged k-fold untuk data deret waktu
+- **Domain expertise** — pahami fitur mana yang legitimate

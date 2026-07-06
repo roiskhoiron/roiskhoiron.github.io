@@ -1,14 +1,60 @@
 ---
 title: Explainability
-description: Belajar tentang Explainability — CodingSkuy
+description: "Membuat keputusan AI bisa dijelaskan kepada manusia — CodingSkuy"
 ---
 
 # Explainability
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"AI yang tidak bisa dijelaskan adalah kotak hitam. Dan kotak hitam tidak bisa dipercaya."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Explainability (XAI) adalah kemampuan untuk menjelaskan mengapa model AI membuat keputusan tertentu.
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### Kenapa Penting?
+
+- **Trust** — pengguna lebih percaya jika tahu alasannya
+- **Debugging** — temukan penyebab error model
+- **Compliance** — regulasi (GDPR, UU PDP) mengharuskan penjelasan
+- **Fairness** — deteksi bias dengan melihat fitur yang mempengaruhi keputusan
+
+---
+
+### Tingkat Explainability
+
+| Level | Deskripsi | Contoh Metode |
+|-------|-----------|---------------|
+| **Global** | Memahami model secara keseluruhan | Feature importance, partial dependence plot |
+| **Local** | Memahami prediksi spesifik | LIME, SHAP |
+| **Counterfactual** | Apa yang harus diubah agar hasil berbeda | What-if analysis |
+
+### Metode Populer
+
+**LIME (Local Interpretable Model-agnostic Explanations)**
+
+Membuat model sederhana di sekitar prediksi tertentu untuk menjelaskan fitur mana yang paling berpengaruh.
+
+Cocok untuk: Klasifikasi teks, gambar sederhana.
+
+**SHAP (SHapley Additive exPlanations)**
+
+Menggunakan game theory untuk menghitung kontribusi setiap fitur terhadap prediksi.
+
+Cocok untuk: Model tabular, analisis fitur global.
+
+**Attention Maps**
+
+Menunjukkan bagian input mana yang paling diperhatikan model.
+
+Cocok untuk: NLP, computer vision.
+
+---
+
+### Trade-off
+
+| Akurasi | Explainability |
+|---------|---------------|
+| Neural network kompleks | Sulit dijelaskan |
+| Decision tree sederhana | Mudah dijelaskan |
+
+Pilih yang sesuai dengan kebutuhan: untuk aplikasi medis, explainability mungkin lebih penting dari akurasi 1% tambahan.

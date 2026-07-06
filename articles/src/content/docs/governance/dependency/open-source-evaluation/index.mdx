@@ -1,14 +1,58 @@
 ---
 title: Open Source Evaluation
-description: Belajar tentang Open Source Evaluation — CodingSkuy
+description: "Kerangka evaluasi library open source sebelum dipakai di proyek — CodingSkuy"
 ---
 
 # Open Source Evaluation
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Menggunakan open source seperti mengadopsi kucing: kamu tidak hanya bertanggung jawab untuk hari ini, tapi untuk seterusnya."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Memilih library open source yang salah bisa jadi bencana. Saya pernah mengalaminya: pilih library yang ternyata tidak terawat, buntu di bug yang tidak bisa diperbaiki, dan harus migrasi di tengah sprint.
+
+Berikut kerangka evaluasi yang saya pakai:
 
 ---
 
-*Coming soon — Tim CodingSkuy*
+### 1. Popularitas & Komunitas
+
+| Metrik | Yang Dicari |
+|--------|-------------|
+| **Stars** | >1.000 untuk library populer, >100 untuk niche |
+| **Contributors** | >10 contributor aktif |
+| **Last commit** | <6 bulan (untuk library aktif) |
+| **Issues** | Ada response dari maintainer |
+
+### 2. Kualitas Kode
+
+- Apakah ada test? (coverage >70%)
+- Apakah dokumentasi jelas?
+- Apakah ada contoh penggunaan?
+- Apakah API intuitive?
+
+### 3. Lisensi
+
+Pastikan lisensi kompatibel dengan proyekmu:
+- **MIT/Apache** — aman untuk proyek komersial
+- **GPL** — hati-hati, bisa memaksa proyekmu open source juga
+- **LGPL** — aman selama penggunaan tidak memodifikasi library
+
+### 4. Maintenance
+
+- Seberapa cepat bug diperbaiki?
+- Apakah ada release regular?
+- Apakah ada breaking changes sering?
+- Apakah maintainer responsif?
+
+### 5. Risiko Migrasi
+
+- Seberapa sulit pindah ke library lain jika diperlukan?
+- Apakah library ini tightly coupled dengan kode kita?
+- Apakah ada abstraksi yang melindungi dari perubahan?
+
+---
+
+### Prinsip
+
+1. **Semakin penting library, semakin ketat evaluasi** — library core (state management, networking) perlu evaluasi lebih ketat daripada utility kecil
+2. **Dokumentasikan keputusan** — catat kenapa library ini dipilih, biar tim tahu di masa depan
+3. **Siapkan exit plan** — bagaimana jika library ini mati besok?
