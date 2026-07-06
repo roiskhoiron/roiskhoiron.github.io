@@ -1,61 +1,44 @@
 ---
 title: Bias Awareness
-description: "Mengenali dan mengurangi bias dalam model AI — CodingSkuy"
+description: "Mengenali bias pada AI — dari pengalaman model yang tidak adil — CodingSkuy"
 ---
 
 # Bias Awareness
 
-> *"AI tidak lahir bias — bias berasal dari data dan manusia yang membuatnya."*
+> *"Model pertamaku akurat 90%. Tapi 0% untuk salah satu kelompok pengguna. Bukan karena modelnya rusak. Tapi karena datanya tidak seimbang."*
+
+Aku tidak sadar sampai ada yang bilang: *"Coba tes modelmu untuk group ini."*
+
+Hasilnya? Bencana. Model prediktifku gagal total untuk kelompok minoritas. Bukan karena modelnya jahat. Karena data training untuk kelompok itu hampir tidak ada.
 
 ---
 
-### Sumber Bias
+### Dari Mana Bias Datang?
 
 | Sumber | Contoh |
 |--------|--------|
-| **Data bias** | Data training tidak representatif |
-| **Labeling bias** | Anotator punya preferensi subjektif |
-| **Selection bias** | Hanya data tertentu yang dikumpulkan |
-| **Confirmation bias** | Model disesuaikan untuk membuktikan hipotesis |
+| **Data tidak seimbang** | 90% data dari kelompok A, 10% dari B |
+| **Label bias** | Anotator punya preferensi subjektif |
+| **Historical bias** | Data masa lalu mengandung diskriminasi |
 | **Deployment bias** | Pengguna di lapangan berbeda dengan data training |
 
 ---
 
-### Cara Mendeteksi
+### Cara Deteksi Sederhana
 
-**1. Analisis Demografi**
-
-Uji performa model di berbagai kelompok:
-- Gender
-- Rentang usia
-- Wilayah geografis
-- Bahasa
-
-**2. Confusion Matrix by Group**
-
-Lihat apakah false positive/negative berbeda signifikan antar kelompok.
-
-**3. Fairness Metrics**
-
-- **Demographic Parity** — tingkat prediksi positif sama antar kelompok
-- **Equal Opportunity** — true positive rate sama antar kelompok
-- **Equalized Odds** — false positive/negative rate sama antar kelompok
+1. Uji model di berbagai kelompok
+2. Bandingkan akurasi antar kelompok
+3. Kalau beda signifikan, ada bias
 
 ---
 
 ### Mitigasi
 
-- **Pre-processing** — seimbangkan data training
-- **In-processing** — tambahkan fairness constraint di training
-- **Post-processing** — sesuaikan threshold keputusan per kelompok
-- **Monitoring** — pantau bias setelah deployment
+- Seimbangkan data training
+- Gunakan fairness metrics
+- Libatkan diverse perspective dalam pengembangan
+- Pantau setelah deployment
 
----
+> *"Bias bukan kesalahan teknis — ini tanggung jawab etis. Kamu yang bikin model, kamu yang bertanggung jawab atas dampaknya."*
 
-### Checklist
-
-- [ ] Data training representatif?
-- [ ] Model diuji di berbagai kelompok demografi?
-- [ ] Fairness metrics dimonitor?
-- [ ] Ada proses audit berkala?
-- [ ] Pengguna bisa melaporkan hasil yang tidak adil?
+[Kembali ke Governance](/articles/governance/)

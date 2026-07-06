@@ -1,41 +1,50 @@
 ---
 title: Technical Risk Assessment
-description: "Menilai risiko teknis sebelum keputusan arsitektur diambil — CodingSkuy"
+description: "Menilai risiko teknis berdasarkan pengalaman proyek — CodingSkuy"
 ---
 
 # Technical Risk Assessment
 
-> *"Setiap keputusan arsitektur mengandung risiko. Tugas kita bukan menghindarinya, tapi mengukurnya."*
+> *"Risiko terbesar dalam software engineering bukan kode yang error. Tapi keputusan yang diambil tanpa mikir dampaknya."*
 
-Risk assessment dalam arsitektur adalah proses mengevaluasi dampak potensial dari keputusan teknis sebelum diimplementasikan.
+Waktu mengerjakan proyek Laravel education dashboard, ada satu fitur: export laporan PDF.
 
----
+Tim developer fokus bikin fungsi export-nya berfungsi. Selesai. Tapi setelah diskusi dengan senior, kami sadar: kalau 100 guru ekspor bersamaan, server bisa collapse.
 
-### Aspek yang Dinilai
-
-| Aspek | Pertanyaan |
-|-------|-----------|
-| **Scalability** | Apakah keputusan ini bertahan ketika traffic 10x lipat? |
-| **Maintainability** | Seberapa mudah kode ini dipahami tim baru? |
-| **Security** | Apakah ini membuka celah keamanan? |
-| **Cost** | Berapa biaya infrastruktur dan pengembangan? |
-| **Tim** | Apakah tim punya kapasitas untuk ini? |
+Itu risiko yang tidak terpikirkan sebelumnya. Karena kami hanya fokus pada *apakah fitur ini jalan*, bukan *apakah fitur ini bertahan dalam skenario nyata.*
 
 ---
 
-### Level Risiko
+### Cara Sederhana Menilai Risiko
 
-- **Low** — dampak terbatas, mudah di-revert
-- **Medium** — berdampak pada modul tertentu, perlu migrasi
-- **High** — perubahan fundamental, butuh persiapan matang
-- **Critical** — bisa menghentikan operasional jika gagal
+Sekarang, sebelum mengambil keputusan teknis, aku tanya:
+
+| Pertanyaan | Kalau jawabannya... |
+|------------|-------------------|
+| *"Apa yang terjadi kalau pengguna 10x lipat?"* | ...maka skalabilitas perlu dipikirkan |
+| *"Siapa yang akan maintain kode ini?"* | ...maka dokumentasi & clean code penting |
+| *"Apa yang terjadi kalau library ini mati?"* | ...maka perlu exit plan |
+| *"Apa dampak kalau fitur ini error?"* | ...maka testing & monitoring harus ketat |
 
 ---
 
-### Output
+### Level Risiko versiku
+
+- **Hijau** — aman, mudah diperbaiki, dampak kecil
+- **Kuning** — perlu perhatian, ada resiko moderat
+- **Merah** — harus dimitigasi sebelum lanjut
+- **Hitam** — jangan dilakukan tanpa persiapan matang
+
+---
+
+### Output Minimal
 
 Setiap risk assessment harus menghasilkan:
-1. **Identifikasi risiko** — apa yang bisa salah
-2. **Mitigasi** — apa yang dilakukan untuk mengurangi risiko
-3. **Contingency plan** — apa yang dilakukan jika risiko terjadi
-4. **Decision** — apakah tetap lanjut, tunda, atau cari alternatif
+1. Risiko yang teridentifikasi
+2. Rencana mitigasi
+3. Siapa yang bertanggung jawab
+4. Kapan akan dievaluasi lagi
+
+> *"Risiko tidak bisa dihilangkan. Tapi bisa diukur, dimitigasi, dan dikelola."*
+
+[Kembali ke Governance](/articles/governance/)

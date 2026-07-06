@@ -1,54 +1,54 @@
 ---
 title: Common Anti Pattern
-description: "Anti-pattern yang sering muncul di code review — dan cara memperbaikinya — CodingSkuy"
+description: "Anti-pattern yang sering muncul — dari pengalaman debugging kode sendiri dan orang lain — CodingSkuy"
 ---
 
 # Common Anti Pattern
 
-> *"Pola buruk tidak muncul tiba-tiba. Mereka muncul dari keputusan kecil yang terakumulasi.""
+> *"Anti-pattern adalah solusi yang terlihat benar di permukaan, tapi jadi mimpi buruk 3 bulan kemudian."*
 
-Anti-pattern adalah solusi yang terlihat benar di permukaan, tapi bermasalah dalam jangka panjang.
+Aku pelajari anti-pattern bukan dari buku. Tapi dari kode yang aku tulis sendiri, lalu aku sesali 6 bulan kemudian. Dan dari kode orang lain yang harus aku perbaiki.
 
-Berikut yang paling sering saya temui:
+Ini yang paling sering kutemui:
 
 ---
 
-### 1. God Class
+### 1. God Class — Satu Kelas untuk Semua
 
-Satu kelas melakukan semuanya: logic, UI, network, database.
+Dulu waktu belajar Android, semua logic kutulis di satu Activity. UI, logic bisnis, network call, database — semua di satu file.
 
-**Tanda:** Kelas >500 baris, susah di-test, perubahan kecil berdampak besar.
+Tanda-tandanya: file >500 baris, susah dibaca, error di satu tempat berdampak ke fitur lain.
 
-**Solusi:** Pisah berdasarkan tanggung jawab (Single Responsibility Principle).
+**Pelajaran:** Pisah berdasarkan tanggung jawab. Testing jadi lebih mudah. Bug lebih gampang dilacak.
 
 ### 2. Copy-Paste Programming
 
-Kode yang sama ada di beberapa tempat dengan sedikit variasi.
+Pernah menemukan bug di satu fitur, lalu sadar bug yang sama ada di 3 file lain karena kodenya di-copy-paste?
 
-**Tanda:** Bug ditemukan di satu tempat, tapi ternyata ada di 3 file lain.
+Aku alami itu. Waktu itu aku buru-buru, copas kode dari fitur A ke fitur B, ubah sedikit. Hemat 5 menit. Tapi ketika fitur A diperbaiki, fitur B lupa diperbaiki. Bug muncul di production.
 
-**Solusi:** Ekstrak ke fungsi atau kelas yang bisa dipakai ulang.
+**Pelajaran:** Kalau kode perlu dipakai di banyak tempat, ekstrak ke fungsi/kelas terpisah.
 
-### 3. Golden Hammer
+### 3. Golden Hammer — Pakai Satu Tools untuk Semua
 
-Semua masalah diselesaikan dengan tools yang sama.
+Dulu aku sempat kecanduan NoSQL. "Semua pake MongoDB." Sampai aku bangun sistem yang butuh relasi kompleks. Pelan. Berantakan. Akhirnya migrasi ke PostgreSQL.
 
-**Tanda:** Pakai database NoSQL untuk aplikasi yang butuh relasi kompleks. Pake microservice untuk aplikasi 2 fitur.
-
-**Solusi:** Pilih tools berdasarkan kebutuhan, bukan kebiasaan.
+**Pelajaran:** Pilih tools berdasarkan masalah, bukan karena lagi tren.
 
 ### 4. Premature Optimization
 
-Optimasi dilakukan sebelum masalah terbukti ada.
+Aku pernah optimasi query yang belum lambat. Bikin cache di semua layer. Kode jadi kompleks. Ternyata setelah diukur, bottleneck-nya di tempat lain.
 
-**Tanda:** Kode kompleks dengan cache di setiap layer, padahal traffic masih 100 user/hari.
-
-**Solusi:** Buat dulu yang sederhana, ukur, baru optimasi yang terbukti lambat.
+**Pelajaran:** Buat sederhana dulu. Ukur. Baru optimasi yang terbukti lambat.
 
 ### 5. Fear of Removing Code
 
-Takut hapus kode meski sudah tidak dipakai.
+Ada file dengan komentar *"TODO: hapus kalau sudah tidak dipakai"* yang bertahan 2 tahun. Karena takut dihapus, padahal tidak ada yang memanggil.
 
-**Tanda:** File dengan komentar "TODO: remove this", fungsi mati yang tidak dipanggil.
+**Pelajaran:** Git menyimpan sejarah. Kalau tidak dipakai, hapus.
 
-**Solusi:** Kalau tidak dipakai, hapus. Git menyimpan sejarah.
+---
+
+> *"Anti-pattern bukan dosa. Tapi pelajaran yang kamu bayar dengan waktu debugging."*
+
+[Kembali ke Governance](/articles/governance/)

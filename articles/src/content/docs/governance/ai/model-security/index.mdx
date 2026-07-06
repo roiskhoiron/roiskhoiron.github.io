@@ -1,54 +1,51 @@
 ---
 title: Model Security
-description: "Melindungi model AI dari serangan dan manipulasi — CodingSkuy"
+description: "Melindungi model AI — dari pengalaman model bisa ditiru orang lain — CodingSkuy"
 ---
 
 # Model Security
 
-> *"Model AI yang tidak diamankan adalah celah yang menunggu untuk dieksploitasi."*
+> *"Model AI itu kayak resep rahasia. Kalau resepnya bocor, kompetitor bisa bikin versi sendiri."*
+
+Aku pernah bikin model yang cukup akurat — investasi waktu dan komputasi berminggu-minggu. Lalu seseorang bilang: *"Coba deploy API-nya tanpa proteksi."*
+
+Dalam hitungan jam, orang lain bisa query modelku dan merekonstruksi behavior-nya. **Model stealing.**
+
+Sejak itu aku paham: model perlu diamankan, sama seperti kode dan database.
 
 ---
 
 ### Ancaman
 
-**1. Adversarial Attacks**
+**1. Model Stealing**
 
-Input yang sengaja dimanipulasi untuk menipu model.
+Seseorang bisa meniru model dengan query berulang.
 
-Contoh: Stiker kecil di rambu STOP yang membuat model mobil otonom membaca sebagai rambu 60 km/jam.
+Mitigasi: Rate limiting, batasi jumlah query per user, monitoring.
 
-**Mitigasi:** Adversarial training, input preprocessing, ensemble models.
+**2. Adversarial Attack**
 
-**2. Model Inversion**
+Input sengaja dimanipulasi untuk menipu model.
 
-Attacker mengekstrak data training dari model.
+Contoh: Stiker di rambu STOP bikin mobil otonom bacanya "60 km/jam".
 
-Contoh: Dari model rekomendasi film, attacker bisa menyimpulkan film apa yang ditonton user tertentu.
+Mitigasi: Adversarial training, input preprocessing.
 
-**Mitigasi:** Differential privacy, regularisasi, batasi output detail.
+**3. Data Extraction**
 
-**3. Model Stealing**
+Attacker bisa mengekstrak data training dari model.
 
-Attacker meniru model dengan query berulang.
-
-Contoh: Ribuan query ke API model prediksi harga untuk merekonstruksi model serupa.
-
-**Mitigasi:** Rate limiting, watermarking, query monitoring.
-
-**4. Backdoor Attack**
-
-Attacker menyisipkan trigger rahasia di training data.
-
-Contoh: Model yang akurat secara normal, tapi menghasilkan output spesifik ketika diberi trigger tertentu.
-
-**Mitigasi:** Input validation, training data audit, anomaly detection.
+Mitigasi: Differential privacy, regularisasi.
 
 ---
 
 ### Praktik
 
-- **Access control** — model cuma bisa diakses via API terautentikasi
-- **Rate limiting** — batasi jumlah query per user
-- **Monitoring** — deteksi pola query mencurigakan
-- **Version control** — simpan versi model untuk rollback
-- **Secure storage** — enkripsi model file, jangan expose di public bucket
+- **Akses terbatas** — model cuma bisa diakses via API terautentikasi
+- **Rate limiting** — batasi query per user
+- **Monitoring** — deteksi pola mencurigakan
+- **Enkripsi** — simpan model file di tempat aman
+
+> *"Model yang tidak diamankan adalah aset berharga yang diletakkan di pinggir jalan."*
+
+[Kembali ke Governance](/articles/governance/)

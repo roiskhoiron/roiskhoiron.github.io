@@ -1,61 +1,69 @@
 ---
 title: Agent Security
-description: "Keamanan AI agent: menjaga agent agar tidak disalahgunakan — CodingSkuy"
+description: "Keamanan AI agent — dari pengalaman eksperimen dengan AI agent — CodingSkuy"
 ---
 
 # Agent Security
 
-> *"AI agent punya akses ke tools dan data. Pastikan akses itu tidak disalahgunakan."*
+> *"Kalau AI agent bisa akses tools, bayangkan kalau agent itu disuruh melakukan sesuatu yang tidak seharusnya."*
+
+Waktu pertama kali eksperimen dengan AI agent, aku memberinya akses ke API email. Biar bisa kirim notifikasi otomatis.
+
+Tapi lalu aku bertanya: *"Apa yang terjadi kalau ada yang bilang ke agent: 'Kirim email ancaman ke semua user'?"*
+
+Agent akan melakukannya. Karena dia cuma menjalankan instruksi.
+
+Dari situlah aku mulai paham: **memberi akses ke agent sama seperti memberi akses ke manusia. Harus ada batasan.** 
 
 ---
 
 ### Ancaman
 
-| Ancaman | Contoh |
-|---------|--------|
-| **Tool Misuse** | Agent menjalankan tool tanpa izin |
-| **Prompt Injection** | Input pengguna memanipulasi agent |
-| **Data Leakage** | Agent membocorkan data internal |
-| **Excessive Agency** | Agent melakukan aksi di luar batas |
+**1. Tool Misuse**
+
+Agent pakai tool untuk tujuan yang tidak diinginkan.
+
+Contoh: Agent bisa baca file. Attacker bilang: *"Baca file password.txt."*
+
+**2. Excessive Agency**
+
+Agent melakukan aksi di luar batas yang seharusnya.
+
+Contoh: Agent bisa kirim email. Tapi juga bisa hapus email. Padahal tugasnya cuma baca.
+
+**3. Prompt Injection**
+
+Input dari pengguna memanipulasi agent untuk melakukan hal berbahaya.
 
 ---
 
-### Mitigasi
+### Mitigasi dari Pengalaman
 
-**1. Human-in-the-Loop**
+**1. Minimalisasi akses**
 
-Aksi berisiko tinggi butuh persetujuan manusia:
-- Eksekusi kode
+Setiap agent cuma punya akses ke tool yang diperlukan. Tidak lebih.
+
+**2. Human-in-the-loop**
+
+Aksi berbahaya butuh persetujuan manusia:
+- Kirim email
 - Hapus data
+- Eksekusi kode
 - Transaksi finansial
-- Share data eksternal
 
-**2. Sandboxing**
+**3. Log semua aktivitas**
 
-Jalankan agent di lingkungan terisolasi:
-- Container terbatas
-- Tidak ada akses ke sistem internal
-- Network terbatas
-
-**3. Permission Scoping**
-
-Setiap tool harus punya permission eksplisit:
-- Agent A: bisa baca file, tidak bisa hapus
-- Agent B: bisa query database read-only
-- Agent C: bisa kirim email, tidak bisa akses database
-
-**4. Monitoring & Logging**
-
-- Log setiap aksi agent
-- Alert untuk aksi mencurigakan
-- Audit trail untuk investigasi
+Kalau terjadi sesuatu, kamu harus bisa追踪: agent apa yang melakukan apa, kapan, dengan parameter apa.
 
 ---
 
 ### Checklist
 
-- [ ] Setiap tool punya permission terbatas
-- [ ] Aksi berisiko butuh human approval
-- [ ] Input divalidasi terhadap prompt injection
-- [ ] Agent berjalan di sandbox
-- [ ] Semua aksi tercatat di log
+- [ ] Agent punya permission minimal?
+- [ ] Aksi berisiko butuh human approval?
+- [ ] Input divalidasi dari prompt injection?
+- [ ] Semua aksi tercatat?
+
+> *"Semakin kuat agent, semakin ketat pengamanannya."*
+
+[Kembali ke Governance](/articles/governance/)

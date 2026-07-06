@@ -1,62 +1,61 @@
 ---
 title: MCP Security
-description: "Keamanan Model Context Protocol — CodingSkuy"
+description: "Keamanan Model Context Protocol — dari pengalaman kasih akses API ke AI agent — CodingSkuy"
 ---
 
 # MCP Security
 
-> *"MCP memberi AI akses ke tools eksternal. Akses itu harus dijaga."*
+> *"MCP kayak memberi AI remote control ke aplikasi. Pastikan remote control-nya tidak bisa dipakai sembarangan."*
 
-Model Context Protocol (MCP) adalah protokol yang memungkinkan AI agent berinteraksi dengan tools dan data eksternal. Dengan kekuatan ini datang tanggung jawab keamanan.
+Waktu pertama kali nyoba MCP (Model Context Protocol), aku kasih AI agent akses ke database — read-only, untuk menjawab pertanyaan.
+
+Tapi lalu aku mikir: *"Apa yang terjadi kalau ada prompt injection? Agent bisa query apa aja?"*
+
+Ternyata bisa.
 
 ---
 
 ### Ancaman
 
-| Ancaman | Deskripsi |
-|---------|-----------|
-| **Tool Hijacking** | Attacker memanipulasi agent untuk menjalankan tool tidak semestinya |
-| **Data Exfiltration** | Agent membaca dan membocorkan data sensitif melalui tools |
-| **Resource Exhaustion** | Agent memanggil tool secara berlebihan (DoS) |
-| **Privilege Escalation** | Agent mendapat akses lebih dari yang seharusnya |
+| Ancaman | Contoh |
+|---------|--------|
+| **Tool abuse** | Agent panggil tool berkali-kali sampai overload |
+| **Data access** | Agent baca data yang tidak seharusnya |
+| **Privilege escalation** | Agent dapet akses lebih dari yang seharusnya |
 
 ---
 
-### Mitigasi
+### Yang Kupelajari
 
-**1. Tool Authentication**
+**1. Scope permission**
 
-Setiap tool yang dipanggil melalui MCP harus terautentikasi. Jangan expose tool internal tanpa autentikasi.
+Setiap koneksi MCP harus punya scope terbatas. Read-only vs read-write. Data apa yang bisa diakses.
 
-**2. Rate Limiting**
+Aku bagi:
+- Agent customer support: bisa baca data user, tidak bisa edit
+- Agent admin: bisa CRUD, tapi butuh approval untuk delete
 
-Batasi frekuensi pemanggilan tool untuk mencegah penyalahgunaan.
+**2. Rate limiting**
 
-**3. Input Validation**
+Batasi berapa kali agent bisa panggil tool per menit. Mencegah abuse.
 
-Semua input dari agent ke tool harus divalidasi — sama seperti input dari user.
+**3. Audit trail**
 
-**4. Audit Trail**
+Log setiap interaksi MCP. Siapa yang minta, tool apa yang dipanggil, apa hasilnya.
 
-Log setiap interaksi MCP:
-- Tool apa yang dipanggil
-- Siapa yang memicu
-- Parameter apa yang dikirim
-- Hasil apa yang dikembalikan
+**4. Input validation**
 
-**5. Scoped Permissions**
-
-Setiap koneksi MCP harus punya scope terbatas:
-- Read-only vs read-write
-- Data apa yang bisa diakses
-- Tool apa yang bisa dipanggil
+Sama seperti input user, input dari agent ke tool harus divalidasi.
 
 ---
 
-### Best Practices
+### Checklist
 
-- Jangan expose MCP endpoint ke publik tanpa autentikasi
-- Gunakan transport terenkripsi
-- Validasi toolkit hanya berisi tool yang diperlukan
-- Monitor penggunaan untuk anomali
-- Regular security review pada MCP configuration
+- [ ] Setiap tool punya scope?
+- [ ] Ada rate limiting?
+- [ ] Interaksi tercatat?
+- [ ] Input divalidasi?
+
+> *"Semakin banyak akses yang kamu beri ke agent, semakin ketat pengamanannya."*
+
+[Kembali ke Governance](/articles/governance/)

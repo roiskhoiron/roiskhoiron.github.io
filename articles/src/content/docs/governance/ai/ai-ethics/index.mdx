@@ -1,52 +1,57 @@
 ---
 title: AI Ethics
-description: "Etika AI: membangun AI yang bertanggung jawab dan adil — CodingSkuy"
+description: "Etika AI — dari pengalaman lihat AI bikin keputusan yang tidak adil — CodingSkuy"
 ---
 
 # AI Ethics
 
-> *"Kekuatan AI harus diimbangi dengan tanggung jawab etis."*
+> *"AI bukan netral. AI belajar dari data yang kita beri. Kalau datanya bias, keputusannya bias."*
+
+Waktu pertama belajar machine learning, aku bikin model klasifikasi sederhana. Hasilnya akurat — 90%.
+
+Tapi setelah dilihat lebih dalam, modelku gagal total di satu kelompok data. Ternyata data training untuk kelompok itu sangat sedikit.
+
+Modelnya tidak "jahat". Tapi tidak adil.
 
 ---
 
-### Prinsip Etika AI
+### Prinsip Etis yang Kupakai
 
 **1. Fairness**
 
-AI tidak boleh mendiskriminasi berdasarkan ras, gender, agama, atau latar belakang.
+Apakah model berlaku adil untuk semua kelompok?
 
-Periksa: Apakah data training representatif? Apakah model bias terhadap kelompok tertentu?
+Coba tes: performa model di kelompok A vs B. Kalau beda jauh, ada masalah.
 
-**2. Accountability**
-
-Harus ada manusia yang bertanggung jawab atas keputusan AI.
-
-Periksa: Siapa yang bertanggung jawab jika AI membuat kesalahan?
-
-**3. Transparency**
+**2. Transparency**
 
 Pengguna harus tahu bahwa mereka berinteraksi dengan AI.
 
-Periksa: Apakah ada disclosure bahwa ini adalah AI? Apakah cara kerja AI bisa dijelaskan?
+Sederhana: *"Halo, saya asisten AI. Saya bisa membantu..."* bukan berpura-pura jadi manusia.
+
+**3. Accountability**
+
+Harus ada manusia yang bertanggung jawab atas keputusan AI.
+
+Kalau AI salah rekomendasi obat — siapa yang bertanggung jawab? Dokter. Bukan AI.
 
 **4. Privacy**
 
-Data pengguna harus dilindungi.
+Model tidak boleh memuntahkan data training.
 
-Periksa: Apakah data training sudah dianonimisasi? Apakah ada consent dari pengguna?
-
-**5. Beneficence**
-
-AI harus bermanfaat, bukan merugikan.
-
-Periksa: Apakah AI ini benar-benar membantu pengguna? Apa potensi penyalahgunaan?
+Ini yang paling sering dilanggar. Model bisa "menghafal" data pribadi dan mengulanginya.
 
 ---
 
 ### Praktik
 
-- **AI Impact Assessment** — lakukan assessment dampak sebelum meluncurkan fitur AI
-- **Human Oversight** — pastikan ada manusia yang bisa override keputusan AI
-- **Feedback Loop** — sediakan mekanisme pengguna melaporkan masalah
-- **Regular Audit** — audit model secara berkala untuk bias dan akurasi
-- **Documentation** — dokumentasikan batasan dan asumsi model
+- **Audit data training** — pastikan representatif
+- **Monitor setelah deployment** — performa bisa berubah seiring waktu
+- **Feedback loop** — sediakan cara pengguna melaporkan hasil yang tidak adil
+- **Human override** — pastikan ada manusia yang bisa membatalkan keputusan AI
+
+---
+
+> *"AI yang etis bukan yang paling pintar. Tapi yang paling bisa dipercaya."*
+
+[Kembali ke Governance](/articles/governance/)

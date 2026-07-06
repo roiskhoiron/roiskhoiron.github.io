@@ -1,68 +1,89 @@
 ---
 title: ADR (Architecture Decision Record)
-description: "Mendokumentasikan keputusan arsitektur agar tidak hilang ditelan waktu — CodingSkuy"
+description: "Mendokumentasikan keputusan arsitektur — dari pengalaman melupakan keputusan sendiri — CodingSkuy"
 ---
 
 # ADR (Architecture Decision Record)
 
-> *"Keputusan arsitektur yang tidak didokumentasi adalah keputusan yang tidak pernah terjadi."*
+> *"6 bulan setelah bikin keputusan arsitektur, tim baru bertanya: 'Kenapa kita pake database ini?' Aku tidak bisa jawab."*
 
-ADR adalah dokumen singkat yang mencatat keputusan arsitektur penting: konteks, opsi yang dipertimbangkan, dan alasan keputusan akhir.
+Itu momen yang memalukan.
 
----
+Aku yang memutuskan pakai MongoDB di proyek itu. Tapi ketika ditanyai alasannya 6 bulan kemudian, aku hanya bisa menjawab: *"Waktu itu kayaknya cocok."*
 
-### Kenapa ADR Penting?
+Tim baru tidak puas. Mereka butuh konteks untuk memahami apakah keputusan itu masih relevan.
 
-- Tim baru bisa memahami kenapa sistem dirancang seperti ini
-- Mencegah diskusi yang sama terulang setiap tahun
-- Memberi konteks saat keputusan perlu dievaluasi ulang
-- Dokumentasi histori untuk post-mortem
+Sejak itu aku mulai nulis ADR.
 
 ---
 
-### Format ADR Sederhana
+### Apa Itu ADR?
+
+Dokumen pendek yang mencatat:
+- Keputusan arsitektur apa yang diambil
+- Konteksnya saat itu
+- Opsi yang dipertimbangkan
+- Kenapa opsi ini dipilih
+
+Bukan dokumentasi berat. Cukup 1 halaman.
+
+---
+
+### Format yang Kupakai
 
 ```
-# ADR-001: Pemilihan Database
+# ADR-001: Pilih PostgreSQL
 
 ## Status
-Accepted
+Diterima
 
-## Context
-Kita perlu memilih database untuk sistem manajemen konten.
-Data bersifat relasional (user, post, comment).
-Traffic diperkirakan 10.000 request/hari.
+## Konteks
+Butuh database untuk sistem manajemen konten.
+Data sangat relasional: user, post, kategori, komentar.
+Tim back-end paham SQL.
 
-## Options
+## Opsi
 1. PostgreSQL — SQL, mature, open source
-2. MongoDB — NoSQL, flexible schema
-3. Firebase — managed, real-time
+2. MongoDB — NoSQL, fleksibel
+3. Firebase — real-time, managed
 
-## Decision
-Pilih PostgreSQL.
+## Keputusan
+PostgreSQL.
 
-## Rationale
-- Data sangat relasional
-- Tim sudah熟悉 SQL
-- Tidak perlu real-time sync
-- Budget terbatas (Firebase mahal untuk skala besar)
+## Alasan
+- Data relasional complex
+- Tim sudah familiar SQL
+- Firebase terlalu mahal untuk skala besar
+- MongoDB overkill untuk kebutuhan saat ini
 
-## Consequences
-- (+) ACID compliance, data integrity terjamin
-- (-) Scaling horizontal lebih kompleks
+## Konsekuensi
+- (+) ACID compliance, integritas data terjamin
+- (-) Scaling horizontal lebih susah dari NoSQL
 ```
 
 ---
 
-### Kapan Membuat ADR?
+### Kapan Nulis ADR?
 
-- Perubahan arsitektur signifikan
-- Pemilihan teknologi baru
-- Perubahan pola desain yang berdampak luas
+- Pilih teknologi baru (database, framework, library utama)
+- Ubah arsitektur yang berdampak luas
 - Setiap keputusan yang mungkin ditanyakan lagi tahun depan
 
 ### Kapan Tidak Perlu?
 
-- Perubahan internal yang tidak berdampak ke modul lain
-- Implementasi detail yang bisa berubah kapan saja
-- Keputusan yang sudah mentok karena constraint teknis
+- Keputusan sepele (pilih warna button)
+- Implementasi detail yang mudah diubah
+- Yang sudah jelas dan tidak kontroversial
+
+---
+
+### Tips dari Pengalaman
+
+- Tulis pas keputusan diambil, bukan 3 bulan kemudian
+- ADR tidak perlu panjang. Intinya: konteks, opsi, alasan
+- Simpan di repo, dekat dengan kode
+- Kalau keputusan berubah, tulis ADR baru (bukan edit yang lama)
+
+> *"Keputusan tanpa dokumentasi adalah keputusan yang tidak pernah terjadi."*
+
+[Kembali ke Governance](/articles/governance/)

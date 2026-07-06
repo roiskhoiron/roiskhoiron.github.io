@@ -1,57 +1,70 @@
 ---
 title: Architecture Guidelines
-description: "Panduan arsitektur untuk menjaga konsistensi antar modul — CodingSkuy"
+description: "Panduan arsitektur — dari pengalaman cleanup kode yang tidak konsisten — CodingSkuy"
 ---
 
 # Architecture Guidelines
 
-> *"Arsitektur yang baik membuat engineer baru bisa produktif dalam 3 hari, bukan 3 minggu."*
+> *"Dulu setiap folder punya struktur sendiri-sendiri. Tergantung mood programmernya. Waktu aku harus cari file, butuh 10 menit."*
 
-Architecture guidelines adalah kesepakatan tim tentang bagaimana kode diorganisir. Bukan aturan kaku, tapi kompas yang memastikan semua orang bergerak ke arah yang sama.
+Itu pengalaman di proyek pertama. Tiga engineer, tiga gaya arsitektur. Satu pake MVC, satu pake spaghetti, satu campur aduk.
+
+Ketika aku harus memperbaiki bug di modul yang bukan aku tulis, waktu habis untuk memahami struktur, bukan untuk memperbaiki bug.
 
 ---
 
-### Prinsip Dasar
+### Kenapa Guidelines Diperlukan
+
+Bukan untuk membatasi kreativitas. Tapi untuk:
+- Engineer baru bisa produktif dalam hari, bukan minggu
+- Bug lebih cepat ditemukan karena struktur konsisten
+- Refactor lebih aman karena kode terprediksi
+
+---
+
+### Prinsip yang Kupakai
 
 **1. Separation of Concerns**
 
-Setiap lapisan punya tanggung jawab yang jelas:
-- **Presentation** — UI, state management
-- **Domain** — logic bisnis, use case
-- **Data** — repository, data source
+Setiap layer punya tugas jelas. Presentasi urus UI. Domain urus logic. Data urus penyimpanan. Tidak campur aduk.
+
+Aku belajar ini setelah pindah dari Android Native (semua di Activity) ke Flutter (architectur jelas).
 
 **2. Dependency Rule**
 
-Dependensi mengarah ke dalam: Presentation → Domain ← Data. Domain tidak tahu apa-apa tentang framework atau database.
+Domain tidak tahu soal framework atau database. Ini yang membuat testing jadi mudah.
 
 **3. Testability**
 
-Setiap komponen harus bisa di-test tanpa komponen lain. Kalau susah di-test, ada yang salah dengan arsitektur.
+Kalau komponen susah di-test, biasanya ada yang salah dengan arsitekturnya.
 
 ---
 
-### Struktur Folder
+### Struktur Folder Standar
 
 ```
 lib/
-├── core/          # shared utilities, constants
-├── feature_a/
-│   ├── data/
-│   ├── domain/
-│   └── presentation/
-├── feature_b/
-│   ├── data/
-│   ├── domain/
-│   └── presentation/
+├── core/          # utilitas bersama
+├── fitur_a/
+│   ├── data/      # repository, data source
+│   ├── domain/    # use case, entity
+│   └── ui/        # halaman, widget
+├── fitur_b/
+│   └── ...        # sama
 └── main.dart
 ```
 
 ---
 
-### Pedoman
+### Panduan Sederhana
 
-- Satu file jangan >300 baris
-- Satu fungsi jangan >30 baris
-- Satu kelas jangan >5 method publik
-- Hindari circular dependency
-- Gunakan abstraksi (interface/abstract class) untuk batas antar layer
+| Hal | Batasan |
+|-----|---------|
+| Baris per file | <300 baris |
+| Baris per fungsi | <30 baris |
+| Method publik per kelas | <5 |
+| Parameter per fungsi | <3 |
+
+> *"Konsistensi lebih penting dari kesempurnaan."*
+
+[Kembali ke Governance](/articles/governance/)

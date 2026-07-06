@@ -1,46 +1,61 @@
 ---
 title: Authentication Best Practice
-description: "Praktik terbaik autentikasi untuk aplikasi modern — CodingSkuy"
+description: "Praktik autentikasi — dari pengalaman hampir kena data breach — CodingSkuy"
 ---
 
 # Authentication Best Practice
 
-> *"Autentikasi adalah gerbang pertama keamanan aplikasi. Jangan buat gerbangnya mudah didobrak."*
+> *"Waktu aku mulai, autentikasi cuma bikin form login dan cek password pake ==. Syukurnya itu cuma proyek belajar.""
+
+Aku mulai serius soal autentikasi ketika baca berita startup yang kena data breach karena password disimpan dalam plain text. Ribuan user terdampak.
+
+Aku bertanya: *"Apakah aplikasiku aman dari serangan serupa?"*
+
+Jawabannya: belum tentu.
 
 ---
 
-### Praktik Dasar
+### Yang Paling Mendasar
 
 **1. Password**
 
-- Hash dengan bcrypt/argon2 (jangan MD5/SHA1)
-- Minimal 8 karakter, kombinasi huruf + angka
-- Jangan batasi karakter spesial secara berlebihan
-- Wajib ada rate limiting setelah 5 percobaan gagal
+Jangan pernah simpan password dalam bentuk asli. Pakai bcrypt atau argon2.
 
-**2. JWT (JSON Web Token)**
+Awalnya aku pikir MD5 sudah cukup — cepat, simpel. Ternyata MD5 bisa di-crack dalam hitungan detik.
 
-- Gunakan access token (short-lived, 15 menit) + refresh token (long-lived, 7 hari)
-- Jangan simpan JWT di localStorage — gunakan httpOnly cookie
+**2. JWT (Token)**
+
+Yang kupelajari:
+- Access token pendek umurnya (15 menit)
+- Refresh token lebih panjang (7 hari) tapi disimpan aman
+- Jangan simpan token di localStorage. Pakai httpOnly cookie
 - Verifikasi signature di setiap request
-- Blacklist token yang di-revoke
 
-**3. OAuth 2.0**
+**3. Rate Limiting**
 
-- Selalu gunakan PKCE (Proof Key for Code Exchange)
-- Validasi redirect URI
-- Jangan pernah gunakan Implicit Grant (deprecated)
-- Simpan client secret di server, bukan di client
+Yang paling sering dilupakan. Tanpa rate limiting, attacker bisa coba jutaan password dalam semalam.
+
+Aku terapin: 5 percobaan gagal = tunggu 15 menit.
 
 ---
 
-### Checklist
+### Checklist dari Pengalaman
 
-- [ ] Password di-hash dengan algorithm modern
-- [ ] Rate limiting di endpoint login
-- [ ] Session timeout setelah periode tidak aktif
-- [ ] MFA sebagai opsi
-- [ ] Log semua percobaan login (berhasil & gagal)
-- [ ] Notifikasi untuk login dari perangkat baru
-- [ ] Revoke token saat logout
-- [ ] Secure cookie (httpOnly, secure, sameSite)
+- [ ] Password di-hash? (bcrypt/argon2, jangan MD5)
+- [ ] Rate limiting di login?
+- [ ] Session timeout setelah tidak aktif?
+- [ ] Opsi MFA sudah ada? (minimal untuk admin)
+- [ ] Log percobaan login?
+- [ ] Token expire otomatis?
+
+---
+
+### Yang Kupelajari dari Kasus Nyata
+
+- Jangan pernah percaya input user. Selalu validasi di server
+- HTTPS wajib. Tidak ada alasan untuk HTTP di 2024
+- Notifikasi login dari perangkat baru — fitur sederhana yang menyelamatkan banyak user
+
+> *"Autentikasi adalah pintu depan aplikasi. Pastikan pintunya kuat."*
+
+[Kembali ke Governance](/articles/governance/)

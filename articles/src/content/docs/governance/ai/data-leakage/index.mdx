@@ -1,13 +1,15 @@
 ---
 title: Data Leakage
-description: "Mencegah kebocoran data di pipeline AI — CodingSkuy"
+description: "Data leakage pada AI — dari pengalaman model terlihat sempurna tapi gagal di produksi — CodingSkuy"
 ---
 
 # Data Leakage
 
-> *"Data leakage adalah ketika model 'mencontek' saat ujian — performa ujian bagus, performa nyata jelek."*
+> *"Aku bangga: modelku akurasi 99%! Tapi pas dipakai beneran, cuma 60%. Ternyata data test-nya bocor ke training."*
 
-Data leakage terjadi ketika informasi dari test set bocor ke training set, membuat model terlihat lebih akurat dari kenyataan.
+Itu pengalaman paling frustrasi dalam belajar machine learning. Model yang kukira sempurna ternyata mencontek — dia sudah lihat jawabannya saat ujian.
+
+Fenomena ini disebut **data leakage**.
 
 ---
 
@@ -15,42 +17,34 @@ Data leakage terjadi ketika informasi dari test set bocor ke training set, membu
 
 **1. Temporal Leakage**
 
-Menggunakan data masa depan untuk memprediksi masa lalu.
+Pakai data masa depan untuk prediksi masa lalu.
 
-Contoh: Training model prediksi saham dengan data 2020-2023, tapi test set juga di 2020-2023.
+Contoh: Training model prediksi harga saham 2023, tapi data training juga include data 2023.
 
-**Solusi:** Pisahkan data berdasarkan waktu (time-based split).
+**Solusi:** Pisahkan berdasarkan waktu.
 
 **2. Feature Leakage**
 
 Fitur yang mengandung informasi dari target.
 
-Contoh: Memprediksi penyakit dengan fitur "hasil tes" yang sebenarnya baru diketahui setelah diagnosis.
+Contoh: Prediksi penyakit dengan fitur "hasil lab" yang baru diketahui setelah diagnosis.
 
-**Solusi:** Hanya gunakan fitur yang tersedia saat prediksi dilakukan.
+**Solusi:** Hanya pakai fitur yang tersedia saat prediksi.
 
 **3. Duplicate Leakage**
 
-Data yang sama muncul di training dan test set.
+Data yang sama ada di training dan test.
 
-Contoh: Gambar yang sama digunakan untuk training dan testing.
-
-**Solusi:** Deduplikasi data sebelum split.
-
-**4. Scaling Leakage**
-
-Menggunakan statistik dari seluruh dataset (termasuk test) untuk scaling.
-
-Contoh: MinMaxScaler dijalankan sebelum split.
-
-**Solusi:** Fit scaler hanya pada training set, lalu transform test set.
+**Solusi:** Deduplikasi sebelum split.
 
 ---
 
-### Pencegahan
+### Cara Mencegah
 
-- **Split data sebelum preprocessing** — scaling, encoding, imputasi dilakukan setelah split
+- **Split sebelum preprocessing** — scaling, encoding dilakukan setelah split
 - **Time-based split** — untuk data deret waktu
-- **Group-based split** — pastikan data dari entitas yang sama tidak terpisah di train dan test
-- **Cross-validation yang benar** — gunakan purged k-fold untuk data deret waktu
-- **Domain expertise** — pahami fitur mana yang legitimate
+- **Pahami domain** — tahu fitur mana yang legitimate
+
+> *"Model dengan akurasi 99% patut dicurigai. Apakah dia benar-benar pintar, atau hanya mencontek?"*
+
+[Kembali ke Governance](/articles/governance/)

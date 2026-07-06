@@ -1,42 +1,68 @@
 ---
 title: Coding Standards
-description: "Standar penulisan kode yang konsisten untuk seluruh tim — CodingSkuy"
+description: "Standar coding — dari pengalaman baca kode sendiri yang tidak konsisten — CodingSkuy"
 ---
 
 # Coding Standards
 
-> *"Kode yang baik adalah kode yang terlihat seperti ditulis oleh satu orang, meskipun dikerjakan oleh 10 orang."*
+> *"6 bulan setelah nulis kode, aku membacanya lagi. 'Ini punya siapa?' Ternyata punyaku sendiri."*
+
+Itu momen yang memalukan sekaligus membuka mata. Kode yang kutulis sendiri — dengan gaya yang tidak konsisten — terasa asing ketika kubaca 6 bulan kemudian.
+
+Bayangkan kalau kode itu dibaca orang lain.
 
 ---
 
-### Formatting
+### Yang Paling Sering Jadi Masalah
 
-- **Indentasi** — 2 spasi (Dart/JS), 4 spasi (Java/PHP)
-- **Line length** — maksimal 80-120 karakter
-- **Curly braces** — di baris yang sama (Egyptian style)
-- **Trailing comma** — wajib untuk daftar parameter/items (Dart)
+**1. Formatting Tidak Konsisten**
 
-### Naming
+Dulu aku kadang pakai 2 spasi, kadang 4 spasi. Kadang `{` di baris baru, kadang di samping. Waktu baca kode sendiri, mata capek.
 
-| Elemen | Convention | Contoh |
-|--------|-----------|--------|
-| Kelas | PascalCase | `UserService` |
-| Fungsi | camelCase | `getUserById()` |
-| Variabel | camelCase | `userName` |
-| Konstanta | UPPER_SNAKE | `MAX_RETRY` |
-| File | snake_case | `user_service.dart` |
+Solusi: formatter otomatis. `dart format`, `prettier`, `php-cs-fixer`. Biarkan mesin yang urus formatting.
 
-### Komentar
+**2. Nama yang Tidak Jelas**
 
-- Komentar untuk **why**, bukan **what**
-- Hindari komentar yang hanya mengulangi kode
-- TODO harus punya issue tracker reference
-- Jangan comment out kode — hapus saja
+`data`, `temp`, `hasil`, `x` — nama variabel yang tidak menjelaskan apa-apa. Waktu debugging, harus baca seluruh fungsi untuk paham.
 
-### Best Practices
+Sekarang aku pake aturan: **kalau kamu bisa tebak isi variabel dari namanya saja, itu nama yang baik.**
 
-- Hindari magic number — gunakan konstanta
-- Setiap `if` harus punya `else` (meskipun kosong dengan komentar)
-- Handle semua error, jangan `catch (e)` kosong
-- Validasi input di layer terluar
-- Hindari `null` — gunakan Optional/Option/Maybe pattern
+**3. Komentar yang Tidak Berguna**
+
+```dart
+// increment i
+i++;
+```
+
+Komentar yang hanya mengulang kode. Tidak membantu. Komentar yang berguna:
+
+```dart
+// skip kalau user sudah login
+if (user.isLoggedIn) return;
+```
+
+---
+
+### Standar yang Kupakai
+
+| Elemen | Aturan |
+|--------|--------|
+| Indentasi | 2 spasi (Dart/JS), 4 spasi (Java/PHP) |
+| Maks baris | 80-120 karakter |
+| Nama kelas | PascalCase: `UserService` |
+| Nama fungsi | camelCase: `getUserById()` |
+| Nama file | snake_case: `user_service.dart` |
+| Komentar | untuk *why*, bukan *what* |
+
+---
+
+### Prinsip
+
+- **Konsisten** — lebih baik konsisten pakai aturan yang "kurang ideal" daripada tidak konsisten
+- **Otomatis** — gunakan linter dan formatter. Manusia tidak perlu mikirin formatting
+- **Eksplisit** — `getUserByEmail()` lebih baik dari `getUser()`
+- **Kontekstual** — `name` di dalam `User` sudah jelas. `userName` di global
+
+> *"Kode yang baik terlihat seperti ditulis satu orang — meskipun dikerjakan 10 orang."*
+
+[Kembali ke Governance](/articles/governance/)

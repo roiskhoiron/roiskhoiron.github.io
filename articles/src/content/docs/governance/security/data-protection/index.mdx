@@ -1,47 +1,60 @@
 ---
 title: Data Protection
-description: "Melindungi data pengguna di aplikasi kamu — CodingSkuy"
+description: "Melindungi data pengguna — dari pengalaman hampir bocorin data sensitif — CodingSkuy"
 ---
 
 # Data Protection
 
-> *"Data adalah aset paling berharga. Jaga seperti kamu menjaga milikmu sendiri."*
+> *"Waktu debugging, aku print object user ke console. Berisi email, nomor telepon, alamat. Lupa dihapus. Ke production."*
+
+Beruntung, ada yang lihat di code review sebelum merge. Tapi itu momen yang bikin aku sadar: data protection bisa gagal karena hal sesederhana lupa hapus log.
+
+---
+
+### Yang Paling Sering Bocor
+
+Dari pengalaman dan baca insiden orang lain:
+
+| Sumber Kebocoran | Contoh |
+|-----------------|--------|
+| **Logging** | Print data sensitif ke console/log |
+| **Error message** | Stack trace yang bocor ke client |
+| **API response** | Field yang seharusnya tidak terekspos |
+| **File upload** | File bisa diakses tanpa autentikasi |
+| **Backup** | Backup database di public bucket |
 
 ---
 
 ### Klasifikasi Data
 
-| Level | Contoh | Proteksi |
-|-------|--------|----------|
-| **Public** | Nama produk, halaman blog | Standar |
-| **Internal** | Kode sumber, dokumentasi | Akses terbatas |
-| **Confidential** | Data pengguna, financial | Enkripsi + akses ketat |
-| **Restricted** | Password, token, Kunci API | Enkripsi kuat + audit |
+Aku bagi data jadi 3 level:
+
+- **Publik** — nama produk, artikel — proteksi standar
+- **Internal** — kode sumber, dokumentasi — akses terbatas
+- **Sensitif** — password, token, data pengguna — enkripsi + akses ketat
+
+Semakin sensitif, semakin ketat perlakuannya.
 
 ---
 
-### Enkripsi
+### Praktik Harian
 
-**In Transit:**
-- Wajib HTTPS (TLS 1.2+)
-- HSTS header
-- Certificate pinning untuk mobile app
+1. **Jangan log data sensitif** — kalau perlu logging untuk debugging, pastikan dihapus sebelum production
+2. **Enkripsi** — HTTPS untuk in transit, AES untuk at rest
+3. **Minimalkan** — hanya kumpulkan data yang benar-benar dibutuhkan
+4. **Hapus** — kalau data sudah tidak diperlukan, hapus
+5. **Backup** — backup terenkripsi, akses terbatas
 
-**At Rest:**
-- Enkripsi database (AES-256)
-- Enkripsi file upload
-- Jangan simpan sensitive data di log
+---
 
-### Praktik
+### Checklist
 
-- **Minimalisasi** — hanya kumpulkan data yang benar-benar dibutuhkan
-- **Anonimisasi** — hapus PII dari data analytics
-- **Retensi** — tentukan berapa lama data disimpan, hapus setelah tidak diperlukan
-- **Backup** — backup terenkripsi dengan disaster recovery plan
+- [ ] Tidak ada data sensitif di log?
+- [ ] Semua API pake HTTPS?
+- [ ] Password di-hash?
+- [ ] File upload terproteksi?
+- [ ] Backup di tempat aman?
 
-### Regulasi
+> *"Data pengguna bukan milikmu. Kamu cuma dititipi. Jaga seperti itu."*
 
-Pahami regulasi yang relevan:
-- **UU PDP** (Indonesia) — wajib untuk aplikasi dengan pengguna Indonesia
-- **GDPR** — jika ada pengguna Eropa
-- **HIPAA** — jika berurusan dengan data kesehatan (AS)
+[Kembali ke Governance](/articles/governance/)

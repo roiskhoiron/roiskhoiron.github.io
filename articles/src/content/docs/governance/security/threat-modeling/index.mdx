@@ -1,67 +1,69 @@
 ---
 title: Threat Modeling
-description: "Memikirkan skenario serangan sebelum terjadi — CodingSkuy"
+description: "Memikirkan skenario serangan — dari pengalaman baru sadar celah setelah ditunjukkin orang — CodingSkuy"
 ---
 
 # Threat Modeling
 
-> *"Threat modeling adalah latihan 'bagaimana jika' untuk keamanan aplikasi."*
+> *"Aku pikir aplikasiku aman. Sampai teman bilang: 'Coba klik ini...' dan aku bisa akses data orang lain."*
 
-Threat modeling adalah proses sistematis untuk mengidentifikasi, mengkategorikan, dan memprioritaskan potensi ancaman keamanan.
-
----
-
-### Framework: STRIDE
-
-| Threat | Contoh |
-|--------|--------|
-| **S**poofing | Orang berpura-pura jadi user lain |
-| **T**ampering | Data diubah di tengah perjalanan |
-| **R**epudiation | User menyangkal melakukan transaksi |
-| **I**nformation Disclosure | Data bocor ke pihak tidak berwenang |
-| **D**enial of Service | Server dibanjiri request |
-| **E**levation of Privilege | User biasa bisa akses admin |
+Threat modeling adalah latihan *"bagaimana jika"* sebelum serangan benar-benar terjadi. Lebih baik mencari celah sendiri daripada ditemukan orang jahat.
 
 ---
 
-### Proses
+### Cara Sederhana: STRIDE
 
-**1. Identifikasi Aset**
+Aku pakai STRIDE untuk kategorisasi ancaman:
 
-Data apa yang paling berharga? (password, data pengguna, API key)
-
-**2. Identifikasi Threat**
-
-Untuk setiap aset, apa yang bisa salah? (gunakan STRIDE)
-
-**3. Analisis Dampak**
-
-Apa yang terjadi jika threat ini terealisasi? Seberapa parah?
-
-**4. Prioritaskan**
-
-| Dampak \ Kemungkinan | Rendah | Tinggi |
-|----------------------|--------|--------|
-| **Tinggi** | Medium | **Critical** |
-| **Rendah** | Low | Medium |
-
-**5. Mitigasi**
-
-Apa yang dilakukan untuk mengurangi risiko?
+| Threat | Arti | Contoh |
+|--------|------|--------|
+| **S**poofing | Pura-pura jadi orang lain | Login pake credential orang |
+| **T**ampering | Ubah data di tengah jalan | Intercept request, ganti nominal |
+| **R**epudiation | Menyangkal sudah melakukan | "Saya tidak transfer uang itu" |
+| **I**nformation Disclosure | Data bocor | Log response API yang terlalu detail |
+| **D**enial of Service | Bikin sistem tidak bisa diakses | Request banjir ke server |
+| **E**levation of Privilege | Dapat akses lebih dari seharusnya | User biasa jadi admin |
 
 ---
 
-### Tools
+### Proses yang Kupakai
 
-- **OWASP Threat Dragon** — diagram ancaman visual
-- **Microsoft Threat Modeling Tool** — untuk aplikasi Windows
-- **Draw.io** — untuk diagram sederhana
+**1. Pilih aset paling berharga**
+
+Data apa yang paling penting? (password, data keuangan, data pribadi)
+
+**2. Pikirkan skenario terburuk**
+
+Apa yang terburuk bisa terjadi pada aset ini? (Gunakan STRIDE)
+
+**3. Cari mitigasi**
+
+Apa yang bisa dilakukan untuk mencegah? Atau mengurangi dampak?
+
+**4. Dokumentasikan**
+
+Catat temuan. Jangan hanya di kepala.
 
 ---
 
-### Prinsip
+### Contoh dari Pengalaman
 
-- Libatkan seluruh tim, bukan hanya security engineer
-- Lakukan sejak tahap desain, bukan setelah jadi
-- Update ketika ada perubahan signifikan
-- Jangan terjebak analisis berlarut — lebih baik threat modeling sederhana daripada tidak sama sekali
+Aplikasi: Sistem manajemen konten.
+
+| Aset | Ancaman | Mitigasi |
+|------|---------|----------|
+| Data login | Spoofing (brute force) | Rate limiting, MFA |
+| Artikel | Tampering (ubah konten) | Audit log, backup |
+| API key | Information Disclosure (bocor di log) | Filter log, scan commit |
+
+---
+
+### Tips
+
+- Libatkan tim, bukan hanya engineer. Perspektif berbeda menemukan celah berbeda
+- Lakukan sejak desain, bukan setelah jadi
+- Sederhana saja. Threat modeling 15 menit lebih baik daripada tidak sama sekali
+
+> *"Cari celah sebelum orang jahat menemukannya."*
+
+[Kembali ke Governance](/articles/governance/)

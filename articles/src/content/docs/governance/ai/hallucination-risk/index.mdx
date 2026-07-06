@@ -1,13 +1,15 @@
 ---
 title: Hallucination Risk
-description: "Mengelola risiko halusinasi pada LLM dan generative AI — CodingSkuy"
+description: "Halusinasi AI — dari pengalaman LLM bikin kutipan yang tidak ada — CodingSkuy"
 ---
 
 # Hallucination Risk
 
-> *"LLM tidak tahu mana fakta dan mana fiksi. Mereka hanya pandai merangkai kata yang terlihat meyakinkan."*
+> *"LLM bilang: 'Menurut penelitian Harvard 2023...' Masalahnya: penelitian itu tidak pernah ada. LLM mengarangnya."*
 
-Hallucination adalah ketika model AI menghasilkan output yang terdengar masuk akal tapi faktanya salah.
+Halusinasi adalah ketika AI menghasilkan output yang terdengar meyakinkan tapi sepenuhnya salah.
+
+Ini bukan bug. Ini fitur dari cara LLM bekerja: mereka merangkai kata yang paling mungkin, bukan mencari kebenaran.
 
 ---
 
@@ -15,50 +17,40 @@ Hallucination adalah ketika model AI menghasilkan output yang terdengar masuk ak
 
 | Tipe | Contoh |
 |------|--------|
-| **Factual** | Menyebutkan peristiwa yang tidak pernah terjadi |
-| **Contextual** | Menjawab di luar konteks pertanyaan |
-| **Logical** | Argumen yang inkonsisten secara logika |
-| **Source** | Mengutip sumber yang tidak ada |
+| **Fakta palsu** | Menyebut peristiwa yang tidak pernah terjadi |
+| **Sumber palsu** | Mengutip jurnal/artikel yang tidak ada |
+| **Logika rusak** | Argumen yang inkonsisten |
 
 ---
 
 ### Penyebab
 
-- Model tidak tahu batas pengetahuannya (tidak bisa bilang "saya tidak tahu")
-- Training data mengandung informasi yang salah
-- Prompt yang ambigu atau menyesatkan
-- Tidak ada grounding ke sumber tepercaya
+- Model tidak tahu batas pengetahuannya (tidak bisa bilang "tidak tahu")
+- Prompt ambigu
+- Tidak ada sumber eksternal untuk verifikasi
 
 ---
 
 ### Mitigasi
 
-**1. Grounding — RAG (Retrieval-Augmented Generation)**
+**1. Grounding — hubungkan ke sumber nyata**
 
-Hubungkan model ke knowledge base eksternal. Setiap jawaban harus didasarkan pada dokumen yang di-retrieve, bukan hanya parameter model.
+Pakai RAG (Retrieval-Augmented Generation). Setiap jawaban harus didasarkan pada dokumen yang di-retrieve, bukan hanya parameter model.
 
-**2. Prompt Engineering**
+**2. Prompt yang jelas**
 
-- Instruksi eksplisit: *"Jika tidak tahu, katakan tidak tahu"*
-- Batasi output ke format tertentu
-- Minta model menyertakan sumber
+Beri instruksi eksplisit: *"Jika tidak tahu, katakan tidak tahu."*
 
-**3. Human-in-the-Loop**
+**3. Validasi**
 
-Untuk use case kritis (medis, hukum, finansial), selalu ada review manusia.
+Cross-check output dengan sumber eksternal.
 
-**4. Validation**
+**4. Human-in-the-loop**
 
-- Cross-check fakta dengan sumber eksternal
-- Gunakan model kedua untuk verifikasi
-- Confidence threshold — jangan tampilkan jawaban dengan confidence rendah
+Untuk keputusan penting (medis, hukum, finansial), selalu ada review manusia.
 
 ---
 
-### Checklist
+> *"AI yang jujur mengakui ketidaktahuannya lebih berharga daripada AI yang percaya diri dengan jawaban salah."*
 
-- [ ] Model terhubung ke knowledge base (RAG)?
-- [ ] Ada disclaimer bahwa AI bisa salah?
-- [ ] Use case kritis punya human review?
-- [ ] Output divalidasi sebelum ditampilkan?
-- [ ] Ada mekanisme feedback untuk laporan error?
+[Kembali ke Governance](/articles/governance/)

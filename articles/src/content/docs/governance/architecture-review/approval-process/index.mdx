@@ -1,43 +1,57 @@
 ---
 title: Architecture Approval Process
-description: "Proses persetujuan arsitektur: menjaga konsistensi tanpa memperlambat tim — CodingSkuy"
+description: "Proses persetujuan arsitektur dari pengalaman tim — CodingSkuy"
 ---
 
 # Architecture Approval Process
 
-> *"Arsitektur yang baik bukan hasil dari satu orang jenius. Tapi hasil dari proses review yang sehat."*
+> *"Dulu aku pikir arsitektur cukup diputuskan sendiri. Sampai aku harus memperbaiki sistem yang dibangun tanpa kesepakatan tim."*
 
-Setiap keputusan arsitektur adalah investasi jangka panjang. Salah pilih hari ini, tim bisa membayar bunganya selama bertahun-tahun.
+Waktu pertama kerja di tim, aku punya kebiasaan: kalau ada keputusan arsitektur, aku putuskan sendiri. Cepat. Efisien. Toh aku yang ngoding.
 
-Tapi di sisi lain, kalau setiap keputusan harus melalui birokrasi yang panjang, tim tidak akan pernah bergerak cepat.
+Masalahnya muncul belakangan.
 
-Arsitektur approval process menjembatani keduanya: **menjaga kualitas tanpa mengorbankan kecepatan.**
+Tim lain bikin fitur yang bergantung pada modul yang aku bangun. Ternyata strukturnya berbeda dengan ekspektasi mereka. Harus ada adaptasi. Waktu terbuang. Akhirnya ada yang nulis ulang.
 
----
-
-### Kapan Approval Diperlukan?
-
-Tidak semua keputusan perlu approval. Bedakan:
-
-| Level Keputusan | Contoh | Perlu Approval? |
-|----------------|--------|----------------|
-| **Strategis** | Pilih database, pilih arsitektur utama | ✅ Ya, oleh tech lead/architect |
-| **Taktis** | Pilih library, desain modul tertentu | ⚠️ Kadang, tergantung dampak |
-| **Operasional** | Implementasi fitur harian | ❌ Tidak, cukup code review |
+Dari situlah aku paham: **arsitektur bukan urusan sendiri. Urusan bersama.**
 
 ---
 
-### Alur Approval Sederhana
+### Kenapa Approval Diperlukan?
 
-1. **RFC (Request for Comments)** — tulis proposal, jelaskan konteks, opsi, dan rekomendasi
-2. **Review** — tim memberikan masukan dalam periode tertentu
-3. **Decision** — tech lead/architect memutuskan, dengan mempertimbangkan masukan
-4. **ADR (Architecture Decision Record)** — dokumentasikan keputusan dan alasannya
+Bukan karena tidak percaya. Tapi karena:
+- **Konsistensi** — semua modul pakai pola yang sama
+- **Knowledge sharing** — tim tahu kenapa keputusan diambil
+- **Risk mitigation** — ada yang lihat dari sudut pandang berbeda
+
+Tidak semua keputusan perlu approval. Ini yang kupelajari dari pengalaman:
+
+| Level | Contoh | Perlu Approval? |
+|-------|--------|----------------|
+| **Pilih framework** | Flutter vs React Native | ✅ Ya, diskusi tim |
+| **Arsitektur modul** | Pake BLoC atau Riverpod | ⚠️ Mungkin, lihat dampak |
+| **Nama variabel** | camelCase vs snake_case | ❌ Cukup coding standards |
 
 ---
 
-### Prinsip
+### Alur yang Kupakai Sekarang
 
-- **Batas waktu jelas** — review tidak boleh molor tak terbatas
-- **Alasan, bukan wewenang** — keputusan didasarkan pada argumen, bukan jabatan
-- **Dokumentasi wajib** — keputusan tanpa dokumentasi adalah keputusan yang tidak pernah ada
+**1. Tulis proposal singkat** — masalah, opsi, rekomendasi
+**2. Share ke tim** — di channel Slack atau PR khusus
+**3. Tunggu masukan** — 1-3 hari, tergantung urgensi
+**4. Putuskan** — kalau ada perbedaan, tech lead yang final
+**5. Dokumentasikan** — ADR biar tidak dilupakan
+
+Paling penting: **ada batas waktu.** Dulu aku pernah lihat proposal arsitektur dibahas berminggu-minggu tanpa keputusan. Akhirnya tim frustrated. Sekarang aku terapin: maksimal 3 hari.
+
+---
+
+### Yang Kupelajari
+
+- Approval bukan birokrasi — ini alat komunikasi
+- Kalau proposal ditolak, itu bukan kegagalan — lebih baik tahu dari awal daripada di tengah jalan
+- Dokumentasi adalah kunci — keputusan tanpa dokumentasi akan ditanyakan lagi tahun depan
+
+> *"Arsitektur yang baik lahir dari diskusi, bukan dari satu orang jenius."*
+
+[Kembali ke Governance](/articles/governance/) | [Lihat Semua Topik](/articles/)

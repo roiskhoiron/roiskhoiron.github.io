@@ -1,53 +1,58 @@
 ---
 title: Review Checklist
-description: "Checklist code review untuk memastikan kualitas kode — CodingSkuy"
+description: "Checklist code review dari pengalaman — apa yang sebenarnya penting diperiksa — CodingSkuy"
 ---
 
 # Review Checklist
 
-> *"Checklist tidak membuatmu jadi reviewer yang baik. Tapi mencegahmu melewatkan hal-hal penting."*
+> *"Waktu pertama kodeku di-review, komentarnya cuma satu: 'Ini fungsi terlalu panjang.' Aku kesal. Tapi itu yang membuatku jadi engineer lebih baik."*
 
-Berikut checklist yang saya pakai saat code review:
+Checklist ini bukan lahir dari buku. Lahir dari pengalaman: dari kode yang aku review, dari kode yang aku tulis dan direview orang lain, dan dari bug-bug yang terlewat karena review yang tidak teliti.
 
 ---
 
-### Fungsional
+### Fungsional — Apakah Ini Bekerja?
 
-- [ ] Apakah kode sesuai dengan spesifikasi?
-- [ ] Apakah ada edge case yang tidak ditangani?
-- [ ] Apakah error handling sudah memadai?
-- [ ] Apakah ada regression risk?
+- Apakah kode sesuai dengan spesifikasi?
+- Apakah ada case yang tidak ditangani? (loading, error, empty state)
+- Apakah error handling ada di tempat yang tepat?
+- Apakah perubahan ini merusak fitur lain? (regression)
 
-### Struktur
+Dulu aku sering lupa nanya nomor 4. Sampai suatu kali "perubahan kecil" merusak halaman login. Sekarang selalu aku cek.
 
-- [ ] Apakah kode mengikuti arsitektur yang sudah disepakati?
-- [ ] Apakah ada duplikasi kode yang tidak perlu?
-- [ ] Apakah nama fungsi/variabel jelas?
-- [ ] Apakah kompleksitas sirkuit (cyclomatic) masih wajar?
+### Struktur — Apakah Ini Rapih?
 
-### Testing
+- Apakah kode mengikuti arsitektur yang disepakati?
+- Apakah ada duplikasi? Kalau ada, apa alasannya?
+- Apakah nama fungsi/variabel menjelaskan apa yang dilakukan?
+- Apakah fungsi terlalu panjang? (>30 baris biasanya tanda bahaya)
 
-- [ ] Apakah ada unit test untuk logic baru?
-- [ ] Apakah test yang ada masih passing?
-- [ ] Apakah edge case tertest?
+### Testing — Apakah Ini Aman?
 
-### Security
+- Apakah logic baru punya test?
+- Apakah test yang ada masih passing?
+- Apakah ada test untuk edge case?
 
-- [ ] Apakah ada input yang tidak divalidasi?
-- [ ] Apakah ada hardcoded credential?
-- [ ] Apakah ada potensi injection?
+Aku dulu malas nulis test. Sampai refactor tanpa test membuatku takut menyentuh kode yang sudah jalan.
 
-### Performance
+### Security — Apakah Ini Rentan?
 
-- [ ] Apakah ada N+1 query?
-- [ ] Apakah ada operasi berat di main thread?
-- [ ] Apakah resource (gambar, file) di-load efisien?
+- Apakah input divalidasi?
+- Apakah ada hardcoded credential?
+- Apakah ada potensi injection?
+
+### Performance — Apakah Ini Efisien?
+
+- Apakah ada N+1 query? (paling sering terjadi)
+- Apakah ada operasi berat di main thread?
+- Apakah resource di-load secara efisien?
 
 ---
 
 ### Cara Pakai
 
-1. Checklist ini panduan, bukan hukum
-2. Prioritaskan finding berdasarkan dampak
-3. Jangan request perubahan kecil yang tidak berdampak signifikan (typo, formatting) — cukup comment saja
-4. Kalau checklist terasa panjang untuk PR kecil, gunakan judgment
+Checklist ini panduan, bukan vonis. Kalau PR-nya cuma 10 baris, tidak perlu dicek semua. Tapi semakin besar perubahan, semakin ketat checklist.
+
+> *"Review yang baik bukan yang menemukan banyak masalah. Tapi yang mencegah masalah besar masuk ke production."*
+
+[Kembali ke Governance](/articles/governance/)

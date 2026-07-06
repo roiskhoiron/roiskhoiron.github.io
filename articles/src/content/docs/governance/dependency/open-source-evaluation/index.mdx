@@ -1,58 +1,62 @@
 ---
 title: Open Source Evaluation
-description: "Kerangka evaluasi library open source sebelum dipakai di proyek — CodingSkuy"
+description: "Cara mengevaluasi library open source — dari pengalaman pilih dan menyesal — CodingSkuy"
 ---
 
 # Open Source Evaluation
 
-> *"Menggunakan open source seperti mengadopsi kucing: kamu tidak hanya bertanggung jawab untuk hari ini, tapi untuk seterusnya."*
+> *"Pakai library open source seperti adopsi kucing. Kamu bertanggung jawab untuk selamanya."*
 
-Memilih library open source yang salah bisa jadi bencana. Saya pernah mengalaminya: pilih library yang ternyata tidak terawat, buntu di bug yang tidak bisa diperbaiki, dan harus migrasi di tengah sprint.
+Aku belajar ini dengan cara yang keras.
 
-Berikut kerangka evaluasi yang saya pakai:
+Waktu proyek Android, aku pake library populer untuk image loading. Berbintang banyak. Dokumentasi bagus. Semua sempurna. Sampai 6 bulan kemudian library itu berhenti di-maintenance. Ada bug di versi Android baru. Tidak ada yang perbaiki.
 
----
+Harus migrasi ke library lain. Butuh waktu 3 hari untuk ganti di seluruh codebase.
 
-### 1. Popularitas & Komunitas
-
-| Metrik | Yang Dicari |
-|--------|-------------|
-| **Stars** | >1.000 untuk library populer, >100 untuk niche |
-| **Contributors** | >10 contributor aktif |
-| **Last commit** | <6 bulan (untuk library aktif) |
-| **Issues** | Ada response dari maintainer |
-
-### 2. Kualitas Kode
-
-- Apakah ada test? (coverage >70%)
-- Apakah dokumentasi jelas?
-- Apakah ada contoh penggunaan?
-- Apakah API intuitive?
-
-### 3. Lisensi
-
-Pastikan lisensi kompatibel dengan proyekmu:
-- **MIT/Apache** — aman untuk proyek komersial
-- **GPL** — hati-hati, bisa memaksa proyekmu open source juga
-- **LGPL** — aman selama penggunaan tidak memodifikasi library
-
-### 4. Maintenance
-
-- Seberapa cepat bug diperbaiki?
-- Apakah ada release regular?
-- Apakah ada breaking changes sering?
-- Apakah maintainer responsif?
-
-### 5. Risiko Migrasi
-
-- Seberapa sulit pindah ke library lain jika diperlukan?
-- Apakah library ini tightly coupled dengan kode kita?
-- Apakah ada abstraksi yang melindungi dari perubahan?
+Sejak itu aku punya kerangka evaluasi sebelum memutuskan pakai library.
 
 ---
 
-### Prinsip
+### Yang Paling Sering Kulihat
 
-1. **Semakin penting library, semakin ketat evaluasi** — library core (state management, networking) perlu evaluasi lebih ketat daripada utility kecil
-2. **Dokumentasikan keputusan** — catat kenapa library ini dipilih, biar tim tahu di masa depan
-3. **Siapkan exit plan** — bagaimana jika library ini mati besok?
+| Yang Terlihat di Luar | Yang Sebenarnya |
+|-----------------------|----------------|
+| Bintang 10k | Tapi 2 tahun tidak di-update |
+| Dokumentasi bagus | Tapi codebase-nya berantakan |
+| Banyak dipakai | Tapi maintainer cuma 1 orang |
+
+---
+
+### Kerangka Evaluasi
+
+**1. Apakah ini terawat?**
+- Kapan terakhir di-commit? (<6 bulan untuk library aktif)
+- Berapa banyak kontributor? (>5 kontributor reguler ideal)
+- Apakah isu ditanggapi? (cek issues, ada response dari maintainer)
+
+**2. Apakah kualitasnya baik?**
+- Ada test? (cek coverage)
+- API-nya intuitive?
+- Dokumentasinya jelas?
+
+**3. Bagaimana risikonya?**
+- Seberapa susah migrasi kalau library ini mati?
+- Apakah tightly coupled dengan kode kita?
+- Apakah lisensinya kompatibel? (MIT/Apache aman, GPL perlu hati-hati)
+
+**4. Apakah benar-benar perlu?**
+- Bisa ditulis sendiri? Kalau fiturnya sederhana, lebih baik tulis manual
+- Apakah library ini terlalu besar untuk kebutuhan kecil?
+
+---
+
+### Yang Kupelajari
+
+- Library populer belum tentu yang terbaik
+- Kalau ragu, cari alternatif. Jangan ambil yang pertama kali ditemukan
+- Siapkan exit plan. Pertanyaan: "Kalau library ini mati besok, apa yang kita lakukan?"
+- Dokumentasikan kenapa library ini dipilih. Tim di masa depan perlu tahu
+
+> *"Library yang baik adalah yang bisa kamu tinggalkan — tanpa menangis."*
+
+[Kembali ke Governance](/articles/governance/)

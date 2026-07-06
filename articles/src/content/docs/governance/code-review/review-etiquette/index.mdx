@@ -1,17 +1,15 @@
 ---
 title: Review Etiquette
-description: "Etika code review: memberi kritik tanpa menyakiti, menerima kritik tanpa defensif — CodingSkuy"
+description: "Etika code review — dari pengalaman pertama kali kode di-review sampai jadi reviewer — CodingSkuy"
 ---
 
 # Review Etiquette
 
-> *"Code review bukan ajang pamer siapa yang paling pintar. Tapi proses bersama untuk membuat kode lebih baik."*
+> *"Komentar pertama di PR pertamaku: 'Fungsi ini terlalu panjang.' Awalnya aku merasa diserang. Ternyata itu investasi paling berharga."*
 
-Saya ingat pertama kali kode saya di-review di Dicoding. Komentarnya: *"Fungsi ini terlalu panjang."*
+Aku ingat persis code review pertamaku di Dicoding. Mentorku dari Tokopedia meninggalkan komentar: *"Fungsi ini terlalu panjang, bisa dipisah jadi dua."*
 
-Reaksi pertama saya? Bertahan. Saya pikir kode saya sudah baik.
-
-Tapi setelah mentor menjelaskan *mengapa* — readability, testability, maintainability — saya paham. Ini bukan kritik. Ini investasi.
+Reaksiku: defensif. Kupikir kodeku sudah baik. Tapi setelah dia menjelaskan *mengapa* — readability, testability, maintainability — aku paham. Ini bukan serangan. Ini bantuan.
 
 ---
 
@@ -19,50 +17,57 @@ Tapi setelah mentor menjelaskan *mengapa* — readability, testability, maintain
 
 **1. Kritik kode, bukan orangnya**
 
-Bukan: *"Kamu kok bikin fungsi panjang begini?"*
-Tapi: *"Fungsi ini bisa dipisah jadi dua untuk readability."*
+Bukan: *"Kamu kok bikin kode kayak gini?"*
+Tapi: *"Fungsi ini bisa dipisah jadi lebih rapi karena..."*
 
-**2. Jelaskan "kenapa"**
+**2. Jelaskan kenapa**
 
-Bukan hanya *"Ini kurang baik"*, tapi *"Ini kurang baik karena..."*
+Bukan cuma bilang "ini jelek." Tapi "ini jelek karena..." Sertakan alasan.
 
-**3. Tawarkan alternatif, bukan hanya masalah**
+**3. Tawarkan alternatif**
 
-Kalau kamu melihat masalah, usulkan solusi. Atau minimal arahkan ke referensi.
+Kalau kamu tahu solusi yang lebih baik, tawarkan. Atau arahkan ke referensi/dokumentasi.
 
-**4. Gunakan "Nitpick" untuk hal kecil**
+**4. Label untuk skala prioritas**
 
-Label comment dengan "nit:" untuk hal sepele (typo, formatting) agar penulis tahu ini bukan blocker.
+Pembedaan yang kupelajari:
+- **Blocker** — harus diperbaiki sebelum merge
+- **Should** — idealnya diperbaiki, tapi bukan blocker
+- **Nitpick** — preferensi pribadi, terserah penulis
 
-**5. Hargai usaha**
+**5. Mulai dengan apresiasi**
 
-Mulai review dengan mengapresiasi apa yang baik. Bukan basa-basi, tapi genuine.
+Sebelum kritik, hargai apa yang baik. Bukan basa-basi. Tulus.
 
 ---
 
 ### Untuk Penulis
 
-**1. Anggap review sebagai bantuan, bukan serangan**
+**1. Jangan defensif**
 
-Reviewer meluangkan waktu untuk membuat kodemu lebih baik. Hargai itu.
+Reviewer meluangkan waktu untuk kodemu. Hargai itu. Kalau tidak setuju, tanya: *"Kenapa menurutmu pendekatan lain lebih baik?"*
 
-**2. Jangan defensif**
+**2. Terima yang masuk akal**
 
-Kalau ada komentar yang kamu tidak setuju, tanyakan. Bukan dengan "ini sudah benar", tapi dengan "kenapa menurutmu ini perlu diubah?"
+Komentar yang jelas dan beralasan? Terima dan perbaiki. Jangan berdebat untuk hal kecil.
 
-**3. Terima dan perbaiki**
+**3. Tanya yang tidak jelas**
 
-Kalau komentarnya masuk akal, terima dan perbaiki. Tidak perlu berdebat untuk hal kecil.
+Kalau komentar tidak kamu pahami, tanya. Bukan diam lalu *resolve*.
 
 **4. Ucapkan terima kasih**
 
-Reviewer tidak punya kewajiban untuk mereview kodemu. Luangkan waktu untuk berterima kasih.
+Sesederhana *"Thanks for the review"* membuat perbedaan besar.
 
 ---
 
 ### Yang Tidak Boleh Terjadi
 
-- Review yang molor >24 jam untuk PR sederhana
-- Review yang isinya cuma "LGTM" tanpa baca
-- Diskusi yang berlarut-larut di comment PR
-- Review yang menyalahkan penulis secara personal
+- Review yang molor >24 jam
+- Review cuma "LGTM" tanpa baca
+- Debat berkepanjangan di comment PR
+- Kritik personal
+
+> *"Code review bukan ajang pamer siapa paling pintar. Tapi proses bersama membuat kode lebih baik."*
+
+[Kembali ke Governance](/articles/governance/)

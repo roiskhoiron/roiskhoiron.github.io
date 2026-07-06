@@ -1,60 +1,58 @@
 ---
 title: Authorization
-description: "Otorisasi: siapa boleh apa di sistem kamu — CodingSkuy"
+description: "Otorisasi — dari pengalaman user bisa akses data orang lain karena bug — CodingSkuy"
 ---
 
 # Authorization
 
-> *"Autentikasi tahu siapa kamu. Otorisasi tahu apa yang boleh kamu lakukan."*
+> *"Pernah lihat bug di mana user A bisa lihat data user B? Itu bukan bug autentikasi. Itu kegagalan otorisasi."*
+
+Waktu pertama bikin fitur multi-user, aku cuma andalkan login. Kalau sudah login, semua fitur bisa diakses.
+
+Sampai seorang teman bilang: *"Coba klik URL ini."* Aku bisa lihat data dia. Padahal aku bukan admin.
+
+Saat itu aku baru paham: **login cuma buktikan identitas. Tapi tidak menentukan apa yang boleh dilakukan.**
 
 ---
 
-### Model Otorisasi
+### Tiga Model yang Kupelajari
 
-**1. RBAC (Role-Based Access Control)**
+**1. RBAC — Role-Based Access Control**
 
-User diberi role, role punya permission.
+Yang paling sering kupakai. User dikasih role, role punya permission.
 
 Contoh:
-- `admin` → CRUD semua data
-- `editor` → CRUD konten, tidak bisa manage user
-- `viewer` → read-only
+- `admin` — bisa apa saja
+- `editor` — CRUD konten
+- `viewer` — lihat saja
 
-**Cocok untuk:** Aplikasi dengan hierarki peran yang jelas.
+Cocok untuk: Aplikasi dengan hierarki peran jelas.
 
-**2. ABAC (Attribute-Based Access Control)**
+**2. ABAC — Attribute-Based Access Control**
 
-Akses ditentukan oleh atribut: user, resource, environment.
+Lebih granular. Akses ditentukan oleh atribut.
 
-Contoh: *"Dosen bisa nilai mahasiswanya sendiri, bukan dosen lain."*
+Contoh: "Dosen bisa nilai mahasiswanya sendiri." Bukan semua dosen, hanya dosen yang mengajar kelas itu.
 
-**Cocok untuk:** Sistem kompleks dengan aturan akses granular.
-
-**3. ACL (Access Control List)**
-
-Setiap resource punya daftar user/role yang boleh mengaksesnya.
-
-**Cocok untuk:** Dokumen/file system.
+Cocok untuk: Sistem kompleks dengan banyak aturan.
 
 ---
 
-### Implementasi
+### Implementasi Sederhana
 
-**Backend:**
-- Middleware untuk check permission di setiap endpoint
-- Jangan percaya request dari client — selalu verifikasi di server
-- Gunakan policy/guard pattern untuk isolasi logic authorization
-
-**Frontend:**
-- Sembunyikan UI yang tidak accessible (tapi jangan andalkan ini sebagai security)
-- Handle 403 response dengan graceful
+Yang kupakai di proyek:
+1. **Backend middleware** — cek permission di setiap endpoint yang sensitif
+2. **Frontend** — sembunyikan tombol yang tidak accessible (tapi jangan andalkan ini)
+3. **Audit log** — catat siapa akses apa
 
 ---
 
-### Checklist
+### Aturan Emas
 
-- [ ] Default deny — semua akses ditolak kecuali diizinkan eksplisit
-- [ ] Principle of least privilege — user hanya punya akses minimum
-- [ ] Separation of duties — operasi kritis butuh approval lebih dari satu orang
-- [ ] Audit log — catat siapa mengakses apa
-- [ ] Review berkala — permission yang tidak dipakai harus dicabut
+- **Default deny** — semua akses ditolak kecuali diizinkan eksplisit
+- **Least privilege** — user hanya punya akses minimum untuk kerja mereka
+- **Validasi server** — jangan percaya data dari client. Serangan bisa datang dari mana saja
+
+> *"Autentikasi: 'Kamu siapa?' Otorisasi: 'Apa yang boleh kamu lakukan?' Keduanya wajib."*
+
+[Kembali ke Governance](/articles/governance/)

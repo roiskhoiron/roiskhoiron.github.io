@@ -1,60 +1,55 @@
 ---
 title: Explainability
-description: "Membuat keputusan AI bisa dijelaskan kepada manusia — CodingSkuy"
+description: "Membuat keputusan AI bisa dijelaskan — dari pengalaman tidak bisa jawab 'kenapa modelku bilang ini' — CodingSkuy"
 ---
 
 # Explainability
 
-> *"AI yang tidak bisa dijelaskan adalah kotak hitam. Dan kotak hitam tidak bisa dipercaya."*
+> *"Boss bertanya: 'Kenapa model ini menolak pengajuan si A?' Aku cuma bisa jawab: 'Soalnya model bilang gitu.' Itu jawaban yang memalukan."*
 
-Explainability (XAI) adalah kemampuan untuk menjelaskan mengapa model AI membuat keputusan tertentu.
+Model AI sering disebut **black box**. Kita tahu input dan output, tapi tidak tahu apa yang terjadi di dalam.
+
+Padahal dalam banyak situasi, kita butuh menjelaskan *kenapa* suatu keputusan diambil.
 
 ---
 
-### Kenapa Penting?
+### Kenapa Explainability Penting?
 
-- **Trust** — pengguna lebih percaya jika tahu alasannya
-- **Debugging** — temukan penyebab error model
-- **Compliance** — regulasi (GDPR, UU PDP) mengharuskan penjelasan
-- **Fairness** — deteksi bias dengan melihat fitur yang mempengaruhi keputusan
+- **Kepercayaan** — pengguna lebih percaya jika tahu alasannya
+- **Debugging** — temukan penyebab error
+- **Compliance** — regulasi minta penjelasan
+- **Fairness** — deteksi bias dari fitur yang mempengaruhi keputusan
 
 ---
 
 ### Tingkat Explainability
 
-| Level | Deskripsi | Contoh Metode |
-|-------|-----------|---------------|
-| **Global** | Memahami model secara keseluruhan | Feature importance, partial dependence plot |
-| **Local** | Memahami prediksi spesifik | LIME, SHAP |
-| **Counterfactual** | Apa yang harus diubah agar hasil berbeda | What-if analysis |
+**Global — memahami model secara keseluruhan**
 
-### Metode Populer
+Fitur apa yang paling berpengaruh? Bagaimana pengaruhnya?
 
-**LIME (Local Interpretable Model-agnostic Explanations)**
+**Local — memahami satu prediksi spesifik**
 
-Membuat model sederhana di sekitar prediksi tertentu untuk menjelaskan fitur mana yang paling berpengaruh.
+Kenapa keputusan ini diambil untuk user ini?
 
-Cocok untuk: Klasifikasi teks, gambar sederhana.
+---
 
-**SHAP (SHapley Additive exPlanations)**
+### Metode yang Kupakai
 
-Menggunakan game theory untuk menghitung kontribusi setiap fitur terhadap prediksi.
+**SHAP** — untuk model tabular, kasih tahu kontribusi setiap fitur terhadap prediksi. Paling sering kupakai.
 
-Cocok untuk: Model tabular, analisis fitur global.
-
-**Attention Maps**
-
-Menunjukkan bagian input mana yang paling diperhatikan model.
-
-Cocok untuk: NLP, computer vision.
+**LIME** — untuk teks/gambar, bikin model sederhana di sekitar prediksi tertentu.
 
 ---
 
 ### Trade-off
 
-| Akurasi | Explainability |
-|---------|---------------|
-| Neural network kompleks | Sulit dijelaskan |
-| Decision tree sederhana | Mudah dijelaskan |
+Model kompleks (neural network) → akurasi tinggi → susah dijelaskan
 
-Pilih yang sesuai dengan kebutuhan: untuk aplikasi medis, explainability mungkin lebih penting dari akurasi 1% tambahan.
+Model sederhana (decision tree) → akurasi lebih rendah → mudah dijelaskan
+
+Pilih sesuai kebutuhan. Untuk aplikasi medis, explainability mungkin lebih penting daripada 1% akurasi.
+
+> *"Kalau modelmu tidak bisa menjelaskan keputusannya, apakah kamu percaya modelmu?"*
+
+[Kembali ke Governance](/articles/governance/)

@@ -1,54 +1,69 @@
 ---
 title: Naming Conventions
-description: "Konsistensi penamaan: bahasa universal yang dipahami seluruh tim — CodingSkuy"
+description: "Konsistensi penamaan — dari pengalaman debugging karena nama yang menyesatkan — CodingSkuy"
 ---
 
 # Naming Conventions
 
-> *"Nama yang baik adalah dokumentasi paling murah."*
+> *"Pernah debug 2 jam. Ternyata salah paham: `getPrice()` mengembalikan harga setelah diskon, bukan harga asli."*
 
-Penamaan yang konsisten membuat kode mudah dibaca tanpa perlu komentar panjang.
-
----
-
-### Package/Module
-
-| Package | Convention | Contoh |
-|---------|-----------|--------|
-| Flutter/Dart | snake_case | `user_profile.dart` |
-| Java/Kotlin | snake_case | `user_profile.dart` |
-| PHP (Laravel) | snake_case | `user_profile.php` |
-| JavaScript | kebab-case | `user-profile.js` |
-| Python | snake_case | `user_profile.py` |
-
-### Folder
-
-- Gunakan snake_case untuk semua folder
-- Hindari singkatan yang tidak jelas (`utils/` vs `helpers/`)
-- Jangan gunakan angka di awal nama folder
-
-### Database
-
-| Elemen | Convention | Contoh |
-|--------|-----------|--------|
-| Table | snake_case (plural) | `users` |
-| Column | snake_case | `created_at` |
-| Index | `idx_[table]_[column]` | `idx_users_email` |
-| Foreign Key | `fk_[table]_[ref]` | `fk_posts_user_id` |
-
-### API
-
-| Elemen | Convention | Contoh |
-|--------|-----------|--------|
-| Endpoint | kebab-case | `/api/user-profiles` |
-| Query param | camelCase | `?sortBy=name` |
-| JSON field | camelCase | `"userName": "rois"` |
+Nama yang menyesatkan adalah bug yang tidak kelihatan. Kode berjalan normal. Tapi logic-nya salah karena programmer lain (atau diri sendiri) salah paham dengan nama fungsi.
 
 ---
 
-### Prinsip
+### Kenapa Nama Penting?
 
-- **Konsisten** — lebih penting konsisten dengan yang salah daripada tidak konsisten
-- **Eksplisit** — `getUserByEmail()` lebih baik dari `fetchUser()`
-- **Kontekstual** — di dalam kelas `User`, field `name` cukup. Di global, butuh `userName`
-- **Hindari ambiguitas** — `data` tidak jelas, `userData` lebih baik
+Nama adalah dokumentasi paling murah. Nama yang baik:
+- Mengurangi kebutuhan komentar
+- Mempercepat onboarding engineer baru
+- Mencegah misinterpretasi
+
+---
+
+### Aturan dari Pengalaman
+
+**1. Eksplisit, bukan singkat**
+
+| ❌ | ✅ |
+|---|---|
+| `getData()` | `getUserByEmail()` |
+| `delUser()` | `deleteUserAccount()` |
+| `proc()` | `processPayment()` |
+
+**2. Satu nama untuk satu konsep**
+
+Kalau sudah pakai `fetchUsers()`, jangan ada `getUserList()` di file lain untuk hal yang sama.
+
+**3. Boolean harus jelas iya/tidak**
+
+| ❌ | ✅ |
+|---|---|
+| `user` | `isLoggedIn` |
+| `flag` | `hasPermission` |
+| `status` | `isActive` |
+
+---
+
+### Convention per Bahasa
+
+| Bahasa | Folder | File | Fungsi |
+|--------|--------|------|--------|
+| Flutter/Dart | snake_case | snake_case | camelCase |
+| Java/Kotlin | snake_case | PascalCase | camelCase |
+| PHP/Laravel | snake_case | snake_case | camelCase |
+| JavaScript | kebab-case | kebab-case | camelCase |
+| Python | snake_case | snake_case | snake_case |
+
+**Konsisten lebih penting dari benar.**
+
+---
+
+### Tips
+
+- Kalau bingung nama, minta review nama ke teman. Kalau mereka paham, nama sudah cukup baik
+- Jangan takut rename. IDE bisa rename otomatis
+- Gunakan istilah domain, bukan istilah teknis. `checkoutCart()` lebih baik dari `postCartData()`
+
+> *"Nama yang baik adalah dokumentasi yang bisa jalan sendiri."*
+
+[Kembali ke Governance](/articles/governance/)

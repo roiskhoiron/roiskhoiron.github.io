@@ -1,69 +1,76 @@
 ---
 title: RFC (Request For Comments)
-description: "RFC: proses kolaboratif untuk keputusan teknis yang melibatkan seluruh tim — CodingSkuy"
+description: "RFC: minta masukan sebelum putuskan — dari pengalaman ambil keputusan sendiri dan menyesal — CodingSkuy"
 ---
 
 # RFC (Request For Comments)
 
-> *"RFC mengubah keputusan sepihak menjadi keputusan kolektif."*
+> *"Dulu aku pikir memutuskan sendiri itu efisien. Sampai keputusan yang salah harus dibayar oleh seluruh tim.""
 
-RFC adalah dokumen yang diajukan untuk mendapat masukan dari tim sebelum keputusan besar diambil.
+RFC adalah kebalikan dari memutuskan sendiri. Ini undangan untuk diskusi sebelum keputusan besar diambil.
 
-Berbeda dengan ADR yang mencatat keputusan setelah diambil, RFC adalah **proses sebelum keputusan.**
+---
+
+### Kenapa RFC?
+
+Waktu di Papua Madhani Tech, ada satu keputusan arsitektur yang aku ambil sendiri. Pilih library A untuk state management.
+
+Sepele, pikirku. Seminggu kemudian, engineer lain kesulitan karena library itu punya learning curve curam. Tim terhambat. Produktivitas turun.
+
+Seandainya aku tulis RFC, mungkin ada yang bilang: *"Library B lebih ringan dan tim sudah familiar."*
 
 ---
 
 ### Kapan Pakai RFC?
 
-- Perubahan arsitektur besar
-- Migrasi teknologi
-- Perubahan proses yang berdampak ke seluruh tim
-- Proposal fitur yang kompleks
+| Situasi | RFC Perlu? |
+|---------|-----------|
+| Ganti framework utama | ✅ Wajib |
+| Ubah arsitektur modul | ✅ Sangat disarankan |
+| Pilih library baru | ⚠️ Tergantung dampak |
+| Refactor internal | ❌ Tidak perlu |
 
 ---
 
-### Format RFC
+### Format RFC Sederhana
 
 ```
-# RFC: [Judul]
+Judul: [deskripsi singkat]
 
-## Meta
-- Author: [nama]
-- Status: [Draft/Review/Approved/Rejected]
-- Date: [tanggal]
+Masalah:
+Apa yang ingin diselesaikan?
 
-## Problem
-Apa masalah yang ingin diselesaikan?
+Usulan:
+Bagaimana solusinya?
 
-## Proposed Solution
-Bagaimana solusi yang diusulkan?
+Alternatif:
+Apa opsi lain? Kenapa tidak dipilih?
 
-## Alternatives
-Apa alternatif yang dipertimbangkan?
-Kenapa tidak dipilih?
-
-## Impact
-Apa dampak ke sistem dan tim?
-
-## Timeline
-Kapan mulai dan selesai?
+Dampak:
+Apa efeknya ke sistem dan tim?
 ```
+
+Cukup setengah halaman. Tidak perlu panjang.
 
 ---
 
 ### Proses RFC
 
-1. **Draft** — penulis menulis proposal
-2. **Review** — tim memberi masukan (biasanya 3-7 hari)
-3. **Iterate** — penulis merevisi berdasarkan masukan
-4. **Decision** — maintainer memutuskan (Accepted/Rejected)
-5. **Archive** — RFC disimpan sebagai referensi
+1. **Tulis draft** — 15 menit cukup
+2. **Share** — di Slack, PR, atau dokumen bersama
+3. **Diskusi** — 1-3 hari, tergantung urgensi
+4. **Keputusan** — tim atau tech lead yang putuskan
+5. **Arsip** — simpan di folder RFC untuk referensi
 
 ---
 
 ### Tips
 
-- RFC tidak boleh >1 halaman untuk hal sederhana
-- Fokus pada problem, bukan solusi detail
+- Jangan terlalu lama. RFC yang dibahas >1 minggu biasanya tandanya tidak fokus
+- Fokus ke masalah, bukan detail implementasi
 - Ajak diskusi, bukan debat
-- Kalau sudah mentok, tech lead yang putuskan
+- Kalau mentok, tech lead yang putuskan. Tim tetap jalan.
+
+> *"RFC bukan birokrasi. Ini alat untuk memastikan semua orang bergerak ke arah yang sama."*
+
+[Kembali ke Governance](/articles/governance/)

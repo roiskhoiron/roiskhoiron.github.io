@@ -1,63 +1,61 @@
 ---
 title: Security Review
-description: "Proses review keamanan untuk menangkap celah sebelum production — CodingSkuy"
+description: "Proses review keamanan — dari pengalaman membiarkan celah masuk ke production — CodingSkuy"
 ---
 
 # Security Review
 
-> *"Security review bukan blocking, tapi safety net."*
+> *"PR yang aku merge tanpa review keamanan ternyata mengandung celah. Beruntung ketahuan sebelum dieksploitasi."*
+
+Itu pelajaran yang tidak akan kulupakan. Sebuah PR sederhana — tambah fitur upload gambar. Aku fokus review logic-nya. Lupa cek: apakah file yang diupload divalidasi tipenya?
+
+Ternyata tidak. Attacker bisa upload file PHP, dan server bisa mengeksekusinya.
+
+Sejak itu, security review jadi bagian wajib dari prosesku.
 
 ---
 
-### Kapan Review?
+### Kapan Perlu Security Review?
 
-- **Setiap fitur baru** yang melibatkan data pengguna
-- **Setiap perubahan** di autentikasi/otorisasi
-- **Setiap dependency baru** (library eksternal)
-- **Sebelum rilis major** (major version)
-- **Setelah incident keamanan**
+Dari pengalaman, ini situasi yang paling rawan:
 
----
-
-### Scope Review
-
-**1. Input Validation**
-
-Apakah input dari user divalidasi? SQL injection? XSS? Command injection?
-
-**2. Authentication & Session**
-
-Apakah session management aman? Token expiry? Rate limiting?
-
-**3. Data Exposure**
-
-Apakah ada data sensitif yang bocor di response API, log, atau error message?
-
-**4. Configuration**
-
-Apakah ada credential hardcoded? Debug mode di production?
-
-**5. Third-party**
-
-Apakah dependency punya known vulnerability? Apakah API eksternal aman?
+- **Fitur baru yang melibatkan data pengguna**
+- **Perubahan di autentikasi/otorisasi** — ganti library auth, ubah role system
+- **Dependency baru** — library eksternal mungkin punya celah
+- **Sebelum rilis major** — kesempatan terakhir catch celah
+- **Setelah incident** — cegah terulang
 
 ---
 
-### Tools
+### Checklist Cepat
+
+Sebelum merge, tanya:
+- Apakah input divalidasi? (SQL injection? XSS?)
+- Apakah ada data sensitif di response/log?
+- Apakah ada credential hardcoded?
+- Apakah library punya known vulnerability?
+- Apakah konfigurasi aman? (debug mode di production?)
+
+---
+
+### Tools yang Kupakai
 
 | Tools | Fungsi |
 |-------|--------|
-| **SAST (Static Analysis)** | Snyk, SonarQube, Semgrep |
-| **DAST (Dynamic Analysis)** | OWASP ZAP, Burp Suite |
-| **Dependency Scanner** | Dependabot, Renovate |
-| **Secret Scanner** | GitLeaks, TruffleHog |
+| Dependabot / Snyk | Cek vulnerability dependency |
+| Linter | Deteksi potensi masalah keamanan |
+| Code review manual | Lihat dengan mata kepala sendiri |
+
+Tools membantu, tapi tidak menggantikan review manual. Terutama untuk logic validasi dan alur data.
 
 ---
 
-### Output
+### Prinsip
 
-Setiap security review harus menghasilkan:
-1. **Findings** — apa yang ditemukan
-2. **Severity** — critical/high/medium/low
-3. **Recommendation** — bagaimana memperbaiki
-4. **Timeline** — kapan harus diperbaiki
+- Security review bukan blocking — ini safety net
+- Kalau ragu, tanya tim. Jangan merge sendiri
+- Dokumentasikan temuan. Tim belajar dari kesalahan
+
+> *"Satu celah yang terlewat bisa berdampak ke ribuan user. Review adalah garis pertahanan terakhir."*
+
+[Kembali ke Governance](/articles/governance/)
