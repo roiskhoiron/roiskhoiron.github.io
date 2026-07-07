@@ -1,58 +1,48 @@
 ---
 title: Architecture Guidelines
-description: "Panduan arsitektur — dari pengalaman cleanup kode yang tidak konsisten — CodingSkuy"
+description: "Panduan arsitektur — dari pengalaman standarisasi pola tim — CodingSkuy"
 ---
 
 # Architecture Guidelines
 
-> *"Dulu setiap folder punya struktur sendiri-sendiri. Tergantung mood programmernya. Waktu aku harus cari file, butuh 10 menit."*
+> *"Satu tim pake BLoC, satu lagi pake Riverpod. Satu pake layer-first, satu pake feature-first. Hasilnya: kode tidak konsisten."*
 
-Itu pengalaman di proyek pertama. Tiga engineer, tiga gaya arsitektur. Satu pake MVC, satu pake spaghetti, satu campur aduk.
+Di satu proyek, setiap developer punya gaya arsitektur sendiri. Hasilnya: kode yang tidak konsisten. Pindah dari modul A ke B, pola berubah total. Butuh adaptasi tiap kali.
 
-Ketika aku harus memperbaiki bug di modul yang bukan aku tulis, waktu habis untuk memahami struktur, bukan untuk memperbaiki bug.
-
----
-
-### Kenapa Guidelines Diperlukan
-
-Bukan untuk membatasi kreativitas. Tapi untuk:
-- Engineer baru bisa produktif dalam hari, bukan minggu
-- Bug lebih cepat ditemukan karena struktur konsisten
-- Refactor lebih aman karena kode terprediksi
+Architecture guidelines adalah solusinya — bukan untuk mengekang, tapi untuk menyepakati standar.
 
 ---
 
-### Prinsip yang Kupakai
+### Komponen Guidelines
 
-**1. Separation of Concerns**
+**1. Struktur folder**
 
-Setiap layer punya tugas jelas. Presentasi urus UI. Domain urus logic. Data urus penyimpanan. Tidak campur aduk.
+Di mana taruh model? Di mana taruh screen? Bagaimana organize fitur?
 
-Aku belajar ini setelah pindah dari Android Native (semua di Activity) ke Flutter (architectur jelas).
+Keputusan: feature-first atau layer-first? Folder `core/` atau `shared/`? Naming conventions untuk folder.
 
-**2. Dependency Rule**
+Aku pake feature-first: setiap fitur punya folder sendiri. Tapi `core/` untuk shared code.
 
-Domain tidak tahu soal framework atau database. Ini yang membuat testing jadi mudah.
+**2. State management pattern**
 
-**3. Testability**
+Pola apa yang dipakai? Kapan pake setState, kapan pake Riverpod?
 
-Kalau komponen susah di-test, biasanya ada yang salah dengan arsitekturnya.
+Guidelines-ku:
+- Data lokal → setState
+- Data shared antar screen → Riverpod
+- Real-time → BLoC
 
----
+**3. Dependency injection**
 
-### Struktur Folder Standar
+Manual atau pake package? Bagaimana cara inject dependency?
 
-```
-lib/
-├── core/          # utilitas bersama
-├── fitur_a/
-│   ├── data/      # repository, data source
-│   ├── domain/    # use case, entity
-│   └── ui/        # halaman, widget
-├── fitur_b/
-│   └── ...        # sama
-└── main.dart
-```
+Aku pake Riverpod (ref) atau constructor injection. Tidak pake get_it.
+
+**4. Error handling**
+
+Gimana handle error? Return type? Global error handler?
+
+Guidelines: Semua fungsi yang bisa error return Result type (Success/Failure). Ada global handler untuk unhandled error.
 
 ---
 
@@ -64,6 +54,17 @@ lib/
 | Baris per fungsi | &lt;30 baris |
 | Method publik per kelas | &lt;5 |
 | Parameter per fungsi | &lt;3 |
+
+Angka ini bukan aturan kaku — tapi panduan. Kalau melebihi, mungkin waktunya refactor.
+
+---
+
+### Cara Menerapkan
+
+1. Tulis guidelines — 1-2 halaman
+2. Diskusikan dengan tim — semua harus setuju
+3. Terapkan via code review dan linter (otomatis)
+4. Review secara periodik — update kalau tidak relevan
 
 > *"Konsistensi lebih penting dari kesempurnaan."*
 

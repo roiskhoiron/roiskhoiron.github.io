@@ -1,69 +1,81 @@
 ---
 title: Threat Modeling
-description: "Memikirkan skenario serangan — dari pengalaman baru sadar celah setelah ditunjukkin orang — CodingSkuy"
+description: "Threat modeling — dari pengalaman mikir 'bagaimana aplikasi diretas' sebelum diretas beneran — CodingSkuy"
 ---
 
 # Threat Modeling
 
-> *"Aku pikir aplikasiku aman. Sampai teman bilang: 'Coba klik ini...' dan aku bisa akses data orang lain."*
+> *"Aku pernah pikir: 'Ah, nggak mungkin ada yang mau retas aplikasi kecilku.' Sampai data temanku bocor lewat celah yang tidak pernah kupikirkan."*
 
-Threat modeling adalah latihan *"bagaimana jika"* sebelum serangan benar-benar terjadi. Lebih baik mencari celah sendiri daripada ditemukan orang jahat.
-
----
-
-### Cara Sederhana: STRIDE
-
-Aku pakai STRIDE untuk kategorisasi ancaman:
-
-| Threat | Arti | Contoh |
-|--------|------|--------|
-| **S**poofing | Pura-pura jadi orang lain | Login pake credential orang |
-| **T**ampering | Ubah data di tengah jalan | Intercept request, ganti nominal |
-| **R**epudiation | Menyangkal sudah melakukan | "Saya tidak transfer uang itu" |
-| **I**nformation Disclosure | Data bocor | Log response API yang terlalu detail |
-| **D**enial of Service | Bikin sistem tidak bisa diakses | Request banjir ke server |
-| **E**levation of Privilege | Dapat akses lebih dari seharusnya | User biasa jadi admin |
+Threat modeling adalah proses mengidentifikasi potensi ancaman sebelum terjadi. Bukan paranoid — tapi persiapan.
 
 ---
 
-### Proses yang Kupakai
+### STRIDE Framework
 
-**1. Pilih aset paling berharga**
+Microsoft punya STRIDE — framework untuk kategorisasi ancaman:
 
-Data apa yang paling penting? (password, data keuangan, data pribadi)
+**Spoofing** — penyamar. Attacker berpura-pura jadi user lain.
+Mitigasi: autentikasi kuat, jangan simpan password.
 
-**2. Pikirkan skenario terburuk**
+**Tampering** — manipulasi data. Attacker mengubah data di transit.
+Mitigasi: enkripsi, checksum, validasi input.
 
-Apa yang terburuk bisa terjadi pada aset ini? (Gunakan STRIDE)
+**Repudiation** — penyangkalan. User melakukan sesuatu lalu menyangkal.
+Mitigasi: audit log, signature.
 
-**3. Cari mitigasi**
+**Information Disclosure** — kebocoran informasi. Data sensitif terbaca pihak tidak berhak.
+Mitigasi: enkripsi, akses kontrol, minimal data exposure.
 
-Apa yang bisa dilakukan untuk mencegah? Atau mengurangi dampak?
+**Denial of Service** — layanan tidak bisa diakses.
+Mitigasi: rate limiting, auto-scaling, resource management.
 
-**4. Dokumentasikan**
-
-Catat temuan. Jangan hanya di kepala.
-
----
-
-### Contoh dari Pengalaman
-
-Aplikasi: Sistem manajemen konten.
-
-| Aset | Ancaman | Mitigasi |
-|------|---------|----------|
-| Data login | Spoofing (brute force) | Rate limiting, MFA |
-| Artikel | Tampering (ubah konten) | Audit log, backup |
-| API key | Information Disclosure (bocor di log) | Filter log, scan commit |
+**Elevation of Privilege** — user biasa bisa akses fitur admin.
+Mitigasi: otorisasi ketat, least privilege.
 
 ---
 
-### Tips
+### Cara Melakukan Threat Modeling
 
-- Libatkan tim, bukan hanya engineer. Perspektif berbeda menemukan celah berbeda
-- Lakukan sejak desain, bukan setelah jadi
-- Sederhana saja. Threat modeling 15 menit lebih baik daripada tidak sama sekali
+**1. Diagram arsitektur**
 
-> *"Cari celah sebelum orang jahat menemukannya."*
+Gambar: client → API → database. Tandai setiap titik di mana data mengalir.
+
+**2. Identifikasi ancaman per titik**
+
+Setiap titik punya ancaman. Client bisa diretas. API bisa kena injection. Database bisa bocor.
+
+Untuk setiap ancaman, tanya:
+- Seberapa mungkin terjadi?
+- Kalau terjadi, seberapa parah?
+
+**3. Prioritaskan**
+
+Fokus ke ancaman dengan probability tinggi dan impact tinggi.
+
+**4. Rencanakan mitigasi**
+
+Untuk setiap ancaman prioritas:
+- Kurangi probability — "pasang rate limiting"
+- Kurangi impact — "matikan database connection kalau anomali"
+
+---
+
+### Contoh Sederhana
+
+Aplikasi CodingSkuy:
+- **Client (mobile app)** — ancaman: reverse engineering → mitigasi: obfuscation
+- **API (Firebase Functions)** — ancaman: injection → mitigasi: validasi input
+- **Database (Firestore)** — ancaman: unauthorized access → mitigasi: security rules
+
+---
+
+### Tools
+
+- **Threat Dragon** — OWASP, gratis, open source
+- **Microsoft Threat Modeling Tool** — untuk Windows, komprehensif
+- Cukup pake whiteboard untuk proyek kecil
+
+> *"Threat modeling bukan untuk menghilangkan semua risiko — tapi untuk tahu risiko apa yang kamu hadapi dan bagaimana menghadapinya."*
 
 [Kembali ke Governance](/articles/governance/)

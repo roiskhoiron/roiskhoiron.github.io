@@ -1,50 +1,52 @@
 ---
 title: Data Leakage
-description: "Data leakage pada AI — dari pengalaman model terlihat sempurna tapi gagal di produksi — CodingSkuy"
+description: "Kebocoran data dari AI — dari pengalaman model memuntahkan data training — CodingSkuy"
 ---
 
 # Data Leakage
 
-> *"Aku bangga: modelku akurasi 99%! Tapi pas dipakai beneran, cuma 60%. Ternyata data test-nya bocor ke training."*
+> *"Aku prompt: 'Lanjutkan kata: Nama saya...' Model menjawab dengan nama asli orang dari data training."*
 
-Itu pengalaman paling frustrasi dalam belajar machine learning. Model yang kukira sempurna ternyata mencontek — dia sudah lihat jawabannya saat ujian.
+Itu momen yang bikin aku sadar: model tidak selalu memproses data — mereka kadang **menghafal** data.
 
-Fenomena ini disebut **data leakage**.
-
----
-
-### Bentuk Data Leakage
-
-**1. Temporal Leakage**
-
-Pakai data masa depan untuk prediksi masa lalu.
-
-Contoh: Training model prediksi harga saham 2023, tapi data training juga include data 2023.
-
-**Solusi:** Pisahkan berdasarkan waktu.
-
-**2. Feature Leakage**
-
-Fitur yang mengandung informasi dari target.
-
-Contoh: Prediksi penyakit dengan fitur "hasil lab" yang baru diketahui setelah diagnosis.
-
-**Solusi:** Hanya pakai fitur yang tersedia saat prediksi.
-
-**3. Duplicate Leakage**
-
-Data yang sama ada di training dan test.
-
-**Solusi:** Deduplikasi sebelum split.
+Data leakage terjadi ketika model mengeluarkan informasi yang seharusnya tidak keluar. Ini beda dengan hallucination — hallucination itu mengarang, leakage itu mengulang data nyata.
 
 ---
 
-### Cara Mencegah
+### Tipe Leakage
 
-- **Split sebelum preprocessing** — scaling, encoding dilakukan setelah split
-- **Time-based split** — untuk data deret waktu
-- **Pahami domain** — tahu fitur mana yang legitimate
+**1. Model memorization**
 
-> *"Model dengan akurasi 99% patut dicurigai. Apakah dia benar-benar pintar, atau hanya mencontek?"*
+Model dengan parameter besar bisa "menghafal" data training. Apalagi kalau data itu muncul berkali-kali dalam training.
+
+Contoh: pribadi (nama, email, alamat) yang ada di data training. Kalau model menghafalnya, prompt tertentu bisa memicu model untuk mengulang informasi itu.
+
+**2. API leakage**
+
+Data yang dikirim ke API AI disimpan oleh penyedia. Beberapa penyedia pake data untuk training model mereka. Kalau kamu kirim data pribadi ke API — data itu bisa jadi bagian dari model yang diakses orang lain.
+
+**3. Prompt leakage**
+
+Prompt yang berisi data sensitif bisa bocor lewat cache atau log. Beberapa layanan AI punya fitur "share conversation" — kalau tidak hati-hati, prompt dengan data pribadi bisa ke-share.
+
+---
+
+### Mitigasi
+
+**Differential privacy** — tambah noise ke data training sehingga model tidak bisa menghafal data individu. Teknik yang kompleks tapi efektif.
+
+**Jangan kirim data sensitif ke API pihak ketiga** — kalau harus, pastikan penyedia punya sertifikasi keamanan yang sesuai.
+
+**Data anonymization** — sebelum data masuk ke training, hapus informasi pribadi.
+
+**Regular testing** — prompt model dengan kalimat yang bisa memicu memorization. Kalau model ngulang data pribadi, ada leakage.
+
+---
+
+### Yang kulakukan
+
+Data artikel CodingSkuy — semua publik. Tapi tetap aku hindari embed data pribadi ke model. Untuk data sensitif, pake model lokal yang tidak ngirim data ke mana-mana.
+
+> *"Data leakage bukan 'kalau-kalau'. Tapi 'kapan'. Lebih baik cegah dari awal."*
 
 [Kembali ke Governance](/articles/governance/)

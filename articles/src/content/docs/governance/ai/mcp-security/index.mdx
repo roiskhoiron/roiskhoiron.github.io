@@ -1,61 +1,65 @@
 ---
 title: MCP Security
-description: "Keamanan Model Context Protocol — dari pengalaman kasih akses API ke AI agent — CodingSkuy"
+description: "Keamanan MCP — dari pengalaman koneksi AI ke tools eksternal — CodingSkuy"
 ---
 
 # MCP Security
 
-> *"MCP kayak memberi AI remote control ke aplikasi. Pastikan remote control-nya tidak bisa dipakai sembarangan."*
+> *"MCP bikin agent bisa pake tools apa aja. Tapi kalau tools-nya tidak aman, agent jadi vector serangan."*
 
-Waktu pertama kali nyoba MCP (Model Context Protocol), aku kasih AI agent akses ke database — read-only, untuk menjawab pertanyaan.
-
-Tapi lalu aku mikir: *"Apa yang terjadi kalau ada prompt injection? Agent bisa query apa aja?"*
-
-Ternyata bisa.
+MCP (Model Context Protocol) adalah protokol yang memungkinkan AI agent berkomunikasi dengan tools. Keren — tapi setiap koneksi baru adalah potensi celah keamanan baru.
 
 ---
 
 ### Ancaman
 
-| Ancaman | Contoh |
-|---------|--------|
-| **Tool abuse** | Agent panggil tool berkali-kali sampai overload |
-| **Data access** | Agent baca data yang tidak seharusnya |
-| **Privilege escalation** | Agent dapet akses lebih dari yang seharusnya |
+**1. Tool spoofing**
+
+Tools palsu yang kelihatan seperti tools resmi. Agent panggil tools palsu → data dikirim ke attacker.
+
+**2. Data interception**
+
+Komunikasi antara agent dan tools dicegat. Tanpa enkripsi, data yang dikirim bisa dibaca pihak ketiga.
+
+**3. Unauthorized access**
+
+Tools yang tidak dilindungi autentikasi. Siapa pun bisa panggil tools itu — termasuk agent jahat.
 
 ---
 
-### Yang Kupelajari
+### Mitigasi
 
-**1. Scope permission**
+**Autentikasi dan otorisasi**
 
-Setiap koneksi MCP harus punya scope terbatas. Read-only vs read-write. Data apa yang bisa diakses.
+Setiap tools MCP harus punya autentikasi. Token, API key, atau OAuth. Tools tidak boleh bisa diakses tanpa kredensial.
 
-Aku bagi:
-- Agent customer support: bisa baca data user, tidak bisa edit
-- Agent admin: bisa CRUD, tapi butuh approval untuk delete
+**Enkripsi**
 
-**2. Rate limiting**
+Komunikasi antara agent dan tools harus dienkripsi. HTTPS/TLS minimum.
 
-Batasi berapa kali agent bisa panggil tool per menit. Mencegah abuse.
+**Rate limiting**
 
-**3. Audit trail**
+Batasi berapa kali agent bisa panggil tools dalam periode tertentu. Cegah abuse.
 
-Log setiap interaksi MCP. Siapa yang minta, tool apa yang dipanggil, apa hasilnya.
+**Audit log**
 
-**4. Input validation**
+Setiap panggilan tools tercatat: agent mana, tools apa, parameter apa, hasil apa. Untuk investigasi kalau ada insiden.
 
-Sama seperti input user, input dari agent ke tool harus divalidasi.
+**Tool whitelist**
+
+Agent cuma bisa akses tools yang sudah di-whitelist. Tidak bisa panggil tools sembarangan di internet.
 
 ---
 
-### Checklist
+### Yang kulakukan
 
-- [ ] Setiap tool punya scope?
-- [ ] Ada rate limiting?
-- [ ] Interaksi tercatat?
-- [ ] Input divalidasi?
+Di CodingSkuy, tools MCP terbatas pada:
+1. Search index artikel
+2. Baca artikel tertentu
+3. Generate ringkasan
 
-> *"Semakin banyak akses yang kamu beri ke agent, semakin ketat pengamanannya."*
+Tidak ada akses ke database user, tidak ada akses ke environment variables, tidak ada akses delete.
+
+> *"Keamanan MCP bukan tentang tools-nya — tapi tentang siapa dan apa yang bisa akses tools itu."*
 
 [Kembali ke Governance](/articles/governance/)

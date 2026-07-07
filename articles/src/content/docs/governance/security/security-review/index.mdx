@@ -1,61 +1,79 @@
 ---
 title: Security Review
-description: "Proses review keamanan — dari pengalaman membiarkan celah masuk ke production — CodingSkuy"
+description: "Security review — dari pengalaman audit keamanan proyek — CodingSkuy"
 ---
 
 # Security Review
 
-> *"PR yang aku merge tanpa review keamanan ternyata mengandung celah. Beruntung ketahuan sebelum dieksploitasi."*
+> *"Aku pikir aplikasi sudah aman. Tapi setelah security review, nemu 10 celah. Termasuk yang kritis."*
 
-Itu pelajaran yang tidak akan kulupakan. Sebuah PR sederhana — tambah fitur upload gambar. Aku fokus review logic-nya. Lupa cek: apakah file yang diupload divalidasi tipenya?
+Security review berbeda dengan code review. Code review fokus ke logika, maintainability. Security review fokus ke: bagaimana aplikasi bisa diretas.
 
-Ternyata tidak. Attacker bisa upload file PHP, dan server bisa mengeksekusinya.
+Aku pernah minta teman audit aplikasi. Dalam 30 menit, dia nemu:
+- API endpoint tanpa autentikasi
+- Input tidak divalidasi
+- Error message bocor informasi server
+- Token tidak expired
 
-Sejak itu, security review jadi bagian wajib dari prosesku.
-
----
-
-### Kapan Perlu Security Review?
-
-Dari pengalaman, ini situasi yang paling rawan:
-
-- **Fitur baru yang melibatkan data pengguna**
-- **Perubahan di autentikasi/otorisasi** — ganti library auth, ubah role system
-- **Dependency baru** — library eksternal mungkin punya celah
-- **Sebelum rilis major** — kesempatan terakhir catch celah
-- **Setelah incident** — cegah terulang
+Itu wake-up call.
 
 ---
 
-### Checklist Cepat
+### Area yang Dicek
 
-Sebelum merge, tanya:
-- Apakah input divalidasi? (SQL injection? XSS?)
-- Apakah ada data sensitif di response/log?
-- Apakah ada credential hardcoded?
-- Apakah library punya known vulnerability?
-- Apakah konfigurasi aman? (debug mode di production?)
+**1. Authentication & Session**
+
+- Apakah password di-hash dengan algoritma kuat? (bcrypt/argon2)
+- Apakah session token aman? (HttpOnly, Secure, SameSite)
+- Apakah ada rate limiting untuk login?
+- Apakah logout beneran invalidate session?
+
+**2. Authorization**
+
+- Apakah setiap endpoint cek otorisasi?
+- Apakah ada IDOR (Insecure Direct Object Reference)?
+- Apakah admin endpoint beneran cuma bisa diakses admin?
+
+**3. Input Validation**
+
+- Apakah input divalidasi di server? (jangan cuma di client)
+- Apakah ada SQL injection risk?
+- Apakah ada XSS (Cross-Site Scripting) risk?
+- File upload — apakah tipe file dan ukuran dibatasi?
+
+**4. Data Exposure**
+
+- Apakah data sensitif di-log?
+- Apakah error response bocor informasi internal? (stack trace, DB detail)
+- Apakah API response mengandung field yang tidak perlu?
+
+**5. Configuration**
+
+- Apakah environment variables aman? (tidak di commit)
+- Apakah CORS dikonfigurasi dengan benar? (jangan allow all)
+- Apakah dependency up-to-date? (cek CVE)
 
 ---
 
-### Tools yang Kupakai
+### Cara Melakukan
 
-| Tools | Fungsi |
-|-------|--------|
-| Dependabot / Snyk | Cek vulnerability dependency |
-| Linter | Deteksi potensi masalah keamanan |
-| Code review manual | Lihat dengan mata kepala sendiri |
+**Manual review** — baca kode dengan perspektif security. Fokus ke area yang disebut di atas. Bisa butuh 1-4 jam tergantung kompleksitas.
 
-Tools membantu, tapi tidak menggantikan review manual. Terutama untuk logic validasi dan alur data.
+**Automated scanning** — pake tools:
+- `npm audit` / `flutter pub audit` — cek dependency
+- OWASP ZAP — automated security scanner
+- `npx snyk test` — cek celah keamanan
+
+**Penetration testing** — simulasi serangan. Coba exploit celah yang mungkin ada. Bisa dilakukan internal atau hire pihak ketiga.
 
 ---
 
-### Prinsip
+### Frekuensi
 
-- Security review bukan blocking — ini safety net
-- Kalau ragu, tanya tim. Jangan merge sendiri
-- Dokumentasikan temuan. Tim belajar dari kesalahan
+- Setiap kali ada fitur yang handle data sensitif
+- Sebelum rilis major
+- Setiap 6 bulan untuk existing system
 
-> *"Satu celah yang terlewat bisa berdampak ke ribuan user. Review adalah garis pertahanan terakhir."*
+> *"Security review bukan one-time activity. Ancaman berubah, dan sistem harus selalu dievaluasi."*
 
 [Kembali ke Governance](/articles/governance/)

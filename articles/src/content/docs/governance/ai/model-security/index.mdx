@@ -5,13 +5,11 @@ description: "Melindungi model AI — dari pengalaman model bisa ditiru orang la
 
 # Model Security
 
-> *"Model AI itu kayak resep rahasia. Kalau resepnya bocor, kompetitor bisa bikin versi sendiri."*
+> *"Model AI itu kayak resep rahasia. Kalau bocor, kompetitor bisa bikin versi sendiri."*
 
 Aku pernah bikin model yang cukup akurat — investasi waktu dan komputasi berminggu-minggu. Lalu seseorang bilang: *"Coba deploy API-nya tanpa proteksi."*
 
-Dalam hitungan jam, orang lain bisa query modelku dan merekonstruksi behavior-nya. **Model stealing.**
-
-Sejak itu aku paham: model perlu diamankan, sama seperti kode dan database.
+Dalam hitungan jam, query model berulang kali bisa merekonstruksi behavior model. **Model stealing.** Sejak itu aku paham: model perlu diamankan.
 
 ---
 
@@ -19,32 +17,35 @@ Sejak itu aku paham: model perlu diamankan, sama seperti kode dan database.
 
 **1. Model Stealing**
 
-Seseorang bisa meniru model dengan query berulang.
+Seseorang bisa meniru model dengan query berulang. Mereka kirim input → catat output → latih model tiruan.
 
-Mitigasi: Rate limiting, batasi jumlah query per user, monitoring.
+Mitigasi: rate limiting, batasi jumlah query per user, monitoring pola mencurigakan.
 
 **2. Adversarial Attack**
 
 Input sengaja dimanipulasi untuk menipu model.
 
-Contoh: Stiker di rambu STOP bikin mobil otonom bacanya "60 km/jam".
+Contoh: stiker kecil di rambu STOP bikin mobil otonom bacanya "60 km/jam." Perubahan kecil yang tidak kelihatan oleh manusia, tapi membuat model salah prediksi.
 
-Mitigasi: Adversarial training, input preprocessing.
+Mitigasi: adversarial training (latih model dengan contoh serangan), input preprocessing.
 
 **3. Data Extraction**
 
-Attacker bisa mengekstrak data training dari model.
+Attacker bisa mengekstrak data training dari model. Dengan query tertentu, model bisa "diingatkan" tentang data spesifik yang ada di training set.
 
-Mitigasi: Differential privacy, regularisasi.
+Mitigasi: differential privacy, regularisasi.
 
 ---
 
 ### Praktik
 
-- **Akses terbatas** — model cuma bisa diakses via API terautentikasi
-- **Rate limiting** — batasi query per user
-- **Monitoring** — deteksi pola mencurigakan
-- **Enkripsi** — simpan model file di tempat aman
+**Akses terbatas** — model cuma bisa diakses via API, bukan file langsung. API terautentikasi.
+
+**Rate limiting** — batasi jumlah query per user per periode waktu. Deteksi anomali.
+
+**Monitoring** — deteksi pola mencurigakan. Kalau satu user query 10.000 kali dalam 5 menit — alarm.
+
+**Enkripsi** — simpan model file di tempat aman. Jangan commit ke git. Jangan simpan di public S3 bucket.
 
 > *"Model yang tidak diamankan adalah aset berharga yang diletakkan di pinggir jalan."*
 

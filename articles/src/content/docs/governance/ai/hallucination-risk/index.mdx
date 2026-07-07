@@ -5,29 +5,31 @@ description: "Halusinasi AI — dari pengalaman LLM bikin kutipan yang tidak ada
 
 # Hallucination Risk
 
-> *"LLM bilang: 'Menurut penelitian Harvard 2023...' Masalahnya: penelitian itu tidak pernah ada. LLM mengarangnya."*
+> *"ChatGPT bilang: 'Menurut penelitian Harvard 2023...' Masalahnya: penelitian itu tidak pernah ada. LLM mengarangnya dengan sangat meyakinkan."*
 
-Halusinasi adalah ketika AI menghasilkan output yang terdengar meyakinkan tapi sepenuhnya salah.
+Awal pakai ChatGPT untuk bantu riset, aku hampaja mengutip penelitian palsu. Untung aku cek sumber asli sebelum publish. Sejak itu, aku tidak pernah percaya output LLM tanpa verifikasi.
 
-Ini bukan bug. Ini fitur dari cara LLM bekerja: mereka merangkai kata yang paling mungkin, bukan mencari kebenaran.
+Halusinasi bukan bug — ini cara kerja LLM. Mereka merangkai kata yang paling mungkin secara statistik, bukan mencari kebenaran.
 
 ---
 
 ### Tipe Halusinasi
 
-| Tipe | Contoh |
-|------|--------|
-| **Fakta palsu** | Menyebut peristiwa yang tidak pernah terjadi |
-| **Sumber palsu** | Mengutip jurnal/artikel yang tidak ada |
-| **Logika rusak** | Argumen yang inkonsisten |
+**Fakta palsu** — model menyebut peristiwa yang tidak pernah terjadi. Contoh: "Flutter 4.0 dirilis Januari 2025" — padahal tidak ada.
+
+**Sumber palsu** — model mengutip jurnal atau artikel yang tidak ada. Yang paling berbahaya karena kelihatan otentik. Nama peneliti, judul, tahun — semua kelihatan bener tapi hasil karangan.
+
+**Logika rusak** — argumen yang inkonsisten. Dalam satu paragraf, model setuju dan tidak setuju dengan hal yang sama.
 
 ---
 
 ### Penyebab
 
-- Model tidak tahu batas pengetahuannya (tidak bisa bilang "tidak tahu")
-- Prompt ambigu
-- Tidak ada sumber eksternal untuk verifikasi
+**Model tidak tahu batas pengetahuannya.** LLM tidak bisa bilang "saya tidak tahu." Mereka selalu akan jawab, meskipun mengarang.
+
+**Prompt ambigu** — makin ambigu prompt, makin besar kemungkinan hallucination.
+
+**Tidak ada sumber eksternal** — kalau cuma mengandalkan parameter model, hallucination hampir pasti terjadi.
 
 ---
 
@@ -35,21 +37,19 @@ Ini bukan bug. Ini fitur dari cara LLM bekerja: mereka merangkai kata yang palin
 
 **1. Grounding — hubungkan ke sumber nyata**
 
-Pakai RAG (Retrieval-Augmented Generation). Setiap jawaban harus didasarkan pada dokumen yang di-retrieve, bukan hanya parameter model.
+RAG (Retrieval-Augmented Generation) — setiap jawaban didasarkan pada dokumen yang di-retrieve, bukan hanya parameter model. Di CodingSkuy, sebelum AI jawab, ambil artikel relevan dulu sebagai konteks.
 
 **2. Prompt yang jelas**
 
-Beri instruksi eksplisit: *"Jika tidak tahu, katakan tidak tahu."*
+Beri instruksi eksplisit: *"Jika tidak tahu, katakan tidak tahu."* Bukan jaminan, tapi mengurangi hallucination.
 
 **3. Validasi**
 
-Cross-check output dengan sumber eksternal.
+Cross-check output dengan sumber eksternal. Kalau model bilang "Flutter 4.0 rilis 2025" — cek dokumentasi resmi. Jangan percaya mentah-mentah.
 
 **4. Human-in-the-loop**
 
-Untuk keputusan penting (medis, hukum, finansial), selalu ada review manusia.
-
----
+Untuk keputusan penting, selalu ada review manusia. AI boleh kasih saran. Tapi manusia yang putuskan.
 
 > *"AI yang jujur mengakui ketidaktahuannya lebih berharga daripada AI yang percaya diri dengan jawaban salah."*
 

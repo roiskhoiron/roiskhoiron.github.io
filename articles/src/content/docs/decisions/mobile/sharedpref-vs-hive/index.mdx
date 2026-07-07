@@ -7,31 +7,25 @@ description: "SharedPreferences vs Hive — dari pengalaman pilih local storage 
 
 > *"Dulu aku pake SharedPreferences untuk semuanya. Sampai nyimpen 1000 data dan aplikasi lemot."*
 
-SharedPreferences itu simpel — key-value, langsung jalan, tanpa setup. Cocok untuk:
+SharedPreferences itu simpel — key-value, langsung jalan, tanpa setup. Awalnya aku pake untuk nyimpen token, theme preference, setting notifikasi. Cepat, mudah. Cocok.
 
+Tapi kemudian aku butuh cache daftar produk — 500 item dengan struktur data kompleks. SharedPreferences mulai terasa lambat. Setiap baca data, UI terasa freeze sebentar. Ternyata SharedPreferences pake disk I/O synchronous — blocking main thread.
+
+**SharedPreferences cocok untuk:**
 - Theme preference (dark/light mode)
 - User session token
 - Setting sederhana (notifikasi on/off)
+- Data &lt;10 item
 
-Tapi ada batasnya: data string terbatas, tidak support query, blocking I/O (bisa bikin UI lag).
+**Hive** — database NoSQL lokal. Cepat, support tipe data kompleks, async. Begitu pindah ke Hive untuk cache produk, UI不再lag. Baca data 500 item dalam milidetik, tanpa blocking.
 
-**Hive** — database NoSQL lokal. Cepat, support tipe data kompleks, async.
-
-Cocok untuk:
+**Hive cocok untuk:**
 - Data offline
 - Cache response API
 - Structured data yang butuh query cepat
-
-**Kapan pilih SharedPreferences:**
-- Hanya untuk preference sederhana
-- Data sedikit (&lt;100 key)
-- Tidak butuh query
-
-**Kapan pilih Hive:**
 - Data agak banyak
-- Butuh query/ filter
-- Data berupa object kompleks
-- Butuh performa baca/tulis cepat
+
+Perbedaan utama: SharedPreferences untuk preference. Hive untuk data. Kalau ragu, Hive aja — lebih aman untuk jangka panjang.
 
 > *"Aturan praktis: SharedPref untuk setting, Hive untuk data. Kalau ragu, Hive aja."*
 

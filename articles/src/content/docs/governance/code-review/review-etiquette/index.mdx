@@ -1,73 +1,71 @@
 ---
 title: Review Etiquette
-description: "Etika code review — dari pengalaman pertama kali kode di-review sampai jadi reviewer — CodingSkuy"
+description: "Etika code review — dari pengalaman direview dengan kasar — CodingSkuy"
 ---
 
 # Review Etiquette
 
-> *"Komentar pertama di PR pertamaku: 'Fungsi ini terlalu panjang.' Awalnya aku merasa diserang. Ternyata itu investasi paling berharga."*
+> *"Pertama kali kena review: 'Ini kode jelek. Tulis ulang.' Tanpa penjelasan. Rasanya — males ngoding seminggu."*
 
-Aku ingat persis code review pertamaku di Dicoding. Mentorku dari Tokopedia meninggalkan komentar: *"Fungsi ini terlalu panjang, bisa dipisah jadi dua."*
+Code review bukan cuma soal teknis. Tapi juga soal **manusia** — perasaan, ego, dan hubungan tim. Review yang kasar bisa bikin developer malas. Review yang baik bisa bikin tim tumbuh.
 
-Reaksiku: defensif. Kupikir kodeku sudah baik. Tapi setelah dia menjelaskan *mengapa* — readability, testability, maintainability — aku paham. Ini bukan serangan. Ini bantuan.
-
----
-
-### Untuk Reviewer
-
-**1. Kritik kode, bukan orangnya**
-
-Bukan: *"Kamu kok bikin kode kayak gini?"*
-Tapi: *"Fungsi ini bisa dipisah jadi lebih rapi karena..."*
-
-**2. Jelaskan kenapa**
-
-Bukan cuma bilang "ini jelek." Tapi "ini jelek karena..." Sertakan alasan.
-
-**3. Tawarkan alternatif**
-
-Kalau kamu tahu solusi yang lebih baik, tawarkan. Atau arahkan ke referensi/dokumentasi.
-
-**4. Label untuk skala prioritas**
-
-Pembedaan yang kupelajari:
-- **Blocker** — harus diperbaiki sebelum merge
-- **Should** — idealnya diperbaiki, tapi bukan blocker
-- **Nitpick** — preferensi pribadi, terserah penulis
-
-**5. Mulai dengan apresiasi**
-
-Sebelum kritik, hargai apa yang baik. Bukan basa-basi. Tulus.
+Aku pernah di kedua sisi. Dulu aku juga reviewer yang kasar — tidak sengaja. Karena aku pikir langsung to the point lebih efisien. Tapi aku salah.
 
 ---
 
-### Untuk Penulis
+### Yang Tidak Boleh Dilakukan
 
-**1. Jangan defensif**
+**1. Jangan bilang "kode kamu jelek"**
 
-Reviewer meluangkan waktu untuk kodemu. Hargai itu. Kalau tidak setuju, tanya: *"Kenapa menurutmu pendekatan lain lebih baik?"*
+Bilang: "Bagian ini bisa disederhanakan." Atau "Ada pendekatan alternatif yang mungkin lebih bersih."
 
-**2. Terima yang masuk akal**
+Fokus ke kode, bukan ke orangnya. Jangan "kamu salah" — tapi "bagian ini riskan karena..."
 
-Komentar yang jelas dan beralasan? Terima dan perbaiki. Jangan berdebat untuk hal kecil.
+**2. Jangan gunakan sarkasme**
 
-**3. Tanya yang tidak jelas**
+"Serius? Ini yang terbaik yang bisa kamu lakukan?" — komentar seperti ini bikin orang sakit hati. Tapi kita sering tidak sadar, apalagi di chat.
 
-Kalau komentar tidak kamu pahami, tanya. Bukan diam lalu *resolve*.
+Teks tidak punya nada. Yang dimaksud bercanda — bisa dibaca sebagai ejekan.
 
-**4. Ucapkan terima kasih**
+**3. Jangan review sambil buru-buru**
 
-Sesederhana *"Thanks for the review"* membuat perbedaan besar.
+Review asal-asalan, komentar ngawur, atau menyetujui kode yang salah — lebih berbahaya daripada tidak review sama sekali.
 
 ---
 
-### Yang Tidak Boleh Terjadi
+### Yang Harus Dilakukan
 
-- Review yang molor >24 jam
-- Review cuma "LGTM" tanpa baca
-- Debat berkepanjangan di comment PR
-- Kritik personal
+**1. Mulai dengan positif**
 
-> *"Code review bukan ajang pamer siapa paling pintar. Tapi proses bersama membuat kode lebih baik."*
+"Bagus, approach-nya menarik." Atau "Nice catch untuk edge case ini."
+
+Bukan basa-basi. Tunjukkan bahwa kamu baca kode dan menghargai usahanya.
+
+**2. Tanya, bukan perintah**
+
+"Kenapa pake pendekatan ini?" lebih baik dari "Ganti pake cara saya."
+
+Tanya memberi kesempatan developer menjelaskan. Mungkin ada alasan yang tidak kamu tahu.
+
+**3. Jelaskan kenapa**
+
+Bukan cuma "ini salah" — tapi "ini riskan karena kalau inputnya X, system bisa error."
+
+Penjelasan membantu developer belajar. Dia tidak cuma benarkan kode — tapi paham kenapa harus dibenerin.
+
+**4. Pisahkan yang penting dan yang opsional**
+
+- "Harus diperbaiki" — untuk error, security issue, logic salah
+- "Saran" — untuk style preference, alternatif approach
+
+Jelasin mana yang blocking dan mana yang nice-to-have.
+
+---
+
+### Timelines
+
+Review dalam 24 jam — maksimal 48 jam. PR yang didiamkan berhari-hari bikin konteks hilang dan developer frustrasi.
+
+> *"Review yang baik bukan tentang membuktikan kamu lebih pintar. Tapi tentang membuat kode tim lebih baik — bersama-sama."*
 
 [Kembali ke Governance](/articles/governance/)

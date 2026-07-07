@@ -7,27 +7,31 @@ description: "REST vs GraphQL — dari pengalaman API design — CodingSkuy"
 
 > *"Dulu semua API kupake REST. Sampai satu endpoint ngirim 10 field, tapi yang kepake cuma 2."*
 
-REST itu simpel dan predictable. Setiap endpoint punya satu resource. GET users, POST users, DELETE users.
-
-**Keunggulan REST:**
-- Sederhana, semua developer paham
-- Caching mudah (HTTP cache)
-- Tooling matang (Postman, Insomnia)
-- Stateless, scale horizontal gampang
+REST itu simpel dan predictable. Setiap endpoint punya satu resource. Developer mana pun yang baca langsung paham. Tapi ada masalah yang mulai kurasakan setelah beberapa proyek.
 
 **Masalah REST yang kualami:**
-- Over-fetching — dapet data kebanyakan
-- Under-fetching — butuh data dari banyak endpoint
-- N+1 query — list → detail tiap item
 
-**GraphQL** nyelesain itu: client request field spesifik, server return sesuai.
+1. **Over-fetching** — endpoint `/users` ngirim semua field user (nama, email, alamat, foto, bio, tangal lahir, dll). Tapi di halaman daftar, aku cuma butuh nama dan foto.
 
-**Tapi GraphQL juga ada masalah:**
-- Complexity — butuh schema, resolver, query language
-- Caching susah — karena tiap query bisa beda
-- Performance — query dalam bisa jadi mahal
-- File upload tidak native
+2. **Under-fetching** — halaman detail butuh data user + data post + data komentar. Dengan REST, butuh 3 endpoint terpisah. Atau bikin endpoint custom yang menggabungkan semuanya.
 
-> *"REST untuk API publik dan simple. GraphQL untuk aplikasi kompleks dengan banyak klien (mobile + web) dan kebutuhan data yang berbeda-beda. Pilih yang paling nyaman untuk timmu."*
+3. **N+1 query** — GET list users, lalu untuk setiap user GET detail posts. Kalau ada 100 user, total 101 request.
+
+**GraphQL nyelesain itu:**
+Client request field spesifik, server return sesuai. Satu query bisa dapet user + posts + comments sekaligus.
+
+Tapi GraphQL juga punya masalah sendiri:
+
+1. **Complexity** — butuh schema, resolver, query language. Setup lebih lama dari REST.
+2. **Caching susah** — karena tiap query bisa beda. REST gampang di-cache karena endpoint tetap.
+3. **Performance query** — client bisa request nested data yang dalam. Query murah di client tapi mahal di server.
+4. **File upload tidak native** — harus pake workaround.
+
+**Kesimpulanku:**
+REST untuk API publik, simple, dan butuh caching. GraphQL untuk aplikasi kompleks dengan banyak klien (mobile + web) yang butuh data berbeda-beda.
+
+Tapi untuk proyek yang timnya kecil? REST aja. Kesederhanaannya lebih berharga.
+
+> *"REST untuk API publik dan simple. GraphQL untuk aplikasi kompleks dengan banyak klien."*
 
 [Kembali ke Decisions](/articles/decisions/)

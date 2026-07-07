@@ -1,62 +1,57 @@
 ---
 title: Security Assessment
-description: "Menilai keamanan dependency — dari pengalaman kena vulnerability — CodingSkuy"
+description: "Menilai keamanan dependensi — dari pengalaman library dengan celah keamanan — CodingSkuy"
 ---
 
 # Security Assessment
 
-> *"Vulnerability pertama yang kuhadapi: library yang kupakai ternyata punya celah SQL injection. Beruntung, production belum terdampak."*
+> *"Tahun lalu ada CVE di library yang kupakai. Untung tidak ekspos data user. Tapi itu peringatan."*
 
-Waktu itu aku dapat notifikasi dari GitHub Dependabot: *"Critical vulnerability detected in library X."*
-
-Jantungku berdetak cepat. Aku buka detailnya — ternyata versi library yang kupakai punya celah eksekusi kode jarak jauh.
-
-Beruntung, celah itu belum dieksploitasi. Tapi sejak itu aku tidak pernah anggap remeh dependency security.
+Setiap dependensi adalah potensi celah keamanan. Kamu tidak tahu siapa yang maintain library itu, apakah mereka jaga keamanan dengan baik.
 
 ---
 
-### Yang Perlu Dicek
+### Yang Harus Dicek
 
-**1. Known Vulnerability**
+**1. Riwayat CVE**
 
-Tools otomatis yang kupakai:
-- GitHub Dependabot (gratis)
-- `npm audit` atau `dart pub outdated`
-- Snyk (untuk yang lebih advance)
+Cek: apakah library ini pernah punya celah keamanan? Gimana respon maintainer?
 
-Jadwalkan pengecekan rutin. Bukan cuma sekali pas install.
+Tools:
+- GitHub Security Advisories
+- Snyk
+- Dependabot (bawaan GitHub)
 
-**2. Reputasi Maintainer**
+**2. Supply chain security**
 
-Cek:
-- Apakah maintainer dikenal di komunitas?
-- Apakah ada red flag di isu tracker?
-- Apakah review keamanan pernah dilakukan?
+- Apakah maintainer pakai 2FA? (kalau tidak, akun mereka bisa diretas)
+- Apakah rilis ditandatangani? (verified)
+- Apakah ada mekanisme reporting vulnerability?
 
-**3. Supply Chain Risk**
+**3. Dependency scope**
 
-Ini yang sekarang paling diperhatikan:
-- Apakah maintainer cuma satu orang? (single point of failure)
-- Apakah maintainer menggunakan 2FA?
-- Apakah ada riwayat akun maintainer diretas?
+Semakin besar library, semakin besar permukaan serangan. Library yang butuh 50 dependency lain — risikonya lebih tinggi dari library yang zero dependency.
 
 ---
 
-### Praktik Harian
+### Mitigasi
 
-- **Lock version** — jangan pakai `^` untuk dependency kritis. Versi spesifik lebih aman
-- **Update terjadwal** — jangan update semua dependency sekaligus. Update satu-satu, test, baru lanjut
-- **Audit bulanan** — jadwalkan dependency audit tiap bulan
-- **Minimalisasi** — makin sedikit dependency, makin sedikit permukaan serangan
+**Update rutin** — jangan biarkan library usang. Dependabot bisa otomatis bikin PR kalau ada update.
+
+**Monitor CVE** — subscribe ke notifikasi keamanan untuk library yang kamu pake.
+
+**Minimalkan dependensi** — setiap library yang ditambah adalah risiko tambahan. Tanya: apa memang perlu? Atau bisa pakai standar library?
+
+**Pin versi** — jangan pake versi "latest" atau "^1.0.0" tanpa batas. Tentukan versi eksak, update setelah testing.
 
 ---
 
-### Pertanyaan Sebelum Install Library
+### Yang kulakukan
 
-*"Apakah saya bersedia bertanggung jawab atas keamanan library ini untuk 2 tahun ke depan?"*
+1. Dependabot aktif — setiap ada update keamanan, langsung notify
+2. Review changelog sebelum update — jangan asal upgrade
+3. Kalau library punya CVE kritis dan tidak di-fix — cari alternatif
 
-Kalau jawabannya tidak, cari alternatif yang lebih terawat.
-
-> *"Setiap dependency yang kamu tambah adalah pintu masuk potensial. Pastikan pintu itu terkunci."*
+> *"Keamanan dependensi bukan cuma tanggung jawab maintainer library — tapi tanggung jawab kamu yang memakainya."*
 
 [Kembali ke Governance](/articles/governance/)

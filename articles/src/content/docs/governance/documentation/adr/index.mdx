@@ -1,89 +1,64 @@
 ---
-title: ADR (Architecture Decision Record)
-description: "Mendokumentasikan keputusan arsitektur — dari pengalaman melupakan keputusan sendiri — CodingSkuy"
+title: Architecture Decision Records
+description: "ADR — dari pengalaman lupa kenapa pilih teknologi tertentu — CodingSkuy"
 ---
 
-# ADR (Architecture Decision Record)
+# Architecture Decision Records
 
-> *"6 bulan setelah bikin keputusan arsitektur, tim baru bertanya: 'Kenapa kita pake database ini?' Aku tidak bisa jawab."*
+> *"Setahun kemudian, aku lihat kode lama dan bertanya: 'Kenaga dulu pake ini?' Tidak ada jawaban — karena tidak didokumentasikan."*
 
-Itu momen yang memalukan.
-
-Aku yang memutuskan pakai MongoDB di proyek itu. Tapi ketika ditanyai alasannya 6 bulan kemudian, aku hanya bisa menjawab: *"Waktu itu kayaknya cocok."*
-
-Tim baru tidak puas. Mereka butuh konteks untuk memahami apakah keputusan itu masih relevan.
-
-Sejak itu aku mulai nulis ADR.
+ADR (Architecture Decision Record) adalah dokumen pendek yang mencatat keputusan arsitektur. Bukan dokumentasi teknis lengkap — cukup konteks, keputusan, dan alasan.
 
 ---
 
-### Apa Itu ADR?
+### Kenapa ADR Penting
 
-Dokumen pendek yang mencatat:
-- Keputusan arsitektur apa yang diambil
-- Konteksnya saat itu
-- Opsi yang dipertimbangkan
-- Kenapa opsi ini dipilih
+**1. Ingatan tidak reliable**
 
-Bukan dokumentasi berat. Cukup 1 halaman.
+Setahun lalu kamu pilih Riverpod daripada BLoC. Sekarang ada yang tanya kenapa. Kamu lupa detailnya. ADR menjawab — tanpa harus meriset ulang.
+
+**2. Onboarding tim baru**
+
+Anggota tim baru baca ADR — langsung paham: "Oh, ini kenaga pake pattern ini, ini trade-off-nya." Tidak perlu tanya senior yang mungkin sudah lupa.
+
+**3. Menghindari repeated debate**
+
+"Kenaga tidak pake microservices?" — "Sudah dibahas setahun lalu. Ini ADR-nya." Diskusi tidak perlu diulang.
 
 ---
 
 ### Format yang Kupakai
 
-```
-# ADR-001: Pilih PostgreSQL
+Format sederhana — tidak perlu template rumit:
 
-## Status
-Diterima
+**Title:** Keputusan apa yang diambil?
 
-## Konteks
-Butuh database untuk sistem manajemen konten.
-Data sangat relasional: user, post, kategori, komentar.
-Tim back-end paham SQL.
+**Status:** Proposed | Accepted | Deprecated | Superseded
 
-## Opsi
-1. PostgreSQL — SQL, mature, open source
-2. MongoDB — NoSQL, fleksibel
-3. Firebase — real-time, managed
+**Context:** Masalah apa yang dihadapi? Kenaga ini perlu diputuskan?
 
-## Keputusan
-PostgreSQL.
+**Decision:** Apa yang diputuskan?
 
-## Alasan
-- Data relasional complex
-- Tim sudah familiar SQL
-- Firebase terlalu mahal untuk skala besar
-- MongoDB overkill untuk kebutuhan saat ini
+**Consequences:** Apa dampaknya? Positif dan negatif.
 
-## Konsekuensi
-- (+) ACID compliance, integritas data terjamin
-- (-) Scaling horizontal lebih susah dari NoSQL
-```
+Contoh:
+
+**Title:** Pilih Riverpod untuk State Management
+**Status:** Accepted
+**Context:** Aplikasi mulai punya 10+ screen. Provider mulai terasa terbatas — butuh BuildContext, testing susah.
+**Decision:** Migrasi ke Riverpod secara bertahap. Fitur baru pake Riverpod. Fitur lama dipindah satu per satu.
+**Consequences:** +Tidak perlu BuildContext, +Testing lebih mudah, -Butuh waktu migrasi, -Tim harus belajar Riverpod.
 
 ---
 
-### Kapan Nulis ADR?
+### Kapan Nulis ADR
 
-- Pilih teknologi baru (database, framework, library utama)
-- Ubah arsitektur yang berdampak luas
-- Setiap keputusan yang mungkin ditanyakan lagi tahun depan
+- Setiap kali ada keputusan arsitektur yang signifikan
+- Setiap kali ada pilihan antara dua teknologi
+- Setiap kali ada perubahan standar tim
 
-### Kapan Tidak Perlu?
+Tidak harus panjang. 5-10 baris cukup.
 
-- Keputusan sepele (pilih warna button)
-- Implementasi detail yang mudah diubah
-- Yang sudah jelas dan tidak kontroversial
-
----
-
-### Tips dari Pengalaman
-
-- Tulis pas keputusan diambil, bukan 3 bulan kemudian
-- ADR tidak perlu panjang. Intinya: konteks, opsi, alasan
-- Simpan di repo, dekat dengan kode
-- Kalau keputusan berubah, tulis ADR baru (bukan edit yang lama)
-
-> *"Keputusan tanpa dokumentasi adalah keputusan yang tidak pernah terjadi."*
+> *"ADR adalah surat untuk dirimu di masa depan — agar tidak bertanya-tanya kenaga dulu ambil keputusan itu."*
 
 [Kembali ke Governance](/articles/governance/)

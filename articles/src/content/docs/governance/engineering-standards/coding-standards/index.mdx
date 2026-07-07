@@ -1,68 +1,57 @@
 ---
 title: Coding Standards
-description: "Standar coding — dari pengalaman baca kode sendiri yang tidak konsisten — CodingSkuy"
+description: "Standar coding — dari pengalaman kode yang tidak konsisten — CodingSkuy"
 ---
 
 # Coding Standards
 
-> *"6 bulan setelah nulis kode, aku membacanya lagi. 'Ini punya siapa?' Ternyata punyaku sendiri."*
+> *"File pertama pake 2 spasi. File kedua pake 4 spasi. File ketiga pake tab. Semua di proyek yang sama."*
 
-Itu momen yang memalukan sekaligus membuka mata. Kode yang kutulis sendiri — dengan gaya yang tidak konsisten — terasa asing ketika kubaca 6 bulan kemudian.
+Pernah lihat kode yang formatting-nya tidak konsisten dalam satu proyek? Aku pernah. Dan itu menyebalkan. Setiap buka file baru, harus adaptasi gaya penulisan yang berbeda.
 
-Bayangkan kalau kode itu dibaca orang lain.
-
----
-
-### Yang Paling Sering Jadi Masalah
-
-**1. Formatting Tidak Konsisten**
-
-Dulu aku kadang pakai 2 spasi, kadang 4 spasi. Kadang `{` di baris baru, kadang di samping. Waktu baca kode sendiri, mata capek.
-
-Solusi: formatter otomatis. `dart format`, `prettier`, `php-cs-fixer`. Biarkan mesin yang urus formatting.
-
-**2. Nama yang Tidak Jelas**
-
-`data`, `temp`, `hasil`, `x` — nama variabel yang tidak menjelaskan apa-apa. Waktu debugging, harus baca seluruh fungsi untuk paham.
-
-Sekarang aku pake aturan: **kalau kamu bisa tebak isi variabel dari namanya saja, itu nama yang baik.**
-
-**3. Komentar yang Tidak Berguna**
-
-```dart
-// increment i
-i++;
-```
-
-Komentar yang hanya mengulang kode. Tidak membantu. Komentar yang berguna:
-
-```dart
-// skip kalau user sudah login
-if (user.isLoggedIn) return;
-```
+Coding standards bukan soal "cara yang benar" — tapi soal **konsistensi**. Tidak masalah pake 2 spasi atau 4 spasi — yang penting sama di semua file.
 
 ---
 
-### Standar yang Kupakai
+### Area yang Perlu Distandarisasi
 
-| Elemen | Aturan |
-|--------|--------|
-| Indentasi | 2 spasi (Dart/JS), 4 spasi (Java/PHP) |
-| Maks baris | 80-120 karakter |
-| Nama kelas | PascalCase: `UserService` |
-| Nama fungsi | camelCase: `getUserById()` |
-| Nama file | snake_case: `user_service.dart` |
-| Komentar | untuk *why*, bukan *what* |
+**1. Formatting**
+
+- Spasi vs tab — pilih salah satu untuk semua
+- Panjang baris — 80 atau 120 karakter?
+- Kurung kurawal — di baris yang sama atau baris baru?
+
+Semua ini bisa diurus oleh formatter otomatis (dart format, prettier, dll). Jangan buang waktu debat formatting — set formatter, jalanin, selesai.
+
+**2. Naming conventions**
+
+- camelCase, snake_case, atau PascalCase? Pilih dan konsisten.
+- Singkatan — boleh atau tidak? "btn" atau "button"? "ctx" atau "context"?
+
+**3. File organization**
+
+- Satu class per file? Atau beberapa class kecil dalam satu file?
+- Naming file — sesuai class name?
 
 ---
 
-### Prinsip
+### Tools yang Kupakai
 
-- **Konsisten** — lebih baik konsisten pakai aturan yang "kurang ideal" daripada tidak konsisten
-- **Otomatis** — gunakan linter dan formatter. Manusia tidak perlu mikirin formatting
-- **Eksplisit** — `getUserByEmail()` lebih baik dari `getUser()`
-- **Kontekstual** — `name` di dalam `User` sudah jelas. `userName` di global
+**Linter** — menangkap kesalahan standar secara otomatis. Di Flutter pake `flutter analyze` atau `dart analyze`.
 
-> *"Kode yang baik terlihat seperti ditulis satu orang — meskipun dikerjakan 10 orang."*
+**Formatter** — merapikan kode secara otomatis. `dart format` untuk Flutter/Dart. `prettier` untuk JavaScript/TypeScript.
+
+**Editor config** — file `.editorconfig` memastikan semua editor punya setting yang sama. Spasi vs tab, indent size, line ending.
+
+---
+
+### Tips
+
+- Jangan debat formatting di code review — itu tugas formatter
+- Standar ditulis dan disepakati — tidak boleh retoraktif
+- Update standar secara periodik — teknologi berubah
+- Automation lebih baik dari manual — makin sedikit yang manual, makin konsisten
+
+> *"Standar coding bukan untuk membatasi kreativitas. Tapi untuk menghilangkan debat tidak produktif tentang hal yang tidak penting."*
 
 [Kembali ke Governance](/articles/governance/)

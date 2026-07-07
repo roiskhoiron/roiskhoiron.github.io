@@ -7,27 +7,33 @@ description: "Edge AI vs cloud AI — dari pengalaman jalanin model di perangkat
 
 > *"Cloud AI itu pintar, tapi lambat karena harus kirim data bolak-balik. Edge AI itu cepat, tapi modelnya lebih kecil."*
 
+Eksperimen: bikin classifier konten untuk kategorisasi artikel CodingSkuy. Dua opsi: pake GPT-4 di cloud, atau TensorFlow Lite di perangkat.
+
 **Cloud AI:**
-- Model besar dan pintar (GPT-4, Claude 3.5)
-- Komputasi di server — perangkat hanya kirim request
-- Dependen internet — tanpa koneksi, mati
-- Latensi lebih tinggi (100ms-2s)
-- Privasi — data dikirim ke cloud
+Aku coba pake GPT-4o via API. Akurat — klasifikasinya tepat. Tapi tiap request butuh 500ms-2s tergantung koneksi. Untuk aplikasi mobile, itu terasa lambat.
+
+Plus: user harus online. Di Indonesia, itu masalah — sinyal tidak selalu stabil.
 
 **Edge AI (on-device):**
-- Model kecil yang jalan di perangkat
-- Latensi sangat rendah (ms)
-- Bisa offline — model tetap jalan
-- Privasi — data tidak ke mana-mana
-- Tapi: model lebih terbatas, komputasi terbatas, baterai terpengaruh
+Aku coba TensorFlow Lite. Training model sederhana dengan dataset artikel CodingSkuy. Hasil: akurasi lebih rendah dari GPT-4 — sekitar 85% vs 95% — tapi klasifikasi selesai dalam 50ms, tanpa internet.
 
-**Ceritaku:**
-Coba eksperimen: bikin classifier sederhana untuk kategorisasi konten.
+Kekurangan: model harus di-deploy bareng aplikasi. Kalau mau update, harus rilis versi baru app.
 
-Versi cloud: pake GPT-4 via API. Akurat, tapi tiap klasifikasi butuh 500ms + koneksi.
+**Perbandingan:**
 
-Versi edge: pake TensorFlow Lite di HP. Training butuh effort, akurasi lebih rendah, tapi klasifikasi selesai dalam 50ms, tanpa internet.
+| Aspek | Cloud AI | Edge AI |
+|-------|----------|---------|
+| Kualitas | Tinggi | Sedang |
+| Latensi | 500ms-2s | 10-100ms |
+| Internet | Wajib | Opsional |
+| Privasi | Data ke server | Data di perangkat |
+| Update model | Instant | Butuh update app |
 
-> *"Cloud AI untuk: kecerdasan tinggi, update model mudah, no device constraint. Edge AI untuk: offline, latensi kritis, privasi ketat, biaya API besar. Keduanya bisa digabung: edge untuk real-time, cloud untuk fallback."*
+**Yang kupelajari:**
+Kombinasi sering jadi jawaban. Edge untuk real-time classification (kategorisasi konten cepat). Cloud untuk task yang butuh kecerdasan tinggi (nulis artikel, analisis mendalam).
+
+Edge sebagai first line — kalau model tidak yakin (confidence rendah), fallback ke cloud.
+
+> *"Cloud AI untuk kecerdasan tinggi. Edge AI untuk offline dan latensi kritis. Gabungkan keduanya untuk hasil optimal."*
 
 [Kembali ke Decisions](/articles/decisions/)

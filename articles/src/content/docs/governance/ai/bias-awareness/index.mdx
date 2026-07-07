@@ -5,22 +5,39 @@ description: "Mengenali bias pada AI — dari pengalaman model yang tidak adil �
 
 # Bias Awareness
 
-> *"Model pertamaku akurat 90%. Tapi 0% untuk salah satu kelompok pengguna. Bukan karena modelnya rusak. Tapi karena datanya tidak seimbang."*
+> *"Model pertamaku akurat 90%. Tapi 0% untuk salah satu kelompok pengguna. Bukan karena rusak — karena data training tidak seimbang."*
 
-Aku tidak sadar sampai ada yang bilang: *"Coba tes modelmu untuk group ini."*
+Aku tidak sadar sama sekali. Laporan akurasi menunjukkan 90%. Aku puas. Sampai seseorang bertanya: *"Coba tes modelmu untuk kategori ini."*
 
-Hasilnya? Bencana. Model prediktifku gagal total untuk kelompok minoritas. Bukan karena modelnya jahat. Karena data training untuk kelompok itu hampir tidak ada.
+Hasilnya? Bencana. Model gagal total. Karena data training untuk kategori itu sangat sedikit.
+
+Dari situ aku belajar: data tidak seimbang bukan cuma masalah teknis — ini masalah etis.
 
 ---
 
 ### Dari Mana Bias Datang?
 
-| Sumber | Contoh |
-|--------|--------|
-| **Data tidak seimbang** | 90% data dari kelompok A, 10% dari B |
-| **Label bias** | Anotator punya preferensi subjektif |
-| **Historical bias** | Data masa lalu mengandung diskriminasi |
-| **Deployment bias** | Pengguna di lapangan berbeda dengan data training |
+**1. Data tidak seimbang**
+
+90% data dari kelompok A, 10% dari B. Model jadi ahli untuk A, tapi buta untuk B. Ini yang paling umum.
+
+Di proyek klasifikasi artikel, dulu aku cuma kumpulin artikel dari sumber yang sama. Hasilnya: model bagus untuk topik dari sumber itu, tapi kacau untuk topik dari sumber lain.
+
+**2. Label bias**
+
+Orang yang kasih label punya preferensi. Contoh: anotator label "spam" untuk email dari domain tertentu karena menurut dia itu spam.
+
+Aku pernah dapat dataset yang labelnya tidak konsisten — dua anotator label data yang sama dengan hasil berbeda. Itu sumber bias.
+
+**3. Historical bias**
+
+Data masa lalu mengandung diskriminasi. Model belajar dari data itu, jadi diskriminasi terwariskan.
+
+Contoh klasik: model screening CV di-training dengan data rekrutmen 10 tahun lalu. Kalau di masa lalu lebih banyak laki-laki yang diterima, model akan "belajar" untuk lebih memprioritaskan laki-laki.
+
+**4. Deployment bias**
+
+Pengguna di lapangan berbeda dengan data training. Model di-training dengan data dari Amerika, dipake di Indonesia. Pasti tidak cocok.
 
 ---
 
@@ -28,16 +45,18 @@ Hasilnya? Bencana. Model prediktifku gagal total untuk kelompok minoritas. Bukan
 
 1. Uji model di berbagai kelompok
 2. Bandingkan akurasi antar kelompok
-3. Kalau beda signifikan, ada bias
+3. Kalau beda signifikan (>10%), ada bias
+
+Tidak perlu tool canggih. Cukup pisahkan data uji per kategori, hitung akurasi masing-masing.
 
 ---
 
 ### Mitigasi
 
-- Seimbangkan data training
-- Gunakan fairness metrics
-- Libatkan diverse perspective dalam pengembangan
-- Pantau setelah deployment
+- **Seimbangkan data training** — oversampling kelompok minoritas, atau undersampling kelompok mayoritas
+- **Gunakan fairness metrics** — jangan cuma accuracy. Lihat false positive rate per kelompok
+- **Diverse perspective** — libatkan orang dari latar belakang berbeda dalam pengembangan
+- **Pantau terus** — bias bisa muncul setelah deployment karena data berubah
 
 > *"Bias bukan kesalahan teknis — ini tanggung jawab etis. Kamu yang bikin model, kamu yang bertanggung jawab atas dampaknya."*
 

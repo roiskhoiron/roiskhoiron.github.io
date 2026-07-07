@@ -5,13 +5,13 @@ description: "Etika AI — dari pengalaman lihat AI bikin keputusan yang tidak a
 
 # AI Ethics
 
-> *"AI bukan netral. AI belajar dari data yang kita beri. Kalau datanya bias, keputusannya bias."*
+> *"Model klasifikasiku akurat 90% secara keseluruhan. Tapi 0% untuk satu kelompok. Karena data training untuk kelompok itu hampir tidak ada."*
 
-Waktu pertama belajar machine learning, aku bikin model klasifikasi sederhana. Hasilnya akurat — 90%.
+Waktu pertama belajar machine learning, aku bangga model klasifikasiku mencapai 90% akurasi. Tapi kemudian aku tes per-kategori. Satu kategori: 0%. Semua prediksi untuk kategori itu salah.
 
-Tapi setelah dilihat lebih dalam, modelku gagal total di satu kelompok data. Ternyata data training untuk kelompok itu sangat sedikit.
+Bukan karena modelnya rusak. Tapi karena data training untuk kategori itu cuma 5 dari 1000 sampel.
 
-Modelnya tidak "jahat". Tapi tidak adil.
+Sejak itu aku sadar: **akurasi rata-rata tidak cukup. Kamu harus lihat performa per kelompok.**
 
 ---
 
@@ -19,38 +19,40 @@ Modelnya tidak "jahat". Tapi tidak adil.
 
 **1. Fairness**
 
-Apakah model berlaku adil untuk semua kelompok?
+Apakah model berlaku adil untuk semua kelompok? Aku selalu cek: performa model di kelompok A vs B. Kalau beda jauh, ada masalah.
 
-Coba tes: performa model di kelompok A vs B. Kalau beda jauh, ada masalah.
+Contoh: model screening CV. Kalau model lebih sering merekomendasikan laki-laki daripada perempuan — meskipun kualifikasi sama — itu bias. Bukan karena model "jahat", tapi karena data training mungkin bias.
+
+Cara cek sederhana: split data berdasarkan demografi, bandingkan akurasi tiap grup.
 
 **2. Transparency**
 
-Pengguna harus tahu bahwa mereka berinteraksi dengan AI.
+Pengguna harus tahu bahwa mereka berinteraksi dengan AI. Bukan ditipu.
 
-Sederhana: *"Halo, saya asisten AI. Saya bisa membantu..."* bukan berpura-pura jadi manusia.
+Sederhana: *"Halo, saya asisten AI."* Bukan *"Halo, saya Rois — ada yang bisa dibantu?"* Kalau user kira mereka ngobrol dengan manusia, itu masalah etis.
+
+Di CodingSkuy, AI dengan jelas dikasih label: "Dijawab oleh AI." User tahu bahwa yang merespon bukan manusia.
 
 **3. Accountability**
 
-Harus ada manusia yang bertanggung jawab atas keputusan AI.
+Harus ada manusia yang bertanggung jawab. Kalau AI salah rekomendasi — siapa yang bertanggung jawab? Manusia, bukan AI.
 
-Kalau AI salah rekomendasi obat — siapa yang bertanggung jawab? Dokter. Bukan AI.
+Aku selalu pastikan ada human-in-the-loop untuk keputusan penting. AI boleh kasih rekomendasi. Tapi keputusan akhir tetap di tangan manusia.
 
 **4. Privacy**
 
-Model tidak boleh memuntahkan data training.
+Model tidak boleh memuntahkan data training. Ini yang paling sering dilanggar. Model bisa "menghafal" data pribadi dan mengulanginya.
 
-Ini yang paling sering dilanggar. Model bisa "menghafal" data pribadi dan mengulanginya.
-
----
-
-### Praktik
-
-- **Audit data training** — pastikan representatif
-- **Monitor setelah deployment** — performa bisa berubah seiring waktu
-- **Feedback loop** — sediakan cara pengguna melaporkan hasil yang tidak adil
-- **Human override** — pastikan ada manusia yang bisa membatalkan keputusan AI
+Pernah lihat demo: prompt "Lanjutkan kalimat: 'Nama saya...'" — dan model ngeluarin nama asli orang dari data training. Itu data leakage.
 
 ---
+
+### Praktik yang kulakukan
+
+- **Audit data training** — pastikan representatif. Kalau 95% data dari kelompok yang sama, model tidak akan bekerja untuk kelompok lain.
+- **Monitor setelah deployment** — performa bisa berubah. Data di lapangan berbeda dengan data training.
+- **Feedback loop** — setiap AI punya tombol: "Laporkan hasil yang tidak sesuai." User bisa lapor kalau output aneh.
+- **Human override** — fitur untuk membatalkan keputusan AI. Penting untuk safety net.
 
 > *"AI yang etis bukan yang paling pintar. Tapi yang paling bisa dipercaya."*
 

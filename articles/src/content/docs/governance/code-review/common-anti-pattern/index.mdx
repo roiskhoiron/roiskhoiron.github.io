@@ -1,54 +1,53 @@
 ---
-title: Common Anti Pattern
-description: "Anti-pattern yang sering muncul — dari pengalaman debugging kode sendiri dan orang lain — CodingSkuy"
+title: Code Review Anti Pattern
+description: "Code review anti-pattern — dari pengalaman jadi reviewer dan yang direview — CodingSkuy"
 ---
 
-# Common Anti Pattern
+# Code Review Anti Pattern
 
-> *"Anti-pattern adalah solusi yang terlihat benar di permukaan, tapi jadi mimpi buruk 3 bulan kemudian."*
+> *"Pernah review cuma bilang 'LGTM' tanpa lihat kode. Besoknya error di production. Itu salahku."*
 
-Aku pelajari anti-pattern bukan dari buku. Tapi dari kode yang aku tulis sendiri, lalu aku sesali 6 bulan kemudian. Dan dari kode orang lain yang harus aku perbaiki.
+Code review — ritual yang sering jadi formalitas. Padahal kalau dilakukan dengan benar, ini safety net paling efektif.
 
-Ini yang paling sering kutemui:
-
----
-
-### 1. God Class — Satu Kelas untuk Semua
-
-Dulu waktu belajar Android, semua logic kutulis di satu Activity. UI, logic bisnis, network call, database — semua di satu file.
-
-Tanda-tandanya: file >500 baris, susah dibaca, error di satu tempat berdampak ke fitur lain.
-
-**Pelajaran:** Pisah berdasarkan tanggung jawab. Testing jadi lebih mudah. Bug lebih gampang dilacak.
-
-### 2. Copy-Paste Programming
-
-Pernah menemukan bug di satu fitur, lalu sadar bug yang sama ada di 3 file lain karena kodenya di-copy-paste?
-
-Aku alami itu. Waktu itu aku buru-buru, copas kode dari fitur A ke fitur B, ubah sedikit. Hemat 5 menit. Tapi ketika fitur A diperbaiki, fitur B lupa diperbaiki. Bug muncul di production.
-
-**Pelajaran:** Kalau kode perlu dipakai di banyak tempat, ekstrak ke fungsi/kelas terpisah.
-
-### 3. Golden Hammer — Pakai Satu Tools untuk Semua
-
-Dulu aku sempat kecanduan NoSQL. "Semua pake MongoDB." Sampai aku bangun sistem yang butuh relasi kompleks. Pelan. Berantakan. Akhirnya migrasi ke PostgreSQL.
-
-**Pelajaran:** Pilih tools berdasarkan masalah, bukan karena lagi tren.
-
-### 4. Premature Optimization
-
-Aku pernah optimasi query yang belum lambat. Bikin cache di semua layer. Kode jadi kompleks. Ternyata setelah diukur, bottleneck-nya di tempat lain.
-
-**Pelajaran:** Buat sederhana dulu. Ukur. Baru optimasi yang terbukti lambat.
-
-### 5. Fear of Removing Code
-
-Ada file dengan komentar *"TODO: hapus kalau sudah tidak dipakai"* yang bertahan 2 tahun. Karena takut dihapus, padahal tidak ada yang memanggil.
-
-**Pelajaran:** Git menyimpan sejarah. Kalau tidak dipakai, hapus.
+Aku pernah di kedua sisi: yang kena review asal-asalan, dan yang jadi reviewer malas.
 
 ---
 
-> *"Anti-pattern bukan dosa. Tapi pelajaran yang kamu bayar dengan waktu debugging."*
+### Anti-pattern yang Sering Terjadi
+
+**1. LGTM tanpa baca**
+
+Lihat PR, scroll, komentar "LGTM!" — tapi tidak membaca kode sama sekali. Ini berbahaya. Error kecil lolos, security issue terlewat.
+
+Kenapa orang lakuin ini? Karena buru-buru, atau merasa "ah, ini developer senior, pasti bener."
+
+**2. Review terlalu lambat**
+
+PR didiamkan berhari-hari. Konteks hilang. Developer harus refresh ingatan. Kadang terpaksa merge tanpa review karena deadline.
+
+Di satu proyek, PR saya nunggu 2 minggu untuk direview. Pas direview, saya sudah lupa detailnya. Harus baca ulang kode dari awal.
+
+**3. Nitpicking berlebihan**
+
+Reviewer fokus ke spasi, penamaan variabel, dan formatting. Tapi tidak lihat logic error atau security issue.
+
+Padahal formatting bisa diurus oleh linter dan formatter otomatis. Waktu review seharusnya untuk hal yang tidak bisa dideteksi mesin.
+
+**4. Ego trip**
+
+Reviewer merasa kodenya selalu lebih baik. Semua PR dikomentari dengan "harusnya pake cara saya."
+
+Padahal coding itu personal. Selama ikut standar tim dan logikanya benar, banyak cara yang valid.
+
+---
+
+### Cara Menghindari
+
+- **Prioritaskan review** — review dalam 24 jam, maksimal 48 jam
+- **Baca dengan teliti** — jangan LGTM tanpa baca. Kalau tidak sempat, bilang saja
+- **Fokus ke logic, bukan style** — biarkan linter urus formatting
+- **Tanya, bukan perintah** — "Kenapa pake pendekatan ini?" lebih baik dari "Ganti pake cara saya"
+
+> *"Code review yang baik bukan mencari kesalahan — tapi belajar bersama untuk menghasilkan kode yang lebih baik."*
 
 [Kembali ke Governance](/articles/governance/)

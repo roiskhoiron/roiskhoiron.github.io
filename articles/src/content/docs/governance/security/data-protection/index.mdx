@@ -1,60 +1,70 @@
 ---
 title: Data Protection
-description: "Melindungi data pengguna — dari pengalaman hampir bocorin data sensitif — CodingSkuy"
+description: "Perlindungan data — dari pengalaman data user nyaris bocor — CodingSkuy"
 ---
 
 # Data Protection
 
-> *"Waktu debugging, aku print object user ke console. Berisi email, nomor telepon, alamat. Lupa dihapus. Ke production."*
+> *"Log error yang kupikir aman — ternyata menyimpan password user dalam bentuk teks biasa. Beruntung ketahuan sebelum bocor."*
 
-Beruntung, ada yang lihat di code review sebelum merge. Tapi itu momen yang bikin aku sadar: data protection bisa gagal karena hal sesederhana lupa hapus log.
+Waktu debugging, aku log request body untuk lihat apa yang dikirim user. Lupa filter field sensitif. Di log tercatat: email, nama, dan password. Log itu bisa diakses tim lain.
 
----
-
-### Yang Paling Sering Bocor
-
-Dari pengalaman dan baca insiden orang lain:
-
-| Sumber Kebocoran | Contoh |
-|-----------------|--------|
-| **Logging** | Print data sensitif ke console/log |
-| **Error message** | Stack trace yang bocor ke client |
-| **API response** | Field yang seharusnya tidak terekspos |
-| **File upload** | File bisa diakses tanpa autentikasi |
-| **Backup** | Backup database di public bucket |
+Sejak itu, semua logging harus difilter. Data sensitif tidak boleh tercatat.
 
 ---
 
-### Klasifikasi Data
+### Data Sensitif
 
-Aku bagi data jadi 3 level:
-
-- **Publik** — nama produk, artikel — proteksi standar
-- **Internal** — kode sumber, dokumentasi — akses terbatas
-- **Sensitif** — password, token, data pengguna — enkripsi + akses ketat
-
-Semakin sensitif, semakin ketat perlakuannya.
+Yang termasuk data sensitif:
+- Password, token, API key
+- Data pribadi (nama, email, alamat, nomor telepon)
+- Data finansial (nomor kartu, rekening)
+- Data kesehatan
 
 ---
 
-### Praktik Harian
+### Prinsip
 
-1. **Jangan log data sensitif** — kalau perlu logging untuk debugging, pastikan dihapus sebelum production
-2. **Enkripsi** — HTTPS untuk in transit, AES untuk at rest
-3. **Minimalkan** — hanya kumpulkan data yang benar-benar dibutuhkan
-4. **Hapus** — kalau data sudah tidak diperlukan, hapus
-5. **Backup** — backup terenkripsi, akses terbatas
+**1. Data minimization**
+
+Kumpulkan data yang diperlukan saja. Jangan minta nomor telepon kalau hanya perlu email.
+
+Ini bukan cuma soal keamanan — tapi juga UX. Makin sedikit data yang diminta, makin kecil risiko.
+
+**2. Enkripsi**
+
+- **In transit** — HTTPS/TLS. Semua data yang dikirim harus dienkripsi.
+- **At rest** — data di database dienkripsi. Kalau database bocor, data tidak bisa dibaca.
+
+**3. Akses terbatas**
+
+Tidak semua orang perlu akses ke semua data. Developer frontend tidak perlu akses ke database production.
+
+Gunakan prinsip least privilege. Setiap role cuma punya akses ke data yang diperlukan untuk tugasnya.
+
+**4. Audit log**
+
+Siapa yang akses data apa dan kapan? Catat. Untuk investigasi kalau ada insiden.
 
 ---
 
-### Checklist
+### Praktik
 
-- [ ] Tidak ada data sensitif di log?
-- [ ] Semua API pake HTTPS?
-- [ ] Password di-hash?
-- [ ] File upload terproteksi?
-- [ ] Backup di tempat aman?
+- **Jangan log password** — filter field sensitif di logging
+- **Mask data sensitif di UI** — nomor kartu: **** **** **** 1234
+- **Hapus data yang tidak diperlukan** — kalau user minta hapus akun, hapus datanya
+- **Backup rutin** — dan backup harus dienkripsi juga
 
-> *"Data pengguna bukan milikmu. Kamu cuma dititipi. Jaga seperti itu."*
+---
+
+### Response Plan
+
+Kalau terjadi kebocoran:
+1. **Identifikasi** — data apa yang bocor? Seberapa parah?
+2. **Stop the leak** — tutup celah. Matikan akses yang tidak perlu.
+3. **Notifikasi** — beri tahu user yang terdampak.
+4. **Evaluasi** — kenapa ini terjadi? Sistem apa yang perlu diperbaiki?
+
+> *"Data protection bukan cuma teknologi — tapi proses. Mulai dari bagaimana data dikumpulkan sampai bagaimana data dihapus."*
 
 [Kembali ke Governance](/articles/governance/)

@@ -1,61 +1,56 @@
 ---
-title: Authentication Best Practice
-description: "Praktik autentikasi — dari pengalaman hampir kena data breach — CodingSkuy"
+title: Auth Best Practice
+description: "Best practice autentikasi — dari pengalaman bikin login yang bocor — CodingSkuy"
 ---
 
-# Authentication Best Practice
+# Auth Best Practice
 
-> *"Waktu aku mulai, autentikasi cuma bikin form login dan cek password pake ==. Syukurnya itu cuma proyek belajar.""
+> *"Dulu aku simpan password di database tanpa hash. Untung aplikasinya cuma dipake 3 orang."*
 
-Aku mulai serius soal autentikasi ketika baca berita startup yang kena data breach karena password disimpan dalam plain text. Ribuan user terdampak.
+Waktu belajar backend pertama kali — di SMK — aku bikin sistem login simpel. Password disimpan di database sebagai teks biasa (plain text). Aku tidak tahu itu berbahaya. Aku juga tidak tahu ada yang namanya hashing, salt, bcrypt.
 
-Aku bertanya: *"Apakah aplikasiku aman dari serangan serupa?"*
-
-Jawabannya: belum tentu.
-
----
-
-### Yang Paling Mendasar
-
-**1. Password**
-
-Jangan pernah simpan password dalam bentuk asli. Pakai bcrypt atau argon2.
-
-Awalnya aku pikir MD5 sudah cukup — cepat, simpel. Ternyata MD5 bisa di-crack dalam hitungan detik.
-
-**2. JWT (Token)**
-
-Yang kupelajari:
-- Access token pendek umurnya (15 menit)
-- Refresh token lebih panjang (7 hari) tapi disimpan aman
-- Jangan simpan token di localStorage. Pakai httpOnly cookie
-- Verifikasi signature di setiap request
-
-**3. Rate Limiting**
-
-Yang paling sering dilupakan. Tanpa rate limiting, attacker bisa coba jutaan password dalam semalam.
-
-Aku terapin: 5 percobaan gagal = tunggu 15 menit.
+Sejak itu, setiap urusan auth, aku selalu terapkan best practice.
 
 ---
 
-### Checklist dari Pengalaman
+### Hal Fundamental
 
-- [ ] Password di-hash? (bcrypt/argon2, jangan MD5)
-- [ ] Rate limiting di login?
-- [ ] Session timeout setelah tidak aktif?
-- [ ] Opsi MFA sudah ada? (minimal untuk admin)
-- [ ] Log percobaan login?
-- [ ] Token expire otomatis?
+**1. Jangan pernah simpan password**
+
+Simpan hash, bukan password. Pakai bcrypt, argon2, atau PBKDF2. Jangan MD5 atau SHA — itu untuk checksum, bukan untuk password.
+
+**2. Gunakan HTTPS**
+
+Setiap request login/register harus HTTPS. Kalau HTTP, password dikirim dalam teks biasa — bisa dibaca siapa pun di jaringan yang sama.
+
+**3. Rate limiting**
+
+Batasi percobaan login. 5 kali salah → tunggu 5 menit. Atau pakai CAPTCHA. Mencegah brute force.
 
 ---
 
-### Yang Kupelajari dari Kasus Nyata
+### JWT
 
-- Jangan pernah percaya input user. Selalu validasi di server
-- HTTPS wajib. Tidak ada alasan untuk HTTP di 2024
-- Notifikasi login dari perangkat baru — fitur sederhana yang menyelamatkan banyak user
+JWT (JSON Web Token) populer untuk session management. Tapi ada hal yang perlu diperhatikan:
 
-> *"Autentikasi adalah pintu depan aplikasi. Pastikan pintunya kuat."*
+- **Jangan simpan rahasia di JWT** — JWT di-encode, bukan di-enkripsi. Siapa pun bisa decode dan lihat isinya. Hanya signature yang tidak bisa dipalsukan.
+- **Set expiration** — JWT tanpa expiry sangat berbahaya. Kalau bocor, penyerang bisa akses selama-lamanya.
+- **Refresh token** — access token pendek (15 menit), refresh token lebih panjang (7 hari). Kalau access token bocor, dampak terbatas.
+
+### Session Management
+
+- **Logout harus invalidate session** — jangan cuma hapus token di client. Server juga harus invalidate.
+- **Multi-device** — apakah user bisa login di banyak device? Kalau iya, butuh session management per device.
+- **Deteksi anomali** — login dari IP berbeda dalam waktu singkat? Notifikasi user.
+
+---
+
+### Praktik yang kulakukan
+
+- Firebase Auth untuk CodingSkuy — tidak perlu handle password sendiri
+- Rate limiting di API — 5 attempts per menit per IP
+- Logout di semua device kalau user ganti password
+
+> *"Auth adalah gerbang pertama. Kalau gerbangnya bocor, sisanya tidak penting."*
 
 [Kembali ke Governance](/articles/governance/)

@@ -7,24 +7,28 @@ description: "Hive vs SQLite — dari pengalaman pilih database lokal Flutter �
 
 > *"Hive itu cepat. Tapi pas butuh JOIN — SQLite lah jawabannya."*
 
-Dua opsi database lokal Flutter. Sama-sama populer, beda use case.
+Dua opsi database lokal Flutter. Aku pake keduanya, untuk kebutuhan yang berbeda.
 
-**Hive:**
-- Key-value NoSQL
-- Super cepat baca/tulis
-- Tidak support query kompleks
-- Tidak ada relasi
+**Awalnya Hive:**
+Aku pilih Hive untuk cache daftar produk. Setup-nya cepat, baca/tulis super cepat. Tinggal define adapter, simpan object, selesai. Cocok banget untuk cache — data tidak perlu query kompleks, cukup "simpan semua dan ambil semua."
 
-**SQLite (via sqflite/drift):**
-- Relational SQL
-- Support JOIN, filter, aggregate
-- Lebih lambat dari Hive untuk operasi sederhana
-- Butuh schema definition
+Tapi kemudian aku butuh filter "produk dengan harga >50000 diurutkan berdasarkan rating." Dengan Hive, harus load semua data ke memory, filter manual pakai loop. Tidak efisien.
 
-**Ceritaku:**
-Awalnya pake Hive untuk cache daftar produk. Cepet, gampang. Tapi begitu perlu filter "produk dengan harga >50000 diurutkan berdasarkan rating" — Hive harus load semua data, filter manual di kode.
+**Pindah ke SQLite:**
+SQLite dengan drift (sebelumnya moor) butuh setup lebih — define table, migration, query. Tapi untuk query kompleks, SQLite jauh lebih cocok. Satu query SQL selesai, tanpa load semua data ke memory.
 
-Migrasi sebagian ke SQLite untuk data yang butuh query kompleks. Hive tetap untuk cache session dan preference.
+**Perbandingan:**
+
+| Hive | SQLite |
+|------|--------|
+| Setup cepat, tanpa boilerplate | Setup butuh schema definition |
+| Baca/tulis super cepat | Lebih lambat untuk operasi sederhana |
+| Tidak support query kompleks | Support JOIN, filter, aggregate |
+| Tidak ada relasi | Relasi dan foreign key |
+| Untuk cache dan data sederhana | Untuk data relasional |
+
+**Yang kulakukan sekarang:**
+Hive tetap untuk cache session, preference, dan data sederhana. SQLite untuk data transaksional yang butuh query. Keduanya dipakai bersamaan dalam satu aplikasi.
 
 > *"Hive untuk cache dan data sederhana. SQLite untuk data relasional yang butuh query. Keduanya bisa dipakai bersamaan."*
 

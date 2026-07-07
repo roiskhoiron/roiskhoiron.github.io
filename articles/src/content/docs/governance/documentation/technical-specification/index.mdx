@@ -7,52 +7,50 @@ description: "Menulis spesifikasi teknis — dari pengalaman nulis kode tanpa re
 
 > *"Dulu aku langsung buka IDE dan ngetik. Hasilnya: kode yang harus ditulis ulang 3 kali."*
 
-Kebiasaan lamaku: ada fitur baru → langsung coding.
+Kebiasaan lamaku: ada fitur baru → langsung coding. Kelihatannya cepat. Tapi selalu ada momen di tengah jalan: *"Oh, ternyata ini tidak sesuai ekspektasi."* Atau: *"Aku lupa handle case ini."*
 
-Kelihatannya cepat. Tapi selalu ada momen di tengah jalan: *"Oh, ternyata ini tidak sesuai ekspektasi."* Atau: *"Aku lupa handle case ini."*
-
-Ulang dari awal.
-
-Technical spec adalah cara untuk memikirkan semuanya sebelum menulis kode. Butuh 15 menit di awal, menghemat berjam-jam di tengah.
+Technical spec adalah cara untuk memikirkan semuanya sebelum menulis kode.
 
 ---
 
 ### Minimal Viable Spec
 
-Tidak perlu dokumen 10 halaman. Cukup jawab:
+Tidak perlu dokumen 10 halaman. Cukup jawab 6 pertanyaan:
 
 **1. Tujuan**
 
-Fitur ini mau selesaikan masalah apa? — *Biar user bisa reset password tanpa menelepon CS.*
+Fitur ini mau selesaikan masalah apa? — *"Biar user bisa reset password tanpa menelepon CS."*
 
 **2. Alur Data**
 
-Dari mana data datang, ke mana pergi? — *User input email → API kirim OTP → verifikasi → update password.*
+Dari mana data datang, ke mana pergi? — *"User input email → API kirim OTP → verifikasi → update password."*
 
 **3. API**
 
-Endpoint, request, response. — *POST /api/reset-password, body `{email}`.*
+Endpoint, request, response. — *"POST /api/reset-password, body `{email}`."*
 
 **4. Perubahan Database**
 
-Table baru? Kolom baru? — *Tambah kolom reset_token di tabel users.*
+Table baru? Kolom baru? — *"Tambah kolom reset_token di tabel users."*
 
 **5. Komponen UI**
 
-Apa yang perlu dibuat? — *Halaman input email, halaman input OTP, halaman password baru.*
+Apa yang perlu dibuat? — *"Halaman input email, halaman input OTP, halaman password baru."*
 
 **6. Testing Plan**
 
-Apa yang perlu di-test? — *Unit test: validasi email, OTP expiry. Integration: alur lengkap.*
+Apa yang perlu di-test? — *"Unit test: validasi email, OTP expiry. Integration: alur lengkap."*
 
 ---
 
 ### Kenapa Ini Bekerja
 
 - Kamu menemukan masalah sebelum kode ditulis, bukan setelahnya
-- Estimasi jadi lebih akurat
+- Estimasi jadi lebih akurat — karena sudah tahu scope
 - Tim lain bisa kasih masukan lebih awal
-- Dokumentasi untuk masa depan
+- Jadi dokumentasi untuk masa depan
+
+Tanpa spec, kamu coding sambil mikir. Dengan spec, kamu tinggal eksekusi.
 
 ---
 

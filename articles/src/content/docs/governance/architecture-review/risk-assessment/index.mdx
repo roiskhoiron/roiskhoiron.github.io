@@ -1,50 +1,63 @@
 ---
-title: Technical Risk Assessment
-description: "Menilai risiko teknis berdasarkan pengalaman proyek — CodingSkuy"
+title: Risk Assessment
+description: "Menilai risiko arsitektur — dari pengalaman estimasi yang meleset — CodingSkuy"
 ---
 
-# Technical Risk Assessment
+# Risk Assessment
 
-> *"Risiko terbesar dalam software engineering bukan kode yang error. Tapi keputusan yang diambil tanpa mikir dampaknya."*
+> *"Aku bilang: 'Ini selesai 2 minggu.' Kenyataannya 2 bulan. Karena aku tidak hitung risikonya."*
 
-Waktu mengerjakan proyek Laravel education dashboard, ada satu fitur: export laporan PDF.
-
-Tim developer fokus bikin fungsi export-nya berfungsi. Selesai. Tapi setelah diskusi dengan senior, kami sadar: kalau 100 guru ekspor bersamaan, server bisa collapse.
-
-Itu risiko yang tidak terpikirkan sebelumnya. Karena kami hanya fokus pada *apakah fitur ini jalan*, bukan *apakah fitur ini bertahan dalam skenario nyata.*
+Setiap keputusan arsitektur punya risiko. Masalahnya: kita sering under-estimate risiko, terutama risiko yang tidak kelihatan.
 
 ---
 
-### Cara Sederhana Menilai Risiko
+### Jenis Risiko
 
-Sekarang, sebelum mengambil keputusan teknis, aku tanya:
+**1. Technical Risk**
 
-| Pertanyaan | Kalau jawabannya... |
-|------------|-------------------|
-| *"Apa yang terjadi kalau pengguna 10x lipat?"* | ...maka skalabilitas perlu dipikirkan |
-| *"Siapa yang akan maintain kode ini?"* | ...maka dokumentasi & clean code penting |
-| *"Apa yang terjadi kalau library ini mati?"* | ...maka perlu exit plan |
-| *"Apa dampak kalau fitur ini error?"* | ...maka testing & monitoring harus ketat |
+Apakah teknologinya sudah matang? Apakah tim paham? Apakah ada masalah performa?
+
+Contoh: pake teknologi baru yang belum banyak dipakai di production. Risikonya: dokumentasi kurang, bug belum ditemukan, komunitas belum besar.
+
+**2. Dependency Risk**
+
+Apakah kita tergantung pada pihak ketiga? Kalau mereka tutup, gimana?
+
+Contoh: pake API pihak ketiga untuk core feature. Kalau API-nya mati atau rate limit — fitur kita ikut mati.
+
+**3. Timeline Risk**
+
+Apakah estimasinya realistis? Faktor apa yang bisa bikin molor?
+
+Pengalamanku: estimasi selalu optimis. Faktor safety 2x dari estimasi awal lebih realistis.
 
 ---
 
-### Level Risiko versiku
+### Cara Menilai
 
-- **Hijau** — aman, mudah diperbaiki, dampak kecil
-- **Kuning** — perlu perhatian, ada resiko moderat
-- **Merah** — harus dimitigasi sebelum lanjut
-- **Hitam** — jangan dilakukan tanpa persiapan matang
+**Probability** — seberapa mungkin risiko terjadi? (rendah/sedang/tinggi)
+
+**Impact** — kalau terjadi, seberapa parah? (rendah/sedang/tinggi)
+
+**Risk score** = probability x impact
+
+| Impact | Rendah | Sedang | Tinggi |
+|--------|--------|--------|--------|
+| **Tinggi** | Medium | High | Critical |
+| **Sedang** | Low | Medium | High |
+| **Rendah** | Low | Low | Medium |
+
+Risiko dengan score Critical harus dimitigasi sebelum eksekusi.
 
 ---
 
-### Output Minimal
+### Mitigasi
 
-Setiap risk assessment harus menghasilkan:
-1. Risiko yang teridentifikasi
-2. Rencana mitigasi
-3. Siapa yang bertanggung jawab
-4. Kapan akan dievaluasi lagi
+- **Research spike** — eksplorasi teknologi sebelum komit
+- **Prototype** — buktikan konsep sebelum full implementation
+- **Fallback plan** — kalau A gagal, pake B
+- **Buffer time** — tambah 30-50% dari estimasi awal untuk risiko tak terduga
 
-> *"Risiko tidak bisa dihilangkan. Tapi bisa diukur, dimitigasi, dan dikelola."*
+> *"Risk assessment bukan untuk menghilangkan risiko — tapi untuk tahu risiko apa yang kita ambil dan siap menghadapinya."*
 
 [Kembali ke Governance](/articles/governance/)

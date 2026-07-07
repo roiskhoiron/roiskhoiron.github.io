@@ -1,58 +1,69 @@
 ---
 title: Authorization
-description: "Otorisasi — dari pengalaman user bisa akses data orang lain karena bug — CodingSkuy"
+description: "Otorisasi — dari pengalaman user bisa akses data user lain — CodingSkuy"
 ---
 
 # Authorization
 
-> *"Pernah lihat bug di mana user A bisa lihat data user B? Itu bukan bug autentikasi. Itu kegagalan otorisasi."*
+> *"Aku ganti angka di URL dari `/user/5` jadi `/user/6`. Dan lihat data orang lain. Itu security hole."*
 
-Waktu pertama bikin fitur multi-user, aku cuma andalkan login. Kalau sudah login, semua fitur bisa diakses.
+Autentikasi (siapa kamu) beda dengan otorisasi (apa yang boleh kamu lakukan). Banyak yang fokus ke auth (login, register) tapi lupa otorisasi.
 
-Sampai seorang teman bilang: *"Coba klik URL ini."* Aku bisa lihat data dia. Padahal aku bukan admin.
-
-Saat itu aku baru paham: **login cuma buktikan identitas. Tapi tidak menentukan apa yang boleh dilakukan.**
+Aku pernah: user A bisa lihat profil user B — tinggal ganti ID di parameter. Ini yang disebut **Broken Access Control**. Sangat umum, sangat berbahaya.
 
 ---
 
-### Tiga Model yang Kupelajari
+### Level Otorisasi
 
-**1. RBAC — Role-Based Access Control**
+**1. Role-based (RBAC)**
 
-Yang paling sering kupakai. User dikasih role, role punya permission.
+User punya role: admin, editor, viewer. Tiap role punya akses berbeda.
 
-Contoh:
-- `admin` — bisa apa saja
-- `editor` — CRUD konten
-- `viewer` — lihat saja
+Contoh: admin bisa hapus artikel. Editor bisa edit. Viewer cuma baca.
 
-Cocok untuk: Aplikasi dengan hierarki peran jelas.
+Implementasi: cek role user sebelum eksekusi. Kalau role tidak sesuai, return 403.
 
-**2. ABAC — Attribute-Based Access Control**
+**2. Attribute-based (ABAC)**
 
-Lebih granular. Akses ditentukan oleh atribut.
+Akses berdasarkan atribut: user, resource, environment.
 
-Contoh: "Dosen bisa nilai mahasiswanya sendiri." Bukan semua dosen, hanya dosen yang mengajar kelas itu.
+Contoh: user hanya bisa edit artikel yang dia buat sendiri. Atau: artikel hanya bisa diedit jam kerja.
 
-Cocok untuk: Sistem kompleks dengan banyak aturan.
+**3. Ownership-based**
 
----
+User hanya bisa akses resource miliknya.
 
-### Implementasi Sederhana
-
-Yang kupakai di proyek:
-1. **Backend middleware** — cek permission di setiap endpoint yang sensitif
-2. **Frontend** — sembunyikan tombol yang tidak accessible (tapi jangan andalkan ini)
-3. **Audit log** — catat siapa akses apa
+Ini yang paling sering dilanggar. API `/api/orders/` harus filter: hanya order milik user yang login. Bukan semua order.
 
 ---
 
-### Aturan Emas
+### Common Mistakes
 
-- **Default deny** — semua akses ditolak kecuali diizinkan eksplisit
-- **Least privilege** — user hanya punya akses minimum untuk kerja mereka
-- **Validasi server** — jangan percaya data dari client. Serangan bisa datang dari mana saja
+**1. Hanya cek auth, tidak cek otorisasi**
 
-> *"Autentikasi: 'Kamu siapa?' Otorisasi: 'Apa yang boleh kamu lakukan?' Keduanya wajib."*
+User sudah login → bisa akses apa pun. Salah. Login cuma bukti identitas, bukan izin akses.
+
+**2. Otorisasi di client-side**
+
+Tombol admin di-hidden dari non-admin. Tapi API-nya tetap bisa diakses. Attacker tinggal panggil langsung API — tidak perlu tombol.
+
+Otorisasi harus di server-side. Client cuma UI.
+
+**3. Insecure direct object reference (IDOR)**
+
+API `/api/invoice/123` — siapa pun bisa akses dengan ganti angka. Padahal invoice itu milik user A, bukan user B.
+
+Solusi: cek kepemilikan di server.
+
+---
+
+### Implementasi
+
+Di CodingSkuy:
+- Setiap endpoint punya cek: apakah user ini punya akses ke resource ini?
+- Middleware yang handle otorisasi — tidak perlu diulang di tiap handler
+- Default: deny. Kecuali explicitly allowed.
+
+> *"Autentikasi tanpa otorisasi ibarat pintu terkunci — tapi semua ruangan di dalam tidak punya kunci."*
 
 [Kembali ke Governance](/articles/governance/)

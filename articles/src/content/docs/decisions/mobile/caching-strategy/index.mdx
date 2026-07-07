@@ -7,31 +7,27 @@ description: "Caching strategy — dari pengalaman bikin aplikasi offline-first 
 
 > *"Aplikasi tanpa cache itu seperti kulkas tanpa listrik — isinya cepat basi, dan kamu harus belanja tiap hari."*
 
-Cache bukan fitur opsional — untuk mobile, cache itu kebutuhan. User bisa offline, koneksi lambat, atau kuota terbatas.
+Pertama bikin aplikasi, semua data ambil dari API. Setiap buka halaman, loading. User di Indonesia dengan koneksi tidak stabil sering lihat spinner kosong. Aplikasi terasa lambat.
 
-**Tingkatan cache yang kupakai:**
+Pelajarannya: cache bukan fitur opsional — untuk mobile, itu kebutuhan.
 
-**1. In-memory cache**
-Data disimpan di RAM selama aplikasi jalan. Cepat, tapi hilang saat app ditutup.
+**Strategi cache yang kupakai:**
 
-Cocok: state management, hasil komputasi berat sementara.
+1. **Cache-first, network-update** — tampilkan cache dulu, update dari network di background. User lihat data instan, kemudian data segar muncul. Ini yang kupakai untuk daftar artikel CodingSkuy.
 
-**2. Local storage cache (Hive/SQLite)**
-Data disimpan di disk. Bertahan meski app ditutup.
+2. **Network-first, cache-fallback** — coba ambil dari network. Kalau gagal (offline atau timeout), pake cache. Untuk data yang harus real-time seperti status pesanan.
 
-Cocok: data profil, daftar produk, setting.
+3. **Stale-while-revalidate** — cache usang boleh ditampilkan sambil ambil data baru. Cocok untuk data yang tidak terlalu kritis — seperti daftar produk.
 
-**3. HTTP cache**
-Cache response API. Pakai package seperti dio_cache_interceptor.
+**Tingkatan cache:**
 
-Cocok: API yang jarang berubah.
+- **In-memory** — data di RAM, cepat, hilang saat app ditutup. Untuk state management.
+- **Local storage (Hive/SQLite)** — data di disk, bertahan. Untuk cache offline.
+- **HTTP cache** — cache response API. Pakai dio_cache_interceptor. Untuk API yang jarang berubah.
 
-**Strategi yang kupakai:**
+**Yang kupelajari:**
+Cache strategy harus disesuaikan dengan tipe data. Data artikel CodingSkuy jarang berubah → cache-first. Data komentar real-time → network-first. Kombinasi strategi untuk tiap jenis data.
 
-- **Cache-first, network-update** — tampilkan cache dulu, update dari network di background. Terasa cepat, selalu segar.
-- **Stale-while-revalidate** — cache usang boleh ditampilkan sambil ambil data baru.
-- **Network-first, cache-fallback** — coba ambil dari network. Kalau gagal, pake cache. Untuk data yang harus real-time.
-
-> *"Cache strategy yang baik bikin aplikasi terasa cepat meski koneksi lambat. Cache strategy yang jelek bikin user lihat data basi. Pilih berdasarkan: seberapa real-time data harus."*
+> *"Cache strategy yang baik bikin aplikasi terasa cepat meski koneksi lambat. Cache strategy yang jelek bikin user lihat data basi."*
 
 [Kembali ke Decisions](/articles/decisions/)

@@ -1,69 +1,68 @@
 ---
 title: Naming Conventions
-description: "Konsistensi penamaan — dari pengalaman debugging karena nama yang menyesatkan — CodingSkuy"
+description: "Konvensi penamaan — dari pengalaman baca kode dengan nama yang tidak jelas — CodingSkuy"
 ---
 
 # Naming Conventions
 
-> *"Pernah debug 2 jam. Ternyata salah paham: `getPrice()` mengembalikan harga setelah diskon, bukan harga asli."*
+> *"Pernah lihat variabel `x`, `data`, `temp`? Aku pernah. Tidak ada yang paham apa isinya."*
 
-Nama yang menyesatkan adalah bug yang tidak kelihatan. Kode berjalan normal. Tapi logic-nya salah karena programmer lain (atau diri sendiri) salah paham dengan nama fungsi.
-
----
-
-### Kenapa Nama Penting?
-
-Nama adalah dokumentasi paling murah. Nama yang baik:
-- Mengurangi kebutuhan komentar
-- Mempercepat onboarding engineer baru
-- Mencegah misinterpretasi
+Naming convention kelihatan sepele. Tapi dampaknya besar. Nama yang baik bisa menjelaskan intent tanpa perlu komentar. Nama yang buruk bikin kode sulit dibaca.
 
 ---
 
-### Aturan dari Pengalaman
+### Prinsip Dasar
 
-**1. Eksplisit, bukan singkat**
+**1. Nama harus reveal intent**
 
-| ❌ | ✅ |
-|---|---|
-| `getData()` | `getUserByEmail()` |
-| `delUser()` | `deleteUserAccount()` |
-| `proc()` | `processPayment()` |
+`int d` — tidak jelas. `int daysSinceLastLogin` — langsung paham.
 
-**2. Satu nama untuk satu konsep**
+`List<User> getUsers()` — jelas. `List<User> getData()` — data apa?
 
-Kalau sudah pakai `fetchUsers()`, jangan ada `getUserList()` di file lain untuk hal yang sama.
+**2. Boolean harus jelas ya/tidaknya**
 
-**3. Boolean harus jelas iya/tidak**
+`bool flag` — tidak jelas. `bool isActive` — jelas. `bool hasPermission` — jelas.
 
-| ❌ | ✅ |
-|---|---|
-| `user` | `isLoggedIn` |
-| `flag` | `hasPermission` |
-| `status` | `isActive` |
+**3. Hindari single-letter (kecuali loop counter)**
+
+`for (int i = 0; i < items.length; i++)` — i oke untuk loop counter.
+
+`User u` — tidak oke. `User user` atau `User currentUser`.
 
 ---
 
-### Convention per Bahasa
+### Konvensi per Bahasa
 
-| Bahasa | Folder | File | Fungsi |
-|--------|--------|------|--------|
-| Flutter/Dart | snake_case | snake_case | camelCase |
-| Java/Kotlin | snake_case | PascalCase | camelCase |
-| PHP/Laravel | snake_case | snake_case | camelCase |
-| JavaScript | kebab-case | kebab-case | camelCase |
-| Python | snake_case | snake_case | snake_case |
+**Dart/Flutter:**
+- Classes, enums, type: `PascalCase` — `UserModel`, `HttpStatus`
+- Variables, functions, parameters: `camelCase` — `getUser()`, `userName`
+- Constants: `lowerCamelCase` (Dart style) — `const defaultTimeout`
+- Files: `snake_case` — `user_model.dart`
+- Private: prefix `_` — `_handleButtonPress()`
 
-**Konsisten lebih penting dari benar.**
+**JavaScript/TypeScript:**
+- Classes: `PascalCase`
+- Variables, functions: `camelCase`
+- Constants: `UPPER_CASE` atau `camelCase`
+- Files: `camelCase` atau `kebab-case`
+
+---
+
+### Nama yang Harus Dihindari
+
+- `data`, `info`, `stuff` — tidak jelas apa isinya
+- `temp`, `tmp` — temporary? Temporary buat apa?
+- `manager`, `util`, `helper` — terlalu generic, biasanya tanda class tidak punya tanggung jawab jelas
+- `test1`, `test2` — apa bedanya?
 
 ---
 
 ### Tips
 
-- Kalau bingung nama, minta review nama ke teman. Kalau mereka paham, nama sudah cukup baik
-- Jangan takut rename. IDE bisa rename otomatis
-- Gunakan istilah domain, bukan istilah teknis. `checkoutCart()` lebih baik dari `postCartData()`
+- Nama lebih panjang lebih baik daripada nama yang tidak jelas
+- Kalau bingung naming — biasanya ada masalah di desain
+- Konsisten lebih penting dari "benar" — yang penting satu proyek pakai konvensi yang sama
 
-> *"Nama yang baik adalah dokumentasi yang bisa jalan sendiri."*
+> *"Kode yang baik adalah yang bisa dibaca seperti cerita — tanpa perlu komentar."*
 
 [Kembali ke Governance](/articles/governance/)

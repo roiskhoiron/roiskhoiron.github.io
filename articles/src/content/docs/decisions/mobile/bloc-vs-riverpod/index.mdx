@@ -7,23 +7,21 @@ description: "BLoC vs Riverpod — dari pengalaman dua pendekatan state manageme
 
 > *"BLoC itu seperti pisau tentara — kuat, tapi berat. Riverpod itu seperti pisau dapur — ringan, tapi untuk sebagian besar masakan cukup."*
 
-Dua state management paling populer di Flutter. Sama-sama powerful. Tapi pendekatannya beda.
+Dua state management paling populer di Flutter. Aku pake keduanya — untuk konteks yang berbeda.
 
-**BLoC (Business Logic Component):**
+**Pengalaman dengan BLoC:**
 
-BLoC pake stream. Event masuk → BLoC proses → state keluar.
+Awalnya aku pikir BLoC itu ribet. Event class, state class, bloc class. Tiap fitur butuh 3 file minimal. Tapi begitu ngerjain fitur real-time chat — di mana ada banyak state transition (connecting, connected, typing, new message, error) — BLoC sangat cocok. Setiap event tercatat, setiap state terdokumentasi. Debugging jadi mudah karena bisa lihat urutan event dan state.
 
-Awalnya kupikir ini ribet. Tapi untuk fitur yang butuh alur data kompleks — seperti real-time chat — BLoC sangat cocok. Alur datanya jelas: event apa yang terjadi, state apa yang dihasilkan.
+**Pengalaman dengan Riverpod:**
 
-**Riverpod:**
-
-Riverpod lebih fleksibel. Bisa return Future, Stream, atau value sync. Tidak perlu event class terpisah.
+Untuk fitur lain yang lebih sederhana — seperti form input, daftar, detail — Riverpod jauh lebih efisien. Cukup provider dengan async data, selesai. Tidak perlu bikin event class.
 
 **Kapan pilih BLoC:**
 - Alur data kompleks dengan banyak state transition
 - Tim besar, butuh struktur yang ketat
 - Butuh traceability — setiap state change tercatat sebagai event
-- Real-time, streaming data
+- Real-time, streaming data — WebSocket, Firebase Realtime
 
 **Kapan pilih Riverpod:**
 - Produktivitas lebih penting dari struktur ketat
@@ -32,7 +30,7 @@ Riverpod lebih fleksibel. Bisa return Future, Stream, atau value sync. Tidak per
 - Mau cepat prototyping
 
 **Contoh pengalamanku:**
-Fitur chat real-time pakai BLoC — alurnya jelas, debugging gampang. Tapi untuk fitur form validation, Riverpod lebih cepat ditulis.
+Satu aplikasi — fitur chat pakai BLoC, sisanya Riverpod. Keduanya coexist. BLoC untuk modul yang alurnya kompleks. Riverpod untuk sisanya yang lebih straightforward.
 
 > *"BLoC dan Riverpod bukan musuh. Mereka alat untuk konteks berbeda. Tim saya pernah pakai BLoC untuk modul chat dan Riverpod untuk sisanya."*
 
