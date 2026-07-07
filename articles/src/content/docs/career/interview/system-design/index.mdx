@@ -1,14 +1,33 @@
 ---
 title: System Design Interview
-description: Belajar tentang System Design Interview — CodingSkuy
+description: "System design interview — dari pengalaman design sistem — CodingSkuy"
 ---
 
 # System Design Interview
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"System design interview bukan soal jawaban benar. Tapi soal pengetahuan trade-off."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Ini interview favoritku — karena mirip kerjaan beneran. Tidak ada jawaban mutlak. Yang dinilai adalah **proses berpikir**.
 
----
+**Framework yang kupakai:**
 
-*Coming soon — Tim CodingSkuy*
+1. **Clarify requirements** — jangan langsung gambar. Tanya: "Feature apa aja? Berapa user? Latency requirement?"
+2. **High-level design** — gambar kotak-kotak besar: client, server, database, cache.
+3. **Deep dive** — pilih satu komponen, bahas detail: "Database-nya pakai apa? Schema-nya gimana?"
+4. **Trade-off** — "Kenapa pake NoSQL daripada SQL? Karena write-heavy."
+5. **Bottleneck & scaling** — "Bagian mana yang paling mungkin jebol? Gimana handle-nya?"
+
+**Topik yang sering muncul:**
+- Design URL shortener (bit.ly)
+- Design chat system (WhatsApp)
+- Design news feed (Instagram/Twitter)
+- Design rate limiter
+
+**Tips:**
+- Mulai dari yang sederhana, tambah kompleksitas bertahap
+- Kenali trade-off: consistency vs availability, latency vs throughput
+- Gambar, jangan cuma ngomong
+
+> *"Tidak ada arsitektur yang sempurna. Yang ada adalah arsitektur yang tepat untuk kebutuhan tertentu."*
+
+[Kembali ke Career](/articles/career/)
