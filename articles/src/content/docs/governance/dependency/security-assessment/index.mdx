@@ -5,53 +5,54 @@ description: "Menilai keamanan dependensi — dari pengalaman library dengan cel
 
 # Security Assessment
 
-> *"Tahun lalu ada CVE di library yang kupakai. Untung tidak ekspos data user. Tapi itu peringatan."*
+> *"Tahun lalu ada CVE di library Flutter yang kupakai — celah keamanan kritis. Untung library itu hanya dipake di fitur minor, bukan di data user. Tapi itu peringatan: setiap library adalah potensi backdoor."*
 
-Setiap dependensi adalah potensi celah keamanan. Kamu tidak tahu siapa yang maintain library itu, apakah mereka jaga keamanan dengan baik.
+Dulu aku pikir: "Pake library populer, pasti aman." Tapi kenyataannya — popularitas tidak menjamin keamanan. Library dengan jutaan download pun bisa punya celah kritis.
+
+Setiap dependensi adalah potensi celah keamanan. Kamu tidak tahu siapa maintainer-nya — apakah mereka jaga keamanan dengan baik? Apakah mereka pake 2FA? Apakah ada vulnerability reporting process?
+
+---
+
+### Kisah Kedua: Supply Chain Attack yang Semakin Marak
+
+Pernah dengar event-stream? Library npm dengan 2 juta download mingguan — disusupi malware di salah satu update. Hanya karena maintainer memberikan akses ke orang yang tidak bertanggung jawab.
+
+Ini bukan fiksi — ini sudah terjadi berkali-kali. Dan makin populer supply chain attack di dunia software.
+
+**Apa yang terjadi:**
+Attacker dapat akses ke akun maintainer (karena tidak ada 2FA) → push update jahat → semua yang auto-update kena.
+
+**Pelajaran:**
+Cek apakah maintainer pake 2FA. Cek apakah rilis ditandatangani. Cek apakah ada security policy di repository.
 
 ---
 
 ### Yang Harus Dicek
 
 **1. Riwayat CVE**
-
-Cek: apakah library ini pernah punya celah keamanan? Gimana respon maintainer?
-
-Tools:
-- GitHub Security Advisories
-- Snyk
-- Dependabot (bawaan GitHub)
+Cek GitHub Security Advisories atau Dependabot. Apakah library ini pernah punya celah? Gimana response maintainer? Cepet atau lambat?
 
 **2. Supply chain security**
-
-- Apakah maintainer pakai 2FA? (kalau tidak, akun mereka bisa diretas)
-- Apakah rilis ditandatangani? (verified)
-- Apakah ada mekanisme reporting vulnerability?
+- Maintainer pake 2FA? (cek di GitHub — ada badge)
+- Rilis ditandatangani? (verified tags)
+- Ada security policy? (SECURITY.md di repo)
 
 **3. Dependency scope**
-
-Semakin besar library, semakin besar permukaan serangan. Library yang butuh 50 dependency lain — risikonya lebih tinggi dari library yang zero dependency.
-
----
-
-### Mitigasi
-
-**Update rutin** — jangan biarkan library usang. Dependabot bisa otomatis bikin PR kalau ada update.
-
-**Monitor CVE** — subscribe ke notifikasi keamanan untuk library yang kamu pake.
-
-**Minimalkan dependensi** — setiap library yang ditambah adalah risiko tambahan. Tanya: apa memang perlu? Atau bisa pakai standar library?
-
-**Pin versi** — jangan pake versi "latest" atau "^1.0.0" tanpa batas. Tentukan versi eksak, update setelah testing.
+Semakin besar library, semakin besar permukaan serangan. Library yang butuh 50 dependensi lain — risikonya lebih tinggi dari yang zero dependensi.
 
 ---
 
-### Yang kulakukan
+### Praktik
 
-1. Dependabot aktif — setiap ada update keamanan, langsung notify
-2. Review changelog sebelum update — jangan asal upgrade
-3. Kalau library punya CVE kritis dan tidak di-fix — cari alternatif
+- **Update rutin** — Dependabot auto-create PR kalau ada update. Jangan biarkan library usang.
+- **Monitor CVE** — subscribe ke notifikasi keamanan untuk library yang dipake.
+- **Minimalkan dependensi** — tanya: apa perlu ini? Atau bisa pake standar library?
+- **Pin versi** — jangan "latest" atau "^1.0.0". Tentukan versi eksak. Update setelah testing.
+- **Review changelog sebelum update** — jangan asal upgrade.
 
-> *"Keamanan dependensi bukan cuma tanggung jawab maintainer library — tapi tanggung jawab kamu yang memakainya."*
+---
 
-[Kembali ke Governance](/articles/governance/)
+🌱 **Aktifkan Dependabot di repositori GitHub-mu:**
+[Kembali ke Governance](/articles/governance/) | [Lihat Semua Topik](/articles/)
+
+*Punya pengalaman dependensi yang kena CVE atau supply chain attack? Cerita di komentar.*

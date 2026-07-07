@@ -5,49 +5,67 @@ description: "Membuat keputusan AI bisa dijelaskan — dari pengalaman tidak bis
 
 # Explainability
 
-> *"Boss bertanya: 'Kenapa model ini menolak pengajuan si A?' Aku cuma bisa jawab: 'Soalnya model bilang gitu.' Jawaban yang memalukan."*
+> *"Boss bertanya: 'Kenapa model ini menolak pengajuan si A?' Aku cuma bisa jawab: 'Soalnya model bilang gitu.' Jawaban yang memalukan — dan tidak profesional.""
 
-Model AI sering disebut black box. Kita tahu input dan output, tapi tidak tahu apa yang terjadi di dalam. Selama model cuma buat rekomendasi film — tidak masalah. Tapi untuk keputusan yang impact-nya besar — masalah.
+Waktu pertama deploy model AI untuk produksi, aku hanya fokus ke akurasi. Model jalan, metric bagus, semua happy.
 
----
+Sampai suatu hari — seorang stakeholder bertanya tentang keputusan spesifik model. Dan aku tidak bisa jawab. Aku tahu input-nya. Aku tahu output-nya. Tapi apa yang terjadi di antara keduanya? Black box.
 
-### Kenapa Explainability Penting?
-
-**Kepercayaan** — pengguna lebih percaya jika tahu alasannya. "Rekomendasi ini karena kamu suka X." Lebih baik dari "Ini rekomendasi buat kamu."
-
-**Debugging** — waktu model error, explainability bantu cari penyebabnya. Kenapa model salah klasifikasi? Fitur mana yang membuatnya salah?
-
-**Compliance** — beberapa regulasi minta penjelasan. GDPR punya "right to explanation." Kamu harus bisa jelasin kenapa algoritma ambil keputusan tertentu.
-
-**Fairness** — explainability bantu deteksi bias. Kalau fitur "gender" berkontribusi besar pada keputusan — ada masalah.
+Sejak itu aku sadar: **akurasi tinggi tidak berguna kalau kamu tidak bisa menjelaskan kenapa model ambil keputusan tertentu.**
 
 ---
 
-### Tingkat Explainability
+### Kisah Kedua: Debugging Tanpa Explainability
 
-**Global** — memahami model secara keseluruhan. Fitur apa yang paling berpengaruh? Secara umum, bagaimana model bekerja?
+Model produksi CodingSkuy mulai salah kasih rekomendasi. Pengguna komplain: "Kenapa saya dikasih rekomendasi Flutter? Saya backend developer."
 
-**Local** — memahami satu prediksi spesifik. Kenapa untuk user A hasilnya ditolak, untuk user B diterima?
+Aku coba debug. Tapi modelnya kompleks — neural network dengan ribuan parameter. Aku tidak tahu fitur mana yang paling berpengaruh.
 
----
+**Yang terjadi:**
+Ternyata karena ada bias di data — pengguna yang login dari HP selalu dikasih topik mobile. Bukan karena preferensi — tapi karena korelasi kebetulan di data training.
 
-### Metode yang Kupakai
-
-**SHAP** — untuk model tabular. Kasih tahu kontribusi setiap fitur terhadap prediksi. Contoh: "Fitur 'pendapatan' berkontribusi 60%, 'usia' 30%, 'lokasi' 10%."
-
-Paling sering kupakai karena implementasinya tidak terlalu rumit.
-
-**LIME** — untuk teks/gambar. Bikin model sederhana di sekitar satu prediksi. Cocok untuk explainability lokal.
+Kalau aku punya explainability tool sejak awal — aku akan lihat bahwa fitur "device type" punya kontribusi besar. Dan itu seharusnya tidak terjadi.
 
 ---
 
-### Trade-off
+### Kisah Ketiga: Trade-off yang Harus Dipilih
 
-Model kompleks → akurasi tinggi → susah dijelaskan.
-Model sederhana → akurasi lebih rendah → mudah dijelaskan.
+Di proyek klasifikasi dokumen, aku dihadapkan pada pilihan:
+- **Model kompleks** (deep learning): akurasi 94% — tapi sulit dijelaskan
+- **Model sederhana** (logistic regression): akurasi 89% — tapi mudah dijelaskan
 
-Pilih sesuai kebutuhan. Untuk aplikasi medis, explainability mungkin lebih penting daripada 1% akurasi. Untuk recommendation system, explainability tidak terlalu kritis.
+Untuk kasus ini, pilihan tergantung konteks:
+- Untuk rekomendasi artikel (risiko rendah) — model kompleks OK
+- Untuk screening CV (risiko tinggi) — model sederhana lebih aman
 
-> *"Kalau modelmu tidak bisa menjelaskan keputusannya, apakah kamu percaya modelmu?"*
+Di CodingSkuy, aku pake pendekatan hybrid:
+- Rekomendasi konten: model kompleks. Explainability-nya: "Karena kamu suka X"
+- Moderasi konten: rule-based + model sederhana. Setiap keputusan bisa dijelaskan
 
-[Kembali ke Governance](/articles/governance/)
+---
+
+### Metode Explainability
+
+**1. SHAP — untuk data tabular**
+Kasih tahu kontribusi setiap fitur. "Fitur 'pendapatan' 60%, 'usia' 30%, 'lokasi' 10%." Paling sering kupakai karena implementasinya straightforward.
+
+**2. LIME — untuk teks/gambar**
+Bikin model sederhana di sekitar satu prediksi. Cocok untuk explainability per-instance.
+
+**3. Feature importance — untuk model tree**
+Random forest dan XGBoost punya feature importance bawaan. Cepat dan mudah.
+
+---
+
+### Praktik
+
+- Setiap model produksi harus punya mekanisme explainability — minimal feature importance
+- Untuk keputusan dengan impact besar, gunakan model yang bisa dijelaskan
+- Dokumentasikan batasan model — "Model ini bagus untuk X, tidak untuk Y"
+
+---
+
+🌱 **Coba jalankan SHAP di model terakhirmu — lihat fitur mana yang paling berpengaruh:**
+[Kembali ke Governance](/articles/governance/) | [Lihat Semua Topik](/articles/)
+
+*Pernah ditanya "kenapa?" dan tidak bisa jawab soal modelmu? Cerita di komentar.*

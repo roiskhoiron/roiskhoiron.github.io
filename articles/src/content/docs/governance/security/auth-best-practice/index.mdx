@@ -5,52 +5,66 @@ description: "Best practice autentikasi — dari pengalaman bikin login yang boc
 
 # Auth Best Practice
 
-> *"Dulu aku simpan password di database tanpa hash. Untung aplikasinya cuma dipake 3 orang."*
+> *"Waktu SMK, aku bikin sistem login. Password disimpan di database sebagai teks biasa — plain text. Aku tidak tahu itu berbahaya. Aku juga tidak tahu ada hashing, salt, atau bcrypt. Untung aplikasinya cuma dipake 3 orang — teman sekelas."*
 
-Waktu belajar backend pertama kali — di SMK — aku bikin sistem login simpel. Password disimpan di database sebagai teks biasa (plain text). Aku tidak tahu itu berbahaya. Aku juga tidak tahu ada yang namanya hashing, salt, bcrypt.
+Waktu pertama belajar backend, aku bikin fitur login. Sederhana: user input email & password → cek ke database → kalau cocok, login.
 
-Sejak itu, setiap urusan auth, aku selalu terapkan best practice.
+Tapi password-nya aku simpan apa adanya. `string password = "admin123"` — di database.
 
----
+Kenapa? Karena aku tidak tahu cara lain. Tidak ada yang ngajarin. Tutorial yang kutonton juga simpan password plain text.
 
-### Hal Fundamental
-
-**1. Jangan pernah simpan password**
-
-Simpan hash, bukan password. Pakai bcrypt, argon2, atau PBKDF2. Jangan MD5 atau SHA — itu untuk checksum, bukan untuk password.
-
-**2. Gunakan HTTPS**
-
-Setiap request login/register harus HTTPS. Kalau HTTP, password dikirim dalam teks biasa — bisa dibaca siapa pun di jaringan yang sama.
-
-**3. Rate limiting**
-
-Batasi percobaan login. 5 kali salah → tunggu 5 menit. Atau pakai CAPTCHA. Mencegah brute force.
+**Sekarang — aku ngeri** mikirnya. Bayangkan kalau database bocor — semua password user terbaca.
 
 ---
 
-### JWT
+### Kisah Kedua: Teman yang Kena Hack karena Pake Library Lawas
 
-JWT (JSON Web Token) populer untuk session management. Tapi ada hal yang perlu diperhatikan:
+Teman punya aplikasi production — pake library auth yang udah usang. Library itu tidak diupdate 3 tahun. Ada CVE yang tidak di-patch.
 
-- **Jangan simpan rahasia di JWT** — JWT di-encode, bukan di-enkripsi. Siapa pun bisa decode dan lihat isinya. Hanya signature yang tidak bisa dipalsukan.
-- **Set expiration** — JWT tanpa expiry sangat berbahaya. Kalau bocor, penyerang bisa akses selama-lamanya.
-- **Refresh token** — access token pendek (15 menit), refresh token lebih panjang (7 hari). Kalau access token bocor, dampak terbatas.
+Suatu hari — akun adminnya dibobol. Bukan karena password lemah — tapi karena celah di library auth.
 
-### Session Management
-
-- **Logout harus invalidate session** — jangan cuma hapus token di client. Server juga harus invalidate.
-- **Multi-device** — apakah user bisa login di banyak device? Kalau iya, butuh session management per device.
-- **Deteksi anomali** — login dari IP berbeda dalam waktu singkat? Notifikasi user.
+**Pelajaran:**
+Library auth bukan "set and forget." Harus diupdate. Dan pilih library yang terawat dengan baik — karena auth adalah gerbang pertama.
 
 ---
 
-### Praktik yang kulakukan
+### Praktik Esensial
 
-- Firebase Auth untuk CodingSkuy — tidak perlu handle password sendiri
-- Rate limiting di API — 5 attempts per menit per IP
-- Logout di semua device kalau user ganti password
+**1. Jangan simpan password — simpan hash**
+Pakai bcrypt, argon2, atau PBKDF2. Bukan MD5 atau SHA — itu untuk checksum, bukan password.
 
-> *"Auth adalah gerbang pertama. Kalau gerbangnya bocor, sisanya tidak penting."*
+**2. HTTPS untuk semua request login**
+Kalau HTTP — password dikirim sebagai teks biasa. Siapa pun di jaringan yang sama bisa baca.
 
-[Kembali ke Governance](/articles/governance/)
+**3. Rate limiting login**
+5 kali salah → tunggu 5 menit. Mencegah brute force.
+
+---
+
+### JWT yang Aman
+
+**Yang sering salah:**
+- JWT disimpan di localStorage (rentan XSS)
+- JWT tanpa expiry — begitu bocor, akses selamanya
+- Data rahasia disimpan di JWT — JWT di-encode, bukan di-enkripsi. Siapa pun bisa decode dan baca isinya.
+
+**Yang benar:**
+- JWT pendek (15 menit)
+- Refresh token lebih panjang (7 hari) — disimpan di httpOnly cookie
+- Jangan simpan data sensitif di JWT
+
+---
+
+### Praktik
+
+Di CodingSkuy — pake Firebase Auth. Tidak perlu handle password sendiri. Tapi tetap:
+- Rate limiting di API
+- Logout invalidate session
+- Multi-device session management
+
+---
+
+🌱 **Cek: password user di database ter-hash atau plain text?**
+[Kembali ke Governance](/articles/governance/) | [Lihat Semua Topik](/articles/)
+
+*Punya pengalaman auth yang bocor atau hampir bocor? Cerita di komentar.*

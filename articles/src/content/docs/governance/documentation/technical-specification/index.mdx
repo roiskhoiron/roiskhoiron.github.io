@@ -5,62 +5,57 @@ description: "Menulis spesifikasi teknis — dari pengalaman nulis kode tanpa re
 
 # Technical Specification
 
-> *"Dulu aku langsung buka IDE dan ngetik. Hasilnya: kode yang harus ditulis ulang 3 kali."*
+> *"Dulu aku langsung buka IDE dan ngetik. Kelihatan cepat — 'gercep' kata anak muda. Tapi hasilnya: kode yang harus ditulis ulang 3 kali. Karena selalu ada momen di tengah jalan: 'Oh, ternyata ini tidak sesuai ekspektasi.'"*
 
-Kebiasaan lamaku: ada fitur baru → langsung coding. Kelihatannya cepat. Tapi selalu ada momen di tengah jalan: *"Oh, ternyata ini tidak sesuai ekspektasi."* Atau: *"Aku lupa handle case ini."*
+Kebiasaan lamaku: ada fitur baru → langsung buka VS Code → mulai ngetik. Tidak ada rencana. Tidak ada diagram. Tidak ada pemikiran tentang edge cases.
 
-Technical spec adalah cara untuk memikirkan semuanya sebelum menulis kode.
+Kelihatan cepat — karena tidak ada fase "buang waktu" untuk nulis dokumen. Tapi di tengah jalan, selalu ada momen:
+- *"Loh, ini berarti perlu table baru di database?"*
+- *"Oh, aku lupa handle kasus kalau user offline."*
+- *"Ternyata API yang kupake limitnya cuma 100 request/hari."*
+
+Akhirnya: kode ditulis ulang. Buang waktu lebih banyak dari yang dihemat dengan tidak nulis spec.
 
 ---
 
-### Minimal Viable Spec
+### Kisah Kedua: Spec yang Menyelamatkan 2 Minggu
 
-Tidak perlu dokumen 10 halaman. Cukup jawab 6 pertanyaan:
+Di CodingSkuy, aku mau nambah fitur bookmark. Sebelum coding, aku paksa diri nulis spesifikasi:
 
-**1. Tujuan**
+**Tujuan:** User bisa bookmark artikel
+**Alur:** User klik icon bookmark → artikel tersimpan ke "Bookmark" → bisa diakses offline
+**API:** POST /api/bookmark {articleId}, DELETE /api/bookmark {articleId}, GET /api/bookmarks
+**Database:** Tabel baru "bookmarks" — userId, articleId, createdAt
+**UI:** Icon bookmark di setiap kartu artikel, halaman Bookmark terpisah
+**Edge cases:** Bookmark duplikat? (handle dengan unique constraint), offline? (local cache), hapus akun? (cascade delete)
 
-Fitur ini mau selesaikan masalah apa? — *"Biar user bisa reset password tanpa menelepon CS."*
+Pas nulis spec ini, aku nemu masalah: kalau user bookmark pas offline — gimana? Kalau tidak dipikirkan dari awal, ini bisa jadi bug di production.
 
-**2. Alur Data**
+---
 
-Dari mana data datang, ke mana pergi? — *"User input email → API kirim OTP → verifikasi → update password."*
+### Format Minimal yang Kupakai
 
-**3. API**
+Tidak perlu 10 halaman. Cukup jawab 6 pertanyaan:
 
-Endpoint, request, response. — *"POST /api/reset-password, body `{email}`."*
-
-**4. Perubahan Database**
-
-Table baru? Kolom baru? — *"Tambah kolom reset_token di tabel users."*
-
-**5. Komponen UI**
-
-Apa yang perlu dibuat? — *"Halaman input email, halaman input OTP, halaman password baru."*
-
-**6. Testing Plan**
-
-Apa yang perlu di-test? — *"Unit test: validasi email, OTP expiry. Integration: alur lengkap."*
+1. **Tujuan** — fitur ini mau selesaikan masalah apa?
+2. **Alur Data** — dari mana ke mana? Flowchart sederhana.
+3. **API** — endpoint, request, response. Contoh konkret.
+4. **Database** — table baru? Kolom baru? Schema.
+5. **UI** — komponen apa yang perlu dibuat?
+6. **Testing Plan** — apa yang perlu di-test?
 
 ---
 
 ### Kenapa Ini Bekerja
 
-- Kamu menemukan masalah sebelum kode ditulis, bukan setelahnya
-- Estimasi jadi lebih akurat — karena sudah tahu scope
+- Kamu nemu masalah sebelum kode ditulis — bukan sesudahnya
+- Estimasi jadi akurat — karena sudah tahu scope
 - Tim lain bisa kasih masukan lebih awal
 - Jadi dokumentasi untuk masa depan
 
-Tanpa spec, kamu coding sambil mikir. Dengan spec, kamu tinggal eksekusi.
-
 ---
 
-### Tips
+🌱 **Sebelum coding fitur berikutnya — tulis spec minimal dulu:**
+[Kembali ke Governance](/articles/governance/) | [Lihat Semua Topik](/articles/)
 
-- Mulai dari high-level, lalu detail. Jangan terjebak detail di awal
-- Gunakan diagram kalau perlu
-- Minta review dari engineer lain sebelum implementasi
-- Update spesifikasi kalau berubah di tengah jalan
-
-> *"Spesifikasi yang baik adalah yang membuatmu bisa coding dengan tenang — tanpa khawatir salah arah."*
-
-[Kembali ke Governance](/articles/governance/)
+*Punya kebiasaan langsung coding tanpa rencana? Atau selalu pake spec? Cerita di komentar.*

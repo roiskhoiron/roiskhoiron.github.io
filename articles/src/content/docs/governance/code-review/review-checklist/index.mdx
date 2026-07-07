@@ -5,57 +5,67 @@ description: "Checklist code review — dari pengalaman biar review tidak asal-a
 
 # Review Checklist
 
-> *"Dulu review cuma lihat 'apakah kodenya jalan.' Tapi banyak hal yang terlewat — security, error handling, performance."*
+> *"Dulu review-ku tidak terstruktur. Baca kode asal, kasih komentar seadanya. Sampai ada bug yang lolos — karena aku tidak cek error handling. Dari situ aku sadar: review butuh checklist."*
 
-Awalnya review-ku tidak terstruktur. Baca kode, kasih komentar seadanya. Sampai ada bug yang lolos karena aku tidak cek error handling. Sejak itu, aku bikin checklist.
+Waktu pertama code review, aku cuma lihat: "apakah kodenya jalan?" Kalau iya, LGTM. Tapi banyak hal yang terlewat: edge case, security, error handling, performance.
+
+Seperti pilot yang punya checklist sebelum take off — code review juga perlu checklist. Bukan untuk memperlambat, tapi untuk memastikan tidak ada yang terlewat.
 
 ---
 
-### Checklist Review
+### Kisah Kedua: Bug Lolos karena Error Handling Tidak Dicek
 
-Setiap kali review, aku cek hal-hal ini:
+PR tentang fitur upload gambar. Kode untuk happy path bagus — upload berhasil, response OK. Aku review, LGTM.
+
+Di production, user upload gambar dengan format tidak didukung. Yang terjadi: aplikasi crash, bukan kasih error message yang jelas.
+
+Kenapa? Karena error handling tidak ada. Kode cuma handle "sukses" — tidak handle "gagal."
+
+**Pelajaran:**
+Happy path hanya setengah dari kode. Error handling adalah setengah lainnya. Dan itu yang paling sering dilewatkan di review.
+
+---
+
+### Checklist yang Kupakai
+
+Setiap review, aku cek hal-hal ini:
 
 **1. Logic & Correctness**
-
-- Apakah kode menyelesaikan masalah yang dimaksud?
-- Apakah ada edge case yang tidak dihandle?
-- Apakah ada asumsi yang tidak tertulis?
-
-Contoh: fungsi "getUser" — apa yang terjadi kalau user tidak ditemukan? Return null? Throw error? Return default?
+- Apakah kode menyelesaikan masalah?
+- Edge case di-handle? Input kosong, null, format salah?
+- Asumsi: apa yang dianggap "benar" oleh kode ini?
 
 **2. Error Handling**
-
-- Apa yang terjadi kalau API error?
-- Apa yang terjadi kalau input tidak valid?
-- Pesan error-nya jelas?
-
-Yang paling sering terlewat: error state. Kode untuk happy path biasanya bagus. Tapi error handling sering dilupakan.
+- Kalau API error — apa yang terjadi? Crash? Retry? Fallback?
+- Kalau input tidak valid — pesan errornya jelas?
+- Kalau database timeout — gimana handle-nya?
 
 **3. Security**
-
-- Apakah input sudah divalidasi?
-- Apakah ada SQL injection / XSS risk?
-- Apakah data sensitif tidak bocor ke log?
-- Apakah autentikasi dan otorisasi sudah benar?
+- Input divalidasi? (SQL injection, XSS)
+- Data sensitif tidak bocor ke log?
+- Autentikasi dan otorisasi sudah benar?
 
 **4. Performance**
-
-- Apakah ada N+1 query?
-- Apakah ada operasi berat di main thread?
-- Apakah bisa di-cache?
+- N+1 query? (cek database call di dalam loop)
+- Operasi berat di main thread? (block UI)
+- Bisa di-cache?
 
 **5. Maintainability**
-
-- Apakah kodenya mudah dibaca?
-- Apakah ada magic number / hardcoded value?
-- Apakah test-nya sudah ditulis? (kalau ada)
+- Mudah dibaca 6 bulan lagi?
+- Magic number / hardcoded value?
+- Test-nya ada? (kalau ada)
 
 ---
 
 ### Cara Pakai
 
-Checklist bukan alat untuk "menghakimi" kode — tapi untuk memastikan tidak ada yang terlewat. Tidak semua item harus dipenuhi setiap review. Tapi setidaknya, sudah dipertimbangkan.
+Checklist bukan untuk "menghakimi" — tapi untuk memastikan tidak ada yang terlewat. Tidak semua item harus dipenuhi. Tapi setidaknya sudah dipertimbangkan.
 
-> *"Checklist adalah pengingat, bukan aturan kaku. Gunakan untuk mengurangi human error, bukan untuk memperlambat."*
+Awalnya aku cetak checklist ini dan tempel di monitor. Sekarang sudah otomatis — tanpa sadar aku sudah cek semuanya.
 
-[Kembali ke Governance](/articles/governance/)
+---
+
+🌱 **Bikin checklist review versimu — sesuaikan dengan tech stack dan tim:**
+[Kembali ke Governance](/articles/governance/) | [Lihat Semua Topik](/articles/)
+
+*Punya item checklist yang menurutmu paling penting? Cerita di komentar.*

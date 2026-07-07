@@ -5,67 +5,62 @@ description: "Etika code review — dari pengalaman direview dengan kasar — Co
 
 # Review Etiquette
 
-> *"Pertama kali kena review: 'Ini kode jelek. Tulis ulang.' Tanpa penjelasan. Rasanya — males ngoding seminggu."*
+> *"Pertama kali kena review: 'Ini kode jelek. Tulis ulang.' Tanpa penjelasan. Rasanya — malas ngoding seminggu. Padahal reviewer-nya tidak bermaksud jahat — cuma terlalu to the point."*
 
-Code review bukan cuma soal teknis. Tapi juga soal **manusia** — perasaan, ego, dan hubungan tim. Review yang kasar bisa bikin developer malas. Review yang baik bisa bikin tim tumbuh.
+Code review bukan cuma soal teknis. Soal **manusia** — perasaan, ego, hubungan tim. Review yang kasar bisa bikin developer malas. Review yang baik bisa bikin tim tumbuh.
 
-Aku pernah di kedua sisi. Dulu aku juga reviewer yang kasar — tidak sengaja. Karena aku pikir langsung to the point lebih efisien. Tapi aku salah.
-
----
-
-### Yang Tidak Boleh Dilakukan
-
-**1. Jangan bilang "kode kamu jelek"**
-
-Bilang: "Bagian ini bisa disederhanakan." Atau "Ada pendekatan alternatif yang mungkin lebih bersih."
-
-Fokus ke kode, bukan ke orangnya. Jangan "kamu salah" — tapi "bagian ini riskan karena..."
-
-**2. Jangan gunakan sarkasme**
-
-"Serius? Ini yang terbaik yang bisa kamu lakukan?" — komentar seperti ini bikin orang sakit hati. Tapi kita sering tidak sadar, apalagi di chat.
-
-Teks tidak punya nada. Yang dimaksud bercanda — bisa dibaca sebagai ejekan.
-
-**3. Jangan review sambil buru-buru**
-
-Review asal-asalan, komentar ngawur, atau menyetujui kode yang salah — lebih berbahaya daripada tidak review sama sekali.
+Aku pernah di kedua sisi. Sebagai yang direview — sakit hati. Sebagai reviewer — tidak sadar sudah bikin orang lain sakit hati.
 
 ---
 
-### Yang Harus Dilakukan
+### Kisah Kedua: Komentar yang Disalahartikan
 
-**1. Mulai dengan positif**
+Waktu itu aku review PR dengan komentar: *"Kok pake cara gini? Aneh."*
 
-"Bagus, approach-nya menarik." Atau "Nice catch untuk edge case ini."
+Yang kumaksud: "Ada cara yang lebih sederhana."
+Yang dibaca penulis: "Kode kamu aneh. Kamu salah."
 
-Bukan basa-basi. Tunjukkan bahwa kamu baca kode dan menghargai usahanya.
+Masalahnya: teks tidak punya nada. Yang dimaksud bercanda — bisa dibaca sebagai ejekan. Yang dimaksud saran — bisa dibaca sebagai perintah.
 
-**2. Tanya, bukan perintah**
-
-"Kenapa pake pendekatan ini?" lebih baik dari "Ganti pake cara saya."
-
-Tanya memberi kesempatan developer menjelaskan. Mungkin ada alasan yang tidak kamu tahu.
-
-**3. Jelaskan kenapa**
-
-Bukan cuma "ini salah" — tapi "ini riskan karena kalau inputnya X, system bisa error."
-
-Penjelasan membantu developer belajar. Dia tidak cuma benarkan kode — tapi paham kenapa harus dibenerin.
-
-**4. Pisahkan yang penting dan yang opsional**
-
-- "Harus diperbaiki" — untuk error, security issue, logic salah
-- "Saran" — untuk style preference, alternatif approach
-
-Jelasin mana yang blocking dan mana yang nice-to-have.
+**Pelajaran:**
+Di code review, pilih kata dengan hati-hati. Baca ulang komentar sebelum kirim. Tanya diri: "Kalau aku yang nerima ini, gimana perasaanku?"
 
 ---
 
-### Timelines
+### Kisah Ketiga: Dari Reviewer Kasar ke Reviewer yang Disukai
 
-Review dalam 24 jam — maksimal 48 jam. PR yang didiamkan berhari-hari bikin konteks hilang dan developer frustrasi.
+Aku dulu reviewer yang "efisien" — langsung tunjuk masalah, tanpa basa-basi. Pikirku: "Biar cepet."
 
-> *"Review yang baik bukan tentang membuktikan kamu lebih pintar. Tapi tentang membuat kode tim lebih baik — bersama-sama."*
+Tapi setelah dapat feedback dari junior: *"Setiap kali lihat komentarmu di PR, aku takut."* — aku rubah pendekatan.
 
-[Kembali ke Governance](/articles/governance/)
+**Yang berubah:**
+
+**Dulu:** "Ini salah. Ganti."
+**Sekarang:** "Bagian ini riskan — kalau inputnya X, system bisa error. Mungkin bisa pake pendekatan Y?"
+
+**Dulu:** "Kode kamu jelek."
+**Sekarang:** "Di bagian ini, ada beberapa hal yang bisa diperbaiki. Yang paling kritis..."
+
+**Dulu:** Diam — kasih LGTM.
+**Sekarang:** "Looks good! Cuma satu catatan kecil..."
+
+---
+
+### Etika yang Kupakai
+
+**1. Mulai dengan positif** — "Bagus, approach-nya menarik." Bukan basa-basi — tunjukkin kamu baca dan hargai.
+
+**2. Tanya, bukan perintah** — "Kenapa pake pendekatan ini?" lebih baik dari "Ganti!" Mungkin ada alasan yang tidak kamu tahu.
+
+**3. Jelaskan kenapa** — "Ini riskan karena..." — bukan cuma "ini salah." Developer jadi paham, bukan cuma nurut.
+
+**4. Pisahkan urgent vs opsional** — "Harus diperbaiki" (error, security) vs "Saran" (style, preferensi).
+
+**5. Review tepat waktu** — 24 jam, maksimal 48 jam.
+
+---
+
+🌱 **Baca ulang komentar review terakhirmu — apa yang bisa diperhalus?**
+[Kembali ke Governance](/articles/governance/) | [Lihat Semua Topik](/articles/)
+
+*Pernah kena review yang kasar? Atau tidak sengaja jadi reviewer kasar? Cerita di komentar.*

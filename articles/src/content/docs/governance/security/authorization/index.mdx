@@ -5,65 +5,61 @@ description: "Otorisasi — dari pengalaman user bisa akses data user lain — C
 
 # Authorization
 
-> *"Aku ganti angka di URL dari `/user/5` jadi `/user/6`. Dan lihat data orang lain. Itu security hole."*
+> *"Aku iseng ganti angka di URL dari `/user/5` jadi `/user/6`. Dan lihat data orang lain. Nama, email, nomor telepon — semua terbaca. Hanya karena tidak ada cek otorisasi."*
 
-Autentikasi (siapa kamu) beda dengan otorisasi (apa yang boleh kamu lakukan). Banyak yang fokus ke auth (login, register) tapi lupa otorisasi.
+Ini dulu — pas aku masih belajar bikin API. Aku bangga endpoint `/api/user/:id` berhasil — return data user sesuai parameter ID. Tapi tidak ada cek: apakah user yang login berhak lihat data user lain?
 
-Aku pernah: user A bisa lihat profil user B — tinggal ganti ID di parameter. Ini yang disebut **Broken Access Control**. Sangat umum, sangat berbahaya.
+Jadi: User A login → ganti ID di URL → lihat data User B. Tanpa usaha.
+
+Ini yang disebut **IDOR — Insecure Direct Object Reference**. Salah satu celah paling umum dan paling berbahaya.
+
+---
+
+### Kisah Kedua: Bedanya Auth dan Otorisasi
+
+Banyak yang bingung. Termasuk aku dulu.
+
+**Autentikasi:** "Kamu siapa?" — bukti identitas. Login, JWT, session.
+**Otorisasi:** "Kamu boleh apa?" — izin akses. Admin, editor, viewer.
+
+Autentikasi tanpa otorisasi = pintu terkunci, tapi semua ruangan di dalam tidak ada kuncinya. Kamu bisa masuk — dan lihat semua yang ada.
 
 ---
 
 ### Level Otorisasi
 
 **1. Role-based (RBAC)**
-
 User punya role: admin, editor, viewer. Tiap role punya akses berbeda.
+Contoh: admin bisa hapus, editor bisa edit, viewer cuma baca.
 
-Contoh: admin bisa hapus artikel. Editor bisa edit. Viewer cuma baca.
+**2. Ownership-based**
+User hanya bisa akses resource miliknya. Ini yang paling sering dilanggar.
+API `/api/orders` harus filter: hanya order milik user yang login.
 
-Implementasi: cek role user sebelum eksekusi. Kalau role tidak sesuai, return 403.
-
-**2. Attribute-based (ABAC)**
-
+**3. Attribute-based (ABAC)**
 Akses berdasarkan atribut: user, resource, environment.
-
-Contoh: user hanya bisa edit artikel yang dia buat sendiri. Atau: artikel hanya bisa diedit jam kerja.
-
-**3. Ownership-based**
-
-User hanya bisa akses resource miliknya.
-
-Ini yang paling sering dilanggar. API `/api/orders/` harus filter: hanya order milik user yang login. Bukan semua order.
+Contoh: artikel hanya bisa diedit jam kerja.
 
 ---
 
 ### Common Mistakes
 
-**1. Hanya cek auth, tidak cek otorisasi**
-
-User sudah login → bisa akses apa pun. Salah. Login cuma bukti identitas, bukan izin akses.
-
-**2. Otorisasi di client-side**
-
-Tombol admin di-hidden dari non-admin. Tapi API-nya tetap bisa diakses. Attacker tinggal panggil langsung API — tidak perlu tombol.
-
-Otorisasi harus di server-side. Client cuma UI.
-
-**3. Insecure direct object reference (IDOR)**
-
-API `/api/invoice/123` — siapa pun bisa akses dengan ganti angka. Padahal invoice itu milik user A, bukan user B.
-
-Solusi: cek kepemilikan di server.
+- **Cuma cek auth, tidak cek otorisasi** — sudah login → bebas akses apa pun. Salah.
+- **Otorisasi di client-side** — tombol admin di-hidden. Tapi API tetap bisa dipanggil.
+- **IDOR** — lihat contoh di atas.
 
 ---
 
 ### Implementasi
 
 Di CodingSkuy:
-- Setiap endpoint punya cek: apakah user ini punya akses ke resource ini?
-- Middleware yang handle otorisasi — tidak perlu diulang di tiap handler
-- Default: deny. Kecuali explicitly allowed.
+- Setiap endpoint cek kepemilikan: apakah user ini pemilik resource?
+- Middleware handle otorisasi — tidak perlu diulang tiap handler
+- Default: deny — kecuali explicitly allowed
 
-> *"Autentikasi tanpa otorisasi ibarat pintu terkunci — tapi semua ruangan di dalam tidak punya kunci."*
+---
 
-[Kembali ke Governance](/articles/governance/)
+🌱 **Cek endpoint API-mu: apakah ada yang bisa diakses tanpa otorisasi?**
+[Kembali ke Governance](/articles/governance/) | [Lihat Semua Topik](/articles/)
+
+*Punya pengalaman nemu IDOR di aplikasi sendiri atau orang lain? Cerita di komentar.*

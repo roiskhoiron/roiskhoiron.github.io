@@ -5,49 +5,63 @@ description: "Code review anti-pattern — dari pengalaman jadi reviewer dan yan
 
 # Code Review Anti Pattern
 
-> *"Pernah review cuma bilang 'LGTM' tanpa lihat kode. Besoknya error di production. Itu salahku."*
+> *"Pernah review cuma bilang 'LGTM' tanpa baca kode. Besoknya error di production gara-gara logic sederhana yang terlewat. Itu salahku — dan pelajaran yang tidak akan kulupakan."*
 
-Code review — ritual yang sering jadi formalitas. Padahal kalau dilakukan dengan benar, ini safety net paling efektif.
+Awal karir, aku pikir code review adalah formalitas. "Biar ada proses aja." Aku kasih LGTM (Looks Good To Me) ke PR tanpa baca detail — karena percaya penulisnya senior, pasti bener.
 
-Aku pernah di kedua sisi: yang kena review asal-asalan, dan yang jadi reviewer malas.
+Besoknya, error di production. Ternyata ada logic sederhana yang salah — if statement terbalik. Sesuatu yang akan ketahuan kalau aku baca 2 menit.
+
+Sejak itu, aku tidak pernah LGTM tanpa baca lagi.
 
 ---
 
-### Anti-pattern yang Sering Terjadi
+### Kisah Kedua: PR Didiamkan 2 Minggu
 
-**1. LGTM tanpa baca**
+Di sisi lain, aku jadi yang kena review lambat. PR-ku nunggu 2 minggu untuk direview. Pas direview, aku sudah lupa detailnya. Harus baca ulang kode dari awal — buang waktu.
 
-Lihat PR, scroll, komentar "LGTM!" — tapi tidak membaca kode sama sekali. Ini berbahaya. Error kecil lolos, security issue terlewat.
+**Dampak review lambat:**
+- Konteks hilang — developer harus refresh ingatan
+- Produktivitas turun — nunggu review sambil ngerjain hal lain
+- Frustrasi — "kenapa PR-ku gak direview?"
+- Deadline terdesak — kadang merge tanpa review
 
-Kenapa orang lakuin ini? Karena buru-buru, atau merasa "ah, ini developer senior, pasti bener."
+**Solusi:**
+Sekarang di tim — target review dalam 24 jam, maksimal 48 jam. PR yang didiamkan >48 jam adalah masalah prioritas.
 
-**2. Review terlalu lambat**
+---
 
-PR didiamkan berhari-hari. Konteks hilang. Developer harus refresh ingatan. Kadang terpaksa merge tanpa review karena deadline.
+### Kisah Ketiga: Nitpicking yang Tidak Produktif
 
-Di satu proyek, PR saya nunggu 2 minggu untuk direview. Pas direview, saya sudah lupa detailnya. Harus baca ulang kode dari awal.
+Waktu pertama jadi reviewer, aku fokus ke hal yang salah. "Pake spasi 2 bukan 4." "Nama variabelnya kurang panjang." "Bracket-nya beda gaya."
 
-**3. Nitpicking berlebihan**
+Aku bangga — kelihatan teliti. Tapi senior bilang: *"Lu buang waktu. Mending fokus ke logic error atau security issue. Formatting urusan linter."*
 
-Reviewer fokus ke spasi, penamaan variabel, dan formatting. Tapi tidak lihat logic error atau security issue.
+**Yang benar:**
+- Linter dan formatter handle formatting — bukan manusia
+- Review fokus ke: logic, security, performance, maintainability
+- Kalau komentar cuma soal style — mungkin tidak perlu
 
-Padahal formatting bisa diurus oleh linter dan formatter otomatis. Waktu review seharusnya untuk hal yang tidak bisa dideteksi mesin.
+---
 
-**4. Ego trip**
+### Anti-pattern Lain
 
-Reviewer merasa kodenya selalu lebih baik. Semua PR dikomentari dengan "harusnya pake cara saya."
-
-Padahal coding itu personal. Selama ikut standar tim dan logikanya benar, banyak cara yang valid.
+**1. Ego trip** — "Harusnya pake cara gue." Padahal banyak cara valid.
+**2. Review sambil multitasking** — baca kode sambil meeting — hasilnya tidak maksimal.
+**3. Komentar vague** — "Ini kurang bagus" tanpa penjelasan. "Kurang bagus kenapa?"
+**4. Overwhelming PR** — PR 5000 baris — siapa pun malas review.
 
 ---
 
 ### Cara Menghindari
 
-- **Prioritaskan review** — review dalam 24 jam, maksimal 48 jam
-- **Baca dengan teliti** — jangan LGTM tanpa baca. Kalau tidak sempat, bilang saja
-- **Fokus ke logic, bukan style** — biarkan linter urus formatting
-- **Tanya, bukan perintah** — "Kenapa pake pendekatan ini?" lebih baik dari "Ganti pake cara saya"
+- Prioritaskan review — dalam 24 jam
+- Baca dengan teliti — 2 menit baca bisa cegah error production
+- Fokus ke logic, security, performance — bukan style
+- Tanya, bukan perintah — "Ada alternatif?" lebih baik dari "Ganti!"
 
-> *"Code review yang baik bukan mencari kesalahan — tapi belajar bersama untuk menghasilkan kode yang lebih baik."*
+---
 
-[Kembali ke Governance](/articles/governance/)
+🌱 **Cek PR yang belum di-review — jangan sampai ada yang nunggu 2 hari:**
+[Kembali ke Governance](/articles/governance/) | [Lihat Semua Topik](/articles/)
+
+*Punya pengalaman code review paling kocak atau paling pahit? Cerita di komentar.*

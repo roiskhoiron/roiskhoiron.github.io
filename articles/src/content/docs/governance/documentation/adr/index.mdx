@@ -5,60 +5,70 @@ description: "ADR — dari pengalaman lupa kenapa pilih teknologi tertentu — C
 
 # Architecture Decision Records
 
-> *"Setahun kemudian, aku lihat kode lama dan bertanya: 'Kenaga dulu pake ini?' Tidak ada jawaban — karena tidak didokumentasikan."*
+> *"Setahun kemudian, aku lihat kode lama dan bertanya: 'Kenapa dulu pake ini?' Tidak ada jawaban. Dokumentasi kosong. Tim yang dulu juga sudah pada lupa. Aku harus riset ulang dari awal."*
 
-ADR (Architecture Decision Record) adalah dokumen pendek yang mencatat keputusan arsitektur. Bukan dokumentasi teknis lengkap — cukup konteks, keputusan, dan alasan.
+Waktu buka CodingSkuy setelah setahun tidak disentuh, aku menemukan keputusan arsitektur yang aneh: "Kenapa pake Riverpod dan bukan BLoC? Kenapa pake Firebase dan bukan Supabase?"
+
+Aku yang nulis kode itu — tidak ingat. Makanya. Tidak ada catatan.
+
+Sejak itu, setiap keputusan arsitektur — berapapun kecilnya — aku catat dalam ADR (Architecture Decision Record).
 
 ---
 
-### Kenapa ADR Penting
+### Kisah Kedua: ADR yang Menyelamatkan Diskusi Tim
 
-**1. Ingatan tidak reliable**
+Suatu hari, anggota tim baru bertanya: *"Kenapa kita pake Riverpod dan bukan BLoC?"*
 
-Setahun lalu kamu pilih Riverpod daripada BLoC. Sekarang ada yang tanya kenapa. Kamu lupa detailnya. ADR menjawab — tanpa harus meriset ulang.
+Aku bisa jawab (karena masih ingat). Tapi 2 tahun lagi — mungkin aku lupa. 5 tahun lagi — mungkin sudah pindah tim.
 
-**2. Onboarding tim baru**
+Dengan ADR, jawabannya abadi:
+> *"2024-03-15: Pilih Riverpod karena: tidak butuh BuildContext, testing lebih mudah, code lebih bersih. Trade-off: not as battle-tested as BLoC, learning curve untuk tim."*
 
-Anggota tim baru baca ADR — langsung paham: "Oh, ini kenaga pake pattern ini, ini trade-off-nya." Tidak perlu tanya senior yang mungkin sudah lupa.
+Anggota tim baru baca ADR. Langsung paham. Tidak perlu tanya senior yang mungkin sudah lupa atau sudah tidak ada.
 
-**3. Menghindari repeated debate**
+---
 
-"Kenaga tidak pake microservices?" — "Sudah dibahas setahun lalu. Ini ADR-nya." Diskusi tidak perlu diulang.
+### Kisah Ketiga: Menghindari Debat Berulang
+
+Pernah di tim yang setiap 6 bulan selalu ada diskusi yang sama: "Kenapa kita tidak pake microservices?"
+
+Setiap kali harus dijelasin dari awal: "Kita tim kecil, belum perlu..." — buang waktu.
+
+Kalau ada ADR, diskusi selesai: "Sudah dibahas 2 tahun lalu. Ini ADR-nya. Kondisi sekarang masih sama, jadi keputusan masih relevan."
 
 ---
 
 ### Format yang Kupakai
 
-Format sederhana — tidak perlu template rumit:
+Sederhana — tidak perlu template rumit:
 
-**Title:** Keputusan apa yang diambil?
-
+**Title:** [Keputusan yang diambil]
 **Status:** Proposed | Accepted | Deprecated | Superseded
-
-**Context:** Masalah apa yang dihadapi? Kenaga ini perlu diputuskan?
-
+**Context:** Masalah? Kenapa perlu diputuskan?
 **Decision:** Apa yang diputuskan?
-
-**Consequences:** Apa dampaknya? Positif dan negatif.
+**Consequences:** Dampak positif dan negatif.
 
 Contoh:
 
 **Title:** Pilih Riverpod untuk State Management
 **Status:** Accepted
-**Context:** Aplikasi mulai punya 10+ screen. Provider mulai terasa terbatas — butuh BuildContext, testing susah.
+**Context:** Aplikasi mulai punya 10+ screen. Provider mulai terbatas — butuh BuildContext, testing susah, rebuild tidak terkontrol.
 **Decision:** Migrasi ke Riverpod secara bertahap. Fitur baru pake Riverpod. Fitur lama dipindah satu per satu.
-**Consequences:** +Tidak perlu BuildContext, +Testing lebih mudah, -Butuh waktu migrasi, -Tim harus belajar Riverpod.
+**Consequences:** +Tidak perlu BuildContext, +Testing lebih mudah, +Performae lebih baik, -Butuh waktu migrasi 2 minggu, -Tim harus belajar Riverpod.
 
 ---
 
 ### Kapan Nulis ADR
 
-- Setiap kali ada keputusan arsitektur yang signifikan
+- Setiap kali ada keputusan arsitektur signifikan
 - Setiap kali ada pilihan antara dua teknologi
 - Setiap kali ada perubahan standar tim
 
-Tidak harus panjang. 5-10 baris cukup.
+Tidak perlu panjang. 5-10 baris cukup. Tapi harus ada.
 
-> *"ADR adalah surat untuk dirimu di masa depan — agar tidak bertanya-tanya kenaga dulu ambil keputusan itu."*
+---
 
-[Kembali ke Governance](/articles/governance/)
+🌱 **Buat ADR pertama untuk keputusan arsitektur terakhirmu:**
+[Kembali ke Governance](/articles/governance/) | [Lihat Semua Topik](/articles/)
+
+*Punya pengalaman lupa kenapa ambil keputusan teknis? Atau debat berulang di tim? Cerita di komentar.*

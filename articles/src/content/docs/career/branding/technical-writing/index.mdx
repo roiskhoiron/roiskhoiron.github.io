@@ -5,27 +5,105 @@ description: "Technical writing — dari pengalaman nulis artikel engineering �
 
 # Technical Writing
 
-> *"Dulu aku pikir technical writing adalah nulis dokumentasi API. Ternyata lebih dari itu."*
+> *"Semua berawal dari frustasi: error yang sama muncul berulang kali. Setiap kali googling, nemu solusi, tutup tab, lupa. Besoknya error yang sama — googling lagi. Akhirnya aku nulis biar nggak lupa."*
 
-Technical writing adalah kemampuan menjelaskan hal rumit dengan cara yang mudah dipahami. Dan di era AI, skill ini makin berharga.
+Aku tidak pernah bercita-cita jadi technical writer. Aku cuma engineer yang males googling error yang sama dua kali.
 
-**Kenapa engineer harus nulis:**
+Tapi apa yang dimulai sebagai catatan pribadi — berkembang menjadi 240+ artikel di CodingSkuy, ribuan pembaca setiap bulan, dan membuka peluang karir yang tidak pernah kubicarakan sebelumnya.
 
-1. **Memperdalam pemahaman** — kalau kamu bisa jelaskan, berarti kamu paham.
-2. **Membangun reputasi** — artikelmu bisa dibaca ribuan orang.
-3. **Dokumentasi masa depan** — 6 bulan lagi, kamu lupa. Tulisanmu jadi pengingat.
-4. **Karier** — engineer yang bisa nulis lebih mudah naik level.
+---
 
-**Tips yang kupakai:**
+### Kisah Pertama: Catatan Pribadi yang Jadi Artikel Pertama
 
-1. **Mulai dari pengalaman** — tulis tentang error yang pernah kamu hadapi. Orang suka konten yang relatable.
-2. **Struktur jelas** — masalah → pendekatan → solusi → pelajaran.
-3. **Kode yang bisa di-copy** — kalau nyertakan kode, pastikan bisa jalan.
-4. **Jangan takut imperfect** — artikel pertamamu tidak harus sempurna. Yang penting ada.
+![Code editor with highlighted error lines and solution notes](/articles/images/journey/13-code-migration-journey.jpeg)
 
-**CodingSkuy buktinya.**
-240+ artikel — dimulai dari catatan pribadi yang lalu dibagikan.
+Waktu pertama kali belajar Flutter, aku berjam-jam menghadapi error yang sama: "No Firebase App — did you call Firebase.initializeApp()?"
 
-> *"Technical writer yang baik bukan yang paling pinter. Tapi yang paling bisa menjelaskan."*
+Setiap kali muncul, aku googling, buka Stack Overflow, copy paste, selesai. Tapi besoknya — entah kenapa — error yang sama muncul lagi. Googling lagi.
 
-[Kembali ke Career](/articles/career/)
+Frustasi, aku buka Notion. Kutulis:
+
+**Error: Firebase.initializeApp() not called**
+- Penyebab: lupa panggil di main() sebelum runApp()
+- Solusi: panggil await Firebase.initializeApp() di main()
+- Sumber: stackoverflow.com/...
+
+Catatan sederhana. Tapi besoknya ketika error itu muncul lagi — aku tinggal buka Notion. Tidak perlu googling.
+
+**Momen berubah:**
+Setelah beberapa bulan, catatan Notion-ku sudah 30+ entry. Aku pikir: "Mungkin orang lain juga butuh ini."
+
+Aku pindahkan ke blog. Publikasikan.
+
+Reaksi? Tidak ada yang baca. Seminggu — 10 views. Sebulan — 50 views.
+
+Tapi aku tetap nulis. Bukan karena pembaca — tapi karena **proses nulis itu sendiri membantu aku paham**. Waktu nulis tentang Riverpod, aku harus paham konsepnya dalam-dalam — lebih dalam dari sekadar make-nya. Dan itu membantu kodingku sehari-hari.
+
+---
+
+### Kisah Kedua: Artikel yang Tak Terduga Viral
+
+![Blog analytics dashboard showing growing visitor numbers over 30 days](/articles/images/journey/16-blog-analytics-dashboard.jpeg)
+
+Setelah 6 bulan nulis — artikel ke-50 atau lebih — satu artikel tentang "Flutter Riverpod Best Practices" tiba-tiba ramai.
+
+Awalnya tidak ada yang beda. Posting seperti biasa. Tapi beberapa hari kemudian:
+- Views: 100 → 500 → 2000
+- Comments mulai masuk
+- Orang share di Twitter, Telegram, Discord Flutter
+
+Aku bingung. Dibanding artikel lain, ini sebenarnya sama saja — cuma pengalaman pribadi yang kutulis.
+
+**Yang kupelajari:**
+Yang bikin artikel itu beda: **bukan kontennya yang unik, tapi cara ceritanya.** Aku nulis dari pengalaman nyata — termasuk kegagalan. Bukan "cara pake Riverpod" yang sempurna, tapi "gimana aku migrasi dari Provider, stumble di sini-sini, dan akhirnya nemu pattern yang works."
+
+Orang lebih suka cerita nyata dari tutorial sempurna.
+
+---
+
+### Kisah Ketiga: Dari Nulis ke Peluang Karir
+
+Setelah setahun nulis, sesuatu terjadi:
+
+1. **Seorang recruiter kirim DM:** "Saya baca artikel Flutter-mu. Kami lagi cari Flutter developer — tertarik?"
+2. **Seorang CTO mention di Twitter:** "Artikel ini bantu tim kami."
+3. **Seorang developer asing kirim email:** "Thanks! Artikelmu bantu aku selesaikan bug yang sudah 2 minggu."
+4. **Tawaran freelance masuk:** "Saya lihat artikelmu — percaya kamu paham Flutter. Bisa bantu project kami?"
+
+Awalnya aku nulis untuk diri sendiri. Ternyata — **tulisan yang bermanfaat untuk satu orang bisa bermanfaat untuk ribuan orang.** Dan itu membuka pintu yang tidak pernah kubicarakan.
+
+---
+
+### Praktik yang Kupakai Sekarang
+
+Setelah 240+ artikel, ini workflow yang paling works untukku:
+
+**1. Tangkap ide cepat**
+Error unik, solusi menarik, pattern yang berguna — langsung catat. Kalau tidak dicatat, besok lupa.
+
+**2. Struktur standar**
+Setiap artikel: masalah → pendekatan → solusi → pelajaran. Pembaca bisa skip ke bagian yang mereka butuh.
+
+**3. Kode yang sudah dites**
+Setiap code snippet aku test di proyek bersih sebelum publish. Satu kode yang error bisa hancurin kredibilitas.
+
+**4. Publikasi konsisten**
+Bukan tiap hari — tapi tiap minggu. Konsistensi > volume.
+
+**5. Edit setelah jeda**
+Aku tulis draft, simpan 1-2 jam, baca ulang. Mata fresh nemuin typo dan kalimat aneh yang terlewat.
+
+---
+
+### Jadi...
+
+Technical writing bukan soal jago nulis. Tapi soal **mau berbagi apa yang kamu pelajari**.
+
+Kalau kamu bisa nulis kode — kamu bisa nulis artikel. Mulai dari catatan pribadi. Yang penting mulai.
+
+---
+
+🌱 **Punya error yang sering muncul? Tulis solusinya — jadi artikel pertamamu:**
+[Kembali ke Career](/articles/career/) | [Lihat Semua Topik](/articles/)
+
+*Pernah nulis artikel teknis? Atau punya pengalaman yang layak dibagikan? Cerita di komentar.*

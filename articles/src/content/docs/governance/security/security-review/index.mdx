@@ -5,75 +5,84 @@ description: "Security review — dari pengalaman audit keamanan proyek — Codi
 
 # Security Review
 
-> *"Aku pikir aplikasi sudah aman. Tapi setelah security review, nemu 10 celah. Termasuk yang kritis."*
+> *"Aku pikir aplikasi sudah aman. Udah pake HTTPS, udah hash password, udah validasi input. Tapi setelah security review — nemu 10 celah. Termasuk yang kritis: API endpoint tanpa autentikasi."*
 
-Security review berbeda dengan code review. Code review fokus ke logika, maintainability. Security review fokus ke: bagaimana aplikasi bisa diretas.
+Suatu hari aku minta teman — yang lebih berpengalaman di security — audit aplikasi CodingSkuy. Dalam 30 menit, dia nemu:
 
-Aku pernah minta teman audit aplikasi. Dalam 30 menit, dia nemu:
-- API endpoint tanpa autentikasi
-- Input tidak divalidasi
-- Error message bocor informasi server
-- Token tidak expired
+- API endpoint lupa dikasih autentikasi (masih dari masa develop)
+- Input tidak divalidasi di server — cuma di client
+- Error message bocor stack trace (termasuk path server)
+- Token tidak ada expiry
 
-Itu wake-up call.
+Aku kaget. Selama ini aku pikir udah aman. Tapi security itu tidak bisa "kira-kira" — harus diperiksa secara sistematis.
+
+---
+
+### Kisah Kedua: Bedanya Code Review dan Security Review
+
+**Code review:** "Apakah kodenya benar? Apakah maintainable?"
+**Security review:** "Bagaimana kode ini bisa diretas?"
+
+Dua hal yang berbeda. Code review bisa terlewatkan security issue — karena reviewer fokus ke logika, bukan ke attack vector.
+
+**Contoh:**
+Di code review, PR tentang fitur upload kelihatan OK — logic bener, error handling ada. Tapi di security review baru ketahuan: tipe file tidak divalidasi — user bisa upload file .exe.
 
 ---
 
 ### Area yang Dicek
 
 **1. Authentication & Session**
-
-- Apakah password di-hash dengan algoritma kuat? (bcrypt/argon2)
-- Apakah session token aman? (HttpOnly, Secure, SameSite)
-- Apakah ada rate limiting untuk login?
-- Apakah logout beneran invalidate session?
+- Password di-hash? (bcrypt/argon2)
+- Session token aman? (HttpOnly, Secure, SameSite)
+- Rate limiting untuk login?
+- Logout beneran invalidate?
 
 **2. Authorization**
-
-- Apakah setiap endpoint cek otorisasi?
-- Apakah ada IDOR (Insecure Direct Object Reference)?
-- Apakah admin endpoint beneran cuma bisa diakses admin?
+- Setiap endpoint cek otorisasi?
+- IDOR? (Insecure Direct Object Reference)
+- Admin endpoint cuma bisa diakses admin?
 
 **3. Input Validation**
-
-- Apakah input divalidasi di server? (jangan cuma di client)
-- Apakah ada SQL injection risk?
-- Apakah ada XSS (Cross-Site Scripting) risk?
-- File upload — apakah tipe file dan ukuran dibatasi?
+- Input divalidasi di server? (jangan cuma client)
+- SQL injection risk?
+- XSS (Cross-Site Scripting) risk?
+- File upload — tipe dan ukuran dibatasi?
 
 **4. Data Exposure**
-
-- Apakah data sensitif di-log?
-- Apakah error response bocor informasi internal? (stack trace, DB detail)
-- Apakah API response mengandung field yang tidak perlu?
+- Data sensitif di-log?
+- Error response bocor internal info?
+- API response mengandung field tidak perlu?
 
 **5. Configuration**
-
-- Apakah environment variables aman? (tidak di commit)
-- Apakah CORS dikonfigurasi dengan benar? (jangan allow all)
-- Apakah dependency up-to-date? (cek CVE)
+- Environment variables aman? (tidak di commit)
+- CORS bener? (jangan allow all)
+- Dependency up-to-date? (cek CVE)
 
 ---
 
 ### Cara Melakukan
 
-**Manual review** — baca kode dengan perspektif security. Fokus ke area yang disebut di atas. Bisa butuh 1-4 jam tergantung kompleksitas.
+**Manual review** — baca kode dengan perspektif security. 1-4 jam tergantung kompleksitas.
 
-**Automated scanning** — pake tools:
-- `npm audit` / `flutter pub audit` — cek dependency
-- OWASP ZAP — automated security scanner
-- `npx snyk test` — cek celah keamanan
+**Automated scanning** — tools:
+- `npm audit` / `flutter pub audit`
+- OWASP ZAP
+- Snyk
 
-**Penetration testing** — simulasi serangan. Coba exploit celah yang mungkin ada. Bisa dilakukan internal atau hire pihak ketiga.
+**Penetration testing** — simulasi serangan. Kalau budget memadai, hire pihak ketiga.
 
 ---
 
 ### Frekuensi
 
-- Setiap kali ada fitur yang handle data sensitif
+- Setiap fitur yang handle data sensitif
 - Sebelum rilis major
 - Setiap 6 bulan untuk existing system
 
-> *"Security review bukan one-time activity. Ancaman berubah, dan sistem harus selalu dievaluasi."*
+---
 
-[Kembali ke Governance](/articles/governance/)
+🌱 **Jadwalkan security review untuk aplikasimu — atau minta teman audit:**
+[Kembali ke Governance](/articles/governance/) | [Lihat Semua Topik](/articles/)
+
+*Punya pengalaman security review yang nemu celah kritis? Cerita di komentar.*

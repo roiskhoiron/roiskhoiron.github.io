@@ -5,64 +5,73 @@ description: "Konvensi penamaan — dari pengalaman baca kode dengan nama yang t
 
 # Naming Conventions
 
-> *"Pernah lihat variabel `x`, `data`, `temp`? Aku pernah. Tidak ada yang paham apa isinya."*
+> *"Pernah lihat variabel `x`, `data`, `temp`? Aku pernah. File pertama — `x` ternyata user ID. File kedua — `x` ternyata total harga. Tidak ada yang paham. Termasuk penulisnya — 2 bulan kemudian."*
 
-Naming convention kelihatan sepele. Tapi dampaknya besar. Nama yang baik bisa menjelaskan intent tanpa perlu komentar. Nama yang buruk bikin kode sulit dibaca.
+Dulu aku males mikir nama. Variabel? `data`. Fungsi? `processData`. Class? `DataManager`. Semua serba "data" — semua tidak jelas.
+
+Sampai suatu hari aku buka kode sendiri yang kutulis 3 bulan lalu. Fungsi `getData()` — data apa? Dari mana? Return type? Aku tidak tahu. Harus baca seluruh fungsi.
+
+Sejak itu: **nama yang baik menjelaskan intent tanpa perlu baca kode.**
 
 ---
 
-### Prinsip Dasar
+### Kisah Kedua: Boolean yang Membingungkan
 
-**1. Nama harus reveal intent**
+Pernah lihat kode ini?
+```dart
+if (flag) { ... }
+```
+Apa itu `flag`? Flag apa? Apa artinya true? Apa artinya false?
 
-`int d` — tidak jelas. `int daysSinceLastLogin` — langsung paham.
+Bandikan dengan:
+```dart
+if (isUserActive) { ... }
+```
 
-`List<User> getUsers()` — jelas. `List<User> getData()` — data apa?
+Tanpa lihat konteks, langsung paham: kalau user aktif, lakukan sesuatu. Itulah kekuatan nama yang baik.
 
-**2. Boolean harus jelas ya/tidaknya**
-
-`bool flag` — tidak jelas. `bool isActive` — jelas. `bool hasPermission` — jelas.
-
-**3. Hindari single-letter (kecuali loop counter)**
-
-`for (int i = 0; i < items.length; i++)` — i oke untuk loop counter.
-
-`User u` — tidak oke. `User user` atau `User currentUser`.
+**Aturan boolean:**
+- `is` + adjective: `isActive`, `isLoaded`, `isVisible`
+- `has` + noun: `hasPermission`, `hasError`
+- `can` + verb: `canEdit`, `canDelete`
 
 ---
 
 ### Konvensi per Bahasa
 
 **Dart/Flutter:**
-- Classes, enums, type: `PascalCase` — `UserModel`, `HttpStatus`
-- Variables, functions, parameters: `camelCase` — `getUser()`, `userName`
-- Constants: `lowerCamelCase` (Dart style) — `const defaultTimeout`
-- Files: `snake_case` — `user_model.dart`
+- Classes, enums: PascalCase — `UserModel`, `HttpStatus`
+- Variables, functions: camelCase — `getUser()`, `userName`
+- Constants: lowerCamelCase — `const defaultTimeout`
+- Files: snake_case — `user_model.dart`
 - Private: prefix `_` — `_handleButtonPress()`
 
 **JavaScript/TypeScript:**
-- Classes: `PascalCase`
-- Variables, functions: `camelCase`
-- Constants: `UPPER_CASE` atau `camelCase`
-- Files: `camelCase` atau `kebab-case`
+- Classes: PascalCase
+- Variables, functions: camelCase
+- Constants: UPPER_CASE atau camelCase
+- Files: camelCase atau kebab-case
 
 ---
 
 ### Nama yang Harus Dihindari
 
-- `data`, `info`, `stuff` — tidak jelas apa isinya
-- `temp`, `tmp` — temporary? Temporary buat apa?
-- `manager`, `util`, `helper` — terlalu generic, biasanya tanda class tidak punya tanggung jawab jelas
+- `data`, `info`, `stuff` — tidak jelas
+- `temp`, `tmp` — temporary untuk apa?
+- `manager`, `util`, `helper` — terlalu generic. Biasanya tanda class tidak punya tanggung jawab jelas
 - `test1`, `test2` — apa bedanya?
 
 ---
 
 ### Tips
 
-- Nama lebih panjang lebih baik daripada nama yang tidak jelas
-- Kalau bingung naming — biasanya ada masalah di desain
-- Konsisten lebih penting dari "benar" — yang penting satu proyek pakai konvensi yang sama
+- Nama lebih panjang lebih baik dari nama tidak jelas. `daysSinceLastLogin` > `d`
+- Kalau bingung naming — biasanya ada masalah di desain, bukan di nama
+- Konsisten lebih penting dari "benar"
 
-> *"Kode yang baik adalah yang bisa dibaca seperti cerita — tanpa perlu komentar."*
+---
 
-[Kembali ke Governance](/articles/governance/)
+🌱 **Cari satu variabel dengan nama tidak jelas di kode — ganti dengan nama yang lebih baik:**
+[Kembali ke Governance](/articles/governance/) | [Lihat Semua Topik](/articles/)
+
+*Punya nama variabel paling aneh yang pernah dilihat? Cerita di komentar.*

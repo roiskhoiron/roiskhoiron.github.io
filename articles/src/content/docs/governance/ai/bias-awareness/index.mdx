@@ -5,59 +5,72 @@ description: "Mengenali bias pada AI — dari pengalaman model yang tidak adil �
 
 # Bias Awareness
 
-> *"Model pertamaku akurat 90%. Tapi 0% untuk salah satu kelompok pengguna. Bukan karena rusak — karena data training tidak seimbang."*
+> *"Model pertamaku akurat 90%. Tapi 0% untuk salah satu kelompok pengguna. Bukan karena rusak — karena data training tidak seimbang. Aku tidak sadar sama sekali. Laporan menunjukkan hijau semua. Sampai seseorang tanya: 'Coba tes per kategori.'"*
 
-Aku tidak sadar sama sekali. Laporan akurasi menunjukkan 90%. Aku puas. Sampai seseorang bertanya: *"Coba tes modelmu untuk kategori ini."*
+Waktu pertama bikin model klasifikasi, aku bangga. Dashboard metrics menunjukkan akurasi 90% — angka yang solid. Aku deploy, kasih tau tim, dan merasa puas.
 
-Hasilnya? Bencana. Model gagal total. Karena data training untuk kategori itu sangat sedikit.
+Tapi seorang kolega bertanya: *"Udah cek per-kategori?"*
 
-Dari situ aku belajar: data tidak seimbang bukan cuma masalah teknis — ini masalah etis.
+Aku buka breakdown per kategori. Satu kategori: 0%. Modelku tidak bisa memprediksi kategori itu sama sekali. Bukan karena model rusak — karena dari 1000 sampel data training, hanya 5 dari kategori itu.
+
+**Kesadaran:**
+Data tidak seimbang bukan masalah teknis — ini masalah etis. Karena model yang bias bisa merugikan sekelompok pengguna secara tidak adil.
 
 ---
 
-### Dari Mana Bias Datang?
+### Kisah Kedua: Labeler yang Tidak Sadar Bias
 
-**1. Data tidak seimbang**
+Di proyek lain, aku pekerjaan label data untuk model NLP. Dua orang anotator — mereka ngasih label untuk data yang sama.
 
-90% data dari kelompok A, 10% dari B. Model jadi ahli untuk A, tapi buta untuk B. Ini yang paling umum.
+Hasilnya: 30% label tidak cocok.
 
-Di proyek klasifikasi artikel, dulu aku cuma kumpulin artikel dari sumber yang sama. Hasilnya: model bagus untuk topik dari sumber itu, tapi kacau untuk topik dari sumber lain.
+Aku cek perbedaan:
+- Anotator A lebih sering label "spam" untuk email dari domain tertentu
+- Anotator B lebih sering label "not spam" untuk email yang sama
 
-**2. Label bias**
+Siapa yang benar? Tidak ada. Masing-masing punya bias sendiri. Tapi model yang belajar dari data mereka akan mewarisi bias itu.
 
-Orang yang kasih label punya preferensi. Contoh: anotator label "spam" untuk email dari domain tertentu karena menurut dia itu spam.
+**Pelajaran:**
+Bias tidak selalu datang dari data — bisa dari orang yang menyiapkan data. Penting punya pedoman anotasi yang jelas dan overlap antar anotator.
 
-Aku pernah dapat dataset yang labelnya tidak konsisten — dua anotator label data yang sama dengan hasil berbeda. Itu sumber bias.
+---
 
-**3. Historical bias**
+### Kisah Ketiga: Bias dari Masa Lalu
 
-Data masa lalu mengandung diskriminasi. Model belajar dari data itu, jadi diskriminasi terwariskan.
+Pernah dapet dataset rekrutmen dari 10 tahun lalu. Ide awalnya: bikin model yang bisa bantu screening CV.
 
-Contoh klasik: model screening CV di-training dengan data rekrutmen 10 tahun lalu. Kalau di masa lalu lebih banyak laki-laki yang diterima, model akan "belajar" untuk lebih memprioritaskan laki-laki.
+Tapi waktu lihat data:
+- 80% kandidat yang diterima adalah laki-laki
+- 20% perempuan
 
-**4. Deployment bias**
+Bukan karena diskriminasi sadar — mungkin karena 10 tahun lalu memang lebih banyak pelamar laki-laki di bidang tech. Tapi kalau model belajar dari data ini, dia akan "belajar" bahwa laki-laki lebih cocok.
 
-Pengguna di lapangan berbeda dengan data training. Model di-training dengan data dari Amerika, dipake di Indonesia. Pasti tidak cocok.
+**Keputusan:**
+Aku tidak pake dataset itu. Cari dataset yang lebih seimbang atau buat dari awal dengan distribusi yang adil.
 
 ---
 
 ### Cara Deteksi Sederhana
 
-1. Uji model di berbagai kelompok
-2. Bandingkan akurasi antar kelompok
-3. Kalau beda signifikan (>10%), ada bias
+Tidak perlu tool canggih untuk deteksi bias dasar:
 
-Tidak perlu tool canggih. Cukup pisahkan data uji per kategori, hitung akurasi masing-masing.
+1. **Uji model di berbagai kelompok** — pisahkan data uji per demografi, per kategori, per segmen
+2. **Bandingkan akurasi antar kelompok** — kalau beda >10%, ada masalah
+3. **Cek false positive rate** — apakah satu kelompok lebih sering salah dikenali sebagai positif?
+4. **Human review** — minta orang dari latar belakang berbeda lihat output model
 
 ---
 
 ### Mitigasi
 
-- **Seimbangkan data training** — oversampling kelompok minoritas, atau undersampling kelompok mayoritas
-- **Gunakan fairness metrics** — jangan cuma accuracy. Lihat false positive rate per kelompok
-- **Diverse perspective** — libatkan orang dari latar belakang berbeda dalam pengembangan
-- **Pantau terus** — bias bisa muncul setelah deployment karena data berubah
+- **Seimbangkan data training** — oversampling minoritas, undersampling mayoritas, atau synthetic data
+- **Gunakan fairness metrics** — jangan cuma accuracy. Hitung false positive rate per kelompok
+- **Diverse perspective** — libatkan orang dari latar belakang berbeda dalam tim pengembangan
+- **Monitor terus** — bias bisa muncul setelah deployment karena data berubah
 
-> *"Bias bukan kesalahan teknis — ini tanggung jawab etis. Kamu yang bikin model, kamu yang bertanggung jawab atas dampaknya."*
+---
 
-[Kembali ke Governance](/articles/governance/)
+🌱 **Mulai dengan cek akurasi per kelompok di modelmu hari ini:**
+[Kembali ke Governance](/articles/governance/) | [Lihat Semua Topik](/articles/)
+
+*Pernah nemu bias di AI? Atau khawatir modelmu bias? Cerita di komentar.*

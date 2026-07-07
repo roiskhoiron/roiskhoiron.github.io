@@ -5,61 +5,58 @@ description: "Keamanan MCP — dari pengalaman koneksi AI ke tools eksternal —
 
 # MCP Security
 
-> *"MCP bikin agent bisa pake tools apa aja. Tapi kalau tools-nya tidak aman, agent jadi vector serangan."*
+> *"MCP bikin agent bisa pake tools apa aja. Keren — tapi setiap tools baru adalah potensi celah keamanan baru. Kayak buka pintu rumah — makin banyak pintu, makin banyak yang perlu dikunci."*
 
-MCP (Model Context Protocol) adalah protokol yang memungkinkan AI agent berkomunikasi dengan tools. Keren — tapi setiap koneksi baru adalah potensi celah keamanan baru.
+Waktu pertama kali setup MCP (Model Context Protocol) untuk agent CodingSkuy, aku excited. Agent bisa search artikel, baca konten, generate ringkasan — semuanya lewat tools yang terintegrasi.
 
----
-
-### Ancaman
-
-**1. Tool spoofing**
-
-Tools palsu yang kelihatan seperti tools resmi. Agent panggil tools palsu → data dikirim ke attacker.
-
-**2. Data interception**
-
-Komunikasi antara agent dan tools dicegat. Tanpa enkripsi, data yang dikirim bisa dibaca pihak ketiga.
-
-**3. Unauthorized access**
-
-Tools yang tidak dilindungi autentikasi. Siapa pun bisa panggil tools itu — termasuk agent jahat.
+Tapi semakin banyak tools yang aku tambah, semakin sadar aku: **setiap tools adalah permukaan serangan baru.**
 
 ---
 
-### Mitigasi
+### Kisah Pertama: Tools Palsu yang Hampir Kepake
 
-**Autentikasi dan otorisasi**
+Suatu hari aku coba integrate tools dari sumber tidak resmi — tools pihak ketiga yang "katanya" bisa bantu analisis sentimen. Tools-nya kelihatan legit: dokumentasi rapi, contoh jelas.
 
-Setiap tools MCP harus punya autentikasi. Token, API key, atau OAuth. Tools tidak boleh bisa diakses tanpa kredensial.
+Tapi sebelum pake, aku cek source code-nya. Ada baris yang mencurigakan — tools mengirim data ke endpoint yang tidak jelas.
 
-**Enkripsi**
+**Bayangkan:**
+Tools itu dipanggil agent → agent kirim data ke tools → tools kirim data ke attacker. Tanpa sadar.
 
-Komunikasi antara agent dan tools harus dienkripsi. HTTPS/TLS minimum.
-
-**Rate limiting**
-
-Batasi berapa kali agent bisa panggil tools dalam periode tertentu. Cegah abuse.
-
-**Audit log**
-
-Setiap panggilan tools tercatat: agent mana, tools apa, parameter apa, hasil apa. Untuk investigasi kalau ada insiden.
-
-**Tool whitelist**
-
-Agent cuma bisa akses tools yang sudah di-whitelist. Tidak bisa panggil tools sembarangan di internet.
+Pelajarannya: **tidak semua tools bisa dipercaya.** Sama seperti tidak boleh asal install package dari npm tanpa cek.
 
 ---
 
-### Yang kulakukan
+### Kisah Kedua: Tools Tanpa Autentikasi
 
-Di CodingSkuy, tools MCP terbatas pada:
-1. Search index artikel
-2. Baca artikel tertentu
-3. Generate ringkasan
+Aku pernah setup tools MCP untuk internal — tanpa autentikasi. Pikirku: "Kan internal aja, nggak ada yang tau endpoint-nya."
 
-Tidak ada akses ke database user, tidak ada akses ke environment variables, tidak ada akses delete.
+Ternyata teman iseng coba akses endpoint itu — dan berhasil. Dia bisa panggil tools tanpa izin. Beruntung dia baik dan cuma notifikasi. Tapi kalau attacker?
 
-> *"Keamanan MCP bukan tentang tools-nya — tapi tentang siapa dan apa yang bisa akses tools itu."*
+**Mitigasi:**
+Setiap tools MCP harus punya autentikasi sekarang. Token, API key, atau OAuth. Minimal.
 
-[Kembali ke Governance](/articles/governance/)
+---
+
+### Praktik Keamanan MCP
+
+**1. Autentikasi dan otorisasi**
+Setiap tools wajib diautentikasi. Token atau API key. Jangan biarkan tools tanpa proteksi.
+
+**2. Enkripsi komunikasi**
+Komunikasi antara agent dan tools harus HTTPS/TLS. Data dalam perjalanan bisa dicegat.
+
+**3. Tool whitelist**
+Agent cuma bisa akses tools tertentu. Bukan bebas panggil tools di internet. Di CodingSkuy, tools MCP terbatas pada: search index artikel, baca artikel tertentu, generate ringkasan. Tidak ada akses ke database user, environment variables, atau delete.
+
+**4. Audit logging**
+Setiap panggilan tools tercatat. Agent mana, tools apa, parameter apa, hasil apa. Kalau ada insiden — bisa di-trace.
+
+**5. Rate limiting**
+Batasi berapa kali agent bisa panggil tools dalam periode tertentu. Cegah abuse atau loop tak terbatas.
+
+---
+
+🌱 **Cek: apakah tools MCP yang kamu pake punya autentikasi?**
+[Kembali ke Governance](/articles/governance/) | [Lihat Semua Topik](/articles/)
+
+*Punya pengalaman dengan tools AI yang tidak aman? Cerita di komentar.*
