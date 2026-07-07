@@ -24,7 +24,7 @@ Di CodingSkuy, aku mau nambah fitur bookmark. Sebelum coding, aku paksa diri nul
 
 **Tujuan:** User bisa bookmark artikel
 **Alur:** User klik icon bookmark → artikel tersimpan ke "Bookmark" → bisa diakses offline
-**API:** POST /api/bookmark {articleId}, DELETE /api/bookmark {articleId}, GET /api/bookmarks
+**API:** POST /api/bookmark `{articleId}`, DELETE /api/bookmark `{articleId}`, GET /api/bookmarks
 **Database:** Tabel baru "bookmarks" — userId, articleId, createdAt
 **UI:** Icon bookmark di setiap kartu artikel, halaman Bookmark terpisah
 **Edge cases:** Bookmark duplikat? (handle dengan unique constraint), offline? (local cache), hapus akun? (cascade delete)
