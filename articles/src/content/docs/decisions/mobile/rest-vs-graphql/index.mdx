@@ -1,14 +1,33 @@
 ---
 title: REST vs GraphQL
-description: Belajar tentang REST vs GraphQL — CodingSkuy
+description: "REST vs GraphQL — dari pengalaman API design — CodingSkuy"
 ---
 
 # REST vs GraphQL
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Dulu semua API kupake REST. Sampai satu endpoint ngirim 10 field, tapi yang kepake cuma 2."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+REST itu simpel dan predictable. Setiap endpoint punya satu resource. GET users, POST users, DELETE users.
 
----
+**Keunggulan REST:**
+- Sederhana, semua developer paham
+- Caching mudah (HTTP cache)
+- Tooling matang (Postman, Insomnia)
+- Stateless, scale horizontal gampang
 
-*Coming soon — Tim CodingSkuy*
+**Masalah REST yang kualami:**
+- Over-fetching — dapet data kebanyakan
+- Under-fetching — butuh data dari banyak endpoint
+- N+1 query — list → detail tiap item
+
+**GraphQL** nyelesain itu: client request field spesifik, server return sesuai.
+
+**Tapi GraphQL juga ada masalah:**
+- Complexity — butuh schema, resolver, query language
+- Caching susah — karena tiap query bisa beda
+- Performance — query dalam bisa jadi mahal
+- File upload tidak native
+
+> *"REST untuk API publik dan simple. GraphQL untuk aplikasi kompleks dengan banyak klien (mobile + web) dan kebutuhan data yang berbeda-beda. Pilih yang paling nyaman untuk timmu."*
+
+[Kembali ke Decisions](/articles/decisions/)

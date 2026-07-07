@@ -1,14 +1,39 @@
 ---
-title: Bloc vs Riverpod
-description: Belajar tentang Bloc vs Riverpod — CodingSkuy
+title: BLoC vs Riverpod
+description: "BLoC vs Riverpod — dari pengalaman dua pendekatan state management — CodingSkuy"
 ---
 
-# Bloc vs Riverpod
+# BLoC vs Riverpod
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"BLoC itu seperti pisau tentara — kuat, tapi berat. Riverpod itu seperti pisau dapur — ringan, tapi untuk sebagian besar masakan cukup."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Dua state management paling populer di Flutter. Sama-sama powerful. Tapi pendekatannya beda.
 
----
+**BLoC (Business Logic Component):**
 
-*Coming soon — Tim CodingSkuy*
+BLoC pake stream. Event masuk → BLoC proses → state keluar.
+
+Awalnya kupikir ini ribet. Tapi untuk fitur yang butuh alur data kompleks — seperti real-time chat — BLoC sangat cocok. Alur datanya jelas: event apa yang terjadi, state apa yang dihasilkan.
+
+**Riverpod:**
+
+Riverpod lebih fleksibel. Bisa return Future, Stream, atau value sync. Tidak perlu event class terpisah.
+
+**Kapan pilih BLoC:**
+- Alur data kompleks dengan banyak state transition
+- Tim besar, butuh struktur yang ketat
+- Butuh traceability — setiap state change tercatat sebagai event
+- Real-time, streaming data
+
+**Kapan pilih Riverpod:**
+- Produktivitas lebih penting dari struktur ketat
+- Aplikasi medium dengan berbagai jenis state
+- Sendiri atau tim kecil
+- Mau cepat prototyping
+
+**Contoh pengalamanku:**
+Fitur chat real-time pakai BLoC — alurnya jelas, debugging gampang. Tapi untuk fitur form validation, Riverpod lebih cepat ditulis.
+
+> *"BLoC dan Riverpod bukan musuh. Mereka alat untuk konteks berbeda. Tim saya pernah pakai BLoC untuk modul chat dan Riverpod untuk sisanya."*
+
+[Kembali ke Decisions](/articles/decisions/)

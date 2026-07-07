@@ -1,14 +1,32 @@
 ---
 title: Single Agent vs Multi Agent
-description: Belajar tentang Single Agent vs Multi Agent — CodingSkuy
+description: "Single agent vs multi agent — dari pengalaman bikin AI agent — CodingSkuy"
 ---
 
 # Single Agent vs Multi Agent
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Dulu kupikir satu agent bisa ngerjain semuanya. Ternyata agent khusus lebih efektif untuk tugas spesifik."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+**Single Agent:**
+Satu model yang handle semua task. Satu prompt besar, satu konteks.
 
----
+Keuntungan: sederhana, latensi rendah, lebih murah (satu API call).
 
-*Coming soon — Tim CodingSkuy*
+Masalah: prompt makin panjang dan kompleks. Agent kewalahan. Konteks window penuh.
+
+**Multi Agent:**
+Beberapa agent spesifik yang bekerja sama. Contoh: agent riset, agent nulis, agent review.
+Setiap agent punya peran dan tools sendiri.
+
+Keuntungan: tiap agent fokus pada satu hal, lebih akurat, modular.
+
+Masalah: kompleksitas koordinasi, overhead komunikasi antar agent, latensi total lebih tinggi.
+
+**Ceritaku:**
+Pertama bikin AI agent — satu prompt untuk semua. Dia harus riset, nulis, dan review artikel CodingSkuy sekaligus. Hasilnya: artikel generik, sering lupa instruksi.
+
+Setelah pisah jadi 3 agent (riset → nulis → review), kualitas naik signifikan. Tapi koordinasi antar agent jadi tantangan sendiri — kadang terputus komunikasinya.
+
+> *"Single agent untuk task sederhana. Multi agent untuk workflow kompleks yang butuh keahlian berbeda. Mulai dari single, refactor ke multi kalau agent mulai kewalahan."*
+
+[Kembali ke Decisions](/articles/decisions/)

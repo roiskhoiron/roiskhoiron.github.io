@@ -1,14 +1,38 @@
 ---
 title: SharedPreferences vs Hive
-description: Belajar tentang SharedPreferences vs Hive — CodingSkuy
+description: "SharedPreferences vs Hive — dari pengalaman pilih local storage Flutter — CodingSkuy"
 ---
 
 # SharedPreferences vs Hive
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Dulu aku pake SharedPreferences untuk semuanya. Sampai nyimpen 1000 data dan aplikasi lemot."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+SharedPreferences itu simpel — key-value, langsung jalan, tanpa setup. Cocok untuk:
 
----
+- Theme preference (dark/light mode)
+- User session token
+- Setting sederhana (notifikasi on/off)
 
-*Coming soon — Tim CodingSkuy*
+Tapi ada batasnya: data string terbatas, tidak support query, blocking I/O (bisa bikin UI lag).
+
+**Hive** — database NoSQL lokal. Cepat, support tipe data kompleks, async.
+
+Cocok untuk:
+- Data offline
+- Cache response API
+- Structured data yang butuh query cepat
+
+**Kapan pilih SharedPreferences:**
+- Hanya untuk preference sederhana
+- Data sedikit (&lt;100 key)
+- Tidak butuh query
+
+**Kapan pilih Hive:**
+- Data agak banyak
+- Butuh query/ filter
+- Data berupa object kompleks
+- Butuh performa baca/tulis cepat
+
+> *"Aturan praktis: SharedPref untuk setting, Hive untuk data. Kalau ragu, Hive aja."*
+
+[Kembali ke Decisions](/articles/decisions/)

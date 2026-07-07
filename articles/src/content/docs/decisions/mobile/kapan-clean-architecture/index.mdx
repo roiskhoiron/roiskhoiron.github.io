@@ -1,14 +1,31 @@
 ---
 title: Kapan Clean Architecture Dibutuhkan?
-description: Belajar tentang Kapan Clean Architecture Dibutuhkan? — CodingSkuy
+description: "Clean Architecture — dari pengalaman over-engineering dan under-engineering — CodingSkuy"
 ---
 
 # Kapan Clean Architecture Dibutuhkan?
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Dulu aku paksa Clean Architecture untuk todo app. 3 layer, repository, use case. Untuk nyimpan catatan belanja."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Itu over-engineering parah.
 
----
+Clean Architecture itu mahal. Setiap fitur baru butuh: entity → use case → repository interface → repository impl → presenter. Kalau cuma CRUD sederhana, ini memperlambat.
 
-*Coming soon — Tim CodingSkuy*
+**Kapan Clean Architecture berguna:**
+
+1. **Domain kompleks** — aturan bisnis berlapis, banyak conditional logic.
+2. **Sumber data ganda** — API + lokal + cache, butuh abstraction.
+3. **Tim besar** — butuh batasan yang jelas antar modul.
+4. **Long-term project** — 2+ tahun, banyak perubahan requirement.
+5. **Testing penting** — use case bisa di-test tanpa dependency eksternal.
+
+**Kapan jangan pake:**
+
+1. **CRUD sederhana** — form → API → database.
+2. **Prototype / MVP** — validasi ide dulu.
+3. **Sendiri atau tim kecil** — overhead tidak sebanding.
+4. **Deadline ketat** — clean architecture butuh waktu setup.
+
+> *"Arsitektur yang baik adalah yang cukup kompleks untuk kebutuhanmu, tidak lebih. Mulai sederhana, tambah lapisan hanya kalau terbukti diperlukan."*
+
+[Kembali ke Decisions](/articles/decisions/)

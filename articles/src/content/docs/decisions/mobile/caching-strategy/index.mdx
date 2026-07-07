@@ -1,14 +1,37 @@
 ---
 title: Caching Strategy
-description: Belajar tentang Caching Strategy — CodingSkuy
+description: "Caching strategy — dari pengalaman bikin aplikasi offline-first — CodingSkuy"
 ---
 
 # Caching Strategy
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Aplikasi tanpa cache itu seperti kulkas tanpa listrik — isinya cepat basi, dan kamu harus belanja tiap hari."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Cache bukan fitur opsional — untuk mobile, cache itu kebutuhan. User bisa offline, koneksi lambat, atau kuota terbatas.
 
----
+**Tingkatan cache yang kupakai:**
 
-*Coming soon — Tim CodingSkuy*
+**1. In-memory cache**
+Data disimpan di RAM selama aplikasi jalan. Cepat, tapi hilang saat app ditutup.
+
+Cocok: state management, hasil komputasi berat sementara.
+
+**2. Local storage cache (Hive/SQLite)**
+Data disimpan di disk. Bertahan meski app ditutup.
+
+Cocok: data profil, daftar produk, setting.
+
+**3. HTTP cache**
+Cache response API. Pakai package seperti dio_cache_interceptor.
+
+Cocok: API yang jarang berubah.
+
+**Strategi yang kupakai:**
+
+- **Cache-first, network-update** — tampilkan cache dulu, update dari network di background. Terasa cepat, selalu segar.
+- **Stale-while-revalidate** — cache usang boleh ditampilkan sambil ambil data baru.
+- **Network-first, cache-fallback** — coba ambil dari network. Kalau gagal, pake cache. Untuk data yang harus real-time.
+
+> *"Cache strategy yang baik bikin aplikasi terasa cepat meski koneksi lambat. Cache strategy yang jelek bikin user lihat data basi. Pilih berdasarkan: seberapa real-time data harus."*
+
+[Kembali ke Decisions](/articles/decisions/)

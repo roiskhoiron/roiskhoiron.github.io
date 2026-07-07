@@ -1,14 +1,31 @@
 ---
 title: RAG vs Fine Tuning
-description: Belajar tentang RAG vs Fine Tuning — CodingSkuy
+description: "RAG vs fine tuning — dari pengalaman bikin AI yang paham konteks — CodingSkuy"
 ---
 
 # RAG vs Fine Tuning
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Dulu aku kira fine-tuning jawaban semua masalah. Ternyata RAG lebih sering jawabannya."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Dua cara bikin model AI paham data spesifikmu.
 
----
+**RAG (Retrieval-Augmented Generation):**
+- Dokumen di-index → pas query, ambil yang relevan → kirim ke LLM sebagai konteks
+- Tidak mengubah model — cuma menambahkan konteks di prompt
+- Data bisa diupdate kapan aja — tinggal ganti dokumen
+- Masalah: konteks terbatas (window size), kadang ambil dokumen tidak relevan
 
-*Coming soon — Tim CodingSkuy*
+**Fine Tuning:**
+- Model dilatih ulang dengan data spesifikmu
+- Model jadi paham pola dan domainmu
+- Sekali training, bisa dipakai offline
+- Tapi: mahal, butuh data banyak, kalau data berubah harus training ulang
+
+**Ceritaku:**
+CodingSkuy punya 240+ artikel. Awalnya kupikir fine-tune model biar ngerti semua artikel. Tapi biaya training mahal, dan artikel baru terus ditambah.
+
+RAG jadi pilihan: index artikel di vector database, pas user tanya, ambil artikel relevan sebagai konteks. Lebih murah, lebih fleksibel.
+
+> *"RAG untuk: knowledge base, dokumentasi, data yang sering berubah. Fine tuning untuk: gaya bicara spesifik, task khusus, model yang harus kerja offline."*
+
+[Kembali ke Decisions](/articles/decisions/)

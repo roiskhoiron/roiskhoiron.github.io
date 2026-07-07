@@ -1,14 +1,50 @@
 ---
 title: Feature First vs Layer First
-description: Belajar tentang Feature First vs Layer First — CodingSkuy
+description: "Feature-first vs layer-first — dari pengalaman struktur folder Flutter — CodingSkuy"
 ---
 
 # Feature First vs Layer First
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Layer-first itu rapi di awal. Feature-first itu rapi setelah 20 fitur."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Perdebatan klasik struktur folder Flutter.
 
----
+**Layer-first:**
 
-*Coming soon — Tim CodingSkuy*
+```
+lib/
+├── models/     → semua model
+├── views/      → semua screen
+├── services/   → semua API call
+└── widgets/    → semua widget
+```
+
+Keuntungan: semua model di satu tempat, semua screen di satu tempat.
+
+Masalah: file makin banyak, folder makin gendut. Mau cari kode fitur X harus buka 4 folder.
+
+**Feature-first:**
+
+```
+lib/
+├── features/
+│   ├── auth/
+│   │   ├── models/
+│   │   ├── screens/
+│   │   └── services/
+│   └── profile/
+│       ├── models/
+│       ├── screens/
+│       └── services/
+└── shared/
+    └── widgets/
+```
+
+Keuntungan: satu fitur, satu folder. Mau hapus? Tinggal hapus foldernya.
+
+**Pengalamanku:**
+Aku mulai dengan layer-first karena kelihatan lebih sederhana. Tapi begitu app punya 15+ screen, setiap perubahan fitur butuh buka 4-5 folder berbeda. Migrasi ke feature-first — dan kerja jadi lebih cepat.
+
+> *"Feature-first untuk fitur. Layer-first untuk shared code. Keduanya bisa jalan beriringan."*
+
+[Kembali ke Decisions](/articles/decisions/)

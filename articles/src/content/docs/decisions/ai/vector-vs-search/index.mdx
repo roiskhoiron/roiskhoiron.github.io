@@ -1,14 +1,33 @@
 ---
 title: Vector Database vs Traditional Search
-description: Belajar tentang Vector Database vs Traditional Search — CodingSkuy
+description: "Vector database vs traditional search — dari pengalaman cari artikel — CodingSkuy"
 ---
 
 # Vector Database vs Traditional Search
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Keyword search itu: 'cari kata' . Vector search itu: 'cari makna'."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Perbedaan fundamental dalam cara mencari informasi.
 
----
+**Traditional Search (Elasticsearch, PostgreSQL full-text):**
+- Cari berdasarkan kata kunci
+- Cocok untuk: exact match, filter by field, faceted search
+- Cepat untuk exact match
+- Tapi: "mobil" dan "kendaraan" dianggap berbeda meskipun maknanya sama
 
-*Coming soon — Tim CodingSkuy*
+**Vector Database (Pinecone, Weaviate, pgvector):**
+- Cari berdasarkan kemiripan makna (semantic similarity)
+- Cocok untuk: rekomendasi, semantic search, RAG
+- Paham sinonim dan konteks
+- Tapi: perlu embedding, butuh resource lebih
+
+**Pengalamanku:**
+Search tradisional di CodingSkuy — user cari "state management" dapat artikel yang persis mengandung kata itu. Tapi user cari "ngelola state" — tidak langsung cocok.
+
+Dengan vector search: "ngelola state" → embedding → cosine similarity → artikel tentang Riverpod, BLoC, Provider.
+
+Keduanya dipakai: traditional untuk exact match, vector untuk semantic search.
+
+> *"Traditional search untuk akurasi keyword. Vector search untuk pemahaman makna. Kombinasi keduanya bikin search engine yang benar-benar paham user."*
+
+[Kembali ke Decisions](/articles/decisions/)

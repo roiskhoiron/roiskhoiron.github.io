@@ -1,14 +1,29 @@
 ---
 title: Kapan setState Sudah Cukup?
-description: Belajar tentang Kapan setState Sudah Cukup? — CodingSkuy
+description: "setState vs state management — dari pengalaman — CodingSkuy"
 ---
 
 # Kapan setState Sudah Cukup?
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Dulu aku pikir semua aplikasi butuh Riverpod. Ternyata setState cukup untuk proyek pertamaku."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Awal belajar Flutter, aku langsung loncat ke state management canggih. Riverpod. BLoC. Semua.
 
----
+Tapi untuk aplikasi pertama — todo app dengan 3 screen — setState sudah lebih dari cukup. Riverpod malah bikin bingung: provider, family, autodispose...
 
-*Coming soon — Tim CodingSkuy*
+**Kapan setState cukup:**
+
+1. **Jumlah screen sedikit** (&lt;5)
+2. **State tidak dibagikan antar screen** — tiap screen punya data sendiri
+3. **Tidak ada real-time** — WebSocket, stream, polling
+4. **Prototype atau MVP** — mau cek ide dulu
+
+**Kapan harus beralih:**
+
+1. **Screen mulai bertambah** — state perlu dibagikan
+2. **Testing jadi susah** — karena state tersebar
+3. **Setiap setState ngelag** — widget tree terlalu besar
+
+> *"Jangan pake state management kompleks untuk aplikasi yang belum tentu kompleks. Mulai dari setState, refactor kalau sudah terbukti perlu."*
+
+[Kembali ke Decisions](/articles/decisions/)

@@ -1,14 +1,29 @@
 ---
 title: Self Hosted vs SaaS
-description: Belajar tentang Self Hosted vs SaaS — CodingSkuy
+description: "Self hosted vs SaaS — dari pengalaman hosting AI sendiri — CodingSkuy"
 ---
 
 # Self Hosted vs SaaS
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"SaaS itu bayar bulanan. Self-hosted itu bayar server, listrik, maintenance, dan waktu tidur."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+**SaaS (Software as a Service):**
+- Langsung pakai — OpenAI, Pinecone, Supabase
+- Harga predictable (per usage atau subscription)
+- Maintenance nol — mereka urus server
+- Tapi: vendor lock-in, data di pihak ketiga, harga naik di luar kontrol
 
----
+**Self-hosted:**
+- Kontrol penuh atas data dan infrastruktur
+- Biaya tetap (server, GPU) — murah kalau usage tinggi
+- Bisa custom sesuka hati
+- Tapi: butuh DevOps skill, maintenance rutin, scaling manual
 
-*Coming soon — Tim CodingSkuy*
+**Pengalamanku:**
+CodingSkuy pake beberapa SaaS — Vercel untuk hosting, Supabase untuk database. Cepet launch, fokus ke produk.
+
+Tapi RAG pipeline — aku self-host pake pgvector di VPS sendiri. Kenapa? Karena aku kontrol kapan update, tidak kena rate limit, dan data artikel CodingSkuy tidak bocor ke pihak ketiga.
+
+> *"SaaS untuk: non-core, standard feature, cepat launch. Self-host untuk: core business, data sensitif, high volume. Hybrid sering jadi jawaban optimal."*
+
+[Kembali ke Decisions](/articles/decisions/)

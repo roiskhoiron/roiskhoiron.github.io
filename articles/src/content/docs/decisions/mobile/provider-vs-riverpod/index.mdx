@@ -1,14 +1,36 @@
 ---
 title: Provider vs Riverpod
-description: Belajar tentang Provider vs Riverpod — CodingSkuy
+description: "Provider vs Riverpod — dari pengalaman migrasi state management — CodingSkuy"
 ---
 
 # Provider vs Riverpod
 
-> 🚧 **Halaman ini sedang dalam pengembangan.**
+> *"Aku pindah dari Provider ke Riverpod. Bukan karena Provider jelek — tapi karena Riverpod nyelesain masalah yang Provider tidak bisa."*
 
-Konten lengkap akan sehadir. Pantau terus *CodingSkuy* untuk update terbaru!
+Provider adalah state management pertama yang kupakai serius di Flutter. Dokumentasi bagus, komunitas besar.
 
----
+Tapi makin besar aplikasi, makin kerasa batasnya:
 
-*Coming soon — Tim CodingSkuy*
+**Masalah dengan Provider:**
+
+1. **BuildContext dependency** — harus ada context untuk akses provider. Di luar widget? Repot.
+2. **Provider tidak bisa standalone** — harus di widget tree.
+3. **Compile-time safety terbatas** — akses provider yang tidak ada baru ketahuan runtime.
+4. **Testing susah** — harus bikin widget tree dulu.
+
+**Kenapa pindah ke Riverpod:**
+
+1. **Tidak perlu BuildContext** — akses dari mana aja.
+2. **Compile-time error** — salah provider langsung ketahuan.
+3. **Testing gampang** — tanpa widget tree.
+4. **Family, autodispose, ref.watch/listen** — fitur lebih lengkap.
+
+**Tapi Riverpod juga ada kekurangan:**
+
+1. **Boilerplate generator** — butuh riverpod_generator untuk efisien.
+2. **Learning curve** — konsep provider, notifier, family, future provider.
+3. **Code generation** — butuh setup build_runner.
+
+> *"Provider cukup untuk aplikasi kecil-medium. Riverpod untuk aplikasi yang makin besar. Kalau baru mulai aplikasi baru, langsung Riverpod aja."*
+
+[Kembali ke Decisions](/articles/decisions/)
