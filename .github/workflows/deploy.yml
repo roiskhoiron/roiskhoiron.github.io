@@ -60,6 +60,26 @@ jobs:
           cp -R articles/dist/* build/articles/
           ls -la build/articles/
 
+      - name: Setup pnpm
+        run: npm install -g pnpm
+
+      - name: Install codingstuff dependencies
+        run: cd codingstuff && pnpm install --frozen-lockfile 2>&1
+
+      - name: Build codingstuff (static for GitHub Pages)
+        run: cd codingstuff && bash scripts/deploy-static.sh 2>&1
+        env:
+          SITE_URL: ${{ secrets.CODINGSTUFF_SITE_URL || 'https://roishoiron.github.io' }}
+
+      - name: Debug codingstuff output
+        run: ls -la codingstuff/dist/ || echo "codingstuff/dist/ not found"
+
+      - name: Merge codingstuff output into build/
+        run: |
+          mkdir -p build/codingstuff
+          cp -R codingstuff/dist/* build/codingstuff/
+          ls -la build/codingstuff/
+
       - name: Install Slidev dependencies
         run: cd slides && npm install --legacy-peer-deps
 
