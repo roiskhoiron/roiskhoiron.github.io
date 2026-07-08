@@ -16,7 +16,7 @@ const base = ((import.meta.env.BASE_URL || "/") + "/").replace(/\/\/$/, "/");
       <a href={base} class="flex items-center space-x-2 md:ml-0 ml-4">
         <div>
           <div
-            class="font-heading text-xl font-bold bg-gradient-to-r from-[#3d8bff] via-[#00d4ff] to-[#8b5cf6] bg-clip-text text-transparent"
+            class="font-heading text-xl font-bold bg-gradient-to-r from-[var(--brand-from)] via-[var(--brand-via)] to-[var(--brand-to)] bg-clip-text text-transparent"
           >
             {SITE_TITLE}
           </div>

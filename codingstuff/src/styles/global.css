@@ -54,6 +54,9 @@
   --lumen: 200 75% 60%;
   --ember: 15 70% 60%;
   --mist: 40 10% 65%;
+  --brand-from: #3d8bff;
+  --brand-via: #00d4ff;
+  --brand-to: #8b5cf6;
 }
 
 .light {
@@ -92,6 +95,9 @@
   --lumen: 200 80% 45%;
   --ember: 15 75% 50%;
   --mist: 25 10% 40%;
+  --brand-from: #e8a598;
+  --brand-via: #f5c542;
+  --brand-to: #a78bfa;
 }
 
 pre.mermaid {

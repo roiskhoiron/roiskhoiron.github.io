@@ -8,6 +8,7 @@ import rehypeSanitize, { defaultSchema } from "rehype-sanitize";
 import { loadEnv } from "vite";
 import { analyzer } from "vite-bundle-analyzer";
 import { envSchema } from "./src/envSchema";
+import { trailingSlashPlugin } from "./scripts/trailing-slash-plugin.mjs";
 
 const { SITE_URL } = loadEnv(process.env.NODE_ENV, process.cwd(), "");
 
@@ -43,6 +44,7 @@ export default defineConfig({
   ],
   vite: {
     plugins: [
+      trailingSlashPlugin(),
       tailwindcss(),
       process.env.ANALYZE &&
         analyzer({
