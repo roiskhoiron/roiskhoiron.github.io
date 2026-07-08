@@ -35,34 +35,34 @@ const doodleEmoji =
         class="relative flex flex-col justify-center items-center pointer-events-auto"
         id="mona-text"
       >
-        <div id="hero-content">
+        {
+          doodle ? (
+            <h1 class="mb-4 text-5xl font-bold tracking-tight text-foreground sm:text-7xl">
+              <span class="relative inline-block text-primary text-glow animate-pulse">
+                {doodleEmoji}
+              </span>
+              &nbsp;{doodle.title}
+            </h1>
+          ) : (
+            <h1 class="mb-4 text-5xl font-bold tracking-tight text-foreground sm:text-7xl">
+              <span class="bg-gradient-to-r from-[var(--brand-from)] via-[var(--brand-via)] to-[var(--brand-to)] bg-clip-text text-transparent">
+                CodingSkuy!
+              </span>
+            </h1>
+          )
+        }
+
+        <div id="hero-content" class="text-foreground/80">
           {
             doodle ? (
-              <>
-                <h1 class="mb-4 text-5xl font-bold tracking-tight text-foreground sm:text-7xl">
-                  <span class="relative inline-block text-primary text-glow animate-pulse">
-                    {doodleEmoji}
-                  </span>
-                  &nbsp;{doodle.title}
-                </h1>
-
-                <p class="mx-auto max-w-3xl text-xl text-muted-foreground leading-relaxed">
-                  {doodle.description}
-                </p>
-              </>
+              <p>
+                {doodle.description}
+              </p>
             ) : (
-              <>
-                <h1 class="mb-4 text-5xl font-bold tracking-tight text-foreground sm:text-7xl">
-                  <span class="bg-gradient-to-r from-[var(--brand-from)] via-[var(--brand-via)] to-[var(--brand-to)] bg-clip-text text-transparent">
-                    CodingSkuy!
-                  </span>
-                </h1>
-
-                <p class="mx-auto max-w-3xl text-xl text-muted-foreground leading-relaxed">
-                  Learning Journal &amp; Engineering Repository — documenting
-                  the process, sharing the architecture, building in public.
-                </p>
-              </>
+              <p>
+                Learning Journal &amp; Engineering Repository — documenting
+                the process, sharing the architecture, building in public.
+              </p>
             )
           }
         </div>
