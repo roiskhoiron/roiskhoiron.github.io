@@ -20,6 +20,15 @@
   position: relative;
   z-index: var(--scrolling-tags-z-index);
   user-select: none;
+  color: hsl(var(--foreground));
+  background-color: hsl(var(--muted) / 0.5);
+  border: 1px solid hsl(var(--border));
+}
+
+.light .tags-bg .tag {
+  color: hsl(var(--foreground));
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
 }
 
 .tags-bg .tag:hover,
@@ -29,9 +38,19 @@
   opacity: 1;
 }
 
+.light .tags-bg .tag:hover,
+.light .tags-bg .tag.tag-hovered {
+  background-color: hsl(var(--primary) / 0.15);
+  border-color: hsl(var(--primary) / 0.4);
+}
+
 .tags-bg .tag:active {
   transform: scale(var(--scrolling-tags-active-scale));
   background-color: hsl(var(--primary) / 0.9);
+}
+
+.light .tags-bg .tag:active {
+  background-color: hsl(var(--primary) / 0.3);
 }
 
 @media (prefers-reduced-motion: reduce) {
