@@ -3,6 +3,7 @@ import { Search } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { getNavigationItems, SITE_TITLE } from "../consts";
 import HeaderLink from "./HeaderLink.astro";
+import MobileNav from "./MobileNav";
 
 const visibleMenuItems = getNavigationItems();
 const base = ((import.meta.env.BASE_URL || "/") + "/").replace(/\/\/$/, "/");
@@ -25,42 +26,7 @@ const base = ((import.meta.env.BASE_URL || "/") + "/").replace(/\/\/$/, "/");
     </div>
 
     <div class="flex items-center gap-4">
-      <button
-        id="mobile-menu-button"
-        class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
-        aria-controls="mobile-menu"
-        aria-expanded="false"
-      >
-        <span class="sr-only">Open Menu</span>
-        <svg
-          class="block h-6 w-6"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-        <svg
-          class="hidden h-6 w-6"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
+      <MobileNav items={visibleMenuItems} base={base} client:load />
       <nav class="hidden gap-8 md:flex items-center">
         {
           visibleMenuItems.map((item) => (
@@ -80,75 +46,4 @@ const base = ((import.meta.env.BASE_URL || "/") + "/").replace(/\/\/$/, "/");
       </a>
     </div>
   </div>
-
-  <div class="md:hidden" id="mobile-menu">
-    <div
-      class="hidden px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t border-border"
-    >
-      {
-        visibleMenuItems.map((item) => (
-          <a
-            href={item.href.startsWith("http") ? item.href : base + item.href.slice(1)}
-            class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary"
-          >
-            {item.label}
-          </a>
-        ))
-      }
-      <div class="px-3 py-2">
-        <a
-        href={`${base}search`}
-          class="flex items-center gap-2 py-2 rounded-md text-base font-medium text-foreground hover:text-primary"
-        >
-          <Search className="w-4 h-4" />
-          Search
-        </a>
-      </div>
-    </div>
-  </div>
 </header>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const mobileMenuButton = document.getElementById("mobile-menu-button");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const menuContent = mobileMenu?.querySelector("div");
-    const menuIcon = mobileMenuButton?.querySelector("svg:first-of-type");
-    const closeIcon = mobileMenuButton?.querySelector("svg:last-of-type");
-
-    if (
-      mobileMenuButton &&
-      mobileMenu &&
-      menuContent &&
-      menuIcon &&
-      closeIcon
-    ) {
-      mobileMenuButton.addEventListener("click", function () {
-        const isExpanded =
-          mobileMenuButton.getAttribute("aria-expanded") === "true";
-
-        if (isExpanded) {
-          menuContent.classList.add("hidden");
-          mobileMenuButton.setAttribute("aria-expanded", "false");
-          menuIcon.classList.remove("hidden");
-          closeIcon.classList.add("hidden");
-        } else {
-          menuContent.classList.remove("hidden");
-          mobileMenuButton.setAttribute("aria-expanded", "true");
-          menuIcon.classList.add("hidden");
-          closeIcon.classList.remove("hidden");
-        }
-      });
-
-      const menuItems = menuContent.querySelectorAll("a");
-      menuItems.forEach((item) => {
-        item.addEventListener("click", function () {
-          menuContent.classList.add("hidden");
-          mobileMenuButton.setAttribute("aria-expanded", "false");
-          menuIcon.classList.remove("hidden");
-          closeIcon.classList.add("hidden");
-        });
-      });
-    }
-  });
-</script>

@@ -56,7 +56,8 @@ const formatDate = (date: Date | string) => {
 ---
 
 <div
-  class="relative overflow-hidden bg-card border-none pt-0 gap-0 w-full flex flex-col cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-xl rounded-2xl shadow-lg"
+  class="relative overflow-hidden bg-card border-none pt-0 gap-0 w-full flex flex-col cursor-pointer transition-all hover:-translate-y-1.5 hover:shadow-xl rounded-2xl shadow-lg"
+  style="transition-duration: 300ms; transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);"
 >
   <a href={`${base}blogs/${blog.id}`} class="flex flex-col grow">
     <header class="p-0 gap-0">

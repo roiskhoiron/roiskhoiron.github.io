@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { type FlatChapter, getStructuredTOC } from "@/lib/course";
 import type { StructureItemType } from "@/types/course";
@@ -92,15 +93,21 @@ export function CourseSidebar({
         <span className="text-sm font-medium">TOC</span>
       </button>
 
-      {isOpen && (
-        <button
-          type="button"
-          className="lg:hidden fixed inset-0 z-50 bg-black/50 cursor-default"
-          onClick={() => setIsOpen(false)}
-          onKeyDown={(e) => e.key === "Escape" && setIsOpen(false)}
-          aria-label="Close menu"
-        />
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.button
+            type="button"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="lg:hidden fixed inset-0 z-50 bg-black/50 cursor-default"
+            onClick={() => setIsOpen(false)}
+            onKeyDown={(e) => e.key === "Escape" && setIsOpen(false)}
+            aria-label="Close menu"
+          />
+        )}
+      </AnimatePresence>
 
       <aside
         className={`fixed lg:sticky top-0 left-0 z-50 lg:z-auto h-full lg:h-auto w-72 lg:w-64 bg-slate-900 lg:bg-transparent border-r border-slate-700 lg:border-0 transform transition-transform duration-300 lg:transform-none ${

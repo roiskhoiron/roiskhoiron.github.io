@@ -83,12 +83,22 @@ const base = ((import.meta.env.BASE_URL || "/") + "/").replace(/\/\/$/, "/");
     moreBtn.onclick = () => {
       const next = Math.min(visible + PAGE, allTags.length);
       for (let i = visible; i < next; i++) {
-        (allTags[i] as HTMLElement).style.display = "inline-flex";
+        const el = allTags[i] as HTMLElement;
+        el.style.display = "inline-flex";
+        el.style.opacity = "0";
+        el.style.transform = "translateY(8px)";
+        requestAnimationFrame(() => {
+          el.style.transition = "opacity 0.3s ease, transform 0.3s ease";
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+        });
       }
       visible = next;
       const remaining = allTags.length - visible;
       if (remaining <= 0) {
-        moreBtn.remove();
+        moreBtn.style.transition = "opacity 0.2s ease";
+        moreBtn.style.opacity = "0";
+        setTimeout(() => moreBtn.remove(), 200);
       } else {
         moreBtn.textContent = `more (${remaining})`;
       }

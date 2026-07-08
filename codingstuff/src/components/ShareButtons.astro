@@ -225,11 +225,17 @@ const shareButtonClass = [
     }
 
     .popup-share-group {
-      display: none;
+      display: flex;
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.95) translateY(-4px);
     }
 
     .popup-share-group[data-open="true"] {
-      display: flex;
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1) translateY(0);
+      transition: opacity 0.2s ease-out, transform 0.2s ease-out;
     }
   </style>
 </slot>
@@ -248,17 +254,26 @@ const shareButtonClass = [
       }
 
       const showPanel = () => {
-        panel.hidden = false;
         panel.removeAttribute("hidden");
         panel.setAttribute("data-open", "true");
-        panel.focus();
+        const anim = panel.animate([
+          { opacity: 0, transform: "scale(0.95) translateY(-4px)" },
+          { opacity: 1, transform: "scale(1) translateY(0)" },
+        ], { duration: 200, easing: "ease-out" });
+        anim.onfinish = () => panel.focus();
         toggle.setAttribute("aria-expanded", "true");
       };
 
       const hidePanel = () => {
-        panel.hidden = true;
-        panel.setAttribute("hidden", "");
-        panel.setAttribute("data-open", "false");
+        const anim = panel.animate([
+          { opacity: 1, transform: "scale(1) translateY(0)" },
+          { opacity: 0, transform: "scale(0.95) translateY(-4px)" },
+        ], { duration: 150, easing: "ease-in" });
+        anim.onfinish = () => {
+          panel.hidden = true;
+          panel.setAttribute("hidden", "");
+          panel.setAttribute("data-open", "false");
+        };
         toggle.setAttribute("aria-expanded", "false");
       };
 

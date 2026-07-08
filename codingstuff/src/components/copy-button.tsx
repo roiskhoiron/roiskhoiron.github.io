@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { CopyIcon } from "lucide-react";
 import { toast } from "sonner";
 
@@ -40,16 +41,17 @@ export const CopyButton: React.FC<CopyButtonProps> = ({
   };
 
   return (
-    <button
+    <motion.button
       type="button"
       onClick={handleCopy}
       onKeyDown={handleKeyDown}
-      className={`group  cursor-pointer ${background}`}
+      whileTap={{ scale: 0.9 }}
+      className={`group cursor-pointer ${background}`}
       aria-label="Copy content"
     >
       <CopyIcon
         className={`${iconSize} transition-colors duration-150 ${textColor ?? ""} group-hover:text-gray-500`.trim()}
       />
-    </button>
+    </motion.button>
   );
 };

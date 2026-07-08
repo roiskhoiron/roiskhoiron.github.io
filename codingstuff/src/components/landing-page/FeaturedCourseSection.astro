@@ -1,4 +1,6 @@
 ---
+import Hoverable from "@/components/Hoverable";
+import Reveal from "@/components/Reveal";
 import { getChapterCount } from "@/lib/course";
 import { getCategoryColor } from "@/lib/utils";
 import type { StructureItemType } from "@/schemas/content/course";
@@ -22,6 +24,7 @@ const courseSlug = course.id.replace(/\/toc$/, "");
 const chapterCount = getChapterCount(course.structure);
 ---
 
+<Reveal client:visible>
 <section class="bg-card/50 py-8">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="mb-8 flex items-center justify-between">
@@ -54,9 +57,10 @@ const chapterCount = getChapterCount(course.structure);
       </a>
     </div>
 
+    <Hoverable client:visible lift={4}>
     <a
       href={`/courses/${courseSlug}`}
-      class="group block overflow-hidden rounded-2xl border-none bg-card shadow-lg transition-all duration-200 hover:shadow-xl hover:-translate-y-1"
+      class="group block overflow-hidden rounded-2xl border-none bg-card shadow-lg transition-shadow duration-200 hover:shadow-xl"
     >
       <div class="flex flex-col md:flex-row">
         <div
@@ -163,5 +167,7 @@ const chapterCount = getChapterCount(course.structure);
         </div>
       </div>
     </a>
+    </Hoverable>
   </div>
 </section>
+</Reveal>

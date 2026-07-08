@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import { staggerItem } from "@/lib/animations";
 import type { ProductItem } from "../types/product";
 
 interface ProductCardProps {
@@ -7,11 +9,16 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <a
+    <motion.a
       href={product.link}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex items-start gap-4 rounded-2xl border-none bg-card p-4 shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
+      variants={staggerItem}
+      whileHover={{
+        y: -6,
+        transition: { type: "spring", stiffness: 300, damping: 20 },
+      }}
+      className="group flex items-start gap-4 rounded-2xl border-none bg-card p-4 shadow-lg transition-shadow duration-200 hover:shadow-xl"
     >
       <div className="shrink-0">
         <img
@@ -35,6 +42,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           </p>
         </div>
       </div>
-    </a>
+    </motion.a>
   );
 };

@@ -1,9 +1,12 @@
 ---
+import Reveal from "@/components/Reveal";
+
 const base = ((import.meta.env.BASE_URL || "/") + "/").replace(/\/\/$/, "/");
 ---
 
 <footer class="border-t border-border bg-background">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <Reveal client:visible>
     <div class="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2 text-xs text-muted-foreground">
         <span>© {new Date().getFullYear()} CodingSkuy!. Learning Journal &amp; Engineering Repository.</span>
@@ -32,5 +35,6 @@ const base = ((import.meta.env.BASE_URL || "/") + "/").replace(/\/\/$/, "/");
         </a>
       </div>
     </div>
+    </Reveal>
   </div>
 </footer>
