@@ -4,26 +4,26 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
-  --card: 222.2 84% 4.9%;
-  --card-foreground: 210 40% 98%;
-  --popover: 222.2 84% 4.9%;
-  --popover-foreground: 210 40% 98%;
-  --primary: 142 76% 36%;
-  --primary-foreground: 222.2 84% 4.9%;
-  --secondary: 217.2 32.6% 17.5%;
-  --secondary-foreground: 210 40% 98%;
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
-  --accent: 217.2 32.6% 17.5%;
-  --accent-foreground: 210 40% 98%;
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 142 76% 36%;
-  --radius: 0.625rem;
+  --background: 40 10% 8%;
+  --foreground: 40 20% 92%;
+  --card: 40 10% 10%;
+  --card-foreground: 40 20% 92%;
+  --popover: 40 10% 10%;
+  --popover-foreground: 40 20% 92%;
+  --primary: 160 60% 45%;
+  --primary-foreground: 40 10% 8%;
+  --secondary: 40 15% 16%;
+  --secondary-foreground: 40 20% 92%;
+  --muted: 40 15% 16%;
+  --muted-foreground: 40 10% 60%;
+  --accent: 40 15% 16%;
+  --accent-foreground: 40 20% 92%;
+  --destructive: 0 62% 40%;
+  --destructive-foreground: 40 20% 92%;
+  --border: 40 15% 18%;
+  --input: 40 15% 18%;
+  --ring: 160 60% 45%;
+  --radius: 0.75rem;
 
   --spacing-xs: 0.25em;
   --spacing-sm: 0.5em;
@@ -31,52 +31,67 @@
   --spacing-lg: 1.5em;
   --spacing-xl: 2em;
 
-  --border-radius: 8px;
-  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --border-radius: 12px;
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.25);
 
-  --tea-main: oklch(12.9% 0.042 264.7);
-  --tea-main-light: oklch(30% 0.04 264.7);
-  --tea-secondary: oklch(60% 0.04 264.7);
-  --tea-light: oklch(27.9% 0.041 260.031);
-  --tea-bg: oklch(95% 0.01 264.7);
-  --tea-gray: oklch(86.9% 0.022 252.894);
-  /* slate-300 */
-  --tea-gray-light: oklch(70% 0.01 264.7);
-  --tea-light-alpha: oklch(90% 0.02 264.7 / 0.3);
-}
-
-.dark {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
-  --card: 222.2 84% 4.9%;
-  --card-foreground: 210 40% 98%;
-  --popover: 222.2 84% 4.9%;
-  --popover-foreground: 210 40% 98%;
-  --primary: 142 76% 36%;
-  --primary-foreground: 222.2 84% 4.9%;
-  --secondary: 217.2 32.6% 17.5%;
-  --secondary-foreground: 210 40% 98%;
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
-  --accent: 217.2 32.6% 17.5%;
-  --accent-foreground: 210 40% 98%;
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 142 76% 36%;
+  --tea-main: oklch(12.9% 0.01 60);
+  --tea-main-light: oklch(30% 0.02 60);
+  --tea-secondary: oklch(60% 0.04 60);
+  --tea-light: oklch(20% 0.01 60);
+  --tea-bg: oklch(95% 0.01 60);
+  --tea-gray: oklch(80% 0.01 60);
+  --tea-gray-light: oklch(65% 0.01 60);
+  --tea-light-alpha: oklch(25% 0.01 60 / 0.3);
 }
 
 .mona {
-  --primary: 160 100% 43%;
-  --nebula: 142 71% 45%;
-  --solar: 32 100% 51%;
-  --cosmic: 84 81% 56%;
-  --lumen: 200 86% 60%;
-  --ember: 9 76% 60%;
-  --mist: 215 14% 72%;
+  --primary: 160 60% 45%;
+  --nebula: 170 50% 50%;
+  --solar: 35 90% 55%;
+  --cosmic: 90 60% 55%;
+  --lumen: 200 75% 60%;
+  --ember: 15 70% 60%;
+  --mist: 40 10% 65%;
+}
+
+.light {
+  --background: 40 33% 96%;
+  --foreground: 25 10% 30%;
+  --card: 0 0% 100%;
+  --card-foreground: 25 10% 30%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 25 10% 30%;
+  --primary: 6 78% 75%;
+  --primary-foreground: 25 10% 20%;
+  --secondary: 140 25% 85%;
+  --secondary-foreground: 140 30% 25%;
+  --muted: 40 20% 90%;
+  --muted-foreground: 25 10% 50%;
+  --accent: 45 80% 90%;
+  --accent-foreground: 25 10% 30%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 40 20% 88%;
+  --input: 40 20% 88%;
+  --ring: 6 78% 75%;
+
+  --tea-main: oklch(30% 0.02 60);
+  --tea-main-light: oklch(50% 0.03 60);
+  --tea-secondary: oklch(70% 0.04 60);
+  --tea-light: oklch(90% 0.02 60);
+  --tea-bg: oklch(97% 0.01 60);
+  --tea-gray: oklch(40% 0.01 60);
+  --tea-gray-light: oklch(50% 0.01 60);
+  --tea-light-alpha: oklch(92% 0.02 60 / 0.5);
+
+  --nebula: 170 60% 45%;
+  --solar: 35 90% 50%;
+  --cosmic: 90 60% 45%;
+  --lumen: 200 80% 45%;
+  --ember: 15 75% 50%;
+  --mist: 25 10% 40%;
 }
 
 pre.mermaid {
@@ -84,6 +99,15 @@ pre.mermaid {
 }
 
 @theme inline {
+  --font-sans: "Nunito", sans-serif;
+  --font-heading: "Fredoka", sans-serif;
+  --font-hand: "Patrick Hand", cursive;
+
+  --color-teahouse-primary: hsl(var(--primary));
+  --color-teahouse-bg: hsl(var(--background));
+  --color-teahouse-light: hsl(var(--muted));
+  --color-teahouse-dark: hsl(var(--foreground));
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -128,7 +152,11 @@ pre.mermaid {
   }
 
   body {
-    @apply bg-slate-950 text-slate-100;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold tracking-tight;
   }
 }
 

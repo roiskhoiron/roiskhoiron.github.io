@@ -138,13 +138,13 @@ const productStructuredData =
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-  href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap"
+  href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Patrick+Hand&display=swap"
   rel="stylesheet"
   media="print"
 />
 <noscript>
   <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Patrick+Hand&display=swap"
     rel="stylesheet"
   />
 </noscript>
@@ -157,6 +157,15 @@ const productStructuredData =
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
+
+<script is:inline>
+  (function() {
+    var theme = localStorage.getItem('theme');
+    if (theme === 'light' || (!theme && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+      document.documentElement.classList.add('light');
+    }
+  })();
+</script>
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>

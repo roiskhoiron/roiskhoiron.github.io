@@ -1,7 +1,6 @@
 ---
 import { Search } from "lucide-react";
-import BetaBadge from "@/components/BetaBadge.astro";
-import OptimizedImage from "@/components/OptimizedImage.astro";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { getNavigationItems, SITE_TITLE } from "../consts";
 import HeaderLink from "./HeaderLink.astro";
 
@@ -10,26 +9,16 @@ const base = ((import.meta.env.BASE_URL || "/") + "/").replace(/\/\/$/, "/");
 ---
 
 <header
-  class="sticky top-0 z-50 w-full border-b border-teahouse-primary/10 bg-teahouse-bg/95 backdrop-blur supports-backdrop-filter:bg-teahouse-bg/60"
+  class="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60"
 >
   <div class="container flex h-16 items-center justify-between">
     <div class="flex items-center gap-6 md:gap-8">
       <a href={base} class="flex items-center space-x-2 md:ml-0 ml-4">
-        <OptimizedImage
-          src="/logo.webp"
-          alt="mona"
-          width={40}
-          height={40}
-          class="h-10 w-10"
-        />
         <div>
           <div
-            class="font-noto-serif text-xl font-bold text-teahouse-dark font-['Noto_Serif_SC','Noto_Serif_SC_Fallback',serif]"
+            class="font-heading text-xl font-bold bg-gradient-to-r from-[#3d8bff] via-[#00d4ff] to-[#8b5cf6] bg-clip-text text-transparent"
           >
             {SITE_TITLE}
-          </div>
-          <div class="flex justify-end mt-1">
-            <BetaBadge />
           </div>
         </div>
       </a>
@@ -38,7 +27,7 @@ const base = ((import.meta.env.BASE_URL || "/") + "/").replace(/\/\/$/, "/");
     <div class="flex items-center gap-4">
       <button
         id="mobile-menu-button"
-        class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-slate-300 hover:text-primary hover:bg-teahouse-primary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teahouse-primary"
+        class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
         aria-controls="mobile-menu"
         aria-expanded="false"
       >
@@ -80,10 +69,11 @@ const base = ((import.meta.env.BASE_URL || "/") + "/").replace(/\/\/$/, "/");
         }
       </nav>
     </div>
-    <div class="hidden md:block">
+    <div class="flex items-center gap-1">
+      <ThemeToggle client:load />
       <a
           href={`${base}search`}
-        class="inline-flex items-center gap-2 px-3 py-2 text-sm font-medium hover:text-primary transition-colors text-white"
+        class="inline-flex items-center gap-2 px-3 py-2 text-sm font-medium hover:text-primary transition-colors text-foreground"
       >
         <Search className="w-4 h-4" />
         Search
@@ -93,13 +83,13 @@ const base = ((import.meta.env.BASE_URL || "/") + "/").replace(/\/\/$/, "/");
 
   <div class="md:hidden" id="mobile-menu">
     <div
-      class="hidden px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-teahouse-bg border-t border-slate-800"
+      class="hidden px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t border-border"
     >
       {
         visibleMenuItems.map((item) => (
           <a
             href={item.href.startsWith("http") ? item.href : base + item.href.slice(1)}
-            class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-primary"
+            class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary"
           >
             {item.label}
           </a>
@@ -108,7 +98,7 @@ const base = ((import.meta.env.BASE_URL || "/") + "/").replace(/\/\/$/, "/");
       <div class="px-3 py-2">
         <a
         href={`${base}search`}
-          class="flex items-center gap-2 py-2 rounded-md text-base font-medium text-white hover:text-primary"
+          class="flex items-center gap-2 py-2 rounded-md text-base font-medium text-foreground hover:text-primary"
         >
           <Search className="w-4 h-4" />
           Search

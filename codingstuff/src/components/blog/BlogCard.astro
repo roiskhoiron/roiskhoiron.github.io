@@ -56,11 +56,11 @@ const formatDate = (date: Date | string) => {
 ---
 
 <div
-  class="relative overflow-hidden bg-slate-900/50 border border-slate-700 pt-0 gap-0 w-full flex flex-col cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:border-emerald-500/50 hover:shadow-lg hover:shadow-emerald-500/10 rounded-lg"
+  class="relative overflow-hidden bg-card border-none pt-0 gap-0 w-full flex flex-col cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-xl rounded-2xl shadow-lg"
 >
   <a href={`${base}blogs/${blog.id}`} class="flex flex-col grow">
     <header class="p-0 gap-0">
-      <div class="aspect-video w-full bg-teahouse-light relative">
+      <div class="aspect-video w-full bg-muted relative overflow-hidden">
         {
           blog.image ? (
             <Image
@@ -80,32 +80,29 @@ const formatDate = (date: Date | string) => {
         }
       </div>
     </header>
-    <div class="p-4">
+    <div class="p-5">
       <h3
-        class="mt-2 line-clamp-2 font-noto-serif text-xl text-slate-300 font-bold"
+        class="line-clamp-2 font-heading text-lg text-foreground font-bold"
       >
         {blog.title}
       </h3>
-      <p class="mt-2 line-clamp-3 text-sm text-slate-300/70">
+      <p class="mt-2 line-clamp-2 text-sm text-muted-foreground">
         {blog.description}
       </p>
     </div>
-    <footer class="p-4 pt-0">
-      <div class="flex items-center justify-between">
-        <div class="text-sm text-slate-300/60">
-          {formatDate(blog.pubDate)}
-        </div>
-        <div class="text-sm text-slate-300/60">{blog.author}</div>
+    <footer class="px-5 pb-4">
+      <div class="flex items-center justify-between text-xs text-muted-foreground">
+        <span>{formatDate(blog.pubDate)}</span>
+        <span>{blog.author}</span>
       </div>
     </footer>
-    <div class="grow"></div>
   </a>
-  <div class="flex items-center justify-between mt-2 p-4">
+  <div class="flex items-center justify-between px-5 pb-4 pt-0">
     <a
       href={`${base}blogs/${blog.id}`}
-      class="text-sm font-medium text-teahouse-primary"
+      class="text-xs font-semibold text-primary hover:text-primary/80 transition-colors"
     >
-      Read More
+      Read More →
     </a>
     <div class="flex justify-end items-center gap-2">
       <ShareButtons

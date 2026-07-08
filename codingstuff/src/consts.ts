@@ -45,10 +45,10 @@ export interface SlideTheme {
   overlayColor: string;
 }
 
-export const SITE_TITLE = "MONA";
-export const SITE_DESCRIPTION = "Mona — Learn from What We Build";
+export const SITE_TITLE = "CodingSkuy!";
+export const SITE_DESCRIPTION = "Learning Journal & Engineering Repository — An open platform and free playground created by Rois Khoiron to document learning processes, write technical tutorials, and share software engineering architecture decisions.";
 
-export const PROD_URL = "https://www.mymona.xyz";
+export const PROD_URL = "https://roiskhoiron.github.io/codingstuff";
 
 export const isProdEnv = () => {
   if (import.meta.env?.PROD || import.meta.env?.MODE === "production") {
@@ -109,11 +109,11 @@ export const MENU_ITEMS: MenuItem[] = [
     description: "Learn step-by-step with our structured courses.",
   },
   {
-    id: "open-source",
+    id: "github",
     label: "GitHub",
-    href: "https://github.com/monakit/monakit",
+    href: "https://github.com/roiskhoiron",
     title: "GitHub",
-    description: "Explore our open-source projects.",
+    description: "Explore open-source projects by Rois Khoiron.",
   },
 ];
 

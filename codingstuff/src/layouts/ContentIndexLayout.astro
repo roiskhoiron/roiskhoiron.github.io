@@ -108,7 +108,7 @@ const items = paginatedItems.items.map((item) => {
         page > 1 && (
           <a
             href={`${base}${collectionType}?page=${page - 1}&limit=${limit}${tag ? `&tag=${tag}` : ""}`}
-            class="inline-flex items-center px-4 py-2 text-sm font-medium border rounded-md transition-colors border-slate-400 text-slate-400 hover:text-emerald-400"
+            class="inline-flex items-center px-4 py-2 text-sm font-medium border rounded-full transition-colors border-border text-muted-foreground hover:text-primary"
           >
             <svg
               class="w-5 h-5 mr-2"
@@ -134,7 +134,7 @@ const items = paginatedItems.items.map((item) => {
         paginatedItems.hasMore && (
           <a
             href={`${base}${collectionType}?page=${page + 1}&limit=${limit}${tag ? `&tag=${tag}` : ""}`}
-            class="inline-flex items-center px-4 py-2 text-sm font-medium border rounded-md border-slate-400 text-slate-400 hover:text-emerald-400 transition-colors"
+            class="inline-flex items-center px-4 py-2 text-sm font-medium border rounded-full border-border text-muted-foreground hover:text-primary transition-colors"
           >
             Next
             <svg
