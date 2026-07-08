@@ -13,6 +13,13 @@ import { getAdjacentContent } from "@/lib/navigation";
 import { hasMermaidContent } from "@/lib/utils";
 import "@/styles/article.css";
 
+export async function getStaticPaths() {
+  const posts = await getCollection("blogs");
+  return posts.map((post) => ({
+    params: { slug: post.id.split("/") },
+  }));
+}
+
 // add all blog posts to sitemap
 sitemap(async ({ addToSitemap }) => {
   const blogPosts = await getCollection("blogs");

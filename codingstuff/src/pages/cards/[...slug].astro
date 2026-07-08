@@ -2,6 +2,13 @@
 import { getCollection, getEntry } from "astro:content";
 import { deflateSync } from "node:zlib";
 import sitemap from "sitemap-ext:config";
+
+export async function getStaticPaths() {
+  const items = await getCollection("cards");
+  return items.map((item) => ({
+    params: { slug: item.id.split("/") },
+  }));
+}
 import CardCover from "@/components/knowledge-card/CardCover.astro";
 import KnowledgeCard from "@/components/knowledge-card/KnowledgeCard.astro";
 import { SITE_TITLE } from "@/consts";

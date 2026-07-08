@@ -20,8 +20,22 @@ import {
 } from "@/lib/course";
 import { hasMermaidContent } from "@/lib/utils";
 import "@/styles/article.css";
-import { getEntry, render } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 import { createElement } from "react";
+
+export async function getStaticPaths() {
+  const courses = await getCollection("courses");
+  const chapters = await getCollection("courseChapters");
+  const paths = [];
+  for (const c of courses) {
+    const courseId = c.id.replace("/toc", "");
+    paths.push({ params: { slug: courseId } });
+  }
+  for (const ch of chapters) {
+    paths.push({ params: { slug: ch.id } });
+  }
+  return paths;
+}
 
 const origin = Astro.url.origin;
 const { slug } = Astro.params;

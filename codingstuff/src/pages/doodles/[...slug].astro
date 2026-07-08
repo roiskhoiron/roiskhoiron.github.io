@@ -10,6 +10,13 @@ import "@/styles/article.css";
 import { getCollection, getEntry, render } from "astro:content";
 import sitemap from "sitemap-ext:config";
 
+export async function getStaticPaths() {
+  const items = await getCollection("doodles");
+  return items.map((item) => ({
+    params: { slug: item.id.split("/") },
+  }));
+}
+
 sitemap(async ({ addToSitemap }) => {
   const doodles = await getCollection("doodles");
 

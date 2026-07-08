@@ -1,6 +1,16 @@
 ---
-import { getEntry } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 import { SlideViewer } from "@/components/slide/slide-viewer";
+
+export async function getStaticPaths() {
+  const slides = await getCollection("courseSlideResources");
+  return slides.map((slide) => {
+    const parts = slide.id.split("/");
+    return {
+      params: { courseId: parts[0], slideId: parts[2] },
+    };
+  });
+}
 
 const { courseId, slideId } = Astro.params;
 
