@@ -15,7 +15,7 @@ import MainLayout from "../layouts/MainLayout.astro";
         <!-- Pagefind search will be initialized here -->
       </div>
 
-      <div class="mt-6 text-sm text-white">
+      <div class="mt-6 text-sm text-muted-foreground">
         <p>
           Search through our collection of knowledge cards, blog articles, and
           presentation slides.
@@ -33,7 +33,8 @@ import MainLayout from "../layouts/MainLayout.astro";
   document.addEventListener("DOMContentLoaded", async () => {
     try {
       // Load pagefind as ES module
-      const pagefind = await import("/_pagefind/pagefind.js");
+      const baseDir = document.baseURI.substring(0, document.baseURI.lastIndexOf("/") + 1);
+      const pagefind = await import(baseDir + "_pagefind/pagefind.js");
 
       // Initialize search
       await pagefind.init();
@@ -124,7 +125,7 @@ import MainLayout from "../layouts/MainLayout.astro";
           );
 
           resultsContainer.innerHTML = `
-          <div class="mb-4 text-sm text-white">
+          <div class="mb-4 text-sm text-muted-foreground">
             Found ${results.results.length} results
           </div>
           ${resultsHTML.join("")}

@@ -111,9 +111,9 @@ export const MENU_ITEMS: MenuItem[] = [
   {
     id: "github",
     label: "GitHub",
-    href: "https://github.com/roiskhoiron",
+    href: "https://github.com/Coding-Skuy",
     title: "GitHub",
-    description: "Explore open-source projects by Rois Khoiron.",
+    description: "Explore open-source projects by CodingSkuy.",
   },
 ];
 
