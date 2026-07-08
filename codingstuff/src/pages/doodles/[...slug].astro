@@ -13,7 +13,7 @@ import sitemap from "sitemap-ext:config";
 export async function getStaticPaths() {
   const items = await getCollection("doodles");
   return items.map((item) => ({
-    params: { slug: item.id.split("/") },
+    params: { slug: item.id },
   }));
 }
 

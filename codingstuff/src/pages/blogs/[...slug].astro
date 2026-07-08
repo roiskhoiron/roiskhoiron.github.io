@@ -16,7 +16,7 @@ import "@/styles/article.css";
 export async function getStaticPaths() {
   const posts = await getCollection("blogs");
   return posts.map((post) => ({
-    params: { slug: post.id.split("/") },
+    params: { slug: post.id },
   }));
 }
 

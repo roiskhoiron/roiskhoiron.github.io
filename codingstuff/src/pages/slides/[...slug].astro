@@ -7,7 +7,7 @@ import sitemap from "sitemap-ext:config";
 export async function getStaticPaths() {
   const items = await getCollection("slides");
   return items.map((item) => ({
-    params: { slug: item.id.split("/") },
+    params: { slug: item.id },
   }));
 }
 import { ImageViewer } from "@/components/image-viewer";

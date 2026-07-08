@@ -6,7 +6,7 @@ import sitemap from "sitemap-ext:config";
 export async function getStaticPaths() {
   const items = await getCollection("cards");
   return items.map((item) => ({
-    params: { slug: item.id.split("/") },
+    params: { slug: item.id },
   }));
 }
 import CardCover from "@/components/knowledge-card/CardCover.astro";
