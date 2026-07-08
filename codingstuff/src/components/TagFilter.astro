@@ -56,7 +56,7 @@ const base = ((import.meta.env.BASE_URL || "/") + "/").replace(/\/\/$/, "/");
 </div>
 
 <script>
-  // Mobile expand/collapse functionality
+  // Tag progressive reveal — 20 at a time
   document.addEventListener("DOMContentLoaded", () => {
     const tagContainer = document.querySelector("[data-tag-filter]");
     if (!tagContainer) return;
@@ -66,34 +66,34 @@ const base = ((import.meta.env.BASE_URL || "/") + "/").replace(/\/\/$/, "/");
     });
 
     const allTags = tagContainer.querySelectorAll('a[href*="tag="]');
-    const isMobile = window.innerWidth < 768;
+    const PAGE = 20;
+    let visible = PAGE;
 
-    if (isMobile && allTags.length > 8) {
-      // Hide tags beyond first 8
-      allTags.forEach((tag, index) => {
-        if (index >= 8) {
-          (tag as HTMLElement).style.display = "none";
-        }
-      });
+    if (allTags.length <= PAGE) return;
 
-      // Add expand button
-      const expandBtn = document.createElement("button");
-      expandBtn.className =
-        "inline-flex items-center justify-center whitespace-nowrap rounded-full text-xs font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-8 px-3! border border-border text-muted-foreground hover:text-primary hover:border-primary";
-      expandBtn.textContent = "Expand More";
-      expandBtn.onclick = () => {
-        const isExpanded = expandBtn.textContent === "Collapse";
-        allTags.forEach((tag, index) => {
-          if (index >= 8) {
-            (tag as HTMLElement).style.display = isExpanded
-              ? "none"
-              : "inline-flex";
-          }
-        });
-        expandBtn.textContent = isExpanded ? "Expand More" : "Collapse";
-      };
+    allTags.forEach((tag, i) => {
+      if (i >= PAGE) (tag as HTMLElement).style.display = "none";
+    });
 
-      tagContainer.appendChild(expandBtn);
-    }
+    const moreBtn = document.createElement("button");
+    moreBtn.className =
+      "inline-flex items-center justify-center whitespace-nowrap rounded-full text-xs font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-8 px-3! border border-border text-muted-foreground hover:text-primary hover:border-primary";
+    moreBtn.textContent = `more (${allTags.length - visible})`;
+
+    moreBtn.onclick = () => {
+      const next = Math.min(visible + PAGE, allTags.length);
+      for (let i = visible; i < next; i++) {
+        (allTags[i] as HTMLElement).style.display = "inline-flex";
+      }
+      visible = next;
+      const remaining = allTags.length - visible;
+      if (remaining <= 0) {
+        moreBtn.remove();
+      } else {
+        moreBtn.textContent = `more (${remaining})`;
+      }
+    };
+
+    tagContainer.appendChild(moreBtn);
   });
 </script>
