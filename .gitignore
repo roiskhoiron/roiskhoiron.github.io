@@ -10,3 +10,4 @@ slides/*/dist/
 slides/package-lock.json
 slides/.slidev/
 /codingstuffy/
+/slides/
