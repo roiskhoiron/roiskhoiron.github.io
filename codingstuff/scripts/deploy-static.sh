@@ -27,6 +27,9 @@ export default defineConfig({
   output: "static",
   site: SITE_URL || "https://roishoiron.github.io",
   base: "/codingstuff",
+  image: {
+    service: { entrypoint: "astro/assets/services/noop" },
+  },
   markdown: {
     rehypePlugins: [rehypeSanitize(defaultSchema)],
   },
