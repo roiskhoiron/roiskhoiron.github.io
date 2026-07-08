@@ -46,7 +46,7 @@ export default defineConfig({
 EOF
 
 # Build with static config
-npx astro build --config astro.config.static.mjs
+pnpm astro build --config astro.config.static.mjs 2>&1
 
 # Clean up
 rm astro.config.static.mjs
