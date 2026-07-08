@@ -17,6 +17,8 @@ interface Props {
 
 const { collectionType, title, description, defaultLimit } = Astro.props;
 
+const base = ((import.meta.env.BASE_URL || "/") + "/").replace(/\/\/$/, "/");
+
 const page = Number(Astro.url.searchParams.get("page")) || 1;
 const limit = Number(Astro.url.searchParams.get("limit")) || defaultLimit;
 const tag = Astro.url.searchParams.get("tag");
@@ -105,7 +107,7 @@ const items = paginatedItems.items.map((item) => {
       {
         page > 1 && (
           <a
-            href={`/${collectionType}?page=${page - 1}&limit=${limit}${tag ? `&tag=${tag}` : ""}`}
+            href={`${base}${collectionType}?page=${page - 1}&limit=${limit}${tag ? `&tag=${tag}` : ""}`}
             class="inline-flex items-center px-4 py-2 text-sm font-medium border rounded-md transition-colors border-slate-400 text-slate-400 hover:text-emerald-400"
           >
             <svg
@@ -131,7 +133,7 @@ const items = paginatedItems.items.map((item) => {
       {
         paginatedItems.hasMore && (
           <a
-            href={`/${collectionType}?page=${page + 1}&limit=${limit}${tag ? `&tag=${tag}` : ""}`}
+            href={`${base}${collectionType}?page=${page + 1}&limit=${limit}${tag ? `&tag=${tag}` : ""}`}
             class="inline-flex items-center px-4 py-2 text-sm font-medium border rounded-md border-slate-400 text-slate-400 hover:text-emerald-400 transition-colors"
           >
             Next

@@ -19,10 +19,11 @@ interface Props {
 }
 
 const origin = Astro.url.origin;
+const base = ((import.meta.env.BASE_URL || "/") + "/").replace(/\/\/$/, "/");
 
 const { blog } = Astro.props;
 
-const url = `${origin}/blogs/${blog.id}`;
+const url = `${origin}${base}blogs/${blog.id}`;
 
 function getCategoryColor(blogId: string) {
   const gradients = [
@@ -57,7 +58,7 @@ const formatDate = (date: Date | string) => {
 <div
   class="relative overflow-hidden bg-slate-900/50 border border-slate-700 pt-0 gap-0 w-full flex flex-col cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:border-emerald-500/50 hover:shadow-lg hover:shadow-emerald-500/10 rounded-lg"
 >
-  <a href={`/blogs/${blog.id}`} class="flex flex-col grow">
+  <a href={`${base}blogs/${blog.id}`} class="flex flex-col grow">
     <header class="p-0 gap-0">
       <div class="aspect-video w-full bg-teahouse-light relative">
         {
@@ -101,7 +102,7 @@ const formatDate = (date: Date | string) => {
   </a>
   <div class="flex items-center justify-between mt-2 p-4">
     <a
-      href={`/blogs/${blog.id}`}
+      href={`${base}blogs/${blog.id}`}
       class="text-sm font-medium text-teahouse-primary"
     >
       Read More

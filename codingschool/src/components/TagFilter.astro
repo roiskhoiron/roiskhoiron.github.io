@@ -20,13 +20,14 @@ const {
 } = Astro.props;
 
 const selectedTags = tag ? [tag] : [];
+const base = ((import.meta.env.BASE_URL || "/") + "/").replace(/\/\/$/, "/");
 ---
 
 <div class="flex flex-wrap gap-2 w-fit" data-tag-filter>
   {
     usedFor === "list" && (
       <a
-        href={`/${type}`}
+        href={`${base}${type}`}
         class={`inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-8 px-3! ${
           selectedTags.length === 0
             ? "text-primary border border-primary hover:text-primary hover:border-primary"
@@ -40,7 +41,7 @@ const selectedTags = tag ? [tag] : [];
   {
     allTags.map((tagItem) => (
       <a
-        href={`/${type}?tag=${tagItem.tag}`}
+        href={`${base}${type}?tag=${tagItem.tag}`}
         class={`inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-8 px-3! no-underline! ${
           selectedTags.includes(tagItem.tag)
             ? "text-primary border border-primary hover:text-primary hover:border-primary bg-black"

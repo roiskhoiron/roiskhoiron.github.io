@@ -28,8 +28,7 @@ export default defineConfig({
     imageService: true,
   }),
   site: SITE_URL || "http://localhost:4321",
-  base: "/codingschool",
-  outDir: "./dist",
+  base: "/codingstuff",
   markdown: {
     rehypePlugins: [rehypeSanitize(defaultSchema)],
   },
