@@ -1,0 +1,6006 @@
+{
+  "label": "original",
+  "url": "https://anggastudio.dev/",
+  "capturedAt": "2026-09-04T21:40:22.524Z",
+  "initial": {
+    "url": "https://anggastudio.dev/",
+    "title": "Home",
+    "activeElement": "body",
+    "scrollY": 0,
+    "bodyTextChars": 3245,
+    "bodyTextStart": "anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CODE ON GitHub Or re",
+    "counts": {
+      "dialogs": 0,
+      "popovers": 0,
+      "canvases": 0,
+      "videos": 0,
+      "buttons": 4,
+      "forms": 0
+    },
+    "htmlHash": "-23829636",
+    "htmlLength": 70992
+  },
+  "discovered": {
+    "interactive": [
+      {
+        "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/",
+        "text": "anggastudio Software Engineer, Tech Speaker, and builder of modern digital products.",
+        "ariaLabel": "anggastudio home",
+        "safeClick": true,
+        "rect": {
+          "x": 97,
+          "y": 22,
+          "width": 444,
+          "height": 36
+        }
+      },
+      {
+        "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/",
+        "text": "Home",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 994,
+          "y": 22,
+          "width": 39,
+          "height": 36
+        }
+      },
+      {
+        "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/about",
+        "text": "About",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 1057,
+          "y": 22,
+          "width": 39,
+          "height": 36
+        }
+      },
+      {
+        "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/decks",
+        "text": "Decks",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 1121,
+          "y": 22,
+          "width": 41,
+          "height": 36
+        }
+      },
+      {
+        "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(4)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/posts",
+        "text": "Posts",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 1186,
+          "y": 22,
+          "width": 37,
+          "height": 36
+        }
+      },
+      {
+        "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(5)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/blog",
+        "text": "Blog",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 1247,
+          "y": 22,
+          "width": 30,
+          "height": 36
+        }
+      },
+      {
+        "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+        "tag": "button",
+        "type": "button",
+        "role": "",
+        "href": "",
+        "text": "Switch to light mode",
+        "ariaLabel": "Switch to light mode",
+        "safeClick": true,
+        "rect": {
+          "x": 1289,
+          "y": 20,
+          "width": 40,
+          "height": 40
+        }
+      },
+      {
+        "selector": "main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://play.google.com/store/apps/dev?id=8721309729295189926",
+        "text": "APPS ON Google Play",
+        "ariaLabel": "",
+        "safeClick": false,
+        "rect": {
+          "x": 515,
+          "y": 1122,
+          "width": 192,
+          "height": 57
+        }
+      },
+      {
+        "selector": "main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(2)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://apps.apple.com/developer/anggastudio",
+        "text": "APPS ON THE App Store",
+        "ariaLabel": "",
+        "safeClick": false,
+        "rect": {
+          "x": 719,
+          "y": 1122,
+          "width": 192,
+          "height": 57
+        }
+      },
+      {
+        "selector": "body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://github.com/anggastudio",
+        "text": "CODE ON GitHub",
+        "ariaLabel": "",
+        "safeClick": false,
+        "rect": {
+          "x": 617,
+          "y": 1191,
+          "width": 192,
+          "height": 57
+        }
+      },
+      {
+        "selector": "body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(2)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/blog",
+        "text": "Or read the blog",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 648,
+          "y": 1263,
+          "width": 128,
+          "height": 20
+        }
+      },
+      {
+        "selector": "div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/blog",
+        "text": "ALL POSTS",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 377,
+          "y": 1529,
+          "width": 92,
+          "height": 17
+        }
+      },
+      {
+        "selector": "section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/blog/four-repos-to-a-monorepo",
+        "text": "JUN 21, 2026 From four repos to a monorepo Consolidating four byte-identical app repos into one shared core plus thin ap",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 122,
+          "y": 1561,
+          "width": 347,
+          "height": 128
+        }
+      },
+      {
+        "selector": "section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/blog/shipping-then-listening",
+        "text": "JUN 20, 2026 Shipping, then listening The first round of real tester feedback and the small, high-leverage fixes it prod",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 122,
+          "y": 1690,
+          "width": 347,
+          "height": 128
+        }
+      },
+      {
+        "selector": "section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/blog/the-play-store-gauntlet",
+        "text": "JUN 19, 2026 The Play Store gauntlet Everything between a finished app and a live listing: store assets, data safety, co",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 122,
+          "y": 1819,
+          "width": 347,
+          "height": 128
+        }
+      },
+      {
+        "selector": "div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/posts",
+        "text": "ALL CAROUSELS",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 757,
+          "y": 1529,
+          "width": 130,
+          "height": 17
+        }
+      },
+      {
+        "selector": "section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman",
+        "text": "MAY 18, 2026 Cut Your Claude Bill By 90% Two tiny tools, one habit. RTK filters bash output before it reaches the model,",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 539,
+          "y": 1561,
+          "width": 347,
+          "height": 128
+        }
+      },
+      {
+        "selector": "section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/posts/css-container-queries",
+        "text": "MAY 15, 2026 Components That Scale Like Images A short CSS pattern that makes a component look identical at any size, li",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 539,
+          "y": 1690,
+          "width": 347,
+          "height": 128
+        }
+      },
+      {
+        "selector": "section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes",
+        "text": "MAY 15, 2026 Cron Jobs in Five Minutes If you keep running scripts manually, it's time. Five asterisks, one command, and",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 539,
+          "y": 1819,
+          "width": 347,
+          "height": 128
+        }
+      },
+      {
+        "selector": "div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/decks",
+        "text": "ALL DECKS",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 1211,
+          "y": 1529,
+          "width": 93,
+          "height": 17
+        }
+      },
+      {
+        "selector": "section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman",
+        "text": "MAY 18, 2026 Cut Your Claude Bill By 90% A short editorial deck on saving Claude tokens with two small tools. RTK trims ",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 956,
+          "y": 1561,
+          "width": 347,
+          "height": 128
+        }
+      },
+      {
+        "selector": "section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/decks/cron-jobs-101",
+        "text": "MAY 15, 2026 Cron Jobs, Explained A short editorial deck on cron jobs for engineers who haven't written one yet. Covers ",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 956,
+          "y": 1690,
+          "width": 347,
+          "height": 128
+        }
+      },
+      {
+        "selector": "section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/decks/css-container-queries",
+        "text": "MAY 15, 2026 Container Queries & The Em Cascade A short editorial deck on the CSS pattern that makes components scale un",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 956,
+          "y": 1819,
+          "width": 347,
+          "height": 128
+        }
+      },
+      {
+        "selector": "div:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/about",
+        "text": "Read the full story",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 130,
+          "y": 2417,
+          "width": 178,
+          "height": 38
+        }
+      },
+      {
+        "selector": "div:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "mailto:aa.angga.pratama@gmail.com",
+        "text": "Get in touch",
+        "ariaLabel": "",
+        "safeClick": false,
+        "rect": {
+          "x": 315,
+          "y": 2417,
+          "width": 138,
+          "height": 38
+        }
+      },
+      {
+        "selector": "html > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/decks",
+        "text": "Presentation Library",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 1026,
+          "y": 2611,
+          "width": 128,
+          "height": 20
+        }
+      },
+      {
+        "selector": "html > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(2)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/posts",
+        "text": "Instagram Posts",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 1170,
+          "y": 2611,
+          "width": 104,
+          "height": 20
+        }
+      },
+      {
+        "selector": "html > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(3)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/about",
+        "text": "About",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 1290,
+          "y": 2611,
+          "width": 38,
+          "height": 20
+        }
+      }
+    ],
+    "canvases": []
+  },
+  "actions": [
+    {
+      "type": "scroll",
+      "target": "middle",
+      "ratio": 0.5,
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 89% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-618645739",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 887,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-2002100177",
+        "htmlLength": 79030
+      },
+      "changed": true,
+      "screenshot": "screenshots/01-scroll-middle-b04a45f075.png"
+    },
+    {
+      "type": "scroll",
+      "target": "bottom",
+      "ratio": 1,
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 86% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "697739189",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 1773,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "275396787",
+        "htmlLength": 79032
+      },
+      "changed": true,
+      "screenshot": "screenshots/02-scroll-bottom-7297e0cbea.png"
+    },
+    {
+      "type": "hover",
+      "target": "anggastudio Software Engineer, Tech Speaker, and builder of modern digital products.",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "meta": {
+        "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/",
+        "text": "anggastudio Software Engineer, Tech Speaker, and builder of modern digital products.",
+        "ariaLabel": "anggastudio home",
+        "safeClick": true,
+        "rect": {
+          "x": 97,
+          "y": 22,
+          "width": 444,
+          "height": 36
+        }
+      },
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 81% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-1403253227",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-1795239587",
+        "htmlLength": 79206
+      },
+      "changed": true,
+      "screenshot": "screenshots/03-hover-anggastudio-Software-Engineer-Tech-Speaker-and-builder-of-modern-digital-products.-e51932c647.png"
+    },
+    {
+      "type": "hover",
+      "target": "Home",
+      "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "meta": {
+        "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/",
+        "text": "Home",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 994,
+          "y": 22,
+          "width": 39,
+          "height": 36
+        }
+      },
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 94% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "857586773",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-870328184",
+        "htmlLength": 79196
+      },
+      "changed": true,
+      "screenshot": "screenshots/04-hover-Home-df9d2b7406.png"
+    },
+    {
+      "type": "hover",
+      "target": "About",
+      "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "meta": {
+        "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/about",
+        "text": "About",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 1057,
+          "y": 22,
+          "width": 39,
+          "height": 36
+        }
+      },
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 88% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-179850763",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-1043604276",
+        "htmlLength": 79196
+      },
+      "changed": true,
+      "screenshot": "screenshots/05-hover-About-60426983fe.png"
+    },
+    {
+      "type": "hover",
+      "target": "Decks",
+      "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "meta": {
+        "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/decks",
+        "text": "Decks",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 1121,
+          "y": 22,
+          "width": 41,
+          "height": 36
+        }
+      },
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 87% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "258944213",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-1255764172",
+        "htmlLength": 79196
+      },
+      "changed": true,
+      "screenshot": "screenshots/06-hover-Decks-f7a5efc7ef.png"
+    },
+    {
+      "type": "hover",
+      "target": "Posts",
+      "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "meta": {
+        "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(4)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/posts",
+        "text": "Posts",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 1186,
+          "y": 22,
+          "width": 37,
+          "height": 36
+        }
+      },
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 87% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "258944213",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "1480975699",
+        "htmlLength": 79194
+      },
+      "changed": true,
+      "screenshot": "screenshots/07-hover-Posts-18956d53b5.png"
+    },
+    {
+      "type": "hover",
+      "target": "Blog",
+      "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "meta": {
+        "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(5)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/blog",
+        "text": "Blog",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 1247,
+          "y": 22,
+          "width": 30,
+          "height": 36
+        }
+      },
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 87% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "258944213",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "605965789",
+        "htmlLength": 79194
+      },
+      "changed": true,
+      "screenshot": "screenshots/08-hover-Blog-98ed6e23e2.png"
+    },
+    {
+      "type": "hover",
+      "target": "Switch to light mode",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+      "meta": {
+        "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+        "tag": "button",
+        "type": "button",
+        "role": "",
+        "href": "",
+        "text": "Switch to light mode",
+        "ariaLabel": "Switch to light mode",
+        "safeClick": true,
+        "rect": {
+          "x": 1289,
+          "y": 20,
+          "width": 40,
+          "height": 40
+        }
+      },
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 82% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-1842048203",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-542639543",
+        "htmlLength": 79193
+      },
+      "changed": true,
+      "screenshot": "screenshots/09-hover-Switch-to-light-mode-12562f4950.png"
+    },
+    {
+      "type": "hover",
+      "target": "APPS ON Google Play",
+      "selector": "main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "meta": {
+        "selector": "main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://play.google.com/store/apps/dev?id=8721309729295189926",
+        "text": "APPS ON Google Play",
+        "ariaLabel": "",
+        "safeClick": false,
+        "rect": {
+          "x": 515,
+          "y": 1122,
+          "width": 192,
+          "height": 57
+        }
+      },
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 87% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "258944213",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 701,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "1215956844",
+        "htmlLength": 79524
+      },
+      "changed": true,
+      "screenshot": "screenshots/10-hover-APPS-ON-Google-Play-85be5cd09e.png"
+    },
+    {
+      "type": "click",
+      "target": "anggastudio Software Engineer, Tech Speaker, and builder of modern digital products.",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+      "meta": {
+        "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/",
+        "text": "anggastudio Software Engineer, Tech Speaker, and builder of modern digital products.",
+        "ariaLabel": "anggastudio home",
+        "safeClick": true,
+        "rect": {
+          "x": 97,
+          "y": 22,
+          "width": 444,
+          "height": 36
+        }
+      },
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 87% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "258944213",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-1795239587",
+        "htmlLength": 79206
+      },
+      "changed": true,
+      "screenshot": "screenshots/11-click-anggastudio-Software-Engineer-Tech-Speaker-and-builder-of-modern-digital-products.-b34ba4263b.png"
+    },
+    {
+      "type": "click",
+      "target": "Home",
+      "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "meta": {
+        "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/",
+        "text": "Home",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 994,
+          "y": 22,
+          "width": 39,
+          "height": 36
+        }
+      },
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 84% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "1575329141",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-870328184",
+        "htmlLength": 79196
+      },
+      "changed": true,
+      "screenshot": "screenshots/12-click-Home-a162308ab2.png"
+    },
+    {
+      "type": "click",
+      "target": "About",
+      "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+      "meta": {
+        "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/about",
+        "text": "About",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 1057,
+          "y": 22,
+          "width": 39,
+          "height": 36
+        }
+      },
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 81% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-1842048203",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-1043604276",
+        "htmlLength": 79196
+      },
+      "changed": true,
+      "screenshot": "screenshots/13-click-About-a6a84feb95.png"
+    },
+    {
+      "type": "click",
+      "target": "Decks",
+      "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+      "meta": {
+        "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/decks",
+        "text": "Decks",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 1121,
+          "y": 22,
+          "width": 41,
+          "height": 36
+        }
+      },
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 82% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-1842048203",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-1255764172",
+        "htmlLength": 79196
+      },
+      "changed": true,
+      "screenshot": "screenshots/14-click-Decks-8678a40ff6.png"
+    },
+    {
+      "type": "click",
+      "target": "Posts",
+      "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(4)",
+      "meta": {
+        "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(4)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/posts",
+        "text": "Posts",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 1186,
+          "y": 22,
+          "width": 37,
+          "height": 36
+        }
+      },
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 82% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-1842048203",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "1480975699",
+        "htmlLength": 79194
+      },
+      "changed": true,
+      "screenshot": "screenshots/15-click-Posts-b1c0f9600b.png"
+    },
+    {
+      "type": "click",
+      "target": "Blog",
+      "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(5)",
+      "meta": {
+        "selector": "body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(5)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/blog",
+        "text": "Blog",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 1247,
+          "y": 22,
+          "width": 30,
+          "height": 36
+        }
+      },
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 82% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-1842048203",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "605965789",
+        "htmlLength": 79194
+      },
+      "changed": true,
+      "screenshot": "screenshots/16-click-Blog-e14143e3eb.png"
+    },
+    {
+      "type": "click",
+      "target": "Switch to light mode",
+      "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+      "meta": {
+        "selector": "html > body:nth-of-type(1) > header:nth-of-type(1) > nav:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+        "tag": "button",
+        "type": "button",
+        "role": "",
+        "href": "",
+        "text": "Switch to light mode",
+        "ariaLabel": "Switch to light mode",
+        "safeClick": true,
+        "rect": {
+          "x": 1289,
+          "y": 20,
+          "width": 40,
+          "height": 40
+        }
+      },
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 86% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "697739189",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-542639543",
+        "htmlLength": 79193
+      },
+      "changed": true,
+      "screenshot": "screenshots/17-click-Switch-to-light-mode-0a9f94b72a.png"
+    },
+    {
+      "type": "click",
+      "target": "Or read the blog",
+      "selector": "body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(2)",
+      "meta": {
+        "selector": "body:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(2)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/blog",
+        "text": "Or read the blog",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 648,
+          "y": 1263,
+          "width": 128,
+          "height": 20
+        }
+      },
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 82% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-1842048203",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 823,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-2147125102",
+        "htmlLength": 79534
+      },
+      "changed": true,
+      "screenshot": "screenshots/18-click-Or-read-the-blog-fea92aaf66.png"
+    },
+    {
+      "type": "click",
+      "target": "ALL POSTS",
+      "selector": "div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+      "meta": {
+        "selector": "div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/blog",
+        "text": "ALL POSTS",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 377,
+          "y": 1529,
+          "width": 92,
+          "height": 17
+        }
+      },
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 87% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "258944213",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 1087,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "828136953",
+        "htmlLength": 79523
+      },
+      "changed": true,
+      "screenshot": "screenshots/19-click-ALL-POSTS-0c8d89177f.png"
+    },
+    {
+      "type": "click",
+      "target": "JUN 21, 2026 From four repos to a monorepo Consolidating four byte-identical app repos into one shared core plus thin ap",
+      "selector": "section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+      "meta": {
+        "selector": "section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/blog/four-repos-to-a-monorepo",
+        "text": "JUN 21, 2026 From four repos to a monorepo Consolidating four byte-identical app repos into one shared core plus thin ap",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 122,
+          "y": 1561,
+          "width": 347,
+          "height": 128
+        }
+      },
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 87% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "258944213",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 1175,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-1321725272",
+        "htmlLength": 79522
+      },
+      "changed": true,
+      "screenshot": "screenshots/20-click-JUN-21-2026-From-four-repos-to-a-monorepo-Consolidating-four-byte-identical-app-repo-31d626f273.png"
+    },
+    {
+      "type": "click",
+      "target": "JUN 20, 2026 Shipping, then listening The first round of real tester feedback and the small, high-leverage fixes it prod",
+      "selector": "section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+      "meta": {
+        "selector": "section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/blog/shipping-then-listening",
+        "text": "JUN 20, 2026 Shipping, then listening The first round of real tester feedback and the small, high-leverage fixes it prod",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 122,
+          "y": 1690,
+          "width": 347,
+          "height": 128
+        }
+      },
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 84% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "1136534165",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 1304,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-838792117",
+        "htmlLength": 79465
+      },
+      "changed": true,
+      "screenshot": "screenshots/21-click-JUN-20-2026-Shipping-then-listening-The-first-round-of-real-tester-feedback-and-the--f74d2f906e.png"
+    },
+    {
+      "type": "click",
+      "target": "JUN 19, 2026 The Play Store gauntlet Everything between a finished app and a live listing: store assets, data safety, co",
+      "selector": "section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "meta": {
+        "selector": "section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+        "tag": "a",
+        "type": "",
+        "role": "",
+        "href": "https://anggastudio.dev/blog/the-play-store-gauntlet",
+        "text": "JUN 19, 2026 The Play Store gauntlet Everything between a finished app and a live listing: store assets, data safety, co",
+        "ariaLabel": "",
+        "safeClick": true,
+        "rect": {
+          "x": 122,
+          "y": 1819,
+          "width": 347,
+          "height": 128
+        }
+      },
+      "before": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 0,
+        "bodyTextChars": 3269,
+        "bodyTextStart": "PREPARING THE HERO 82% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Sto",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "-1842048203",
+        "htmlLength": 78699
+      },
+      "after": {
+        "url": "https://anggastudio.dev/",
+        "title": "Home",
+        "activeElement": "body",
+        "scrollY": 1433,
+        "bodyTextChars": 3264,
+        "bodyTextStart": "ALMOST READY 100% anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Angga Pratama Mobile developer, every framework. Nine years of shipping production mobile software across Android, iOS, Flutter, and React Native. Transaction systems, EDC platforms, and open-source libraries. Android Kotlin Flutter React Native Swift Dart Firebase Ionic Angga Pratama Android · iOS · Flutter · React Native APPS ON Google Play APPS ON THE App Store CO",
+        "counts": {
+          "dialogs": 0,
+          "popovers": 0,
+          "canvases": 0,
+          "videos": 0,
+          "buttons": 4,
+          "forms": 0
+        },
+        "htmlHash": "1836927017",
+        "htmlLength": 79530
+      },
+      "changed": true,
+      "screenshot": "screenshots/22-click-JUN-19-2026-The-Play-Store-gauntlet-Everything-between-a-finished-app-and-a-live-lis-e6c50d7e1d.png"
+    }
+  ],
+  "network": [
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=-ELR7ucchV35q9H0",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=AvNkQiUdxKXXXqHN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=s1Ndo2CGpjUXhqK2",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=N7VTyXxpgeKEQNLf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=u7vUkAFFFy3UYS9a",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=__IfCLbPMqa7sE28",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=AvNkQiUdxKXXXqHN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=-ELR7ucchV35q9H0",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=s1Ndo2CGpjUXhqK2",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=N7VTyXxpgeKEQNLf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=__IfCLbPMqa7sE28",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=u7vUkAFFFy3UYS9a",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=s1Ndo2CGpjUXhqK2",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=N7VTyXxpgeKEQNLf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=u7vUkAFFFy3UYS9a",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=__IfCLbPMqa7sE28",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=-ELR7ucchV35q9H0",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=AvNkQiUdxKXXXqHN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=s1Ndo2CGpjUXhqK2",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=N7VTyXxpgeKEQNLf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=__IfCLbPMqa7sE28",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=u7vUkAFFFy3UYS9a",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=-ELR7ucchV35q9H0",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=AvNkQiUdxKXXXqHN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=s1Ndo2CGpjUXhqK2",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=N7VTyXxpgeKEQNLf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=__IfCLbPMqa7sE28",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=u7vUkAFFFy3UYS9a",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=-ELR7ucchV35q9H0",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=AvNkQiUdxKXXXqHN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=s1Ndo2CGpjUXhqK2",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=N7VTyXxpgeKEQNLf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=u7vUkAFFFy3UYS9a",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=__IfCLbPMqa7sE28",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=-ELR7ucchV35q9H0",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=s1Ndo2CGpjUXhqK2",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=AvNkQiUdxKXXXqHN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=N7VTyXxpgeKEQNLf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=u7vUkAFFFy3UYS9a",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=mmesLQGW3rnT2rSK",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=yIp22O3xgPPxC28X",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts?_rsc=KSvpJLIax2PMlq5B",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=Npvf18QV6N2pz_RZ",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog?_rsc=XuRAQlwoBb3DBgw_",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=nZYy7nl0aT_Ig6_w",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks?_rsc=2bPfAAiltjnma4_Y",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=n4tDNspjD4yS_Xnd",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/about?_rsc=hzcUC6YqarYE9pKE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/?_rsc=8nTjltbQWvg6NcbE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=5CB68i4pnAekjehf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=AvNkQiUdxKXXXqHN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/css-container-queries?_rsc=-ELR7ucchV35q9H0",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=N7VTyXxpgeKEQNLf",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/cron-jobs-101?_rsc=s1Ndo2CGpjUXhqK2",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=__IfCLbPMqa7sE28",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman?_rsc=u7vUkAFFFy3UYS9a",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=LDEQ3GnN168Cl_QG",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman?_rsc=AcipPB-lQEFZuUSE",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=7h4NYy5eoyMcNlUN",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=M93RFKHOE6KijLJS",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo?_rsc=hjRwlybSvoEojtGc",
+      "status": 200,
+      "method": "GET",
+      "resourceType": "fetch"
+    }
+  ],
+  "consoleErrors": [],
+  "findings": [
+    "28 visible interactive candidates discovered",
+    "0 visible canvas targets discovered",
+    "22/22 actions changed DOM, URL, scroll, or visible overlay counts"
+  ]
+}

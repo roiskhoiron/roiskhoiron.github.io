@@ -1,0 +1,26 @@
+{
+  "original": {
+    "width": 1440,
+    "height": 2673
+  },
+  "clone": {
+    "width": 1440,
+    "height": 2548
+  },
+  "comparedCanvas": {
+    "width": 1440,
+    "height": 2673
+  },
+  "threshold": 0.08,
+  "changedPixels": 659848,
+  "totalPixels": 3849120,
+  "diffPixelRatio": 0.17142827451469428,
+  "meanAbsDiff": 0.09031180516227923,
+  "rmse": 0.21627909673947796,
+  "visualScore": 2,
+  "files": {
+    "original": "/Users/roishoiron/Library/Application Support/Open Design/namespaces/release-stable/data/projects/4d32e448-32c1-4373-a75c-a74d99d38428/RECON/screenshots/original-1440.png",
+    "clone": "/Users/roishoiron/Library/Application Support/Open Design/namespaces/release-stable/data/projects/4d32e448-32c1-4373-a75c-a74d99d38428/RECON/screenshots/clone-1440.png",
+    "diff": "/Users/roishoiron/Library/Application Support/Open Design/namespaces/release-stable/data/projects/4d32e448-32c1-4373-a75c-a74d99d38428/RECON/screenshots/visual-diff-1440.png"
+  }
+}

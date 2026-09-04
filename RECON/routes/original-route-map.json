@@ -1,0 +1,725 @@
+{
+  "label": "original",
+  "url": "https://anggastudio.dev",
+  "capturedAt": "2026-09-04T21:40:01.673Z",
+  "maxPages": 12,
+  "maxDepth": 2,
+  "allowSubdomains": false,
+  "routes": [
+    {
+      "url": "https://anggastudio.dev",
+      "from": "",
+      "depth": 0,
+      "status": 200,
+      "title": "Home",
+      "lang": "en",
+      "metaDescription": "Senior Mobile Engineer with 9+ years of shipping production mobile software. Decks, posts, and notes on building reliable systems.",
+      "h1": [
+        "Mobile developer, every framework."
+      ],
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Mobile developer, every framework."
+        },
+        {
+          "tag": "h2",
+          "text": "Latest from the workshop."
+        },
+        {
+          "tag": "h2",
+          "text": "I build software that has to survive merchants, OS upgrades, and weeks without anyone watching it."
+        }
+      ],
+      "counts": {
+        "links": 36,
+        "images": 19,
+        "canvas": 0,
+        "forms": 0,
+        "buttons": 4
+      },
+      "linkCount": 36,
+      "screenshot": "screenshots/anggastudio.dev-10cf6520.png",
+      "consoleErrors": []
+    },
+    {
+      "url": "https://anggastudio.dev/about",
+      "from": "https://anggastudio.dev",
+      "depth": 1,
+      "status": 200,
+      "title": "About | anggastudio",
+      "lang": "en",
+      "metaDescription": "Senior Mobile Engineer with 9+ years building production transaction systems, EDC platforms, and AI-assisted engineering workflows.",
+      "h1": [
+        "Angga Pratama.Senior Mobile Engineer."
+      ],
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Angga Pratama.Senior Mobile Engineer."
+        },
+        {
+          "tag": "h2",
+          "text": "Focus areas"
+        },
+        {
+          "tag": "h3",
+          "text": "Production stability"
+        },
+        {
+          "tag": "h3",
+          "text": "Mobile architecture"
+        },
+        {
+          "tag": "h3",
+          "text": "AI-assisted workflows"
+        },
+        {
+          "tag": "h3",
+          "text": "Cross-platform delivery"
+        },
+        {
+          "tag": "h3",
+          "text": "Constrained device performance"
+        },
+        {
+          "tag": "h3",
+          "text": "Developer productivity"
+        },
+        {
+          "tag": "h2",
+          "text": "Experience"
+        },
+        {
+          "tag": "h3",
+          "text": "Senior Fullstack Mobile Developer"
+        },
+        {
+          "tag": "h3",
+          "text": "Senior Android Developer"
+        },
+        {
+          "tag": "h3",
+          "text": "Senior Mobile Developer"
+        },
+        {
+          "tag": "h3",
+          "text": "Android Developer"
+        },
+        {
+          "tag": "h3",
+          "text": "Senior Software Engineer"
+        },
+        {
+          "tag": "h2",
+          "text": "Technical skills"
+        },
+        {
+          "tag": "h2",
+          "text": "Featured project"
+        },
+        {
+          "tag": "h3",
+          "text": "Printama"
+        },
+        {
+          "tag": "h3",
+          "text": "Education"
+        },
+        {
+          "tag": "h3",
+          "text": "Outside the work"
+        }
+      ],
+      "counts": {
+        "links": 22,
+        "images": 23,
+        "canvas": 0,
+        "forms": 0,
+        "buttons": 1
+      },
+      "linkCount": 22,
+      "screenshot": "screenshots/anggastudio.dev-about-78d26d04.png",
+      "consoleErrors": []
+    },
+    {
+      "url": "https://anggastudio.dev/decks",
+      "from": "https://anggastudio.dev",
+      "depth": 1,
+      "status": 200,
+      "title": "Decks | anggastudio",
+      "lang": "en",
+      "metaDescription": "A library of live-ready presentation decks covering AI coding agents, mobile development frameworks, and learning topics.",
+      "h1": [
+        "Presentation Library"
+      ],
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Presentation Library"
+        },
+        {
+          "tag": "h2",
+          "text": "Cut Your Claude Bill By 90%"
+        },
+        {
+          "tag": "h2",
+          "text": "Cron Jobs, Explained"
+        },
+        {
+          "tag": "h2",
+          "text": "Container Queries & The Em Cascade"
+        },
+        {
+          "tag": "h2",
+          "text": "Rubik’s Cube 101"
+        },
+        {
+          "tag": "h2",
+          "text": "Mobile Development Frameworks in 2026"
+        },
+        {
+          "tag": "h2",
+          "text": "AI Coding Agent"
+        }
+      ],
+      "counts": {
+        "links": 20,
+        "images": 4,
+        "canvas": 0,
+        "forms": 0,
+        "buttons": 1
+      },
+      "linkCount": 20,
+      "screenshot": "screenshots/anggastudio.dev-decks-3d22a7f2.png",
+      "consoleErrors": []
+    },
+    {
+      "url": "https://anggastudio.dev/posts",
+      "from": "https://anggastudio.dev",
+      "depth": 1,
+      "status": 200,
+      "title": "Posts | anggastudio",
+      "lang": "en",
+      "metaDescription": "A library of portrait-first Instagram carousel posts that can be previewed on the web and exported as bulk PNG files.",
+      "h1": [
+        "Instagram Carousel Library"
+      ],
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Instagram Carousel Library"
+        },
+        {
+          "tag": "h2",
+          "text": "Stop Burning Claude Credits"
+        },
+        {
+          "tag": "h2",
+          "text": "Stop Running Things Manually"
+        },
+        {
+          "tag": "h2",
+          "text": "Components That Scale"
+        },
+        {
+          "tag": "h2",
+          "text": "Your AI Is Not Autocomplete"
+        },
+        {
+          "tag": "h2",
+          "text": "Pick Your Mobile Stack"
+        },
+        {
+          "tag": "h2",
+          "text": "You Can Solve The Cube"
+        }
+      ],
+      "counts": {
+        "links": 20,
+        "images": 16,
+        "canvas": 0,
+        "forms": 0,
+        "buttons": 1
+      },
+      "linkCount": 20,
+      "screenshot": "screenshots/anggastudio.dev-posts-83e7fc25.png",
+      "consoleErrors": []
+    },
+    {
+      "url": "https://anggastudio.dev/blog",
+      "from": "https://anggastudio.dev",
+      "depth": 1,
+      "status": 200,
+      "title": "Blog | anggastudio",
+      "lang": "en",
+      "metaDescription": "Long-form notes on engineering, design, and the craft of shipping software.",
+      "h1": [
+        "Notes from the workshop."
+      ],
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Notes from the workshop."
+        },
+        {
+          "tag": "h2",
+          "text": "From four repos to a monorepo"
+        },
+        {
+          "tag": "h2",
+          "text": "More posts"
+        },
+        {
+          "tag": "h3",
+          "text": "Shipping, then listening"
+        },
+        {
+          "tag": "h3",
+          "text": "The Play Store gauntlet"
+        },
+        {
+          "tag": "h3",
+          "text": "A cross-app discount with no backend"
+        },
+        {
+          "tag": "h3",
+          "text": "Mobile in-app purchases: what nobody warns you about"
+        },
+        {
+          "tag": "h3",
+          "text": "A hint economy that's fair but not free"
+        },
+        {
+          "tag": "h3",
+          "text": "Building a crossword engine in React Native"
+        },
+        {
+          "tag": "h3",
+          "text": "One idea, four apps"
+        },
+        {
+          "tag": "h3",
+          "text": "Building four apps with an AI coding agent"
+        },
+        {
+          "tag": "h3",
+          "text": "How I cut my Claude token bill by 90%"
+        },
+        {
+          "tag": "h3",
+          "text": "The cron job I avoided for five years"
+        },
+        {
+          "tag": "h3",
+          "text": "Components that scale like images"
+        }
+      ],
+      "counts": {
+        "links": 26,
+        "images": 4,
+        "canvas": 0,
+        "forms": 0,
+        "buttons": 1
+      },
+      "linkCount": 26,
+      "screenshot": "screenshots/anggastudio.dev-blog-7dc3bff5.png",
+      "consoleErrors": []
+    },
+    {
+      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo",
+      "from": "https://anggastudio.dev",
+      "depth": 1,
+      "status": 200,
+      "title": "From four repos to a monorepo | anggastudio",
+      "lang": "en",
+      "metaDescription": "Consolidating four byte-identical app repos into one shared core plus thin app shells, the expo-router and Metro problems it surfaced, and validating the migration with real bundles.",
+      "h1": [
+        "From four repos to a monorepo"
+      ],
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "From four repos to a monorepo"
+        },
+        {
+          "tag": "h2",
+          "text": "What is actually shared"
+        },
+        {
+          "tag": "h2",
+          "text": "The resolution trick"
+        },
+        {
+          "tag": "h2",
+          "text": "The expo-router wrinkle"
+        },
+        {
+          "tag": "h2",
+          "text": "Validate with a bundle, not a vibe"
+        },
+        {
+          "tag": "h2",
+          "text": "Do it safely"
+        },
+        {
+          "tag": "h2",
+          "text": "The lesson"
+        }
+      ],
+      "counts": {
+        "links": 22,
+        "images": 4,
+        "canvas": 0,
+        "forms": 0,
+        "buttons": 2
+      },
+      "linkCount": 22,
+      "screenshot": "screenshots/anggastudio.dev-blog-four-repos-to-a-monorepo-accc2fde.png",
+      "consoleErrors": []
+    },
+    {
+      "url": "https://anggastudio.dev/blog/shipping-then-listening",
+      "from": "https://anggastudio.dev",
+      "depth": 1,
+      "status": 200,
+      "title": "Shipping, then listening | anggastudio",
+      "lang": "en",
+      "metaDescription": "The first round of real tester feedback and the small, high-leverage fixes it produced: grid spacing, free typing, jump buttons, easing early ads, and a well-timed review prompt.",
+      "h1": [
+        "Shipping, then listening"
+      ],
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Shipping, then listening"
+        },
+        {
+          "tag": "h2",
+          "text": "The grid felt cramped"
+        },
+        {
+          "tag": "h2",
+          "text": "The typing fight"
+        },
+        {
+          "tag": "h2",
+          "text": "Two buttons people did not know they needed"
+        },
+        {
+          "tag": "h2",
+          "text": "Ads that did not ambush new players"
+        },
+        {
+          "tag": "h2",
+          "text": "Asking for a rating at the right moment"
+        },
+        {
+          "tag": "h2",
+          "text": "A bug only real money finds"
+        },
+        {
+          "tag": "h2",
+          "text": "The lesson"
+        }
+      ],
+      "counts": {
+        "links": 24,
+        "images": 4,
+        "canvas": 0,
+        "forms": 0,
+        "buttons": 2
+      },
+      "linkCount": 24,
+      "screenshot": "screenshots/anggastudio.dev-blog-shipping-then-listening-08820177.png",
+      "consoleErrors": []
+    },
+    {
+      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet",
+      "from": "https://anggastudio.dev",
+      "depth": 1,
+      "status": 200,
+      "title": "The Play Store gauntlet | anggastudio",
+      "lang": "en",
+      "metaDescription": "Everything between a finished app and a live listing: store assets, data safety, content rating, the target-audience trap, app-ads.txt, and the testing tracks, from real experience.",
+      "h1": [
+        "The Play Store gauntlet"
+      ],
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "The Play Store gauntlet"
+        },
+        {
+          "tag": "h2",
+          "text": "Store listing assets"
+        },
+        {
+          "tag": "h2",
+          "text": "Data safety, honestly"
+        },
+        {
+          "tag": "h2",
+          "text": "The target-audience trap"
+        },
+        {
+          "tag": "h2",
+          "text": "app-ads.txt"
+        },
+        {
+          "tag": "h2",
+          "text": "Privacy policy"
+        },
+        {
+          "tag": "h2",
+          "text": "The testing tracks, and the door I used"
+        },
+        {
+          "tag": "h2",
+          "text": "Real-time notifications and the 36-hour wait"
+        },
+        {
+          "tag": "h2",
+          "text": "The lesson"
+        }
+      ],
+      "counts": {
+        "links": 25,
+        "images": 4,
+        "canvas": 0,
+        "forms": 0,
+        "buttons": 2
+      },
+      "linkCount": 25,
+      "screenshot": "screenshots/anggastudio.dev-blog-the-play-store-gauntlet-b1d41b6d.png",
+      "consoleErrors": []
+    },
+    {
+      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman",
+      "from": "https://anggastudio.dev",
+      "depth": 1,
+      "status": 200,
+      "title": "Cut Your Claude Bill By 90% | anggastudio",
+      "lang": "en",
+      "metaDescription": "Two tiny tools, one habit. RTK filters bash output before it reaches the model, Caveman mode compresses the model's replies. Together they take 90% off a typical session.",
+      "h1": [
+        "Cut Your Claude Bill By 90%"
+      ],
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Cut Your Claude Bill By 90%"
+        },
+        {
+          "tag": "h2",
+          "text": "Slide previews"
+        },
+        {
+          "tag": "h2",
+          "text": "Stop Burning Claude Credits"
+        },
+        {
+          "tag": "h2",
+          "text": "It's Not The Code"
+        },
+        {
+          "tag": "h2",
+          "text": "RTK Filters Bash Before It Speaks"
+        },
+        {
+          "tag": "h2",
+          "text": "Caveman Compresses Replies"
+        },
+        {
+          "tag": "h2",
+          "text": "Roughly 90% Off"
+        },
+        {
+          "tag": "h2",
+          "text": "Two Things To Know"
+        },
+        {
+          "tag": "h2",
+          "text": "Ten Minutes, Months Of Credits"
+        },
+        {
+          "tag": "h3",
+          "text": "Cron Jobs in Five Minutes"
+        }
+      ],
+      "counts": {
+        "links": 16,
+        "images": 18,
+        "canvas": 0,
+        "forms": 0,
+        "buttons": 11
+      },
+      "linkCount": 16,
+      "screenshot": "screenshots/anggastudio.dev-posts-save-claude-tokens-rtk-caveman-17496dbf.png",
+      "consoleErrors": []
+    },
+    {
+      "url": "https://anggastudio.dev/posts/css-container-queries",
+      "from": "https://anggastudio.dev",
+      "depth": 1,
+      "status": 200,
+      "title": "Components That Scale Like Images | anggastudio",
+      "lang": "en",
+      "metaDescription": "A short CSS pattern that makes a component look identical at any size, like an image being resized. Container queries plus an em cascade, no breakpoints, no JS.",
+      "h1": [
+        "Components That Scale Like Images"
+      ],
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Components That Scale Like Images"
+        },
+        {
+          "tag": "h2",
+          "text": "Slide previews"
+        },
+        {
+          "tag": "h2",
+          "text": "Components That Scale"
+        },
+        {
+          "tag": "h2",
+          "text": "Media Queries Miss The Point"
+        },
+        {
+          "tag": "h2",
+          "text": "Ask Your Parent's Size"
+        },
+        {
+          "tag": "h2",
+          "text": "1cqi = 1% Of Container"
+        },
+        {
+          "tag": "h2",
+          "text": "One Knob, Whole Composition"
+        },
+        {
+          "tag": "h2",
+          "text": "It Can't Query Itself"
+        },
+        {
+          "tag": "h2",
+          "text": "Use For Reusable UI"
+        },
+        {
+          "tag": "h3",
+          "text": "Rubik's Cube Beginner Flow"
+        },
+        {
+          "tag": "h3",
+          "text": "Cron Jobs in Five Minutes"
+        }
+      ],
+      "counts": {
+        "links": 17,
+        "images": 18,
+        "canvas": 0,
+        "forms": 0,
+        "buttons": 11
+      },
+      "linkCount": 17,
+      "screenshot": "screenshots/anggastudio.dev-posts-css-container-queries-4280c267.png",
+      "consoleErrors": []
+    },
+    {
+      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes",
+      "from": "https://anggastudio.dev",
+      "depth": 1,
+      "status": 200,
+      "title": "Cron Jobs in Five Minutes | anggastudio",
+      "lang": "en",
+      "metaDescription": "If you keep running scripts manually, it's time. Five asterisks, one command, and your computer takes over the boring part.",
+      "h1": [
+        "Cron Jobs in Five Minutes"
+      ],
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Cron Jobs in Five Minutes"
+        },
+        {
+          "tag": "h2",
+          "text": "Slide previews"
+        },
+        {
+          "tag": "h2",
+          "text": "Stop Running Things Manually"
+        },
+        {
+          "tag": "h2",
+          "text": "You Are Already The Cron Job"
+        },
+        {
+          "tag": "h2",
+          "text": "It's Just A Schedule + Command"
+        },
+        {
+          "tag": "h2",
+          "text": "Five Asterisks, Read Left To Right"
+        },
+        {
+          "tag": "h2",
+          "text": "Pick The Wrapper That Fits"
+        },
+        {
+          "tag": "h2",
+          "text": "Two Things That Will Bite"
+        },
+        {
+          "tag": "h2",
+          "text": "Five Asterisks. That's The Whole Wall."
+        },
+        {
+          "tag": "h3",
+          "text": "Components That Scale Like Images"
+        },
+        {
+          "tag": "h3",
+          "text": "Cut Your Claude Bill By 90%"
+        }
+      ],
+      "counts": {
+        "links": 17,
+        "images": 18,
+        "canvas": 0,
+        "forms": 0,
+        "buttons": 11
+      },
+      "linkCount": 17,
+      "screenshot": "screenshots/anggastudio.dev-posts-cron-jobs-in-five-minutes-128f07c9.png",
+      "consoleErrors": []
+    },
+    {
+      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman",
+      "from": "https://anggastudio.dev",
+      "depth": 1,
+      "status": 200,
+      "title": "Cut Your Claude Bill By 90% | anggastudio",
+      "lang": "en",
+      "metaDescription": "A short editorial deck on saving Claude tokens with two small tools. RTK trims noisy bash output before it reaches the model; Caveman compresses Claude's replies. Combined they cut a typical session by ~90%.",
+      "h1": [],
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Cut Your Claude Bill By 90%"
+        }
+      ],
+      "counts": {
+        "links": 14,
+        "images": 4,
+        "canvas": 0,
+        "forms": 0,
+        "buttons": 5
+      },
+      "linkCount": 14,
+      "screenshot": "screenshots/anggastudio.dev-decks-save-claude-tokens-rtk-caveman-2749cb90.png",
+      "consoleErrors": []
+    }
+  ],
+  "skipped": []
+}

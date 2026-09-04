@@ -1,0 +1,498 @@
+{
+  "url": "https://anggastudio.dev/",
+  "capturedVia": "browser-network+recon",
+  "total": 61,
+  "ok": 61,
+  "error": 0,
+  "fontsCss": "fonts/fonts.css",
+  "assets": [
+    {
+      "url": "https://anggastudio.dev/_next/static/media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2",
+      "kind": "font",
+      "via": "network",
+      "status": "ok",
+      "bytes": 45624,
+      "localPath": "fonts/anggastudio.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/static/media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2",
+      "kind": "font",
+      "via": "network",
+      "status": "ok",
+      "bytes": 28336,
+      "localPath": "fonts/anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/static/media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2",
+      "kind": "font",
+      "via": "network",
+      "status": "ok",
+      "bytes": 29288,
+      "localPath": "fonts/anggastudio.dev/caa3a2e1cccd8315-s.p.09-u27dqhyhd6-5a245f9d10.woff2"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css",
+      "kind": "stylesheet",
+      "via": "network",
+      "status": "ok",
+      "bytes": 106359,
+      "localPath": "css/anggastudio.dev/03_07va1d-lzq-8585a2b377.css"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/image?url=%2Fimage%2Fangga-photo.webp&w=1920&q=90",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 84862,
+      "localPath": "images/anggastudio.dev/image-40c0ff040b.bin"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/static/media/797e433ab948586e-s.p.08e28id.o-okb.woff2",
+      "kind": "font",
+      "via": "network",
+      "status": "ok",
+      "bytes": 23108,
+      "localPath": "fonts/anggastudio.dev/797e433ab948586e-s.p.08e28id.o-okb-aec76f6241.woff2"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/static/media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2",
+      "kind": "font",
+      "via": "network",
+      "status": "ok",
+      "bytes": 36560,
+      "localPath": "fonts/anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/image?url=%2Fimage%2Flogo-black.png&w=256&q=75",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 1649,
+      "localPath": "images/anggastudio.dev/image-2357e1b9e3.bin"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/image?url=%2Fimage%2Flogo-black.png&w=96&q=75",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 635,
+      "localPath": "images/anggastudio.dev/image-505b2fc41a.bin"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/image?url=%2Fimage%2Flogo-white.png&w=256&q=75",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 1680,
+      "localPath": "images/anggastudio.dev/image-ea99769544.bin"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/image?url=%2Fimage%2Flogo-white.png&w=96&q=75",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 676,
+      "localPath": "images/anggastudio.dev/image-908729748e.bin"
+    },
+    {
+      "url": "https://cdn.simpleicons.org/firebase/DD2C00",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 1942,
+      "localPath": "images/cdn.simpleicons.org/DD2C00-e76082cf9c.bin"
+    },
+    {
+      "url": "https://cdn.simpleicons.org/android/3DDC84",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 1099,
+      "localPath": "images/cdn.simpleicons.org/3DDC84-f89c810216.bin"
+    },
+    {
+      "url": "https://cdn.simpleicons.org/flutter/02569B",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 236,
+      "localPath": "images/cdn.simpleicons.org/02569B-27bc88046f.bin"
+    },
+    {
+      "url": "https://cdn.simpleicons.org/kotlin/7F52FF",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 145,
+      "localPath": "images/cdn.simpleicons.org/7F52FF-30fac224ca.bin"
+    },
+    {
+      "url": "https://cdn.simpleicons.org/dart/0175C2",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 521,
+      "localPath": "images/cdn.simpleicons.org/0175C2-d900c9209d.bin"
+    },
+    {
+      "url": "https://cdn.simpleicons.org/react/61DAFB",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 2941,
+      "localPath": "images/cdn.simpleicons.org/61DAFB-330e064985.bin"
+    },
+    {
+      "url": "https://cdn.simpleicons.org/swift/F05138",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 1705,
+      "localPath": "images/cdn.simpleicons.org/F05138-44ad0fc1c6.bin"
+    },
+    {
+      "url": "https://cdn.simpleicons.org/ionic/3880FF",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 719,
+      "localPath": "images/cdn.simpleicons.org/3880FF-be10a6cdc9.bin"
+    },
+    {
+      "url": "https://cdn.simpleicons.org/googleplay/FFFFFF",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 454,
+      "localPath": "images/cdn.simpleicons.org/FFFFFF-d5d704ba29.bin"
+    },
+    {
+      "url": "https://cdn.simpleicons.org/appstore/FFFFFF",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 2017,
+      "localPath": "images/cdn.simpleicons.org/FFFFFF-45ae3780b6.bin"
+    },
+    {
+      "url": "https://cdn.simpleicons.org/github/FFFFFF",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 837,
+      "localPath": "images/cdn.simpleicons.org/FFFFFF-c8c82016a2.bin"
+    },
+    {
+      "url": "https://cdn.simpleicons.org/appstore/18181B",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 2017,
+      "localPath": "images/cdn.simpleicons.org/18181B-071d5f29bf.bin"
+    },
+    {
+      "url": "https://cdn.simpleicons.org/github/18181B",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 837,
+      "localPath": "images/cdn.simpleicons.org/18181B-0b3b328cca.bin"
+    },
+    {
+      "url": "https://cdn.simpleicons.org/googleplay/18181B",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 454,
+      "localPath": "images/cdn.simpleicons.org/18181B-d921510c17.bin"
+    },
+    {
+      "url": "https://anggastudio.dev/image/ig-anggastudio-black.png",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 1855,
+      "localPath": "images/anggastudio.dev/ig-anggastudio-black-ad89c2c91f.png"
+    },
+    {
+      "url": "https://anggastudio.dev/image/anggastudio-logo-black.png",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 4534,
+      "localPath": "images/anggastudio.dev/anggastudio-logo-black-237ee31bfe.png"
+    },
+    {
+      "url": "https://anggastudio.dev/image/anggastudio-logo-white.png",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 4263,
+      "localPath": "images/anggastudio.dev/anggastudio-logo-white-56db12683d.png"
+    },
+    {
+      "url": "https://anggastudio.dev/image/ig-anggastudio-white.png",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 1904,
+      "localPath": "images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png"
+    },
+    {
+      "url": "https://anggastudio.dev/favicons/favicon.ico",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 15406,
+      "localPath": "images/anggastudio.dev/favicon-2af8ed36e3.ico"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/image?url=%2Fimage%2Flogo-black.png&w=48&q=75",
+      "kind": "image",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 364,
+      "localPath": "images/anggastudio.dev/image-e95d0d142c.bin"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/image?url=%2Fimage%2Flogo-white.png&w=48&q=75",
+      "kind": "image",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 376,
+      "localPath": "images/anggastudio.dev/image-0e265fd066.bin"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/image?url=%2Fimage%2Fangga-photo.webp&w=640&q=90",
+      "kind": "image",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 31263,
+      "localPath": "images/anggastudio.dev/image-57a2d41f77.bin"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/image?url=%2Fimage%2Fangga-photo.webp&w=32&q=90",
+      "kind": "image",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 695,
+      "localPath": "images/anggastudio.dev/image-2053d28cb2.bin"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/image?url=%2Fimage%2Fangga-photo.webp&w=48&q=90",
+      "kind": "image",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 980,
+      "localPath": "images/anggastudio.dev/image-7515ba9ab1.bin"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/image?url=%2Fimage%2Fangga-photo.webp&w=64&q=90",
+      "kind": "image",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 1364,
+      "localPath": "images/anggastudio.dev/image-6d041fb683.bin"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/image?url=%2Fimage%2Fangga-photo.webp&w=96&q=90",
+      "kind": "image",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 2144,
+      "localPath": "images/anggastudio.dev/image-f28b094a7c.bin"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/image?url=%2Fimage%2Fangga-photo.webp&w=128&q=90",
+      "kind": "image",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 3115,
+      "localPath": "images/anggastudio.dev/image-e85120eac0.bin"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/image?url=%2Fimage%2Fangga-photo.webp&w=256&q=90",
+      "kind": "image",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 7936,
+      "localPath": "images/anggastudio.dev/image-aff5592376.bin"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/image?url=%2Fimage%2Fangga-photo.webp&w=384&q=90",
+      "kind": "image",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 14269,
+      "localPath": "images/anggastudio.dev/image-0e5bb7de92.bin"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/image?url=%2Fimage%2Fangga-photo.webp&w=750&q=90",
+      "kind": "image",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 40044,
+      "localPath": "images/anggastudio.dev/image-554bcc6c93.bin"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/image?url=%2Fimage%2Fangga-photo.webp&w=828&q=90",
+      "kind": "image",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 46825,
+      "localPath": "images/anggastudio.dev/image-ea1f78c024.bin"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/image?url=%2Fimage%2Fangga-photo.webp&w=1080&q=90",
+      "kind": "image",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 69640,
+      "localPath": "images/anggastudio.dev/image-6178f0effd.bin"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/image?url=%2Fimage%2Fangga-photo.webp&w=1200&q=90",
+      "kind": "image",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 81897,
+      "localPath": "images/anggastudio.dev/image-d66418828f.bin"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/image?url=%2Fimage%2Fangga-photo.webp&w=2048&q=90",
+      "kind": "image",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 84862,
+      "localPath": "images/anggastudio.dev/image-d02e30a5c0.bin"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/image?url=%2Fimage%2Fangga-photo.webp&w=3840&q=90",
+      "kind": "image",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 84862,
+      "localPath": "images/anggastudio.dev/image-509d3a92ab.bin"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/static/media/fef07dbb0973bf53-s.12tyk43_3sh9u.woff2",
+      "kind": "font",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 7252,
+      "localPath": "fonts/anggastudio.dev/fef07dbb0973bf53-s.12tyk43_3sh9u-00da62189c.woff2"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/static/media/8a480f0b521d4e75-s.0jzbimsg8vl84.woff2",
+      "kind": "font",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 14900,
+      "localPath": "fonts/anggastudio.dev/8a480f0b521d4e75-s.0jzbimsg8vl84-2497bc8350.woff2"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/static/media/53b9e256198e5412-s.0-wfv7uh4i7h9.woff2",
+      "kind": "font",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 7968,
+      "localPath": "fonts/anggastudio.dev/53b9e256198e5412-s.0-wfv7uh4i7h9-6cf0d305fb.woff2"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/static/media/7178b3e590c64307-s.0nx0ww8fni_q3.woff2",
+      "kind": "font",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 16540,
+      "localPath": "fonts/anggastudio.dev/7178b3e590c64307-s.0nx0ww8fni_q3-39beb59442.woff2"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/static/media/5ce348bf30bf5439-s.0zgw-jeven.3w.woff2",
+      "kind": "font",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 6204,
+      "localPath": "fonts/anggastudio.dev/5ce348bf30bf5439-s.0zgw-jeven.3w-862238bc14.woff2"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/static/media/4fa387ec64143e14-s.0wkzw~je483f-.woff2",
+      "kind": "font",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 12872,
+      "localPath": "fonts/anggastudio.dev/4fa387ec64143e14-s.0wkzw-je483f--d11da2bf4e.woff2"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/static/media/6306c77e7c8268e4-s.0rhz0arwfsn~5.woff2",
+      "kind": "font",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 5892,
+      "localPath": "fonts/anggastudio.dev/6306c77e7c8268e4-s.0rhz0arwfsn-5-3b63799561.woff2"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/static/media/7d817b4c03b0c5f1-s.0l76wvqk9d84w.woff2",
+      "kind": "font",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 7728,
+      "localPath": "fonts/anggastudio.dev/7d817b4c03b0c5f1-s.0l76wvqk9d84w-4ebaf705a2.woff2"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/static/media/bbc41e54d2fcbd21-s.0k4k9394f2q-k.woff2",
+      "kind": "font",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 14712,
+      "localPath": "fonts/anggastudio.dev/bbc41e54d2fcbd21-s.0k4k9394f2q-k-4859551ce6.woff2"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/static/media/50a3f1070da3c6cc-s.0xr8au8udm.h9.woff2",
+      "kind": "font",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 12956,
+      "localPath": "fonts/anggastudio.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/static/media/b887d91685b8c137-s.0z~ry.rim0raw.woff2",
+      "kind": "font",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 40560,
+      "localPath": "fonts/anggastudio.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/static/media/1e219c03c996efbd-s.0vlx5hthn2t7i.woff2",
+      "kind": "font",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 11536,
+      "localPath": "fonts/anggastudio.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/static/media/b35b0dbffda7f2c4-s.0fu677rwbv-.g.woff2",
+      "kind": "font",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 33640,
+      "localPath": "fonts/anggastudio.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/static/media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2",
+      "kind": "font",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 8812,
+      "localPath": "fonts/anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
+    },
+    {
+      "url": "https://anggastudio.dev/_next/static/media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2",
+      "kind": "font",
+      "via": "recon",
+      "status": "ok",
+      "bytes": 26568,
+      "localPath": "fonts/anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
+    }
+  ]
+}
