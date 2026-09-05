@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { fade, fly } from 'svelte/transition';
   import { decksData, deckSlides, postsData, postsSlides, blogData, blogFull } from './lib/data';
 
   let view: string = 'home';
@@ -24,7 +25,7 @@
     let p = 0;
     const t = setInterval(() => {
       p += Math.random()*18+6;
-      if (p >= 100) { p = 100; bootPct = 100; clearInterval(t); setTimeout(()=> bootDone = true, 400); }
+      if (p >= 100) { p = 100; bootPct = 100; clearInterval(t); setTimeout(()=> {bootDone = true; setTimeout(setupReveal, 120)}, 400); }
       else bootPct = Math.floor(p);
     }, 85);
     // theme init
@@ -35,17 +36,28 @@
     // hash init
     handleHash();
     window.addEventListener('hashchange', handleHash);
-    window.addEventListener('scroll', () => { const hdr=document.getElementById('site-header'); if(hdr) hdr.classList.toggle('shadow-lg', window.scrollY>8); });
+    window.addEventListener('scroll', handleScroll, {passive:true});
+    handleScroll();
+    setTimeout(setupReveal, 600);
   });
 
+  let themeWipe = false;
+  let themeWipeBg: string = '#ffffff';
   function applyTheme(t: 'dark'|'light') {
     theme = t;
+    document.documentElement.classList.add('theme-transition');
+    setTimeout(()=> document.documentElement.classList.remove('theme-transition'), 520);
     document.documentElement.classList.toggle('dark', t==='dark');
     document.documentElement.classList.toggle('light', t==='light');
     document.documentElement.style.colorScheme = t;
     localStorage.setItem('theme-preference', t);
   }
-  function toggleTheme(){ applyTheme(theme==='dark'?'light':'dark'); }
+  function toggleTheme(){
+    themeWipeBg = theme==='dark' ? '#ffffff' : '#0a0a0a';
+    themeWipe = true;
+    setTimeout(()=> applyTheme(theme==='dark'?'light':'dark'), 40);
+    setTimeout(()=> themeWipe = false, 560);
+  }
 
   function handleHash(){
     const raw = location.hash.replace('#','') || 'home';
@@ -104,12 +116,15 @@
   }).sort((a,b)=> new Date(b.date).getTime() - new Date(a.date).getTime());
   $: blogFeatured = filteredBlog.find(b=>b.featured) || filteredBlog[0];
   $: blogRest = filteredBlog.filter(b=>b!==blogFeatured);
+  $: if(view) setTimeout(setupReveal, 280);
 
   let postsTouchStartX = 0;
   let postsDragDx = 0;
   let postsIsDragging = false;
   let postsMouseDown = false;
   let postsMouseStartX = 0;
+  let scrollProgress = 0;
+  let heroParallaxY = 0;
   function handlePostsTouchStart(e: TouchEvent){ postsTouchStartX = e.touches[0].clientX; postsIsDragging = true; postsDragDx = 0; }
   function handlePostsTouchMove(e: TouchEvent){ if(!postsIsDragging) return; postsDragDx = e.touches[0].clientX - postsTouchStartX; }
   function handlePostsTouchEnd(e: TouchEvent){
@@ -123,6 +138,20 @@
     if(!postsMouseDown) return; postsMouseDown = false; postsIsDragging = false;
     const dx = e.clientX - postsMouseStartX; postsDragDx = 0;
     if(Math.abs(dx)>40){ if(dx<0 && postsCarIdx < filteredPosts.length-1) postsCarIdx++; else if(dx>0 && postsCarIdx>0) postsCarIdx--; }
+  }
+  function handleScroll(){
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    scrollProgress = max > 0 ? (window.scrollY / max) * 100 : 0;
+    heroParallaxY = Math.min(window.scrollY * 0.12, 24);
+    const hdr = document.getElementById('site-header');
+    if(hdr){ hdr.classList.toggle('shadow-lg', window.scrollY>8); hdr.style.backdropFilter = `blur(${Math.min(12 + window.scrollY*0.02, 20)}px)`; }
+  }
+  function setupReveal(){
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(el=> obs.observe(el));
   }
 </script>
 
@@ -139,7 +168,9 @@
 </div>
 {/if}
 
-<svelte:window on:keydown={handleKeys} />
+<svelte:window on:keydown={handleKeys} on:scroll={handleScroll} />
+<div id="scroll-progress" class="fixed top-0 left-0 h-[2px] bg-[#FF6B35] z-[60] pointer-events-none" style="width:{scrollProgress}%"></div>
+{#if themeWipe}<div id="theme-wipe" class="fixed inset-0 z-[65] pointer-events-none" style="background:{themeWipeBg}"></div>{/if}
 <header id="site-header" class="sticky top-0 z-40 border-b border-zinc-800/60 bg-[#09090b]/60 backdrop-blur-xl">
   <nav class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
     <button on:click={()=> nav('home')} class="flex items-center gap-3">
@@ -149,16 +180,16 @@
         <span class="hidden sm:block text-[11px] text-zinc-400">Software Engineer, Tech Speaker</span>
       </div>
     </button>
-    <div class="hidden md:flex items-center gap-1 bg-zinc-900/60 border border-zinc-800 rounded-full p-1">
-      {#each ['home','about','decks','posts','blog'] as v}
-        <button on:click={()=> nav(v)} class="px-4 py-1.5 rounded-full text-[13px] font-medium {view===v || view.startsWith(v+'/') ? 'bg-white text-black' : 'text-zinc-400'}">{v[0].toUpperCase()+v.slice(1)}</button>
-      {/each}
-    </div>
-    <div class="flex items-center gap-2">
-      <button on:click={toggleTheme} aria-label="Toggle theme" class="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 grid place-items-center text-zinc-400">
+    <div class="flex items-center gap-3">
+      <div class="hidden md:flex items-center gap-6">
+        {#each ['home','about','decks','posts','blog'] as v}
+          <button on:click={()=> nav(v)} class="relative px-1 py-1.5 text-[13px] {view===v || view.startsWith(v+'/') ? 'font-semibold text-white' : 'font-medium text-zinc-400 hover:text-white'}">{v[0].toUpperCase()+v.slice(1)}{#if view===v || view.startsWith(v+'/')}<span class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#FF6B35] rounded-full"></span>{/if}</button>
+        {/each}
+      </div>
+      <button on:click={toggleTheme} aria-label="Toggle theme" class="w-9 h-9 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 grid place-items-center text-zinc-600 dark:text-zinc-400 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
         {#if theme==='dark'}☾{:else}☀{/if}
       </button>
-      <button class="md:hidden w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 grid place-items-center" on:click={()=> document.getElementById('mobile-menu')?.classList.toggle('hidden')}>☰</button>
+      <button class="md:hidden w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 grid place-items-center text-zinc-400" on:click={()=> document.getElementById('mobile-menu')?.classList.toggle('hidden')}>☰</button>
     </div>
   </nav>
   <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-800 bg-[#0a0a0a] px-4 py-3">
@@ -169,12 +200,14 @@
 </header>
 
 <main class="mx-auto w-full max-w-7xl px-4 pb-24 pt-8 sm:px-6">
+  {#key view}
+  <div in:fade={{duration:220, delay:30}} out:fade={{duration:150}}>
   {#if view==='home'}
-    <section class="flex flex-col items-center gap-10 text-center">
-      <div class="flex flex-col items-center gap-6 max-w-3xl">
+    <section class="flex flex-col items-center gap-10 text-center reveal in">
+      <div class="flex flex-col items-center gap-6 max-w-3xl reveal in">
         <h1 class="fraunces text-[42px] sm:text-[56px] md:text-[68px] font-medium leading-[0.9]">Mobile developer,<br><span class="italic">every framework.</span></h1>
         <p class="max-w-[560px] text-zinc-400">5+ years building complete products — Mobile (Flutter, SwiftUI & Kotlin), Backend systems & APIs, AI-powered. Product-driven, end-to-end, and system-thinking.</p>
-        <div class="flex flex-wrap justify-center gap-2 max-w-[560px]">
+        <div class="flex flex-wrap justify-center gap-2 max-w-[560px] reveal">
           <span class="inline-flex items-center gap-1.5 rounded-full border border-zinc-800 bg-zinc-900/60 px-3 py-1.5 text-xs font-medium"><img src="https://cdn.simpleicons.org/android/3DDC84" class="w-4 h-4" alt=""> Android</span>
           <span class="inline-flex items-center gap-1.5 rounded-full border border-zinc-800 bg-zinc-900/60 px-3 py-1.5 text-xs font-medium"><img src="https://cdn.simpleicons.org/kotlin/7F52FF" class="w-4 h-4" alt=""> Kotlin</span>
           <span class="inline-flex items-center gap-1.5 rounded-full border border-zinc-800 bg-zinc-900/60 px-3 py-1.5 text-xs font-medium"><img src="https://cdn.simpleicons.org/flutter/02569B" class="w-4 h-4" alt=""> Flutter</span>
@@ -185,8 +218,8 @@
           <span class="inline-flex items-center gap-1.5 rounded-full border border-zinc-800 bg-zinc-900/60 px-3 py-1.5 text-xs font-medium"><img src="https://cdn.simpleicons.org/ionic/3880FF" class="w-4 h-4" alt=""> Ionic</span>
         </div>
       </div>
-      <div class="flex flex-col items-center gap-4">
-        <div class="relative"><div class="w-[168px] h-[168px] rounded-full overflow-hidden border border-zinc-800 p-[5px] bg-zinc-900"><img src="/assets/images/khoirlabs.dev/khoiron-rois.jpeg" class="w-full h-full object-cover rounded-full object-top" alt="Khoiron Rois"/></div><div class="absolute -bottom-2 -right-2 bg-white text-black mono text-[10px] font-bold tracking-widest px-2 py-1 rounded-full border border-zinc-200">5+ YRS</div></div>
+      <div class="flex flex-col items-center gap-4 reveal">
+        <div class="relative parallax" style="transform: translateY({heroParallaxY}px)"><div class="w-[168px] h-[168px] rounded-full overflow-hidden border border-zinc-800 p-[5px] bg-zinc-900"><img src="/assets/images/khoirlabs.dev/khoiron-rois.jpeg" class="w-full h-full object-cover rounded-full object-top" alt="Khoiron Rois"/></div><div class="absolute -bottom-2 -right-2 bg-white text-black mono text-[10px] font-bold tracking-widest px-2 py-1 rounded-full border border-zinc-200">5+ YRS</div></div>
         <div class="text-center"><div class="text-[15px] font-semibold">Khoiron Rois</div><div class="mono text-[11px] tracking-wide text-zinc-500">Android · iOS · Flutter · React Native</div></div>
         <div class="flex flex-wrap justify-center gap-3 mt-1">
           <a href="https://play.google.com/store/apps/dev?id=8721309729295189926" target="_blank" class="inline-flex items-center gap-3 bg-white text-black rounded-xl px-4 py-2.5 hover:bg-zinc-100 transition min-w-[148px]"><img src="https://cdn.simpleicons.org/googleplay/000000" class="w-5 h-5" alt=""><span class="flex flex-col leading-none text-left"><span class="mono text-[9px] tracking-[0.14em] uppercase font-semibold text-zinc-500">Apps on</span><span class="text-[13px] font-semibold -mt-0.5">Google Play</span></span></a>
@@ -196,7 +229,7 @@
         <button on:click={()=> nav('blog')} class="mono text-[12px] text-zinc-400 hover:text-white inline-flex items-center gap-1.5 mt-1 transition">Or read the blog <span>→</span></button>
       </div>
     </section>
-    <section class="flex flex-col gap-10 mt-20 md:mt-24" id="recent">
+    <section class="flex flex-col gap-10 mt-20 md:mt-24 reveal" id="recent">
       <div class="flex flex-col gap-2"><span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">Recent</span><div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4"><h2 class="fraunces text-[30px] sm:text-[36px] font-medium leading-none tracking-tight">Latest from the workshop.</h2><div class="flex items-center gap-2 overflow-x-auto scrollbar-none"><button on:click={()=> nav('blog')} class="whitespace-nowrap rounded-full px-4 py-2 text-xs font-medium border bg-white text-black border-white">All <span class="opacity-60 ml-1">9</span></button><button on:click={()=> nav('blog')} class="whitespace-nowrap rounded-full px-4 py-2 text-xs font-medium border border-zinc-800 text-zinc-400">Blog <span class="opacity-60 ml-1">3</span></button><button on:click={()=> nav('posts')} class="whitespace-nowrap rounded-full px-4 py-2 text-xs font-medium border border-zinc-800 text-zinc-400">Carousels <span class="opacity-60 ml-1">3</span></button><button on:click={()=> nav('decks')} class="whitespace-nowrap rounded-full px-4 py-2 text-xs font-medium border border-zinc-800 text-zinc-400">Decks <span class="opacity-60 ml-1">3</span></button></div></div></div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
         <article class="group relative flex flex-col gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 hover:bg-zinc-900/70 hover:border-zinc-700 transition cursor-pointer" on:click={()=> openBlog('four-repos-to-a-monorepo')}><div class="mono text-[11px] tracking-widest uppercase text-zinc-500">Jun 21, 2026 — Blog</div><h3 class="text-[16px] font-semibold leading-5">From four repos to a monorepo</h3><p class="text-[13px] leading-5 text-zinc-400 line-clamp-3">Consolidating four byte-identical app repos into one shared core plus thin app shells, the expo-router and Metro problems it surfaced.</p><span class="mono text-[11px] text-zinc-300 mt-2 inline-flex gap-1">Read post <span class="group-hover:translate-x-0.5 transition">→</span></span></article>
@@ -269,7 +302,7 @@
     {@const deck = decksData.find(d=>d.slug===deckSlug)}
     {@const slides = deckSlides[deckSlug] || []}
     {@const cur = slides[deckIdx]}
-    <div class="fixed inset-0 z-50 bg-black flex flex-col">
+    <div class="fixed inset-0 z-50 bg-black flex flex-col" in:fade={{duration:200}} out:fade={{duration:150}}>
       <!-- top bar — identik vanilla -->
       <div class="h-[56px] shrink-0 border-b border-zinc-800 bg-[#09090b]/80 backdrop-blur flex items-center justify-between px-4 sm:px-6">
         <div class="flex items-center gap-3">
@@ -289,6 +322,8 @@
       <!-- stage — layout-aware, sama seperti vanilla renderDeck() -->
       <div class="flex-1 flex flex-col items-center justify-center p-4 sm:p-8 overflow-auto bg-gradient-to-br from-[#0a0a0a] via-[#0f0f12] to-[#0a0a0a]">
         <div id="deck-stage" class="w-full max-w-5xl aspect-[16/9] bg-zinc-900 rounded-2xl border border-zinc-800 overflow-hidden shadow-2xl flex relative">
+          {#key deckIdx}
+          <div class="flex-1 flex" in:fade={{duration:180}}>
           {#if cur}
             {#if cur.layout==='cover'}
               <div class="flex-1 grid md:grid-cols-2">
@@ -327,8 +362,10 @@
                 <div class="p-8 flex flex-col gap-4 bg-gradient-to-br {cur.gradient || 'from-zinc-800 to-zinc-900'}"><span class="mono text-[11px] tracking-widest uppercase text-emerald-400">{cur.rightTitle}</span><h3 class="fraunces text-[18px] font-semibold text-white">After</h3>{#if cur.rightPoints}<ul class="space-y-2">{#each cur.rightPoints as p}<li class="flex gap-2 text-xs leading-5 text-zinc-300"><span class="text-emerald-400">✓</span>{p}</li>{/each}</ul>{/if}</div>
               </div>
             {/if}
-          {/if}
-        </div>
+           {/if}
+          </div>
+          {/key}
+         </div>
         <div class="mt-4 flex items-center gap-3">
           <button on:click={deckPrev} class="sm:hidden w-9 h-9 rounded-full border border-zinc-800 bg-zinc-900 text-zinc-300 grid place-items-center">‹</button>
           <div class="flex items-center gap-1.5">{#each slides as _,i}<span class="h-1.5 rounded-full transition-all {i===deckIdx?'bg-white w-4':'bg-zinc-700 w-1.5'}"></span>{/each}</div>
@@ -384,7 +421,7 @@
   {:else if view==='postDetail' && postSlug}
     {@const meta = postsData.find(p=>p.slug===postSlug)}
     {@const sls = postsSlides[postSlug] || []}
-    <div class="fixed inset-0 z-50 bg-black flex flex-col">
+    <div class="fixed inset-0 z-50 bg-black flex flex-col" in:fade={{duration:200}} out:fade={{duration:150}}>
       <div class="h-[56px] shrink-0 border-b border-zinc-800 bg-[#09090b]/80 backdrop-blur flex items-center justify-between px-4 sm:px-6">
         <div class="flex items-center gap-3">
           <button on:click={()=> nav('posts')} class="inline-flex items-center gap-1.5 rounded-full border border-zinc-800 bg-zinc-900 px-3 py-1.5 text-xs font-medium text-zinc-300 hover:text-white hover:border-zinc-700">← All posts</button>
@@ -664,6 +701,8 @@
       </div>
     </div>
   {/if}
+  </div>
+  {/key}
 </main>
 
 <footer class="border-t border-zinc-800/80 bg-[#09090b]/70" data-od-id="footer">
