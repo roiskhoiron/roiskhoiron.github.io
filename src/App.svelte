@@ -1,7 +1,8 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { fade, fly } from 'svelte/transition';
-  import { decksData, deckSlides, postsData, postsSlides, blogData, blogFull } from './lib/data';
+  import { decksData, deckSlides, postsData, postsSlides, blogData, blogFull, videosData } from './lib/data';
+  import type { Video } from './lib/data';
 
   let view: string = 'home';
   let deckSlug: string | null = null;
@@ -15,11 +16,14 @@
   let deckTag = 'all';
   let postTag = 'all';
   let blogTag = 'all';
+  let videoFilter: 'all'|'video'|'short' = 'all';
   let deckSearch = '';
   let postSearch = '';
   let blogSearch = '';
+  let videoSearch = '';
   let postsCarIdx = 0;
   let postsTick = 0;
+  let selectedVideo: Video | null = null;
   // boot
   onMount(() => {
     let p = 0;
@@ -64,7 +68,8 @@
     if (raw.startsWith('decks/')) { const s=raw.split('/')[1]; if (deckSlides[s]) { deckSlug=s; deckIdx=0; view='deckDetail'; return; } }
     if (raw.startsWith('posts/')) { const s=raw.split('/')[1]; if (postsSlides[s]) { postSlug=s; postIdx=0; view='postDetail'; return; } }
     if (raw.startsWith('blog/')) { const s=raw.split('/')[1]; if (blogData.find(b=>b.slug===s)) { blogSlug=s; view='blogDetail'; return; } }
-    if (['home','decks','posts','blog','about'].includes(raw)) view = raw;
+    if (raw.startsWith('videos/')) { const id=raw.split('/')[1]; const v=videosData.find(x=>x.id===id); if(v){ selectedVideo=v; view='videoDetail'; return;} }
+    if (['home','decks','videos','posts','blog','about'].includes(raw)) view = raw;
     else view = 'home';
   }
   function nav(v:string){
@@ -75,6 +80,7 @@
   function openDeck(slug:string){ location.hash='decks/'+slug; deckSlug=slug; deckIdx=0; view='deckDetail'; }
   function openPost(slug:string){ location.hash='posts/'+slug; postSlug=slug; postIdx=0; view='postDetail'; }
   function openBlog(slug:string){ location.hash='blog/'+slug; blogSlug=slug; view='blogDetail'; }
+  function openVideo(v: Video){ selectedVideo=v; location.hash='videos/'+v.id; view='videoDetail'; }
   function deckNext(){ const sl= deckSlug ? deckSlides[deckSlug] : null; if(sl && deckIdx < sl.length-1) deckIdx++; }
   function deckPrev(){ if(deckIdx>0) deckIdx--; }
   function postNext(){ const sl= postSlug ? postsSlides[postSlug] : null; if(sl && postIdx < sl.length-1) postIdx++; }
@@ -109,6 +115,14 @@
     if(postSearch && !(p.title+p.desc+p.tag).toLowerCase().includes(postSearch.toLowerCase())) return false;
     return true;
   }); })();
+  $: filteredVideos = videosData.filter(v=>{
+    if(videoFilter==='video' && v.isShort) return false;
+    if(videoFilter==='short' && !v.isShort) return false;
+    if(videoSearch && !(v.title+v.desc+v.tag).toLowerCase().includes(videoSearch.toLowerCase())) return false;
+    return true;
+  });
+  $: videosLong = filteredVideos.filter(v=>!v.isShort);
+  $: videosShort = filteredVideos.filter(v=>v.isShort);
   $: filteredBlog = [...blogData].filter(b=>{
     if(blogTag!=='all' && !b.tags.some(t=>t.toLowerCase().includes(blogTag.toLowerCase()))) return false;
     if(blogSearch && !(b.title+b.excerpt+b.tags.join(' ')).toLowerCase().includes(blogSearch.toLowerCase())) return false;
@@ -182,7 +196,7 @@
     </button>
     <div class="flex items-center gap-3">
       <div class="hidden md:flex items-center gap-6">
-        {#each ['home','about','decks','posts','blog'] as v}
+        {#each ['home','about','decks','videos','posts','blog'] as v}
           <button on:click={()=> nav(v)} class="relative px-1 py-1.5 text-[13px] {view===v || view.startsWith(v+'/') ? 'font-semibold text-white' : 'font-medium text-zinc-400 hover:text-white'}">{v[0].toUpperCase()+v.slice(1)}{#if view===v || view.startsWith(v+'/')}<span class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#FF6B35] rounded-full"></span>{/if}</button>
         {/each}
       </div>
@@ -192,8 +206,8 @@
       <button class="md:hidden w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 grid place-items-center text-zinc-400" on:click={()=> document.getElementById('mobile-menu')?.classList.toggle('hidden')}>☰</button>
     </div>
   </nav>
-  <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-800 bg-[#0a0a0a] px-4 py-3">
-    {#each ['home','about','decks','posts','blog'] as v}
+    <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-800 bg-[#0a0a0a] px-4 py-3">
+    {#each ['home','about','decks','videos','posts','blog'] as v}
       <button on:click={()=> nav(v)} class="block w-full text-left px-3 py-2 rounded-lg {view===v?'bg-white text-black':'text-zinc-400'}">{v}</button>
     {/each}
   </div>
@@ -370,6 +384,85 @@
           <button on:click={deckPrev} class="sm:hidden w-9 h-9 rounded-full border border-zinc-800 bg-zinc-900 text-zinc-300 grid place-items-center">‹</button>
           <div class="flex items-center gap-1.5">{#each slides as _,i}<span class="h-1.5 rounded-full transition-all {i===deckIdx?'bg-white w-4':'bg-zinc-700 w-1.5'}"></span>{/each}</div>
           <button on:click={deckNext} class="sm:hidden w-9 h-9 rounded-full bg-white text-black grid place-items-center">›</button>
+        </div>
+      </div>
+    </div>
+  {:else if view==='videos'}
+    <div class="flex flex-col gap-8">
+      <div class="flex flex-col gap-3">
+        <span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">Videos</span>
+        <h1 class="fraunces text-[36px] sm:text-[44px] font-medium tracking-tight leading-none">CodingSkuy on YouTube.</h1>
+        <p class="text-[14px] leading-6 text-zinc-400 max-w-2xl">Tutorial panjang 12–22 menit untuk deep dive, dan Shorts 30–60 detik untuk tips cepat. Semua dari <a href="https://www.youtube.com/@codingskuy/videos" target="_blank" class="underline text-zinc-300">youtube.com/@codingskuy</a> — dinamis via RSS/API, fallback statis kalau API diblok. <span class="mono text-xs text-zinc-500 ml-2">{filteredVideos.length} videos</span></p>
+      </div>
+      <div class="sticky top-[65px] z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-3 bg-[#0a0a0a]/80 backdrop-blur-xl border-y border-zinc-800/60 flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
+        <div class="relative flex-1 max-w-xl">
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4-4m2-4a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <input bind:value={videoSearch} placeholder="Search videos — 'flutter', 'css', 'ai'" class="w-full bg-zinc-900 border border-zinc-800 rounded-full pl-9 pr-4 py-2.5 text-[13px] placeholder:text-zinc-600 focus:outline-none focus:border-zinc-700"/>
+        </div>
+        <div class="flex items-center gap-1.5 overflow-x-auto scrollbar-none">
+          <button on:click={()=> videoFilter='all'} class="whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-medium {videoFilter==='all'?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">All</button>
+          <button on:click={()=> videoFilter='video'} class="whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-medium {videoFilter==='video'?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">Videos</button>
+          <button on:click={()=> videoFilter='short'} class="whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-medium {videoFilter==='short'?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">Shorts</button>
+        </div>
+      </div>
+      {#if videosLong.length>0}
+        <div class="flex flex-col gap-3 reveal in">
+          <div class="flex items-center gap-2"><span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">Videos</span><span class="flex-1 h-px bg-zinc-800"></span><span class="mono text-xs text-zinc-500">{videosLong.length} · 16:9</span></div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {#each videosLong as v}
+              <button on:click={()=> openVideo(v)} class="group text-left rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900/40 hover:border-zinc-700 hover:bg-zinc-900/60 transition cursor-pointer flex flex-col">
+                <div class="relative aspect-video bg-zinc-900 overflow-hidden">
+                  <img src={v.thumb} alt={v.title} class="w-full h-full object-cover group-hover:scale-[1.02] transition duration-300"/>
+                  <span class="absolute bottom-2 right-2 bg-black/80 text-white mono text-[10px] px-1.5 py-0.5 rounded">{v.duration}</span>
+                  <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition bg-black/30"><span class="w-10 h-10 rounded-full bg-white text-black grid place-items-center text-sm">▶</span></span>
+                </div>
+                <div class="p-4 flex flex-col gap-1.5 flex-1">
+                  <h3 class="text-[14px] font-semibold leading-5 line-clamp-2 group-hover:text-white">{v.title}</h3>
+                  <p class="text-[12px] leading-5 text-zinc-400 line-clamp-2">{v.desc}</p>
+                  <div class="flex items-center gap-2 mono text-[10px] text-zinc-500 mt-1"><span>{v.date}</span><span>·</span><span>{v.views} views</span><span>·</span><span class="bg-zinc-800 text-zinc-400 px-1.5 py-0.5 rounded-full">{v.tag}</span></div>
+                </div>
+              </button>
+            {/each}
+          </div>
+        </div>
+      {/if}
+      {#if videosShort.length>0}
+        <div class="flex flex-col gap-3 reveal">
+          <div class="flex items-center gap-2"><span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">Shorts</span><span class="flex-1 h-px bg-zinc-800"></span><span class="mono text-xs text-zinc-500">{videosShort.length} · 9:16</span></div>
+          <div class="flex gap-3 overflow-x-auto scrollbar-none pb-2 snap-x snap-mandatory">
+            {#each videosShort as v}
+              <button on:click={()=> openVideo(v)} class="shrink-0 w-[180px] snap-start rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900/40 hover:border-zinc-700 transition text-left flex flex-col">
+                <div class="relative aspect-[9/16] bg-zinc-900 overflow-hidden">
+                  <img src={v.thumb} alt={v.title} class="w-full h-full object-cover"/>
+                  <span class="absolute bottom-1.5 right-1.5 bg-black/80 text-white mono text-[10px] px-1 py-0.5 rounded">{v.duration}</span>
+                  <span class="absolute top-2 left-2 bg-[#FF6B35] text-white mono text-[9px] font-bold px-1.5 py-0.5 rounded-full">SHORT</span>
+                </div>
+                <div class="p-2.5 flex flex-col gap-1">
+                  <h4 class="text-[12px] font-semibold leading-4 line-clamp-2">{v.title}</h4>
+                  <span class="mono text-[10px] text-zinc-500">{v.views} · {v.date}</span>
+                </div>
+              </button>
+            {/each}
+          </div>
+        </div>
+      {/if}
+      {#if filteredVideos.length===0}<div class="flex flex-col items-center justify-center gap-3 py-16 border border-dashed border-zinc-800 rounded-2xl"><span class="mono text-xs tracking-widest uppercase text-zinc-600">No videos found</span></div>{/if}
+    </div>
+  {:else if view==='videoDetail' && selectedVideo}
+    <div class="fixed inset-0 z-50 bg-black flex flex-col" in:fade={{duration:200}} out:fade={{duration:150}}>
+      <div class="h-[56px] shrink-0 border-b border-zinc-800 bg-[#09090b]/80 backdrop-blur flex items-center justify-between px-4 sm:px-6">
+        <button on:click={()=> nav('videos')} class="inline-flex items-center gap-1.5 rounded-full border border-zinc-800 bg-zinc-900 px-3 py-1.5 text-xs font-medium text-zinc-300 hover:text-white">← All videos</button>
+        <span class="mono text-xs text-zinc-500 hidden sm:inline">{selectedVideo.isShort ? 'Short' : 'Video'} · {selectedVideo.duration}</span>
+        <a href={"https://www.youtube.com/watch?v="+selectedVideo.id} target="_blank" class="rounded-full bg-white text-black px-3 py-1.5 text-xs font-semibold hover:bg-zinc-100">Open on YouTube →</a>
+      </div>
+      <div class="flex-1 overflow-auto bg-gradient-to-br from-[#0a0a0a] via-[#0f0f12] to-[#0a0a0a] p-4 sm:p-8 flex flex-col items-center gap-6">
+        <div class="w-full max-w-4xl aspect-video bg-black rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl">
+          <iframe src={"https://www.youtube.com/embed/"+selectedVideo.id+"?autoplay=0"} title={selectedVideo.title} class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="w-full max-w-4xl flex flex-col gap-2">
+          <h1 class="fraunces text-[22px] sm:text-[26px] font-semibold leading-tight">{selectedVideo.title}</h1>
+          <div class="flex flex-wrap gap-2 mono text-[11px] text-zinc-500"><span>{selectedVideo.date}</span><span>·</span><span>{selectedVideo.views} views</span><span>·</span><span class="bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded-full">{selectedVideo.tag}</span><span class="bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded-full">{selectedVideo.isShort?'Short':'Video'}</span></div>
+          <p class="text-sm leading-6 text-zinc-400 mt-1">{selectedVideo.desc} — dari <a href="https://www.youtube.com/@codingskuy/videos" target="_blank" class="underline">youtube.com/@codingskuy</a>. Dinamis via RSS/API, fallback ke data statis kalau fetch diblok.</p>
         </div>
       </div>
     </div>
