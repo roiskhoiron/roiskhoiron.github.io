@@ -29,7 +29,7 @@
     let p = 0;
     const t = setInterval(() => {
       p += Math.random()*18+6;
-      if (p >= 100) { p = 100; bootPct = 100; clearInterval(t); setTimeout(()=> {bootDone = true; setTimeout(setupReveal, 120)}, 400); }
+      if (p >= 100) { p = 100; bootPct = 100; clearInterval(t); setTimeout(()=> {bootDone = true; setupReveal()}, 700); }
       else bootPct = Math.floor(p);
     }, 85);
     // theme init
@@ -42,11 +42,8 @@
     window.addEventListener('hashchange', handleHash);
     window.addEventListener('scroll', handleScroll, {passive:true});
     handleScroll();
-    setTimeout(setupReveal, 600);
   });
 
-  let themeWipe = false;
-  let themeWipeBg: string = '#ffffff';
   function applyTheme(t: 'dark'|'light') {
     theme = t;
     document.documentElement.classList.add('theme-transition');
@@ -57,10 +54,7 @@
     localStorage.setItem('theme-preference', t);
   }
   function toggleTheme(){
-    themeWipeBg = theme==='dark' ? '#ffffff' : '#0a0a0a';
-    themeWipe = true;
-    setTimeout(()=> applyTheme(theme==='dark'?'light':'dark'), 40);
-    setTimeout(()=> themeWipe = false, 560);
+    applyTheme(theme==='dark'?'light':'dark');
   }
 
   function handleHash(){
@@ -170,21 +164,24 @@
 </script>
 
 {#if !bootDone}
-<div class="fixed inset-0 z-[100] bg-[#0a0a0a] flex flex-col items-center justify-center transition-opacity" style="opacity:{bootPct===100?0:1}">
-  <div class="flex flex-col items-center gap-6">
-    <div class="flex items-center gap-3">
-      <img src="/assets/images/khoirlabs.dev/logo-khoirlabs.jpeg" class="w-9 h-9 rounded-full bg-white p-1 object-contain" alt="Khoirlabs"/>
-      <span class="text-[11px] tracking-[0.2em] font-semibold text-zinc-500 uppercase">Booting khoirlabs</span>
+<div class="fixed inset-0 z-[100] flex flex-col items-center justify-center transition-opacity duration-700 ease-out" style="background:{theme==='dark'?'#0a0a0a':'#ffffff'};opacity:{bootPct===100?0:1}">
+  <div class="flex flex-col items-center gap-8">
+    <div class="relative">
+      <div class="absolute -inset-4 rounded-full bg-zinc-400/10 blur-2xl animate-pulse-glow"></div>
+      <img src="/assets/images/khoirlabs.dev/logo-khoirlabs.jpeg" class="relative w-10 h-10 rounded-full bg-white p-1 object-contain" alt="Khoirlabs"/>
     </div>
-    <div class="flex items-baseline gap-2"><span class="text-7xl font-light tracking-tight">{bootPct}</span><span class="text-2xl font-light text-zinc-600">%</span></div>
-    <div class="w-[280px] h-[2px] bg-zinc-800 rounded-full overflow-hidden"><div class="h-full bg-white transition-all" style="width:{bootPct}%"></div></div>
+    <div class="flex flex-col items-center gap-4">
+      <span class="text-[11px] tracking-[0.2em] font-semibold text-zinc-500 uppercase">Booting khoirlabs</span>
+      <div class="w-24 h-[1px] bg-zinc-800 rounded-full overflow-hidden">
+        <div class="h-full w-full bg-gradient-to-r from-transparent via-zinc-400 to-transparent animate-shimmer"></div>
+      </div>
+    </div>
   </div>
 </div>
 {/if}
 
 <svelte:window on:keydown={handleKeys} on:scroll={handleScroll} />
 <div id="scroll-progress" class="fixed top-0 left-0 h-[2px] bg-[#FF6B35] z-[60] pointer-events-none" style="width:{scrollProgress}%"></div>
-{#if themeWipe}<div id="theme-wipe" class="fixed inset-0 z-[65] pointer-events-none" style="background:{themeWipeBg}"></div>{/if}
 <header id="site-header" class="sticky top-0 z-40 border-b border-zinc-800/60 bg-[#09090b]/60 backdrop-blur-xl">
   <nav class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
     <button on:click={()=> nav('home')} class="flex items-center gap-3">
