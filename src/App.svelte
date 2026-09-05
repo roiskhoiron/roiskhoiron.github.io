@@ -300,7 +300,7 @@
     </div>
   {:else if view==='about'}
     <div class="flex flex-col gap-10">
-      <!-- hero — Khoiron Rois (acuan anggastudio.dev/about) -->
+      <!-- hero — Khoiron Rois (acuan khoirlabs.dev/about) -->
       <div class="flex flex-col gap-4 max-w-3xl">
         <span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">Yogyakarta, Indonesia · rois.khoiron@gmail.com</span>
         <h1 class="fraunces text-[36px] sm:text-[44px] font-medium leading-[0.9] tracking-tight">Khoiron Rois.<br><span class="italic text-zinc-400">Software Engineer — Mobile, Backend & AI.</span></h1>
