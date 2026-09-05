@@ -1,2 +1,12 @@
 node_modules/
 .DS_Store
+.file-versions/
+.od-skills/
+RECON/
+NOTES.md
+README-SVELTE.md
+CLONE_AUDIT.md
+CLONE_REPORT.md
+index-vanilla.html
+*.artifact.json
+*.html.bak
