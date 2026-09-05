@@ -1,7 +1,7 @@
 # clone-final recon
 
 - URL: http://127.0.0.1:8151/index.html
-- Title: Home — anggastudio
+- Title: Home — khoirlabs
 - Lang: en
 - Viewports: 1440, 768, 390
 - Framework signals: none

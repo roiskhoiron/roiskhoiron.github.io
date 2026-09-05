@@ -1,7 +1,7 @@
 # clone-post recon
 
 - URL: http://127.0.0.1:8141/index.html#posts/cron-jobs-in-five-minutes
-- Title: Stop Running Things Manually | anggastudio
+- Title: Stop Running Things Manually | khoirlabs
 - Lang: en
 - Viewports: 1440, 768, 390
 - Framework signals: none

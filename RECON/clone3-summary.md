@@ -1,7 +1,7 @@
 # clone3 recon
 
 - URL: http://127.0.0.1:8145/index.html
-- Title: Home — anggastudio
+- Title: Home — khoirlabs
 - Lang: en
 - Viewports: 1440, 768, 390
 - Framework signals: none

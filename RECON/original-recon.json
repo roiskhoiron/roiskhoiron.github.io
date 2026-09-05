@@ -1,6 +1,6 @@
 {
   "label": "original",
-  "url": "https://anggastudio.dev/",
+  "url": "https://khoirlabs.dev/",
   "capturedAt": "2026-09-04T21:39:03.749Z",
   "console": {
     "errors": [],
@@ -11,19 +11,19 @@
     {
       "viewport": 1440,
       "recovered": false,
-      "url": "https://anggastudio.dev/",
+      "url": "https://khoirlabs.dev/",
       "readyState": "interactive"
     },
     {
       "viewport": 768,
       "recovered": false,
-      "url": "https://anggastudio.dev/",
+      "url": "https://khoirlabs.dev/",
       "readyState": "interactive"
     },
     {
       "viewport": 390,
       "recovered": false,
-      "url": "https://anggastudio.dev/",
+      "url": "https://khoirlabs.dev/",
       "readyState": "interactive"
     }
   ],
@@ -35,7 +35,7 @@
       },
       "screenshot": "screenshots/original-1440.png",
       "signals": {
-        "href": "https://anggastudio.dev/",
+        "href": "https://khoirlabs.dev/",
         "title": "Home",
         "lang": "en",
         "bodyTextChars": 3245,
@@ -87,36 +87,36 @@
           "lenis": false
         },
         "scripts": [
-          "https://anggastudio.dev/_next/static/chunks/0iy702g37r_1m.js",
-          "https://anggastudio.dev/_next/static/chunks/07iywn6a.h.y9.js",
-          "https://anggastudio.dev/_next/static/chunks/0hobgl84_yhip.js",
-          "https://anggastudio.dev/_next/static/chunks/0mu1qslb0zv9i.js",
-          "https://anggastudio.dev/_next/static/chunks/turbopack-0fxht80.6f7_2.js",
-          "https://anggastudio.dev/_next/static/chunks/12fonvijejpoh.js",
-          "https://anggastudio.dev/_next/static/chunks/0gjbjuw3upo.3.js",
-          "https://anggastudio.dev/_next/static/chunks/01xlw8hd842-c.js",
-          "https://anggastudio.dev/_next/static/chunks/0d3shmwh5_nmn.js",
-          "https://anggastudio.dev/_next/static/chunks/10n6nr-i8bf1..js",
-          "https://anggastudio.dev/_next/static/chunks/10l9sgcueb5ly.js",
-          "https://anggastudio.dev/_next/static/chunks/03~yq9q893hmn.js",
-          "https://anggastudio.dev/c3849f561a3f2c52/script.js",
-          "https://anggastudio.dev/5a8c3770552ddfdf/script.js",
-          "https://anggastudio.dev/_next/static/chunks/03s3hnpiqc99u.js",
-          "https://anggastudio.dev/_next/static/chunks/0kdcx21.dq-zq.js",
-          "https://anggastudio.dev/_next/static/chunks/10z-bbjty9szn.js",
-          "https://anggastudio.dev/_next/static/chunks/0ueoo1g7ra30x.js",
-          "https://anggastudio.dev/_next/static/chunks/0lcp6wwg3k3as.js",
-          "https://anggastudio.dev/_next/static/chunks/0_k5kz-r4593u.js"
+          "https://khoirlabs.dev/_next/static/chunks/0iy702g37r_1m.js",
+          "https://khoirlabs.dev/_next/static/chunks/07iywn6a.h.y9.js",
+          "https://khoirlabs.dev/_next/static/chunks/0hobgl84_yhip.js",
+          "https://khoirlabs.dev/_next/static/chunks/0mu1qslb0zv9i.js",
+          "https://khoirlabs.dev/_next/static/chunks/turbopack-0fxht80.6f7_2.js",
+          "https://khoirlabs.dev/_next/static/chunks/12fonvijejpoh.js",
+          "https://khoirlabs.dev/_next/static/chunks/0gjbjuw3upo.3.js",
+          "https://khoirlabs.dev/_next/static/chunks/01xlw8hd842-c.js",
+          "https://khoirlabs.dev/_next/static/chunks/0d3shmwh5_nmn.js",
+          "https://khoirlabs.dev/_next/static/chunks/10n6nr-i8bf1..js",
+          "https://khoirlabs.dev/_next/static/chunks/10l9sgcueb5ly.js",
+          "https://khoirlabs.dev/_next/static/chunks/03~yq9q893hmn.js",
+          "https://khoirlabs.dev/c3849f561a3f2c52/script.js",
+          "https://khoirlabs.dev/5a8c3770552ddfdf/script.js",
+          "https://khoirlabs.dev/_next/static/chunks/03s3hnpiqc99u.js",
+          "https://khoirlabs.dev/_next/static/chunks/0kdcx21.dq-zq.js",
+          "https://khoirlabs.dev/_next/static/chunks/10z-bbjty9szn.js",
+          "https://khoirlabs.dev/_next/static/chunks/0ueoo1g7ra30x.js",
+          "https://khoirlabs.dev/_next/static/chunks/0lcp6wwg3k3as.js",
+          "https://khoirlabs.dev/_next/static/chunks/0_k5kz-r4593u.js"
         ],
         "stylesheets": [
-          "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+          "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
         ],
         "sections": [
           {
             "tag": "header",
             "id": "",
             "className": "sticky top-0 z-40 border-b border-zinc-200/60 bg-white/60 backdrop-blur-md dark:border-zinc-800/60 dark:bg-[#09090b]/50",
-            "text": "anggastudioSoftware Engineer, Tech Speaker, and builder of modern digital products.HomeAboutDecksPostsBlog",
+            "text": "khoirlabsSoftware Engineer, Tech Speaker, and builder of modern digital products.HomeAboutDecksPostsBlog",
             "rect": {
               "x": 0,
               "y": 0,
@@ -136,7 +136,7 @@
             "tag": "nav",
             "id": "",
             "className": "mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 sm:py-5",
-            "text": "anggastudioSoftware Engineer, Tech Speaker, and builder of modern digital products.HomeAboutDecksPostsBlog",
+            "text": "khoirlabsSoftware Engineer, Tech Speaker, and builder of modern digital products.HomeAboutDecksPostsBlog",
             "rect": {
               "x": 73,
               "y": 0,
@@ -296,7 +296,7 @@
             "tag": "footer",
             "id": "",
             "className": "border-t border-zinc-200/80 bg-white/70 dark:border-zinc-800/80 dark:bg-[#09090b]/70",
-            "text": "anggastudioSoftware Engineer, Tech Speaker, and builder of modern digital products.Presentation LibraryInstagram PostsAbout",
+            "text": "khoirlabsSoftware Engineer, Tech Speaker, and builder of modern digital products.Presentation LibraryInstagram PostsAbout",
             "rect": {
               "x": 0,
               "y": 2568,
@@ -509,7 +509,7 @@
               "../media/fef07dbb0973bf53-s.12tyk43_3sh9u.woff2"
             ],
             "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/fef07dbb0973bf53-s.12tyk43_3sh9u.woff2\") format(\"woff2\"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist",
@@ -519,7 +519,7 @@
               "../media/8a480f0b521d4e75-s.0jzbimsg8vl84.woff2"
             ],
             "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/8a480f0b521d4e75-s.0jzbimsg8vl84.woff2\") format(\"woff2\"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist",
@@ -529,7 +529,7 @@
               "../media/53b9e256198e5412-s.0-wfv7uh4i7h9.woff2"
             ],
             "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/53b9e256198e5412-s.0-wfv7uh4i7h9.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist",
@@ -539,7 +539,7 @@
               "../media/7178b3e590c64307-s.0nx0ww8fni_q3.woff2"
             ],
             "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/7178b3e590c64307-s.0nx0ww8fni_q3.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist",
@@ -549,7 +549,7 @@
               "../media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2"
             ],
             "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Fallback",
@@ -557,7 +557,7 @@
             "style": "",
             "srcUrls": [],
             "cssText": "@font-face { font-family: \"Geist Fallback\"; src: local(\"Arial\"); ascent-override: 95.94%; descent-override: 28.16%; line-gap-override: 0%; size-adjust: 104.76%; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Mono",
@@ -567,7 +567,7 @@
               "../media/5ce348bf30bf5439-s.0zgw-jeven.3w.woff2"
             ],
             "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/5ce348bf30bf5439-s.0zgw-jeven.3w.woff2\") format(\"woff2\"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Mono",
@@ -577,7 +577,7 @@
               "../media/4fa387ec64143e14-s.0wkzw~je483f-.woff2"
             ],
             "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/4fa387ec64143e14-s.0wkzw~je483f-.woff2\") format(\"woff2\"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Mono",
@@ -587,7 +587,7 @@
               "../media/6306c77e7c8268e4-s.0rhz0arwfsn~5.woff2"
             ],
             "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/6306c77e7c8268e4-s.0rhz0arwfsn~5.woff2\") format(\"woff2\"); unicode-range: U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Mono",
@@ -597,7 +597,7 @@
               "../media/7d817b4c03b0c5f1-s.0l76wvqk9d84w.woff2"
             ],
             "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/7d817b4c03b0c5f1-s.0l76wvqk9d84w.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Mono",
@@ -607,7 +607,7 @@
               "../media/bbc41e54d2fcbd21-s.0k4k9394f2q-k.woff2"
             ],
             "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/bbc41e54d2fcbd21-s.0k4k9394f2q-k.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Mono",
@@ -617,7 +617,7 @@
               "../media/797e433ab948586e-s.p.08e28id.o-okb.woff2"
             ],
             "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/797e433ab948586e-s.p.08e28id.o-okb.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Mono Fallback",
@@ -625,7 +625,7 @@
             "style": "",
             "srcUrls": [],
             "cssText": "@font-face { font-family: \"Geist Mono Fallback\"; src: local(\"Arial\"); ascent-override: 74.67%; descent-override: 21.92%; line-gap-override: 0%; size-adjust: 134.59%; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -635,7 +635,7 @@
               "../media/50a3f1070da3c6cc-s.0xr8au8udm.h9.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"../media/50a3f1070da3c6cc-s.0xr8au8udm.h9.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -645,7 +645,7 @@
               "../media/b887d91685b8c137-s.0z~ry.rim0raw.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"../media/b887d91685b8c137-s.0z~ry.rim0raw.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -655,7 +655,7 @@
               "../media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"../media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -665,7 +665,7 @@
               "../media/50a3f1070da3c6cc-s.0xr8au8udm.h9.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"../media/50a3f1070da3c6cc-s.0xr8au8udm.h9.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -675,7 +675,7 @@
               "../media/b887d91685b8c137-s.0z~ry.rim0raw.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"../media/b887d91685b8c137-s.0z~ry.rim0raw.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -685,7 +685,7 @@
               "../media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"../media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -695,7 +695,7 @@
               "../media/50a3f1070da3c6cc-s.0xr8au8udm.h9.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"../media/50a3f1070da3c6cc-s.0xr8au8udm.h9.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -705,7 +705,7 @@
               "../media/b887d91685b8c137-s.0z~ry.rim0raw.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"../media/b887d91685b8c137-s.0z~ry.rim0raw.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -715,7 +715,7 @@
               "../media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"../media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -725,7 +725,7 @@
               "../media/1e219c03c996efbd-s.0vlx5hthn2t7i.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"../media/1e219c03c996efbd-s.0vlx5hthn2t7i.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -735,7 +735,7 @@
               "../media/b35b0dbffda7f2c4-s.0fu677rwbv-.g.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"../media/b35b0dbffda7f2c4-s.0fu677rwbv-.g.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -745,7 +745,7 @@
               "../media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"../media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -755,7 +755,7 @@
               "../media/1e219c03c996efbd-s.0vlx5hthn2t7i.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"../media/1e219c03c996efbd-s.0vlx5hthn2t7i.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -765,7 +765,7 @@
               "../media/b35b0dbffda7f2c4-s.0fu677rwbv-.g.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"../media/b35b0dbffda7f2c4-s.0fu677rwbv-.g.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -775,7 +775,7 @@
               "../media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"../media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -785,7 +785,7 @@
               "../media/1e219c03c996efbd-s.0vlx5hthn2t7i.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"../media/1e219c03c996efbd-s.0vlx5hthn2t7i.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -795,7 +795,7 @@
               "../media/b35b0dbffda7f2c4-s.0fu677rwbv-.g.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"../media/b35b0dbffda7f2c4-s.0fu677rwbv-.g.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -805,7 +805,7 @@
               "../media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"../media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces Fallback",
@@ -813,7 +813,7 @@
             "style": "",
             "srcUrls": [],
             "cssText": "@font-face { font-family: \"Fraunces Fallback\"; src: local(\"Times New Roman\"); ascent-override: 84.71%; descent-override: 22.09%; line-gap-override: 0%; size-adjust: 115.45%; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -823,7 +823,7 @@
               "../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -833,7 +833,7 @@
               "../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -843,7 +843,7 @@
               "../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -853,7 +853,7 @@
               "../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -863,7 +863,7 @@
               "../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -873,7 +873,7 @@
               "../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -883,7 +883,7 @@
               "../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -893,7 +893,7 @@
               "../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -903,7 +903,7 @@
               "../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -913,7 +913,7 @@
               "../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -923,7 +923,7 @@
               "../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -933,7 +933,7 @@
               "../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand Fallback",
@@ -941,7 +941,7 @@
             "style": "",
             "srcUrls": [],
             "cssText": "@font-face { font-family: \"Quicksand Fallback\"; src: local(\"Arial\"); ascent-override: 95.87%; descent-override: 23.97%; line-gap-override: 0%; size-adjust: 104.31%; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           }
         ],
         "resources": {
@@ -957,34 +957,34 @@
             "https://cdn.simpleicons.org/googleplay/FFFFFF",
             "https://cdn.simpleicons.org/github/FFFFFF",
             "https://cdn.simpleicons.org/appstore/FFFFFF",
-            "https://anggastudio.dev/favicons/favicon.ico",
+            "https://khoirlabs.dev/favicons/favicon.ico",
             "https://cdn.simpleicons.org/googleplay/18181B",
             "https://cdn.simpleicons.org/github/18181B",
             "https://cdn.simpleicons.org/appstore/18181B",
-            "https://anggastudio.dev/image/anggastudio-logo-white.png",
-            "https://anggastudio.dev/image/anggastudio-logo-black.png",
-            "https://anggastudio.dev/image/ig-anggastudio-white.png",
-            "https://anggastudio.dev/image/ig-anggastudio-black.png"
+            "https://khoirlabs.dev/image/khoirlabs-logo-white.png",
+            "https://khoirlabs.dev/image/khoirlabs-logo-black.png",
+            "https://khoirlabs.dev/image/ig-khoirlabs-white.png",
+            "https://khoirlabs.dev/image/ig-khoirlabs-black.png"
           ],
           "fonts": [
-            "https://anggastudio.dev/_next/static/media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2",
-            "https://anggastudio.dev/_next/static/media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2",
-            "https://anggastudio.dev/_next/static/media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2",
-            "https://anggastudio.dev/_next/static/media/797e433ab948586e-s.p.08e28id.o-okb.woff2",
-            "https://anggastudio.dev/_next/static/media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2"
+            "https://khoirlabs.dev/_next/static/media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2",
+            "https://khoirlabs.dev/_next/static/media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2",
+            "https://khoirlabs.dev/_next/static/media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2",
+            "https://khoirlabs.dev/_next/static/media/797e433ab948586e-s.p.08e28id.o-okb.woff2",
+            "https://khoirlabs.dev/_next/static/media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2"
           ],
           "media": []
         },
         "images": [
           {
-            "src": "https://anggastudio.dev/_next/image?url=%2Fimage%2Flogo-black.png&w=48&q=75",
+            "src": "https://khoirlabs.dev/_next/image?url=%2Fimage%2Flogo-black.png&w=48&q=75",
             "srcset": "/_next/image?url=%2Fimage%2Flogo-black.png&w=48&q=75 1x, /_next/image?url=%2Fimage%2Flogo-black.png&w=96&q=75 2x",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "https://anggastudio.dev/_next/image?url=%2Fimage%2Flogo-white.png&w=48&q=75",
+            "src": "https://khoirlabs.dev/_next/image?url=%2Fimage%2Flogo-white.png&w=48&q=75",
             "srcset": "/_next/image?url=%2Fimage%2Flogo-white.png&w=48&q=75 1x, /_next/image?url=%2Fimage%2Flogo-white.png&w=96&q=75 2x",
             "alt": "",
             "width": 48,
@@ -1047,9 +1047,9 @@
             "height": 150
           },
           {
-            "src": "https://anggastudio.dev/_next/image?url=%2Fimage%2Fangga-photo.webp&w=640&q=90",
+            "src": "https://khoirlabs.dev/_next/image?url=%2Fimage%2Fangga-photo.webp&w=640&q=90",
             "srcset": "/_next/image?url=%2Fimage%2Fangga-photo.webp&w=32&q=90 32w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=48&q=90 48w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=64&q=90 64w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=96&q=90 96w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=128&q=90 128w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=256&q=90 256w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=384&q=90 384w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=640&q=90 640w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=750&q=90 750w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=828&q=90 828w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=1080&q=90 1080w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=1200&q=90 1200w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=1920&q=90 1920w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=2048&q=90 2048w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=3840&q=90 3840w",
-            "alt": "Angga Pratama, mobile developer behind anggastudio",
+            "alt": "Angga Pratama, mobile developer behind khoirlabs",
             "width": 640,
             "height": 640
           },
@@ -1106,7 +1106,7 @@
       },
       "screenshot": "screenshots/original-768.png",
       "signals": {
-        "href": "https://anggastudio.dev/",
+        "href": "https://khoirlabs.dev/",
         "title": "Home",
         "lang": "en",
         "bodyTextChars": 1919,
@@ -1158,32 +1158,32 @@
           "lenis": false
         },
         "scripts": [
-          "https://anggastudio.dev/_next/static/chunks/0iy702g37r_1m.js",
-          "https://anggastudio.dev/_next/static/chunks/07iywn6a.h.y9.js",
-          "https://anggastudio.dev/_next/static/chunks/0hobgl84_yhip.js",
-          "https://anggastudio.dev/_next/static/chunks/0mu1qslb0zv9i.js",
-          "https://anggastudio.dev/_next/static/chunks/turbopack-0fxht80.6f7_2.js",
-          "https://anggastudio.dev/_next/static/chunks/12fonvijejpoh.js",
-          "https://anggastudio.dev/_next/static/chunks/0gjbjuw3upo.3.js",
-          "https://anggastudio.dev/_next/static/chunks/01xlw8hd842-c.js",
-          "https://anggastudio.dev/_next/static/chunks/0d3shmwh5_nmn.js",
-          "https://anggastudio.dev/_next/static/chunks/10n6nr-i8bf1..js",
-          "https://anggastudio.dev/_next/static/chunks/10l9sgcueb5ly.js",
-          "https://anggastudio.dev/_next/static/chunks/03~yq9q893hmn.js",
-          "https://anggastudio.dev/c3849f561a3f2c52/script.js",
-          "https://anggastudio.dev/5a8c3770552ddfdf/script.js",
-          "https://anggastudio.dev/_next/static/chunks/0lcp6wwg3k3as.js",
-          "https://anggastudio.dev/_next/static/chunks/0_k5kz-r4593u.js"
+          "https://khoirlabs.dev/_next/static/chunks/0iy702g37r_1m.js",
+          "https://khoirlabs.dev/_next/static/chunks/07iywn6a.h.y9.js",
+          "https://khoirlabs.dev/_next/static/chunks/0hobgl84_yhip.js",
+          "https://khoirlabs.dev/_next/static/chunks/0mu1qslb0zv9i.js",
+          "https://khoirlabs.dev/_next/static/chunks/turbopack-0fxht80.6f7_2.js",
+          "https://khoirlabs.dev/_next/static/chunks/12fonvijejpoh.js",
+          "https://khoirlabs.dev/_next/static/chunks/0gjbjuw3upo.3.js",
+          "https://khoirlabs.dev/_next/static/chunks/01xlw8hd842-c.js",
+          "https://khoirlabs.dev/_next/static/chunks/0d3shmwh5_nmn.js",
+          "https://khoirlabs.dev/_next/static/chunks/10n6nr-i8bf1..js",
+          "https://khoirlabs.dev/_next/static/chunks/10l9sgcueb5ly.js",
+          "https://khoirlabs.dev/_next/static/chunks/03~yq9q893hmn.js",
+          "https://khoirlabs.dev/c3849f561a3f2c52/script.js",
+          "https://khoirlabs.dev/5a8c3770552ddfdf/script.js",
+          "https://khoirlabs.dev/_next/static/chunks/0lcp6wwg3k3as.js",
+          "https://khoirlabs.dev/_next/static/chunks/0_k5kz-r4593u.js"
         ],
         "stylesheets": [
-          "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+          "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
         ],
         "sections": [
           {
             "tag": "header",
             "id": "",
             "className": "sticky top-0 z-40 border-b border-zinc-200/60 bg-white/60 backdrop-blur-md dark:border-zinc-800/60 dark:bg-[#09090b]/50",
-            "text": "anggastudioSoftware Engineer, Tech Speaker, and builder of modern digital products.HomeAboutDecksPostsBlog",
+            "text": "khoirlabsSoftware Engineer, Tech Speaker, and builder of modern digital products.HomeAboutDecksPostsBlog",
             "rect": {
               "x": 0,
               "y": 0,
@@ -1203,7 +1203,7 @@
             "tag": "nav",
             "id": "",
             "className": "mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 sm:py-5",
-            "text": "anggastudioSoftware Engineer, Tech Speaker, and builder of modern digital products.HomeAboutDecksPostsBlog",
+            "text": "khoirlabsSoftware Engineer, Tech Speaker, and builder of modern digital products.HomeAboutDecksPostsBlog",
             "rect": {
               "x": 0,
               "y": 0,
@@ -1363,7 +1363,7 @@
             "tag": "footer",
             "id": "",
             "className": "border-t border-zinc-200/80 bg-white/70 dark:border-zinc-800/80 dark:bg-[#09090b]/70",
-            "text": "anggastudioSoftware Engineer, Tech Speaker, and builder of modern digital products.Presentation LibraryInstagram PostsAbout",
+            "text": "khoirlabsSoftware Engineer, Tech Speaker, and builder of modern digital products.Presentation LibraryInstagram PostsAbout",
             "rect": {
               "x": 0,
               "y": 2803,
@@ -1576,7 +1576,7 @@
               "../media/fef07dbb0973bf53-s.12tyk43_3sh9u.woff2"
             ],
             "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/fef07dbb0973bf53-s.12tyk43_3sh9u.woff2\") format(\"woff2\"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist",
@@ -1586,7 +1586,7 @@
               "../media/8a480f0b521d4e75-s.0jzbimsg8vl84.woff2"
             ],
             "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/8a480f0b521d4e75-s.0jzbimsg8vl84.woff2\") format(\"woff2\"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist",
@@ -1596,7 +1596,7 @@
               "../media/53b9e256198e5412-s.0-wfv7uh4i7h9.woff2"
             ],
             "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/53b9e256198e5412-s.0-wfv7uh4i7h9.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist",
@@ -1606,7 +1606,7 @@
               "../media/7178b3e590c64307-s.0nx0ww8fni_q3.woff2"
             ],
             "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/7178b3e590c64307-s.0nx0ww8fni_q3.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist",
@@ -1616,7 +1616,7 @@
               "../media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2"
             ],
             "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Fallback",
@@ -1624,7 +1624,7 @@
             "style": "",
             "srcUrls": [],
             "cssText": "@font-face { font-family: \"Geist Fallback\"; src: local(\"Arial\"); ascent-override: 95.94%; descent-override: 28.16%; line-gap-override: 0%; size-adjust: 104.76%; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Mono",
@@ -1634,7 +1634,7 @@
               "../media/5ce348bf30bf5439-s.0zgw-jeven.3w.woff2"
             ],
             "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/5ce348bf30bf5439-s.0zgw-jeven.3w.woff2\") format(\"woff2\"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Mono",
@@ -1644,7 +1644,7 @@
               "../media/4fa387ec64143e14-s.0wkzw~je483f-.woff2"
             ],
             "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/4fa387ec64143e14-s.0wkzw~je483f-.woff2\") format(\"woff2\"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Mono",
@@ -1654,7 +1654,7 @@
               "../media/6306c77e7c8268e4-s.0rhz0arwfsn~5.woff2"
             ],
             "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/6306c77e7c8268e4-s.0rhz0arwfsn~5.woff2\") format(\"woff2\"); unicode-range: U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Mono",
@@ -1664,7 +1664,7 @@
               "../media/7d817b4c03b0c5f1-s.0l76wvqk9d84w.woff2"
             ],
             "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/7d817b4c03b0c5f1-s.0l76wvqk9d84w.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Mono",
@@ -1674,7 +1674,7 @@
               "../media/bbc41e54d2fcbd21-s.0k4k9394f2q-k.woff2"
             ],
             "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/bbc41e54d2fcbd21-s.0k4k9394f2q-k.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Mono",
@@ -1684,7 +1684,7 @@
               "../media/797e433ab948586e-s.p.08e28id.o-okb.woff2"
             ],
             "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/797e433ab948586e-s.p.08e28id.o-okb.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Mono Fallback",
@@ -1692,7 +1692,7 @@
             "style": "",
             "srcUrls": [],
             "cssText": "@font-face { font-family: \"Geist Mono Fallback\"; src: local(\"Arial\"); ascent-override: 74.67%; descent-override: 21.92%; line-gap-override: 0%; size-adjust: 134.59%; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -1702,7 +1702,7 @@
               "../media/50a3f1070da3c6cc-s.0xr8au8udm.h9.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"../media/50a3f1070da3c6cc-s.0xr8au8udm.h9.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -1712,7 +1712,7 @@
               "../media/b887d91685b8c137-s.0z~ry.rim0raw.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"../media/b887d91685b8c137-s.0z~ry.rim0raw.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -1722,7 +1722,7 @@
               "../media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"../media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -1732,7 +1732,7 @@
               "../media/50a3f1070da3c6cc-s.0xr8au8udm.h9.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"../media/50a3f1070da3c6cc-s.0xr8au8udm.h9.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -1742,7 +1742,7 @@
               "../media/b887d91685b8c137-s.0z~ry.rim0raw.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"../media/b887d91685b8c137-s.0z~ry.rim0raw.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -1752,7 +1752,7 @@
               "../media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"../media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -1762,7 +1762,7 @@
               "../media/50a3f1070da3c6cc-s.0xr8au8udm.h9.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"../media/50a3f1070da3c6cc-s.0xr8au8udm.h9.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -1772,7 +1772,7 @@
               "../media/b887d91685b8c137-s.0z~ry.rim0raw.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"../media/b887d91685b8c137-s.0z~ry.rim0raw.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -1782,7 +1782,7 @@
               "../media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"../media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -1792,7 +1792,7 @@
               "../media/1e219c03c996efbd-s.0vlx5hthn2t7i.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"../media/1e219c03c996efbd-s.0vlx5hthn2t7i.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -1802,7 +1802,7 @@
               "../media/b35b0dbffda7f2c4-s.0fu677rwbv-.g.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"../media/b35b0dbffda7f2c4-s.0fu677rwbv-.g.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -1812,7 +1812,7 @@
               "../media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"../media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -1822,7 +1822,7 @@
               "../media/1e219c03c996efbd-s.0vlx5hthn2t7i.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"../media/1e219c03c996efbd-s.0vlx5hthn2t7i.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -1832,7 +1832,7 @@
               "../media/b35b0dbffda7f2c4-s.0fu677rwbv-.g.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"../media/b35b0dbffda7f2c4-s.0fu677rwbv-.g.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -1842,7 +1842,7 @@
               "../media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"../media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -1852,7 +1852,7 @@
               "../media/1e219c03c996efbd-s.0vlx5hthn2t7i.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"../media/1e219c03c996efbd-s.0vlx5hthn2t7i.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -1862,7 +1862,7 @@
               "../media/b35b0dbffda7f2c4-s.0fu677rwbv-.g.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"../media/b35b0dbffda7f2c4-s.0fu677rwbv-.g.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -1872,7 +1872,7 @@
               "../media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"../media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces Fallback",
@@ -1880,7 +1880,7 @@
             "style": "",
             "srcUrls": [],
             "cssText": "@font-face { font-family: \"Fraunces Fallback\"; src: local(\"Times New Roman\"); ascent-override: 84.71%; descent-override: 22.09%; line-gap-override: 0%; size-adjust: 115.45%; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -1890,7 +1890,7 @@
               "../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -1900,7 +1900,7 @@
               "../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -1910,7 +1910,7 @@
               "../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -1920,7 +1920,7 @@
               "../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -1930,7 +1930,7 @@
               "../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -1940,7 +1940,7 @@
               "../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -1950,7 +1950,7 @@
               "../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -1960,7 +1960,7 @@
               "../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -1970,7 +1970,7 @@
               "../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -1980,7 +1980,7 @@
               "../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -1990,7 +1990,7 @@
               "../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -2000,7 +2000,7 @@
               "../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand Fallback",
@@ -2008,7 +2008,7 @@
             "style": "",
             "srcUrls": [],
             "cssText": "@font-face { font-family: \"Quicksand Fallback\"; src: local(\"Arial\"); ascent-override: 95.87%; descent-override: 23.97%; line-gap-override: 0%; size-adjust: 104.31%; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           }
         ],
         "resources": {
@@ -2024,30 +2024,30 @@
             "https://cdn.simpleicons.org/swift/F05138",
             "https://cdn.simpleicons.org/appstore/18181B",
             "https://cdn.simpleicons.org/github/18181B",
-            "https://anggastudio.dev/image/anggastudio-logo-white.png",
-            "https://anggastudio.dev/image/anggastudio-logo-black.png",
-            "https://anggastudio.dev/image/ig-anggastudio-white.png",
-            "https://anggastudio.dev/image/ig-anggastudio-black.png"
+            "https://khoirlabs.dev/image/khoirlabs-logo-white.png",
+            "https://khoirlabs.dev/image/khoirlabs-logo-black.png",
+            "https://khoirlabs.dev/image/ig-khoirlabs-white.png",
+            "https://khoirlabs.dev/image/ig-khoirlabs-black.png"
           ],
           "fonts": [
-            "https://anggastudio.dev/_next/static/media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2",
-            "https://anggastudio.dev/_next/static/media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2",
-            "https://anggastudio.dev/_next/static/media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2",
-            "https://anggastudio.dev/_next/static/media/797e433ab948586e-s.p.08e28id.o-okb.woff2",
-            "https://anggastudio.dev/_next/static/media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2"
+            "https://khoirlabs.dev/_next/static/media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2",
+            "https://khoirlabs.dev/_next/static/media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2",
+            "https://khoirlabs.dev/_next/static/media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2",
+            "https://khoirlabs.dev/_next/static/media/797e433ab948586e-s.p.08e28id.o-okb.woff2",
+            "https://khoirlabs.dev/_next/static/media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2"
           ],
           "media": []
         },
         "images": [
           {
-            "src": "https://anggastudio.dev/_next/image?url=%2Fimage%2Flogo-black.png&w=48&q=75",
+            "src": "https://khoirlabs.dev/_next/image?url=%2Fimage%2Flogo-black.png&w=48&q=75",
             "srcset": "/_next/image?url=%2Fimage%2Flogo-black.png&w=48&q=75 1x, /_next/image?url=%2Fimage%2Flogo-black.png&w=96&q=75 2x",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "https://anggastudio.dev/_next/image?url=%2Fimage%2Flogo-white.png&w=48&q=75",
+            "src": "https://khoirlabs.dev/_next/image?url=%2Fimage%2Flogo-white.png&w=48&q=75",
             "srcset": "/_next/image?url=%2Fimage%2Flogo-white.png&w=48&q=75 1x, /_next/image?url=%2Fimage%2Flogo-white.png&w=96&q=75 2x",
             "alt": "",
             "width": 48,
@@ -2110,9 +2110,9 @@
             "height": 150
           },
           {
-            "src": "https://anggastudio.dev/_next/image?url=%2Fimage%2Fangga-photo.webp&w=640&q=90",
+            "src": "https://khoirlabs.dev/_next/image?url=%2Fimage%2Fangga-photo.webp&w=640&q=90",
             "srcset": "/_next/image?url=%2Fimage%2Fangga-photo.webp&w=32&q=90 32w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=48&q=90 48w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=64&q=90 64w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=96&q=90 96w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=128&q=90 128w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=256&q=90 256w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=384&q=90 384w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=640&q=90 640w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=750&q=90 750w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=828&q=90 828w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=1080&q=90 1080w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=1200&q=90 1200w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=1920&q=90 1920w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=2048&q=90 2048w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=3840&q=90 3840w",
-            "alt": "Angga Pratama, mobile developer behind anggastudio",
+            "alt": "Angga Pratama, mobile developer behind khoirlabs",
             "width": 640,
             "height": 640
           },
@@ -2169,7 +2169,7 @@
       },
       "screenshot": "screenshots/original-390.png",
       "signals": {
-        "href": "https://anggastudio.dev/",
+        "href": "https://khoirlabs.dev/",
         "title": "Home",
         "lang": "en",
         "bodyTextChars": 1782,
@@ -2221,32 +2221,32 @@
           "lenis": false
         },
         "scripts": [
-          "https://anggastudio.dev/_next/static/chunks/0iy702g37r_1m.js",
-          "https://anggastudio.dev/_next/static/chunks/07iywn6a.h.y9.js",
-          "https://anggastudio.dev/_next/static/chunks/0hobgl84_yhip.js",
-          "https://anggastudio.dev/_next/static/chunks/0mu1qslb0zv9i.js",
-          "https://anggastudio.dev/_next/static/chunks/turbopack-0fxht80.6f7_2.js",
-          "https://anggastudio.dev/_next/static/chunks/12fonvijejpoh.js",
-          "https://anggastudio.dev/_next/static/chunks/0gjbjuw3upo.3.js",
-          "https://anggastudio.dev/_next/static/chunks/01xlw8hd842-c.js",
-          "https://anggastudio.dev/_next/static/chunks/0d3shmwh5_nmn.js",
-          "https://anggastudio.dev/_next/static/chunks/10n6nr-i8bf1..js",
-          "https://anggastudio.dev/_next/static/chunks/10l9sgcueb5ly.js",
-          "https://anggastudio.dev/_next/static/chunks/03~yq9q893hmn.js",
-          "https://anggastudio.dev/c3849f561a3f2c52/script.js",
-          "https://anggastudio.dev/5a8c3770552ddfdf/script.js",
-          "https://anggastudio.dev/_next/static/chunks/0lcp6wwg3k3as.js",
-          "https://anggastudio.dev/_next/static/chunks/0_k5kz-r4593u.js"
+          "https://khoirlabs.dev/_next/static/chunks/0iy702g37r_1m.js",
+          "https://khoirlabs.dev/_next/static/chunks/07iywn6a.h.y9.js",
+          "https://khoirlabs.dev/_next/static/chunks/0hobgl84_yhip.js",
+          "https://khoirlabs.dev/_next/static/chunks/0mu1qslb0zv9i.js",
+          "https://khoirlabs.dev/_next/static/chunks/turbopack-0fxht80.6f7_2.js",
+          "https://khoirlabs.dev/_next/static/chunks/12fonvijejpoh.js",
+          "https://khoirlabs.dev/_next/static/chunks/0gjbjuw3upo.3.js",
+          "https://khoirlabs.dev/_next/static/chunks/01xlw8hd842-c.js",
+          "https://khoirlabs.dev/_next/static/chunks/0d3shmwh5_nmn.js",
+          "https://khoirlabs.dev/_next/static/chunks/10n6nr-i8bf1..js",
+          "https://khoirlabs.dev/_next/static/chunks/10l9sgcueb5ly.js",
+          "https://khoirlabs.dev/_next/static/chunks/03~yq9q893hmn.js",
+          "https://khoirlabs.dev/c3849f561a3f2c52/script.js",
+          "https://khoirlabs.dev/5a8c3770552ddfdf/script.js",
+          "https://khoirlabs.dev/_next/static/chunks/0lcp6wwg3k3as.js",
+          "https://khoirlabs.dev/_next/static/chunks/0_k5kz-r4593u.js"
         ],
         "stylesheets": [
-          "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+          "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
         ],
         "sections": [
           {
             "tag": "header",
             "id": "",
             "className": "sticky top-0 z-40 border-b border-zinc-200/60 bg-white/60 backdrop-blur-md dark:border-zinc-800/60 dark:bg-[#09090b]/50",
-            "text": "anggastudioSoftware Engineer, Tech Speaker, and builder of modern digital products.HomeAboutDecksPostsBlog",
+            "text": "khoirlabsSoftware Engineer, Tech Speaker, and builder of modern digital products.HomeAboutDecksPostsBlog",
             "rect": {
               "x": 0,
               "y": 0,
@@ -2266,7 +2266,7 @@
             "tag": "nav",
             "id": "",
             "className": "mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 sm:py-5",
-            "text": "anggastudioSoftware Engineer, Tech Speaker, and builder of modern digital products.HomeAboutDecksPostsBlog",
+            "text": "khoirlabsSoftware Engineer, Tech Speaker, and builder of modern digital products.HomeAboutDecksPostsBlog",
             "rect": {
               "x": 0,
               "y": 0,
@@ -2426,7 +2426,7 @@
             "tag": "footer",
             "id": "",
             "className": "border-t border-zinc-200/80 bg-white/70 dark:border-zinc-800/80 dark:bg-[#09090b]/70",
-            "text": "anggastudioSoftware Engineer, Tech Speaker, and builder of modern digital products.Presentation LibraryInstagram PostsAbout",
+            "text": "khoirlabsSoftware Engineer, Tech Speaker, and builder of modern digital products.Presentation LibraryInstagram PostsAbout",
             "rect": {
               "x": 0,
               "y": 2938,
@@ -2639,7 +2639,7 @@
               "../media/fef07dbb0973bf53-s.12tyk43_3sh9u.woff2"
             ],
             "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/fef07dbb0973bf53-s.12tyk43_3sh9u.woff2\") format(\"woff2\"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist",
@@ -2649,7 +2649,7 @@
               "../media/8a480f0b521d4e75-s.0jzbimsg8vl84.woff2"
             ],
             "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/8a480f0b521d4e75-s.0jzbimsg8vl84.woff2\") format(\"woff2\"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist",
@@ -2659,7 +2659,7 @@
               "../media/53b9e256198e5412-s.0-wfv7uh4i7h9.woff2"
             ],
             "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/53b9e256198e5412-s.0-wfv7uh4i7h9.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist",
@@ -2669,7 +2669,7 @@
               "../media/7178b3e590c64307-s.0nx0ww8fni_q3.woff2"
             ],
             "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/7178b3e590c64307-s.0nx0ww8fni_q3.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist",
@@ -2679,7 +2679,7 @@
               "../media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2"
             ],
             "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Fallback",
@@ -2687,7 +2687,7 @@
             "style": "",
             "srcUrls": [],
             "cssText": "@font-face { font-family: \"Geist Fallback\"; src: local(\"Arial\"); ascent-override: 95.94%; descent-override: 28.16%; line-gap-override: 0%; size-adjust: 104.76%; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Mono",
@@ -2697,7 +2697,7 @@
               "../media/5ce348bf30bf5439-s.0zgw-jeven.3w.woff2"
             ],
             "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/5ce348bf30bf5439-s.0zgw-jeven.3w.woff2\") format(\"woff2\"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Mono",
@@ -2707,7 +2707,7 @@
               "../media/4fa387ec64143e14-s.0wkzw~je483f-.woff2"
             ],
             "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/4fa387ec64143e14-s.0wkzw~je483f-.woff2\") format(\"woff2\"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Mono",
@@ -2717,7 +2717,7 @@
               "../media/6306c77e7c8268e4-s.0rhz0arwfsn~5.woff2"
             ],
             "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/6306c77e7c8268e4-s.0rhz0arwfsn~5.woff2\") format(\"woff2\"); unicode-range: U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Mono",
@@ -2727,7 +2727,7 @@
               "../media/7d817b4c03b0c5f1-s.0l76wvqk9d84w.woff2"
             ],
             "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/7d817b4c03b0c5f1-s.0l76wvqk9d84w.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Mono",
@@ -2737,7 +2737,7 @@
               "../media/bbc41e54d2fcbd21-s.0k4k9394f2q-k.woff2"
             ],
             "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/bbc41e54d2fcbd21-s.0k4k9394f2q-k.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Mono",
@@ -2747,7 +2747,7 @@
               "../media/797e433ab948586e-s.p.08e28id.o-okb.woff2"
             ],
             "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"../media/797e433ab948586e-s.p.08e28id.o-okb.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Geist Mono Fallback",
@@ -2755,7 +2755,7 @@
             "style": "",
             "srcUrls": [],
             "cssText": "@font-face { font-family: \"Geist Mono Fallback\"; src: local(\"Arial\"); ascent-override: 74.67%; descent-override: 21.92%; line-gap-override: 0%; size-adjust: 134.59%; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -2765,7 +2765,7 @@
               "../media/50a3f1070da3c6cc-s.0xr8au8udm.h9.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"../media/50a3f1070da3c6cc-s.0xr8au8udm.h9.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -2775,7 +2775,7 @@
               "../media/b887d91685b8c137-s.0z~ry.rim0raw.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"../media/b887d91685b8c137-s.0z~ry.rim0raw.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -2785,7 +2785,7 @@
               "../media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"../media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -2795,7 +2795,7 @@
               "../media/50a3f1070da3c6cc-s.0xr8au8udm.h9.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"../media/50a3f1070da3c6cc-s.0xr8au8udm.h9.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -2805,7 +2805,7 @@
               "../media/b887d91685b8c137-s.0z~ry.rim0raw.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"../media/b887d91685b8c137-s.0z~ry.rim0raw.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -2815,7 +2815,7 @@
               "../media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"../media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -2825,7 +2825,7 @@
               "../media/50a3f1070da3c6cc-s.0xr8au8udm.h9.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"../media/50a3f1070da3c6cc-s.0xr8au8udm.h9.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -2835,7 +2835,7 @@
               "../media/b887d91685b8c137-s.0z~ry.rim0raw.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"../media/b887d91685b8c137-s.0z~ry.rim0raw.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -2845,7 +2845,7 @@
               "../media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"../media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -2855,7 +2855,7 @@
               "../media/1e219c03c996efbd-s.0vlx5hthn2t7i.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"../media/1e219c03c996efbd-s.0vlx5hthn2t7i.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -2865,7 +2865,7 @@
               "../media/b35b0dbffda7f2c4-s.0fu677rwbv-.g.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"../media/b35b0dbffda7f2c4-s.0fu677rwbv-.g.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -2875,7 +2875,7 @@
               "../media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"../media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -2885,7 +2885,7 @@
               "../media/1e219c03c996efbd-s.0vlx5hthn2t7i.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"../media/1e219c03c996efbd-s.0vlx5hthn2t7i.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -2895,7 +2895,7 @@
               "../media/b35b0dbffda7f2c4-s.0fu677rwbv-.g.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"../media/b35b0dbffda7f2c4-s.0fu677rwbv-.g.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -2905,7 +2905,7 @@
               "../media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"../media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -2915,7 +2915,7 @@
               "../media/1e219c03c996efbd-s.0vlx5hthn2t7i.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"../media/1e219c03c996efbd-s.0vlx5hthn2t7i.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -2925,7 +2925,7 @@
               "../media/b35b0dbffda7f2c4-s.0fu677rwbv-.g.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"../media/b35b0dbffda7f2c4-s.0fu677rwbv-.g.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces",
@@ -2935,7 +2935,7 @@
               "../media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2"
             ],
             "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"../media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Fraunces Fallback",
@@ -2943,7 +2943,7 @@
             "style": "",
             "srcUrls": [],
             "cssText": "@font-face { font-family: \"Fraunces Fallback\"; src: local(\"Times New Roman\"); ascent-override: 84.71%; descent-override: 22.09%; line-gap-override: 0%; size-adjust: 115.45%; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -2953,7 +2953,7 @@
               "../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -2963,7 +2963,7 @@
               "../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -2973,7 +2973,7 @@
               "../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -2983,7 +2983,7 @@
               "../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -2993,7 +2993,7 @@
               "../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -3003,7 +3003,7 @@
               "../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -3013,7 +3013,7 @@
               "../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -3023,7 +3023,7 @@
               "../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -3033,7 +3033,7 @@
               "../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -3043,7 +3043,7 @@
               "../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"../media/0781808e3393dbfb-s.14kfb.s8daf6i.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -3053,7 +3053,7 @@
               "../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"../media/fae90444fefcda8c-s.16tw9pkncu6rk.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand",
@@ -3063,7 +3063,7 @@
               "../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2"
             ],
             "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"../media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           },
           {
             "family": "Quicksand Fallback",
@@ -3071,7 +3071,7 @@
             "style": "",
             "srcUrls": [],
             "cssText": "@font-face { font-family: \"Quicksand Fallback\"; src: local(\"Arial\"); ascent-override: 95.87%; descent-override: 23.97%; line-gap-override: 0%; size-adjust: 104.31%; }",
-            "sheetHref": "https://anggastudio.dev/_next/static/chunks/03_07va1d-lzq.css"
+            "sheetHref": "https://khoirlabs.dev/_next/static/chunks/03_07va1d-lzq.css"
           }
         ],
         "resources": {
@@ -3082,30 +3082,30 @@
             "https://cdn.simpleicons.org/googleplay/18181B",
             "https://cdn.simpleicons.org/appstore/18181B",
             "https://cdn.simpleicons.org/github/18181B",
-            "https://anggastudio.dev/image/anggastudio-logo-white.png",
-            "https://anggastudio.dev/image/anggastudio-logo-black.png",
-            "https://anggastudio.dev/image/ig-anggastudio-white.png",
-            "https://anggastudio.dev/image/ig-anggastudio-black.png"
+            "https://khoirlabs.dev/image/khoirlabs-logo-white.png",
+            "https://khoirlabs.dev/image/khoirlabs-logo-black.png",
+            "https://khoirlabs.dev/image/ig-khoirlabs-white.png",
+            "https://khoirlabs.dev/image/ig-khoirlabs-black.png"
           ],
           "fonts": [
-            "https://anggastudio.dev/_next/static/media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2",
-            "https://anggastudio.dev/_next/static/media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2",
-            "https://anggastudio.dev/_next/static/media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2",
-            "https://anggastudio.dev/_next/static/media/797e433ab948586e-s.p.08e28id.o-okb.woff2",
-            "https://anggastudio.dev/_next/static/media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2"
+            "https://khoirlabs.dev/_next/static/media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2",
+            "https://khoirlabs.dev/_next/static/media/4a7551bcc3548e67-s.p.10.2v_am23hfz.woff2",
+            "https://khoirlabs.dev/_next/static/media/3c7c6164b2587822-s.p.0duriy8536ewt.woff2",
+            "https://khoirlabs.dev/_next/static/media/797e433ab948586e-s.p.08e28id.o-okb.woff2",
+            "https://khoirlabs.dev/_next/static/media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2"
           ],
           "media": []
         },
         "images": [
           {
-            "src": "https://anggastudio.dev/_next/image?url=%2Fimage%2Flogo-black.png&w=48&q=75",
+            "src": "https://khoirlabs.dev/_next/image?url=%2Fimage%2Flogo-black.png&w=48&q=75",
             "srcset": "/_next/image?url=%2Fimage%2Flogo-black.png&w=48&q=75 1x, /_next/image?url=%2Fimage%2Flogo-black.png&w=96&q=75 2x",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "https://anggastudio.dev/_next/image?url=%2Fimage%2Flogo-white.png&w=48&q=75",
+            "src": "https://khoirlabs.dev/_next/image?url=%2Fimage%2Flogo-white.png&w=48&q=75",
             "srcset": "/_next/image?url=%2Fimage%2Flogo-white.png&w=48&q=75 1x, /_next/image?url=%2Fimage%2Flogo-white.png&w=96&q=75 2x",
             "alt": "",
             "width": 48,
@@ -3168,9 +3168,9 @@
             "height": 26
           },
           {
-            "src": "https://anggastudio.dev/_next/image?url=%2Fimage%2Fangga-photo.webp&w=640&q=90",
+            "src": "https://khoirlabs.dev/_next/image?url=%2Fimage%2Fangga-photo.webp&w=640&q=90",
             "srcset": "/_next/image?url=%2Fimage%2Fangga-photo.webp&w=32&q=90 32w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=48&q=90 48w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=64&q=90 64w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=96&q=90 96w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=128&q=90 128w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=256&q=90 256w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=384&q=90 384w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=640&q=90 640w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=750&q=90 750w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=828&q=90 828w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=1080&q=90 1080w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=1200&q=90 1200w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=1920&q=90 1920w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=2048&q=90 2048w, /_next/image?url=%2Fimage%2Fangga-photo.webp&w=3840&q=90 3840w",
-            "alt": "Angga Pratama, mobile developer behind anggastudio",
+            "alt": "Angga Pratama, mobile developer behind khoirlabs",
             "width": 480,
             "height": 480
           },

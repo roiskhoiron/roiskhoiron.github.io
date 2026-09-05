@@ -1,6 +1,6 @@
 # original recon
 
-- URL: https://anggastudio.dev/
+- URL: https://khoirlabs.dev/
 - Title: Home
 - Lang: en
 - Viewports: 1440, 768, 390

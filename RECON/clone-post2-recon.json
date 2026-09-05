@@ -52,7 +52,7 @@
       "screenshot": "screenshots/clone-post2-1440.png",
       "signals": {
         "href": "http://127.0.0.1:8143/index.html#posts/cron-jobs-in-five-minutes",
-        "title": "Stop Running Things Manually | anggastudio",
+        "title": "Stop Running Things Manually | khoirlabs",
         "lang": "en",
         "bodyTextChars": 3367,
         "scrollHeight": 900,
@@ -305,7 +305,7 @@
             "tag": "header",
             "id": "site-header",
             "className": "sticky top-0 z-40 border-b border-zinc-800/60 bg-[#09090b]/60 backdrop-blur-xl",
-            "text": "anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Home About Decks Posts Blog",
+            "text": "khoirlabs Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Home About Decks Posts Blog",
             "rect": {
               "x": 0,
               "y": 0,
@@ -325,7 +325,7 @@
             "tag": "nav",
             "id": "",
             "className": "mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 sm:py-4",
-            "text": "anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog",
+            "text": "khoirlabs Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog",
             "rect": {
               "x": 0,
               "y": 0,
@@ -845,7 +845,7 @@
             "tag": "footer",
             "id": "",
             "className": "border-t border-zinc-800/80 bg-[#09090b]/70",
-            "text": "anggastudioSoftware Engineer, Tech Speaker, and builder of modern digital products. Decks, carousels and notes on reliable mobile systems.© 2026 anggastudioContact ExploreHomeAboutBlogLibraryPresentation LibraryInstagram PostsDecksConnectGi",
+            "text": "khoirlabsSoftware Engineer, Tech Speaker, and builder of modern digital products. Decks, carousels and notes on reliable mobile systems.© 2026 khoirlabsContact ExploreHomeAboutBlogLibraryPresentation LibraryInstagram PostsDecksConnectGi",
             "rect": {
               "x": 0,
               "y": 0,
@@ -2043,9 +2043,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/fef07dbb0973bf53-s.12tyk43_3sh9u-00da62189c.woff2"
+              "khoirlabs.dev/fef07dbb0973bf53-s.12tyk43_3sh9u-00da62189c.woff2"
             ],
-            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/fef07dbb0973bf53-s.12tyk43_3sh9u-00da62189c.woff2\") format(\"woff2\"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }",
+            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/fef07dbb0973bf53-s.12tyk43_3sh9u-00da62189c.woff2\") format(\"woff2\"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2053,9 +2053,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/8a480f0b521d4e75-s.0jzbimsg8vl84-2497bc8350.woff2"
+              "khoirlabs.dev/8a480f0b521d4e75-s.0jzbimsg8vl84-2497bc8350.woff2"
             ],
-            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/8a480f0b521d4e75-s.0jzbimsg8vl84-2497bc8350.woff2\") format(\"woff2\"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }",
+            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/8a480f0b521d4e75-s.0jzbimsg8vl84-2497bc8350.woff2\") format(\"woff2\"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2063,9 +2063,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/53b9e256198e5412-s.0-wfv7uh4i7h9-6cf0d305fb.woff2"
+              "khoirlabs.dev/53b9e256198e5412-s.0-wfv7uh4i7h9-6cf0d305fb.woff2"
             ],
-            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/53b9e256198e5412-s.0-wfv7uh4i7h9-6cf0d305fb.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/53b9e256198e5412-s.0-wfv7uh4i7h9-6cf0d305fb.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2073,9 +2073,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/7178b3e590c64307-s.0nx0ww8fni_q3-39beb59442.woff2"
+              "khoirlabs.dev/7178b3e590c64307-s.0nx0ww8fni_q3-39beb59442.woff2"
             ],
-            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/7178b3e590c64307-s.0nx0ww8fni_q3-39beb59442.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/7178b3e590c64307-s.0nx0ww8fni_q3-39beb59442.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2083,9 +2083,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/caa3a2e1cccd8315-s.p.09-u27dqhyhd6-5a245f9d10.woff2"
+              "khoirlabs.dev/caa3a2e1cccd8315-s.p.09-u27dqhyhd6-5a245f9d10.woff2"
             ],
-            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/caa3a2e1cccd8315-s.p.09-u27dqhyhd6-5a245f9d10.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/caa3a2e1cccd8315-s.p.09-u27dqhyhd6-5a245f9d10.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2101,9 +2101,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/5ce348bf30bf5439-s.0zgw-jeven.3w-862238bc14.woff2"
+              "khoirlabs.dev/5ce348bf30bf5439-s.0zgw-jeven.3w-862238bc14.woff2"
             ],
-            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/5ce348bf30bf5439-s.0zgw-jeven.3w-862238bc14.woff2\") format(\"woff2\"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }",
+            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/5ce348bf30bf5439-s.0zgw-jeven.3w-862238bc14.woff2\") format(\"woff2\"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2111,9 +2111,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/4fa387ec64143e14-s.0wkzw-je483f--d11da2bf4e.woff2"
+              "khoirlabs.dev/4fa387ec64143e14-s.0wkzw-je483f--d11da2bf4e.woff2"
             ],
-            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/4fa387ec64143e14-s.0wkzw-je483f--d11da2bf4e.woff2\") format(\"woff2\"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }",
+            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/4fa387ec64143e14-s.0wkzw-je483f--d11da2bf4e.woff2\") format(\"woff2\"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2121,9 +2121,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/6306c77e7c8268e4-s.0rhz0arwfsn-5-3b63799561.woff2"
+              "khoirlabs.dev/6306c77e7c8268e4-s.0rhz0arwfsn-5-3b63799561.woff2"
             ],
-            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/6306c77e7c8268e4-s.0rhz0arwfsn-5-3b63799561.woff2\") format(\"woff2\"); unicode-range: U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F; }",
+            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/6306c77e7c8268e4-s.0rhz0arwfsn-5-3b63799561.woff2\") format(\"woff2\"); unicode-range: U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2131,9 +2131,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/7d817b4c03b0c5f1-s.0l76wvqk9d84w-4ebaf705a2.woff2"
+              "khoirlabs.dev/7d817b4c03b0c5f1-s.0l76wvqk9d84w-4ebaf705a2.woff2"
             ],
-            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/7d817b4c03b0c5f1-s.0l76wvqk9d84w-4ebaf705a2.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/7d817b4c03b0c5f1-s.0l76wvqk9d84w-4ebaf705a2.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2141,9 +2141,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/bbc41e54d2fcbd21-s.0k4k9394f2q-k-4859551ce6.woff2"
+              "khoirlabs.dev/bbc41e54d2fcbd21-s.0k4k9394f2q-k-4859551ce6.woff2"
             ],
-            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/bbc41e54d2fcbd21-s.0k4k9394f2q-k-4859551ce6.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/bbc41e54d2fcbd21-s.0k4k9394f2q-k-4859551ce6.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2151,9 +2151,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/797e433ab948586e-s.p.08e28id.o-okb-aec76f6241.woff2"
+              "khoirlabs.dev/797e433ab948586e-s.p.08e28id.o-okb-aec76f6241.woff2"
             ],
-            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/797e433ab948586e-s.p.08e28id.o-okb-aec76f6241.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/797e433ab948586e-s.p.08e28id.o-okb-aec76f6241.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2169,9 +2169,9 @@
             "weight": "500",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2"
+              "khoirlabs.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2179,9 +2179,9 @@
             "weight": "500",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2"
+              "khoirlabs.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2189,9 +2189,9 @@
             "weight": "500",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2"
+              "khoirlabs.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2199,9 +2199,9 @@
             "weight": "600",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2"
+              "khoirlabs.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2209,9 +2209,9 @@
             "weight": "600",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2"
+              "khoirlabs.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2219,9 +2219,9 @@
             "weight": "600",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2"
+              "khoirlabs.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2229,9 +2229,9 @@
             "weight": "700",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2"
+              "khoirlabs.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2239,9 +2239,9 @@
             "weight": "700",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2"
+              "khoirlabs.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2249,9 +2249,9 @@
             "weight": "700",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2"
+              "khoirlabs.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2259,9 +2259,9 @@
             "weight": "500",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2"
+              "khoirlabs.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2269,9 +2269,9 @@
             "weight": "500",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2"
+              "khoirlabs.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2279,9 +2279,9 @@
             "weight": "500",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
+              "khoirlabs.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2289,9 +2289,9 @@
             "weight": "600",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2"
+              "khoirlabs.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2299,9 +2299,9 @@
             "weight": "600",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2"
+              "khoirlabs.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2309,9 +2309,9 @@
             "weight": "600",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
+              "khoirlabs.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2319,9 +2319,9 @@
             "weight": "700",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2"
+              "khoirlabs.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2329,9 +2329,9 @@
             "weight": "700",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2"
+              "khoirlabs.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2339,9 +2339,9 @@
             "weight": "700",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
+              "khoirlabs.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2357,9 +2357,9 @@
             "weight": "400",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
+              "khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2367,9 +2367,9 @@
             "weight": "400",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
+              "khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2377,9 +2377,9 @@
             "weight": "400",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
+              "khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2387,9 +2387,9 @@
             "weight": "500",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
+              "khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2397,9 +2397,9 @@
             "weight": "500",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
+              "khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2407,9 +2407,9 @@
             "weight": "500",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
+              "khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2417,9 +2417,9 @@
             "weight": "600",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
+              "khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2427,9 +2427,9 @@
             "weight": "600",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
+              "khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2437,9 +2437,9 @@
             "weight": "600",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
+              "khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2447,9 +2447,9 @@
             "weight": "700",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
+              "khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2457,9 +2457,9 @@
             "weight": "700",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
+              "khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2467,9 +2467,9 @@
             "weight": "700",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
+              "khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -2483,8 +2483,8 @@
         ],
         "resources": {
           "images": [
-            "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
-            "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-505b2fc41a.bin",
+            "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
+            "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-505b2fc41a.bin",
             "https://cdn.simpleicons.org/kotlin/7F52FF",
             "https://cdn.simpleicons.org/android/3DDC84",
             "https://cdn.simpleicons.org/flutter/02569B",
@@ -2492,23 +2492,23 @@
             "https://cdn.simpleicons.org/swift/F05138",
             "https://cdn.simpleicons.org/dart/0175C2",
             "https://cdn.simpleicons.org/firebase/DD2C00",
-            "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e5bb7de92.bin",
+            "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e5bb7de92.bin",
             "https://cdn.simpleicons.org/ionic/3880FF",
             "https://cdn.simpleicons.org/googleplay/000000",
             "https://cdn.simpleicons.org/github/FFFFFF",
             "https://cdn.simpleicons.org/appstore/FFFFFF",
-            "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
-            "http://127.0.0.1:8143/assets/images/anggastudio.dev/favicon-2af8ed36e3.ico"
+            "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
+            "http://127.0.0.1:8143/assets/images/khoirlabs.dev/favicon-2af8ed36e3.ico"
           ],
           "fonts": [
-            "http://127.0.0.1:8143/assets/fonts/anggastudio.dev/797e433ab948586e-s.p.08e28id.o-okb-aec76f6241.woff2",
-            "http://127.0.0.1:8143/assets/fonts/anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
+            "http://127.0.0.1:8143/assets/fonts/khoirlabs.dev/797e433ab948586e-s.p.08e28id.o-okb-aec76f6241.woff2",
+            "http://127.0.0.1:8143/assets/fonts/khoirlabs.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
           ],
           "media": []
         },
         "images": [
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "logo",
             "width": 48,
@@ -2571,7 +2571,7 @@
             "height": 150
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e5bb7de92.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e5bb7de92.bin",
             "srcset": "",
             "alt": "Angga",
             "width": 384,
@@ -2599,147 +2599,147 @@
             "height": 150
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
             "srcset": "",
             "alt": "",
             "width": 152,
             "height": 27
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
             "srcset": "",
             "alt": "",
             "width": 152,
             "height": 27
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
             "srcset": "",
             "alt": "",
             "width": 152,
             "height": 27
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
             "srcset": "",
             "alt": "",
             "width": 152,
             "height": 27
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
             "srcset": "",
             "alt": "",
             "width": 152,
             "height": 27
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
             "srcset": "",
             "alt": "",
             "width": 152,
             "height": 27
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
             "srcset": "",
             "alt": "",
             "width": 152,
             "height": 27
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
@@ -2757,7 +2757,7 @@
       "screenshot": "screenshots/clone-post2-768.png",
       "signals": {
         "href": "http://127.0.0.1:8143/index.html#posts/cron-jobs-in-five-minutes",
-        "title": "Stop Running Things Manually | anggastudio",
+        "title": "Stop Running Things Manually | khoirlabs",
         "lang": "en",
         "bodyTextChars": 3367,
         "scrollHeight": 900,
@@ -3010,7 +3010,7 @@
             "tag": "header",
             "id": "site-header",
             "className": "sticky top-0 z-40 border-b border-zinc-800/60 bg-[#09090b]/60 backdrop-blur-xl",
-            "text": "anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Home About Decks Posts Blog",
+            "text": "khoirlabs Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Home About Decks Posts Blog",
             "rect": {
               "x": 0,
               "y": 0,
@@ -3030,7 +3030,7 @@
             "tag": "nav",
             "id": "",
             "className": "mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 sm:py-4",
-            "text": "anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog",
+            "text": "khoirlabs Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog",
             "rect": {
               "x": 0,
               "y": 0,
@@ -3550,7 +3550,7 @@
             "tag": "footer",
             "id": "",
             "className": "border-t border-zinc-800/80 bg-[#09090b]/70",
-            "text": "anggastudioSoftware Engineer, Tech Speaker, and builder of modern digital products. Decks, carousels and notes on reliable mobile systems.© 2026 anggastudioContact ExploreHomeAboutBlogLibraryPresentation LibraryInstagram PostsDecksConnectGi",
+            "text": "khoirlabsSoftware Engineer, Tech Speaker, and builder of modern digital products. Decks, carousels and notes on reliable mobile systems.© 2026 khoirlabsContact ExploreHomeAboutBlogLibraryPresentation LibraryInstagram PostsDecksConnectGi",
             "rect": {
               "x": 0,
               "y": 0,
@@ -4748,9 +4748,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/fef07dbb0973bf53-s.12tyk43_3sh9u-00da62189c.woff2"
+              "khoirlabs.dev/fef07dbb0973bf53-s.12tyk43_3sh9u-00da62189c.woff2"
             ],
-            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/fef07dbb0973bf53-s.12tyk43_3sh9u-00da62189c.woff2\") format(\"woff2\"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }",
+            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/fef07dbb0973bf53-s.12tyk43_3sh9u-00da62189c.woff2\") format(\"woff2\"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4758,9 +4758,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/8a480f0b521d4e75-s.0jzbimsg8vl84-2497bc8350.woff2"
+              "khoirlabs.dev/8a480f0b521d4e75-s.0jzbimsg8vl84-2497bc8350.woff2"
             ],
-            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/8a480f0b521d4e75-s.0jzbimsg8vl84-2497bc8350.woff2\") format(\"woff2\"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }",
+            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/8a480f0b521d4e75-s.0jzbimsg8vl84-2497bc8350.woff2\") format(\"woff2\"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4768,9 +4768,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/53b9e256198e5412-s.0-wfv7uh4i7h9-6cf0d305fb.woff2"
+              "khoirlabs.dev/53b9e256198e5412-s.0-wfv7uh4i7h9-6cf0d305fb.woff2"
             ],
-            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/53b9e256198e5412-s.0-wfv7uh4i7h9-6cf0d305fb.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/53b9e256198e5412-s.0-wfv7uh4i7h9-6cf0d305fb.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4778,9 +4778,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/7178b3e590c64307-s.0nx0ww8fni_q3-39beb59442.woff2"
+              "khoirlabs.dev/7178b3e590c64307-s.0nx0ww8fni_q3-39beb59442.woff2"
             ],
-            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/7178b3e590c64307-s.0nx0ww8fni_q3-39beb59442.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/7178b3e590c64307-s.0nx0ww8fni_q3-39beb59442.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4788,9 +4788,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/caa3a2e1cccd8315-s.p.09-u27dqhyhd6-5a245f9d10.woff2"
+              "khoirlabs.dev/caa3a2e1cccd8315-s.p.09-u27dqhyhd6-5a245f9d10.woff2"
             ],
-            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/caa3a2e1cccd8315-s.p.09-u27dqhyhd6-5a245f9d10.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/caa3a2e1cccd8315-s.p.09-u27dqhyhd6-5a245f9d10.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4806,9 +4806,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/5ce348bf30bf5439-s.0zgw-jeven.3w-862238bc14.woff2"
+              "khoirlabs.dev/5ce348bf30bf5439-s.0zgw-jeven.3w-862238bc14.woff2"
             ],
-            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/5ce348bf30bf5439-s.0zgw-jeven.3w-862238bc14.woff2\") format(\"woff2\"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }",
+            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/5ce348bf30bf5439-s.0zgw-jeven.3w-862238bc14.woff2\") format(\"woff2\"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4816,9 +4816,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/4fa387ec64143e14-s.0wkzw-je483f--d11da2bf4e.woff2"
+              "khoirlabs.dev/4fa387ec64143e14-s.0wkzw-je483f--d11da2bf4e.woff2"
             ],
-            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/4fa387ec64143e14-s.0wkzw-je483f--d11da2bf4e.woff2\") format(\"woff2\"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }",
+            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/4fa387ec64143e14-s.0wkzw-je483f--d11da2bf4e.woff2\") format(\"woff2\"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4826,9 +4826,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/6306c77e7c8268e4-s.0rhz0arwfsn-5-3b63799561.woff2"
+              "khoirlabs.dev/6306c77e7c8268e4-s.0rhz0arwfsn-5-3b63799561.woff2"
             ],
-            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/6306c77e7c8268e4-s.0rhz0arwfsn-5-3b63799561.woff2\") format(\"woff2\"); unicode-range: U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F; }",
+            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/6306c77e7c8268e4-s.0rhz0arwfsn-5-3b63799561.woff2\") format(\"woff2\"); unicode-range: U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4836,9 +4836,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/7d817b4c03b0c5f1-s.0l76wvqk9d84w-4ebaf705a2.woff2"
+              "khoirlabs.dev/7d817b4c03b0c5f1-s.0l76wvqk9d84w-4ebaf705a2.woff2"
             ],
-            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/7d817b4c03b0c5f1-s.0l76wvqk9d84w-4ebaf705a2.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/7d817b4c03b0c5f1-s.0l76wvqk9d84w-4ebaf705a2.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4846,9 +4846,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/bbc41e54d2fcbd21-s.0k4k9394f2q-k-4859551ce6.woff2"
+              "khoirlabs.dev/bbc41e54d2fcbd21-s.0k4k9394f2q-k-4859551ce6.woff2"
             ],
-            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/bbc41e54d2fcbd21-s.0k4k9394f2q-k-4859551ce6.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/bbc41e54d2fcbd21-s.0k4k9394f2q-k-4859551ce6.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4856,9 +4856,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/797e433ab948586e-s.p.08e28id.o-okb-aec76f6241.woff2"
+              "khoirlabs.dev/797e433ab948586e-s.p.08e28id.o-okb-aec76f6241.woff2"
             ],
-            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/797e433ab948586e-s.p.08e28id.o-okb-aec76f6241.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/797e433ab948586e-s.p.08e28id.o-okb-aec76f6241.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4874,9 +4874,9 @@
             "weight": "500",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2"
+              "khoirlabs.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4884,9 +4884,9 @@
             "weight": "500",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2"
+              "khoirlabs.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4894,9 +4894,9 @@
             "weight": "500",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2"
+              "khoirlabs.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4904,9 +4904,9 @@
             "weight": "600",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2"
+              "khoirlabs.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4914,9 +4914,9 @@
             "weight": "600",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2"
+              "khoirlabs.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4924,9 +4924,9 @@
             "weight": "600",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2"
+              "khoirlabs.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4934,9 +4934,9 @@
             "weight": "700",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2"
+              "khoirlabs.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4944,9 +4944,9 @@
             "weight": "700",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2"
+              "khoirlabs.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4954,9 +4954,9 @@
             "weight": "700",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2"
+              "khoirlabs.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4964,9 +4964,9 @@
             "weight": "500",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2"
+              "khoirlabs.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4974,9 +4974,9 @@
             "weight": "500",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2"
+              "khoirlabs.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4984,9 +4984,9 @@
             "weight": "500",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
+              "khoirlabs.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -4994,9 +4994,9 @@
             "weight": "600",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2"
+              "khoirlabs.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -5004,9 +5004,9 @@
             "weight": "600",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2"
+              "khoirlabs.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -5014,9 +5014,9 @@
             "weight": "600",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
+              "khoirlabs.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -5024,9 +5024,9 @@
             "weight": "700",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2"
+              "khoirlabs.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -5034,9 +5034,9 @@
             "weight": "700",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2"
+              "khoirlabs.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -5044,9 +5044,9 @@
             "weight": "700",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
+              "khoirlabs.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -5062,9 +5062,9 @@
             "weight": "400",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
+              "khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -5072,9 +5072,9 @@
             "weight": "400",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
+              "khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -5082,9 +5082,9 @@
             "weight": "400",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
+              "khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -5092,9 +5092,9 @@
             "weight": "500",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
+              "khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -5102,9 +5102,9 @@
             "weight": "500",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
+              "khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -5112,9 +5112,9 @@
             "weight": "500",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
+              "khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -5122,9 +5122,9 @@
             "weight": "600",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
+              "khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -5132,9 +5132,9 @@
             "weight": "600",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
+              "khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -5142,9 +5142,9 @@
             "weight": "600",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
+              "khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -5152,9 +5152,9 @@
             "weight": "700",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
+              "khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -5162,9 +5162,9 @@
             "weight": "700",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
+              "khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -5172,9 +5172,9 @@
             "weight": "700",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
+              "khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -5188,8 +5188,8 @@
         ],
         "resources": {
           "images": [
-            "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-505b2fc41a.bin",
-            "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-505b2fc41a.bin",
+            "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "https://cdn.simpleicons.org/android/3DDC84",
             "https://cdn.simpleicons.org/kotlin/7F52FF",
             "https://cdn.simpleicons.org/flutter/02569B",
@@ -5199,20 +5199,20 @@
             "https://cdn.simpleicons.org/swift/F05138",
             "https://cdn.simpleicons.org/dart/0175C2",
             "https://cdn.simpleicons.org/googleplay/000000",
-            "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e5bb7de92.bin",
+            "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e5bb7de92.bin",
             "https://cdn.simpleicons.org/appstore/FFFFFF",
             "https://cdn.simpleicons.org/github/FFFFFF",
-            "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png"
+            "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png"
           ],
           "fonts": [
-            "http://127.0.0.1:8143/assets/fonts/anggastudio.dev/797e433ab948586e-s.p.08e28id.o-okb-aec76f6241.woff2",
-            "http://127.0.0.1:8143/assets/fonts/anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
+            "http://127.0.0.1:8143/assets/fonts/khoirlabs.dev/797e433ab948586e-s.p.08e28id.o-okb-aec76f6241.woff2",
+            "http://127.0.0.1:8143/assets/fonts/khoirlabs.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
           ],
           "media": []
         },
         "images": [
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "logo",
             "width": 48,
@@ -5275,7 +5275,7 @@
             "height": 150
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e5bb7de92.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e5bb7de92.bin",
             "srcset": "",
             "alt": "Angga",
             "width": 384,
@@ -5303,147 +5303,147 @@
             "height": 150
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
             "srcset": "",
             "alt": "",
             "width": 152,
             "height": 27
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
             "srcset": "",
             "alt": "",
             "width": 152,
             "height": 27
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
             "srcset": "",
             "alt": "",
             "width": 152,
             "height": 27
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
             "srcset": "",
             "alt": "",
             "width": 152,
             "height": 27
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
             "srcset": "",
             "alt": "",
             "width": 152,
             "height": 27
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
             "srcset": "",
             "alt": "",
             "width": 152,
             "height": 27
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
             "srcset": "",
             "alt": "",
             "width": 152,
             "height": 27
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
@@ -5461,7 +5461,7 @@
       "screenshot": "screenshots/clone-post2-390.png",
       "signals": {
         "href": "http://127.0.0.1:8143/index.html#posts/cron-jobs-in-five-minutes",
-        "title": "Stop Running Things Manually | anggastudio",
+        "title": "Stop Running Things Manually | khoirlabs",
         "lang": "en",
         "bodyTextChars": 3277,
         "scrollHeight": 900,
@@ -5714,7 +5714,7 @@
             "tag": "header",
             "id": "site-header",
             "className": "sticky top-0 z-40 border-b border-zinc-800/60 bg-[#09090b]/60 backdrop-blur-xl",
-            "text": "anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Home About Decks Posts Blog",
+            "text": "khoirlabs Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog Home About Decks Posts Blog",
             "rect": {
               "x": 0,
               "y": 0,
@@ -5734,7 +5734,7 @@
             "tag": "nav",
             "id": "",
             "className": "mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 sm:py-4",
-            "text": "anggastudio Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog",
+            "text": "khoirlabs Software Engineer, Tech Speaker, and builder of modern digital products. Home About Decks Posts Blog",
             "rect": {
               "x": 0,
               "y": 0,
@@ -6254,7 +6254,7 @@
             "tag": "footer",
             "id": "",
             "className": "border-t border-zinc-800/80 bg-[#09090b]/70",
-            "text": "anggastudioSoftware Engineer, Tech Speaker, and builder of modern digital products. Decks, carousels and notes on reliable mobile systems.© 2026 anggastudioContact ExploreHomeAboutBlogLibraryPresentation LibraryInstagram PostsDecksConnectGi",
+            "text": "khoirlabsSoftware Engineer, Tech Speaker, and builder of modern digital products. Decks, carousels and notes on reliable mobile systems.© 2026 khoirlabsContact ExploreHomeAboutBlogLibraryPresentation LibraryInstagram PostsDecksConnectGi",
             "rect": {
               "x": 0,
               "y": 0,
@@ -7452,9 +7452,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/fef07dbb0973bf53-s.12tyk43_3sh9u-00da62189c.woff2"
+              "khoirlabs.dev/fef07dbb0973bf53-s.12tyk43_3sh9u-00da62189c.woff2"
             ],
-            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/fef07dbb0973bf53-s.12tyk43_3sh9u-00da62189c.woff2\") format(\"woff2\"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }",
+            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/fef07dbb0973bf53-s.12tyk43_3sh9u-00da62189c.woff2\") format(\"woff2\"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7462,9 +7462,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/8a480f0b521d4e75-s.0jzbimsg8vl84-2497bc8350.woff2"
+              "khoirlabs.dev/8a480f0b521d4e75-s.0jzbimsg8vl84-2497bc8350.woff2"
             ],
-            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/8a480f0b521d4e75-s.0jzbimsg8vl84-2497bc8350.woff2\") format(\"woff2\"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }",
+            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/8a480f0b521d4e75-s.0jzbimsg8vl84-2497bc8350.woff2\") format(\"woff2\"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7472,9 +7472,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/53b9e256198e5412-s.0-wfv7uh4i7h9-6cf0d305fb.woff2"
+              "khoirlabs.dev/53b9e256198e5412-s.0-wfv7uh4i7h9-6cf0d305fb.woff2"
             ],
-            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/53b9e256198e5412-s.0-wfv7uh4i7h9-6cf0d305fb.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/53b9e256198e5412-s.0-wfv7uh4i7h9-6cf0d305fb.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7482,9 +7482,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/7178b3e590c64307-s.0nx0ww8fni_q3-39beb59442.woff2"
+              "khoirlabs.dev/7178b3e590c64307-s.0nx0ww8fni_q3-39beb59442.woff2"
             ],
-            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/7178b3e590c64307-s.0nx0ww8fni_q3-39beb59442.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/7178b3e590c64307-s.0nx0ww8fni_q3-39beb59442.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7492,9 +7492,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/caa3a2e1cccd8315-s.p.09-u27dqhyhd6-5a245f9d10.woff2"
+              "khoirlabs.dev/caa3a2e1cccd8315-s.p.09-u27dqhyhd6-5a245f9d10.woff2"
             ],
-            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/caa3a2e1cccd8315-s.p.09-u27dqhyhd6-5a245f9d10.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Geist; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/caa3a2e1cccd8315-s.p.09-u27dqhyhd6-5a245f9d10.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7510,9 +7510,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/5ce348bf30bf5439-s.0zgw-jeven.3w-862238bc14.woff2"
+              "khoirlabs.dev/5ce348bf30bf5439-s.0zgw-jeven.3w-862238bc14.woff2"
             ],
-            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/5ce348bf30bf5439-s.0zgw-jeven.3w-862238bc14.woff2\") format(\"woff2\"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }",
+            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/5ce348bf30bf5439-s.0zgw-jeven.3w-862238bc14.woff2\") format(\"woff2\"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7520,9 +7520,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/4fa387ec64143e14-s.0wkzw-je483f--d11da2bf4e.woff2"
+              "khoirlabs.dev/4fa387ec64143e14-s.0wkzw-je483f--d11da2bf4e.woff2"
             ],
-            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/4fa387ec64143e14-s.0wkzw-je483f--d11da2bf4e.woff2\") format(\"woff2\"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }",
+            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/4fa387ec64143e14-s.0wkzw-je483f--d11da2bf4e.woff2\") format(\"woff2\"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7530,9 +7530,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/6306c77e7c8268e4-s.0rhz0arwfsn-5-3b63799561.woff2"
+              "khoirlabs.dev/6306c77e7c8268e4-s.0rhz0arwfsn-5-3b63799561.woff2"
             ],
-            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/6306c77e7c8268e4-s.0rhz0arwfsn-5-3b63799561.woff2\") format(\"woff2\"); unicode-range: U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F; }",
+            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/6306c77e7c8268e4-s.0rhz0arwfsn-5-3b63799561.woff2\") format(\"woff2\"); unicode-range: U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7540,9 +7540,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/7d817b4c03b0c5f1-s.0l76wvqk9d84w-4ebaf705a2.woff2"
+              "khoirlabs.dev/7d817b4c03b0c5f1-s.0l76wvqk9d84w-4ebaf705a2.woff2"
             ],
-            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/7d817b4c03b0c5f1-s.0l76wvqk9d84w-4ebaf705a2.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/7d817b4c03b0c5f1-s.0l76wvqk9d84w-4ebaf705a2.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7550,9 +7550,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/bbc41e54d2fcbd21-s.0k4k9394f2q-k-4859551ce6.woff2"
+              "khoirlabs.dev/bbc41e54d2fcbd21-s.0k4k9394f2q-k-4859551ce6.woff2"
             ],
-            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/bbc41e54d2fcbd21-s.0k4k9394f2q-k-4859551ce6.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/bbc41e54d2fcbd21-s.0k4k9394f2q-k-4859551ce6.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7560,9 +7560,9 @@
             "weight": "100 900",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/797e433ab948586e-s.p.08e28id.o-okb-aec76f6241.woff2"
+              "khoirlabs.dev/797e433ab948586e-s.p.08e28id.o-okb-aec76f6241.woff2"
             ],
-            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"anggastudio.dev/797e433ab948586e-s.p.08e28id.o-okb-aec76f6241.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: \"Geist Mono\"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(\"khoirlabs.dev/797e433ab948586e-s.p.08e28id.o-okb-aec76f6241.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7578,9 +7578,9 @@
             "weight": "500",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2"
+              "khoirlabs.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7588,9 +7588,9 @@
             "weight": "500",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2"
+              "khoirlabs.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7598,9 +7598,9 @@
             "weight": "500",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2"
+              "khoirlabs.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7608,9 +7608,9 @@
             "weight": "600",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2"
+              "khoirlabs.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7618,9 +7618,9 @@
             "weight": "600",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2"
+              "khoirlabs.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7628,9 +7628,9 @@
             "weight": "600",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2"
+              "khoirlabs.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7638,9 +7638,9 @@
             "weight": "700",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2"
+              "khoirlabs.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/50a3f1070da3c6cc-s.0xr8au8udm.h9-5539120093.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7648,9 +7648,9 @@
             "weight": "700",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2"
+              "khoirlabs.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/b887d91685b8c137-s.0z-ry.rim0raw-555056c56f.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7658,9 +7658,9 @@
             "weight": "700",
             "style": "italic",
             "srcUrls": [
-              "anggastudio.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2"
+              "khoirlabs.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: italic; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/3c7c6164b2587822-s.p.0duriy8536ewt-e221e301f6.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7668,9 +7668,9 @@
             "weight": "500",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2"
+              "khoirlabs.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7678,9 +7678,9 @@
             "weight": "500",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2"
+              "khoirlabs.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7688,9 +7688,9 @@
             "weight": "500",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
+              "khoirlabs.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7698,9 +7698,9 @@
             "weight": "600",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2"
+              "khoirlabs.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7708,9 +7708,9 @@
             "weight": "600",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2"
+              "khoirlabs.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7718,9 +7718,9 @@
             "weight": "600",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
+              "khoirlabs.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7728,9 +7728,9 @@
             "weight": "700",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2"
+              "khoirlabs.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/1e219c03c996efbd-s.0vlx5hthn2t7i-781196b0ad.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7738,9 +7738,9 @@
             "weight": "700",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2"
+              "khoirlabs.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/b35b0dbffda7f2c4-s.0fu677rwbv-.g-2ef64c03fb.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7748,9 +7748,9 @@
             "weight": "700",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
+              "khoirlabs.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
             ],
-            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Fraunces; font-style: normal; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7766,9 +7766,9 @@
             "weight": "400",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
+              "khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7776,9 +7776,9 @@
             "weight": "400",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
+              "khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7786,9 +7786,9 @@
             "weight": "400",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
+              "khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 400; font-display: swap; src: url(\"khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7796,9 +7796,9 @@
             "weight": "500",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
+              "khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7806,9 +7806,9 @@
             "weight": "500",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
+              "khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7816,9 +7816,9 @@
             "weight": "500",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
+              "khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 500; font-display: swap; src: url(\"khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7826,9 +7826,9 @@
             "weight": "600",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
+              "khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7836,9 +7836,9 @@
             "weight": "600",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
+              "khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7846,9 +7846,9 @@
             "weight": "600",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
+              "khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 600; font-display: swap; src: url(\"khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7856,9 +7856,9 @@
             "weight": "700",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
+              "khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/0781808e3393dbfb-s.14kfb.s8daf6i-ef194dc733.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7866,9 +7866,9 @@
             "weight": "700",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
+              "khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/fae90444fefcda8c-s.16tw9pkncu6rk-bc35834966.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7876,9 +7876,9 @@
             "weight": "700",
             "style": "normal",
             "srcUrls": [
-              "anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
+              "khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2"
             ],
-            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"anggastudio.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
+            "cssText": "@font-face { font-family: Quicksand; font-style: normal; font-weight: 700; font-display: swap; src: url(\"khoirlabs.dev/4a7551bcc3548e67-s.p.10.2v_am23hfz-49da2411a8.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }",
             "sheetHref": "http://127.0.0.1:8143/assets/fonts/fonts.css"
           },
           {
@@ -7892,31 +7892,31 @@
         ],
         "resources": {
           "images": [
-            "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-505b2fc41a.bin",
-            "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-505b2fc41a.bin",
+            "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "https://cdn.simpleicons.org/android/3DDC84",
             "https://cdn.simpleicons.org/flutter/02569B",
             "https://cdn.simpleicons.org/kotlin/7F52FF",
             "https://cdn.simpleicons.org/react/61DAFB",
             "https://cdn.simpleicons.org/firebase/DD2C00",
             "https://cdn.simpleicons.org/ionic/3880FF",
-            "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e5bb7de92.bin",
+            "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e5bb7de92.bin",
             "https://cdn.simpleicons.org/googleplay/000000",
             "https://cdn.simpleicons.org/appstore/FFFFFF",
             "https://cdn.simpleicons.org/dart/0175C2",
             "https://cdn.simpleicons.org/swift/F05138",
             "https://cdn.simpleicons.org/github/FFFFFF",
-            "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png"
+            "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png"
           ],
           "fonts": [
-            "http://127.0.0.1:8143/assets/fonts/anggastudio.dev/797e433ab948586e-s.p.08e28id.o-okb-aec76f6241.woff2",
-            "http://127.0.0.1:8143/assets/fonts/anggastudio.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
+            "http://127.0.0.1:8143/assets/fonts/khoirlabs.dev/797e433ab948586e-s.p.08e28id.o-okb-aec76f6241.woff2",
+            "http://127.0.0.1:8143/assets/fonts/khoirlabs.dev/03bda585a99c6450-s.p.0zzh68k1-whtc-0740b119af.woff2"
           ],
           "media": []
         },
         "images": [
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "logo",
             "width": 48,
@@ -7979,7 +7979,7 @@
             "height": 150
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e5bb7de92.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e5bb7de92.bin",
             "srcset": "",
             "alt": "Angga",
             "width": 384,
@@ -8007,147 +8007,147 @@
             "height": 150
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
             "srcset": "",
             "alt": "",
             "width": 152,
             "height": 27
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
             "srcset": "",
             "alt": "",
             "width": 152,
             "height": 27
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
             "srcset": "",
             "alt": "",
             "width": 152,
             "height": 27
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
             "srcset": "",
             "alt": "",
             "width": 152,
             "height": 27
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
             "srcset": "",
             "alt": "",
             "width": 152,
             "height": 27
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
             "srcset": "",
             "alt": "",
             "width": 152,
             "height": 27
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/ig-anggastudio-white-2d8fecd0f2.png",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png",
             "srcset": "",
             "alt": "",
             "width": 152,
             "height": 27
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,
             "height": 48
           },
           {
-            "src": "http://127.0.0.1:8143/assets/images/anggastudio.dev/image-0e265fd066.bin",
+            "src": "http://127.0.0.1:8143/assets/images/khoirlabs.dev/image-0e265fd066.bin",
             "srcset": "",
             "alt": "",
             "width": 48,

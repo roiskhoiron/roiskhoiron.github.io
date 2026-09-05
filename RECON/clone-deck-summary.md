@@ -1,7 +1,7 @@
 # clone-deck recon
 
 - URL: http://127.0.0.1:8138/index.html#decks/cron-jobs-101
-- Title: Cron Jobs, Explained | anggastudio
+- Title: Cron Jobs, Explained | khoirlabs
 - Lang: en
 - Viewports: 1440, 768, 390
 - Framework signals: none

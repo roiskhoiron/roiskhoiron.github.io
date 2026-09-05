@@ -1,13 +1,13 @@
 {
   "label": "original",
-  "url": "https://anggastudio.dev",
+  "url": "https://khoirlabs.dev",
   "capturedAt": "2026-09-04T21:40:01.673Z",
   "maxPages": 12,
   "maxDepth": 2,
   "allowSubdomains": false,
   "routes": [
     {
-      "url": "https://anggastudio.dev",
+      "url": "https://khoirlabs.dev",
       "from": "",
       "depth": 0,
       "status": 200,
@@ -39,15 +39,15 @@
         "buttons": 4
       },
       "linkCount": 36,
-      "screenshot": "screenshots/anggastudio.dev-10cf6520.png",
+      "screenshot": "screenshots/khoirlabs.dev-10cf6520.png",
       "consoleErrors": []
     },
     {
-      "url": "https://anggastudio.dev/about",
-      "from": "https://anggastudio.dev",
+      "url": "https://khoirlabs.dev/about",
+      "from": "https://khoirlabs.dev",
       "depth": 1,
       "status": 200,
-      "title": "About | anggastudio",
+      "title": "About | khoirlabs",
       "lang": "en",
       "metaDescription": "Senior Mobile Engineer with 9+ years building production transaction systems, EDC platforms, and AI-assisted engineering workflows.",
       "h1": [
@@ -139,15 +139,15 @@
         "buttons": 1
       },
       "linkCount": 22,
-      "screenshot": "screenshots/anggastudio.dev-about-78d26d04.png",
+      "screenshot": "screenshots/khoirlabs.dev-about-78d26d04.png",
       "consoleErrors": []
     },
     {
-      "url": "https://anggastudio.dev/decks",
-      "from": "https://anggastudio.dev",
+      "url": "https://khoirlabs.dev/decks",
+      "from": "https://khoirlabs.dev",
       "depth": 1,
       "status": 200,
-      "title": "Decks | anggastudio",
+      "title": "Decks | khoirlabs",
       "lang": "en",
       "metaDescription": "A library of live-ready presentation decks covering AI coding agents, mobile development frameworks, and learning topics.",
       "h1": [
@@ -191,15 +191,15 @@
         "buttons": 1
       },
       "linkCount": 20,
-      "screenshot": "screenshots/anggastudio.dev-decks-3d22a7f2.png",
+      "screenshot": "screenshots/khoirlabs.dev-decks-3d22a7f2.png",
       "consoleErrors": []
     },
     {
-      "url": "https://anggastudio.dev/posts",
-      "from": "https://anggastudio.dev",
+      "url": "https://khoirlabs.dev/posts",
+      "from": "https://khoirlabs.dev",
       "depth": 1,
       "status": 200,
-      "title": "Posts | anggastudio",
+      "title": "Posts | khoirlabs",
       "lang": "en",
       "metaDescription": "A library of portrait-first Instagram carousel posts that can be previewed on the web and exported as bulk PNG files.",
       "h1": [
@@ -243,15 +243,15 @@
         "buttons": 1
       },
       "linkCount": 20,
-      "screenshot": "screenshots/anggastudio.dev-posts-83e7fc25.png",
+      "screenshot": "screenshots/khoirlabs.dev-posts-83e7fc25.png",
       "consoleErrors": []
     },
     {
-      "url": "https://anggastudio.dev/blog",
-      "from": "https://anggastudio.dev",
+      "url": "https://khoirlabs.dev/blog",
+      "from": "https://khoirlabs.dev",
       "depth": 1,
       "status": 200,
-      "title": "Blog | anggastudio",
+      "title": "Blog | khoirlabs",
       "lang": "en",
       "metaDescription": "Long-form notes on engineering, design, and the craft of shipping software.",
       "h1": [
@@ -323,15 +323,15 @@
         "buttons": 1
       },
       "linkCount": 26,
-      "screenshot": "screenshots/anggastudio.dev-blog-7dc3bff5.png",
+      "screenshot": "screenshots/khoirlabs.dev-blog-7dc3bff5.png",
       "consoleErrors": []
     },
     {
-      "url": "https://anggastudio.dev/blog/four-repos-to-a-monorepo",
-      "from": "https://anggastudio.dev",
+      "url": "https://khoirlabs.dev/blog/four-repos-to-a-monorepo",
+      "from": "https://khoirlabs.dev",
       "depth": 1,
       "status": 200,
-      "title": "From four repos to a monorepo | anggastudio",
+      "title": "From four repos to a monorepo | khoirlabs",
       "lang": "en",
       "metaDescription": "Consolidating four byte-identical app repos into one shared core plus thin app shells, the expo-router and Metro problems it surfaced, and validating the migration with real bundles.",
       "h1": [
@@ -375,15 +375,15 @@
         "buttons": 2
       },
       "linkCount": 22,
-      "screenshot": "screenshots/anggastudio.dev-blog-four-repos-to-a-monorepo-accc2fde.png",
+      "screenshot": "screenshots/khoirlabs.dev-blog-four-repos-to-a-monorepo-accc2fde.png",
       "consoleErrors": []
     },
     {
-      "url": "https://anggastudio.dev/blog/shipping-then-listening",
-      "from": "https://anggastudio.dev",
+      "url": "https://khoirlabs.dev/blog/shipping-then-listening",
+      "from": "https://khoirlabs.dev",
       "depth": 1,
       "status": 200,
-      "title": "Shipping, then listening | anggastudio",
+      "title": "Shipping, then listening | khoirlabs",
       "lang": "en",
       "metaDescription": "The first round of real tester feedback and the small, high-leverage fixes it produced: grid spacing, free typing, jump buttons, easing early ads, and a well-timed review prompt.",
       "h1": [
@@ -431,15 +431,15 @@
         "buttons": 2
       },
       "linkCount": 24,
-      "screenshot": "screenshots/anggastudio.dev-blog-shipping-then-listening-08820177.png",
+      "screenshot": "screenshots/khoirlabs.dev-blog-shipping-then-listening-08820177.png",
       "consoleErrors": []
     },
     {
-      "url": "https://anggastudio.dev/blog/the-play-store-gauntlet",
-      "from": "https://anggastudio.dev",
+      "url": "https://khoirlabs.dev/blog/the-play-store-gauntlet",
+      "from": "https://khoirlabs.dev",
       "depth": 1,
       "status": 200,
-      "title": "The Play Store gauntlet | anggastudio",
+      "title": "The Play Store gauntlet | khoirlabs",
       "lang": "en",
       "metaDescription": "Everything between a finished app and a live listing: store assets, data safety, content rating, the target-audience trap, app-ads.txt, and the testing tracks, from real experience.",
       "h1": [
@@ -491,15 +491,15 @@
         "buttons": 2
       },
       "linkCount": 25,
-      "screenshot": "screenshots/anggastudio.dev-blog-the-play-store-gauntlet-b1d41b6d.png",
+      "screenshot": "screenshots/khoirlabs.dev-blog-the-play-store-gauntlet-b1d41b6d.png",
       "consoleErrors": []
     },
     {
-      "url": "https://anggastudio.dev/posts/save-claude-tokens-rtk-caveman",
-      "from": "https://anggastudio.dev",
+      "url": "https://khoirlabs.dev/posts/save-claude-tokens-rtk-caveman",
+      "from": "https://khoirlabs.dev",
       "depth": 1,
       "status": 200,
-      "title": "Cut Your Claude Bill By 90% | anggastudio",
+      "title": "Cut Your Claude Bill By 90% | khoirlabs",
       "lang": "en",
       "metaDescription": "Two tiny tools, one habit. RTK filters bash output before it reaches the model, Caveman mode compresses the model's replies. Together they take 90% off a typical session.",
       "h1": [
@@ -555,15 +555,15 @@
         "buttons": 11
       },
       "linkCount": 16,
-      "screenshot": "screenshots/anggastudio.dev-posts-save-claude-tokens-rtk-caveman-17496dbf.png",
+      "screenshot": "screenshots/khoirlabs.dev-posts-save-claude-tokens-rtk-caveman-17496dbf.png",
       "consoleErrors": []
     },
     {
-      "url": "https://anggastudio.dev/posts/css-container-queries",
-      "from": "https://anggastudio.dev",
+      "url": "https://khoirlabs.dev/posts/css-container-queries",
+      "from": "https://khoirlabs.dev",
       "depth": 1,
       "status": 200,
-      "title": "Components That Scale Like Images | anggastudio",
+      "title": "Components That Scale Like Images | khoirlabs",
       "lang": "en",
       "metaDescription": "A short CSS pattern that makes a component look identical at any size, like an image being resized. Container queries plus an em cascade, no breakpoints, no JS.",
       "h1": [
@@ -623,15 +623,15 @@
         "buttons": 11
       },
       "linkCount": 17,
-      "screenshot": "screenshots/anggastudio.dev-posts-css-container-queries-4280c267.png",
+      "screenshot": "screenshots/khoirlabs.dev-posts-css-container-queries-4280c267.png",
       "consoleErrors": []
     },
     {
-      "url": "https://anggastudio.dev/posts/cron-jobs-in-five-minutes",
-      "from": "https://anggastudio.dev",
+      "url": "https://khoirlabs.dev/posts/cron-jobs-in-five-minutes",
+      "from": "https://khoirlabs.dev",
       "depth": 1,
       "status": 200,
-      "title": "Cron Jobs in Five Minutes | anggastudio",
+      "title": "Cron Jobs in Five Minutes | khoirlabs",
       "lang": "en",
       "metaDescription": "If you keep running scripts manually, it's time. Five asterisks, one command, and your computer takes over the boring part.",
       "h1": [
@@ -691,15 +691,15 @@
         "buttons": 11
       },
       "linkCount": 17,
-      "screenshot": "screenshots/anggastudio.dev-posts-cron-jobs-in-five-minutes-128f07c9.png",
+      "screenshot": "screenshots/khoirlabs.dev-posts-cron-jobs-in-five-minutes-128f07c9.png",
       "consoleErrors": []
     },
     {
-      "url": "https://anggastudio.dev/decks/save-claude-tokens-rtk-caveman",
-      "from": "https://anggastudio.dev",
+      "url": "https://khoirlabs.dev/decks/save-claude-tokens-rtk-caveman",
+      "from": "https://khoirlabs.dev",
       "depth": 1,
       "status": 200,
-      "title": "Cut Your Claude Bill By 90% | anggastudio",
+      "title": "Cut Your Claude Bill By 90% | khoirlabs",
       "lang": "en",
       "metaDescription": "A short editorial deck on saving Claude tokens with two small tools. RTK trims noisy bash output before it reaches the model; Caveman compresses Claude's replies. Combined they cut a typical session by ~90%.",
       "h1": [],
@@ -717,7 +717,7 @@
         "buttons": 5
       },
       "linkCount": 14,
-      "screenshot": "screenshots/anggastudio.dev-decks-save-claude-tokens-rtk-caveman-2749cb90.png",
+      "screenshot": "screenshots/khoirlabs.dev-decks-save-claude-tokens-rtk-caveman-2749cb90.png",
       "consoleErrors": []
     }
   ],

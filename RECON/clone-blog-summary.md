@@ -1,7 +1,7 @@
 # clone-blog recon
 
 - URL: http://127.0.0.1:8146/index.html#blog/the-play-store-gauntlet
-- Title: The Play Store gauntlet | anggastudio
+- Title: The Play Store gauntlet | khoirlabs
 - Lang: en
 - Viewports: 1440, 768, 390
 - Framework signals: none
