@@ -48,11 +48,61 @@ footer a, footer button{ position:relative }
 footer a:hover, footer button:hover{ color: #FF6B35 !important }
 footer a::after{ content:""; position:absolute; left:0; bottom:-2px; width:0; height:1px; background:#FF6B35; transition: width 180ms ease }
 footer a:hover::after{ width:100% }
-/* boot bar shimmer */
-#boot-bar, [style*="width:"]{ transition: width 300ms cubic-bezier(0.22,1,0.36,1) }
-/* boot screen animations */
-.animate-pulse-glow{ animation: pulseGlow 3s ease-in-out infinite }
-.animate-shimmer{ animation: shimmer 2.5s ease-in-out infinite }
+/* — elegant immersive boot — */
+#boot-screen{ transition: opacity 520ms cubic-bezier(0.22,1,0.36,1) }
+#boot-screen *{ will-change: transform, opacity }
+
+/* ambient backdrop */
+.boot-orb{
+  position:absolute; border-radius:9999px; pointer-events:none; filter: blur(90px); opacity:.35;
+}
+.boot-orb-1{
+  width:420px; height:420px; left:50%; top:50%; transform:translate(-50%,-50%);
+  background: radial-gradient(circle, rgba(255,107,53,.28) 0%, transparent 70%);
+  animation: floatOrb 10s ease-in-out infinite;
+}
+.boot-orb-2{
+  width:320px; height:320px; left:50%; top:45%; transform:translate(-50%,-50%);
+  background: radial-gradient(circle, rgba(255,107,53,.18) 0%, transparent 70%);
+  animation: floatOrb 14s ease-in-out infinite reverse;
+}
+@keyframes floatOrb{
+  0%,100%{ transform: translate(-50%,-50%) translate(0,0) }
+  50%{ transform: translate(-50%,-50%) translate(30px,-20px) }
+}
+
+.boot-logo-wrap{ position:relative; width:124px; height:124px }
+.boot-logo{
+  width:124px; height:124px; border-radius:9999px; object-fit:cover;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.06), 0 20px 60px -15px rgba(0,0,0,.55), 0 0 80px -20px rgba(255,107,53,.35);
+  animation: scaleIn 1100ms cubic-bezier(.22,1,.36,1) backwards;
+}
+@keyframes scaleIn{ from{ opacity:0; transform: scale(.92) } to{ opacity:1; transform: none } }
+
+.boot-title{ animation: fadeInUp 900ms cubic-bezier(.22,1,.36,1) 280ms backwards }
+@keyframes fadeInUp{ from{ opacity:0; transform: translateY(12px) } to{ opacity:1; transform: none } }
+
+.boot-line{
+  width:0; height:1px; background: #FF6B35; opacity:.7;
+  animation: lineExpand 800ms cubic-bezier(.22,1,.36,1) 480ms forwards;
+}
+@keyframes lineExpand{ to{ width:72px } }
+
+  .boot-fade{ opacity:0; animation: fadeInUp 800ms cubic-bezier(.22,1,.36,1) 680ms forwards }
+
+  html.light .boot-orb{ opacity:.22 }
+  html.light .boot-logo{ box-shadow: 0 0 0 1px rgba(0,0,0,.04), 0 20px 60px -15px rgba(0,0,0,.12), 0 0 80px -20px rgba(255,107,53,.2) }
+  html.light .boot-line{ opacity:.5 }
+
+
+@media (prefers-reduced-motion: reduce){
+  #boot-screen, #boot-screen * { animation: none !important; transition: none !important; }
+  .boot-orb{ display:none }
+  .boot-logo, .boot-title, .boot-line, .boot-fade{ opacity:1 !important; transform:none !important; width:auto !important }
+}
+@media (max-width: 640px){
+  .boot-logo, .boot-logo-wrap{ width:104px; height:104px }
+}
 /* scrolling effects */
 #scroll-progress{ transition: width 80ms linear }
 .reveal{ opacity:0; transform: translateY(10px); transition: opacity 400ms cubic-bezier(0.22,1,0.36,1), transform 400ms cubic-bezier(0.22,1,0.36,1) }

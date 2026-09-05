@@ -8,8 +8,7 @@
   let deckSlug: string | null = null;
   let postSlug: string | null = null;
   let blogSlug: string | null = null;
-  let bootDone = false;
-  let bootPct = 0;
+let booted = false;
   let theme: 'dark' | 'light' = 'dark';
   let deckIdx = 0;
   let postIdx = 0;
@@ -24,25 +23,36 @@
   let postsCarIdx = 0;
   let postsTick = 0;
   let selectedVideo: Video | null = null;
-  // boot
-  onMount(() => {
-    let p = 0;
-    const t = setInterval(() => {
-      p += Math.random()*18+6;
-      if (p >= 100) { p = 100; bootPct = 100; clearInterval(t); setTimeout(()=> {bootDone = true; setupReveal()}, 700); }
-      else bootPct = Math.floor(p);
-    }, 85);
-    // theme init
-    const saved = localStorage.getItem('theme-preference');
-    const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    theme = (saved === 'light' || saved === 'dark') ? saved as any : (sysDark ? 'dark' : 'light');
-    applyTheme(theme);
-    // hash init
-    handleHash();
-    window.addEventListener('hashchange', handleHash);
-    window.addEventListener('scroll', handleScroll, {passive:true});
-    handleScroll();
-  });
+  let csStats: { installs: number; stars: number; contributors: number } | null = null;
+  let csLoading = false;
+// boot
+   onMount(() => {
+     // theme init (sebelum boot animation supaya background match)
+     const saved = localStorage.getItem('theme-preference');
+     const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+     theme = (saved === 'light' || saved === 'dark') ? saved as any : (sysDark ? 'dark' : 'light');
+     applyTheme(theme);
+      // run boot sequence
+      runBootSequence();
+      // hash & scroll & stats
+      handleHash();
+      window.addEventListener('hashchange', handleHash);
+      window.addEventListener('scroll', handleScroll, {passive:true});
+      handleScroll();
+      loadCodingSchoolStats();
+    });
+
+  function runBootSequence(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      booted = true;
+      setTimeout(() => { setupReveal(); }, 60);
+      return;
+    }
+    setTimeout(() => {
+      booted = true;
+      setTimeout(() => { setupReveal(); }, 420);
+    }, 1100);
+  }
 
   function applyTheme(t: 'dark'|'light') {
     theme = t;
@@ -55,6 +65,29 @@
   }
   function toggleTheme(){
     applyTheme(theme==='dark'?'light':'dark');
+  }
+
+  async function loadCodingSchoolStats(){
+    csLoading = true;
+    const ctrl = new AbortController();
+    const to = setTimeout(()=> ctrl.abort(), 4000);
+    const today = new Date().toISOString().slice(0,10);
+    try{
+      const npmP = fetch(`https://api.npmjs.org/downloads/point/2026-07-13:${today}/@codingskuy/coding-school`, {signal:ctrl.signal}).then(r=>r.ok?r.json():null);
+      const ghRepoP = fetch(`https://api.github.com/repos/codingskuy/coding-school`, {signal:ctrl.signal, headers:{'Accept':'application/vnd.github+json'}}).then(r=>r.ok?r.json():null);
+      const ghConP = fetch(`https://api.github.com/repos/codingskuy/coding-school/contributors`, {signal:ctrl.signal, headers:{'Accept':'application/vnd.github+json'}}).then(r=>r.ok?r.json():null);
+      const [npm,res,con] = await Promise.all([npmP,ghRepoP,ghConP]);
+      csStats = {
+        installs: npm?.downloads ?? 0,
+        stars: res?.stargazers_count ?? 0,
+        contributors: Array.isArray(con) ? con.length : 0
+      };
+    }catch{
+      csStats = { installs: 0, stars: 0, contributors: 0 };
+    }finally{
+      clearTimeout(to);
+      csLoading = false;
+    }
   }
 
   function handleHash(){
@@ -163,22 +196,28 @@
   }
 </script>
 
-{#if !bootDone}
-<div class="fixed inset-0 z-[100] flex flex-col items-center justify-center transition-opacity duration-700 ease-out" style="background:{theme==='dark'?'#0a0a0a':'#ffffff'};opacity:{bootPct===100?0:1}">
-  <div class="flex flex-col items-center gap-8">
-    <div class="relative">
-      <div class="absolute -inset-4 rounded-full bg-zinc-400/10 blur-2xl animate-pulse-glow"></div>
-      <img src="/assets/images/khoirlabs.dev/logo-khoirlabs.jpeg" class="relative w-10 h-10 rounded-full bg-white p-1 object-contain" alt="Khoirlabs"/>
-    </div>
-    <div class="flex flex-col items-center gap-4">
-      <span class="text-[11px] tracking-[0.2em] font-semibold text-zinc-500 uppercase">Booting khoirlabs</span>
-      <div class="w-24 h-[1px] bg-zinc-800 rounded-full overflow-hidden">
-        <div class="h-full w-full bg-gradient-to-r from-transparent via-zinc-400 to-transparent animate-shimmer"></div>
+<div id="boot-screen" class="fixed inset-0 z-[100] overflow-hidden" style="background:{theme==='dark'?'#050608':'#f4f4f5'};opacity:{booted?0:1};pointer-events:{booted?'none':'auto'};">
+  <!-- ambient backdrop -->
+  <div class="boot-orb boot-orb-1" aria-hidden="true"></div>
+  <div class="boot-orb boot-orb-2" aria-hidden="true"></div>
+
+  <div class="relative z-10 flex h-full w-full flex-col items-center justify-center px-6">
+    <div class="flex flex-col items-center gap-6 text-center">
+      <div class="boot-logo-wrap">
+        <img src="/assets/images/khoirlabs.dev/logo-khoirlabs.jpeg" class="boot-logo" alt="Khoirlabs"/>
+      </div>
+      <div class="flex flex-col items-center gap-3">
+        <h1 class="fraunces text-[36px] sm:text-[52px] md:text-[60px] font-medium leading-[0.95] tracking-tight boot-title">
+          khoirlabs
+        </h1>
+        <div class="boot-line" aria-hidden="true"></div>
+        <p class="mono text-[11px] sm:text-xs tracking-[0.18em] {theme==='dark'?'text-zinc-400':'text-zinc-600'} boot-fade">
+          loading experiences
+        </p>
       </div>
     </div>
   </div>
 </div>
-{/if}
 
 <svelte:window on:keydown={handleKeys} on:scroll={handleScroll} />
 <div id="scroll-progress" class="fixed top-0 left-0 h-[2px] bg-[#FF6B35] z-[60] pointer-events-none" style="width:{scrollProgress}%"></div>
@@ -188,7 +227,7 @@
       <img src="/assets/images/khoirlabs.dev/logo-khoirlabs.jpeg" class="w-8 h-8 rounded-full border border-zinc-800 bg-white object-contain p-1" alt="Khoirlabs"/>
       <div class="flex flex-col leading-none text-left">
         <span class="text-[15px] font-semibold tracking-tight">khoirlabs</span>
-        <span class="hidden sm:block text-[11px] text-zinc-400">Software Engineer, Tech Speaker</span>
+        <span class="hidden sm:block text-[11px] text-zinc-400">Software Engineer, Tech Educator/Mentor, Security-First</span>
       </div>
     </button>
     <div class="flex items-center gap-3">
@@ -607,7 +646,7 @@
           </div>
         </div>
       </div>
-      <div id="blog-featured" class="rounded-2xl border border-zinc-800 bg-zinc-900/40 overflow-hidden hover:border-zinc-700 transition">
+      <div id="blog-featured" on:click={()=> openBlog(blogFeatured.slug)} class="rounded-2xl border border-zinc-800 bg-zinc-900/40 overflow-hidden hover:border-zinc-700 transition cursor-pointer">
         {#if blogFeatured}
           <div class="grid md:grid-cols-[1.3fr_0.7fr] gap-0">
             <div class="p-6 sm:p-8 flex flex-col gap-3">
@@ -686,21 +725,21 @@
 
       <!-- counters — real Khoiron stats -->
       <div class="grid grid-cols-3 gap-4 border border-zinc-800 rounded-2xl bg-zinc-900/30 p-4 sm:p-6">
-        <div class="flex flex-col gap-1 border-r border-zinc-800 pr-4">
-          <span class="fraunces text-2xl font-semibold">5+</span>
-          <span class="mono text-[11px] tracking-widest uppercase text-zinc-500">Years engineering</span>
+         <a href="https://www.linkedin.com/in/rois-khoiron/details/experience/" target="_blank" rel="noopener noreferrer" class="flex flex-col gap-1 border-r border-zinc-800 pr-4 no-underline group">
+          <span class="fraunces text-2xl font-semibold group-hover:text-[#FF6B35] transition">5+</span>
+          <span class="mono text-[11px] tracking-widest uppercase text-zinc-500 group-hover:text-[#FF6B35] transition">Years engineering</span>
           <span class="text-xs text-zinc-500 leading-4">Mobile (Flutter, SwiftUI, Kotlin) + Backend & APIs.</span>
-        </div>
-        <div class="flex flex-col gap-1 border-r border-zinc-800 pr-4">
-          <span class="fraunces text-2xl font-semibold">50+</span>
-          <span class="mono text-[11px] tracking-widest uppercase text-zinc-500">Products shipped</span>
+        </a>
+        <a href="https://www.linkedin.com/in/rois-khoiron/details/projects/" target="_blank" rel="noopener noreferrer" class="flex flex-col gap-1 border-r border-zinc-800 pr-4 no-underline group">
+          <span class="fraunces text-2xl font-semibold group-hover:text-[#FF6B35] transition">22+</span>
+          <span class="mono text-[11px] tracking-widest uppercase text-zinc-500 group-hover:text-[#FF6B35] transition">Projects delivered</span>
           <span class="text-xs text-zinc-500 leading-4">End-to-end — mobile to backend.</span>
-        </div>
-        <div class="flex flex-col gap-1">
-          <span class="fraunces text-2xl font-semibold">10K+</span>
-          <span class="mono text-[11px] tracking-widest uppercase text-zinc-500">Learners</span>
-          <span class="text-xs text-zinc-500 leading-4">100+ records · 50K+ views via CodingSkuy.</span>
-        </div>
+        </a>
+         <a href="https://www.linkedin.com/in/rois-khoiron/details/certifications/" target="_blank" rel="noopener noreferrer" class="flex flex-col gap-1 no-underline group">
+           <span class="fraunces text-2xl font-semibold group-hover:text-[#FF6B35] transition">33</span>
+           <span class="mono text-[11px] tracking-widest uppercase text-zinc-500 group-hover:text-[#FF6B35] transition">Licenses & Certificates</span>
+           <span class="text-xs text-zinc-500 leading-4">Professional skill certifications.</span>
+         </a>
       </div>
 
       <!-- focus areas — 4 pillars -->
@@ -757,24 +796,33 @@
         </div>
       </div>
 
-      <!-- featured — CodingSkuy -->
-      <div class="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 flex flex-col gap-4">
-        <span class="mono text-[11px] tracking-widest uppercase text-zinc-500">Featured — CodingSkuy! Engineering Journal</span>
+      <!-- featured — CodingSchool (content loaded live from codingskuy.github.io/codingschool) -->
+      <a href="https://codingskuy.github.io/codingschool/" target="_blank" rel="noopener noreferrer" class="group block rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 no-underline transition hover:border-zinc-700">
+        <span class="mono text-[11px] tracking-widest uppercase text-zinc-500">Featured — Open Source</span>
         <div class="flex flex-col sm:flex-row gap-4">
-          <div class="flex-1">
-            <h3 class="fraunces text-xl font-semibold">CodingSkuy!</h3>
-            <p class="text-xs mono text-zinc-500">Open engineering journal & knowledge hub — not a startup</p>
-            <p class="text-sm leading-6 text-zinc-400 mt-2">Free community contribution documenting learning — 100+ journal records, 10K+ learners, 50K+ total views. Visit <a href="https://roiskhoiron.github.io" class="underline">roiskhoiron.github.io</a> · <a href="https://youtube.com/@codingskuy" class="underline">YouTube @codingskuy</a> · <a href="https://github.com/roiskhoiron" class="underline">github.com/roiskhoiron</a>. Portfolio https://roiskhoiron.github.io — WA +62 823-3462-6354 · rois.khoiron@gmail.com</p>
-            <div class="flex gap-2 mt-3">
-              <a href="https://roiskhoiron.github.io" target="_blank" class="rounded-full bg-white text-black px-4 py-1.5 text-xs font-medium">Portfolio — 50+ products</a>
-              <a href="https://github.com/roiskhoiron/flutter_chat_realtime" target="_blank" class="rounded-full border border-zinc-800 bg-zinc-900 px-4 py-1.5 text-xs">flutter_chat_realtime</a>
+          <div class="flex-1 min-w-0">
+            <h3 class="fraunces text-xl font-semibold group-hover:text-[#FF6B35] transition">CodingSchool</h3>
+            <p class="text-xs mono text-zinc-500">AI Engineering Mentor for OpenCode</p>
+            <p class="text-sm leading-6 text-zinc-400 mt-2">The free OpenCode plugin that teaches, reviews, and grows you through real software projects. MIT licensed — built by khoirlabs.</p>
+            <div class="flex items-center gap-2 mt-3">
+              <span class="mono text-[9px] text-zinc-600">npm i @codingskuy/coding-school</span>
             </div>
           </div>
-          <div class="hidden sm:flex flex-col gap-2 mono text-xs text-zinc-500">
-            <span class="px-3 py-2 rounded-xl bg-zinc-800 text-white">10K+ learners</span><span class="px-3 py-2 rounded-xl bg-zinc-800 text-white">100+ records</span><span class="px-3 py-2 rounded-xl bg-zinc-800 text-white">50K+ views</span>
-          </div>
+          {#if csLoading}
+            <div class="hidden sm:flex flex-col gap-2 mono text-xs text-zinc-500">
+              <span class="px-3 py-2 rounded-xl bg-zinc-800 w-[90px] animate-pulse">—</span>
+              <span class="px-3 py-2 rounded-xl bg-zinc-800 w-[90px] animate-pulse">—</span>
+              <span class="px-3 py-2 rounded-xl bg-zinc-800 w-[90px] animate-pulse">—</span>
+            </div>
+          {:else if csStats}
+            <div class="hidden sm:flex flex-col gap-2 mono text-xs text-zinc-500" in:fade={{duration:240}} out:fade={{duration:160}}>
+              <span class="px-3 py-2 rounded-xl bg-zinc-800 text-white">{csStats.stars.toLocaleString()}+ stars</span>
+              <span class="px-3 py-2 rounded-xl bg-zinc-800 text-white">{csStats.contributors}+ contributors</span>
+              <span class="px-3 py-2 rounded-xl bg-zinc-800 text-white">{csStats.installs.toLocaleString()}+ installs</span>
+            </div>
+          {/if}
         </div>
-      </div>
+      </a>
 
       <div class="grid sm:grid-cols-2 gap-4">
         <div class="rounded-2xl border border-zinc-800 bg-zinc-900/20 p-5">
@@ -783,11 +831,11 @@
           <p class="text-xs text-zinc-500 mt-1">Yogyakarta, Indonesia · Typically responds within 24h · Portfolio: roiskhoiron.github.io</p>
           <p class="text-xs text-zinc-500">GitHub roiskhoiron · 16 followers · Dart, C++, TypeScript · Top: flutter_chat_realtime</p>
         </div>
-        <div class="rounded-2xl border border-zinc-800 bg-zinc-900/20 p-5">
+        <a href="https://www.linkedin.com/in/rois-khoiron/details/recommendations/" target="_blank" rel="noopener" class="rounded-2xl border border-zinc-800 bg-zinc-900/20 p-5 block no-underline hover:border-zinc-700 transition">
           <span class="mono text-[11px] uppercase text-zinc-500">Outside the work & Recommendations</span>
           <p class="text-xs leading-5 text-zinc-400 mt-2">Arman Maulana: "Rois is very kind, critical in a positive way, strong problem-solving, skilled technically." · yosa angela: "Rois memastikan alur kerja jelas, komunikatif, semangat belajar hal baru."</p>
-          <div class="flex gap-2 mt-3"><button on:click={()=> nav('decks')} class="mono text-xs border border-zinc-800 rounded-full px-3 py-1.5">See the decks →</button><button on:click={()=> nav('blog')} class="mono text-xs border border-zinc-800 rounded-full px-3 py-1.5">Read the blog →</button></div>
-        </div>
+          <div class="flex gap-2 mt-3"><span class="mono text-xs border border-zinc-800 rounded-full px-3 py-1.5 text-zinc-500">See the decks →</span><span class="mono text-xs border border-zinc-800 rounded-full px-3 py-1.5 text-zinc-500">Read the blog →</span></div>
+        </a>
       </div>
     </div>
   {/if}
