@@ -22,11 +22,13 @@ html.light .bg-zinc-800 { background-color:#ffffff !important; border-color:#e4e
 html.light .border-zinc-800, html.light .border-zinc-700 { border-color:#e4e4e7 !important; }
 html.light .border-zinc-800\/60 { border-color:rgba(228,228,231,0.85) !important; }
 /* teks muted — dipergelap untuk 4.5:1 di atas putih */
-html.light .text-zinc-400 { color:#3f3f46 !important; }
-html.light .text-zinc-500 { color:#52525b !important; }
-html.light .text-zinc-300 { color:#18181b !important; }
-html.light .text-zinc-600 { color:#52525b !important; }
+html.light .text-zinc-400 { color:#27272a !important; }
+html.light .text-zinc-500 { color:#3f3f46 !important; }
+html.light .text-zinc-300 { color:#09090b !important; }
+html.light .text-zinc-600 { color:#3f3f46 !important; }
 html.light .text-white { color:#09090b !important; }
+html.light .mono { color:#27272a; }
+html.light .mono.text-zinc-500 { color:#27272a !important; }
 html.light .text-\[\#ededed\] { color:#09090b !important; }
 html.light .bg-white { background-color:#09090b !important; color:#ffffff !important; }
 html.light .bg-white .text-black, html.light .bg-white.text-black { color:#ffffff !important; }
@@ -43,7 +45,10 @@ html.light .text-amber-500 { color:#92400e !important; }
 /* form & pills */
 html.light input, html.light select, html.light textarea { background-color:#ffffff !important; border-color:#e4e4e7 !important; color:#09090b !important; }
 html.light input::placeholder, html.light textarea::placeholder { color:#71717a !important; }
-html.light .bg-zinc-800.text-zinc-400, html.light span.bg-zinc-800 { color:#18181b !important; }
+html.light .bg-zinc-800.text-zinc-400, html.light span.bg-zinc-800, html.light .bg-zinc-800 { color:#09090b !important; background-color:#f4f4f5 !important; border-color:#e4e4e7 !important; }
+html.light .bg-zinc-800\/40 { background-color:#f4f4f5 !important; border-color:#e4e4e7 !important; }
+html.light article.bg-zinc-900\/40, html.light div.bg-zinc-900\/40 { background-color:#ffffff !important; border-color:#e4e4e7 !important; box-shadow: 0 1px 2px rgba(0,0,0,0.04) !important; }
+html.light .text-zinc-400.mono, html.light span.mono.text-zinc-500 { color:#27272a !important; }
 /* immersive detail tetap gelap */
 html.light #view-deck-detail .bg-black, html.light #view-post-detail .bg-black { background:#000000 !important; color:#ededed !important; }
 html.light #view-deck-detail .bg-zinc-900, html.light #view-post-detail .bg-zinc-900 { background:#18181b !important; color:#ededed !important; border-color:#27272a !important; }
