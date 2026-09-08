@@ -232,13 +232,10 @@ let booted = false;
 
 <svelte:window on:keydown={handleKeys} on:scroll={handleScroll} />
 <div id="scroll-progress" class="fixed top-0 left-0 h-[2px] bg-[#FF6B35] z-[60] pointer-events-none" style="width:{scrollProgress}%"></div>
-<div id="section-indicator" class="fixed top-4 right-4 z-50 mono text-[11px] tracking-widest text-zinc-500 hidden md:flex items-center gap-2" style="opacity:{scrollProgress > 2 ? 1 : 0}">
-  <span class="text-zinc-600">Scroll</span>
-  <span class="text-[#FF6B35]">{String(activeSection).padStart(2, '0')}</span>
-  <span class="text-zinc-700">/</span>
-  <span class="text-zinc-600">{String(totalSections).padStart(2, '0')}</span>
-</div>
+
 <div class="fixed inset-0 pointer-events-none z-0" aria-hidden="true" style="background: radial-gradient(ellipse 80% 60% at 50% {Math.min(30 + scrollProgress * 0.4, 70)}%, rgba(255,107,53,0.03) 0%, transparent 70%);"></div>
+<div class="ambient-layer" aria-hidden="true"></div>
+<div class="floating-orbs" aria-hidden="true"></div>
 <header id="site-header" class="sticky top-0 z-40 border-b border-zinc-800/60 bg-[#09090b]/60 backdrop-blur-xl">
   <nav class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
     <button on:click={()=> nav('home')} class="flex items-center gap-3">

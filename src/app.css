@@ -272,13 +272,6 @@ body::after{
 html.light body::after{ opacity:.018 }
 
 /* — section scroll indicator — */
-#section-indicator{
-  transition: opacity 300ms ease, color 200ms ease;
-}
-#section-indicator span:first-child{
-  transition: opacity 200ms ease;
-}
-
 /* — enhanced scroll reveal variants — */
 .reveal-fade{ opacity:0; transition: opacity 600ms cubic-bezier(0.22,1,0.36,1) }
 .reveal-fade.in{ opacity:1 }
@@ -294,6 +287,22 @@ html.light body::after{ opacity:.018 }
 }
 .animate-bounce{ animation: scrollBounce 2s ease-in-out infinite; }
 
+/* ambient background layer — stronger ambient feel in light theme, inspired by ambient-site patterns */
+.#ambient-layer{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;transform:translate(calc(var(--mx,0)*30px),calc(var(--my,0)*30px));will-change:transform}
+.#ambient-layer::before,.#ambient-layer::after{content:"";position:absolute;border-radius:9999px;filter:blur(90px);opacity:0;animation:none}
+html.light .#ambient-layer{opacity:1}
+html.light .#ambient-layer::before{width:600px;height:600px;left:-10%;top:-10%;background:radial-gradient(circle,rgba(255,107,53,0.12) 0%,transparent 70%);animation:floatOrb 18s ease-in-out infinite}
+html.light .#ambient-layer::after{width:500px;height:500px;right:-5%;bottom:-10%;background:radial-gradient(circle,rgba(251,146,60,0.10) 0%,transparent 70%);animation:floatOrb 22s ease-in-out infinite reverse}
+html.dark .#ambient-layer::before{width:420px;height:420px;left:50%;top:40%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,107,53,0.08) 0%,transparent 70%);opacity:1;animation:floatOrb 20s ease-in-out infinite}
+
+/* floating ambient orbs — stronger ambient depth */
+.floating-orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;transform:translate(calc(var(--mx,0)*20px),calc(var(--my,0)*20px));will-change:transform}
+.floating-orbs::before,.floating-orbs::after{content:"";position:absolute;border-radius:9999px;filter:blur(80px);opacity:0.25;animation:floatOrb 14s ease-in-out infinite}
+html.dark .floating-orbs::before{width:300px;height:300px;left:20%;top:20%;background:radial-gradient(circle,rgba(255,107,53,0.15) 0%,transparent 70%)}
+html.dark .floating-orbs::after{width:250px;height:250px;right:15%;bottom:15%;background:radial-gradient(circle,rgba(251,146,60,0.12) 0%,transparent 70%);animation-duration:18s;animation-direction:reverse}
+html.light .floating-orbs::before{width:500px;height:500px;left:10%;top:-5%;background:radial-gradient(circle,rgba(255,107,53,0.18) 0%,rgba(251,146,60,0.08) 60%,transparent 100%);animation-duration:16s}
+html.light .floating-orbs::after{width:400px;height:400px;right:-5%;bottom:-10%;background:radial-gradient(circle,rgba(251,146,60,0.14) 0%,rgba(255,200,150,0.5) 50%,transparent 70%);animation-duration:20s;animation-direction:reverse;opacity:0.35}
+
 /* — ambient scroll-driven background shift — */
 body{
   background: linear-gradient(180deg, #050608 0%, #0a0a0a 30%, #0f0f12 60%, #050608 100%);
@@ -305,8 +314,3 @@ html.light body{
   background-attachment: fixed;
 }
 
-/* — section-specific ambient tint (subtle) — */
-.scroll-section:nth-of-type(1) ~ body,
-main > .scroll-section:nth-child(1){
-  --section-tint: transparent;
-}
