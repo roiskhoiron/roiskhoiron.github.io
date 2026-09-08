@@ -223,7 +223,7 @@ let booted = false;
 
 <svelte:window on:keydown={handleKeys} on:scroll={handleScroll} />
 <div id="scroll-progress" class="fixed top-0 left-0 h-[2px] bg-[#FF6B35] z-[60] pointer-events-none" style="width:{scrollProgress}%"></div>
-<header id="site-header" class="sticky top-0 z-40 border-b border-zinc-800/60 bg-[#2B2B2B]/60 backdrop-blur-xl">
+<header id="site-header" class="sticky top-0 z-40 border-b border-zinc-800/60 bg-[#09090b]/60 backdrop-blur-xl">
   <nav class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
     <button on:click={()=> nav('home')} class="flex items-center gap-3">
       <img src={logoKhoirlabs} class="w-8 h-8 rounded-full border border-zinc-800 logo-bg object-contain p-1" alt="Khoirlabs"/>
@@ -244,7 +244,7 @@ let booted = false;
       <button class="md:hidden w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 grid place-items-center text-zinc-400" on:click={()=> document.getElementById('mobile-menu')?.classList.toggle('hidden')}>☰</button>
     </div>
   </nav>
-    <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-800 bg-[#2B2B2B] px-4 py-3">
+    <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-800 bg-[#0a0a0a] px-4 py-3">
     {#each ['home','about','decks','videos','posts','blog'] as v}
       <button on:click={()=> nav(v)} class="block w-full text-left px-3 py-2 rounded-lg {view===v?'bg-white text-black':'text-zinc-400'}">{v}</button>
     {/each}
@@ -286,9 +286,9 @@ let booted = false;
         <article class="group relative flex flex-col gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 hover:bg-zinc-900/70 hover:border-zinc-700 transition cursor-pointer" on:click={()=> openBlog('four-repos-to-a-monorepo')}><div class="mono text-[11px] tracking-widest uppercase text-zinc-500">Jun 21, 2026 — Blog</div><h3 class="text-[16px] font-semibold leading-5">From four repos to a monorepo</h3><p class="text-[13px] leading-5 text-zinc-400 line-clamp-3">Consolidating four byte-identical app repos into one shared core plus thin app shells, the expo-router and Metro problems it surfaced.</p><span class="mono text-[11px] text-zinc-300 mt-2 inline-flex gap-1">Read post <span class="group-hover:translate-x-0.5 transition">→</span></span></article>
         <article class="group relative flex flex-col gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 hover:bg-zinc-900/70 transition cursor-pointer" on:click={()=> openBlog('shipping-then-listening')}><div class="mono text-[11px] tracking-widest uppercase text-zinc-500">Jun 20, 2026 — Blog</div><h3 class="text-[16px] font-semibold leading-5">Shipping, then listening</h3><p class="text-[13px] leading-5 text-zinc-400 line-clamp-3">The first round of real tester feedback and the small, high-leverage fixes it produced.</p><span class="mono text-[11px] text-zinc-300 mt-2 inline-flex gap-1">Read post →</span></article>
         <article class="group relative flex flex-col gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 hover:bg-zinc-900/70 transition cursor-pointer" on:click={()=> openBlog('the-play-store-gauntlet')}><div class="mono text-[11px] tracking-widest uppercase text-zinc-500">Jun 19, 2026 — Blog</div><h3 class="text-[16px] font-semibold leading-5">The Play Store gauntlet</h3><p class="text-[13px] leading-5 text-zinc-400 line-clamp-3">Everything between a finished app and a live listing: store assets, data safety, content rating.</p><span class="mono text-[11px] text-zinc-300 mt-2 inline-flex gap-1">Read post →</span></article>
-        <article class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-[#2B2B2B] overflow-hidden hover:border-zinc-700 transition cursor-pointer" on:click={()=> openPost('save-claude-tokens-rtk-caveman')}><div class="h-[140px] bg-gradient-to-br from-violet-600/20 via-fuchsia-500/10 to-zinc-900 flex items-center justify-center p-6"><div class="rounded-xl bg-white text-black px-4 py-3 mono text-[11px] leading-4 font-medium shadow-xl max-w-[220px]">Cut Your Claude Bill By 90%<br><span class="text-zinc-500 font-normal">Two tiny tools, one habit.</span></div></div><div class="p-5 flex flex-col gap-2"><div class="mono text-[11px] tracking-widest uppercase text-zinc-500">May 18, 2026 — Carousel</div><h3 class="text-[15px] font-semibold leading-5">Cut Your Claude Bill By 90%</h3><p class="text-[13px] leading-5 text-zinc-400">RTK filters bash output, Caveman compresses replies.</p></div></article>
-        <article class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-[#2B2B2B] overflow-hidden hover:border-zinc-700 transition cursor-pointer" on:click={()=> openPost('css-container-queries')}><div class="h-[140px] bg-gradient-to-br from-emerald-600/20 via-teal-500/10 to-zinc-900 flex items-center justify-center p-6"><div class="rounded-xl bg-white text-black px-4 py-3 mono text-[11px] font-medium shadow-xl">Components That<br>Scale Like Images</div></div><div class="p-5 flex flex-col gap-2"><div class="mono text-[11px] tracking-widest uppercase text-zinc-500">May 15, 2026 — Carousel</div><h3 class="text-[15px] font-semibold leading-5">Components That Scale Like Images</h3><p class="text-[13px] leading-5 text-zinc-400">Container queries plus an em cascade.</p></div></article>
-        <article class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-[#2B2B2B] overflow-hidden hover:border-zinc-700 transition cursor-pointer" on:click={()=> openPost('cron-jobs-in-five-minutes')}><div class="h-[140px] bg-gradient-to-br from-amber-500/20 via-orange-500/10 to-zinc-900 flex items-center justify-center p-6"><div class="rounded-xl bg-zinc-900 border border-zinc-700 text-white px-4 py-3 mono text-[11px] font-medium">cron_jobs.sh<br><span class="text-zinc-400">* * * * *</span></div></div><div class="p-5 flex flex-col gap-2"><div class="mono text-[11px] tracking-widest uppercase text-zinc-500">May 15, 2026 — Carousel</div><h3 class="text-[15px] font-semibold leading-5">Cron Jobs in Five Minutes</h3><p class="text-[13px] leading-5 text-zinc-400">Five asterisks, one command.</p></div></article>
+        <article class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-[#1a1a1e] overflow-hidden hover:border-zinc-700 transition cursor-pointer" on:click={()=> openPost('save-claude-tokens-rtk-caveman')}><div class="h-[140px] bg-gradient-to-br from-violet-600/20 via-fuchsia-500/10 to-zinc-900 flex items-center justify-center p-6"><div class="rounded-xl bg-white text-black px-4 py-3 mono text-[11px] leading-4 font-medium shadow-xl max-w-[220px]">Cut Your Claude Bill By 90%<br><span class="text-zinc-500 font-normal">Two tiny tools, one habit.</span></div></div><div class="p-5 flex flex-col gap-2"><div class="mono text-[11px] tracking-widest uppercase text-zinc-500">May 18, 2026 — Carousel</div><h3 class="text-[15px] font-semibold leading-5">Cut Your Claude Bill By 90%</h3><p class="text-[13px] leading-5 text-zinc-400">RTK filters bash output, Caveman compresses replies.</p></div></article>
+        <article class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-[#1a1a1e] overflow-hidden hover:border-zinc-700 transition cursor-pointer" on:click={()=> openPost('css-container-queries')}><div class="h-[140px] bg-gradient-to-br from-emerald-600/20 via-teal-500/10 to-zinc-900 flex items-center justify-center p-6"><div class="rounded-xl bg-white text-black px-4 py-3 mono text-[11px] font-medium shadow-xl">Components That<br>Scale Like Images</div></div><div class="p-5 flex flex-col gap-2"><div class="mono text-[11px] tracking-widest uppercase text-zinc-500">May 15, 2026 — Carousel</div><h3 class="text-[15px] font-semibold leading-5">Components That Scale Like Images</h3><p class="text-[13px] leading-5 text-zinc-400">Container queries plus an em cascade.</p></div></article>
+        <article class="group relative flex flex-col rounded-2xl border border-zinc-800 bg-[#1a1a1e] overflow-hidden hover:border-zinc-700 transition cursor-pointer" on:click={()=> openPost('cron-jobs-in-five-minutes')}><div class="h-[140px] bg-gradient-to-br from-amber-500/20 via-orange-500/10 to-zinc-900 flex items-center justify-center p-6"><div class="rounded-xl bg-zinc-900 border border-zinc-700 text-white px-4 py-3 mono text-[11px] font-medium">cron_jobs.sh<br><span class="text-zinc-400">* * * * *</span></div></div><div class="p-5 flex flex-col gap-2"><div class="mono text-[11px] tracking-widest uppercase text-zinc-500">May 15, 2026 — Carousel</div><h3 class="text-[15px] font-semibold leading-5">Cron Jobs in Five Minutes</h3><p class="text-[13px] leading-5 text-zinc-400">Five asterisks, one command.</p></div></article>
         <article class="group relative flex flex-col gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 hover:bg-zinc-900/70 transition cursor-pointer" on:click={()=> openDeck('save-claude-tokens-rtk-caveman')}><div class="mono text-[11px] tracking-widest uppercase text-zinc-500">May 18, 2026 — Deck</div><h3 class="text-[16px] font-semibold leading-5 flex items-center gap-2"><span class="w-5 h-5 rounded bg-white text-black grid place-items-center text-[10px]">◧</span> Cut Your Claude Bill By 90%</h3><p class="text-[13px] leading-5 text-zinc-400">A short editorial deck on saving Claude tokens.</p><span class="mono text-[11px] text-zinc-300 mt-1">Open deck →</span></article>
         <article class="group relative flex flex-col gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 hover:bg-zinc-900/70 transition cursor-pointer" on:click={()=> openDeck('cron-jobs-101')}><div class="mono text-[11px] tracking-widest uppercase text-zinc-500">May 15, 2026 — Deck</div><h3 class="text-[16px] font-semibold leading-5 flex items-center gap-2"><span class="w-5 h-5 rounded bg-amber-400 text-black grid place-items-center text-[10px]">◧</span> Cron Jobs, Explained</h3><p class="text-[13px] leading-5 text-zinc-400">The mental model, syntax, three real examples.</p><span class="mono text-[11px] text-zinc-300 mt-1">Open deck →</span></article>
         <article class="group relative flex flex-col gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 hover:bg-zinc-900/70 transition cursor-pointer" on:click={()=> openDeck('css-container-queries')}><div class="mono text-[11px] tracking-widest uppercase text-zinc-500">May 15, 2026 — Deck</div><h3 class="text-[16px] font-semibold leading-5 flex items-center gap-2"><span class="w-5 h-5 rounded bg-emerald-400 text-black grid place-items-center text-[10px]">◧</span> Container Queries & The Em Cascade</h3><p class="text-[13px] leading-5 text-zinc-400">Components that scale uniformly using cqi and em.</p><span class="mono text-[11px] text-zinc-300 mt-1">Open deck →</span></article>
@@ -314,7 +314,7 @@ let booted = false;
         <h1 class="fraunces text-[36px] sm:text-[44px] font-medium tracking-tight leading-none">Presentation Library</h1>
         <p class="text-[14px] leading-6 text-zinc-400 max-w-2xl">Open any deck in fullscreen mode. Each presentation now runs on a shared slide engine, which keeps the visual language, keyboard controls, and navigation consistent across topics. <span class="text-zinc-500 mono text-xs ml-2">{filteredDecks.length} decks</span></p>
       </div>
-      <div class="sticky top-[65px] z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-3 bg-[#2B2B2B]/80 backdrop-blur-xl border-y border-zinc-800/60 flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
+      <div class="sticky top-[65px] z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-3 bg-[#0a0a0a]/80 backdrop-blur-xl border-y border-zinc-800/60 flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
         <div class="flex items-center gap-2 flex-1 max-w-xl">
           <div class="relative flex-1">
             <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4-4m2-4a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
@@ -355,7 +355,7 @@ let booted = false;
     {@const cur = slides[deckIdx]}
     <div class="fixed inset-0 z-50 bg-black flex flex-col" in:fade={{duration:200}} out:fade={{duration:150}}>
       <!-- top bar — identik vanilla -->
-      <div class="h-[56px] shrink-0 border-b border-zinc-800 bg-[#2B2B2B]/80 backdrop-blur flex items-center justify-between px-4 sm:px-6">
+      <div class="h-[56px] shrink-0 border-b border-zinc-800 bg-[#09090b]/80 backdrop-blur flex items-center justify-between px-4 sm:px-6">
         <div class="flex items-center gap-3">
           <button on:click={()=> nav('decks')} class="inline-flex items-center gap-1.5 rounded-full border border-zinc-800 bg-zinc-900 px-3 py-1.5 text-xs font-medium text-zinc-300 hover:text-white hover:border-zinc-700">← Exit</button>
           <span class="hidden sm:inline mono text-[11px] tracking-widest uppercase text-zinc-600">Presentation</span>
@@ -385,7 +385,7 @@ let booted = false;
                   {#if cur.points}<ul class="mt-2 space-y-1.5">{#each cur.points as p}<li class="flex gap-2 text-[12px] leading-5 text-zinc-300"><span class="text-amber-400 mt-1">•</span><span>{p}</span></li>{/each}</ul>{/if}
                 </div>
                 <div class="relative bg-gradient-to-br {cur.gradient || 'from-zinc-800 to-zinc-900'} flex items-center justify-center p-6 border-t md:border-t-0 md:border-l border-zinc-800">
-                  <div class="w-full max-w-[360px] aspect-[16/10] rounded-xl bg-[#2B2B2B] border border-zinc-800 p-4 flex flex-col gap-2 overflow-hidden">
+                  <div class="w-full max-w-[360px] aspect-[16/10] rounded-xl bg-[#0a0a0a] border border-zinc-800 p-4 flex flex-col gap-2 overflow-hidden">
                     <div class="flex gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span><span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span><span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span></div>
                     <div class="flex-1 rounded-lg bg-gradient-to-br {cur.gradient || 'from-zinc-800 to-zinc-900'} border border-zinc-800/50 mt-2"></div>
                     <span class="mono text-[10px] text-zinc-600">preview • {deckIdx+1}/{slides.length}</span>
@@ -400,7 +400,7 @@ let booted = false;
             {:else if cur.layout==='code'}
               <div class="flex-1 grid md:grid-cols-[1.1fr_0.9fr] gap-0 bg-zinc-900 overflow-auto">
                 <div class="p-8 sm:p-10 flex flex-col gap-4"><span class="mono text-[11px] tracking-[0.16em] uppercase text-emerald-400">{cur.subtitle}</span><h2 class="fraunces text-[24px] font-semibold leading-tight">{cur.title}</h2><p class="text-[13px] leading-6 text-zinc-400">{cur.message}</p>{#if cur.points}<ul class="space-y-1.5">{#each cur.points as p}<li class="mono text-[11px] text-zinc-500">• {p}</li>{/each}</ul>{/if}</div>
-                <div class="bg-[#2B2B2B] border-t md:border-t-0 md:border-l border-zinc-800 p-4 flex flex-col"><div class="mono text-[11px] tracking-widest uppercase text-zinc-600 mb-2">code</div><pre class="flex-1 bg-zinc-900 border border-zinc-800 rounded-xl p-4 mono text-[11px] leading-5 text-zinc-300 overflow-auto whitespace-pre-wrap">{cur.code}</pre></div>
+                <div class="bg-[#0a0a0a] border-t md:border-t-0 md:border-l border-zinc-800 p-4 flex flex-col"><div class="mono text-[11px] tracking-widest uppercase text-zinc-600 mb-2">code</div><pre class="flex-1 bg-zinc-900 border border-zinc-800 rounded-xl p-4 mono text-[11px] leading-5 text-zinc-300 overflow-auto whitespace-pre-wrap">{cur.code}</pre></div>
               </div>
             {:else if cur.layout==='cards'}
               <div class="flex-1 p-8 sm:p-10 flex flex-col gap-5 bg-zinc-900 overflow-auto">
@@ -431,7 +431,7 @@ let booted = false;
         <h1 class="fraunces text-[36px] sm:text-[44px] font-medium tracking-tight leading-none">CodingSkuy on YouTube.</h1>
         <p class="text-[14px] leading-6 text-zinc-400 max-w-2xl">Tutorial panjang 12–22 menit untuk deep dive, dan Shorts 30–60 detik untuk tips cepat. Semua dari <a href="https://www.youtube.com/@codingskuy/videos" target="_blank" class="underline text-zinc-300">youtube.com/@codingskuy</a> — dinamis via RSS/API, fallback statis kalau API diblok. <span class="mono text-xs text-zinc-500 ml-2">{filteredVideos.length} videos</span></p>
       </div>
-      <div class="sticky top-[65px] z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-3 bg-[#2B2B2B]/80 backdrop-blur-xl border-y border-zinc-800/60 flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
+      <div class="sticky top-[65px] z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-3 bg-[#0a0a0a]/80 backdrop-blur-xl border-y border-zinc-800/60 flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
         <div class="relative flex-1 max-w-xl">
           <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4-4m2-4a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           <input bind:value={videoSearch} placeholder="Search videos — 'flutter', 'css', 'ai'" class="w-full bg-zinc-900 border border-zinc-800 rounded-full pl-9 pr-4 py-2.5 text-[13px] placeholder:text-zinc-600 focus:outline-none focus:border-zinc-700"/>
@@ -487,7 +487,7 @@ let booted = false;
     </div>
   {:else if view==='videoDetail' && selectedVideo}
     <div class="fixed inset-0 z-50 bg-black flex flex-col" in:fade={{duration:200}} out:fade={{duration:150}}>
-      <div class="h-[56px] shrink-0 border-b border-zinc-800 bg-[#2B2B2B]/80 backdrop-blur flex items-center justify-between px-4 sm:px-6">
+      <div class="h-[56px] shrink-0 border-b border-zinc-800 bg-[#09090b]/80 backdrop-blur flex items-center justify-between px-4 sm:px-6">
         <button on:click={()=> nav('videos')} class="inline-flex items-center gap-1.5 rounded-full border border-zinc-800 bg-zinc-900 px-3 py-1.5 text-xs font-medium text-zinc-300 hover:text-white">← All videos</button>
         <span class="mono text-xs text-zinc-500 hidden sm:inline">{selectedVideo.isShort ? 'Short' : 'Video'} · {selectedVideo.duration}</span>
         <a href={"https://www.youtube.com/watch?v="+selectedVideo.id} target="_blank" class="rounded-full bg-white text-black px-3 py-1.5 text-xs font-semibold hover:bg-zinc-100">Open on YouTube →</a>
@@ -510,7 +510,7 @@ let booted = false;
         <h1 class="fraunces text-[36px] sm:text-[44px] font-medium tracking-tight leading-none">Instagram Carousel Library</h1>
         <p class="text-[14px] leading-6 text-zinc-400 max-w-2xl">Each post is designed for a 4:5 portrait frame. Tap a cover to open the full carousel. Swipe through 8–10 cards per story. <span class="text-zinc-500 mono text-xs ml-2">{filteredPosts.length} posts</span></p>
       </div>
-      <div class="sticky top-[65px] z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-3 bg-[#2B2B2B]/80 backdrop-blur-xl border-y border-zinc-800/60 flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
+      <div class="sticky top-[65px] z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-3 bg-[#0a0a0a]/80 backdrop-blur-xl border-y border-zinc-800/60 flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
         <div class="relative flex-1 max-w-xl">
           <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4-4m2-4a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           <input bind:value={postSearch} placeholder="Search carousels — 'claude', 'css', 'cube'" class="w-full bg-zinc-900 border border-zinc-800 rounded-full pl-9 pr-4 py-2.5 text-[13px] placeholder:text-zinc-600 focus:outline-none focus:border-zinc-700"/>
@@ -552,7 +552,7 @@ let booted = false;
     {@const meta = postsData.find(p=>p.slug===postSlug)}
     {@const sls = postsSlides[postSlug] || []}
     <div class="fixed inset-0 z-50 bg-black flex flex-col" in:fade={{duration:200}} out:fade={{duration:150}}>
-      <div class="h-[56px] shrink-0 border-b border-zinc-800 bg-[#2B2B2B]/80 backdrop-blur flex items-center justify-between px-4 sm:px-6">
+      <div class="h-[56px] shrink-0 border-b border-zinc-800 bg-[#09090b]/80 backdrop-blur flex items-center justify-between px-4 sm:px-6">
         <div class="flex items-center gap-3">
           <button on:click={()=> nav('posts')} class="inline-flex items-center gap-1.5 rounded-full border border-zinc-800 bg-zinc-900 px-3 py-1.5 text-xs font-medium text-zinc-300 hover:text-white hover:border-zinc-700">← All posts</button>
           <span class="hidden sm:inline mono text-[11px] tracking-widest uppercase text-zinc-600">Instagram Carousel</span>
@@ -632,7 +632,7 @@ let booted = false;
         <h1 class="fraunces text-[36px] sm:text-[44px] font-medium tracking-tight leading-none">Notes from the workshop.</h1>
         <p class="text-[14px] leading-6 text-zinc-400 max-w-2xl">Long-form writing on what I'm learning, building, and breaking. Daily-ish, depending on how the day goes. <span class="mono text-xs text-zinc-500 ml-2">{filteredBlog.length} posts</span></p>
       </div>
-      <div class="sticky top-[65px] z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-3 bg-[#2B2B2B]/80 backdrop-blur-xl border-y border-zinc-800/60 flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
+      <div class="sticky top-[65px] z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-3 bg-[#0a0a0a]/80 backdrop-blur-xl border-y border-zinc-800/60 flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
         <div class="relative flex-1 max-w-xl">
           <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4-4m2-4a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           <input bind:value={blogSearch} placeholder="Search notes — 'monorepo', 'RevenueCat', 'Expo'" class="w-full bg-zinc-900 border border-zinc-800 rounded-full pl-9 pr-4 py-2.5 text-[13px] placeholder:text-zinc-600 focus:outline-none focus:border-zinc-700"/>
@@ -656,7 +656,7 @@ let booted = false;
               <p class="text-[14px] leading-6 text-zinc-400">{blogFeatured.excerpt}</p>
               <button on:click={()=> openBlog(blogFeatured.slug)} class="self-start mt-1 inline-flex items-center gap-1 mono text-xs border border-zinc-800 rounded-full px-4 py-2 hover:border-zinc-700 hover:text-white">Read <span>→</span></button>
             </div>
-            <div class="bg-gradient-to-br from-zinc-800 to-zinc-900 p-6 flex items-center justify-center border-t md:border-t-0 md:border-l border-zinc-800"><div class="rounded-xl bg-[#2B2B2B] border border-zinc-800 p-4 mono text-xs leading-5 text-zinc-400 max-w-[260px]">“{blogFeatured.excerpt.slice(0,120)}…”<br><span class="text-white font-medium mt-2 block">— workshop note</span></div></div>
+            <div class="bg-gradient-to-br from-zinc-800 to-zinc-900 p-6 flex items-center justify-center border-t md:border-t-0 md:border-l border-zinc-800"><div class="rounded-xl bg-[#0a0a0a] border border-zinc-800 p-4 mono text-xs leading-5 text-zinc-400 max-w-[260px]">“{blogFeatured.excerpt.slice(0,120)}…”<br><span class="text-white font-medium mt-2 block">— workshop note</span></div></div>
           </div>
         {/if}
       </div>
@@ -844,7 +844,7 @@ let booted = false;
   {/key}
 </main>
 
-<footer class="border-t border-zinc-800/80 bg-[#2B2B2B]/70" data-od-id="footer">
+<footer class="border-t border-zinc-800/80 bg-[#09090b]/70" data-od-id="footer">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 py-8 flex flex-col md:flex-row justify-between gap-8">
     <div class="flex flex-col gap-3 max-w-sm"><div class="flex items-center gap-2"><img src={logoKhoirlabs} class="w-6 h-6 rounded-full logo-bg object-contain p-1" alt=""><span class="text-sm font-semibold">khoirlabs</span></div><p class="text-xs leading-5 text-zinc-500">Software Engineer — Mobile (Flutter, SwiftUI & Kotlin), Backend & APIs, AI-powered. Product-driven, end-to-end, system-thinking.</p><div class="flex items-center gap-3 mono text-[11px] text-zinc-500"><span>© 2026 khoirlabs</span><span class="w-1 h-1 rounded-full bg-zinc-700"></span><a href="https://wa.me/082334626354" target="_blank" rel="noopener" class="hover:text-white">Contact</a></div></div>
     <div class="flex gap-10 sm:gap-14 text-xs"><div class="flex flex-col gap-2"><span class="mono text-[11px] tracking-widest uppercase text-zinc-500">Explore</span><button on:click={()=> nav('home')} class="text-left text-zinc-400 hover:text-white">Home</button><button on:click={()=> nav('about')} class="text-left text-zinc-400 hover:text-white">About</button><button on:click={()=> nav('blog')} class="text-left text-zinc-400 hover:text-white">Blog</button></div><div class="flex flex-col gap-2"><span class="mono text-[11px] tracking-widest uppercase text-zinc-500">Library</span><button on:click={()=> nav('decks')} class="text-left text-zinc-400 hover:text-white">Presentation Library</button><button on:click={()=> nav('posts')} class="text-left text-zinc-400 hover:text-white">Instagram Posts</button><button on:click={()=> nav('decks')} class="text-left text-zinc-400 hover:text-white">Decks</button></div><div class="flex flex-col gap-2"><span class="mono text-[11px] tracking-widest uppercase text-zinc-500">Connect</span><a href="https://github.com/roiskhoiron" target="_blank" rel="noopener" class="text-zinc-400 hover:text-white">GitHub</a><a href="https://www.instagram.com/codingskuy_/" target="_blank" rel="noopener" class="text-zinc-400 hover:text-white">Instagram</a><a href="https://www.linkedin.com/in/rois-khoiron/" target="_blank" rel="noopener" class="text-zinc-400 hover:text-white">LinkedIn</a></div></div>

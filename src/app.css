@@ -119,9 +119,6 @@ html.light footer { background:#ffffff !important; border-color:#e4e4e7 !importa
 html.light .bg-zinc-900 { background-color:#ffffff !important; border-color:#e4e4e7 !important; }
 html.light .bg-zinc-900\/40, html.light .bg-zinc-900\/30, html.light .bg-zinc-900\/20 { background-color:#ffffff !important; border-color:#e4e4e7 !important; }
 html.light .bg-zinc-900\/60 { background-color:#f4f4f5 !important; border-color:#e4e4e7 !important; }
-.bg-zinc-900 { background-color: #2B2B2B !important; }
-.bg-zinc-900\/40, .bg-zinc-900\/30, .bg-zinc-900\/20 { background-color: #2B2B2B !important; }
-.bg-zinc-900\/60 { background-color: #2B2B2B !important; }
 html.light .bg-zinc-800 { background-color:#ffffff !important; border-color:#e4e4e7 !important; }
 html.light .border-zinc-800, html.light .border-zinc-700 { border-color:#e4e4e7 !important; }
 html.light .border-zinc-800\/60 { border-color:rgba(228,228,231,0.85) !important; }
