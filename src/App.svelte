@@ -168,6 +168,8 @@ let booted = false;
   let postsMouseStartX = 0;
   let scrollProgress = 0;
   let heroParallaxY = 0;
+  let activeSection = 0;
+  const totalSections = 5;
   function handlePostsTouchStart(e: TouchEvent){ postsTouchStartX = e.touches[0].clientX; postsIsDragging = true; postsDragDx = 0; }
   function handlePostsTouchMove(e: TouchEvent){ if(!postsIsDragging) return; postsDragDx = e.touches[0].clientX - postsTouchStartX; }
   function handlePostsTouchEnd(e: TouchEvent){
@@ -189,6 +191,13 @@ let booted = false;
     heroParallaxY = Math.min(window.scrollY * 0.12, 24);
     const hdr = document.getElementById('site-header');
     if(hdr){ hdr.classList.toggle('shadow-lg', window.scrollY>8); hdr.style.backdropFilter = `blur(${Math.min(12 + window.scrollY*0.02, 20)}px)`; }
+    const sections = document.querySelectorAll('main section[id], main .scroll-section');
+    sections.forEach((sec, i) => {
+      const rect = sec.getBoundingClientRect();
+      if (rect.top <= window.innerHeight * 0.55 && rect.bottom >= window.innerHeight * 0.35) {
+        activeSection = i + 1;
+      }
+    });
   }
   function setupReveal(){
     const obs = new IntersectionObserver((entries)=>{
@@ -223,6 +232,13 @@ let booted = false;
 
 <svelte:window on:keydown={handleKeys} on:scroll={handleScroll} />
 <div id="scroll-progress" class="fixed top-0 left-0 h-[2px] bg-[#FF6B35] z-[60] pointer-events-none" style="width:{scrollProgress}%"></div>
+<div id="section-indicator" class="fixed top-4 right-4 z-50 mono text-[11px] tracking-widest text-zinc-500 hidden md:flex items-center gap-2" style="opacity:{scrollProgress > 2 ? 1 : 0}">
+  <span class="text-zinc-600">Scroll</span>
+  <span class="text-[#FF6B35]">{String(activeSection).padStart(2, '0')}</span>
+  <span class="text-zinc-700">/</span>
+  <span class="text-zinc-600">{String(totalSections).padStart(2, '0')}</span>
+</div>
+<div class="fixed inset-0 pointer-events-none z-0" aria-hidden="true" style="background: radial-gradient(ellipse 80% 60% at 50% {Math.min(30 + scrollProgress * 0.4, 70)}%, rgba(255,107,53,0.03) 0%, transparent 70%);"></div>
 <header id="site-header" class="sticky top-0 z-40 border-b border-zinc-800/60 bg-[#09090b]/60 backdrop-blur-xl">
   <nav class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
     <button on:click={()=> nav('home')} class="flex items-center gap-3">
@@ -255,7 +271,7 @@ let booted = false;
   {#key view}
   <div in:fade={{duration:220, delay:30}} out:fade={{duration:150}}>
   {#if view==='home'}
-    <section class="relative flex flex-col items-center gap-10 text-center reveal in">
+    <section class="relative flex flex-col items-center gap-10 text-center reveal in scroll-section" id="section-hero">
       <div class="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
         <div class="hero-glow"></div>
       </div>
@@ -282,9 +298,13 @@ let booted = false;
           <a href="https://github.com/roiskhoiron" target="_blank" class="platform-btn inline-flex items-center gap-3 bg-zinc-900 border border-zinc-800 text-white rounded-xl px-4 py-2.5 min-w-[148px]"><img src="https://cdn.simpleicons.org/github/FFFFFF" class="w-5 h-5 platform-icon" alt=""><span class="flex flex-col leading-none text-left"><span class="mono text-[9px] tracking-[0.14em] uppercase font-semibold text-zinc-400">Code on</span><span class="text-[13px] font-semibold -mt-0.5">GitHub</span></span></a>
         </div>
         <button on:click={()=> nav('blog')} class="mono text-[12px] text-zinc-400 hover:text-white inline-flex items-center gap-1.5 mt-1 transition">Or read the blog <span>→</span></button>
+        <div class="mt-8 mono text-[11px] tracking-[0.18em] text-zinc-600 flex items-center gap-2 animate-bounce">
+          <span>Scroll to explore</span>
+          <span>↓</span>
+        </div>
       </div>
     </section>
-    <section class="flex flex-col gap-10 mt-20 md:mt-24 reveal" id="recent">
+    <section class="flex flex-col gap-10 mt-20 md:mt-24 reveal scroll-section" id="recent">
       <div class="flex flex-col gap-2"><span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">Recent</span><div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4"><h2 class="fraunces text-[30px] sm:text-[36px] font-medium leading-none tracking-tight">Latest from the workshop.</h2><div class="flex items-center gap-2 overflow-x-auto scrollbar-none"><button on:click={()=> nav('blog')} class="whitespace-nowrap rounded-full px-4 py-2 text-xs font-medium border bg-white text-black border-white">All <span class="opacity-60 ml-1">9</span></button><button on:click={()=> nav('blog')} class="whitespace-nowrap rounded-full px-4 py-2 text-xs font-medium border border-zinc-800 text-zinc-400">Blog <span class="opacity-60 ml-1">3</span></button><button on:click={()=> nav('posts')} class="whitespace-nowrap rounded-full px-4 py-2 text-xs font-medium border border-zinc-800 text-zinc-400">Carousels <span class="opacity-60 ml-1">3</span></button><button on:click={()=> nav('decks')} class="whitespace-nowrap rounded-full px-4 py-2 text-xs font-medium border border-zinc-800 text-zinc-400">Decks <span class="opacity-60 ml-1">3</span></button></div></div></div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
         <article class="group relative flex flex-col gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 hover:bg-zinc-900/70 hover:border-zinc-700 transition cursor-pointer reveal reveal-delay-1" on:click={()=> openBlog('four-repos-to-a-monorepo')}><div class="mono text-[11px] tracking-widest uppercase text-zinc-500">Jun 21, 2026 — Blog</div><h3 class="text-[16px] font-semibold leading-5">From four repos to a monorepo</h3><p class="text-[13px] leading-5 text-zinc-400 line-clamp-3">Consolidating four byte-identical app repos into one shared core plus thin app shells, the expo-router and Metro problems it surfaced.</p><span class="mono text-[11px] text-zinc-300 mt-2 inline-flex gap-1">Read post <span class="group-hover:translate-x-0.5 transition">→</span></span></article>
@@ -298,7 +318,7 @@ let booted = false;
         <article class="group relative flex flex-col gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 hover:bg-zinc-900/70 transition cursor-pointer reveal reveal-delay-3" on:click={()=> openDeck('css-container-queries')}><div class="mono text-[11px] tracking-widest uppercase text-zinc-500">May 15, 2026 — Deck</div><h3 class="text-[16px] font-semibold leading-5 flex items-center gap-2"><span class="w-5 h-5 rounded bg-emerald-400 text-black grid place-items-center text-[10px]">◧</span> Container Queries & The Em Cascade</h3><p class="text-[13px] leading-5 text-zinc-400">Components that scale uniformly using cqi and em.</p><span class="mono text-[11px] text-zinc-300 mt-1">Open deck →</span></article>
       </div>
     </section>
-    <section id="about-section" class="flex flex-col gap-8 mt-16 md:mt-20 border-t border-zinc-800 pt-12 md:pt-16">
+    <section id="about-section" class="flex flex-col gap-8 mt-16 md:mt-20 border-t border-zinc-800 pt-12 md:pt-16 scroll-section">
       <div class="flex flex-col gap-2"><span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">About</span><div class="grid md:grid-cols-[1.15fr_0.85fr] gap-8 md:gap-12 items-start"><h2 class="fraunces text-[28px] sm:text-[34px] md:text-[38px] font-medium leading-[0.95] tracking-tight">Hi, I'm Khoiron — 5+ years building complete products, not just apps.</h2><div class="flex flex-col gap-4 text-[14px] leading-6 text-zinc-400"><p>Software Engineer — Mobile (Flutter, SwiftUI & Kotlin), Backend & APIs, AI-powered. Product-driven, end-to-end, system-thinking. Based in Yogyakarta, building for enterprise (AI Care, Callink) and teaching via BIT House.</p><div class="flex gap-3"><button on:click={()=> nav('about')} class="inline-flex items-center justify-center rounded-full bg-white text-black text-xs font-semibold px-5 py-2.5 hover:bg-zinc-100 transition">Read the full story</button><a href="mailto:rois.khoiron@gmail.com" class="inline-flex items-center justify-center rounded-full border border-zinc-800 text-xs font-medium px-5 py-2.5 hover:border-zinc-700 hover:text-white transition">Get in touch</a></div></div></div></div>
       <div class="grid md:grid-cols-2 gap-6">
         <div class="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 flex flex-col gap-4"><h3 class="font-semibold">Focus areas</h3><div class="grid grid-cols-1 gap-3 text-sm text-zinc-400"><div><span class="text-white font-medium">Product-driven engineering</span> — why before code.</div><div><span class="text-white font-medium">End-to-end scalability</span> — mobile + APIs that grow.</div><div><span class="text-white font-medium">AI-powered integration</span> — intelligent UX.</div></div></div>
@@ -312,7 +332,7 @@ let booted = false;
       </div>
     </section>
   {:else if view==='decks'}
-    <div class="flex flex-col gap-6">
+    <div class="flex flex-col gap-6 scroll-section">
       <div class="flex flex-col gap-3">
         <span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">Decks</span>
         <h1 class="fraunces text-[36px] sm:text-[44px] font-medium tracking-tight leading-none">Presentation Library</h1>
@@ -429,7 +449,7 @@ let booted = false;
       </div>
     </div>
   {:else if view==='videos'}
-    <div class="flex flex-col gap-8">
+    <div class="flex flex-col gap-8 scroll-section">
       <div class="flex flex-col gap-3">
         <span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">Videos</span>
         <h1 class="fraunces text-[36px] sm:text-[44px] font-medium tracking-tight leading-none">CodingSkuy on YouTube.</h1>
@@ -508,7 +528,7 @@ let booted = false;
       </div>
     </div>
   {:else if view==='posts'}
-    <div class="flex flex-col gap-6">
+    <div class="flex flex-col gap-6 scroll-section">
       <div class="flex flex-col gap-3">
         <span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">Posts</span>
         <h1 class="fraunces text-[36px] sm:text-[44px] font-medium tracking-tight leading-none">Instagram Carousel Library</h1>
@@ -630,7 +650,7 @@ let booted = false;
       </div>
     </div>
   {:else if view==='blog'}
-    <div class="flex flex-col gap-6">
+    <div class="flex flex-col gap-6 scroll-section">
       <div class="flex flex-col gap-3">
         <span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">Blog</span>
         <h1 class="fraunces text-[36px] sm:text-[44px] font-medium tracking-tight leading-none">Notes from the workshop.</h1>
@@ -712,7 +732,7 @@ let booted = false;
       </div>
     </div>
   {:else if view==='about'}
-    <div class="flex flex-col gap-10">
+    <div class="flex flex-col gap-10 scroll-section">
       <!-- hero — Khoiron Rois (acuan khoirlabs.dev/about) -->
       <div class="flex flex-col gap-4 max-w-3xl">
         <span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">Yogyakarta, Indonesia · rois.khoiron@gmail.com</span>
