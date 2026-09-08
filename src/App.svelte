@@ -3,6 +3,8 @@
   import { fade, fly } from 'svelte/transition';
   import { decksData, deckSlides, postsData, postsSlides, blogData, blogFull, videosData } from './lib/data';
   import type { Video } from './lib/data';
+  import logoKhoirlabs from '../assets/images/khoirlabs.dev/logo-khoirlabs.jpeg';
+  import khoironRois from '../assets/images/khoirlabs.dev/khoiron-rois.jpeg';
 
   let view: string = 'home';
   let deckSlug: string | null = null;
@@ -204,7 +206,7 @@ let booted = false;
   <div class="relative z-10 flex h-full w-full flex-col items-center justify-center px-6">
     <div class="flex flex-col items-center gap-6 text-center">
       <div class="boot-logo-wrap">
-        <img src="./assets/images/khoirlabs.dev/logo-khoirlabs.jpeg" class="boot-logo" alt="Khoirlabs"/>
+        <img src={logoKhoirlabs} class="boot-logo" alt="Khoirlabs"/>
       </div>
       <div class="flex flex-col items-center gap-3">
         <h1 class="fraunces text-[36px] sm:text-[52px] md:text-[60px] font-medium leading-[0.95] tracking-tight boot-title">
@@ -224,7 +226,7 @@ let booted = false;
 <header id="site-header" class="sticky top-0 z-40 border-b border-zinc-800/60 bg-[#09090b]/60 backdrop-blur-xl">
   <nav class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
     <button on:click={()=> nav('home')} class="flex items-center gap-3">
-      <img src="./assets/images/khoirlabs.dev/logo-khoirlabs.jpeg" class="w-8 h-8 rounded-full border border-zinc-800 bg-white object-contain p-1" alt="Khoirlabs"/>
+      <img src={logoKhoirlabs} class="w-8 h-8 rounded-full border border-zinc-800 bg-white object-contain p-1" alt="Khoirlabs"/>
       <div class="flex flex-col leading-none text-left">
         <span class="text-[15px] font-semibold tracking-tight">khoirlabs</span>
         <span class="hidden sm:block text-[11px] text-zinc-400">Software Engineer, Tech Educator/Mentor, Security-First</span>
@@ -269,7 +271,7 @@ let booted = false;
         </div>
       </div>
       <div class="flex flex-col items-center gap-4 reveal">
-        <div class="relative parallax" style="transform: translateY({heroParallaxY}px)"><div class="w-[168px] h-[168px] rounded-full overflow-hidden border border-zinc-800 p-[5px] bg-zinc-900"><img src="./assets/images/khoirlabs.dev/khoiron-rois.jpeg" class="w-full h-full object-cover rounded-full object-top" alt="Khoiron Rois"/></div><div class="absolute -bottom-2 -right-2 bg-white text-black mono text-[10px] font-bold tracking-widest px-2 py-1 rounded-full border border-zinc-200">5+ YRS</div></div>
+        <div class="relative parallax" style="transform: translateY({heroParallaxY}px)"><div class="w-[168px] h-[168px] rounded-full overflow-hidden border border-zinc-800 p-[5px] bg-zinc-900"><img src={khoironRois} class="w-full h-full object-cover rounded-full object-top" alt="Khoiron Rois"/></div><div class="absolute -bottom-2 -right-2 bg-white text-black mono text-[10px] font-bold tracking-widest px-2 py-1 rounded-full border border-zinc-200">5+ YRS</div></div>
         <div class="text-center"><div class="text-[15px] font-semibold">Khoiron Rois</div><div class="mono text-[11px] tracking-wide text-zinc-500">Android · iOS · Flutter · React Native</div></div>
         <div class="flex flex-wrap justify-center gap-3 mt-1">
           <a href="https://play.google.com/store/apps/dev?id=8721309729295189926" target="_blank" class="inline-flex items-center gap-3 bg-white text-black rounded-xl px-4 py-2.5 hover:bg-zinc-100 transition min-w-[148px]"><img src="https://cdn.simpleicons.org/googleplay/000000" class="w-5 h-5" alt=""><span class="flex flex-col leading-none text-left"><span class="mono text-[9px] tracking-[0.14em] uppercase font-semibold text-zinc-500">Apps on</span><span class="text-[13px] font-semibold -mt-0.5">Google Play</span></span></a>
@@ -530,7 +532,7 @@ let booted = false;
           <div class="flex gap-4 will-change-transform" style="transition: {postsIsDragging||postsMouseDown ? 'none' : 'transform 420ms cubic-bezier(0.22,1,0.36,1)'}; transform: translateX({-postsCarIdx * 336 + postsDragDx}px);">
             {#each filteredPosts as p}
               <article on:click={()=> openPost(p.slug)} class="shrink-0 w-[320px] aspect-[4/5] rounded-2xl border border-zinc-800 p-5 flex flex-col cursor-pointer {p.color} snap-center" style="scroll-snap-align:center;">
-                <div class="flex items-center justify-between"><img src="./assets/images/khoirlabs.dev/logo-khoirlabs.jpeg" class="w-6 h-6 rounded-full {p.color.includes('white')?'':'bg-white'} object-contain p-0.5" alt=""><span class="mono text-[10px] tracking-widest uppercase {p.color.includes('white')?'text-zinc-500':'text-zinc-400'}">{p.accent}</span></div>
+                <div class="flex items-center justify-between"><img src={logoKhoirlabs} class="w-6 h-6 rounded-full {p.color.includes('white')?'':'bg-white'} object-contain p-0.5" alt=""><span class="mono text-[10px] tracking-widest uppercase {p.color.includes('white')?'text-zinc-500':'text-zinc-400'}">{p.accent}</span></div>
                 <h3 class="fraunces text-[22px] font-medium mt-4 flex-1 leading-[1.05]">{p.title}</h3>
                 <p class="text-[12px] leading-5 {p.color.includes('white')?'text-zinc-600':'text-zinc-400'} line-clamp-3">{p.desc}</p>
                 <div class="flex items-center justify-between mt-4"><span class="mono text-[10px] {p.color.includes('white')?'text-zinc-400':'text-zinc-500'}">{p.date}</span><span class="mono text-[11px] flex items-center gap-1 {p.color.includes('white')?'text-black':'text-white'}">tap to open →</span></div>
@@ -571,7 +573,7 @@ let booted = false;
                 {@const isWhite = s.theme==='white'}
                 <div class="w-full h-full {isWhite?'bg-white text-black':'bg-zinc-900 text-white'} flex flex-col p-6 relative shrink-0" style="width:{100/sls.length}%">
                   <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-2"><img src="./assets/images/khoirlabs.dev/logo-khoirlabs.jpeg" class="w-6 h-6 rounded-full {isWhite?'':'bg-white'} object-contain p-0.5" alt=""/><span class="text-[11px] font-bold tracking-tight">khoirlabs</span></div>
+                    <div class="flex items-center gap-2"><img src={logoKhoirlabs} class="w-6 h-6 rounded-full {isWhite?'':'bg-white'} object-contain p-0.5" alt=""/><span class="text-[11px] font-bold tracking-tight">khoirlabs</span></div>
                     <span class="mono text-[10px] tracking-widest uppercase text-zinc-500">{s.label} {s.num? '· '+s.num: ''}</span>
                   </div>
                   <div class="flex-1 flex flex-col justify-center gap-3 py-6 overflow-auto">
@@ -581,7 +583,7 @@ let booted = false;
                     {#if s.code}<pre class="mt-2 {isWhite?'bg-zinc-900 text-zinc-100 border-zinc-800':'bg-black text-zinc-300 border-zinc-700'} rounded-xl p-3 mono text-[11px] leading-5 overflow-auto whitespace-pre-wrap border">{s.code}</pre>{/if}
                   </div>
                   <div class="flex items-center justify-between pt-4 border-t {isWhite?'border-zinc-200':'border-zinc-800'}">
-                    <span class="mono text-[10px] text-zinc-500 flex items-center gap-1"><img src="./assets/images/khoirlabs.dev/{isWhite?'ig-khoirlabs-black-ad89c2c91f.png':'ig-khoirlabs-white-2d8fecd0f2.png'}" class="w-4 h-4 rounded-full" alt=""/>@khoirlabs</span>
+                    <span class="mono text-[10px] text-zinc-500 flex items-center gap-1">                    <img src={isWhite ? new URL('../assets/images/khoirlabs.dev/ig-khoirlabs-black-ad89c2c91f.png', import.meta.url).href : new URL('../assets/images/khoirlabs.dev/ig-khoirlabs-white-2d8fecd0f2.png', import.meta.url).href} class="w-4 h-4 rounded-full" alt=""/>@khoirlabs</span>
                     <span class="mono text-[11px] {isWhite?'text-zinc-900':'text-white'}">{s.num===''?'swipe →':'• • •'}</span>
                   </div>
                 </div>
@@ -845,7 +847,7 @@ let booted = false;
 
 <footer class="border-t border-zinc-800/80 bg-[#09090b]/70" data-od-id="footer">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 py-8 flex flex-col md:flex-row justify-between gap-8">
-    <div class="flex flex-col gap-3 max-w-sm"><div class="flex items-center gap-2"><img src="./assets/images/khoirlabs.dev/logo-khoirlabs.jpeg" class="w-6 h-6 rounded-full bg-white object-contain p-1" alt=""><span class="text-sm font-semibold">khoirlabs</span></div><p class="text-xs leading-5 text-zinc-500">Software Engineer — Mobile (Flutter, SwiftUI & Kotlin), Backend & APIs, AI-powered. Product-driven, end-to-end, system-thinking.</p><div class="flex items-center gap-3 mono text-[11px] text-zinc-500"><span>© 2026 khoirlabs</span><span class="w-1 h-1 rounded-full bg-zinc-700"></span><a href="https://wa.me/082334626354" target="_blank" rel="noopener" class="hover:text-white">Contact</a></div></div>
+    <div class="flex flex-col gap-3 max-w-sm"><div class="flex items-center gap-2"><img src={logoKhoirlabs} class="w-6 h-6 rounded-full bg-white object-contain p-1" alt=""><span class="text-sm font-semibold">khoirlabs</span></div><p class="text-xs leading-5 text-zinc-500">Software Engineer — Mobile (Flutter, SwiftUI & Kotlin), Backend & APIs, AI-powered. Product-driven, end-to-end, system-thinking.</p><div class="flex items-center gap-3 mono text-[11px] text-zinc-500"><span>© 2026 khoirlabs</span><span class="w-1 h-1 rounded-full bg-zinc-700"></span><a href="https://wa.me/082334626354" target="_blank" rel="noopener" class="hover:text-white">Contact</a></div></div>
     <div class="flex gap-10 sm:gap-14 text-xs"><div class="flex flex-col gap-2"><span class="mono text-[11px] tracking-widest uppercase text-zinc-500">Explore</span><button on:click={()=> nav('home')} class="text-left text-zinc-400 hover:text-white">Home</button><button on:click={()=> nav('about')} class="text-left text-zinc-400 hover:text-white">About</button><button on:click={()=> nav('blog')} class="text-left text-zinc-400 hover:text-white">Blog</button></div><div class="flex flex-col gap-2"><span class="mono text-[11px] tracking-widest uppercase text-zinc-500">Library</span><button on:click={()=> nav('decks')} class="text-left text-zinc-400 hover:text-white">Presentation Library</button><button on:click={()=> nav('posts')} class="text-left text-zinc-400 hover:text-white">Instagram Posts</button><button on:click={()=> nav('decks')} class="text-left text-zinc-400 hover:text-white">Decks</button></div><div class="flex flex-col gap-2"><span class="mono text-[11px] tracking-widest uppercase text-zinc-500">Connect</span><a href="https://github.com/roiskhoiron" target="_blank" rel="noopener" class="text-zinc-400 hover:text-white">GitHub</a><a href="https://www.instagram.com/codingskuy_/" target="_blank" rel="noopener" class="text-zinc-400 hover:text-white">Instagram</a><a href="https://www.linkedin.com/in/rois-khoiron/" target="_blank" rel="noopener" class="text-zinc-400 hover:text-white">LinkedIn</a></div></div>
   </div>
 </footer>
