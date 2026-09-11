@@ -134,16 +134,16 @@ let booted = false;
     }
   }
 
-  $: filteredDecks = decksData.filter(d=>{
+  $: filteredDecks = [...decksData].filter(d=>{
     if(deckTag!=='all' && !d.type.toLowerCase().includes(deckTag)) return false;
     if(deckSearch && !(d.title+d.desc+d.tags.join(' ')).toLowerCase().includes(deckSearch.toLowerCase())) return false;
     return true;
-  });
-  $: filteredPosts = (()=>{ postsTick; return postsData.filter(p=>{
+  }).reverse();
+  $: filteredPosts = (()=>{ postsTick; return [...postsData].filter(p=>{
     if(postTag!=='all' && p.tag!==postTag) return false;
     if(postSearch && !(p.title+p.desc+p.tag).toLowerCase().includes(postSearch.toLowerCase())) return false;
     return true;
-  }); })();
+  }).reverse(); })();
   $: filteredVideos = videosData.filter(v=>{
     if(videoFilter==='video' && v.isShort) return false;
     if(videoFilter==='short' && !v.isShort) return false;
