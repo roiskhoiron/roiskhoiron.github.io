@@ -109,6 +109,7 @@ export const postsData: Post[] = [
   {title:"Pick Your Mobile Stack", slug:"mobile-frameworks-2026", tag:"tips", date:"2026-05-10", desc:"There's no universal winner. Only a winner for your team, your timeline, and the product you're actually building.", color:"bg-white text-black", accent:"tips"},
   {title:"You Can Solve The Cube", slug:"rubiks-cube-beginner-flow", tag:"hobby", date:"2026-05-08", desc:"Not in 20 seconds. But in a weekend. The trick is to stop trusting your instincts and start trusting layers.", color:"bg-zinc-900 text-white border border-zinc-800", accent:"hobby"},
   {title:"Kotlin Multiplatform: Leverage, Not Replacement", slug:"kmp-leverage-post", tag:"mobile", date:"2026-09-11", desc:"KMP bukan tentang menggantikan Flutter, melainkan leverage native codebase yang sudah ada. Sesi demo bersama Iqbal Fauzi.", color:"bg-white text-black", accent:"mobile"},
+  {title:"TypeScript Template Literals", slug:"ts-template-literals", tag:"tips", date:"2026-09-12", desc:"Bedanya template string Kotlin vs JS/TS. Kapan pakai backtick dan ${} vs tanda kutip biasa.", color:"bg-white text-black", accent:"tips"},
 ];
 
 export const postsSlides: Record<string, PostSlide[]> = {
@@ -171,6 +172,14 @@ export const postsSlides: Record<string, PostSlide[]> = {
     {num:"05", label:"False Binary", title:"KMP Tidak Akan Membunuh Flutter", body:"Pertanyaannya bukan siapa yang menang. Pertanyaannya adalah: problem Anda apa?", bullets:["Flutter: cross-platform UI, satu codebase, mulai dari nol.","KMP: shared logic, native UI, leverage existing codebase.","Dua pendekatan berbeda untuk dua konteks berbeda."], theme:"white"},
     {num:"06", label:"Framework Selection", title:"Problem First, Framework Second", body:"Solusi terbaik kadang bukan mengganti semuanya — tapi membuat yang sudah ada menjadi lebih powerful.", bullets:["Codebase Anda sekarang seperti apa?","Berapa besar investasi yang sudah ada di native?","Framework mana yang memberi leverage terbesar?"], theme:"white"},
     {num:"07", label:"Terima kasih Iqbal Fauzi", title:"Closing", body:"Insight dan demo dari Iqbal Fauzi, Senior Mobile Developer di Bobobox. KMP sebagai opsi realistis, bukan sekadar teori.", bullets:["KotlinMultiplatform #KMP #Flutter.","#MobileDevelopment #SoftwareEngineering.","Evaluate based on your actual constraints."], theme:"white"},
+  ],
+  "ts-template-literals":[
+    {num:"", label:"tips", title:"Template Literals: JS/TS vs Kotlin", body:"Hampir bener Rois! Tapi di TypeScript/JavaScript beda dikit sama Kotlin. Jangan ketukar pakai kutip dua.", theme:"white"},
+    {num:"02", label:"Problem", title:"Kenapa $a nggak jalan?", body:"Kalau kamu nulis console.log(\"$a + $b = $hasil\"), JS/TS akan menganggap itu teks literal biasa. Nggak ada nilai variabel yang masuk.", bullets:["Kutip dua (\") di JS/TS adalah teks murni.","Variabel tidak di-interpolate secara otomatis."], theme:"white"},
+    {num:"03", label:"Cara 1 (Disarankan)", title:"Backtick + ${}", body:"Ini yang paling mirip Kotlin. Buka template ajaib pakai backtick (`), lalu masukkan variabel di lubang ${}.", code:"let a = 5; let b = 10; let hasil = a + b;\n\n// Pakai backtick (`), bukan kutip biasa\nconsole.log(`${a} + ${b} = ${hasil}`);", theme:"white"},
+    {num:"04", label:"Cara 2 (Jadul)", title:"String Concatenation", body:"Cara klasik menyambung string dengan operator (+). Repot, tapi tetap jalan.", code:"console.log(a + \" + \" + b + \" = \" + hasil);", theme:"white"},
+    {num:"05", label:"Perbandingan", title:"Coba Bandingkan", body:"Lihat bedanya di console.", code:"// ❌ Hasil: \"$a + $b = $hasil\"\nconsole.log(\"$a + $b = $hasil\");\n\n// ✅ Hasil: \"5 + 10 = 15\"\nconsole.log(`${a} + ${b} = ${hasil}`);", theme:"white"},
+    {num:"06", label:"Kesimpulan", title:"Kuncinya di Backtick", body:"Di Kotlin string interpolation itu fitur bahasa. Di JS/TS, itu fitur Template Literals.", bullets:["Kutip dua: Teks biasa.","Backtick (`): Template ajaib.","${}: Lubang variabel."], theme:"white"},
   ],
 };
 
