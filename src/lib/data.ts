@@ -108,6 +108,7 @@ export const postsData: Post[] = [
   {title:"Your AI Is Not Autocomplete", slug:"ai-coding-agent-operating-model", tag:"coding", date:"2026-05-14", desc:"It's a fast junior who needs direction. Get it right and you ship faster. Get it wrong and you ship confident garbage.", color:"bg-zinc-900 text-white border border-zinc-800", accent:"coding"},
   {title:"Pick Your Mobile Stack", slug:"mobile-frameworks-2026", tag:"tips", date:"2026-05-10", desc:"There's no universal winner. Only a winner for your team, your timeline, and the product you're actually building.", color:"bg-white text-black", accent:"tips"},
   {title:"You Can Solve The Cube", slug:"rubiks-cube-beginner-flow", tag:"hobby", date:"2026-05-08", desc:"Not in 20 seconds. But in a weekend. The trick is to stop trusting your instincts and start trusting layers.", color:"bg-zinc-900 text-white border border-zinc-800", accent:"hobby"},
+  {title:"Kotlin Multiplatform: Leverage, Not Replacement", slug:"kmp-leverage-post", tag:"mobile", date:"2026-09-11", desc:"KMP bukan tentang menggantikan Flutter, melainkan leverage native codebase yang sudah ada. Sesi demo bersama Iqbal Fauzi.", color:"bg-white text-black", accent:"mobile"},
 ];
 
 export const postsSlides: Record<string, PostSlide[]> = {
@@ -161,6 +162,15 @@ export const postsSlides: Record<string, PostSlide[]> = {
     {num:"04", label:"Step 3", title:"Slip In The Middle Edges", body:"Two algorithms, mirror images of each other. Don't memorize them. Feel the rhythm. Up, around, down.", bullets:["One edge at a time. Slow it down.","Repeat until it stops feeling weird."], theme:"black"},
     {num:"05", label:"Step 4", title:"Crack The Last Layer", body:"This is where everyone gets stuck. The secret: recognize the pattern first, then trust the sequence.", bullets:["Orient the top face before permuting.","Trust the algorithm. It works."], theme:"black"},
     {num:"06", label:"Closing", title:"Habits Beat Panic-Twisting", body:"Beginners who slow down learn fastest. The cube rewards calm hands and clean patterns way more than speed.", bullets:["Same sequence every session.","Recognize patterns; don't memorize."], theme:"black"},
+  ],
+  "kmp-leverage-post":[
+    {num:"", label:"mobile", title:"KMP: Leverage, Not Replacement", body:"Datang ingin tahu KMP. Pulang kepikiran: ternyata positioning-nya sangat berbeda dari yang saya bayangkan.", theme:"white"},
+    {num:"02", label:"Dua Pertanyaan", title:"Speed Yang Sesungguhnya", body:"Di sesi Iqbal Fauzi, KMP didemo langsung di device low-end. Bukan slide. Bukan klaim. Langsung dijalankan.", bullets:["Seberapa cepat kita menulis code?","Seberapa baik hasilnya saat dijalankan?","KMP menjawab keduanya sekaligus."], theme:"white"},
+    {num:"03", label:"Shared Logic", title:"Share Yang Masuk Akal", body:"KMP tidak memaksa UI menjadi abstraksi. Anda share bagian yang memang layak di-share.", bullets:["Business logic & domain rules.","Networking & data layer.","Validation & state management.","UI? Tetap native, tetap platform-specific."], theme:"white"},
+    {num:"04", label:"Nilai Bisnis Terbesar", title:"Incremental Migration", body:"Untuk perusahaan dengan investasi besar di native Android dan iOS, KMP tidak memaksa rewrite dari nol.", bullets:["Masuk per modul, bukan big-bang migration.","Mulai dari bagian yang paling memberikan value.","Tidak buang codebase lama.","Tidak ambil risiko migrasi sekaligus."], theme:"white"},
+    {num:"05", label:"False Binary", title:"KMP Tidak Akan Membunuh Flutter", body:"Pertanyaannya bukan siapa yang menang. Pertanyaannya adalah: problem Anda apa?", bullets:["Flutter: cross-platform UI, satu codebase, mulai dari nol.","KMP: shared logic, native UI, leverage existing codebase.","Dua pendekatan berbeda untuk dua konteks berbeda."], theme:"white"},
+    {num:"06", label:"Framework Selection", title:"Problem First, Framework Second", body:"Solusi terbaik kadang bukan mengganti semuanya — tapi membuat yang sudah ada menjadi lebih powerful.", bullets:["Codebase Anda sekarang seperti apa?","Berapa besar investasi yang sudah ada di native?","Framework mana yang memberi leverage terbesar?"], theme:"white"},
+    {num:"07", label:"Terima kasih Iqbal Fauzi", title:"Closing", body:"Insight dan demo dari Iqbal Fauzi, Senior Mobile Developer di Bobobox. KMP sebagai opsi realistis, bukan sekadar teori.", bullets:["KotlinMultiplatform #KMP #Flutter.","#MobileDevelopment #SoftwareEngineering.","Evaluate based on your actual constraints."], theme:"white"},
   ],
 };
 
