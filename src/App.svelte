@@ -5,6 +5,7 @@
   import type { Video } from './lib/data';
   import logoKhoirlabs from '../assets/images/khoirlabs.dev/logo-khoirlabs.jpeg';
   import khoironRois from '../assets/images/khoirlabs.dev/khoiron-rois.jpeg';
+  import ThreeHero from './lib/ThreeHero.svelte';
 
   let view: string = 'home';
   let deckSlug: string | null = null;
@@ -30,20 +31,21 @@ let booted = false;
   let csLoading = false;
 // boot
    onMount(() => {
-     // theme init (sebelum boot animation supaya background match)
-     const saved = localStorage.getItem('theme-preference');
-     const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-     theme = (saved === 'light' || saved === 'dark') ? saved as any : (sysDark ? 'dark' : 'light');
-     applyTheme(theme);
-      // run boot sequence
-      runBootSequence();
-      // hash & scroll & stats
-      handleHash();
-      window.addEventListener('hashchange', handleHash);
-      window.addEventListener('scroll', handleScroll, {passive:true});
-      handleScroll();
-      loadCodingSchoolStats();
-    });
+      // theme init (sebelum boot animation supaya background match)
+      const saved = localStorage.getItem('theme-preference');
+      const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      theme = (saved === 'light' || saved === 'dark') ? saved as any : (sysDark ? 'dark' : 'light');
+      applyTheme(theme);
+       // run boot sequence
+       runBootSequence();
+       // hash & scroll & stats
+       handleHash();
+       window.addEventListener('hashchange', handleHash);
+       window.addEventListener('scroll', handleScroll, {passive:true});
+       handleScroll();
+       loadCodingSchoolStats();
+       setupGravity();
+     });
 
   function runBootSequence(){
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
@@ -261,6 +263,56 @@ let booted = false;
       obs.observe(el);
     });
   }
+
+  // cursor gravity for every UI component — fluid pull toward cursor
+  let gravityRaf = 0;
+  let gMouseX = -9999, gMouseY = -9999;
+  function setupGravity(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(hover: none)').matches) return; // off on touch
+    window.addEventListener('mousemove', (e)=> {
+      gMouseX = e.clientX; gMouseY = e.clientY;
+      if (!gravityRaf) gravityRaf = requestAnimationFrame(applyGravity);
+    }, { passive: true });
+    window.addEventListener('mouseleave', ()=> {
+      gMouseX = -9999; gMouseY = -9999;
+      if (!gravityRaf) gravityRaf = requestAnimationFrame(applyGravity);
+    });
+  }
+  function applyGravity(){
+    gravityRaf = 0;
+    // auto-tag gravity targets (every card/button) so fluid gravity hits all components
+    document.querySelectorAll('article.group, .platform-btn, #blog-featured, #about-section .rounded-2xl, .grid .rounded-2xl.border').forEach(el=> el.classList.add('gravity-item'));
+    const els = document.querySelectorAll('.gravity-item');
+    if (!els.length) return;
+    const radius = 340;
+    const maxPull = 9; // px
+    for (const el of els) {
+      const r = (el as HTMLElement).getBoundingClientRect();
+      const cx = r.left + r.width/2;
+      const cy = r.top + r.height/2;
+      const dx = gMouseX - cx;
+      const dy = gMouseY - cy;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < radius && dist > 4) {
+        const falloff = Math.pow(1 - dist / radius, 1.9);
+        const pull = falloff * maxPull;
+        const nx = (dx / dist) * pull;
+        const ny = (dy / dist) * pull;
+        const scale = 1 + falloff * 0.015;
+        (el as HTMLElement).style.setProperty('--gx', nx.toFixed(2) + 'px');
+        (el as HTMLElement).style.setProperty('--gy', ny.toFixed(2) + 'px');
+        (el as HTMLElement).style.setProperty('--g-scale', scale.toFixed(3));
+        // subtle orange glow intensity for border
+        (el as HTMLElement).style.setProperty('--g-glow', falloff.toFixed(2));
+      } else {
+        (el as HTMLElement).style.setProperty('--gx', '0px');
+        (el as HTMLElement).style.setProperty('--gy', '0px');
+        (el as HTMLElement).style.setProperty('--g-scale', '1');
+        (el as HTMLElement).style.setProperty('--g-glow', '0');
+      }
+    }
+  }
 </script>
 
 <div id="boot-screen" class="fixed inset-0 z-[100] overflow-hidden {booted?'boot-exit':''}" style="background:{theme==='dark'?'#050608':'#fcfcfc'};opacity:{booted?0:1};pointer-events:{booted?'none':'auto'};">
@@ -298,9 +350,11 @@ let booted = false;
 <svelte:window on:keydown={handleKeys} on:scroll={handleScroll} />
 <div id="scroll-progress" class="fixed top-0 left-0 h-[2px] bg-[#FF6B35] z-[60] pointer-events-none w-full origin-left" style="transform: scaleX({scrollProgress/100})"></div>
 
-<div class="fixed inset-0 pointer-events-none z-0" aria-hidden="true" style="background: radial-gradient(ellipse 80% 60% at 50% {Math.min(30 + scrollProgress * 0.4, 70)}%, rgba(255,107,53,0.03) 0%, transparent 70%);"></div>
-<div class="ambient-layer" aria-hidden="true"></div>
-<div class="floating-orbs" aria-hidden="true"></div>
+<!-- global nebula veil — scroll-oriented, covers whole site -->
+<div class="fixed inset-0 -z-10 pointer-events-none" aria-hidden="true">
+  <ThreeHero theme={theme} scrollProgress={scrollProgress} />
+</div>
+<div class="fixed inset-0 pointer-events-none z-0" aria-hidden="true" style="background: radial-gradient(ellipse 80% 60% at 50% {Math.min(30 + scrollProgress * 0.4, 70)}%, rgba(255,107,53,0.018) 0%, transparent 70%); opacity: 0.55"></div>
 <header id="site-header" class="sticky top-0 z-40 border-b border-zinc-800/60 bg-[#09090b]/60 backdrop-blur-xl">
   <nav class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6">
     <button on:click={()=> nav('home')} class="flex items-center gap-3 focus-visible:outline-none" aria-label="Go to home">
@@ -334,9 +388,6 @@ let booted = false;
   <div in:fly={{y:8, duration:320, delay:40, opacity:0}} out:fade={{duration:160}}>
   {#if view==='home'}
     <section class="hero-ek relative flex flex-col items-center gap-8 sm:gap-10 text-center scroll-section" id="section-hero">
-      <div class="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
-        <div class="hero-glow"></div>
-      </div>
       <div class="relative flex flex-col items-center gap-5 max-w-[640px]">
         <h1 class="fraunces text-[38px] sm:text-[54px] md:text-[64px] font-medium leading-[0.92] tracking-[-0.02em]">Mobile developer,<br><span class="italic font-[450] text-zinc-300">every framework.</span></h1>
         <p class="hero-lead max-w-[560px] text-[15px] leading-7 text-zinc-400">5+ years building complete products — Mobile (Flutter, SwiftUI & Kotlin), Backend systems & APIs, AI-powered. Product-driven, end-to-end, and system-thinking.</p>

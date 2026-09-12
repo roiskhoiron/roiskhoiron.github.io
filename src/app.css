@@ -48,6 +48,13 @@ article.group, #blog-featured, #blog-list > button, #decks-grid > article{
   will-change: transform;
 }
 article.group:hover, #blog-list > button:hover{ transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,.26); border-color: rgba(113,113,122,.45); }
+/* cursor gravity — compositor-only offset via CSS vars; hover composes with gravity offset */
+.gravity-item{ --gx: 0px; --gy: 0px; --g-scale: 1; transform: translate3d(var(--gx), var(--gy), 0) scale(var(--g-scale)); will-change: transform; }
+.gravity-item:hover{ transform: translate3d(var(--gx), calc(var(--gy) - 2px), 0) scale(var(--g-scale)); }
+.gravity-item:active{ transform: translate3d(var(--gx), var(--gy), 0) scale(0.99); }
+@media (prefers-reduced-motion: reduce){
+  .gravity-item, .gravity-item:hover, .gravity-item:active{ transform: none !important; }
+}
 article.group:active, #blog-list > button:active{ transform: translateY(0) scale(0.99); box-shadow: none; }
 article.group:focus-visible{ border-color: #FF6B35; box-shadow: 0 0 0 3px rgba(255,107,53,.18); }
 /* prose article must never lift on hover — reading comfort */
@@ -123,6 +130,9 @@ html.light .boot-fill{ box-shadow: none; }
 @keyframes ekAvatarPop{ from{ opacity:0; transform: scale(0.94) translateY(10px) } to{ opacity:1; transform: none } }
 @keyframes ekLineGrow{ from{ transform: scaleX(0) } to{ transform: scaleX(1) } }
 /* hero cascade — applied once boot exits; stagger capped at 6 pills */
+#section-hero{ min-height: 560px; }
+#section-hero .three-hero-wrap{ z-index: 0; }
+#section-hero > div.relative{ z-index: 1; }
 .hero-ek h1{ opacity:0; animation: ekHeroIn 620ms var(--ease-emil) 160ms both; will-change: transform, opacity; }
 .hero-ek .hero-lead{ opacity:0; animation: ekHeroIn 520ms var(--ease-emil) 280ms both; will-change: transform, opacity; }
 .hero-ek .ek-pills > *{ opacity:0; animation: ekPillIn 420ms var(--ease-emil) both; will-change: transform, opacity; }
