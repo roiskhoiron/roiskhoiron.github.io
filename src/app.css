@@ -1,316 +1,120 @@
-@import url('https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/base.css');
-* { font-variant-ligatures: common-ligatures; }
-html{scroll-behavior:smooth}
-::selection{background:#FF6B35;color:white}
-@media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important} }
-.fraunces { font-family: "Fraunces","Fraunces Fallback", serif; }
-.mono { font-family: "Geist Mono","Geist Mono Fallback", monospace; }
-.geist { font-family: "Geist","Geist Fallback", Arial, sans-serif; }
-.scrollbar-none::-webkit-scrollbar { display: none; }
-.view { display: none; }
-.view.active { display: block; animation: viewIn 220ms cubic-bezier(0.22,1,0.36,1) }
-@keyframes viewIn{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:translateY(0)}}
-@keyframes dotIn{from{transform:translate(-50%, 6px) scale(0); opacity:0} to{transform:translate(-50%,0) scale(1); opacity:1}}
-@keyframes pulseSoft{0%,100%{opacity:1} 50%{opacity:0.6} }
-@keyframes pulseGlow{0%,100%{opacity:0.3; transform:scale(1)} 50%{opacity:0.6; transform:scale(1.08)}}
-@keyframes shimmer{0%{transform:translateX(-100%)} 100%{transform:translateX(100%)}}
-.line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-
-/* — microinteractions masif tapi elegan — */
-button, a{ transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 180ms cubic-bezier(0.22,1,0.36,1), box-shadow 180ms ease, opacity 180ms ease }
-button:active, a:active{ transform: scale(0.98) }
-#site-header{ transition: background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease }
-#site-header .bg-white, #site-header .bg-zinc-900{ transition: all 200ms ease }
-/* nav dot warm */
-#site-header button span.bg-\[\#FF6B35\]{ animation: dotIn 200ms cubic-bezier(0.22,1,0.36,1) }
-/* theme toggle rotate */
-button[aria-label="Toggle theme"]{ transition: transform 220ms cubic-bezier(0.22,1,0.36,1), background-color 200ms ease }
-button[aria-label="Toggle theme"]:active{ transform: rotate(20deg) scale(0.95) }
-/* cards lift */
-article, #blog-featured, #blog-list > button, #decks-grid > article{ transition: transform 200ms cubic-bezier(0.22,1,0.36,1), box-shadow 200ms ease, border-color 200ms ease, background-color 200ms ease }
-article:hover, #blog-list > button:hover{ transform: translateY(-2px) }
-article:active, #blog-list > button:active{ transform: translateY(0) scale(0.99) }
-/* tech pills */
-#recent + * .inline-flex, .flex-wrap .inline-flex{ transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease }
-.flex-wrap .inline-flex:hover{ transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.08) }
-/* inputs focus */
-input:focus, select:focus, textarea:focus{ box-shadow: 0 0 0 3px rgba(255,107,53,0.15); border-color: #FF6B35 !important; transition: box-shadow 180ms ease, border-color 180ms ease }
-html.light input:focus, html.light select:focus{ box-shadow: 0 0 0 3px rgba(255,107,53,0.12) }
-/* deck stage slide */
-#deck-stage{ transition: transform 220ms cubic-bezier(0.22,1,0.36,1) }
-#deck-stage > div{ animation: viewIn 200ms cubic-bezier(0.22,1,0.36,1) }
-/* posts carousel already 420ms, tambah hover hint */
-#posts-grid article:hover{ transform: translateY(-2px) }
-#post-stage{ transition: transform 420ms cubic-bezier(0.22,1,0.36,1) }
-/* footer links */
-footer a, footer button{ position:relative }
-footer a:hover, footer button:hover{ color: #FF6B35 !important }
-footer a::after{ content:""; position:absolute; left:0; bottom:-2px; width:0; height:1px; background:#FF6B35; transition: width 180ms ease }
-footer a:hover::after{ width:100% }
-/* — elegant immersive boot — */
-#boot-screen{ transition: opacity 520ms cubic-bezier(0.22,1,0.36,1) }
-#boot-screen *{ will-change: transform, opacity }
-
-/* ambient backdrop */
-.boot-orb{
-  position:absolute; border-radius:9999px; pointer-events:none; filter: blur(90px); opacity:.35;
-}
-.boot-orb-1{
-  width:420px; height:420px; left:50%; top:50%; transform:translate(-50%,-50%);
-  background: radial-gradient(circle, rgba(255,107,53,.28) 0%, transparent 70%);
-  animation: floatOrb 10s ease-in-out infinite;
-}
-.boot-orb-2{
-  width:320px; height:320px; left:50%; top:45%; transform:translate(-50%,-50%);
-  background: radial-gradient(circle, rgba(255,107,53,.18) 0%, transparent 70%);
-  animation: floatOrb 14s ease-in-out infinite reverse;
-}
-@keyframes floatOrb{
-  0%,100%{ transform: translate(-50%,-50%) translate(0,0) }
-  50%{ transform: translate(-50%,-50%) translate(30px,-20px) }
-}
-
-.boot-logo-wrap{ position:relative; width:124px; height:124px }
-.boot-logo{
-  width:124px; height:124px; border-radius:9999px; object-fit:cover;
-  box-shadow: 0 0 0 1px rgba(255,255,255,.06), 0 20px 60px -15px rgba(0,0,0,.55), 0 0 80px -20px rgba(255,107,53,.35);
-  animation: scaleIn 1100ms cubic-bezier(.22,1,.36,1) backwards;
-}
-@keyframes scaleIn{ from{ opacity:0; transform: scale(.92) } to{ opacity:1; transform: none } }
-
-.boot-title{ animation: fadeInUp 900ms cubic-bezier(.22,1,.36,1) 280ms backwards }
-@keyframes fadeInUp{ from{ opacity:0; transform: translateY(12px) } to{ opacity:1; transform: none } }
-
-.boot-line{
-  width:0; height:1px; background: #FF6B35; opacity:.7;
-  animation: lineExpand 800ms cubic-bezier(.22,1,.36,1) 480ms forwards;
-}
-@keyframes lineExpand{ to{ width:72px } }
-
-  .boot-fade{ opacity:0; animation: fadeInUp 800ms cubic-bezier(.22,1,.36,1) 680ms forwards }
-
-  html.light .boot-orb{ opacity:.22 }
-  html.light .boot-logo{ box-shadow: 0 0 0 1px rgba(0,0,0,.04), 0 20px 60px -15px rgba(0,0,0,.12), 0 0 80px -20px rgba(255,107,53,.2) }
-  html.light .boot-line{ opacity:.5 }
-
-
-@media (prefers-reduced-motion: reduce){
-  #boot-screen, #boot-screen * { animation: none !important; transition: none !important; }
-  .boot-orb{ display:none }
-  .boot-logo, .boot-title, .boot-line, .boot-fade{ opacity:1 !important; transform:none !important; width:auto !important }
-}
-@media (max-width: 640px){
-  .boot-logo, .boot-logo-wrap{ width:104px; height:104px }
-}
-/* scrolling effects */
-#scroll-progress{ transition: width 80ms linear }
-.reveal{ opacity:0; transform: translateY(10px); transition: opacity 400ms cubic-bezier(0.22,1,0.36,1), transform 400ms cubic-bezier(0.22,1,0.36,1) }
-.reveal.in{ opacity:1; transform: translateY(0) }
-.reveal-delay-1{ transition-delay: 60ms } .reveal-delay-2{ transition-delay: 120ms } .reveal-delay-3{ transition-delay: 180ms }
-.parallax{ will-change: transform; transition: transform 100ms linear }
-
-/* — light theme — kontras diperbaiki menyeluruh (WCAG 4.5:1) */
+/* — light theme: dominant bright, simple & elegant — */
 html.light { color-scheme: light; }
-html.light body { background:#ffffff !important; color:#09090b !important; }
-html.light #site-header { background:rgba(255,255,255,0.92) !important; border-color:#e4e4e7 !important; backdrop-filter:blur(12px); }
-html.light #site-header .bg-zinc-900\/60 { background:rgba(244,244,245,0.95) !important; border-color:#e4e4e7 !important; }
+html.light body { background:#fcfcfc !important; color:#18181b !important; }
+
+/* — transitions — */
+html.theme-transition, html.theme-transition body, html.theme-transition #site-header, html.theme-transition footer, html.theme-transition main section, html.theme-transition article, html.theme-transition #blog-featured, html.theme-transition #blog-list{ transition: background-color 420ms cubic-bezier(0.22,1,0.36,1), color 420ms ease, border-color 420ms ease, box-shadow 420ms ease !important }
+html.theme-transition #site-header{ transition-delay: 0ms !important }
+html.theme-transition main{ transition-delay: 45ms !important }
+html.theme-transition footer{ transition-delay: 90ms !important }
+html.theme-transition article{ transition-delay: 30ms !important }
+
+/* — shell: header / footer / sticky filters → bright white — */
+html.light #site-header { background: rgba(255,255,255,0.86) !important; border-color:#e4e4e7 !important; backdrop-filter: blur(12px); box-shadow: 0 1px 3px rgba(0,0,0,0.04) !important; }
 html.light footer { background:#ffffff !important; border-color:#e4e4e7 !important; }
-html.light .bg-zinc-900 { background-color:#ffffff !important; border-color:#e4e4e7 !important; }
-html.light .bg-zinc-900\/40, html.light .bg-zinc-900\/30, html.light .bg-zinc-900\/20 { background-color:#ffffff !important; border-color:#e4e4e7 !important; }
-html.light .bg-zinc-900\/60 { background-color:#f4f4f5 !important; border-color:#e4e4e7 !important; }
-html.light .bg-zinc-800 { background-color:#ffffff !important; border-color:#e4e4e7 !important; }
-html.light .border-zinc-800, html.light .border-zinc-700 { border-color:#e4e4e7 !important; }
-html.light .border-zinc-800\/60 { border-color:rgba(228,228,231,0.85) !important; }
-/* teks muted — dipergelap untuk 4.5:1 di atas putih */
-html.light .text-zinc-400 { color:#27272a !important; }
-html.light .text-zinc-500 { color:#3f3f46 !important; }
-html.light .text-zinc-300 { color:#09090b !important; }
-html.light .text-zinc-600 { color:#3f3f46 !important; }
-html.light .text-white { color:#09090b !important; }
-html.light .mono { color:#27272a; }
-html.light .mono.text-zinc-500 { color:#27272a !important; }
-html.light .text-\[\#ededed\] { color:#09090b !important; }
-html.light .bg-white { background-color:#09090b !important; color:#ffffff !important; }
-html.light .bg-white .text-black, html.light .bg-white.text-black { color:#ffffff !important; }
-.logo-bg { background-color: #ffffff; }
-html.light .logo-bg { background-color: #ffffff !important; }
-html.light .platform-icon { filter: invert(1); }
-html.light .bg-black { background-color:#ffffff !important; color:#09090b !important; }
-html.light .bg-\[\#0a0a0a\] { background-color:#ffffff !important; }
-html.light .bg-\[\#0a0a0a\]\/80 { background-color:rgba(255,255,255,0.85) !important; }
-/* highlight label — amber/indigo/emerald/sky terlalu muda di putih, pakai 600/700 */
+html.light .sticky.bg-\[\#0a0a0a\]\/80, html.light .sticky.bg-\[\#09090b\]\/80 { background: rgba(255,255,255,0.84) !important; border-color:#e4e4e7 !important; backdrop-filter: blur(10px); }
+
+/* — generic dark surfaces → white cards with soft shadow — */
+html.light .bg-black, html.light .bg-\[\#0a0a0a\], html.light .bg-\[\#0a0a0a\]\/80,
+html.light .bg-\[\#09090b\], html.light .bg-\[\#09090b\]\/80, html.light .bg-\[\#09090b\]\/60,
+html.light .bg-\[\#1a1a1e\] { background-color:#ffffff !important; color:#18181b !important; }
+html.light .bg-zinc-900, html.light .bg-zinc-900\/40, html.light .bg-zinc-900\/30, html.light .bg-zinc-900\/20, html.light .bg-zinc-900\/50, html.light .bg-zinc-900\/60,
+html.light article.bg-zinc-900\/40, html.light div.bg-zinc-900\/40,
+html.light .bg-zinc-900\/30 { background-color:#ffffff !important; border-color:#e4e4e7 !important; box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03) !important; }
+html.light .bg-zinc-900\/20 { background-color:#ffffff !important; }
+
+/* zinc-800 pills / secondary surfaces → subtle grey */
+html.light .bg-zinc-800, html.light .bg-zinc-800\/40, html.light .bg-zinc-800\/60, html.light .bg-zinc-800\/50,
+html.light span.bg-zinc-800, html.light .skill-pill.bg-zinc-800 { background-color:#f4f4f5 !important; border-color:#e4e4e7 !important; color:#27272a !important; }
+html.light .bg-zinc-800.text-zinc-400 { background-color:#f4f4f5 !important; color:#27272a !important; }
+
+/* borders → light grey */
+html.light .border-zinc-800, html.light .border-zinc-800\/60, html.light .border-zinc-800\/80 { border-color:#e4e4e7 !important; }
+html.light .border-zinc-700 { border-color:#d4d4d8 !important; }
+html.light .divide-zinc-800 > * + * { border-color:#e4e4e7 !important; }
+html.light .divide-zinc-800 { border-color:#e4e4e7 !important; }
+html.light .border-zinc-800.bg-zinc-900, html.light .border-zinc-800.bg-zinc-900\/40 { border-color:#e4e4e7 !important; }
+
+/* text hierarchy — clean zinc scale on white */
+html.light .text-white, html.light .text-zinc-100 { color:#18181b !important; }
+html.light .text-zinc-200 { color:#27272a !important; }
+html.light .text-zinc-300 { color:#3f3f46 !important; }
+html.light .text-zinc-400 { color:#52525b !important; }
+html.light .text-zinc-500 { color:#71717a !important; }
+html.light .text-zinc-400.mono, html.light span.mono.text-zinc-500 { color:#52525b !important; }
+html.light .text-zinc-400.hover\:text-white:hover { color:#18181b !important; }
+
+/* specific tweaks — hero / quotes */
+html.light .text-zinc-300.italic { color:#52525b !important; }
+html.light .italic.text-zinc-300 { color:#52525b !important; }
+html.light .text-zinc-400.leading-7 { color:#52525b !important; }
+
+/* accent labels — deeper for contrast on white */
 html.light .text-amber-400 { color:#92400e !important; }
 html.light .text-indigo-400 { color:#4338ca !important; }
 html.light .text-emerald-400 { color:#065f46 !important; }
 html.light .text-sky-400 { color:#0c4a6e !important; }
 html.light .text-violet-400, html.light .text-fuchsia-400 { color:#6d28d9 !important; }
 html.light .text-amber-500 { color:#92400e !important; }
-/* form & pills */
-html.light input, html.light select, html.light textarea { background-color:#ffffff !important; border-color:#e4e4e7 !important; color:#09090b !important; }
-html.light input::placeholder, html.light textarea::placeholder { color:#71717a !important; }
-html.light .bg-zinc-800.text-zinc-400, html.light span.bg-zinc-800, html.light .bg-zinc-800 { color:#09090b !important; background-color:#f4f4f5 !important; border-color:#e4e4e7 !important; }
-html.light .bg-zinc-800\/40 { background-color:#f4f4f5 !important; border-color:#e4e4e7 !important; }
-html.light article.bg-zinc-900\/40, html.light div.bg-zinc-900\/40 { background-color:#ffffff !important; border-color:#e4e4e7 !important; box-shadow: 0 1px 2px rgba(0,0,0,0.04) !important; }
-html.light .text-zinc-400.mono, html.light span.mono.text-zinc-500 { color:#27272a !important; }
-/* distribusi perubahan warna dark↔light — sekuensial atraktif */
-html.theme-transition, html.theme-transition body, html.theme-transition #site-header, html.theme-transition footer, html.theme-transition main section, html.theme-transition article, html.theme-transition #blog-featured, html.theme-transition #blog-list{ transition: background-color 420ms cubic-bezier(0.22,1,0.36,1), color 420ms ease, border-color 420ms ease, box-shadow 420ms ease !important }
-html.theme-transition #site-header{ transition-delay: 0ms !important }
-html.theme-transition main{ transition-delay: 45ms !important }
-html.theme-transition footer{ transition-delay: 90ms !important }
-html.theme-transition article{ transition-delay: 30ms !important }
-/* immersive detail tetap gelap */
+
+/* buttons — active filters become dark pill on bright bg, cards stay white */
+html.light .bg-white { background-color:#ffffff !important; color:#18181b !important; border-color:#e4e4e7 !important; }
+html.light button.bg-white, html.light button.bg-white.text-black, html.light a.bg-white, html.light a.rounded-full.bg-white { background-color:#18181b !important; color:#ffffff !important; border-color:#18181b !important; }
+html.light button.bg-white span, html.light a.bg-white span { color:#ffffff !important; }
+html.light article.bg-white { background-color:#ffffff !important; color:#18181b !important; }
+html.light .hover\:bg-zinc-100:hover { background-color:#27272a !important; }
+html.light .border-zinc-800.text-zinc-400 { background:#ffffff !important; color:#52525b !important; border-color:#e4e4e7 !important; }
+html.light .border-zinc-800.text-zinc-400:hover { border-color:#d4d4d8 !important; color:#18181b !important; }
+
+/* search / inputs / selects */
+html.light input, html.light select, html.light textarea { background-color:#ffffff !important; border-color:#e4e4e7 !important; color:#18181b !important; box-shadow: 0 1px 1px rgba(0,0,0,0.02) !important; }
+html.light input::placeholder, html.light textarea::placeholder { color:#a1a1aa !important; }
+html.light select { background-color:#ffffff !important; }
+
+/* logo / platform icons — keep elegant */
+.logo-bg { background-color: #ffffff; }
+html.light .logo-bg { background-color:#ffffff !important; border-color:#e4e4e7 !important; }
+html.light .platform-icon { filter: invert(0); opacity:0.9; }
+html.light .platform-btn.bg-zinc-900 { background:#ffffff !important; border-color:#e4e4e7 !important; color:#18181b !important; box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important; }
+html.light .platform-btn.bg-zinc-900\/50 { background:#f4f4f5 !important; border-color:#e4e4e7 !important; color:#a1a1aa !important; }
+
+/* solid dark pills that use bg-zinc-800 for tags — already handled, ensure text readable */
+html.light .bg-zinc-800.text-zinc-400.px-2 { color:#52525b !important; }
+
+/* gradients — soften ending to white instead of zinc-900 */
+html.light .to-zinc-900 { --tw-gradient-to: #ffffff !important; }
+html.light .from-zinc-800 { --tw-gradient-from: #f4f4f5 !important; }
+html.light .bg-gradient-to-br.from-zinc-800.to-zinc-900 { background-image: linear-gradient(to bottom right, #f4f4f5, #ffffff) !important; }
+html.light .bg-gradient-to-br.from-\[\#0a0a0a\].via-\[\#0f0f12\].to-\[\#0a0a0a\] { background: #fcfcfc !important; }
+
+/* section dividers */
+html.light #about-section { border-color:#e4e4e7 !important; }
+
+/* prose — blog detail needs normal readable on white */
+html.light .prose-invert { color:#27272a !important; }
+html.light .prose-invert h1, html.light .prose-invert h2, html.light .prose-invert h3, html.light .prose-invert strong { color:#09090b !important; }
+html.light .prose-invert a { color:#18181b !important; }
+
+/* scrollbar progress / accent stays */
+html.light #scroll-progress { background:#FF6B35 !important; }
+
+/* ambient — mute in light */
+html.light .ambient-layer, html.light .floating-orbs, html.light .hero-glow { opacity:0.35 !important; }
+
+/* mobile menu — bright */
+html.light #mobile-menu { background:#ffffff !important; border-color:#e4e4e7 !important; }
+
+/* — immersive detail views stay dark (charter exception) — */
+html.light #view-deck-detail, html.light #view-post-detail, html.light #view-deck-detail.bg-black, html.light #view-post-detail.bg-black { background:#000000 !important; color:#ededed !important; }
 html.light #view-deck-detail .bg-black, html.light #view-post-detail .bg-black { background:#000000 !important; color:#ededed !important; }
 html.light #view-deck-detail .bg-zinc-900, html.light #view-post-detail .bg-zinc-900 { background:#18181b !important; color:#ededed !important; border-color:#27272a !important; }
 html.light #view-deck-detail .bg-zinc-800, html.light #view-post-detail .bg-zinc-800 { background:#27272a !important; color:#ededed !important; border-color:#3f3f46 !important; }
+html.light #view-deck-detail .bg-zinc-800\/60 { background:rgba(39,39,42,.6) !important; border-color:#3f3f46 !important; }
+html.light #view-deck-detail .bg-white, html.light #view-post-detail .bg-white { background-color:#ffffff !important; color:#09090b !important; }
+html.light #view-deck-detail .text-black, html.light #view-post-detail .text-black { color:#09090b !important; }
+html.light #view-deck-detail .border-white { border-color:#ffffff !important; }
 html.light #view-deck-detail .text-white, html.light #view-post-detail .text-white { color:#ffffff !important; }
 html.light #view-deck-detail .text-amber-400, html.light #view-post-detail .text-amber-400 { color:#fbbf24 !important; }
 html.light #view-deck-detail .text-indigo-400, html.light #view-post-detail .text-indigo-400 { color:#818cf8 !important; }
 html.light #view-deck-detail .text-emerald-400, html.light #view-post-detail .text-emerald-400 { color:#34d399 !important; }
 html.light #view-deck-detail .text-sky-400, html.light #view-post-detail .text-sky-400 { color:#38bdf8 !important; }
-/* scoped: blog/posts/decks toolbar — pastikan light surface */
-html.light body > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2),
-html.light body > main:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2),
-html.light body > main:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(2){
-  background-color: rgba(255,255,255,0.92) !important;
-  border-color: #e4e4e7 !important;
-}
-/* scoped: blog list cards & pills */
-html.light body > main:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(5) > a{
-  background-color: #ffffff !important; border-color:#e4e4e7 !important;
-}
-html.light body > main:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(5) > a:hover{
-  background-color: #f4f4f5 !important;
-}
-html.light body > main:nth-of-type(1) > div:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(5) > a span.mono.text-\[10px\]{
-  background-color: #ffffff !important; color:#09090b !important; border:1px solid #e4e4e7 !important;
-}
-
-/* — hero ambient glow — */
-.hero-glow{
-  position:absolute; width:420px; height:420px; left:50%; top:50%; transform:translate(-50%,-50%);
-  background: radial-gradient(circle, rgba(255,107,53,.12) 0%, rgba(255,107,53,.04) 40%, transparent 70%);
-  border-radius:9999px; pointer-events:none; filter:blur(40px);
-  animation: floatOrb 12s ease-in-out infinite;
-}
-html.light .hero-glow{
-  background: radial-gradient(circle, rgba(255,107,53,.10) 0%, rgba(255,107,53,.03) 40%, transparent 70%);
-}
-
-/* — card glow on hover — */
-article, #blog-featured, #blog-list > button, #decks-grid > article{
-  transition: transform 200ms cubic-bezier(0.22,1,0.36,1), box-shadow 200ms ease, border-color 200ms ease, background-color 200ms ease;
-}
-article:hover, #blog-list > button:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px -12px rgba(0,0,0,.45), 0 0 0 1px rgba(255,107,53,.08);
-}
-html.light article:hover, html.light #blog-list > button:hover{
-  box-shadow: 0 12px 40px -12px rgba(0,0,0,.12), 0 0 0 1px rgba(255,107,53,.10);
-}
-
-/* — staggered reveal — */
-.reveal{ opacity:0; transform: translateY(14px); transition: opacity 520ms cubic-bezier(0.22,1,0.36,1), transform 520ms cubic-bezier(0.22,1,0.36,1) }
-.reveal.in{ opacity:1; transform: translateY(0) }
-.reveal-delay-1{ transition-delay: 80ms }
-.reveal-delay-2{ transition-delay: 160ms }
-.reveal-delay-3{ transition-delay: 240ms }
-.reveal-delay-4{ transition-delay: 320ms }
-.reveal-delay-5{ transition-delay: 400ms }
-
-/* — platform buttons polish — */
-.platform-btn{
-  position:relative; overflow:hidden;
-  transition: transform 180ms cubic-bezier(0.22,1,0.36,1), box-shadow 180ms ease, border-color 180ms ease;
-}
-.platform-btn:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px -8px rgba(0,0,0,.35);
-}
-.platform-btn:active{
-  transform: translateY(0) scale(0.98);
-}
-.platform-btn::before{
-  content:""; position:absolute; inset:0; opacity:0; transition:opacity 200ms ease;
-  background: linear-gradient(135deg, rgba(255,255,255,.04) 0%, transparent 60%);
-}
-.platform-btn:hover::before{ opacity:1 }
-html.light .platform-btn:hover{
-  box-shadow: 0 8px 24px -8px rgba(0,0,0,.10);
-}
-
-/* — about counter hover — */
-.about-counter{
-  transition: transform 200ms cubic-bezier(0.22,1,0.36,1), border-color 200ms ease;
-}
-.about-counter:hover{
-  transform: translateY(-2px);
-  border-color: rgba(255,107,53,.25);
-}
-
-/* — skill pill hover — */
-.skill-pill{
-  transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
-}
-.skill-pill:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0,0,0,.15);
-  background-color: #3f3f46;
-}
-
-/* — nav active indicator pulse — */
-nav button .nav-dot{
-  animation: dotIn 200ms cubic-bezier(0.22,1,0.36,1);
-}
-
-/* — subtle noise texture overlay — */
-body::after{
-  content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat: repeat; background-size: 180px;
-}
-html.light body::after{ opacity:.018 }
-
-/* — section scroll indicator — */
-/* — enhanced scroll reveal variants — */
-.reveal-fade{ opacity:0; transition: opacity 600ms cubic-bezier(0.22,1,0.36,1) }
-.reveal-fade.in{ opacity:1 }
-.reveal-slide{ opacity:0; transform: translateY(20px); transition: opacity 600ms cubic-bezier(0.22,1,0.36,1), transform 600ms cubic-bezier(0.22,1,0.36,1) }
-.reveal-slide.in{ opacity:1; transform: translateY(0) }
-.reveal-scale{ opacity:0; transform: scale(0.96); transition: opacity 600ms cubic-bezier(0.22,1,0.36,1), transform 600ms cubic-bezier(0.22,1,0.36,1) }
-.reveal-scale.in{ opacity:1; transform: scale(1) }
-
-/* — scroll prompt bounce — */
-@keyframes scrollBounce{
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(4px); }
-}
-.animate-bounce{ animation: scrollBounce 2s ease-in-out infinite; }
-
-/* ambient background layer — stronger ambient feel in light theme, inspired by ambient-site patterns */
-.#ambient-layer{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;transform:translate(calc(var(--mx,0)*30px),calc(var(--my,0)*30px));will-change:transform}
-.#ambient-layer::before,.#ambient-layer::after{content:"";position:absolute;border-radius:9999px;filter:blur(90px);opacity:0;animation:none}
-html.light .#ambient-layer{opacity:1}
-html.light .#ambient-layer::before{width:600px;height:600px;left:-10%;top:-10%;background:radial-gradient(circle,rgba(255,107,53,0.12) 0%,transparent 70%);animation:floatOrb 18s ease-in-out infinite}
-html.light .#ambient-layer::after{width:500px;height:500px;right:-5%;bottom:-10%;background:radial-gradient(circle,rgba(251,146,60,0.10) 0%,transparent 70%);animation:floatOrb 22s ease-in-out infinite reverse}
-html.dark .#ambient-layer::before{width:420px;height:420px;left:50%;top:40%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,107,53,0.08) 0%,transparent 70%);opacity:1;animation:floatOrb 20s ease-in-out infinite}
-
-/* floating ambient orbs — stronger ambient depth */
-.floating-orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;transform:translate(calc(var(--mx,0)*20px),calc(var(--my,0)*20px));will-change:transform}
-.floating-orbs::before,.floating-orbs::after{content:"";position:absolute;border-radius:9999px;filter:blur(80px);opacity:0.25;animation:floatOrb 14s ease-in-out infinite}
-html.dark .floating-orbs::before{width:300px;height:300px;left:20%;top:20%;background:radial-gradient(circle,rgba(255,107,53,0.15) 0%,transparent 70%)}
-html.dark .floating-orbs::after{width:250px;height:250px;right:15%;bottom:15%;background:radial-gradient(circle,rgba(251,146,60,0.12) 0%,transparent 70%);animation-duration:18s;animation-direction:reverse}
-html.light .floating-orbs::before{width:500px;height:500px;left:10%;top:-5%;background:radial-gradient(circle,rgba(255,107,53,0.18) 0%,rgba(251,146,60,0.08) 60%,transparent 100%);animation-duration:16s}
-html.light .floating-orbs::after{width:400px;height:400px;right:-5%;bottom:-10%;background:radial-gradient(circle,rgba(251,146,60,0.14) 0%,rgba(255,200,150,0.5) 50%,transparent 70%);animation-duration:20s;animation-direction:reverse;opacity:0.35}
-
-/* — ambient scroll-driven background shift — */
-body{
-  background: linear-gradient(180deg, #050608 0%, #0a0a0a 30%, #0f0f12 60%, #050608 100%);
-  background-attachment: fixed;
-  transition: background 800ms ease;
-}
-html.light body{
-  background: linear-gradient(180deg, #ffffff 0%, #fafafa 30%, #f4f4f5 60%, #ffffff 100%);
-  background-attachment: fixed;
-}
-

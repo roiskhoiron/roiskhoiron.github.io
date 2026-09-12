@@ -147,11 +147,13 @@ let booted = false;
   $: filteredVideos = videosData.filter(v=>{
     if(videoFilter==='video' && v.isShort) return false;
     if(videoFilter==='short' && !v.isShort) return false;
+    if(videoFilter==='live' && !v.isLive) return false;
     if(videoSearch && !(v.title+v.desc+v.tag).toLowerCase().includes(videoSearch.toLowerCase())) return false;
     return true;
   });
   $: videosLong = filteredVideos.filter(v=>!v.isShort);
   $: videosShort = filteredVideos.filter(v=>v.isShort);
+  $: videosLive = filteredVideos.filter(v=>v.isLive);
   $: filteredBlog = [...blogData].filter(b=>{
     if(blogTag!=='all' && !b.tags.some(t=>t.toLowerCase().includes(blogTag.toLowerCase()))) return false;
     if(blogSearch && !(b.title+b.excerpt+b.tags.join(' ')).toLowerCase().includes(blogSearch.toLowerCase())) return false;
@@ -374,7 +376,7 @@ let booted = false;
     {@const deck = decksData.find(d=>d.slug===deckSlug)}
     {@const slides = deckSlides[deckSlug] || []}
     {@const cur = slides[deckIdx]}
-    <div class="fixed inset-0 z-50 bg-black flex flex-col" in:fade={{duration:200}} out:fade={{duration:150}}>
+    <div id="view-deck-detail" class="fixed inset-0 z-50 bg-black flex flex-col" in:fade={{duration:200}} out:fade={{duration:150}}>
       <!-- top bar — identik vanilla -->
       <div class="h-[56px] shrink-0 border-b border-zinc-800 bg-[#09090b]/80 backdrop-blur flex items-center justify-between px-4 sm:px-6">
         <div class="flex items-center gap-3">
@@ -461,6 +463,7 @@ let booted = false;
           <button on:click={()=> videoFilter='all'} class="whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-medium {videoFilter==='all'?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">All</button>
           <button on:click={()=> videoFilter='video'} class="whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-medium {videoFilter==='video'?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">Videos</button>
           <button on:click={()=> videoFilter='short'} class="whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-medium {videoFilter==='short'?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">Shorts</button>
+          <button on:click={()=> videoFilter='live'} class="whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-medium {videoFilter==='live'?'bg-[#FF6B35] text-white':'border border-zinc-800 text-zinc-400 hover:text-white'}">Live</button>
         </div>
       </div>
       {#if videosLong.length>0}
@@ -484,7 +487,29 @@ let booted = false;
           </div>
         </div>
       {/if}
-      {#if videosShort.length>0}
+      {#if videosLive.length>0}
+        <div class="flex flex-col gap-3 reveal">
+          <div class="flex items-center gap-2"><span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">Live</span><span class="flex-1 h-px bg-zinc-800"></span><span class="mono text-xs text-zinc-500">{videosLive.length} · Live</span></div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {#each videosLive as v}
+              <button on:click={()=> openVideo(v)} class="group text-left rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900/40 hover:border-zinc-700 hover:bg-zinc-900/60 transition cursor-pointer flex-col">
+                <div class="relative aspect-video bg-zinc-900 overflow-hidden">
+                  <img src={v.thumb} alt={v.title} class="w-full h-full object-cover group-hover:scale-[1.02] transition duration-300"/>
+                  <span class="absolute top-2 left-2 bg-[#FF6B35] text-white mono text-[9px] font-bold px-1.5 py-0.5 rounded-full">LIVE</span>
+                  <span class="absolute bottom-2 right-2 bg-black/80 text-white mono text-[10px] px-1.5 py-0.5 rounded">{v.duration}</span>
+                  <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition bg-black/30"><span class="w-10 h-10 rounded-full bg-white text-black grid place-items-center text-sm">▶</span></span>
+                </div>
+                <div class="p-4 flex flex-col gap-1.5 flex-1">
+                  <h3 class="text-[14px] font-semibold leading-5 line-clamp-2 group-hover:text-white">{v.title}</h3>
+                  <p class="text-[12px] leading-5 text-zinc-400 line-clamp-2">{v.desc}</p>
+                  <div class="flex items-center gap-2 mono text-[10px] text-zinc-500 mt-1"><span>{v.date}</span><span>·</span><span>{v.views} views</span><span>·</span><span class="bg-zinc-800 text-zinc-400 px-1.5 py-0.5 rounded-full">{v.tag}</span></div>
+                </div>
+              </button>
+            {/each}
+          </div>
+        </div>
+      {/if}
+      {#if videosShort.length>0},
         <div class="flex flex-col gap-3 reveal">
           <div class="flex items-center gap-2"><span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">Shorts</span><span class="flex-1 h-px bg-zinc-800"></span><span class="mono text-xs text-zinc-500">{videosShort.length} · 9:16</span></div>
           <div class="flex gap-3 overflow-x-auto scrollbar-none pb-2 snap-x snap-mandatory">
@@ -572,7 +597,7 @@ let booted = false;
   {:else if view==='postDetail' && postSlug}
     {@const meta = postsData.find(p=>p.slug===postSlug)}
     {@const sls = postsSlides[postSlug] || []}
-    <div class="fixed inset-0 z-50 bg-black flex flex-col" in:fade={{duration:200}} out:fade={{duration:150}}>
+    <div id="view-post-detail" class="fixed inset-0 z-50 bg-black flex flex-col" in:fade={{duration:200}} out:fade={{duration:150}}>
       <div class="h-[56px] shrink-0 border-b border-zinc-800 bg-[#09090b]/80 backdrop-blur flex items-center justify-between px-4 sm:px-6">
         <div class="flex items-center gap-3">
           <button on:click={()=> nav('posts')} class="inline-flex items-center gap-1.5 rounded-full border border-zinc-800 bg-zinc-900 px-3 py-1.5 text-xs font-medium text-zinc-300 hover:text-white hover:border-zinc-700">← All posts</button>
