@@ -57,10 +57,10 @@
     geo.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
 
     const mat = new THREE.PointsMaterial({
-      size: 0.08,
+      size: 0.055,
       vertexColors: true,
       transparent: true,
-      opacity: theme === 'dark' ? 0.42 : 0.34,
+      opacity: theme === 'dark' ? 0.22 : 0.18,
       sizeAttenuation: true,
       depthWrite: false,
       blending: THREE.NormalBlending
@@ -190,9 +190,9 @@
 
 <style>
   .three-hero-wrap { overflow: hidden; }
-  .three-hero-canvas { display: block; width: 100%; height: 100%; opacity: 0.68; }
+  .three-hero-canvas { display: block; width: 100%; height: 100%; opacity: 0.42; }
   @media (prefers-reduced-motion: reduce) {
     .three-hero-canvas { display: none !important; }
   }
-  html.light .three-hero-canvas { opacity: 0.52; }
+  html.light .three-hero-canvas { opacity: 0.32; }
 </style>
