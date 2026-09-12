@@ -239,21 +239,27 @@ let booted = false;
     });
   }
   function setupReveal(){
-    // GSAP-perf: if using GSAP, replace observer stagger with:
-    // gsap.utils.toArray('.reveal').forEach(el=> gsap.fromTo(el,{y:14,autoAlpha:0},{y:0,autoAlpha:1,duration:0.52,ease:"expo.out", scrollTrigger:{trigger:el, once:true}}))
-    // + stagger for grids: gsap.from(cards,{y:12,autoAlpha:0,duration:0.45,stagger:0.07,ease:"power2.out"})
-    // Clean prior observer to avoid doubles on view change
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce){ document.querySelectorAll('.reveal:not(.in)').forEach(el=> el.classList.add('in')); return; }
     const obs = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
         if(e.isIntersecting){
           e.target.classList.add('in');
           obs.unobserve(e.target);
-          // drop will-change after transition ends to free GPU memory
-          e.target.addEventListener('transitionend', ()=> (e.target as HTMLElement).style.willChange='auto', {once:true});
+          (e.target as HTMLElement).addEventListener('transitionend', ()=> (e.target as HTMLElement).style.willChange='auto', {once:true});
         }
       });
-    }, {threshold:0.12, rootMargin:'0px 0px -60px 0px'});
-    document.querySelectorAll('.reveal:not(.in)').forEach(el=> obs.observe(el));
+    }, {threshold:0.14, rootMargin:'0px 0px -56px 0px'});
+    // auto-stagger cards inside same grid — cap to 3 steps to keep Emil restrained
+    document.querySelectorAll('.reveal:not(.in)').forEach(el=> {
+      const parent = el.parentElement;
+      if(parent && parent.classList.contains('grid') && el.tagName.toLowerCase()==='article'){
+        const idx = Array.from(parent.children).indexOf(el);
+        const step = Math.min(idx, 2); // 0,1,2 only
+        (el as HTMLElement).style.transitionDelay = `${55 + step*55}ms`;
+      }
+      obs.observe(el);
+    });
   }
 </script>
 
@@ -325,16 +331,16 @@ let booted = false;
 
 <main id="main-content" class="mx-auto w-full max-w-7xl px-4 pb-24 pt-8 sm:px-6">
   {#key view}
-  <div in:fade={{duration:220, delay:30}} out:fade={{duration:150}}>
+  <div in:fly={{y:8, duration:320, delay:40, opacity:0}} out:fade={{duration:160}}>
   {#if view==='home'}
-    <section class="relative flex flex-col items-center gap-8 sm:gap-10 text-center reveal in scroll-section" id="section-hero">
+    <section class="hero-ek relative flex flex-col items-center gap-8 sm:gap-10 text-center scroll-section" id="section-hero">
       <div class="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
         <div class="hero-glow"></div>
       </div>
-      <div class="relative flex flex-col items-center gap-5 max-w-[640px] reveal in">
+      <div class="relative flex flex-col items-center gap-5 max-w-[640px]">
         <h1 class="fraunces text-[38px] sm:text-[54px] md:text-[64px] font-medium leading-[0.92] tracking-[-0.02em]">Mobile developer,<br><span class="italic font-[450] text-zinc-300">every framework.</span></h1>
-        <p class="max-w-[560px] text-[15px] leading-7 text-zinc-400">5+ years building complete products — Mobile (Flutter, SwiftUI & Kotlin), Backend systems & APIs, AI-powered. Product-driven, end-to-end, and system-thinking.</p>
-        <div class="flex flex-wrap justify-center gap-2 max-w-[560px] reveal">
+        <p class="hero-lead max-w-[560px] text-[15px] leading-7 text-zinc-400">5+ years building complete products — Mobile (Flutter, SwiftUI & Kotlin), Backend systems & APIs, AI-powered. Product-driven, end-to-end, and system-thinking.</p>
+        <div class="ek-pills flex flex-wrap justify-center gap-2 max-w-[560px]">
           <span class="inline-flex items-center gap-1.5 rounded-full border border-zinc-800 bg-zinc-900/60 px-3 py-1.5 text-xs font-medium"><img src="https://cdn.simpleicons.org/android/3DDC84" class="w-4 h-4" alt=""> Android</span>
           <span class="inline-flex items-center gap-1.5 rounded-full border border-zinc-800 bg-zinc-900/60 px-3 py-1.5 text-xs font-medium"><img src="https://cdn.simpleicons.org/kotlin/7F52FF" class="w-4 h-4" alt=""> Kotlin</span>
           <span class="inline-flex items-center gap-1.5 rounded-full border border-zinc-800 bg-zinc-900/60 px-3 py-1.5 text-xs font-medium"><img src="https://cdn.simpleicons.org/flutter/02569B" class="w-4 h-4" alt=""> Flutter</span>
@@ -345,15 +351,15 @@ let booted = false;
           <span class="inline-flex items-center gap-1.5 rounded-full border border-zinc-800 bg-zinc-900/60 px-3 py-1.5 text-xs font-medium"><img src="https://cdn.simpleicons.org/ionic/3880FF" class="w-4 h-4" alt=""> Ionic</span>
         </div>
       </div>
-      <div class="relative flex flex-col items-center gap-4 reveal">
-        <div class="relative parallax will-change-transform" style="transform: translate3d(0,{heroParallaxY}px,0)"><div class="w-[168px] h-[168px] rounded-full overflow-hidden border border-zinc-800 p-[5px] bg-zinc-900"><img src={khoironRois} class="w-full h-full object-cover rounded-full object-top" alt="Khoiron Rois"/></div><div class="absolute -bottom-2 -right-2 bg-white text-black mono text-[10px] font-bold tracking-widest px-2 py-1 rounded-full border border-zinc-200">5+ YRS</div></div>
-        <div class="text-center"><div class="text-[15px] font-semibold">Khoiron Rois</div><div class="mono text-[11px] tracking-wide text-zinc-500">Android · iOS · Flutter · React Native</div></div>
-        <div class="flex flex-wrap justify-center gap-3 mt-1">
+      <div class="relative flex flex-col items-center gap-4">
+        <div class="ek-avatar relative parallax will-change-transform" style="transform: translate3d(0,{heroParallaxY}px,0)"><div class="w-[168px] h-[168px] rounded-full overflow-hidden border border-zinc-800 p-[5px] bg-zinc-900"><img src={khoironRois} class="w-full h-full object-cover rounded-full object-top" alt="Khoiron Rois"/></div><div class="absolute -bottom-2 -right-2 bg-white text-black mono text-[10px] font-bold tracking-widest px-2 py-1 rounded-full border border-zinc-200">5+ YRS</div></div>
+        <div class="ek-avatar-meta text-center"><div class="text-[15px] font-semibold">Khoiron Rois</div><div class="mono text-[11px] tracking-wide text-zinc-500">Android · iOS · Flutter · React Native</div></div>
+        <div class="ek-cta flex flex-wrap justify-center gap-3 mt-1">
           <a href="https://apps.apple.com/developer/khoirlabs" target="_blank" class="platform-btn inline-flex items-center gap-3 bg-zinc-900 border border-zinc-800 text-white rounded-xl px-4 py-2.5 min-w-[148px]"><img src="https://cdn.simpleicons.org/appstore/FFFFFF" class="w-5 h-5 platform-icon" alt=""><span class="flex flex-col leading-none text-left"><span class="mono text-[9px] tracking-[0.14em] uppercase font-semibold text-zinc-400">Apps on the</span><span class="text-[13px] font-semibold -mt-0.5">App Store</span></span></a>
           <button disabled class="platform-btn inline-flex items-center gap-3 bg-zinc-900/50 border border-zinc-800 text-zinc-500 rounded-xl px-4 py-2.5 cursor-not-allowed min-w-[148px]"><img src="https://cdn.simpleicons.org/googleplay/FFFFFF" class="w-5 h-5 platform-icon" alt=""><span class="flex flex-col leading-none text-left"><span class="mono text-[9px] tracking-[0.14em] uppercase font-semibold text-zinc-500">Get it on</span><span class="text-[13px] font-semibold -mt-0.5 flex items-center gap-1.5">Google Play <span class="text-[9px] font-normal border border-zinc-700 rounded px-1 py-0.5 leading-none">Soon</span></span></span></button>
           <a href="https://github.com/roiskhoiron" target="_blank" class="platform-btn inline-flex items-center gap-3 bg-zinc-900 border border-zinc-800 text-white rounded-xl px-4 py-2.5 min-w-[148px]"><img src="https://cdn.simpleicons.org/github/FFFFFF" class="w-5 h-5 platform-icon" alt=""><span class="flex flex-col leading-none text-left"><span class="mono text-[9px] tracking-[0.14em] uppercase font-semibold text-zinc-400">Code on</span><span class="text-[13px] font-semibold -mt-0.5">GitHub</span></span></a>
         </div>
-        <button on:click={()=> nav('blog')} class="mono text-[12px] text-zinc-400 hover:text-white inline-flex items-center gap-1.5 mt-1 transition">Or read the blog <span>→</span></button>
+        <button on:click={()=> nav('blog')} class="ek-cta mono text-[12px] text-zinc-400 hover:text-white inline-flex items-center gap-1.5 mt-1 transition">Or read the blog <span>→</span></button>
         <div class="mt-8 mono text-[11px] tracking-[0.18em] text-zinc-600 flex items-center gap-2 scroll-hint" aria-hidden="true">
           <span>Scroll to explore</span>
           <span>↓</span>
