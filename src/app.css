@@ -2,7 +2,11 @@
 * { font-variant-ligatures: common-ligatures; }
 html{scroll-behavior:smooth}
 ::selection{background:#FF6B35;color:white}
-@media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important} }
+/* GSAP-perf: compositor-only hints — move will-change to elements that actually animate */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+  .boot-halo, .boot-ring, .hero-glow, .floating-orbs { display:none !important; }
+}
 .fraunces { font-family: "Fraunces","Fraunces Fallback", serif; }
 .mono { font-family: "Geist Mono","Geist Mono Fallback", monospace; }
 .geist { font-family: "Geist","Geist Fallback", Arial, sans-serif; }
@@ -17,10 +21,14 @@ html{scroll-behavior:smooth}
 .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 
-/* — microinteractions masif tapi elegan — */
+/* — microinteractions — refined to compositor-safe props — */
 button, a{ transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 180ms cubic-bezier(0.22,1,0.36,1), box-shadow 180ms ease, opacity 180ms ease }
 button:active, a:active{ transform: scale(0.98) }
-#site-header{ transition: background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease }
+#site-header{
+  transition: background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease, backdrop-filter 200ms ease;
+  will-change: backdrop-filter;
+}
+#site-header.is-scrolled{ box-shadow: 0 4px 24px rgba(0,0,0,.28); }
 #site-header .bg-white, #site-header .bg-zinc-900{ transition: all 200ms ease }
 #site-header button span.bg-\[\#FF6B35\]{ animation: dotIn 200ms cubic-bezier(0.22,1,0.36,1) }
 button[aria-label="Toggle theme"]{ transition: transform 220ms cubic-bezier(0.22,1,0.36,1), background-color 200ms ease }
@@ -74,8 +82,11 @@ html.light .boot-ring{ border-top-color: #FF6B35; border-right-color: rgba(255,1
 }
 html.light .boot-track{ background: #e4e4e7; border-color: #e4e4e7; }
 .boot-fill{
-  height:100%; background: #FF6B35; width:0%;
-  transition: width 120ms linear; border-radius:9999px;
+  height:100%; background: #FF6B35; width:100%;
+  transform: scaleX(0); transform-origin: left center;
+  /* GSAP-perf: animating transform (compositor) instead of width (layout) */
+  will-change: transform;
+  transition: transform 140ms linear; border-radius:9999px;
   box-shadow: 0 0 10px rgba(255,107,53,.45);
 }
 html.light .boot-fill{ box-shadow: none; }
@@ -89,12 +100,26 @@ html.light .boot-fill{ box-shadow: none; }
   .boot-track{ width:136px }
 }
 
-/* scrolling effects */
-#scroll-progress{ transition: width 80ms linear }
-.reveal{ opacity:0; transform: translateY(10px); transition: opacity 400ms cubic-bezier(0.22,1,0.36,1), transform 400ms cubic-bezier(0.22,1,0.36,1) }
-.reveal.in{ opacity:1; transform: translateY(0) }
-.reveal-delay-1{ transition-delay: 60ms } .reveal-delay-2{ transition-delay: 120ms } .reveal-delay-3{ transition-delay: 180ms }
-.parallax{ will-change: transform; transition: transform 100ms linear }
+/* scrolling effects — GSAP-perf: transform/opacity only, no width/height/top */
+#scroll-progress{
+  transform-origin: left center;
+  will-change: transform;
+  /* width is 100%, progress via scaleX to stay on compositor */
+}
+.reveal{
+  opacity:0; transform: translateY(14px);
+  /* refined: slightly longer, softer ease (expo-out) for premium feel; compositor only */
+  transition: opacity 520ms cubic-bezier(0.22,1,0.36,1), transform 520ms cubic-bezier(0.22,1,0.36,1);
+  will-change: opacity, transform;
+}
+.reveal.in{ opacity:1; transform: translateY(0); will-change: auto; }
+.reveal-delay-1{ transition-delay: 70ms } .reveal-delay-2{ transition-delay: 140ms } .reveal-delay-3{ transition-delay: 210ms }
+/* stagger group: if you migrate to GSAP, use stagger:0.07 instead of manual delays */
+.parallax{ transform: translateZ(0); }
+.parallax.is-animating{ will-change: transform; }
+/* replace cheap bounce with refined drift — respects reduced-motion via media query above */
+@keyframes scrollHint{ 0%,100%{ transform: translateY(0); opacity: .65 } 50%{ transform: translateY(3px); opacity:1 } }
+.scroll-hint{ animation: scrollHint 2.2s ease-in-out infinite; }
 
 /* — light theme: dominant bright, simple & elegant — */
 html.light { color-scheme: light; }

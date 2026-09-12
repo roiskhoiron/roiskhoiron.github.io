@@ -201,26 +201,59 @@ let booted = false;
     const dx = e.clientX - postsMouseStartX; postsDragDx = 0;
     if(Math.abs(dx)>40){ if(dx<0 && postsCarIdx < filteredPosts.length-1) postsCarIdx++; else if(dx>0 && postsCarIdx>0) postsCarIdx--; }
   }
+  // GSAP-perf: batch scroll reads/writes in rAF to avoid layout thrashing.
+  // Prefer transform/opacity only; avoid per-frame backdropFilter writes (paint) —
+  // toggle class instead and let CSS handle blur once. For frequently updated
+  // y (heroParallaxY) a GSAP quickTo() would be ideal:
+  //   const yTo = gsap.quickTo(parallaxEl, "y", {duration:0.4, ease:"power3"});
+  //   yTo(y); // reuses single tween, no new tween per scroll
+  let scrollRaf = 0;
+  let lastProgress = 0;
   function handleScroll(){
-    const h = document.documentElement;
-    const max = h.scrollHeight - h.clientHeight;
-    scrollProgress = max > 0 ? (window.scrollY / max) * 100 : 0;
-    heroParallaxY = Math.min(window.scrollY * 0.12, 24);
-    const hdr = document.getElementById('site-header');
-    if(hdr){ hdr.classList.toggle('shadow-lg', window.scrollY>8); hdr.style.backdropFilter = `blur(${Math.min(12 + window.scrollY*0.02, 20)}px)`; }
-    const sections = document.querySelectorAll('main section[id], main .scroll-section');
-    sections.forEach((sec, i) => {
-      const rect = sec.getBoundingClientRect();
-      if (rect.top <= window.innerHeight * 0.55 && rect.bottom >= window.innerHeight * 0.35) {
-        activeSection = i + 1;
+    if(scrollRaf) return;
+    scrollRaf = requestAnimationFrame(()=>{
+      scrollRaf = 0;
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const p = max > 0 ? (window.scrollY / max) * 100 : 0;
+      // only write when delta > 0.15% to reduce paint
+      if(Math.abs(p - lastProgress) > 0.15){ scrollProgress = p; lastProgress = p; }
+      heroParallaxY = Math.min(window.scrollY * 0.08, 18);
+      const hdr = document.getElementById('site-header');
+      if(hdr){
+        const scrolled = window.scrollY > 8;
+        hdr.classList.toggle('is-scrolled', scrolled);
+        hdr.classList.toggle('shadow-lg', scrolled);
+        // GSAP-perf: removed per-frame backdropFilter write — CSS handles blur via .is-scrolled
       }
+      const sections = document.querySelectorAll('main section[id], main .scroll-section');
+      // batch reads first, then writes (already batched via rAF)
+      let nextActive = activeSection;
+      sections.forEach((sec, i) => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.55 && rect.bottom >= window.innerHeight * 0.35) {
+          nextActive = i + 1;
+        }
+      });
+      activeSection = nextActive;
     });
   }
   function setupReveal(){
+    // GSAP-perf: if using GSAP, replace observer stagger with:
+    // gsap.utils.toArray('.reveal').forEach(el=> gsap.fromTo(el,{y:14,autoAlpha:0},{y:0,autoAlpha:1,duration:0.52,ease:"expo.out", scrollTrigger:{trigger:el, once:true}}))
+    // + stagger for grids: gsap.from(cards,{y:12,autoAlpha:0,duration:0.45,stagger:0.07,ease:"power2.out"})
+    // Clean prior observer to avoid doubles on view change
     const obs = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
-    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
-    document.querySelectorAll('.reveal').forEach(el=> obs.observe(el));
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          obs.unobserve(e.target);
+          // drop will-change after transition ends to free GPU memory
+          e.target.addEventListener('transitionend', ()=> (e.target as HTMLElement).style.willChange='auto', {once:true});
+        }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -60px 0px'});
+    document.querySelectorAll('.reveal:not(.in)').forEach(el=> obs.observe(el));
   }
 </script>
 
@@ -240,7 +273,7 @@ let booted = false;
           Software · Product · Workshop
         </p>
         <div class="boot-track" aria-hidden="true">
-          <div class="boot-fill" style="width:{bootProgress}%"></div>
+          <div class="boot-fill" style="transform: scaleX({bootProgress/100})"></div>
         </div>
         <div class="boot-meta flex items-center gap-2 mono text-[10px] tracking-[0.14em]" style="color:{theme==='dark'?'#71717a':'#a1a1aa'}">
           <span>{Math.round(bootProgress)}%</span>
@@ -256,7 +289,7 @@ let booted = false;
 </div>
 
 <svelte:window on:keydown={handleKeys} on:scroll={handleScroll} />
-<div id="scroll-progress" class="fixed top-0 left-0 h-[2px] bg-[#FF6B35] z-[60] pointer-events-none" style="width:{scrollProgress}%"></div>
+<div id="scroll-progress" class="fixed top-0 left-0 h-[2px] bg-[#FF6B35] z-[60] pointer-events-none w-full origin-left" style="transform: scaleX({scrollProgress/100})"></div>
 
 <div class="fixed inset-0 pointer-events-none z-0" aria-hidden="true" style="background: radial-gradient(ellipse 80% 60% at 50% {Math.min(30 + scrollProgress * 0.4, 70)}%, rgba(255,107,53,0.03) 0%, transparent 70%);"></div>
 <div class="ambient-layer" aria-hidden="true"></div>
@@ -312,7 +345,7 @@ let booted = false;
         </div>
       </div>
       <div class="relative flex flex-col items-center gap-4 reveal">
-        <div class="relative parallax" style="transform: translateY({heroParallaxY}px)"><div class="w-[168px] h-[168px] rounded-full overflow-hidden border border-zinc-800 p-[5px] bg-zinc-900"><img src={khoironRois} class="w-full h-full object-cover rounded-full object-top" alt="Khoiron Rois"/></div><div class="absolute -bottom-2 -right-2 bg-white text-black mono text-[10px] font-bold tracking-widest px-2 py-1 rounded-full border border-zinc-200">5+ YRS</div></div>
+        <div class="relative parallax will-change-transform" style="transform: translate3d(0,{heroParallaxY}px,0)"><div class="w-[168px] h-[168px] rounded-full overflow-hidden border border-zinc-800 p-[5px] bg-zinc-900"><img src={khoironRois} class="w-full h-full object-cover rounded-full object-top" alt="Khoiron Rois"/></div><div class="absolute -bottom-2 -right-2 bg-white text-black mono text-[10px] font-bold tracking-widest px-2 py-1 rounded-full border border-zinc-200">5+ YRS</div></div>
         <div class="text-center"><div class="text-[15px] font-semibold">Khoiron Rois</div><div class="mono text-[11px] tracking-wide text-zinc-500">Android · iOS · Flutter · React Native</div></div>
         <div class="flex flex-wrap justify-center gap-3 mt-1">
           <a href="https://apps.apple.com/developer/khoirlabs" target="_blank" class="platform-btn inline-flex items-center gap-3 bg-zinc-900 border border-zinc-800 text-white rounded-xl px-4 py-2.5 min-w-[148px]"><img src="https://cdn.simpleicons.org/appstore/FFFFFF" class="w-5 h-5 platform-icon" alt=""><span class="flex flex-col leading-none text-left"><span class="mono text-[9px] tracking-[0.14em] uppercase font-semibold text-zinc-400">Apps on the</span><span class="text-[13px] font-semibold -mt-0.5">App Store</span></span></a>
@@ -320,7 +353,7 @@ let booted = false;
           <a href="https://github.com/roiskhoiron" target="_blank" class="platform-btn inline-flex items-center gap-3 bg-zinc-900 border border-zinc-800 text-white rounded-xl px-4 py-2.5 min-w-[148px]"><img src="https://cdn.simpleicons.org/github/FFFFFF" class="w-5 h-5 platform-icon" alt=""><span class="flex flex-col leading-none text-left"><span class="mono text-[9px] tracking-[0.14em] uppercase font-semibold text-zinc-400">Code on</span><span class="text-[13px] font-semibold -mt-0.5">GitHub</span></span></a>
         </div>
         <button on:click={()=> nav('blog')} class="mono text-[12px] text-zinc-400 hover:text-white inline-flex items-center gap-1.5 mt-1 transition">Or read the blog <span>→</span></button>
-        <div class="mt-8 mono text-[11px] tracking-[0.18em] text-zinc-600 flex items-center gap-2 animate-bounce">
+        <div class="mt-8 mono text-[11px] tracking-[0.18em] text-zinc-600 flex items-center gap-2 scroll-hint" aria-hidden="true">
           <span>Scroll to explore</span>
           <span>↓</span>
         </div>
@@ -597,7 +630,7 @@ let booted = false;
       </div>
       <div class="relative">
         <div class="overflow-hidden select-none" style="cursor:{postsIsDragging||postsMouseDown?'grabbing':'grab'}" on:touchstart={handlePostsTouchStart} on:touchmove={handlePostsTouchMove} on:touchend={handlePostsTouchEnd} on:mousedown={handlePostsMouseDown} on:mousemove={handlePostsMouseMove} on:mouseup={handlePostsMouseUp} on:mouseleave={handlePostsMouseUp}>
-          <div class="flex gap-4 will-change-transform" style="transition: {postsIsDragging||postsMouseDown ? 'none' : 'transform 420ms cubic-bezier(0.22,1,0.36,1)'}; transform: translateX({-postsCarIdx * 336 + postsDragDx}px);">
+          <div class="flex gap-4" style="will-change:{postsIsDragging||postsMouseDown?'transform':'auto'}; transition: {postsIsDragging||postsMouseDown ? 'none' : 'transform 420ms cubic-bezier(0.22,1,0.36,1)'}; transform: translate3d({-postsCarIdx * 336 + postsDragDx}px,0,0);">
             {#each filteredPosts as p}
               <article on:click={()=> openPost(p.slug)} class="shrink-0 w-[320px] aspect-[4/5] rounded-2xl border border-zinc-800 p-5 flex flex-col cursor-pointer {p.color} snap-center" style="scroll-snap-align:center;">
                 <div class="flex items-center justify-between"><img src={logoKhoirlabs} class="w-6 h-6 rounded-full {p.color.includes('white')?'':'bg-white'} object-contain p-0.5" alt=""><span class="mono text-[10px] tracking-widest uppercase {p.color.includes('white')?'text-zinc-500':'text-zinc-400'}">{p.accent}</span></div>
@@ -636,7 +669,7 @@ let booted = false;
       <div class="flex-1 flex flex-col lg:flex-row overflow-hidden bg-gradient-to-br from-[#0a0a0a] via-[#0f0f12] to-[#0a0a0a]">
         <div class="flex-1 flex flex-col items-center justify-center p-4 sm:p-6 gap-4 overflow-auto">
           <div class="w-full max-w-[380px] aspect-[4/5] rounded-2xl border border-zinc-800 overflow-hidden shadow-2xl bg-black">
-            <div id="post-stage" class="flex h-full will-change-transform" style="width:{sls.length*100}%; transform:translateX(-{postIdx * (100/sls.length)}%); transition: transform 420ms cubic-bezier(0.22,1,0.36,1)">
+            <div id="post-stage" class="flex h-full" style="width:{sls.length*100}%; transform:translate3d(-{postIdx * (100/sls.length)}%,0,0); transition: transform 420ms cubic-bezier(0.22,1,0.36,1); will-change: transform">
               {#each sls as s}
                 {@const isWhite = s.theme==='white'}
                 <div class="w-full h-full {isWhite?'bg-white text-black':'bg-zinc-900 text-white'} flex flex-col p-6 relative shrink-0" style="width:{100/sls.length}%">
