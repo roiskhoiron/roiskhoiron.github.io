@@ -11,6 +11,7 @@
   let postSlug: string | null = null;
   let blogSlug: string | null = null;
 let booted = false;
+  let bootProgress = 0;
   let theme: 'dark' | 'light' = 'dark';
   let deckIdx = 0;
   let postIdx = 0;
@@ -46,14 +47,28 @@ let booted = false;
 
   function runBootSequence(){
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      bootProgress = 100;
       booted = true;
       setTimeout(() => { setupReveal(); }, 60);
       return;
     }
+    let p = 0;
+    const iv = setInterval(()=> {
+      p += Math.random()*14 + 7;
+      if(p >= 92) p = 92 + Math.random()*5;
+      if(p > 98) p = 98;
+      bootProgress = Math.min(p, 98);
+    }, 95);
+    const tick = setInterval(()=> {
+      if(bootProgress < 100 && booted) bootProgress = 100;
+    }, 60);
     setTimeout(() => {
+      clearInterval(iv);
+      bootProgress = 100;
       booted = true;
+      setTimeout(()=> clearInterval(tick), 800);
       setTimeout(() => { setupReveal(); }, 420);
-    }, 1100);
+    }, 1350);
   }
 
   function applyTheme(t: 'dark'|'light') {
@@ -209,26 +224,34 @@ let booted = false;
   }
 </script>
 
-<div id="boot-screen" class="fixed inset-0 z-[100] overflow-hidden" style="background:{theme==='dark'?'#050608':'#f4f4f5'};opacity:{booted?0:1};pointer-events:{booted?'none':'auto'};">
-  <!-- ambient backdrop -->
-  <div class="boot-orb boot-orb-1" aria-hidden="true"></div>
-  <div class="boot-orb boot-orb-2" aria-hidden="true"></div>
-
+<div id="boot-screen" class="fixed inset-0 z-[100] overflow-hidden {booted?'boot-exit':''}" style="background:{theme==='dark'?'#050608':'#fcfcfc'};opacity:{booted?0:1};pointer-events:{booted?'none':'auto'};">
+  <div class="boot-halo" aria-hidden="true"></div>
   <div class="relative z-10 flex h-full w-full flex-col items-center justify-center px-6">
-    <div class="flex flex-col items-center gap-6 text-center">
+    <div class="flex flex-col items-center gap-7 text-center">
       <div class="boot-logo-wrap">
+        <span class="boot-ring" aria-hidden="true"></span>
         <img src={logoKhoirlabs} class="boot-logo" alt="Khoirlabs"/>
       </div>
       <div class="flex flex-col items-center gap-3">
-        <h1 class="fraunces text-[36px] sm:text-[52px] md:text-[60px] font-medium leading-[0.95] tracking-tight boot-title">
+        <h1 class="fraunces text-[34px] sm:text-[46px] font-medium leading-[0.95] tracking-tight boot-title" style="color:{theme==='dark'?'#fafafa':'#18181b'}">
           khoirlabs
         </h1>
-        <div class="boot-line" aria-hidden="true"></div>
-        <p class="mono text-[11px] sm:text-xs tracking-[0.18em] {theme==='dark'?'text-zinc-400':'text-zinc-600'} boot-fade">
-          loading experiences
+        <p class="mono text-[10px] tracking-[0.20em] uppercase boot-sub" style="color:{theme==='dark'?'#a1a1aa':'#71717a'}">
+          Software · Product · Workshop
         </p>
+        <div class="boot-track" aria-hidden="true">
+          <div class="boot-fill" style="width:{bootProgress}%"></div>
+        </div>
+        <div class="boot-meta flex items-center gap-2 mono text-[10px] tracking-[0.14em]" style="color:{theme==='dark'?'#71717a':'#a1a1aa'}">
+          <span>{Math.round(bootProgress)}%</span>
+          <span class="w-1 h-1 rounded-full" style="background: currentColor; opacity:.5"></span>
+          <span>loading</span>
+        </div>
       </div>
     </div>
+  </div>
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 mono text-[10px] tracking-[0.16em] boot-meta" style="color:{theme==='dark'?'#3f3f46':'#a1a1aa'}">
+    khoirlabs.dev — est 2020
   </div>
 </div>
 
