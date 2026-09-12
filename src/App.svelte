@@ -288,6 +288,7 @@ let booted = false;
   </div>
 </div>
 
+<a href="#main-content" class="skip-link">Skip to content</a>
 <svelte:window on:keydown={handleKeys} on:scroll={handleScroll} />
 <div id="scroll-progress" class="fixed top-0 left-0 h-[2px] bg-[#FF6B35] z-[60] pointer-events-none w-full origin-left" style="transform: scaleX({scrollProgress/100})"></div>
 
@@ -295,44 +296,44 @@ let booted = false;
 <div class="ambient-layer" aria-hidden="true"></div>
 <div class="floating-orbs" aria-hidden="true"></div>
 <header id="site-header" class="sticky top-0 z-40 border-b border-zinc-800/60 bg-[#09090b]/60 backdrop-blur-xl">
-  <nav class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-    <button on:click={()=> nav('home')} class="flex items-center gap-3">
+  <nav class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6">
+    <button on:click={()=> nav('home')} class="flex items-center gap-3 focus-visible:outline-none" aria-label="Go to home">
       <img src={logoKhoirlabs} class="w-8 h-8 rounded-full border border-zinc-800 logo-bg object-contain p-1" alt="Khoirlabs"/>
       <div class="flex flex-col leading-none text-left">
         <span class="text-[15px] font-semibold tracking-tight">khoirlabs</span>
         <span class="hidden sm:block text-[11px] text-zinc-400">Software Engineer, Tech Educator/Mentor, Security-First</span>
       </div>
     </button>
-    <div class="flex items-center gap-3">
-      <div class="hidden md:flex items-center gap-6">
+    <div class="flex items-center gap-2.5">
+      <div class="hidden md:flex items-center gap-1.5">
         {#each ['home','about','decks','videos','posts','blog'] as v}
-          <button on:click={()=> nav(v)} class="relative px-1 py-1.5 text-[13px] {view===v || view.startsWith(v+'/') ? 'font-semibold text-white' : 'font-medium text-zinc-400 hover:text-white'}">{v[0].toUpperCase()+v.slice(1)}{#if view===v || view.startsWith(v+'/')}<span class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#FF6B35] rounded-full"></span>{/if}</button>
+          <button on:click={()=> nav(v)} class="relative px-3 py-2 rounded-full text-[13px] transition {view===v || view.startsWith(v+'/') ? 'font-semibold text-white bg-zinc-800' : 'font-medium text-zinc-400 hover:text-white hover:bg-zinc-800/60'}">{v[0].toUpperCase()+v.slice(1)}{#if view===v || view.startsWith(v+'/')}<span class="absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#FF6B35] rounded-full"></span>{/if}</button>
         {/each}
       </div>
-      <button on:click={toggleTheme} aria-label="Toggle theme" class="w-9 h-9 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 grid place-items-center text-zinc-600 dark:text-zinc-400 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
+      <button on:click={toggleTheme} aria-label="Toggle theme" class="w-9 h-9 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 grid place-items-center text-zinc-600 dark:text-zinc-400 hover:border-zinc-300 dark:hover:border-zinc-700 transition shrink-0">
         {#if theme==='dark'}☾{:else}☀{/if}
       </button>
-      <button class="md:hidden w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 grid place-items-center text-zinc-400" on:click={()=> document.getElementById('mobile-menu')?.classList.toggle('hidden')}>☰</button>
+      <button aria-label="Open navigation menu" class="md:hidden w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 grid place-items-center text-zinc-400 shrink-0" on:click={()=> document.getElementById('mobile-menu')?.classList.toggle('hidden')}>☰</button>
     </div>
   </nav>
-    <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-800 bg-[#0a0a0a] px-4 py-3">
+    <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-800 bg-[#0a0a0a] px-4 py-3 space-y-1">
     {#each ['home','about','decks','videos','posts','blog'] as v}
-      <button on:click={()=> nav(v)} class="block w-full text-left px-3 py-2 rounded-lg {view===v?'bg-white text-black':'text-zinc-400'}">{v}</button>
+      <button on:click={()=> { nav(v); document.getElementById('mobile-menu')?.classList.add('hidden');}} class="block w-full text-left px-3 py-2.5 rounded-xl text-sm {view===v?'bg-white text-black font-semibold':'text-zinc-400 hover:bg-zinc-900 hover:text-white'}">{v[0].toUpperCase()+v.slice(1)}</button>
     {/each}
   </div>
 </header>
 
-<main class="mx-auto w-full max-w-7xl px-4 pb-24 pt-8 sm:px-6">
+<main id="main-content" class="mx-auto w-full max-w-7xl px-4 pb-24 pt-8 sm:px-6">
   {#key view}
   <div in:fade={{duration:220, delay:30}} out:fade={{duration:150}}>
   {#if view==='home'}
-    <section class="relative flex flex-col items-center gap-10 text-center reveal in scroll-section" id="section-hero">
+    <section class="relative flex flex-col items-center gap-8 sm:gap-10 text-center reveal in scroll-section" id="section-hero">
       <div class="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
         <div class="hero-glow"></div>
       </div>
-      <div class="relative flex flex-col items-center gap-6 max-w-3xl reveal in">
-        <h1 class="fraunces text-[42px] sm:text-[56px] md:text-[68px] font-medium leading-[0.9]">Mobile developer,<br><span class="italic text-zinc-300">every framework.</span></h1>
-        <p class="max-w-[560px] text-zinc-400 leading-7">5+ years building complete products — Mobile (Flutter, SwiftUI & Kotlin), Backend systems & APIs, AI-powered. Product-driven, end-to-end, and system-thinking.</p>
+      <div class="relative flex flex-col items-center gap-5 max-w-[640px] reveal in">
+        <h1 class="fraunces text-[38px] sm:text-[54px] md:text-[64px] font-medium leading-[0.92] tracking-[-0.02em]">Mobile developer,<br><span class="italic font-[450] text-zinc-300">every framework.</span></h1>
+        <p class="max-w-[560px] text-[15px] leading-7 text-zinc-400">5+ years building complete products — Mobile (Flutter, SwiftUI & Kotlin), Backend systems & APIs, AI-powered. Product-driven, end-to-end, and system-thinking.</p>
         <div class="flex flex-wrap justify-center gap-2 max-w-[560px] reveal">
           <span class="inline-flex items-center gap-1.5 rounded-full border border-zinc-800 bg-zinc-900/60 px-3 py-1.5 text-xs font-medium"><img src="https://cdn.simpleicons.org/android/3DDC84" class="w-4 h-4" alt=""> Android</span>
           <span class="inline-flex items-center gap-1.5 rounded-full border border-zinc-800 bg-zinc-900/60 px-3 py-1.5 text-xs font-medium"><img src="https://cdn.simpleicons.org/kotlin/7F52FF" class="w-4 h-4" alt=""> Kotlin</span>
@@ -359,8 +360,8 @@ let booted = false;
         </div>
       </div>
     </section>
-    <section class="flex flex-col gap-10 mt-20 md:mt-24 reveal scroll-section" id="recent">
-      <div class="flex flex-col gap-2"><span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">Recent</span><div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4"><h2 class="fraunces text-[30px] sm:text-[36px] font-medium leading-none tracking-tight">Latest from the workshop.</h2><div class="flex items-center gap-2 overflow-x-auto scrollbar-none"><button on:click={()=> nav('blog')} class="whitespace-nowrap rounded-full px-4 py-2 text-xs font-medium border bg-white text-black border-white">All <span class="opacity-60 ml-1">9</span></button><button on:click={()=> nav('blog')} class="whitespace-nowrap rounded-full px-4 py-2 text-xs font-medium border border-zinc-800 text-zinc-400">Blog <span class="opacity-60 ml-1">3</span></button><button on:click={()=> nav('posts')} class="whitespace-nowrap rounded-full px-4 py-2 text-xs font-medium border border-zinc-800 text-zinc-400">Carousels <span class="opacity-60 ml-1">3</span></button><button on:click={()=> nav('decks')} class="whitespace-nowrap rounded-full px-4 py-2 text-xs font-medium border border-zinc-800 text-zinc-400">Decks <span class="opacity-60 ml-1">3</span></button></div></div></div>
+    <section class="flex flex-col gap-8 mt-20 md:mt-24 reveal scroll-section" id="recent">
+      <div class="flex flex-col gap-3"><span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">Recent</span><div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4"><h2 class="fraunces text-[28px] sm:text-[34px] font-medium leading-none tracking-[-0.015em]">Latest from the workshop.</h2><div class="flex items-center gap-1.5 overflow-x-auto scrollbar-none pb-1 -mb-1"><button on:click={()=> nav('blog')} class="whitespace-nowrap rounded-full px-4 py-2 text-xs font-medium border bg-white text-black border-white">All <span class="opacity-60 ml-1">9</span></button><button on:click={()=> nav('blog')} class="whitespace-nowrap rounded-full px-4 py-2 text-xs font-medium border border-zinc-800 text-zinc-400">Blog <span class="opacity-60 ml-1">3</span></button><button on:click={()=> nav('posts')} class="whitespace-nowrap rounded-full px-4 py-2 text-xs font-medium border border-zinc-800 text-zinc-400">Carousels <span class="opacity-60 ml-1">3</span></button><button on:click={()=> nav('decks')} class="whitespace-nowrap rounded-full px-4 py-2 text-xs font-medium border border-zinc-800 text-zinc-400">Decks <span class="opacity-60 ml-1">3</span></button></div></div></div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
         <article class="group relative flex flex-col gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 hover:bg-zinc-900/70 hover:border-zinc-700 transition cursor-pointer reveal reveal-delay-1" on:click={()=> openBlog('four-repos-to-a-monorepo')}><div class="mono text-[11px] tracking-widest uppercase text-zinc-500">Jun 21, 2026 — Blog</div><h3 class="text-[16px] font-semibold leading-5">From four repos to a monorepo</h3><p class="text-[13px] leading-5 text-zinc-400 line-clamp-3">Consolidating four byte-identical app repos into one shared core plus thin app shells, the expo-router and Metro problems it surfaced.</p><span class="mono text-[11px] text-zinc-300 mt-2 inline-flex gap-1">Read post <span class="group-hover:translate-x-0.5 transition">→</span></span></article>
         <article class="group relative flex flex-col gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 hover:bg-zinc-900/70 transition cursor-pointer reveal reveal-delay-2" on:click={()=> openBlog('shipping-then-listening')}><div class="mono text-[11px] tracking-widest uppercase text-zinc-500">Jun 20, 2026 — Blog</div><h3 class="text-[16px] font-semibold leading-5">Shipping, then listening</h3><p class="text-[13px] leading-5 text-zinc-400 line-clamp-3">The first round of real tester feedback and the small, high-leverage fixes it produced.</p><span class="mono text-[11px] text-zinc-300 mt-2 inline-flex gap-1">Read post →</span></article>
@@ -393,7 +394,7 @@ let booted = false;
         <h1 class="fraunces text-[36px] sm:text-[44px] font-medium tracking-tight leading-none">Presentation Library</h1>
         <p class="text-[14px] leading-6 text-zinc-400 max-w-2xl">Open any deck in fullscreen mode. Each presentation now runs on a shared slide engine, which keeps the visual language, keyboard controls, and navigation consistent across topics. <span class="text-zinc-500 mono text-xs ml-2">{filteredDecks.length} decks</span></p>
       </div>
-      <div class="sticky top-[65px] z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-3 bg-[#0a0a0a]/80 backdrop-blur-xl border-y border-zinc-800/60 flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
+      <div class="sticky sticky-filter top-[65px] z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-3 bg-[#0a0a0a]/80 backdrop-blur-xl border-y border-zinc-800/60 flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
         <div class="flex items-center gap-2 flex-1 max-w-xl">
           <div class="relative flex-1">
             <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4-4m2-4a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
@@ -426,7 +427,7 @@ let booted = false;
           </article>
         {/each}
       </div>
-      {#if filteredDecks.length===0}<div class="flex flex-col items-center justify-center gap-3 py-16 border border-dashed border-zinc-800 rounded-2xl"><span class="mono text-xs tracking-widest uppercase text-zinc-600">No decks found</span><p class="text-sm text-zinc-500">Try another keyword.</p></div>{/if}
+      {#if filteredDecks.length===0}<div class="empty-state flex flex-col items-center justify-center gap-3 py-14 rounded-2xl"><span class="empty-state-icon">∅</span><span class="mono text-xs tracking-widest uppercase text-zinc-500">No decks found</span><p class="text-sm text-zinc-500">Try another keyword or clear filters.</p></div>{/if}
     </div>
   {:else if view==='deckDetail' && deckSlug}
     {@const deck = decksData.find(d=>d.slug===deckSlug)}
@@ -510,7 +511,7 @@ let booted = false;
         <h1 class="fraunces text-[36px] sm:text-[44px] font-medium tracking-tight leading-none">CodingSkuy on YouTube.</h1>
         <p class="text-[14px] leading-6 text-zinc-400 max-w-2xl">Tutorial panjang 12–22 menit untuk deep dive, dan Shorts 30–60 detik untuk tips cepat. Semua dari <a href="https://www.youtube.com/@codingskuy/videos" target="_blank" class="underline text-zinc-300">youtube.com/@codingskuy</a> — dinamis via RSS/API, fallback statis kalau API diblok. <span class="mono text-xs text-zinc-500 ml-2">{filteredVideos.length} videos</span></p>
       </div>
-      <div class="sticky top-[65px] z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-3 bg-[#0a0a0a]/80 backdrop-blur-xl border-y border-zinc-800/60 flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
+      <div class="sticky sticky-filter top-[65px] z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-3 bg-[#0a0a0a]/80 backdrop-blur-xl border-y border-zinc-800/60 flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
         <div class="relative flex-1 max-w-xl">
           <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4-4m2-4a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           <input bind:value={videoSearch} placeholder="Search videos — 'flutter', 'css', 'ai'" class="w-full bg-zinc-900 border border-zinc-800 rounded-full pl-9 pr-4 py-2.5 text-[13px] placeholder:text-zinc-600 focus:outline-none focus:border-zinc-700"/>
@@ -585,7 +586,7 @@ let booted = false;
           </div>
         </div>
       {/if}
-      {#if filteredVideos.length===0}<div class="flex flex-col items-center justify-center gap-3 py-16 border border-dashed border-zinc-800 rounded-2xl"><span class="mono text-xs tracking-widest uppercase text-zinc-600">No videos found</span></div>{/if}
+      {#if filteredVideos.length===0}<div class="empty-state flex flex-col items-center justify-center gap-3 py-14 rounded-2xl"><span class="empty-state-icon">∅</span><span class="mono text-xs tracking-widest uppercase text-zinc-600">No videos found</span></div>{/if}
     </div>
   {:else if view==='videoDetail' && selectedVideo}
     <div class="fixed inset-0 z-50 bg-black flex flex-col" in:fade={{duration:200}} out:fade={{duration:150}}>
@@ -612,7 +613,7 @@ let booted = false;
         <h1 class="fraunces text-[36px] sm:text-[44px] font-medium tracking-tight leading-none">Instagram Carousel Library</h1>
         <p class="text-[14px] leading-6 text-zinc-400 max-w-2xl">Each post is designed for a 4:5 portrait frame. Tap a cover to open the full carousel. Swipe through 8–10 cards per story. <span class="text-zinc-500 mono text-xs ml-2">{filteredPosts.length} posts</span></p>
       </div>
-      <div class="sticky top-[65px] z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-3 bg-[#0a0a0a]/80 backdrop-blur-xl border-y border-zinc-800/60 flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
+      <div class="sticky sticky-filter top-[65px] z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-3 bg-[#0a0a0a]/80 backdrop-blur-xl border-y border-zinc-800/60 flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
         <div class="relative flex-1 max-w-xl">
           <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4-4m2-4a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           <input bind:value={postSearch} placeholder="Search carousels — 'claude', 'css', 'cube'" class="w-full bg-zinc-900 border border-zinc-800 rounded-full pl-9 pr-4 py-2.5 text-[13px] placeholder:text-zinc-600 focus:outline-none focus:border-zinc-700"/>
@@ -648,7 +649,7 @@ let booted = false;
         <div class="flex items-center gap-1.5">{#each filteredPosts as _,i}<button on:click={()=> postsCarIdx=i} class="h-1.5 rounded-full transition-all {i===postsCarIdx?'bg-white w-6':'bg-zinc-700 w-1.5'}" aria-label="go {i}"></button>{/each}</div>
         <span class="mono text-[11px] text-zinc-600 ml-2 hidden sm:inline">drag / swipe untuk geser — fokus 1 item per slide</span>
       </div>
-      {#if filteredPosts.length===0}<div class="flex flex-col items-center justify-center gap-3 py-16 border border-dashed border-zinc-800 rounded-2xl"><span class="mono text-xs tracking-widest uppercase text-zinc-600">No posts found</span><p class="text-sm text-zinc-500">Try a different tag.</p></div>{/if}
+      {#if filteredPosts.length===0}<div class="empty-state flex flex-col items-center justify-center gap-3 py-14 rounded-2xl"><span class="empty-state-icon">∅</span><span class="mono text-xs tracking-widest uppercase text-zinc-600">No posts found</span><p class="text-sm text-zinc-500">Try a different tag or search.</p></div>{/if}
     </div>
   {:else if view==='postDetail' && postSlug}
     {@const meta = postsData.find(p=>p.slug===postSlug)}
@@ -734,7 +735,7 @@ let booted = false;
         <h1 class="fraunces text-[36px] sm:text-[44px] font-medium tracking-tight leading-none">Notes from the workshop.</h1>
         <p class="text-[14px] leading-6 text-zinc-400 max-w-2xl">Long-form writing on what I'm learning, building, and breaking. Daily-ish, depending on how the day goes. <span class="mono text-xs text-zinc-500 ml-2">{filteredBlog.length} posts</span></p>
       </div>
-      <div class="sticky top-[65px] z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-3 bg-[#0a0a0a]/80 backdrop-blur-xl border-y border-zinc-800/60 flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
+      <div class="sticky sticky-filter top-[65px] z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-3 bg-[#0a0a0a]/80 backdrop-blur-xl border-y border-zinc-800/60 flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
         <div class="relative flex-1 max-w-xl">
           <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4-4m2-4a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           <input bind:value={blogSearch} placeholder="Search notes — 'monorepo', 'RevenueCat', 'Expo'" class="w-full bg-zinc-900 border border-zinc-800 rounded-full pl-9 pr-4 py-2.5 text-[13px] placeholder:text-zinc-600 focus:outline-none focus:border-zinc-700"/>
@@ -772,18 +773,18 @@ let booted = false;
           </button>
         {/each}
       </div>
-      {#if filteredBlog.length===0}<div class="flex flex-col items-center justify-center gap-3 py-16 border border-dashed border-zinc-800 rounded-2xl"><span class="mono text-xs tracking-widest uppercase text-zinc-600">No notes found</span></div>{/if}
+      {#if filteredBlog.length===0}<div class="empty-state flex flex-col items-center justify-center gap-3 py-14 rounded-2xl"><span class="empty-state-icon">∅</span><span class="mono text-xs tracking-widest uppercase text-zinc-600">No notes found</span></div>{/if}
     </div>
   {:else if view==='blogDetail' && blogSlug}
     {@const b = blogData.find(x=>x.slug===blogSlug)}
     <div class="max-w-5xl mx-auto">
       <button on:click={()=> nav('blog')} class="inline-flex items-center gap-1.5 mono text-xs text-zinc-500 hover:text-white mb-6">← All posts</button>
       <div class="flex flex-col lg:flex-row gap-8">
-        <article class="flex-1 min-w-0">
+        <article class="prose-article flex-1 min-w-0 rounded-2xl border border-transparent px-4 sm:px-6 py-6 sm:py-8 bg-transparent">
           <div class="mono text-[11px] tracking-widest uppercase text-zinc-500 flex flex-wrap items-center gap-2"><span>{b?.date}</span><span>·</span><span>{b?.mins} min read</span><span>·</span><span>By Khoiron Rois</span><span class="hidden sm:inline">·</span><span class="flex flex-wrap gap-1.5">{#if b}{#each b.tags as t}<span class="mono text-[10px] bg-zinc-800 text-zinc-400 px-2 py-1 rounded-full">{t}</span>{/each}{/if}</span></div>
           <h1 class="fraunces text-[32px] sm:text-[40px] font-semibold leading-[1.05] tracking-tight mt-3">{b?.title}</h1>
           <p class="text-[18px] leading-7 text-zinc-300 mt-4">{b?.excerpt}</p>
-          <div class="mt-8 flex flex-col gap-8 text-[14px] leading-7 text-zinc-300 prose prose-invert max-w-none">
+           <div class="mt-8 flex flex-col gap-8 text-[15px] leading-7 text-zinc-300 prose prose-invert max-w-[68ch]">
             {#if blogSlug && blogFull[blogSlug]}
               {#each blogFull[blogSlug].sections as s}
                 <section id={s.id} class="scroll-mt-24"><h2 class="fraunces text-[20px] sm:text-[22px] font-semibold leading-tight">{s.title}</h2><div class="mt-3 text-[14px] leading-7">{@html s.body}</div></section>
