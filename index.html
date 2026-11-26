@@ -3,17 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Rois Khoiron</title>
-    <meta name="description" content="Senior Mobile Engineer — rebuilt with Svelte + TypeScript" />
-    <link rel="icon" href="./assets/images/khoirlabs.dev/logo-khoirlabs.jpeg" type="image/jpeg" />
+    <title>Khoiron Rois — Mobile &amp; Product Engineer · khoirlabs</title>
+    <meta name="description" content="Khoiron Rois — software engineer with 5+ years shipping mobile products in Flutter, SwiftUI and Kotlin, plus the backends behind them. Decks, carousels, videos and build notes from the khoirlabs workshop." />
+    <meta name="author" content="Khoiron Rois" />
+    <meta name="theme-color" content="#09090b" />
+    <link rel="canonical" href="https://roiskhoiron.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="khoirlabs" />
+    <meta property="og:title" content="Khoiron Rois — Mobile &amp; Product Engineer" />
+    <meta property="og:description" content="5+ years building complete products — mobile, backend and AI-powered. Decks, videos and build notes from the khoirlabs workshop." />
+    <meta property="og:url" content="https://roiskhoiron.github.io/" />
+    <meta property="og:image" content="https://roiskhoiron.github.io/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="stylesheet" href="./assets/fonts/fonts.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = { darkMode: 'class', theme:{extend:{fontFamily:{geist:['Geist','Arial','sans-serif'],mono:['Geist Mono','monospace'],display:['Fraunces','serif']}}} }
+      // Resolve the theme before first paint so there is no dark→light flash.
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem('theme-preference'); } catch (e) {}
+        if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        var h = document.documentElement;
+        h.classList.toggle('dark', t === 'dark');
+        h.classList.toggle('light', t === 'light');
+        h.style.colorScheme = t;
+        if (t === 'light') document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fcfcfc');
+      })();
+    </script>
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"Person","name":"Khoiron Rois","alternateName":"khoirlabs","jobTitle":"Software Engineer","url":"https://roiskhoiron.github.io/","address":{"@type":"PostalAddress","addressLocality":"Yogyakarta","addressCountry":"ID"},"sameAs":["https://github.com/roiskhoiron","https://www.linkedin.com/in/rois-khoiron/","https://www.youtube.com/@codingskuy","https://www.instagram.com/codingskuy_/"]}
     </script>
   </head>
   <body class="geist bg-black text-[#ededed] antialiased overflow-x-hidden">
     <div id="app"></div>
+    <noscript><p style="padding:24px;font-family:sans-serif">khoirlabs — Khoiron Rois, software engineer. This site needs JavaScript; meanwhile find me on <a href="https://github.com/roiskhoiron">GitHub</a>.</p></noscript>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
