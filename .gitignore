@@ -11,4 +11,4 @@ CLONE_REPORT.md
 index-vanilla.html
 *.artifact.json
 *.html.bak
-*.bak
+*.bakdist/

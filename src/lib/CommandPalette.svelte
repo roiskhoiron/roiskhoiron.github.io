@@ -11,8 +11,8 @@
   const dispatch = createEventDispatcher<{ go: string; theme: void }>();
 
   const all: Item[] = [
-    ...[['Home', 'home', 'Start page'], ['About', 'about', 'Experience, skills, contact'], ['Decks', 'decks', 'Presentation library'],
-        ['Videos', 'videos', 'CodingSkuy on YouTube'], ['Posts', 'posts', 'Instagram carousels'], ['Blog', 'blog', 'Notes from the workshop']]
+    ...[['Home', 'home', 'Start page'], ['About', 'about', 'Experience, skills, contact'], ['Decks', 'decks', 'Slide decks'],
+        ['Videos', 'videos', 'CodingSkuy on YouTube'], ['Posts', 'posts', 'Instagram carousels'], ['Blog', 'blog', 'Field notes']]
       .map(([title, hash, hint]) => ({ group: 'Pages', title, hint, hash, hay: '' })),
     ...blogData.map((b) => ({ group: 'Blog', title: b.title, hint: `${b.mins} min`, hash: 'blog/' + b.slug, hay: b.excerpt + ' ' + b.tags.join(' ') })),
     ...decksData.filter((d) => deckSlides[d.slug]).map((d) => ({ group: 'Decks', title: d.title, hint: `${d.slides} slides`, hash: 'decks/' + d.slug, hay: d.desc + ' ' + d.tags.join(' ') })),
@@ -83,7 +83,7 @@
             <span class="cp-title">{r.title}</span><span class="cp-hint">{r.hint}</span>
           </button>
         {:else}
-          <div class="cp-empty">Nothing matches “{q}”. Try “claude”, “kotlin” or “monorepo”.</div>
+          <div class="cp-empty">Nothing matches “{q}”. Try “kotlin”, “typescript” or “promise”.</div>
         {/each}
       </div>
       <div class="cp-foot"><span><kbd>↑</kbd><kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> open</span><span class="cp-count">{all.length} entries indexed</span></div>

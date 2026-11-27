@@ -15,7 +15,6 @@
   import icFirebase from './assets/icons/firebase.svg';
   import icIonic from './assets/icons/ionic.svg';
   import icAppStore from './assets/icons/appstore.svg';
-  import icGooglePlay from './assets/icons/googleplay.svg';
   import icGitHub from './assets/icons/github.svg';
   import ParticleField from './lib/ParticleField.svelte';
   import CommandPalette from './lib/CommandPalette.svelte';
@@ -33,8 +32,12 @@
   let recentKind: 'all' | FeedKind = 'all';
   const recentTabs: ['all' | FeedKind, string][] = [['all','All'],['blog','Blog'],['post','Carousels'],['deck','Decks']];
   const feed = buildFeed();
+  // filter chips come from the content itself, so they can never point at an empty result
+  const deckTypes = [...new Set(decksData.map(d=> d.type.split(' ')[0].toLowerCase()))];
+  const postTags = [...new Set(postsData.map(p=> p.tag))];
+  const blogTags = [...new Set(blogData.flatMap(b=> b.tags))].slice(0, 6);
   // send the curious to an article whose full text is published, not just an excerpt
-  const blogPick = blogData.find(b=> blogFull[b.slug]) ?? blogData[0];
+  const blogPick = blogData.find(b=> b.featured) ?? blogData[0];
   const feedCount: Record<string, number> = { all: feed.length, blog: blogData.length, post: feed.filter(f=>f.kind==='post').length, deck: feed.filter(f=>f.kind==='deck').length };
   // in "All", a topic published as both deck and carousel shows once (newest format wins)
   $: recentItems = (recentKind==='all' ? feed.filter((f,i)=> feed.findIndex(g=>g.title===f.title)===i) : feed.filter(f=>f.kind===recentKind)).slice(0,6);
@@ -181,7 +184,7 @@ let booted = false;
     : view==='blogDetail' ? blogData.find(d=>d.slug===blogSlug)?.title
     : view==='videoDetail' ? selectedVideo?.title
     : view==='home' ? '' : view[0].toUpperCase()+view.slice(1);
-  $: if (typeof document !== 'undefined') document.title = pageTitle ? `${pageTitle} — khoirlabs` : 'Khoiron Rois — Mobile & Product Engineer · khoirlabs';
+  $: if (typeof document !== 'undefined') document.title = pageTitle ? `${pageTitle} — khoirlabs` : 'Khoiron Rois — Software Engineer · khoirlabs';
 
   function deckNext(){ const sl= deckSlug ? deckSlides[deckSlug] : null; if(sl && deckIdx < sl.length-1) deckIdx++; }
   function deckPrev(){ if(deckIdx>0) deckIdx--; }
@@ -398,7 +401,7 @@ let booted = false;
     </div>
   </div>
   <div class="absolute bottom-6 left-1/2 -translate-x-1/2 mono text-[10px] tracking-[0.16em] boot-meta" style="color:{theme==='dark'?'#3f3f46':'#a1a1aa'}">
-    khoirlabs.dev — est 2020
+    roiskhoiron.github.io
   </div>
 </div>
 {/if}
@@ -456,7 +459,7 @@ let booted = false;
   {#if view==='home'}
     <section class="hero-ek relative flex flex-col items-center gap-8 sm:gap-10 text-center scroll-section" id="section-hero">
       <div class="relative flex flex-col items-center gap-5 max-w-[640px]">
-        <h1 class="fraunces text-[38px] sm:text-[54px] md:text-[64px] font-medium leading-[0.92] tracking-[-0.02em]">Mobile developer,<br><span class="italic font-[450] text-zinc-300">every framework.</span></h1>
+        <h1 class="fraunces text-[38px] sm:text-[54px] md:text-[64px] font-medium leading-[0.92] tracking-[-0.02em]">Complete products,<br><span class="italic font-[450] text-zinc-300">not just apps.</span></h1>
         <p class="hero-lead max-w-[560px] text-[15px] leading-7 text-zinc-400">5+ years building complete products — Mobile (Flutter, SwiftUI & Kotlin), Backend systems & APIs, AI-powered. Product-driven, end-to-end, and system-thinking.</p>
         <div class="ek-pills flex flex-wrap justify-center gap-2 max-w-[560px]">
           {#each stack as [name, icon]}
@@ -469,7 +472,6 @@ let booted = false;
         <div class="ek-avatar-meta text-center"><div class="text-[15px] font-semibold">Khoiron Rois</div><div class="mono text-[11px] tracking-wide text-zinc-500">Android · iOS · Flutter · React Native</div></div>
         <div class="ek-cta flex flex-wrap justify-center gap-3 mt-1">
           <a href="https://apps.apple.com/developer/khoirlabs" target="_blank" rel="noopener" class="platform-btn inline-flex items-center gap-3 bg-zinc-900 border border-zinc-800 text-white rounded-xl px-4 py-2.5 min-w-[148px]"><img src={icAppStore} width="20" height="20" class="w-5 h-5 platform-icon" alt=""><span class="flex flex-col leading-none text-left"><span class="mono text-[9px] tracking-[0.14em] uppercase font-semibold text-zinc-400">Apps on the</span><span class="text-[13px] font-semibold -mt-0.5">App Store</span></span></a>
-          <button disabled class="platform-btn inline-flex items-center gap-3 bg-zinc-900/50 border border-zinc-800 text-zinc-500 rounded-xl px-4 py-2.5 cursor-not-allowed min-w-[148px]"><img src={icGooglePlay} width="20" height="20" class="w-5 h-5 platform-icon" alt=""><span class="flex flex-col leading-none text-left"><span class="mono text-[9px] tracking-[0.14em] uppercase font-semibold text-zinc-500">Get it on</span><span class="text-[13px] font-semibold -mt-0.5 flex items-center gap-1.5">Google Play <span class="text-[9px] font-normal border border-zinc-700 rounded px-1 py-0.5 leading-none">Soon</span></span></span></button>
           <a href="https://github.com/roiskhoiron" target="_blank" rel="noopener" class="platform-btn inline-flex items-center gap-3 bg-zinc-900 border border-zinc-800 text-white rounded-xl px-4 py-2.5 min-w-[148px]"><img src={icGitHub} width="20" height="20" class="w-5 h-5 platform-icon" alt=""><span class="flex flex-col leading-none text-left"><span class="mono text-[9px] tracking-[0.14em] uppercase font-semibold text-zinc-400">Code on</span><span class="text-[13px] font-semibold -mt-0.5">GitHub</span></span></a>
         </div>
         {#if resume}
@@ -500,20 +502,20 @@ let booted = false;
         <article class="group relative flex flex-col gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 hover:bg-zinc-900/70 hover:border-zinc-700 transition">
           <span class="mono text-[11px] tracking-widest uppercase text-[#FF6B35]">02 — Learning</span>
           <h3 class="text-[16px] font-semibold leading-5"><a href="#decks" class="after:absolute after:inset-0">Learn something in 5 minutes</a></h3>
-          <p class="text-[13px] leading-5 text-zinc-400">{decksData.length} slide decks, {postsData.length} swipeable carousels and {videosData.length} CodingSkuy sessions — Kotlin, TypeScript, AI agents.</p>
+          <p class="text-[13px] leading-5 text-zinc-400">{decksData.length} slide decks, {postsData.length} swipeable carousels and {videosData.length} CodingSkuy videos — Kotlin, TypeScript and mobile.</p>
           <span class="mono text-[11px] text-zinc-300 mt-auto pt-2 inline-flex gap-1">Open the library <span class="group-hover:translate-x-0.5 transition">→</span></span>
         </article>
         <article class="group relative flex flex-col gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 hover:bg-zinc-900/70 hover:border-zinc-700 transition">
           <span class="mono text-[11px] tracking-widest uppercase text-[#FF6B35]">03 — Just curious</span>
           <h3 class="text-[16px] font-semibold leading-5"><a href="#blog/{blogPick.slug}" class="after:absolute after:inset-0">Read a build note</a></h3>
-          <p class="text-[13px] leading-5 text-zinc-400">“{blogPick.title}” — {blogPick.mins} min. One of {blogData.length} build logs on shipping apps solo.</p>
+          <p class="text-[13px] leading-5 text-zinc-400">“{blogPick.title}” — {blogPick.mins} min. One of {blogData.length} field notes on mobile, TypeScript and learning with AI.</p>
           <span class="mono text-[11px] text-zinc-300 mt-auto pt-2 inline-flex gap-1">Start reading <span class="group-hover:translate-x-0.5 transition">→</span></span>
         </article>
       </div>
     </section>
 
     <section class="flex flex-col gap-8 mt-16 md:mt-20 reveal scroll-section" id="recent" aria-labelledby="recent-h">
-      <div class="flex flex-col gap-3"><span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">Recent</span><div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4"><h2 id="recent-h" class="fraunces text-[28px] sm:text-[34px] font-medium leading-none tracking-[-0.015em]">Latest from the workshop.</h2>
+      <div class="flex flex-col gap-3"><span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">Recent</span><div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4"><h2 id="recent-h" class="fraunces text-[28px] sm:text-[34px] font-medium leading-none tracking-[-0.015em]">Fresh from CodingSkuy.</h2>
         <div class="flex items-center gap-1.5 overflow-x-auto scrollbar-none pb-1 -mb-1" role="group" aria-label="Filter recent items">
           {#each recentTabs as [k,label]}
             <button on:click={()=> recentKind = k} aria-pressed={recentKind===k} class="whitespace-nowrap rounded-full px-4 py-2 text-xs font-medium border {recentKind===k ? 'bg-white text-black border-white' : 'border-zinc-800 text-zinc-400 hover:text-white'}">{label} <span class="opacity-60 ml-1">{feedCount[k]}</span></button>
@@ -542,30 +544,29 @@ let booted = false;
         <div class="flex flex-col gap-1 border-r border-zinc-800 pr-4"><span class="mono text-[11px] tracking-widest uppercase text-zinc-500">Based</span><span class="text-sm font-medium">Yogyakarta, Indonesia</span><span class="text-xs text-zinc-500">GMT+7 · Remote first</span></div>
         <div class="flex flex-col gap-1 border-r border-zinc-800 pr-4"><span class="mono text-[11px] tracking-widest uppercase text-zinc-500">Working with</span><span class="text-sm font-medium">WFO, Hybrid or Remote</span><span class="text-xs text-zinc-500">Product + engineering</span></div>
         <div class="flex flex-col gap-1 border-r border-zinc-800 pr-4"><span class="mono text-[11px] tracking-widest uppercase text-zinc-500">Stack</span><span class="text-sm font-medium">Kotlin, Swift, Dart, TypeScript</span><span class="text-xs text-zinc-500">Android · Flutter · RN</span></div>
-        <div class="flex flex-col gap-1"><span class="mono text-[11px] tracking-widest uppercase text-zinc-500">Side projects</span><span class="text-sm font-medium">Security, AI Product and Education</span><span class="text-xs text-zinc-500">Printama · Tools</span></div>
+        <div class="flex flex-col gap-1"><span class="mono text-[11px] tracking-widest uppercase text-zinc-500">Side projects</span><span class="text-sm font-medium">Security, AI Product and Education</span><span class="text-xs text-zinc-500">CodingSchool · CodingSkuy</span></div>
       </div>
     </section>
   {:else if view==='decks'}
     <div class="flex flex-col gap-6 scroll-section">
       <div class="flex flex-col gap-3">
         <span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">Decks</span>
-        <h1 class="fraunces text-[36px] sm:text-[44px] font-medium tracking-tight leading-none">Presentation Library</h1>
-        <p class="text-[14px] leading-6 text-zinc-400 max-w-2xl">Open any deck in fullscreen mode. Each presentation now runs on a shared slide engine, which keeps the visual language, keyboard controls, and navigation consistent across topics. <span class="text-zinc-500 mono text-xs ml-2">{filteredDecks.length} decks</span></p>
+        <h1 class="fraunces text-[36px] sm:text-[44px] font-medium tracking-tight leading-none">Slide decks.</h1>
+        <p class="text-[14px] leading-6 text-zinc-400 max-w-2xl">Talks and study sessions as slides. Open one, press → or Space to advance, Esc to come back. <span class="text-zinc-500 mono text-xs ml-2">{filteredDecks.length} decks</span></p>
       </div>
       <div class="sticky sticky-filter top-[65px] z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-3 bg-[#0a0a0a]/80 backdrop-blur-xl border-y border-zinc-800/60 flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
         <div class="flex items-center gap-2 flex-1 max-w-xl">
           <div class="relative flex-1">
             <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4-4m2-4a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-            <input bind:value={deckSearch} placeholder="Search decks — try 'claude', 'cron', 'cube'" class="w-full bg-zinc-900 border border-zinc-800 rounded-full pl-9 pr-4 py-2.5 text-[13px] placeholder:text-zinc-600 focus:outline-none focus:border-zinc-700"/>
+            <input bind:value={deckSearch} placeholder="Search decks — try 'kotlin', 'typescript', 'promise'" class="w-full bg-zinc-900 border border-zinc-800 rounded-full pl-9 pr-4 py-2.5 text-[13px] placeholder:text-zinc-600 focus:outline-none focus:border-zinc-700"/>
           </div>
-          <select bind:value={deckTag} class="hidden sm:flex bg-zinc-900 border border-zinc-800 rounded-full px-3 py-2.5 text-xs text-zinc-400 focus:outline-none"><option value="all">All</option><option value="editorial">Editorial</option><option value="spotlight">Spotlight</option><option value="presentation">Presentation</option></select>
+          <select bind:value={deckTag} class="hidden sm:flex bg-zinc-900 border border-zinc-800 rounded-full px-3 py-2.5 text-xs text-zinc-400 focus:outline-none"><option value="all">All</option>{#each deckTypes as t}<option value={t}>{t}</option>{/each}</select>
         </div>
         <div class="flex items-center gap-2 overflow-x-auto scrollbar-none">
           <div class="flex gap-1.5">
-            <button on:click={()=> deckTag='all'} class="whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-medium {deckTag==='all'?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">All</button>
-            <button on:click={()=> deckTag='editorial'} class="whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-medium {deckTag==='editorial'?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">Editorial</button>
-            <button on:click={()=> deckTag='spotlight'} class="whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-medium {deckTag==='spotlight'?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">Spotlight</button>
-            <button on:click={()=> deckTag='presentation'} class="whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-medium {deckTag==='presentation'?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">Presentation</button>
+            {#each ['all', ...deckTypes] as t}
+              <button on:click={()=> deckTag = t} aria-pressed={deckTag===t} class="whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-medium capitalize {deckTag===t?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">{t}</button>
+            {/each}
           </div>
         </div>
       </div>
@@ -768,21 +769,19 @@ let booted = false;
     <div class="flex flex-col gap-6 scroll-section">
       <div class="flex flex-col gap-3">
         <span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">Posts</span>
-        <h1 class="fraunces text-[36px] sm:text-[44px] font-medium tracking-tight leading-none">Instagram Carousel Library</h1>
-        <p class="text-[14px] leading-6 text-zinc-400 max-w-2xl">Each post is designed for a 4:5 portrait frame. Tap a cover to open the full carousel. Swipe through 8–10 cards per story. <span class="text-zinc-500 mono text-xs ml-2">{filteredPosts.length} posts</span></p>
+        <h1 class="fraunces text-[36px] sm:text-[44px] font-medium tracking-tight leading-none">Swipeable carousels.</h1>
+        <p class="text-[14px] leading-6 text-zinc-400 max-w-2xl">Short lessons in a 4:5 frame, the way they go out on Instagram. Tap a cover and swipe through. <span class="text-zinc-500 mono text-xs ml-2">{filteredPosts.length} posts</span></p>
       </div>
       <div class="sticky sticky-filter top-[65px] z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-3 bg-[#0a0a0a]/80 backdrop-blur-xl border-y border-zinc-800/60 flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
         <div class="relative flex-1 max-w-xl">
           <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4-4m2-4a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-          <input bind:value={postSearch} placeholder="Search carousels — 'claude', 'css', 'cube'" class="w-full bg-zinc-900 border border-zinc-800 rounded-full pl-9 pr-4 py-2.5 text-[13px] placeholder:text-zinc-600 focus:outline-none focus:border-zinc-700"/>
+          <input bind:value={postSearch} placeholder="Search carousels — 'kotlin', 'typescript', 'cli'" class="w-full bg-zinc-900 border border-zinc-800 rounded-full pl-9 pr-4 py-2.5 text-[13px] placeholder:text-zinc-600 focus:outline-none focus:border-zinc-700"/>
         </div>
         <div class="flex items-center gap-2 overflow-x-auto scrollbar-none">
           <div class="flex gap-1.5">
-            <button on:click={()=> {postTag='all'; postsCarIdx=0}} class="whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-medium {postTag==='all'?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">All</button>
-            <button on:click={()=> {postTag='tips'; postsCarIdx=0}} class="whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-medium {postTag==='tips'?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">tips</button>
-            <button on:click={()=> {postTag='css'; postsCarIdx=0}} class="whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-medium {postTag==='css'?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">css</button>
-            <button on:click={()=> {postTag='coding'; postsCarIdx=0}} class="whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-medium {postTag==='coding'?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">coding</button>
-            <button on:click={()=> {postTag='hobby'; postsCarIdx=0}} class="whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-medium {postTag==='hobby'?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">hobby</button>
+            {#each ['all', ...postTags] as t}
+              <button on:click={()=> {postTag = t; postsCarIdx = 0}} aria-pressed={postTag===t} class="whitespace-nowrap rounded-full px-3.5 py-1.5 text-xs font-medium {postTag===t?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">{t==='all' ? 'All' : t}</button>
+            {/each}
           </div>
           <button on:click={()=> { postsData.sort(()=>Math.random()-0.5); postsTick++; postsCarIdx=0; }} class="hidden sm:inline-flex mono text-xs border border-zinc-800 rounded-full px-3.5 py-1.5 text-zinc-400 hover:text-white hover:border-zinc-700 whitespace-nowrap">Shuffle ↻</button>
         </div>
@@ -890,21 +889,20 @@ let booted = false;
     <div class="flex flex-col gap-6 scroll-section">
       <div class="flex flex-col gap-3">
         <span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">Blog</span>
-        <h1 class="fraunces text-[36px] sm:text-[44px] font-medium tracking-tight leading-none">Notes from the workshop.</h1>
-        <p class="text-[14px] leading-6 text-zinc-400 max-w-2xl">Long-form writing on what I'm learning, building, and breaking. Daily-ish, depending on how the day goes. <span class="mono text-xs text-zinc-500 ml-2">{filteredBlog.length} posts</span></p>
+        <h1 class="fraunces text-[36px] sm:text-[44px] font-medium tracking-tight leading-none">Field notes.</h1>
+        <p class="text-[14px] leading-6 text-zinc-400 max-w-2xl">Write-ups of what I learn, teach and build — mostly in Bahasa Indonesia. <span class="mono text-xs text-zinc-500 ml-2">{filteredBlog.length} posts</span></p>
       </div>
       <div class="sticky sticky-filter top-[65px] z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-3 bg-[#0a0a0a]/80 backdrop-blur-xl border-y border-zinc-800/60 flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
         <div class="relative flex-1 max-w-xl">
           <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4-4m2-4a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-          <input bind:value={blogSearch} placeholder="Search notes — 'monorepo', 'RevenueCat', 'Expo'" class="w-full bg-zinc-900 border border-zinc-800 rounded-full pl-9 pr-4 py-2.5 text-[13px] placeholder:text-zinc-600 focus:outline-none focus:border-zinc-700"/>
+          <input bind:value={blogSearch} placeholder="Search notes — 'kmp', 'typescript', 'performance'" class="w-full bg-zinc-900 border border-zinc-800 rounded-full pl-9 pr-4 py-2.5 text-[13px] placeholder:text-zinc-600 focus:outline-none focus:border-zinc-700"/>
         </div>
         <div class="flex items-center gap-2 overflow-x-auto scrollbar-none">
-          <select bind:value={blogTag} class="bg-zinc-900 border border-zinc-800 rounded-full px-3 py-2 text-xs text-zinc-400"><option value="all">All tags</option><option value="mobile">mobile</option><option value="Expo">Expo</option><option value="ai">ai</option></select>
+          <select bind:value={blogTag} class="bg-zinc-900 border border-zinc-800 rounded-full px-3 py-2 text-xs text-zinc-400"><option value="all">All tags</option>{#each blogTags as t}<option value={t}>{t}</option>{/each}</select>
           <div class="hidden sm:flex gap-1.5">
-            <button on:click={()=> blogTag='all'} class="whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-medium {blogTag==='all'?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">All tags</button>
-            <button on:click={()=> blogTag='mobile'} class="whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-medium {blogTag==='mobile'?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">mobile</button>
-            <button on:click={()=> blogTag='Expo'} class="whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-medium {blogTag==='Expo'?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">Expo</button>
-            <button on:click={()=> blogTag='ai'} class="whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-medium {blogTag==='ai'?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">ai</button>
+            {#each ['all', ...blogTags] as t}
+              <button on:click={()=> blogTag = t} aria-pressed={blogTag===t} class="whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-medium {blogTag===t?'bg-white text-black':'border border-zinc-800 text-zinc-400 hover:text-white'}">{t==='all' ? 'All tags' : t}</button>
+            {/each}
           </div>
         </div>
       </div>
@@ -917,7 +915,7 @@ let booted = false;
               <p class="text-[14px] leading-6 text-zinc-400">{blogFeatured.excerpt}</p>
               <button on:click={()=> openBlog(blogFeatured.slug)} class="self-start mt-1 inline-flex items-center gap-1 mono text-xs border border-zinc-800 rounded-full px-4 py-2 hover:border-zinc-700 hover:text-white">Read <span>→</span></button>
             </div>
-            <div class="bg-gradient-to-br from-zinc-800 to-zinc-900 p-6 flex items-center justify-center border-t md:border-t-0 md:border-l border-zinc-800"><div class="rounded-xl bg-[#0a0a0a] border border-zinc-800 p-4 mono text-xs leading-5 text-zinc-400 max-w-[260px]">“{blogFeatured.excerpt.slice(0,120)}…”<br><span class="text-white font-medium mt-2 block">— workshop note</span></div></div>
+            <div class="bg-gradient-to-br from-zinc-800 to-zinc-900 p-6 flex items-center justify-center border-t md:border-t-0 md:border-l border-zinc-800"><div class="rounded-xl bg-[#0a0a0a] border border-zinc-800 p-4 mono text-xs leading-5 text-zinc-400 max-w-[260px]">“{blogFeatured.excerpt.slice(0,120)}…”<br><span class="text-white font-medium mt-2 block">— {blogFeatured.mins} min read</span></div></div>
           </div>
         {/if}
       </div>
@@ -948,7 +946,7 @@ let booted = false;
                 <section id={s.id} class="scroll-mt-24"><h2 class="fraunces text-[20px] sm:text-[22px] font-semibold leading-tight">{s.title}</h2><div class="mt-3 text-[14px] leading-7">{@html s.body}</div></section>
               {/each}
             {:else}
-              <p>{b?.excerpt}</p><p class="mt-4 text-zinc-400">Full article would render here — original at khoirlabs.dev/blog/{blogSlug}. This faithful placeholder keeps the same Fraunces headings, zinc prose, and code styling as the original.</p><section class="mt-6"><h2 class="fraunces text-xl font-medium">Highlights</h2><ul class="list-disc pl-5 mt-3 space-y-1.5 text-zinc-300">{#if b}{#each b.tags as t}<li>{t}</li>{/each}{/if}</ul></section>
+              <p>{b?.excerpt}</p><p class="mt-4 text-zinc-400">The full write-up for this note is not published yet.</p><section class="mt-6"><h2 class="fraunces text-xl font-medium">Highlights</h2><ul class="list-disc pl-5 mt-3 space-y-1.5 text-zinc-300">{#if b}{#each b.tags as t}<li>{t}</li>{/each}{/if}</ul></section>
             {/if}
           </div>
           <div class="mt-10 flex gap-3 border-t border-zinc-800 pt-6">
@@ -970,7 +968,7 @@ let booted = false;
     </div>
   {:else if view==='about'}
     <div class="flex flex-col gap-10 scroll-section">
-      <!-- hero — Khoiron Rois (acuan khoirlabs.dev/about) -->
+      <!-- hero — Khoiron Rois  -->
       <div class="flex flex-col gap-4 max-w-3xl">
         <span class="mono text-[11px] tracking-[0.18em] uppercase text-zinc-500">Yogyakarta, Indonesia · rois.khoiron@gmail.com</span>
         <h1 class="fraunces text-[36px] sm:text-[44px] font-medium leading-[0.9] tracking-tight">Khoiron Rois.<br><span class="italic text-zinc-400">Software Engineer — Mobile, Backend & AI.</span></h1>
