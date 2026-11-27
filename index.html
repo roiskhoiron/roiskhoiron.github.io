@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Khoiron Rois — Software Engineer · khoirlabs</title>
     <meta name="description" content="Khoiron Rois — software engineer with 5+ years shipping mobile products in Flutter, SwiftUI and Kotlin, plus the backends behind them. Decks, carousels, videos and build notes from the khoirlabs workshop." />
     <meta name="author" content="Khoiron Rois" />
-    <meta name="theme-color" content="#09090b" />
+    <meta name="theme-color" content="#f3efe6" />
     <link rel="canonical" href="https://roiskhoiron.github.io/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="khoirlabs" />
@@ -19,25 +19,23 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="stylesheet" href="./assets/fonts/fonts.css" />
     <script>
       // Resolve the theme before first paint so there is no dark→light flash.
       (function () {
         var t = null;
         try { t = localStorage.getItem('theme-preference'); } catch (e) {}
-        if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         var h = document.documentElement;
         h.classList.toggle('dark', t === 'dark');
-        h.classList.toggle('light', t === 'light');
         h.style.colorScheme = t;
-        if (t === 'light') document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fcfcfc');
+        if (t === 'dark') document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0e1014');
       })();
     </script>
     <script type="application/ld+json">
       {"@context":"https://schema.org","@type":"Person","name":"Khoiron Rois","alternateName":"khoirlabs","jobTitle":"Software Engineer","url":"https://roiskhoiron.github.io/","address":{"@type":"PostalAddress","addressLocality":"Yogyakarta","addressCountry":"ID"},"sameAs":["https://github.com/roiskhoiron","https://www.linkedin.com/in/rois-khoiron/","https://www.youtube.com/@codingskuy","https://www.instagram.com/codingskuy_/"]}
     </script>
   </head>
-  <body class="geist bg-black text-[#ededed] antialiased overflow-x-hidden">
+  <body>
     <div id="app"></div>
     <noscript><p style="padding:24px;font-family:sans-serif">khoirlabs — Khoiron Rois, software engineer. This site needs JavaScript; meanwhile find me on <a href="https://github.com/roiskhoiron">GitHub</a>.</p></noscript>
     <script type="module" src="/src/main.ts"></script>

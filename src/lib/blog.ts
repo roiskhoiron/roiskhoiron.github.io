@@ -3,21 +3,22 @@
 // `blogData` and its body to `blogFull` under the same slug.
 import type { BlogPost } from './data';
 
+// Bodies are plain semantic HTML; all styling comes from `.prose` in styles.css.
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-const p = (...html: string[]) => html.map((h) => `<p class="mt-3 first:mt-0">${h}</p>`).join('');
-const ul = (...items: string[]) => `<ul class="list-disc pl-5 space-y-1.5 text-zinc-300 mt-3">${items.map((i) => `<li>${i}</li>`).join('')}</ul>`;
-const pre = (code: string) => `<pre class="mt-3 bg-zinc-900 border border-zinc-800 rounded-xl p-4 mono text-xs leading-5 overflow-auto">${esc(code)}</pre>`;
-const c = (code: string) => `<code class="mono bg-zinc-800 px-1.5 py-0.5 rounded text-xs">${esc(code)}</code>`;
-const b = (text: string) => `<strong class="text-white">${text}</strong>`;
+const p = (...html: string[]) => html.map((h) => `<p>${h}</p>`).join('');
+const ul = (...items: string[]) => `<ul>${items.map((i) => `<li>${i}</li>`).join('')}</ul>`;
+const pre = (code: string) => `<pre>${esc(code)}</pre>`;
+const c = (code: string) => `<code>${esc(code)}</code>`;
+const b = (text: string) => `<strong>${text}</strong>`;
 
 export const blogData: BlogPost[] = [
   {
-    title: 'Situs ini: dari 4,5 MB ke 242 KB',
-    slug: 'situs-ini-dari-4-5-mb-ke-242-kb',
+    title: 'Situs ini: dari 4,5 MB ke 155 KB',
+    slug: 'situs-ini-dari-4-5-mb-ke-155-kb',
     date: '2026-11-27',
-    mins: 4,
+    mins: 5,
     tags: ['performance', 'web', 'ai-agent', 'svelte'],
-    excerpt: 'Saya mengaudit portofolio ini bersama AI coding agent. Empat keputusan kecil memangkas 95% ukuran halaman, dan tidak satu pun terlihat oleh pengunjung.',
+    excerpt: 'Saya mengaudit portofolio ini bersama AI coding agent. Empat keputusan memangkas lebih dari 95% ukuran halaman, lalu desainnya saya tulis ulang dari nol.',
     featured: true
   },
   {
@@ -65,8 +66,8 @@ export const blogData: BlogPost[] = [
 type Full = { lead: string; sections: { id: string; title: string; body: string }[] };
 
 export const blogFull: Record<string, Full> = {
-  'situs-ini-dari-4-5-mb-ke-242-kb': {
-    lead: 'Halaman depan portofolio ini dulu mengunduh 4,5 MB dalam 44 request. Sekarang 242 KB dalam 9 request.',
+  'situs-ini-dari-4-5-mb-ke-155-kb': {
+    lead: 'Halaman depan portofolio ini dulu mengunduh 4,5 MB dalam 44 request. Sekarang 155 KB dalam 7 request.',
     sections: [
       {
         id: 'titik-awal',
@@ -81,12 +82,20 @@ export const blogFull: Record<string, Full> = {
         title: 'Empat penyebab, empat keputusan',
         body:
           ul(
-            `${b('Foto profil 2,5 MB.')} File aslinya 2048 piksel, padahal ditampilkan sebagai lingkaran 168 piksel. Diganti WebP berukuran 10 sampai 19 KB. Lebih dari separuh berat halaman hilang dari satu gambar.`,
+            `${b('Foto profil 2,5 MB.')} File aslinya 2048 piksel, padahal ditampilkan sebagai lingkaran 168 piksel. Diganti WebP yang ukurannya sesuai tampilan, sekitar 12 KB. Lebih dari separuh berat halaman hilang dari satu gambar.`,
             `${b('Tailwind lewat CDN.')} Praktis saat prototyping, tapi di production browser harus mengunduh 126 KB JavaScript lalu menyusun CSS di perangkat pengunjung, sambil menahan render. Sekarang CSS disusun saat build.`,
-            `${b('Three.js untuk 160 titik.')} Latar partikel memakai engine 3D lengkap. Efek yang sama bisa digambar dengan canvas 2D biasa dalam sekitar seratus baris.`,
-            `${b('Layar loading buatan.')} Ada progress bar 1,35 detik yang tidak menunggu apa pun. Sekarang intro hanya tampil sekali per sesi, dan link langsung ke sebuah deck tidak tertahan.`
+            `${b('Three.js untuk 160 titik.')} Latar partikel memakai engine 3D lengkap. Awalnya diganti canvas 2D, lalu dihapus sama sekali: pola titik di latar sekarang cukup satu baris CSS.`,
+            `${b('Layar loading buatan.')} Ada progress bar 1,35 detik yang tidak menunggu apa pun. Sekarang tidak ada lagi: konten langsung tampil.`
           ) +
-          p('Hasil akhirnya 242 KB dalam 9 request, dengan JavaScript turun dari 305 KB menjadi 78 KB (gzip).')
+          p('Setelah empat perubahan itu, halaman depan turun menjadi 242 KB dalam 9 request.')
+      },
+      {
+        id: 'desain-ulang',
+        title: 'Lalu desainnya ditulis ulang',
+        body: p(
+          'Langkah berikutnya lebih besar: tampilan situs ini saya rombak total menjadi tema buku catatan lab, dengan CSS yang ditulis tangan tanpa framework dan hanya dua file font.',
+          `Efek sampingnya ke performa ternyata positif. Halaman depan sekarang ${b('155 KB dalam 7 request')}, dengan JavaScript 46 KB dan CSS 9 KB (gzip). Lebih dari separuhnya adalah dua file font.`
+        )
       },
       {
         id: 'pelajaran',
@@ -156,7 +165,7 @@ export const blogFull: Record<string, Full> = {
         body:
           p('CodingSchool berlisensi MIT dan berjalan di OpenCode, Claude Code, Pi, dan host MCP lainnya. Kontennya tersedia dalam bahasa Inggris dan Indonesia.') +
           pre('npm i @codingskuy/coding-school\nnpx @codingskuy/coding-school setup') +
-          p(`Kode sumbernya ada di <a class="underline" href="https://github.com/codingskuy/coding-school" target="_blank" rel="noopener">github.com/codingskuy/coding-school</a>. Masukan dan kontribusi sangat saya harapkan.`)
+          p(`Kode sumbernya ada di <a href="https://github.com/codingskuy/coding-school" target="_blank" rel="noopener">github.com/codingskuy/coding-school</a>. Masukan dan kontribusi sangat saya harapkan.`)
       }
     ]
   },

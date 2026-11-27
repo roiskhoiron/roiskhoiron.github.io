@@ -70,7 +70,7 @@
 {#if open}
   <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
   <div class="cp-backdrop" transition:fade={{ duration: 140 }} on:click|self={() => (open = false)}>
-    <div class="cp-panel {theme}" role="dialog" aria-modal="true" aria-label="Search the site" in:fly={{ y: -10, duration: 220 }}>
+    <div class="cp-panel" role="dialog" aria-modal="true" aria-label="Search the site" in:fly={{ y: -10, duration: 220 }}>
       <div class="cp-input-row">
         <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4-4m2-4a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
         <input bind:this={input} bind:value={q} on:keydown={onKey} placeholder="Search decks, posts, videos…" aria-label="Search" role="combobox" aria-expanded="true" aria-controls="cp-list" aria-activedescendant={results.length ? 'cp-opt-' + active : undefined} autocomplete="off" spellcheck="false" />
@@ -92,23 +92,23 @@
 {/if}
 
 <style>
-  .cp-backdrop { position: fixed; inset: 0; z-index: 90; background: rgba(0,0,0,.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); display: flex; justify-content: center; align-items: flex-start; padding: 12vh 16px 16px; }
-  .cp-panel { --bg:#0f0f11; --fg:#fafafa; --mut:#8b8b94; --line:#27272a; --hi:#1c1c20;
-    width: 100%; max-width: 580px; max-height: min(70vh, 560px); display: flex; flex-direction: column; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; box-shadow: 0 30px 80px -20px rgba(0,0,0,.6); }
-  .cp-panel.light { --bg:#ffffff; --fg:#18181b; --mut:#6b6b74; --line:#e4e4e7; --hi:#f4f4f5; box-shadow: 0 30px 80px -24px rgba(0,0,0,.28); }
+  .cp-backdrop { position: fixed; inset: 0; z-index: 90; background: rgba(14,16,20,.5); display: flex; justify-content: center; align-items: flex-start; padding: 12vh 16px 16px; }
+  .cp-panel { --bg: var(--card); --fg: var(--ink); --mut: var(--ink-3); --line: var(--rule); --hi: var(--mark);
+    width: 100%; max-width: 580px; max-height: min(70vh, 560px); display: flex; flex-direction: column; background: var(--bg); color: var(--fg); border: 1.5px solid var(--rule-strong); border-radius: 4px; overflow: hidden; box-shadow: 8px 8px 0 rgba(0,0,0,.25); }
   .cp-input-row { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-bottom: 1px solid var(--line); color: var(--mut); }
   .cp-input-row input { flex: 1; min-width: 0; background: transparent; border: 0; outline: none; box-shadow: none !important; color: var(--fg); font-size: 16px; }
   .cp-input-row input::placeholder { color: var(--mut); }
   .cp-list { overflow-y: auto; padding: 6px; overscroll-behavior: contain; }
-  .cp-group { padding: 10px 10px 4px; font-family: "Geist Mono", monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--mut); }
-  .cp-item { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px; border-radius: 10px; text-align: left; font-size: 14px; color: var(--fg); transition: none; }
+  .cp-group { padding: 10px 10px 4px; font-family: var(--mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--mut); }
+  .cp-item { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px; border-radius: 3px; text-align: left; font-size: 14px; color: var(--fg); transition: none; }
   .cp-item:active { transform: none; }
-  .cp-item[aria-selected="true"] { background: var(--hi); box-shadow: inset 2px 0 0 #FF6B35; }
+  .cp-item[aria-selected="true"] { background: var(--hi); color: #16181d; }
+  .cp-item[aria-selected="true"] .cp-hint { color: #16181d; }
   .cp-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .cp-hint { flex-shrink: 0; font-family: "Geist Mono", monospace; font-size: 11px; color: var(--mut); }
+  .cp-hint { flex-shrink: 0; font-family: var(--mono); font-size: 11px; color: var(--mut); }
   .cp-empty { padding: 28px 16px; text-align: center; font-size: 13px; color: var(--mut); }
   .cp-foot { display: flex; gap: 16px; align-items: center; padding: 10px 16px; border-top: 1px solid var(--line); font-size: 11px; color: var(--mut); }
-  .cp-count { margin-left: auto; font-family: "Geist Mono", monospace; }
-  kbd { font-family: "Geist Mono", monospace; font-size: 10px; padding: 2px 6px; margin-right: 3px; border: 1px solid var(--line); border-radius: 6px; color: var(--mut); }
+  .cp-count { margin-left: auto; font-family: var(--mono); }
+  kbd { font-family: var(--mono); font-size: 10px; padding: 2px 6px; margin-right: 3px; border: 1px solid var(--line); border-radius: 6px; color: var(--mut); }
   @media (max-width: 640px) { .cp-backdrop { padding-top: 8vh; } .cp-foot span:not(.cp-count) { display: none; } .cp-count { margin-left: 0; } }
 </style>
