@@ -2,10 +2,10 @@
   // ⌘K / "/" palette: one search box across every page, deck, carousel, article and video.
   import { createEventDispatcher, tick } from 'svelte';
   import { fade, fly } from 'svelte/transition';
+  import { backOut } from 'svelte/easing';
   import { decksData, postsData, blogData, videosData, deckSlides, postsSlides } from './data';
 
   export let open = false;
-  export let theme: 'dark' | 'light' = 'dark';
 
   type Item = { group: string; title: string; hint: string; hay: string; hash?: string; action?: 'theme' | 'email' };
   const dispatch = createEventDispatcher<{ go: string; theme: void }>();
@@ -18,7 +18,7 @@
     ...decksData.filter((d) => deckSlides[d.slug]).map((d) => ({ group: 'Decks', title: d.title, hint: `${d.slides} slides`, hash: 'decks/' + d.slug, hay: d.desc + ' ' + d.tags.join(' ') })),
     ...postsData.filter((p) => postsSlides[p.slug]).map((p) => ({ group: 'Carousels', title: p.title, hint: '#' + p.tag, hash: 'posts/' + p.slug, hay: p.desc + ' ' + p.tag })),
     ...videosData.map((v) => ({ group: 'Videos', title: v.title, hint: v.duration, hash: 'videos/' + v.id, hay: v.desc + ' ' + v.tag })),
-    { group: 'Actions', title: 'Toggle light / dark theme', hint: 'theme', hay: 'dark light mode appearance', action: 'theme' as const },
+    { group: 'Actions', title: 'Remix the colours', hint: 'C', hay: 'dark light mode theme palette color colour remix', action: 'theme' as const },
     { group: 'Actions', title: 'Email Khoiron', hint: 'mailto', hay: 'contact hire get in touch', action: 'email' as const }
   ].map((i) => ({ ...i, hay: (i.title + ' ' + i.group + ' ' + i.hay).toLowerCase() }));
 
@@ -70,7 +70,7 @@
 {#if open}
   <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
   <div class="cp-backdrop" transition:fade={{ duration: 140 }} on:click|self={() => (open = false)}>
-    <div class="cp-panel" role="dialog" aria-modal="true" aria-label="Search the site" in:fly={{ y: -10, duration: 220 }}>
+    <div class="cp-panel" role="dialog" aria-modal="true" aria-label="Search the site" in:fly={{ y: -30, duration: 380, easing: backOut }}>
       <div class="cp-input-row">
         <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4-4m2-4a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
         <input bind:this={input} bind:value={q} on:keydown={onKey} placeholder="Search decks, posts, videos…" aria-label="Search" role="combobox" aria-expanded="true" aria-controls="cp-list" aria-activedescendant={results.length ? 'cp-opt-' + active : undefined} autocomplete="off" spellcheck="false" />
@@ -93,22 +93,22 @@
 
 <style>
   .cp-backdrop { position: fixed; inset: 0; z-index: 90; background: rgba(14,16,20,.5); display: flex; justify-content: center; align-items: flex-start; padding: 12vh 16px 16px; }
-  .cp-panel { --bg: var(--card); --fg: var(--ink); --mut: var(--ink-3); --line: var(--rule); --hi: var(--mark);
-    width: 100%; max-width: 580px; max-height: min(70vh, 560px); display: flex; flex-direction: column; background: var(--bg); color: var(--fg); border: 1.5px solid var(--rule-strong); border-radius: 4px; overflow: hidden; box-shadow: 8px 8px 0 rgba(0,0,0,.25); }
-  .cp-input-row { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-bottom: 1px solid var(--line); color: var(--mut); }
+  .cp-panel { --bg: var(--card); --mut: var(--soft); --hi: var(--a1);
+    width: 100%; max-width: 600px; max-height: min(70vh, 560px); display: flex; flex-direction: column; background: var(--bg); color: var(--fg); border: 2px solid var(--fg); border-radius: 28px; overflow: hidden; box-shadow: 10px 10px 0 var(--a2); }
+  .cp-input-row { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-bottom: 1px solid var(--line, rgba(128,128,128,.3)); color: var(--mut); }
   .cp-input-row input { flex: 1; min-width: 0; background: transparent; border: 0; outline: none; box-shadow: none !important; color: var(--fg); font-size: 16px; }
   .cp-input-row input::placeholder { color: var(--mut); }
   .cp-list { overflow-y: auto; padding: 6px; overscroll-behavior: contain; }
-  .cp-group { padding: 10px 10px 4px; font-family: var(--mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--mut); }
-  .cp-item { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px; border-radius: 3px; text-align: left; font-size: 14px; color: var(--fg); transition: none; }
+  .cp-group { padding: 10px 10px 4px; font-family: var(--sans); font-weight: 700; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--mut); }
+  .cp-item { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px; border-radius: 14px; text-align: left; font-size: 15px; font-weight: 600; color: var(--fg); transition: translate .25s cubic-bezier(.34,1.56,.64,1); }
   .cp-item:active { transform: none; }
-  .cp-item[aria-selected="true"] { background: var(--hi); color: #16181d; }
-  .cp-item[aria-selected="true"] .cp-hint { color: #16181d; }
+  .cp-item[aria-selected="true"] { background: var(--hi); color: var(--ink); translate: 6px 0; }
+  .cp-item[aria-selected="true"] .cp-hint { color: var(--ink); }
   .cp-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .cp-hint { flex-shrink: 0; font-family: var(--mono); font-size: 11px; color: var(--mut); }
+  .cp-hint { flex-shrink: 0; font-family: var(--sans); font-weight: 700; font-size: 11px; color: var(--mut); }
   .cp-empty { padding: 28px 16px; text-align: center; font-size: 13px; color: var(--mut); }
-  .cp-foot { display: flex; gap: 16px; align-items: center; padding: 10px 16px; border-top: 1px solid var(--line); font-size: 11px; color: var(--mut); }
-  .cp-count { margin-left: auto; font-family: var(--mono); }
-  kbd { font-family: var(--mono); font-size: 10px; padding: 2px 6px; margin-right: 3px; border: 1px solid var(--line); border-radius: 6px; color: var(--mut); }
+  .cp-foot { display: flex; gap: 16px; align-items: center; padding: 10px 16px; border-top: 1px solid var(--line, rgba(128,128,128,.3)); font-size: 11px; color: var(--mut); }
+  .cp-count { margin-left: auto; font-family: var(--sans); font-weight: 700; }
+  kbd { font-family: var(--sans); font-weight: 700; font-size: 10px; padding: 2px 6px; margin-right: 3px; border: 1px solid var(--line, rgba(128,128,128,.3)); border-radius: 6px; color: var(--mut); }
   @media (max-width: 640px) { .cp-backdrop { padding-top: 8vh; } .cp-foot span:not(.cp-count) { display: none; } .cp-count { margin-left: 0; } }
 </style>

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { split, countUp } from '../lib/fx';
   import { profile, stats, principles, experience, skills, recommendations } from '../lib/profile';
 
   // Live numbers for the open-source project; cached for the session because the
@@ -25,7 +26,7 @@
 
 <header class="page-head">
   <p class="label">About · {profile.base}</p>
-  <h1 class="h1">{profile.name}. <span class="hl">Mobile, backend &amp; AI.</span></h1>
+  <h1 class="h1" use:split>{`${profile.name}.`} <span class="hl">Mobile, backend &amp; AI.</span></h1>
   <p class="lead">{profile.intro} Product-driven, end to end, and system-thinking.</p>
   <div class="row" style="margin-top:6px">
     <a class="btn btn-ink" href="mailto:{profile.email}">{profile.email}</a>
@@ -41,7 +42,7 @@
 
 <div class="stats">
   {#each stats as s}
-    <div><div class="n">{s.n}</div><div class="label" style="margin-top:8px">{s.label}</div><p class="small muted note" style="margin-top:4px">{s.note}</p></div>
+    <div><div class="n" use:countUp>{s.n}</div><div class="label" style="margin-top:8px">{s.label}</div><p class="small muted note" style="margin-top:4px">{s.note}</p></div>
   {/each}
 </div>
 

@@ -16,14 +16,14 @@
   placeholder="Search notes: kmp, typescript, performance…">
   <div class="entries">
     {#each [lead, ...list.filter((b) => b !== lead)] as b, i (b.slug)}
-      <article class="entry" class:featured={i === 0}>
+      <article class="entry" data-cursor="read" class:featured={i === 0}>
         <div class="entry-meta"><span>{fmtDate(b.date)}</span><span>{b.mins} min read</span>{#if i === 0}<span class="pen">Latest</span>{/if}</div>
         <div>
           <h2 class="entry-title"><a href="#blog/{b.slug}"><span>{b.title}</span></a></h2>
           <p style="margin-top:6px">{b.excerpt}</p>
           <div class="row" style="gap:6px;margin-top:12px">{#each b.tags as t}<span class="tag">{t}</span>{/each}</div>
         </div>
-        <span class="go">Read →</span>
+        <span class="go">Read</span>
       </article>
     {/each}
   </div>

@@ -20,15 +20,36 @@
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <script>
-      // Resolve the theme before first paint so there is no dark→light flash.
+      // Palettes live here so the colour is chosen before first paint (no flash).
+      // Every visit starts on a different one; the "remix" button deals the next.
+      // Rules: fg on bg is AAA; accents a1-a3 are only ever fills behind dark ink.
       (function () {
-        var t = null;
-        try { t = localStorage.getItem('theme-preference'); } catch (e) {}
-        if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        var h = document.documentElement;
-        h.classList.toggle('dark', t === 'dark');
-        h.style.colorScheme = t;
-        if (t === 'dark') document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0e1014');
+        var P = [
+          { name: 'Pasar Malam', bg: '#17102b', fg: '#f6f0ff', card: '#241a40', a1: '#c6ff3d', a2: '#ff6fae', a3: '#5ee6ff' },
+          { name: 'Es Krim', bg: '#fff4e0', fg: '#1d1433', card: '#ffffff', a1: '#ff6b4a', a2: '#b79bff', a3: '#3ddbc0' },
+          { name: 'Tropis', bg: '#06342f', fg: '#f3ffe9', card: '#0b4a43', a1: '#ffd23f', a2: '#ff8a65', a3: '#9ef01a' },
+          { name: 'Kobalt', bg: '#1230d9', fg: '#ffffff', card: '#1f40f0', a1: '#ffe14a', a2: '#ff9ad6', a3: '#7dffb0' },
+          { name: 'Permen', bg: '#ffd9ec', fg: '#2a0f3d', card: '#fff3f9', a1: '#9d7bff', a2: '#ff6b88', a3: '#2fd3a6' },
+          { name: 'Senja', bg: '#2b0f1f', fg: '#ffeede', card: '#3d1a2e', a1: '#ff9f1c', a2: '#ff5c8a', a3: '#b8f2e6' }
+        ];
+        var last = -1;
+        try { last = parseInt(sessionStorage.getItem('kl-pal') || '-1', 10); } catch (e) {}
+        var i = Math.floor(Math.random() * P.length);
+        if (i === last) i = (i + 1) % P.length;
+        window.__KL = {
+          palettes: P, index: i,
+          apply: function (n) {
+            var p = P[n], st = document.documentElement.style;
+            for (var k in p) if (k !== 'name') st.setProperty('--' + k, p[k]);
+            var dark = parseInt(p.bg.slice(1, 3), 16) < 128;
+            st.colorScheme = dark ? 'dark' : 'light';
+            document.documentElement.dataset.tone = dark ? 'dark' : 'light';
+            var m = document.querySelector('meta[name="theme-color"]'); if (m) m.setAttribute('content', p.bg);
+            window.__KL.index = n;
+            try { sessionStorage.setItem('kl-pal', String(n)); } catch (e) {}
+          }
+        };
+        window.__KL.apply(i);
       })();
     </script>
     <script type="application/ld+json">

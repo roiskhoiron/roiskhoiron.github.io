@@ -15,7 +15,7 @@
   placeholder="Search carousels: kotlin, typescript, cli…">
   <div class="tiles">
     {#each list as p (p.slug)}
-      <article class="tile">
+      <article class="tile" data-cursor="swipe">
         <p class="label">#{p.tag} · {postsSlides[p.slug].length} cards</p>
         <h3><a href="#posts/{p.slug}"><span>{p.title}</span></a></h3>
         <p>{p.desc}</p>

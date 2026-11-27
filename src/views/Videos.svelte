@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { split } from '../lib/fx';
   import { videosData, type Video } from '../lib/data';
   import { profile } from '../lib/profile';
 
@@ -16,7 +17,7 @@
 
 <header class="page-head">
   <p class="label">Videos · {list.length} videos</p>
-  <h1 class="h1">CodingSkuy on YouTube.</h1>
+  <h1 class="h1" use:split>CodingSkuy on YouTube.</h1>
   <p class="lead">Live coding, seri belajar bareng, dan Shorts dari channel <a class="link" href={profile.links.youtube} target="_blank" rel="noopener">@codingskuy</a>.</p>
 </header>
 <div class="toolbar">
@@ -35,7 +36,7 @@
 {#if long.length}
   <div class="videos">
     {#each long as v (v.id)}
-      <a class="video" href="#videos/{v.id}">
+      <a class="video" data-cursor="play" href="#videos/{v.id}">
         <div class="thumb">
           <img src={thumb(v)} alt="" loading="lazy" decoding="async" width="320" height="180" />
           {#if v.isLive}<span class="live">LIVE</span>{/if}
@@ -51,7 +52,7 @@
   <p class="label subhead">Shorts · {shorts.length}</p>
   <div class="videos shorts">
     {#each shorts as v (v.id)}
-      <a class="video" href="#videos/{v.id}">
+      <a class="video" data-cursor="play" href="#videos/{v.id}">
         <div class="thumb"><img src={thumb(v)} alt="" loading="lazy" decoding="async" width="180" height="320" /><span class="dur">{v.duration}</span></div>
         <h3 class="small">{v.title}</h3>
       </a>

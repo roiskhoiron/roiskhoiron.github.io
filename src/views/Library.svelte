@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { split } from '../lib/fx';
   // Shared list page for decks and carousels: heading, search, filter tabs, results.
   export let label: string;
   export let title: string;
@@ -13,7 +14,7 @@
 
 <header class="page-head">
   <p class="label">{label} · {count} {noun}</p>
-  <h1 class="h1">{title}</h1>
+  <h1 class="h1" use:split>{title}</h1>
   <p class="lead">{intro}</p>
 </header>
 <div class="toolbar">

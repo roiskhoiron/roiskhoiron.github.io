@@ -13,12 +13,12 @@ const b = (text: string) => `<strong>${text}</strong>`;
 
 export const blogData: BlogPost[] = [
   {
-    title: 'Situs ini: dari 4,5 MB ke 155 KB',
-    slug: 'situs-ini-dari-4-5-mb-ke-155-kb',
+    title: 'Situs ini: dari 4,5 MB ke 190 KB',
+    slug: 'situs-ini-dari-4-5-mb-ke-190-kb',
     date: '2026-11-27',
     mins: 5,
     tags: ['performance', 'web', 'ai-agent', 'svelte'],
-    excerpt: 'Saya mengaudit portofolio ini bersama AI coding agent. Empat keputusan memangkas lebih dari 95% ukuran halaman, lalu desainnya saya tulis ulang dari nol.',
+    excerpt: 'Saya mengaudit portofolio ini bersama AI coding agent. Empat keputusan memangkas lebih dari 95% ukuran halaman, lalu desainnya saya tulis ulang dari nol: lebih ramai, tapi tetap ringan.',
     featured: true
   },
   {
@@ -66,8 +66,8 @@ export const blogData: BlogPost[] = [
 type Full = { lead: string; sections: { id: string; title: string; body: string }[] };
 
 export const blogFull: Record<string, Full> = {
-  'situs-ini-dari-4-5-mb-ke-155-kb': {
-    lead: 'Halaman depan portofolio ini dulu mengunduh 4,5 MB dalam 44 request. Sekarang 155 KB dalam 7 request.',
+  'situs-ini-dari-4-5-mb-ke-190-kb': {
+    lead: 'Halaman depan portofolio ini dulu mengunduh 4,5 MB dalam 44 request. Sekarang 190 KB dalam 8 request.',
     sections: [
       {
         id: 'titik-awal',
@@ -93,8 +93,8 @@ export const blogFull: Record<string, Full> = {
         id: 'desain-ulang',
         title: 'Lalu desainnya ditulis ulang',
         body: p(
-          'Langkah berikutnya lebih besar: tampilan situs ini saya rombak total menjadi tema buku catatan lab, dengan CSS yang ditulis tangan tanpa framework dan hanya dua file font.',
-          `Efek sampingnya ke performa ternyata positif. Halaman depan sekarang ${b('155 KB dalam 7 request')}, dengan JavaScript 46 KB dan CSS 9 KB (gzip). Lebih dari separuhnya adalah dua file font.`
+          'Langkah berikutnya lebih besar: tampilan situs ini saya rombak total, dua kali. Versi yang sekarang penuh warna dan animasi, dengan palet yang diacak tiap kunjungan, tapi CSS-nya ditulis tangan tanpa framework dan semua animasinya hanya memakai transform dan opacity.',
+          `Hasilnya, situs yang jauh lebih ramai ini tetap jauh lebih ringan daripada versi awal yang terlihat sederhana: ${b('190 KB dalam 8 request, dengan JavaScript 50 KB dan CSS 13 KB (gzip)')}. Ramai dan ringan ternyata tidak bertentangan.`
         )
       },
       {

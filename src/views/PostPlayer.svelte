@@ -2,17 +2,19 @@
   import { postsData, postsSlides } from '../lib/data';
   import { go } from '../lib/router';
   import { saveResume, resumeIndex } from '../lib/resume';
+  import { confetti } from '../lib/fx';
   export let slug: string;
 
-  let i = 0, loaded = '';
+  let i = 0, loaded = '', back = false, cheered = false;
   $: post = postsData.find((p) => p.slug === slug);
   $: slides = postsSlides[slug] ?? [];
   $: if (slug !== loaded) { loaded = slug; i = resumeIndex('post', slug); }
   $: s = slides[i];
   $: if (post) saveResume({ kind: 'post', slug, title: post.title, idx: i, total: slides.length });
 
-  const next = () => { if (i < slides.length - 1) i++; };
-  const prev = () => { if (i > 0) i--; };
+  const next = () => { if (i < slides.length - 1) { back = false; i++; } };
+  const prev = () => { if (i > 0) { back = true; i--; } };
+  $: if (slides.length > 1 && i === slides.length - 1 && !cheered) { cheered = true; confetti(); }
   const exit = () => go('posts');
   function key(e: KeyboardEvent) {
     if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
@@ -39,12 +41,12 @@
     <span class="mono muted">{i + 1} / {slides.length}</span>
   </div>
 
-  <div class="player-stage">
+  <div class="player-stage" class:back>
     <div class="swipe-stage">
       {#if s}
         {#key i}
           <!-- svelte-ignore a11y-no-static-element-interactions -->
-          <div class="frame" class:inverse={i % 2 === 1} on:pointerdown={down} on:pointerup={up} on:pointercancel={() => (x0 = null)}>
+          <div class="frame c{i % 4}" data-cursor="swipe" on:pointerdown={down} on:pointerup={up} on:pointercancel={() => (x0 = null)}>
             <div class="top label"><span>khoirlabs</span><span>{s.label}</span></div>
             <div class="body" class:first={i === 0}>
               <h2>{s.title}</h2>
@@ -61,7 +63,7 @@
         <p class="muted">{post?.desc}</p>
         <div class="outline">
           {#each slides as sl, n}
-            <button aria-current={n === i} on:click={() => (i = n)}><span class="mono muted">{String(n + 1).padStart(2, '0')}</span><span>{sl.title}</span></button>
+            <button aria-current={n === i} on:click={() => { back = n < i; i = n; }}><span class="mono muted">{String(n + 1).padStart(2, '0')}</span><span>{sl.title}</span></button>
           {/each}
         </div>
       </div>
@@ -70,7 +72,7 @@
 
   <div class="player-foot">
     <button class="step" on:click={prev} disabled={i === 0} aria-label="Previous card">←</button>
-    <div class="dots">{#each slides as _, n}<button aria-label="Card {n + 1}" aria-current={n === i} on:click={() => (i = n)}></button>{/each}</div>
+    <div class="dots">{#each slides as _, n}<button aria-label="Card {n + 1}" aria-current={n === i} on:click={() => { back = n < i; i = n; }}></button>{/each}</div>
     <button class="step" on:click={next} disabled={i === slides.length - 1} aria-label="Next card">→</button>
   </div>
 </div>

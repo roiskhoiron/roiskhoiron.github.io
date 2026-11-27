@@ -2,9 +2,10 @@
   import { decksData, deckSlides } from '../lib/data';
   import { go } from '../lib/router';
   import { saveResume, resumeIndex } from '../lib/resume';
+  import { confetti } from '../lib/fx';
   export let slug: string;
 
-  let i = 0, loaded = '';
+  let i = 0, loaded = '', back = false, cheered = false;
   let stage: HTMLElement;
   $: deck = decksData.find((d) => d.slug === slug);
   $: slides = deckSlides[slug] ?? [];
@@ -12,8 +13,10 @@
   $: s = slides[i];
   $: if (deck) saveResume({ kind: 'deck', slug, title: deck.title, idx: i, total: slides.length });
 
-  const next = () => { if (i < slides.length - 1) i++; };
-  const prev = () => { if (i > 0) i--; };
+  const next = () => { if (i < slides.length - 1) { back = false; i++; } };
+  const prev = () => { if (i > 0) { back = true; i--; } };
+  // reaching the last slide earns a small celebration, once
+  $: if (slides.length > 1 && i === slides.length - 1 && !cheered) { cheered = true; confetti(); }
   const exit = () => go('decks');
   const full = () => (document.fullscreenElement ? document.exitFullscreen() : stage?.requestFullscreen?.());
   function key(e: KeyboardEvent) {
@@ -37,18 +40,18 @@
     </div>
   </div>
 
-  <div class="player-stage" bind:this={stage} style="background:inherit">
+  <div class="player-stage" class:back bind:this={stage} style="background:var(--bg)">
     {#if s}
       {#key i}
         {#if s.layout === 'cover'}
-          <div class="slide cover"><div class="slide-body">
+          <div class="slide cover n{i % 3}"><div class="slide-body">
             <p class="label">{s.subtitle}</p>
             <h2>{s.title}</h2>
             {#if s.message}<p>{s.message}</p>{/if}
             {#if s.points}<ul class="plain">{#each s.points as p}<li>{p}</li>{/each}</ul>{/if}
           </div></div>
         {:else if s.layout === 'code'}
-          <div class="slide cols">
+          <div class="slide cols n{i % 3}">
             <div class="slide-body">
               <p class="label">{s.subtitle}</p><h2>{s.title}</h2>
               {#if s.message}<p>{s.message}</p>{/if}
@@ -57,12 +60,12 @@
             <div class="slide-body dark"><pre>{(s.code ?? '').replace(/\\n/g, '\n')}</pre></div>
           </div>
         {:else if s.layout === 'split'}
-          <div class="slide cols">
+          <div class="slide cols n{i % 3}">
             <div class="slide-body"><p class="label">{s.subtitle}</p><h2>{s.leftTitle}</h2>{#if s.leftPoints}<ul class="plain">{#each s.leftPoints as p}<li>{p}</li>{/each}</ul>{/if}</div>
             <div class="slide-body dark"><p class="label">{s.title}</p><h2>{s.rightTitle}</h2>{#if s.rightPoints}<ul class="plain">{#each s.rightPoints as p}<li>{p}</li>{/each}</ul>{/if}</div>
           </div>
         {:else}
-          <div class="slide"><div class="slide-body">
+          <div class="slide n{i % 3}"><div class="slide-body">
             <p class="label">{s.subtitle}</p>
             <h2>{s.title}</h2>
             {#if s.message}<p>{s.message}</p>{/if}
@@ -79,7 +82,7 @@
 
   <div class="player-foot">
     <button class="step" on:click={prev} disabled={i === 0} aria-label="Previous slide">←</button>
-    <div class="dots">{#each slides as _, n}<button aria-label="Slide {n + 1}" aria-current={n === i} on:click={() => (i = n)}></button>{/each}</div>
+    <div class="dots">{#each slides as _, n}<button aria-label="Slide {n + 1}" aria-current={n === i} on:click={() => { back = n < i; i = n; }}></button>{/each}</div>
     <button class="step" on:click={next} disabled={i === slides.length - 1} aria-label="Next slide">→</button>
   </div>
 </div>

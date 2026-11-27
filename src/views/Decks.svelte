@@ -16,7 +16,7 @@
   placeholder="Search decks: kotlin, typescript, promise…">
   <div class="grid" style="padding-top:8px">
     {#each list as d (d.slug)}
-      <article class="card">
+      <article class="card" data-cursor="open">
         <span class="tabmark">{kind(d.type)} · {d.lang}</span>
         <span class="label count">{deckSlides[d.slug].length} slides</span>
         <h3 class="h3"><a class="stretch" href="#decks/{d.slug}"><span>{d.title}</span></a></h3>

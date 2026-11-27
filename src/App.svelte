@@ -1,5 +1,7 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte';
+  import { startFx, arm } from './lib/fx';
+  import { remix, paletteName } from './lib/palette';
   import { route, pages, parentOf, go, startRouter } from './lib/router';
   import { decksData, postsData, blogData, videosData } from './lib/data';
   import { profile } from './lib/profile';
@@ -16,27 +18,24 @@
   import DeckPlayer from './views/DeckPlayer.svelte';
   import PostPlayer from './views/PostPlayer.svelte';
 
-  let theme: 'dark' | 'light' = 'light';
   let paletteOpen = false;
   let progress = 0;
 
+  let ready = false;
   onMount(() => {
-    theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-    return startRouter();
+    const stopRouter = startRouter(), stopFx = startFx();
+    ready = true;
+    return () => { stopRouter(); stopFx(); };
   });
+  // re-arm scroll reveal whenever the view changes
+  $: if (ready && $route) tick().then(arm);
 
-  function toggleTheme() {
-    theme = theme === 'dark' ? 'light' : 'dark';
-    const h = document.documentElement;
-    h.classList.toggle('dark', theme === 'dark');
-    h.style.colorScheme = theme;
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#0e1014' : '#f3efe6');
-    try { localStorage.setItem('theme-preference', theme); } catch {}
-  }
+  const deal = (e?: MouseEvent) => (e && e.clientX ? remix(e.clientX, e.clientY) : remix());
 
   function keys(e: KeyboardEvent) {
     const typing = /^(INPUT|TEXTAREA|SELECT)$/.test((e.target as HTMLElement)?.tagName ?? '');
     if ((e.key === 'k' && (e.metaKey || e.ctrlKey)) || (e.key === '/' && !typing && !paletteOpen)) { e.preventDefault(); paletteOpen = !paletteOpen; }
+    else if (e.key === 'c' && !typing && !paletteOpen && !e.metaKey && !e.ctrlKey) deal();
   }
   // reading progress, shown on articles only
   let raf = 0;
@@ -72,7 +71,7 @@
 
 <svelte:window on:keydown={keys} on:scroll={onScroll} />
 <a class="skip" href="#main">Skip to content</a>
-<CommandPalette bind:open={paletteOpen} {theme} on:go={(e) => go(e.detail)} on:theme={toggleTheme} />
+<CommandPalette bind:open={paletteOpen} on:go={(e) => go(e.detail)} on:theme={() => deal()} />
 {#if view === 'article'}<div class="progress" style="transform:scaleX({progress})"></div>{/if}
 
 <header class="site-head">
@@ -90,8 +89,8 @@
         <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-width="2" d="M21 21l-4.3-4.3M10.5 18a7.5 7.5 0 100-15 7.5 7.5 0 000 15z" /></svg>
         <span class="wide">search</span><kbd class="wide">/</kbd>
       </button>
-      <button class="icon-btn" on:click={toggleTheme} aria-label="Switch to {theme === 'dark' ? 'light' : 'dark'} theme">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8" /><path d="M12 4v16" /><path d="M12 4a8 8 0 010 16z" fill="currentColor" /></svg>
+      <button class="icon-btn remix" on:click={deal} aria-label="Remix colours (now: {$paletteName})" title="Remix colours — {$paletteName}" data-cursor="remix" aria-keyshortcuts="C">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0113.7-5.7L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 01-13.7 5.7L4 15.5M4 20v-4.5h4.5" /></svg>
       </button>
     </div>
   </div>
@@ -119,10 +118,11 @@
 
 <footer>
   <div class="wrap">
+    <p class="bigword" aria-hidden="true">ngoding kuy</p>
     <div class="foot-grid">
       <div>
         <p class="brand"><span>khoirlabs</span><span class="glyph" aria-hidden="true">&lt;|&gt;</span></p>
-        <p class="muted small" style="margin-top:10px;max-width:38ch">The lab notebook of {profile.name}: mobile, backend and AI, written down so others can learn from it.</p>
+        <p class="muted small" style="margin-top:10px;max-width:38ch">{profile.name} builds mobile products end to end and teaches what he learns along the way.</p>
       </div>
       <nav aria-label="Explore"><p class="label">Explore</p><ul><li><a class="link" href="#home">Home</a></li><li><a class="link" href="#about">About</a></li><li><a class="link" href="#blog">Blog</a></li></ul></nav>
       <nav aria-label="Library"><p class="label">Library</p><ul><li><a class="link" href="#decks">Decks</a></li><li><a class="link" href="#posts">Carousels</a></li><li><a class="link" href="#videos">Videos</a></li></ul></nav>
@@ -132,7 +132,7 @@
         <li><a class="link" href={profile.links.instagram} target="_blank" rel="noopener">Instagram</a></li>
       </ul></nav>
     </div>
-    <p class="foot-note label"><span>© 2026 khoirlabs · {profile.base}</span><a class="link" href={profile.whatsapp} target="_blank" rel="noopener">Contact</a></p>
+    <p class="foot-note label"><span>© 2026 khoirlabs · {profile.base} · palette: {$paletteName} (press C)</span><a class="link" href={profile.whatsapp} target="_blank" rel="noopener">Contact</a></p>
   </div>
 </footer>
 
