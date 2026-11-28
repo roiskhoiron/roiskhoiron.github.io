@@ -3,6 +3,7 @@
 // To add one: append its entry to the list and its slides under the same slug.
 import type { Deck, DeckSlide, Post, PostSlide } from './data';
 import { decks2, deckSlides2, posts2, postSlides2 } from './library-more';
+import { workflowDecks, workflowDeckSlides, workflowPosts, workflowPostSlides } from './agent-workflow';
 
 const DATE = '2026-11-28';
 const deck = (slug: string, title: string, type: string, tags: string[], desc: string): Deck =>
@@ -15,6 +16,7 @@ const card = (label: string, title: string, body: string, extra: Partial<PostSli
 /* ───────────────────────── decks ───────────────────────── */
 
 export const moreDecks: Deck[] = [
+  ...workflowDecks,
   ...decks2,
   deck('sejarah-software', 'Dari Kartu Berlubang ke AI Agent', 'History Deck', ['sejarah', 'software', 'ai'],
     'Program pertama ditulis seabad sebelum komputernya ada. Dari sana sampai AI agent, polanya ternyata selalu sama.'),
@@ -33,6 +35,7 @@ export const moreDecks: Deck[] = [
 ];
 
 export const moreDeckSlides: Record<string, DeckSlide[]> = {
+  ...workflowDeckSlides,
   ...deckSlides2,
   'sejarah-software': [
     { layout: 'cover', subtitle: 'Sejarah singkat pengembangan software', title: 'Dari Kartu Berlubang ke AI Agent', message: 'Hampir dua abad dalam sepuluh slide. Alatnya berubah total, tapi beberapa pola terus berulang.', points: ['1843: algoritma pertama yang diterbitkan.', 'Sekarang: program yang menulis program.'] },
@@ -117,6 +120,7 @@ export const moreDeckSlides: Record<string, DeckSlide[]> = {
 /* ─────────────────────── carousels ─────────────────────── */
 
 export const morePosts: Post[] = [
+  ...workflowPosts,
   ...posts2,
   post('lima-era-software', '5 Era Software dalam 60 Detik', 'sejarah', 'Dulu mengganti program berarti mencabut dan memasang kabel berhari-hari. Sekarang cukup satu kalimat.'),
   post('bug-pertama', 'Kisah "Bug" Pertama', 'sejarah', 'Bug pertama di dunia benar-benar seekor serangga. Tapi ceritanya tidak sesederhana yang sering diulang.'),
@@ -129,6 +133,7 @@ export const morePosts: Post[] = [
 ];
 
 export const morePostSlides: Record<string, PostSlide[]> = {
+  ...workflowPostSlides,
   ...postSlides2,
   'lima-era-software': [
     card('sejarah', '5 Era Software dalam 60 Detik', 'Cara manusia membuat software sudah berubah lima kali. Geser untuk melihat lompatannya.'),
