@@ -31,7 +31,7 @@ export const posts: Post[] = [
   { slug: 'md5-itu-cepat', title: 'MD5 Itu Cepat. Itulah Masalahnya.', tag: 'tutorial',
     desc: 'Untuk password, hash yang cepat adalah hash yang salah. Enam kartu tentang cara menyimpan password supaya database bocor tidak jadi bencana.', date: DATE, color: '', accent: 'tutorial' },
   { slug: 'jwt-bisa-dibaca', title: 'JWT Bisa Dibaca Siapa Saja', tag: 'teori',
-    desc: 'Decode bagian tengahnya dengan base64, isinya langsung terlihat. Enam kartu tentang apa yang sebenarnya dijamin oleh JWT.', date: DATE, color: '', accent: 'teori' },
+    desc: 'Decode bagian tengahnya dengan base64, isinya langsung terlihat. Enam kartu tentang apa yang sebenarnya dibuktikan oleh JWT.', date: DATE, color: '', accent: 'teori' },
   { slug: 'sql-injection-bug-lama', title: 'Bug Lama yang Masih Ditulis Ulang', tag: 'tutorial',
     desc: 'SQL injection sudah dibahas puluhan tahun, dan obatnya tersedia di setiap driver. Kenapa masih terus muncul di kode baru?', date: DATE, color: '', accent: 'tutorial' },
   { slug: 'xss-filter-input-gagal', title: 'Filter Input Tidak Menghentikan XSS', tag: 'teori',
