@@ -1,4 +1,5 @@
 <script lang="ts">
+  import ShareButton from './ShareButton.svelte';
   import { allNotes, loadNote } from '../lib/content';
   import { listHash } from '../lib/router';
   import type { Full } from '../lib/blog-html';
@@ -28,6 +29,7 @@
         <h1 class="h1">{post.title}</h1>
         <p class="lead">{post.excerpt}</p>
         <div class="row" style="gap:6px">{#each post.tags as t}<span class="tag">{t}</span>{/each}</div>
+        <div><ShareButton variant="pill" item={{ section: 'blog', slug, title: post.title, text: post.excerpt }} /></div>
       </header>
       <div class="prose">
         {#if !ready}
@@ -40,6 +42,12 @@
           <p class="muted">The full write-up for this note is not published yet.</p>
         {/if}
       </div>
+      {#if ready}
+        <aside class="share-cta">
+          <p><b>Bermanfaat?</b> Kirim ke teman yang sedang belajar hal yang sama.</p>
+          <ShareButton variant="pill" item={{ section: 'blog', slug, title: post.title, text: post.excerpt }} />
+        </aside>
+      {/if}
       <nav class="pager" aria-label="More notes">
         {#if older}<a href="#blog/{older.slug}"><span class="label">← Older</span><b>{older.title}</b></a>{/if}
         {#if newer}<a href="#blog/{newer.slug}"><span class="label">Newer →</span><b>{newer.title}</b></a>{/if}

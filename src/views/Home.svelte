@@ -1,4 +1,5 @@
 <script lang="ts">
+  import ShareButton from './ShareButton.svelte';
   import { videosData } from '../lib/data';
   import { allDecks, allPosts, allNotes } from '../lib/content';
   import { buildFeed, fmtDate, kindLabel, kindRoute, type FeedKind } from '../lib/feed';
@@ -118,7 +119,7 @@
           <h3 class="entry-title"><a href="#{kindRoute[it.kind]}/{it.slug}"><span>{it.title}</span></a></h3>
           <p>{it.desc}</p>
         </div>
-        <span class="go">{cta[it.kind]} · {it.meta}</span>
+        <div class="entry-end"><span class="go">{cta[it.kind]} · {it.meta}</span><ShareButton variant="mini" item={{ section: kindRoute[it.kind] === 'posts' ? 'posts' : kindRoute[it.kind] === 'decks' ? 'decks' : 'blog', slug: it.slug, title: it.title, text: it.desc }} /></div>
       </article>
     {/each}
   </div>

@@ -57,7 +57,7 @@ export const posts: Post[] = [
 export const notes: BlogPost[] = [
   note('hopper-bahasa-inggris', 'Kenapa "Program dalam Bahasa Inggris" Pernah Dianggap Konyol', 4, ['sejarah', 'compiler', 'karier'],
     'Keberatan terhadap compiler tahun 1950-an terdengar sangat masuk akal pada zamannya. Dan bunyinya mirip sekali dengan keberatan terhadap alat baru hari ini.'),
-  note('unix-dan-pipa', 'Sepuluh Halaman Program Melawan Enam Baris Shell', 4, ['sejarah', 'unix', 'shell'],
+  note('unix-dan-pipa', 'Program Panjang Melawan Enam Baris Shell', 4, ['sejarah', 'unix', 'shell'],
     'Tahun 1986, Donald Knuth menulis program panjang yang indah untuk menghitung kata. Doug McIlroy menjawabnya dengan pipeline enam baris.'),
   note('internet-bukan-untuk-perang-nuklir', 'Internet Tidak Dibuat untuk Bertahan dari Bom Nuklir', 4, ['sejarah', 'internet', 'jaringan'],
     'Cerita populernya: ARPANET dibuat agar komunikasi militer selamat dari serangan nuklir. Kenyataannya lebih menarik, dan lebih berguna untuk programmer.'),

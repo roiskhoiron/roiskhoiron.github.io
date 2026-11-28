@@ -9,6 +9,8 @@
   import { profile } from './lib/profile';
   import logo from './assets/logo-192.webp';
   import CommandPalette from './lib/CommandPalette.svelte';
+  import ShareSheet from './views/ShareSheet.svelte';
+  import { sharing } from './lib/share';
   import Home from './views/Home.svelte';
   import About from './views/About.svelte';
   import Decks from './views/Decks.svelte';
@@ -35,6 +37,7 @@
   const deal = (e?: MouseEvent) => (e && e.clientX ? remix(e.clientX, e.clientY) : remix());
 
   function keys(e: KeyboardEvent) {
+    if (e.defaultPrevented || $sharing) return;
     const typing = /^(INPUT|TEXTAREA|SELECT)$/.test((e.target as HTMLElement)?.tagName ?? '');
     if ((e.key === 'k' && (e.metaKey || e.ctrlKey)) || (e.key === '/' && !typing && !paletteOpen)) { e.preventDefault(); paletteOpen = !paletteOpen; }
     else if (e.key === 'c' && !typing && !paletteOpen && !e.metaKey && !e.ctrlKey) deal();
@@ -73,6 +76,7 @@
 
 <svelte:window on:keydown={keys} on:scroll={onScroll} on:pointerover={(e) => { const a = e.target instanceof Element && e.target.closest('a[href^="#"]'); if (a) prefetch(a.getAttribute('href') ?? ''); }} />
 <a class="skip" href="#main">Skip to content</a>
+<ShareSheet />
 <CommandPalette bind:open={paletteOpen} on:go={(e) => go(e.detail)} on:theme={() => deal()} />
 {#if view === 'article'}<div class="progress" style="transform:scaleX({progress})"></div>{/if}
 

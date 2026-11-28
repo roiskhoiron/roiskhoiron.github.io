@@ -434,3 +434,11 @@ footer { padding-bottom: 96px; }
 .page-flip > * > :nth-child(4) { animation-delay: 120ms; } .page-flip > * > :nth-child(5) { animation-delay: 160ms; }
 .page-flip > * > :nth-child(6) { animation-delay: 200ms; } .page-flip > * > :nth-child(n + 7) { animation-delay: 240ms; }
 @keyframes flip-in { from { opacity: 0; transform: translateY(28px) rotate(-1.5deg) scale(0.97); } }
+
+/* share placements */
+.entry-end { display: flex; align-items: center; gap: 10px; align-self: center; }
+.card-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 4px; }
+.tile .foot { align-items: center; position: relative; z-index: 2; } /* .foot is translucent, so it needs its own layer above the stretched link */
+.tile .foot .share-btn { position: relative; z-index: 2; background: transparent; border-color: currentColor; color: inherit; }
+.share-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; margin-top: 48px; padding: 20px 22px; border: 2px dashed var(--fg); border-radius: var(--r); }
+.share-cta p { max-width: 42ch; }

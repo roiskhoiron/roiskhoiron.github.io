@@ -12,7 +12,7 @@ export function startSmoothScroll() {
     autoRaf: true,
     lerp: 0.11,
     // overlays and inner scroll areas keep their own native scrolling
-    prevent: (node) => !!node.closest('.player, .cp-backdrop, [data-lenis-prevent]')
+    prevent: (node) => !!node.closest('.player, .cp-backdrop, .share-backdrop, [data-lenis-prevent]')
   });
   return () => { lenis?.destroy(); lenis = null; };
 }

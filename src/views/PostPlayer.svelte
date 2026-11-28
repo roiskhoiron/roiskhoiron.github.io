@@ -1,8 +1,10 @@
 <script lang="ts">
+  import ShareButton from './ShareButton.svelte';
   import { onDestroy, onMount } from 'svelte';
   import type { PostSlide } from '../lib/data';
   import { findPost, loadPost } from '../lib/content';
   import { lockScroll } from '../lib/scroll';
+  import { sharing } from '../lib/share';
   import { go, listHash } from '../lib/router';
   import { saveResume, resumeIndex } from '../lib/resume';
   import { confetti, swipe } from '../lib/fx';
@@ -28,6 +30,7 @@
   $: if (slides.length > 1 && i === slides.length - 1 && !cheered) { cheered = true; confetti(); }
   const exit = () => go(listHash('posts'));
   function key(e: KeyboardEvent) {
+    if (e.defaultPrevented || $sharing) return; // the share sheet has the keyboard
     if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
     else if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
     else if (e.key === 'Escape') exit();
@@ -41,7 +44,10 @@
       <button class="icon-btn" on:click={exit}>← <span class="wide">Posts</span></button>
       <span class="title">{post?.title}</span>
     </div>
-    <span class="mono muted">{ready ? `${i + 1} / ${slides.length}` : '…'}</span>
+    <div class="row" style="flex-wrap:nowrap">
+      <span class="mono muted">{ready ? `${i + 1} / ${slides.length}` : '…'}</span>
+      {#if post}<ShareButton item={{ section: 'posts', slug, title: post.title, text: post.desc }} />{/if}
+    </div>
   </div>
 
   <div class="player-stage" class:back>

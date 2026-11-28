@@ -1,4 +1,5 @@
 <script lang="ts">
+  import ShareButton from './ShareButton.svelte';
   import Library from './Library.svelte';
   import { allPosts } from '../lib/content';
   import { fmtDate } from '../lib/feed';
@@ -20,7 +21,7 @@
         <p class="label">#{p.tag}</p>
         <h3><a href="#posts/{p.slug}"><span>{p.title}</span></a></h3>
         <p>{p.desc}</p>
-        <div class="foot label"><span>{fmtDate(p.date)}</span><span>Swipe →</span></div>
+        <div class="foot label"><span>{fmtDate(p.date)}</span><ShareButton variant="mini" item={{ section: 'posts', slug: p.slug, title: p.title, text: p.desc }} /></div>
       </article>
     {/each}
   </div>

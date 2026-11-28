@@ -1,4 +1,5 @@
 <script lang="ts">
+  import ShareButton from './ShareButton.svelte';
   import Library from './Library.svelte';
   import { allNotes } from '../lib/content';
   import { fmtDate } from '../lib/feed';
@@ -30,7 +31,7 @@
           <p style="margin-top:6px">{b.excerpt}</p>
           <div class="row" style="gap:6px;margin-top:12px">{#each b.tags as t}<span class="tag">{t}</span>{/each}</div>
         </div>
-        <span class="go">Read</span>
+        <div class="entry-end"><span class="go">Read</span><ShareButton variant="mini" item={{ section: 'blog', slug: b.slug, title: b.title, text: b.excerpt }} /></div>
       </article>
     {/each}
   </div>

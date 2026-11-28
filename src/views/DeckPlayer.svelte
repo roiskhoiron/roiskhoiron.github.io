@@ -1,8 +1,10 @@
 <script lang="ts">
+  import ShareButton from './ShareButton.svelte';
   import { onDestroy, onMount } from 'svelte';
   import type { DeckSlide } from '../lib/data';
   import { findDeck, loadDeck } from '../lib/content';
   import { lockScroll } from '../lib/scroll';
+  import { sharing } from '../lib/share';
   import { go, listHash } from '../lib/router';
   import { saveResume, resumeIndex } from '../lib/resume';
   import { confetti, swipe } from '../lib/fx';
@@ -31,6 +33,7 @@
   const exit = () => go(listHash('decks'));
   const full = () => (document.fullscreenElement ? document.exitFullscreen() : stage?.requestFullscreen?.());
   function key(e: KeyboardEvent) {
+    if (e.defaultPrevented || $sharing) return; // the share sheet has the keyboard
     if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); next(); }
     else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prev(); }
     else if (e.key === 'Escape' && !document.fullscreenElement) exit();
@@ -47,6 +50,7 @@
     </div>
     <div class="row" style="flex-wrap:nowrap">
       <span class="mono muted">{ready ? `${i + 1} / ${slides.length}` : '…'}</span>
+      {#if deck}<ShareButton item={{ section: 'decks', slug, title: deck.title, text: deck.desc }} />{/if}
       <button class="icon-btn" on:click={full} aria-label="Toggle fullscreen"><kbd>F</kbd><span class="wide">Fullscreen</span></button>
     </div>
   </div>
