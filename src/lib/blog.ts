@@ -9,12 +9,12 @@ import { morePosts, moreFull } from './blog-more';
 export const blogData: BlogPost[] = [
   ...morePosts,
   {
-    title: 'Situs ini: dari 4,5 MB ke 190 KB',
+    title: 'Situs ini: dari 4,5 MB ke 263 KB, dengan 300 Konten',
     slug: 'situs-ini-dari-4-5-mb-ke-190-kb',
     date: '2026-11-27',
     mins: 5,
     tags: ['performance', 'web', 'ai-agent', 'svelte'],
-    excerpt: 'Saya mengaudit portofolio ini bersama AI coding agent. Empat keputusan memangkas lebih dari 95% ukuran halaman, lalu desainnya saya tulis ulang dari nol: lebih ramai, tapi tetap ringan.'
+    excerpt: 'Saya mengaudit portofolio ini bersama AI coding agent. Empat keputusan memangkas sekitar 94% ukuran halaman, bahkan setelah isinya tumbuh menjadi 300 konten.'
   },
   {
     title: 'CodingSchool: mentor AI yang tidak langsung memberi jawaban',
@@ -62,7 +62,7 @@ export const blogData: BlogPost[] = [
 export const blogFull: Record<string, Full> = {
   ...moreFull,
   'situs-ini-dari-4-5-mb-ke-190-kb': {
-    lead: 'Halaman depan portofolio ini dulu mengunduh 4,5 MB dalam 44 request. Sekarang 190 KB dalam 8 request.',
+    lead: 'Halaman depan portofolio ini dulu mengunduh 4,5 MB dalam 44 request. Sekarang 263 KB dalam 8 request, padahal isinya 300 deck, carousel, dan artikel.',
     sections: [
       {
         id: 'titik-awal',
@@ -89,7 +89,7 @@ export const blogFull: Record<string, Full> = {
         title: 'Lalu desainnya ditulis ulang',
         body: p(
           'Langkah berikutnya lebih besar: tampilan situs ini saya rombak total, dua kali. Versi yang sekarang penuh warna dan animasi, dengan palet yang diacak tiap kunjungan, tapi CSS-nya ditulis tangan tanpa framework dan semua animasinya hanya memakai transform dan opacity.',
-          `Hasilnya, situs yang jauh lebih ramai ini tetap jauh lebih ringan daripada versi awal yang terlihat sederhana: ${b('190 KB dalam 8 request, dengan JavaScript 50 KB dan CSS 13 KB (gzip)')}. Ramai dan ringan ternyata tidak bertentangan.`
+          `Lalu isinya bertambah menjadi 300 konten. Kuncinya: halaman hanya memuat judul dan deskripsi semuanya, sedangkan slide, kartu, dan isi artikel diunduh per paket tema saat dibuka, sekitar 24 KB (gzip) per paket. Hasilnya ${b('263 KB dalam 8 request')}, masih jauh lebih ringan daripada versi awal yang isinya cuma belasan konten. Ramai dan ringan ternyata tidak bertentangan.`
         )
       },
       {
