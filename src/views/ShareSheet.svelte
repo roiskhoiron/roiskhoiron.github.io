@@ -89,7 +89,7 @@
   .share-backdrop { position: fixed; inset: 0; z-index: 95; display: grid; place-items: center; padding: 16px; background: var(--scrim); }
   .sheet.wide { width: min(100%, 940px); }
   .sh-tabs { display: flex; gap: 4px; padding: 4px; border: var(--border-base) solid var(--fg); border-radius: var(--radius-pill); }
-  .sh-tabs button { padding: 7px 14px; border-radius: var(--radius-pill); font-weight: 700; font-size: .85rem; transition: background .2s, color .2s; }
+  .sh-tabs button { padding: 7px 14px; border-radius: var(--radius-pill); font-weight: 700; font-size: .85rem; transition: background var(--dur-1) var(--ease), color var(--dur-1) var(--ease); }
   .sh-tabs button[aria-selected='true'] { background: var(--fg); color: var(--bg); }
   .sh-more { display: flex; flex-wrap: wrap; gap: 8px; }
   .sh-studio-cta { flex: 1 1 100%; min-height: 48px; border-radius: var(--radius-pill); border: var(--border-base) solid var(--fg); font-weight: 800; background: conic-gradient(from 90deg, var(--a1), var(--a2), var(--a3), var(--a1)); color: var(--ink); transition: transform var(--dur-2) var(--spring); }
@@ -97,20 +97,20 @@
   .sh-native { flex: 1 1 auto; min-height: 44px; border-radius: var(--radius-pill); border: var(--border-base) solid var(--line); font-weight: 700; }
   .sheet { width: min(100%, 460px); max-height: calc(100vh - 32px); overflow: auto; display: grid; gap: 16px; padding: 22px; background: var(--card); color: var(--fg); border: var(--border-base) solid var(--fg); border-radius: var(--radius-card); box-shadow: var(--lift-5) var(--a1); }
   .sh-head { display: flex; justify-content: space-between; align-items: center; }
-  .sh-x { width: 36px; height: 36px; border-radius: 50%; border: var(--border-base) solid var(--fg); transition: transform var(--dur-2) var(--spring), background .2s; }
+  .sh-x { width: 36px; height: 36px; border-radius: 50%; border: var(--border-base) solid var(--fg); transition: transform var(--dur-2) var(--spring), background var(--dur-1) var(--ease); }
   .sh-x:hover { transform: rotate(90deg); background: var(--a2); color: var(--ink); }
-  .sh-preview { position: relative; display: grid; gap: 6px; padding: 18px; border-radius: var(--radius-xl); background: var(--a1); color: var(--ink); border: var(--border-base) solid var(--ink); rotate: -1.2deg; animation: sh-tilt var(--dur-5) var(--spring) .1s both; }
+  .sh-preview { position: relative; display: grid; gap: 6px; padding: 18px; border-radius: var(--radius-xl); background: var(--a1); color: var(--ink); border: var(--border-base) solid var(--ink); rotate: -1.2deg; animation: sh-tilt var(--dur-5) var(--spring) var(--dur-1) both; }
   @keyframes sh-tilt { from { rotate: 4deg; scale: .92; } }
   .sh-kind { justify-self: start; font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; background: var(--ink); color: var(--a1); padding: 2px 10px; border-radius: var(--radius-pill); }
   .sh-preview h2 { font-family: var(--display); font-size: 1.25rem; line-height: 1.1; font-weight: 800; }
   .sh-preview p { font-size: .88rem; line-height: 1.4; opacity: .85; display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
   .sh-url { font-family: var(--mono); font-size: .7rem; opacity: .7; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .sh-copy { min-height: 52px; border-radius: var(--radius-pill); border: var(--border-base) solid var(--fg); background: var(--fg); color: var(--bg); font-weight: 800; font-size: 1rem; box-shadow: var(--lift-3) var(--a2); transition: transform var(--dur-2) var(--spring), background .25s, color .25s, box-shadow .2s; }
+  .sh-copy { min-height: 52px; border-radius: var(--radius-pill); border: var(--border-base) solid var(--fg); background: var(--fg); color: var(--bg); font-weight: 800; font-size: 1rem; box-shadow: var(--lift-3) var(--a2); transition: transform var(--dur-2) var(--spring), background var(--dur-2) var(--ease), color var(--dur-2) var(--ease), box-shadow var(--dur-1) var(--ease); }
   .sh-copy:hover { transform: translateY(-2px); }
   .sh-copy:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--a2); }
   .sh-copy.done { background: var(--a3); color: var(--ink); animation: pop var(--dur-3) var(--spring); }
   .sh-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  .sh-t { display: grid; justify-items: center; gap: 6px; padding: 12px 6px; border-radius: var(--radius-xl); border: var(--border-base) solid var(--line); font-size: .8rem; font-weight: 700; animation: sh-in var(--dur-4) var(--spring) both; animation-delay: calc(var(--i) * 45ms + 120ms); transition: transform var(--dur-2) var(--spring), background .2s, color .2s, border-color .2s; }
+  .sh-t { display: grid; justify-items: center; gap: 6px; padding: 12px 6px; border-radius: var(--radius-xl); border: var(--border-base) solid var(--line); font-size: .8rem; font-weight: 700; animation: sh-in var(--dur-4) var(--spring) both; animation-delay: calc(var(--i) * 45ms + 120ms); transition: transform var(--dur-2) var(--spring), background var(--dur-1) var(--ease), color var(--dur-1) var(--ease), border-color var(--dur-1) var(--ease); }
   @keyframes sh-in { from { opacity: 0; transform: translateY(14px) scale(.9); } }
   .sh-t:hover { transform: translateY(-4px) rotate(-3deg); border-color: var(--fg); background: var(--a3); color: var(--ink); }
   .sh-ico { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--fg); color: var(--bg); transition: transform var(--dur-3) var(--spring); }

@@ -31,7 +31,7 @@ for (const [k, t] of Object.entries<any>(tokens.color)) {
 for (const [k, t] of Object.entries<any>(tokens.derived)) if (isTok(t)) { lines.push(`  --${k}: ${css(t)};`); rows.push({ group: 'derived', name: `--${k}`, value: String(t.$value), desc: t.$description ?? '' }); }
 for (const [g, prefix] of groups) {
   const grp = tokens[g];
-  const name = (k: string) => (g === 'ease' ? (k === 'out' ? '--ease' : '--spring') : g === 'font' && k === 'sans' ? '--sans' : `--${prefix}${k}`);
+  const name = (k: string) => (g === 'ease' ? (k === 'out' ? '--ease' : k === 'spring' ? '--spring' : `--${k}`) : g === 'font' && k === 'sans' ? '--sans' : `--${prefix}${k}`);
   for (const [k, t] of Object.entries<any>(grp)) {
     if (!isTok(t)) continue;
     const v = css(t, t.$type ?? grp.$type);

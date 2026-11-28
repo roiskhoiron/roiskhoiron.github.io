@@ -68,7 +68,8 @@ highlighter `.hl`; links use `.link`.
 
 ## 5. Space and layout
 
-`--space-1 … --space-16` (4 → 64 px) for new components. Max width `--wrap`, side
+`--space-1 … --space-16` (4 → 64 px) for new components; 1–3 px optical nudges may stay
+raw. Spacing is not machine-checked yet, so reviewers check it by eye. Max width `--wrap`, side
 padding `--gutter`. Below 900 px the nav becomes the floating tab bar.
 
 ## 6. Motion
@@ -76,9 +77,14 @@ padding `--gutter`. Below 900 px the nav becomes the floating tab bar.
 | Token | Value | Use |
 |---|---|---|
 | `--spring` | cubic-bezier(0.34, 1.56, 0.64, 1) | anything that moves |
-| `--ease` | cubic-bezier(0.2, 0.8, 0.2, 1) | fades, colour floods, scroll |
+| `--ease` | cubic-bezier(0.2, 0.8, 0.2, 1) | fades, colour changes, colour floods, scroll |
+| `--sway` | cubic-bezier(0.42, 0, 0.58, 1) | ambient loops (drift, wave, pulse) |
 | `--dur-1 … --dur-7` | 200 → 900 ms | colour → long glides |
-| `--dur-loop` | 3 s | ambient attention loops |
+| `--dur-loop-fast` · `--dur-loop` · `--dur-drift` | 1.6 s · 3 s · 28 s | ambient loops |
+
+Every `transition`/`animation` takes its duration from `--dur-*` and its easing from
+`--spring`, `--ease`, `--sway` (or `linear` for constant motion). `design:check` enforces
+this; delays written inside `calc()` (staggers) are allowed.
 
 Named patterns (keyframes in `styles.css`): `pop` (active choice), `rise` (slide
 content), `hop` (tab bar icon), `wave`, `flip-in` (new page of items), `slide-in` /

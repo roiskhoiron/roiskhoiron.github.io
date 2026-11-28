@@ -30,7 +30,7 @@
   const isTok = (x: any) => x && typeof x === 'object' && '$value' in x;
   const show = (v: unknown) => (Array.isArray(v) ? (v.every((x) => typeof x === 'number') ? `cubic-bezier(${v.join(', ')})` : v.join(', ')) : String(v));
   const varName = (group: string, key: string) =>
-    group === 'ease' ? (key === 'out' ? '--ease' : '--spring') : group === 'font' ? `--${key}` : group === 'layout' ? `--${key}` :
+    group === 'ease' ? (key === 'out' ? '--ease' : key === 'spring' ? '--spring' : `--${key}`) : group === 'font' ? `--${key}` : group === 'layout' ? `--${key}` :
     group === 'color' || group === 'derived' ? `--${key}` : `--${{ text: 'text', radius: 'radius', border: 'border', lift: 'lift', space: 'space', duration: 'dur' }[group]}-${key}`;
   const groupRows = (g: string): Row[] => Object.entries<any>((tokens as any)[g]).filter(([, t]) => isTok(t)).map(([k, t]) => ({ name: varName(g, k), value: show(t.$value), desc: t.$description ?? '' }));
   const tables: [string, string, Row[]][] = [
@@ -74,6 +74,8 @@
   ];
   const jump = (id: string) => glideTo(document.getElementById(id));
 
+  // keep in step with the component table in docs/design/DESIGN_SYSTEM.md
+  const components = ['Button', 'Tab / filter', 'Field', 'Tag', 'Stabilo & tautan', 'Kepala section', 'Kartu deck', 'Tile carousel', 'Entri daftar', 'Pintu A/B/C', 'Statistik', 'Stiker', 'Pagination', 'Share', 'Player'];
   const demoItem = { section: 'decks' as const, slug: 'sejarah-apollo-11', title: 'Apollo 11: Alarm 1202 dan Software yang Tidak Panik', text: 'Contoh item untuk tombol share di halaman design system.', tags: ['sejarah'] };
 </script>
 
@@ -85,7 +87,7 @@
     <div><b use:countUp>{PALETTES.length}</b><span class="label">palet</span></div>
     <div><b use:countUp>{tokenCount}</b><span class="label">token</span></div>
     <div><b use:countUp>3</b><span class="label">keluarga font</span></div>
-    <div><b use:countUp>12</b><span class="label">komponen</span></div>
+    <div><b use:countUp>{components.length}</b><span class="label">komponen</span></div>
   </div>
   <div class="row">
     <button class="btn btn-ink" on:click={download}>Unduh tokens.json <span aria-hidden="true">↓</span></button>
@@ -120,7 +122,7 @@
       <div class="section-head"><span class="no">02</span><h2 class="h2">Warna.</h2></div>
       <p class="lead">Ada enam palet. Setiap kunjungan mendapat satu secara acak, dan tombol remix (atau tombol <kbd>C</kbd>) menggantinya. Komponen tidak pernah tahu palet mana yang aktif: ia hanya memakai peran warna.</p>
       <div class="ds-roles">
-        {#each [['--bg', 'Latar halaman'], ['--fg', 'Teks utama, garis tebal'], ['--card', 'Permukaan yang terangkat'], ['--a1', 'Aksen utama, tombol primer'], ['--a2', 'Aksen kedua, lift dekoratif'], ['--a3', 'Aksen ketiga, hover'], ['--ink', 'Teks di atas aksen'], ['--soft', 'Teks sekunder'], ['--line', 'Garis tipis']] as [v, use]}
+        {#each [['--bg', 'Latar halaman'], ['--fg', 'Teks utama, garis tebal'], ['--card', 'Permukaan yang terangkat'], ['--a1', 'Aksen utama, tombol primer'], ['--a2', 'Aksen kedua, lift dekoratif'], ['--a3', 'Aksen ketiga, hover'], ['--ink', 'Teks di atas aksen'], ['--soft', 'Teks sekunder'], ['--line', 'Garis tipis'], ['--scrim', 'Latar di belakang dialog']] as [v, use]}
           <div class="ds-role"><span class="ds-chip" style="background: var({v})"></span><code>{v}</code><span class="small muted">{use}</span></div>
         {/each}
       </div>
@@ -130,7 +132,7 @@
             <header><b>{p.name}</b><button class="tab" on:click={() => use(i)}>Pakai</button></header>
             <div class="ds-sw">
               {#each [['bg', p.bg], ['fg', p.fg], ['card', p.card], ['a1', p.a1], ['a2', p.a2], ['a3', p.a3]] as [k, hex]}
-                <span style="background:{hex}" title="{k} {hex}"><i>{k}</i><i>{hex}</i></span>
+                <span style="background:{hex}" title="{k} {hex}"><i>{k}</i></span>
               {/each}
             </div>
             <table class="ds-contrast">
@@ -160,7 +162,7 @@
         {#each typeScale as [k, sample, note]}
           <div class="ds-type">
             <div class="ds-type-meta"><code>.{k === 'body' ? 'body' : k}</code><span class="mono muted">--text-{k}</span>{#if note}<span class="small muted">{note}</span>{/if}</div>
-            <p class={k === 'body' ? '' : k} style={k === 'display' ? 'font-size: clamp(2rem, 6vw, 4.6rem)' : ''}>{sample}</p>
+            <p class={k === 'body' ? '' : k}>{sample}</p>
           </div>
         {/each}
       </div>
@@ -219,8 +221,8 @@
       </div>
       <p class="label">Pola gerak (klik untuk memutar ulang)</p>
       <div class="ds-motions">
-        {#each [['pop', 'Pilihan aktif'], ['rise', 'Isi slide masuk'], ['hop', 'Ikon tab bar'], ['wave', 'Sapaan'], ['flip-in', 'Item halaman baru'], ['slide-in', 'Slide berikutnya']] as [n, d]}
-          <button class="ds-motion" on:click={replay}><span class="demo-target" data-anim="{n === 'wave' ? 'wave 2.4s ease-in-out' : n + ' var(--dur-5) var(--spring)'} both" style="animation: {n === 'wave' ? 'wave 2.4s ease-in-out' : n + ' var(--dur-5) var(--spring)'} both">●</span><code>{n}</code><span class="small muted">{d}</span></button>
+        {#each [['pop', 'Pilihan aktif'], ['rise', 'Isi slide masuk'], ['hop', 'Ikon tab bar'], ['wave', 'Sapaan'], ['flip-in', 'Item halaman baru'], ['slide-in', 'Slide berikutnya'], ['slide-back', 'Slide sebelumnya'], ['view-in', 'Pindah halaman']] as [n, d]}
+          <button class="ds-motion" on:click={replay}><span class="demo-target" data-anim="{n === 'wave' ? 'wave var(--dur-loop) var(--sway)' : n + ' var(--dur-5) var(--spring)'} both" style="animation: {n === 'wave' ? 'wave var(--dur-loop) var(--sway)' : n + ' var(--dur-5) var(--spring)'} both">●</span><code>{n}</code><span class="small muted">{d}</span></button>
         {/each}
         <button class="ds-motion" on:click={(e) => confetti(e.clientX, e.clientY)}><span>✦</span><code>confetti</code><span class="small muted">Selesai deck atau salin link</span></button>
         <button class="ds-motion" on:click={(e) => remix(e.clientX, e.clientY)}><span>◐</span><code>remix</code><span class="small muted">Banjir warna dari titik klik</span></button>
@@ -235,6 +237,7 @@
     <section id="komponen" class="ds-sec">
       <div class="section-head"><span class="no">07</span><h2 class="h2">Komponen.</h2></div>
       <p class="lead">Semua contoh di bawah adalah komponen asli, bukan gambar. Arahkan kursor dan klik untuk melihat micro-interaction-nya.</p>
+      <div class="ds-index">{#each components as c}<span class="tag">{c}</span>{/each}</div>
 
       <div class="ds-comp">
         <header><h3 class="h3">Button</h3><code>.btn .btn-ink | .btn-line</code></header>
@@ -249,7 +252,7 @@
       </div>
 
       <div class="ds-comp">
-        <header><h3 class="h3">Field</h3><code>label.field &gt; input</code></header>
+        <header><h3 class="h3">Field</h3><code>label.field &gt; svg + input</code></header>
         <div class="ds-demo"><label class="field"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-width="2" d="M21 21l-4.3-4.3M10.5 18a7.5 7.5 0 100-15 7.5 7.5 0 000 15z" /></svg><input type="search" placeholder="Fokus untuk melihat efeknya…" aria-label="Contoh field" /></label></div>
         <p class="small muted">Saat fokus: lift aksen dan ikon berputar. Placeholder memberi contoh kata kunci, bukan instruksi.</p>
       </div>
@@ -297,7 +300,7 @@
 
       <div class="ds-comp">
         <header><h3 class="h3">Pagination</h3><code>&lt;Pager&gt;</code></header>
-        <div class="ds-demo"><Pager base="designsystem" page={2} pages={9} total={100} size={12} /></div>
+        <div class="ds-demo"><Pager base="designsystem" page={2} pages={9} total={100} size={12} demo /></div>
         <p class="small muted">Nomor halaman ada di URL. Indikator meluncur ke nomor aktif, dan klik meluncur halus ke atas daftar.</p>
       </div>
 
@@ -331,6 +334,7 @@
     <section id="token" class="ds-sec">
       <div class="section-head"><span class="no">09</span><h2 class="h2">Referensi token.</h2></div>
       <p class="lead">Klik nama variabel untuk menyalin <code>var(--…)</code>. Sumbernya <code>src/design/tokens.json</code> (format W3C Design Tokens); jalankan <code>bun run tokens</code> setelah mengubahnya.</p>
+      <p class="ds-live" aria-live="polite">{copied ? `var(${copied}) tersalin` : ''}</p>
       {#each tables as [id, title, rows]}
         <details class="ds-table" open={id === 'color' || id === 'radius' || id === 'duration'}>
           <summary><b>{title}</b><span class="mono muted">{rows.length}</span></summary>
@@ -339,7 +343,7 @@
             <tbody>
               {#each rows as r}
                 <tr>
-                  <td><button class="ds-var" on:click={() => copyVar(r.name)}>{copied === r.name ? 'tersalin ✓' : r.name}</button></td>
+                  <td><button class="ds-var" on:click={() => copyVar(r.name)} aria-label="Salin var({r.name})">{copied === r.name ? 'tersalin ✓' : r.name}</button></td>
                   <td class="mono">{#if id === 'color'}<span class="ds-dot" style="background:{r.value}"></span>{/if}{r.value}</td>
                   <td class="small muted">{r.desc}</td>
                 </tr>
@@ -373,107 +377,109 @@
 </div>
 
 <style>
-  .ds-hero { margin-bottom: 40px; }
-  .ds-stats { display: flex; flex-wrap: wrap; gap: 10px; }
-  .ds-stats div { display: grid; padding: 12px 18px; border: var(--border-base) solid var(--fg); border-radius: var(--radius-xl); background: var(--card); min-width: 110px; }
+  .ds-hero { margin-bottom: var(--space-10); }
+  .ds-index { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+  .ds-live { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .ds-stats { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+  .ds-stats div { display: grid; padding: var(--space-3) var(--space-5); border: var(--border-base) solid var(--fg); border-radius: var(--radius-xl); background: var(--card); min-width: 110px; }
   .ds-stats b { font-family: var(--display); font-size: 2rem; line-height: 1; font-weight: 900; }
-  .ds { display: grid; gap: 40px; }
+  .ds { display: grid; gap: var(--space-10); }
   @media (min-width: 1000px) { .ds { grid-template-columns: 200px minmax(0, 1fr); } }
   .ds-toc { display: none; }
   @media (min-width: 1000px) {
-    .ds-toc { display: grid; gap: 2px; align-content: start; align-self: start; position: sticky; top: 100px; padding: 14px; border: var(--border-base) solid var(--fg); border-radius: var(--radius-card); background: var(--card); }
+    .ds-toc { display: grid; gap: 2px; align-content: start; align-self: start; position: sticky; top: calc(var(--space-16) + var(--space-8)); padding: var(--space-4); border: var(--border-base) solid var(--fg); border-radius: var(--radius-card); background: var(--card); }
   }
-  .ds-toc a { display: flex; gap: 10px; padding: 6px 8px; border-radius: var(--radius-md); font-size: 0.9rem; font-weight: 600; transition: background var(--dur-1), color var(--dur-1), translate var(--dur-2) var(--spring); }
+  .ds-toc a { display: flex; gap: var(--space-3); padding: var(--space-2) var(--space-2); border-radius: var(--radius-md); font-size: 0.9rem; font-weight: 600; transition: background var(--dur-1) var(--ease), color var(--dur-1) var(--ease), translate var(--dur-2) var(--spring); }
   .ds-toc a:hover { background: var(--a1); color: var(--ink); translate: 4px 0; }
-  .ds-toc .mono { opacity: 0.6; }
+  .ds-toc .mono { color: var(--soft); }
   .ds-main { display: grid; gap: clamp(56px, 8vw, 96px); min-width: 0; }
-  .ds-sec { display: grid; gap: 20px; min-width: 0; scroll-margin-top: 100px; }
-  .ds-sec code, .ds-comp code, .ds-rules code { font-family: var(--mono); font-size: 0.82em; padding: 1px 6px; border-radius: var(--radius-sm); border: var(--border-hair) solid var(--line); }
-  .ds-rules { display: grid; gap: 8px; padding: 16px 18px; border: var(--border-base) dashed var(--fg); border-radius: var(--radius-card); }
+  .ds-sec { display: grid; gap: var(--space-5); min-width: 0; scroll-margin-top: calc(var(--space-16) + var(--space-8)); }
+  .ds-sec code, .ds-comp code, .ds-rules code { font-family: var(--mono); font-size: 0.82em; padding: 1px var(--space-2); border-radius: var(--radius-sm); border: var(--border-hair) solid var(--line); }
+  .ds-rules { display: grid; gap: var(--space-2); padding: var(--space-4) var(--space-5); border: var(--border-base) dashed var(--fg); border-radius: var(--radius-card); }
 
-  .ds-roles { display: grid; gap: 8px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); }
-  .ds-role { display: grid; grid-template-columns: 34px auto 1fr; align-items: center; gap: 10px; }
+  .ds-roles { display: grid; gap: var(--space-2); grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); }
+  .ds-role { display: grid; grid-template-columns: 34px auto 1fr; align-items: center; gap: var(--space-3); }
   .ds-chip { width: 34px; height: 34px; border-radius: 50%; border: var(--border-base) solid var(--fg); }
-  .ds-palettes { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
-  .ds-pal { display: grid; gap: 12px; padding: 14px; border-radius: var(--radius-card); background: var(--pbg); color: var(--pfg); border: var(--border-base) solid var(--fg); transition: rotate var(--dur-4) var(--spring); }
+  .ds-palettes { display: grid; gap: var(--space-5); grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+  .ds-pal { display: grid; gap: var(--space-3); padding: var(--space-4); border-radius: var(--radius-card); background: var(--pbg); color: var(--pfg); border: var(--border-base) solid var(--fg); transition: rotate var(--dur-4) var(--spring); }
   .ds-pal:hover { rotate: -1deg; }
   .ds-pal header { display: flex; justify-content: space-between; align-items: center; font-family: var(--display); font-size: 1.15rem; }
-  .ds-pal .tab { color: var(--pfg); border-color: color-mix(in srgb, var(--pfg) 40%, transparent); }
+  .ds-pal .tab { min-height: 40px; color: var(--pfg); border-color: color-mix(in srgb, var(--pfg) 40%, transparent); }
   .ds-sw { display: grid; grid-template-columns: repeat(6, 1fr); border-radius: var(--radius-lg); overflow: hidden; border: var(--border-base) solid var(--pfg); }
-  .ds-sw span { display: grid; align-content: end; height: 78px; padding: 4px; font-size: 0.55rem; font-family: var(--mono); color: var(--ink); }
+  .ds-sw span { display: grid; align-content: end; height: 78px; padding: var(--space-1); font-size: var(--text-label); font-weight: 700; color: var(--ink); }
   .ds-sw span:nth-child(-n + 3) { color: var(--pfg); }
   .ds-sw span:nth-child(2) { color: var(--pbg); }
   .ds-sw i { font-style: normal; overflow: hidden; text-overflow: ellipsis; }
   .ds-contrast { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
-  .ds-contrast td { padding: 4px 2px; border-top: 1px solid color-mix(in srgb, var(--pfg) 20%, transparent); }
+  .ds-contrast td { padding: var(--space-1) 2px; border-top: var(--border-hair) solid color-mix(in srgb, var(--pfg) 20%, transparent); }
   .ds-contrast td:last-child { text-align: right; }
-  .ds-grade { display: inline-block; padding: 1px 8px; border-radius: var(--radius-pill); background: var(--p3); color: var(--ink); font-weight: 800; font-size: 0.72rem; }
+  .ds-grade { display: inline-block; padding: 1px var(--space-2); border-radius: var(--radius-pill); background: var(--p3); color: var(--ink); font-weight: 800; font-size: var(--text-label); }
   .ds-grade.fail { background: var(--p2); }
 
-  .ds-fonts { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); }
-  .ds-font { display: grid; gap: 8px; align-content: start; padding: 18px; border: var(--border-base) solid var(--line); border-radius: var(--radius-card); }
+  .ds-fonts { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); }
+  .ds-font { display: grid; gap: var(--space-2); align-content: start; padding: var(--space-5); border: var(--border-base) solid var(--line); border-radius: var(--radius-card); }
   .ds-font input { width: 100%; accent-color: var(--a1); }
   .ds-anybody { font-family: var(--display); font-weight: 800; font-size: 3rem; line-height: 1; transition: font-stretch var(--dur-2) var(--ease); }
   .ds-onest { font-family: var(--sans); font-weight: 700; font-size: 3rem; line-height: 1; }
   .ds-jet { font-family: var(--mono); font-weight: 700; font-size: 1.9rem; line-height: 1.3; }
   .ds-scale { display: grid; border-top: var(--border-base) solid var(--fg); }
-  .ds-type { display: grid; gap: 6px 24px; padding: 18px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+  .ds-type { display: grid; gap: var(--space-2) var(--space-6); padding: var(--space-5) 0; border-bottom: var(--border-hair) solid var(--line); min-width: 0; }
   @media (min-width: 760px) { .ds-type { grid-template-columns: 200px minmax(0, 1fr); align-items: baseline; } }
-  .ds-type-meta { display: grid; gap: 4px; justify-items: start; }
+  .ds-type-meta { display: grid; gap: var(--space-1); justify-items: start; }
   .ds-type p { min-width: 0; overflow-wrap: anywhere; }
 
-  .ds-boxes { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
-  .ds-box { display: grid; gap: 6px; justify-items: start; }
+  .ds-boxes { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+  .ds-box { display: grid; gap: var(--space-2); justify-items: start; }
   .ds-box > span:first-child { width: 84px; height: 64px; background: var(--a1); border: var(--border-base) solid var(--ink); }
-  .ds-box .ds-lift { border-radius: var(--radius-lg); background: var(--card) !important; border-color: var(--fg) !important; }
-  .ds-space { display: grid; gap: 6px; }
-  .ds-space div { display: grid; grid-template-columns: 110px 1fr 60px; align-items: center; gap: 12px; }
+  .ds-box > span.ds-lift { border-radius: var(--radius-lg); background: var(--card); border-color: var(--fg); }
+  .ds-space { display: grid; gap: var(--space-2); }
+  .ds-space div { display: grid; grid-template-columns: 110px 1fr 60px; align-items: center; gap: var(--space-3); }
   .ds-space i { display: block; height: 14px; border-radius: var(--radius-pill); background: linear-gradient(90deg, var(--a1), var(--a2)); border: var(--border-hair) solid var(--ink); }
 
-  .ds-curves { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); align-items: start; }
-  .ds-curve { display: grid; gap: 6px; padding: 14px; border: var(--border-base) solid var(--line); border-radius: var(--radius-card); }
+  .ds-curves { display: grid; gap: var(--space-5); grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); align-items: start; }
+  .ds-curve { display: grid; gap: var(--space-2); padding: var(--space-4); border: var(--border-base) solid var(--line); border-radius: var(--radius-card); }
   .ds-curve svg { width: 100%; height: 150px; overflow: visible; }
   .ds-guide { stroke: var(--line); stroke-width: 1.5; fill: none; stroke-dasharray: 4 4; }
   .ds-bez { stroke: var(--a1); stroke-width: 5; fill: none; stroke-linecap: round; }
-  .ds-race { display: grid; gap: 10px; align-content: start; grid-column: 1 / -1; }
-  .ds-track { position: relative; height: 40px; border-radius: var(--radius-pill); border: var(--border-base) solid var(--line); }
-  .ds-track i { position: absolute; top: 3px; left: 3px; display: grid; place-items: center; height: 30px; padding: 0 12px; border-radius: var(--radius-pill); background: var(--a1); color: var(--ink); font-style: normal; font-weight: 800; font-size: 0.75rem; transition: left var(--dur-7) var(--spring); }
-  .ds-track i.out { background: var(--a3); transition: left var(--dur-7) var(--ease); }
-  .ds-track i.go { left: calc(100% - 90px); }
-  .ds-durs { display: grid; gap: 6px; }
-  .ds-durs div { display: grid; grid-template-columns: 100px 70px 1fr; gap: 12px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--line); }
-  .ds-motions { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
-  .ds-motion { display: grid; justify-items: center; gap: 6px; padding: 16px 10px; border: var(--border-base) solid var(--line); border-radius: var(--radius-xl); transition: border-color var(--dur-1), translate var(--dur-2) var(--spring); }
+  .ds-race { display: grid; gap: var(--space-3); align-content: start; grid-column: 1 / -1; }
+  .ds-track { position: relative; height: 40px; container-type: inline-size; border-radius: var(--radius-pill); border: var(--border-base) solid var(--line); }
+  .ds-track i { position: absolute; top: 3px; left: 3px; display: grid; place-items: center; height: 30px; padding: 0 var(--space-3); border-radius: var(--radius-pill); background: var(--a1); color: var(--ink); font-style: normal; font-weight: 800; font-size: 0.75rem; transition: translate var(--dur-7) var(--spring); }
+  .ds-track i.out { background: var(--a3); transition: translate var(--dur-7) var(--ease); }
+  .ds-track i.go { translate: calc(100cqi - 100% - 6px) 0; }
+  .ds-durs { display: grid; gap: var(--space-2); }
+  .ds-durs div { display: grid; grid-template-columns: 100px 70px 1fr; gap: var(--space-3); align-items: baseline; padding: var(--space-2) 0; border-bottom: var(--border-hair) solid var(--line); }
+  .ds-motions { display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .ds-motion { display: grid; justify-items: center; gap: var(--space-2); padding: var(--space-4) var(--space-3); border: var(--border-base) solid var(--line); border-radius: var(--radius-xl); transition: border-color var(--dur-1) var(--ease), translate var(--dur-2) var(--spring); }
   .ds-motion:hover { border-color: var(--fg); translate: 0 -3px; }
   .ds-motion > span:first-child { font-size: 1.8rem; color: var(--a1); -webkit-text-stroke: 1px var(--fg); display: inline-block; }
 
-  .ds-comp { display: grid; gap: 12px; padding: 20px; border: var(--border-base) solid var(--fg); border-radius: var(--radius-card); background: var(--card); min-width: 0; }
-  .ds-comp header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; }
-  .ds-demo { padding: 18px; border-radius: var(--radius-xl); background: var(--bg); border: var(--border-hair) dashed var(--line); min-width: 0; }
-  .ds-grid2 { display: grid; gap: 22px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); }
+  .ds-comp { display: grid; gap: var(--space-3); padding: var(--space-5); border: var(--border-base) solid var(--fg); border-radius: var(--radius-card); background: var(--card); min-width: 0; }
+  .ds-comp header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-2); }
+  .ds-demo { padding: var(--space-5); border-radius: var(--radius-xl); background: var(--bg); border: var(--border-hair) dashed var(--line); min-width: 0; }
+  .ds-grid2 { display: grid; gap: var(--space-6); grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); }
   .ds-stickers { position: relative; height: 180px; overflow: hidden; }
 
-  .ds-check { display: grid; gap: 8px; }
+  .ds-check { display: grid; gap: var(--space-2); }
   .ds-check li { position: relative; padding-left: 30px; }
   .ds-check li::before { content: '✓'; position: absolute; left: 0; top: 0; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--a3); color: var(--ink); font-weight: 900; font-size: 0.75rem; }
 
   .ds-table { border: var(--border-base) solid var(--fg); border-radius: var(--radius-xl); overflow: hidden; background: var(--card); }
-  .ds-table summary { display: flex; justify-content: space-between; padding: 12px 16px; cursor: pointer; font-family: var(--display); }
+  .ds-table summary { display: flex; justify-content: space-between; padding: var(--space-3) var(--space-4); cursor: pointer; font-family: var(--display); }
   .ds-table table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
-  .ds-table th { text-align: left; padding: 8px 16px; font-size: var(--text-label); letter-spacing: 0.08em; text-transform: uppercase; color: var(--soft); border-top: 1px solid var(--line); }
-  .ds-table td { padding: 8px 16px; border-top: 1px solid var(--line); vertical-align: top; overflow-wrap: anywhere; }
-  .ds-var { font-family: var(--mono); font-size: 0.8rem; font-weight: 700; padding: 2px 8px; border-radius: var(--radius-pill); border: var(--border-hair) solid var(--line); white-space: nowrap; transition: background var(--dur-1), color var(--dur-1); }
+  .ds-table th { text-align: left; padding: var(--space-2) var(--space-4); font-size: var(--text-label); letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); border-top: var(--border-hair) solid var(--line); }
+  .ds-table td { padding: var(--space-2) var(--space-4); border-top: var(--border-hair) solid var(--line); vertical-align: top; overflow-wrap: anywhere; }
+  .ds-var { min-height: 40px; font-family: var(--mono); font-size: 0.8rem; font-weight: 700; padding: 0 var(--space-3); border-radius: var(--radius-pill); border: var(--border-hair) solid var(--line); white-space: nowrap; transition: background var(--dur-1) var(--ease), color var(--dur-1) var(--ease); }
   .ds-var:hover { background: var(--a1); color: var(--ink); }
-  .ds-dot { display: inline-block; width: 14px; height: 14px; margin-right: 8px; border-radius: 50%; vertical-align: -2px; border: 1px solid var(--line); }
+  .ds-dot { display: inline-block; width: 14px; height: 14px; margin-right: var(--space-2); border-radius: 50%; vertical-align: -2px; border: var(--border-hair) solid var(--line); }
   @media (max-width: 620px) { .ds-table th:nth-child(3), .ds-table td:nth-child(3) { display: none; } }
 
-  .ds-flow { display: grid; gap: 10px; counter-reset: f; }
-  .ds-flow li { counter-increment: f; display: grid; grid-template-columns: 44px 1fr; gap: 2px 12px; padding: 14px; border: var(--border-base) solid var(--line); border-radius: var(--radius-card); transition: border-color var(--dur-1), translate var(--dur-2) var(--spring); }
+  .ds-flow { display: grid; gap: var(--space-3); counter-reset: f; }
+  .ds-flow li { counter-increment: f; display: grid; grid-template-columns: 44px 1fr; gap: 2px var(--space-3); padding: var(--space-4); border: var(--border-base) solid var(--line); border-radius: var(--radius-card); transition: border-color var(--dur-1) var(--ease), translate var(--dur-2) var(--spring); }
   .ds-flow li:hover { border-color: var(--fg); translate: 6px 0; }
   .ds-flow li::before { content: counter(f); grid-row: span 2; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--a1); color: var(--ink); font-family: var(--display); font-weight: 900; }
-  .ds-flow li span { color: var(--soft); font-size: 0.92rem; }
-  .ds-files { display: grid; gap: 8px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
-  .ds-file { display: grid; gap: 4px; padding: 12px 14px; border: var(--border-base) solid var(--line); border-radius: var(--radius-xl); transition: border-color var(--dur-1), background var(--dur-1), color var(--dur-1); }
+  .ds-flow li span { color: var(--soft); font-size: var(--text-small); }
+  .ds-files { display: grid; gap: var(--space-2); grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+  .ds-file { display: grid; gap: var(--space-1); padding: var(--space-3) var(--space-4); border: var(--border-base) solid var(--line); border-radius: var(--radius-xl); transition: border-color var(--dur-1) var(--ease), background var(--dur-1) var(--ease), color var(--dur-1) var(--ease); }
   .ds-file:hover { border-color: var(--fg); background: var(--a3); color: var(--ink); }
   .ds-file:hover span { color: var(--ink); }
 </style>

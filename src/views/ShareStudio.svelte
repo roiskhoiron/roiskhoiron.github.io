@@ -152,7 +152,7 @@
 <style>
   .studio { display: grid; gap: 16px; }
   .st-platforms { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding: 2px; }
-  .st-chip { white-space: nowrap; padding: 9px 16px; border-radius: var(--radius-pill); border: var(--border-base) solid var(--line); font-weight: 700; font-size: .85rem; transition: transform var(--dur-2) var(--spring), background .2s, color .2s, border-color .2s; }
+  .st-chip { white-space: nowrap; padding: 9px 16px; border-radius: var(--radius-pill); border: var(--border-base) solid var(--line); font-weight: 700; font-size: .85rem; transition: transform var(--dur-2) var(--spring), background var(--dur-1) var(--ease), color var(--dur-1) var(--ease), border-color var(--dur-1) var(--ease); }
   .st-chip:hover { transform: translateY(-2px) rotate(-2deg); border-color: var(--fg); }
   .st-chip[aria-selected='true'] { background: var(--fg); color: var(--bg); border-color: var(--fg); animation: pop var(--dur-3) var(--spring); }
   .st-body { display: grid; gap: 20px; align-items: start; }
@@ -162,7 +162,7 @@
   .st-remix:hover { transform: rotate(-3deg) scale(1.04); }
   .st-remix:active svg { transform: rotate(360deg); transition: transform var(--dur-4) var(--spring); }
   .loading { position: relative; }
-  .loading::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 30%, var(--glare) 50%, transparent 70%) 0 0 / 200% 100%; animation: shine 1s linear infinite; border-radius: inherit; }
+  .loading::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 30%, var(--glare) 50%, transparent 70%) 0 0 / 200% 100%; animation: shine var(--dur-loop-fast) linear infinite; border-radius: inherit; }
   @keyframes shine { to { background-position: -200% 0; } }
 
   /* design-exception:start mock-ups imitate other platforms' own colours and system fonts */
@@ -206,10 +206,10 @@
   .st-count { justify-self: end; font-size: .74rem; font-weight: 700; color: var(--soft); }
   .st-count.over { color: var(--ink); background: var(--a2); padding: 1px 8px; border-radius: var(--radius-pill); }
   .st-actions { display: flex; flex-wrap: wrap; gap: 8px; }
-  .st-go { flex: 1 1 100%; min-height: 50px; border-radius: var(--radius-pill); border: var(--border-base) solid var(--fg); background: var(--fg); color: var(--bg); font-weight: 800; box-shadow: var(--lift-2) var(--a2); transition: transform var(--dur-2) var(--spring), box-shadow .2s; }
+  .st-go { flex: 1 1 100%; min-height: 50px; border-radius: var(--radius-pill); border: var(--border-base) solid var(--fg); background: var(--fg); color: var(--bg); font-weight: 800; box-shadow: var(--lift-2) var(--a2); transition: transform var(--dur-2) var(--spring), box-shadow var(--dur-1) var(--ease); }
   .st-go:hover:not(:disabled) { transform: translateY(-2px); }
   .st-go:active:not(:disabled) { transform: translate(4px, 4px); box-shadow: none; }
-  .st-alt { flex: 1 1 auto; min-height: 44px; padding: 0 16px; border-radius: var(--radius-pill); border: var(--border-base) solid var(--fg); font-weight: 700; font-size: .85rem; transition: background .2s, color .2s, transform var(--dur-2) var(--spring); }
+  .st-alt { flex: 1 1 auto; min-height: 44px; padding: 0 16px; border-radius: var(--radius-pill); border: var(--border-base) solid var(--fg); font-weight: 700; font-size: .85rem; transition: background var(--dur-1) var(--ease), color var(--dur-1) var(--ease), transform var(--dur-2) var(--spring); }
   .st-alt:hover:not(:disabled) { background: var(--a3); color: var(--ink); transform: translateY(-2px); }
   .st-go:disabled, .st-alt:disabled { opacity: .45; cursor: default; }
   .st-steps { display: grid; gap: 8px; padding-left: 20px; list-style: decimal; font-size: .9rem; }

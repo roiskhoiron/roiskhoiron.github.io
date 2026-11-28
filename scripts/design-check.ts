@@ -48,7 +48,13 @@ for (const file of files) {
       if (!v.split(/\s+/).every((x) => RADII.has(x) || /^var\(--radius-[\w-]+\)$/.test(x))) warnings.push(`${at}  radius "${v}" is off the scale (radius-xs…pill)`);
     }
     for (const m of code.matchAll(/box-shadow:\s*(\d+px \d+px 0)/g)) warnings.push(`${at}  shadow "${m[1]}" is not a lift token`);
-    for (const m of code.matchAll(/(?<![\w.-])(\d*\.?\d+m?s) var\(--(spring|ease)\)/g)) warnings.push(`${at}  duration "${m[1]}" is not a dur token`);
+    // durations and easings in animation/transition shorthands must come from tokens
+    // (delays inside calc(), e.g. staggers, are allowed)
+    for (const m of code.matchAll(/(?:^|[;{\s])(?:animation|transition):\s*([^;}]+)/g)) {
+      const decl = m[1].replace(/var\([^()]*\)/g, '').replace(/calc\([^)]*\)/g, '');
+      for (const t of decl.matchAll(/(?<![\w.(-])(\d*\.?\d+m?s)\b/g)) warnings.push(`${at}  duration "${t[1]}" is not a --dur-* token`);
+      for (const k of decl.matchAll(/(?<![\w-])(ease-in-out|ease-in|ease-out|ease)(?![\w-])/g)) warnings.push(`${at}  easing keyword "${k[1]}" — use var(--spring), var(--ease) or var(--sway)`);
+    }
   });
 }
 

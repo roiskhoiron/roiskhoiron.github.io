@@ -10,6 +10,7 @@
   export let total = 0;
   export let size = 12;
   export let anchor: HTMLElement | null = null; // top of the list to glide back to
+  export let demo = false; // documentation: flip pages locally, leave the URL alone
 
   const href = (n: number) => '#' + base + (n > 1 ? '/page-' + n : '');
 
@@ -28,6 +29,7 @@
   function open(n: number, e?: Event) {
     e?.preventDefault();
     if (n < 1 || n > pages || n === page) return;
+    if (demo) { page = n; return; }
     location.hash = href(n);
     glideTo(anchor);
   }
@@ -73,7 +75,7 @@
 <style>
   .pager-nav { display: grid; gap: 14px; justify-items: center; margin-top: clamp(36px, 6vw, 56px); }
   .pager-row { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
-  .pg-step { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 18px; border: var(--border-base) solid var(--fg); border-radius: var(--radius-pill); background: var(--card); font-weight: 700; box-shadow: var(--lift-2) var(--fg); translate: var(--mx, 0) var(--my, 0); transition: translate var(--dur-3) var(--spring), background .2s, color .2s, box-shadow .2s, opacity .2s; }
+  .pg-step { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 18px; border: var(--border-base) solid var(--fg); border-radius: var(--radius-pill); background: var(--card); font-weight: 700; box-shadow: var(--lift-2) var(--fg); translate: var(--mx, 0) var(--my, 0); transition: translate var(--dur-3) var(--spring), background var(--dur-1) var(--ease), color var(--dur-1) var(--ease), box-shadow var(--dur-1) var(--ease), opacity var(--dur-1) var(--ease); }
   .pg-step:hover { background: var(--a1); color: var(--ink); }
   .pg-step:active { box-shadow: 0 0 0 var(--fg); transform: translate(4px, 4px); }
   .pg-step span[aria-hidden] { display: inline-block; transition: transform var(--dur-2) var(--spring); }
@@ -81,9 +83,9 @@
   .pg-step:first-child { --nudge: -4px; }
   .pg-step[aria-disabled='true'] { opacity: .3; pointer-events: none; box-shadow: none; }
   .pg-track { position: relative; display: flex; align-items: center; gap: 4px; padding: 5px; border: var(--border-base) solid var(--fg); border-radius: var(--radius-pill); background: var(--card); }
-  .pg-blob { position: absolute; left: 0; top: 5px; bottom: 5px; border-radius: var(--radius-pill); background: var(--a1); border: var(--border-base) solid var(--ink); opacity: 0; transition: transform var(--dur-4) var(--spring), width var(--dur-4) var(--spring), opacity .2s; }
+  .pg-blob { position: absolute; left: 0; top: 5px; bottom: 5px; border-radius: var(--radius-pill); background: var(--a1); border: var(--border-base) solid var(--ink); opacity: 0; transition: transform var(--dur-4) var(--spring), width var(--dur-4) var(--spring), opacity var(--dur-1) var(--ease); }
   .pg-blob.ready { opacity: 1; }
-  .pg-num { position: relative; z-index: 1; display: grid; place-items: center; min-width: 40px; height: 40px; padding: 0 6px; border-radius: var(--radius-pill); font-weight: 800; font-variant-numeric: tabular-nums; transition: transform var(--dur-2) var(--spring), color .2s; }
+  .pg-num { position: relative; z-index: 1; display: grid; place-items: center; min-width: 40px; height: 40px; padding: 0 6px; border-radius: var(--radius-pill); font-weight: 800; font-variant-numeric: tabular-nums; transition: transform var(--dur-2) var(--spring), color var(--dur-1) var(--ease); }
   .pg-num:hover:not([aria-current]) { transform: translateY(-3px) rotate(-6deg); }
   .pg-num[aria-current='page'] { color: var(--ink); }
   .pg-gap { min-width: 22px; text-align: center; color: var(--soft); font-weight: 800; }

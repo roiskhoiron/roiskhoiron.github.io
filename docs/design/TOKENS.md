@@ -119,6 +119,7 @@ Runtime variables set by the active palette: `--bg --fg --card --a1 --a2 --a3`. 
 |---|---|---|
 | `--spring` | `cubic-bezier(0.34, 1.56, 0.64, 1)` | The signature overshoot. Default for anything that moves. |
 | `--ease` | `cubic-bezier(0.2, 0.8, 0.2, 1)` | Fades, colour floods, scroll-linked motion. |
+| `--sway` | `cubic-bezier(0.42, 0, 0.58, 1)` | Symmetric ease-in-out for ambient loops (drift, wave, pulse). |
 
 ## duration
 
@@ -132,3 +133,5 @@ Runtime variables set by the active palette: `--bg --fg --card --a1 --a2 --a3`. 
 | `--dur-6` | `700ms` | Big playful moves (stickers, A/B/C letters). |
 | `--dur-7` | `900ms` | Long glides (pager scroll, colour flood). |
 | `--dur-loop` | `3s` | Ambient attention loops (resume nudge). |
+| `--dur-loop-fast` | `1.6s` | Fast ambient loops (live badge pulse, loading shimmer). |
+| `--dur-drift` | `28s` | Very slow ambient motion (background blobs, marquee). Multiply for desync. |
