@@ -143,7 +143,7 @@ export function arm() {
     }
   }, { rootMargin: '0px 0px -6% 0px' });
   document.querySelectorAll<HTMLElement>(REVEAL).forEach((el, i) => {
-    if (el.classList.contains('rv')) return;
+    if (el.classList.contains('rv') || el.closest('.page-flip')) return; // paged lists animate on their own
     el.classList.add('rv', ['rv-up', 'rv-left', 'rv-pop', 'rv-tilt'][i % 4]);
     io!.observe(el);
   });

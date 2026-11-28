@@ -1,22 +1,23 @@
 <script lang="ts">
   import Library from './Library.svelte';
-  import { postsData, postsSlides } from '../lib/data';
+  import { allPosts } from '../lib/content';
   import { fmtDate } from '../lib/feed';
+  import type { Post } from '../lib/data';
 
-  const all = postsData.filter((p) => postsSlides[p.slug]).sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
-  const filters = [...new Set(all.map((p) => p.tag))];
+  const filters = [...new Set(allPosts.map((p) => p.tag))];
   let filter = 'all', query = '';
   $: q = query.trim().toLowerCase();
-  $: list = all.filter((p) => (filter === 'all' || p.tag === filter) && (!q || (p.title + p.desc + p.tag).toLowerCase().includes(q)));
+  $: list = allPosts.filter((p) => (filter === 'all' || p.tag === filter) && (!q || (p.title + p.desc + p.tag).toLowerCase().includes(q)));
+  const asPosts = (x: unknown) => x as Post[];
 </script>
 
-<Library label="Posts" title="Swipeable carousels." noun="carousels" count={list.length} {filters} bind:filter bind:query
+<Library base="posts" label="Posts" title="Swipeable carousels." noun="carousels" items={list} size={12} {filters} bind:filter bind:query let:shown
   intro="Short lessons in a 4:5 frame, the way they go out on Instagram. Tap a cover and swipe through."
-  placeholder="Search carousels: kotlin, typescript, cli…">
+  placeholder="Search carousels: git, sql, ai…">
   <div class="tiles">
-    {#each list as p (p.slug)}
+    {#each asPosts(shown) as p (p.slug)}
       <article class="tile" data-cursor="swipe">
-        <p class="label">#{p.tag} · {postsSlides[p.slug].length} cards</p>
+        <p class="label">#{p.tag}</p>
         <h3><a href="#posts/{p.slug}"><span>{p.title}</span></a></h3>
         <p>{p.desc}</p>
         <div class="foot label"><span>{fmtDate(p.date)}</span><span>Swipe →</span></div>

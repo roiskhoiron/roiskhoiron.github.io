@@ -1,13 +1,18 @@
 <script lang="ts">
-  import { blogData, blogFull } from '../lib/data';
+  import { allNotes, loadNote } from '../lib/content';
+  import { listHash } from '../lib/router';
+  import type { Full } from '../lib/blog-html';
   import { fmtDate } from '../lib/feed';
   import { saveResume } from '../lib/resume';
   export let slug: string;
 
-  const sorted = [...blogData].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+  const sorted = allNotes;
   $: i = sorted.findIndex((b) => b.slug === slug);
   $: post = sorted[i];
-  $: full = blogFull[slug];
+  // bodies of pack notes arrive on demand
+  let full: Full | undefined;
+  let ready = false;
+  $: { const want = slug; ready = false; loadNote(want).then((f) => { if (want === slug) { full = f; ready = true; } }); }
   $: newer = sorted[i - 1];
   $: older = sorted[i + 1];
   $: if (post) saveResume({ kind: 'blog', slug, title: post.title, idx: 0, total: 1 });
@@ -15,7 +20,7 @@
 </script>
 
 {#if post}
-  <p style="margin-bottom:24px"><a class="link mono" href="#blog">← All notes</a></p>
+  <p style="margin-bottom:24px"><a class="link mono" href="#{listHash('blog')}">← All notes</a></p>
   <div class="article">
     <article>
       <header class="page-head">
@@ -25,7 +30,9 @@
         <div class="row" style="gap:6px">{#each post.tags as t}<span class="tag">{t}</span>{/each}</div>
       </header>
       <div class="prose">
-        {#if full}
+        {#if !ready}
+          <div class="slide-wait" role="status" aria-label="Memuat"><i></i><i></i><i></i></div>
+        {:else if full}
           {#each full.sections as s}
             <section id={s.id}><h2>{s.title}</h2>{@html s.body}</section>
           {/each}

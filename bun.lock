@@ -4,6 +4,9 @@
   "workspaces": {
     "": {
       "name": "khoirlabs-clone-svelte",
+      "dependencies": {
+        "lenis": "^1.3.29",
+      },
       "devDependencies": {
         "@fontsource-variable/anybody": "^5.3.0",
         "@fontsource-variable/jetbrains-mono": "^5.3.0",
@@ -205,6 +208,8 @@
     "is-reference": ["is-reference@3.0.3", "", { "dependencies": { "@types/estree": "^1.0.6" } }, "sha512-ixkJoqQvAP88E6wLydLGGqCJsrFUnqoH6HnaczB8XmDH1oaWU+xxdptvikTgaEhtZ53Ky6YXiBuUI2WXLMCwjw=="],
 
     "kleur": ["kleur@4.1.5", "", {}, "sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ=="],
+
+    "lenis": ["lenis@1.3.29", "", { "peerDependencies": { "@nuxt/kit": ">=3.0.0", "react": ">=17.0.0", "vue": ">=3.0.0" }, "optionalPeers": ["@nuxt/kit", "react", "vue"] }, "sha512-wuraTm8KuF56RDHTjzK2xlDln9tweoU9lJ24t0Ebzt+xaiWS90tIK79ZD5C3S+bK8B4MDyVoqzBm2qxYUpjPQA=="],
 
     "locate-character": ["locate-character@3.0.0", "", {}, "sha512-SW13ws7BjaeJ6p7Q6CO2nchbYEc3X3J6WrmTTDto7yMPqVSZTUyY5Tjbid+Ab8gLnATtygYtiDIJGQRRn2ZOiA=="],
 

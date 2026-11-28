@@ -1,4 +1,4 @@
-import { decksData, postsData, blogData, deckSlides, postsSlides } from './data';
+import { allDecks, allPosts, allNotes, slideCount } from './content';
 
 export type FeedKind = 'blog' | 'post' | 'deck';
 export type FeedItem = { kind: FeedKind; slug: string; title: string; desc: string; date: string; meta: string };
@@ -18,9 +18,9 @@ export function fmtDate(iso: string): string {
  *  Decks and carousels whose slides are not written yet are left out (no dead ends). */
 export function buildFeed(): FeedItem[] {
   const items: FeedItem[] = [
-    ...blogData.map((b) => ({ kind: 'blog' as const, slug: b.slug, title: b.title, desc: b.excerpt, date: b.date, meta: `${b.mins} min read` })),
-    ...postsData.filter((p) => postsSlides[p.slug]).map((p) => ({ kind: 'post' as const, slug: p.slug, title: p.title, desc: p.desc, date: p.date, meta: `#${p.tag}` })),
-    ...decksData.filter((d) => deckSlides[d.slug]).map((d) => ({ kind: 'deck' as const, slug: d.slug, title: d.title, desc: d.desc, date: d.date, meta: `${deckSlides[d.slug].length} slides` }))
+    ...allNotes.map((b) => ({ kind: 'blog' as const, slug: b.slug, title: b.title, desc: b.excerpt, date: b.date, meta: `${b.mins} min read` })),
+    ...allPosts.map((p) => ({ kind: 'post' as const, slug: p.slug, title: p.title, desc: p.desc, date: p.date, meta: `#${p.tag}` })),
+    ...allDecks.map((d) => ({ kind: 'deck' as const, slug: d.slug, title: d.title, desc: d.desc, date: d.date, meta: `${slideCount(d)} slides` }))
   ];
   // newest first; items published on the same day alternate between kinds
   const rank = new Map<FeedItem, number>();

@@ -1,21 +1,32 @@
 <script lang="ts">
-  import { postsData, postsSlides } from '../lib/data';
-  import { go } from '../lib/router';
+  import { onDestroy, onMount } from 'svelte';
+  import type { PostSlide } from '../lib/data';
+  import { findPost, loadPost } from '../lib/content';
+  import { lockScroll } from '../lib/scroll';
+  import { go, listHash } from '../lib/router';
   import { saveResume, resumeIndex } from '../lib/resume';
   import { confetti, swipe } from '../lib/fx';
   export let slug: string;
 
   let i = 0, loaded = '', back = false, cheered = false;
-  $: post = postsData.find((p) => p.slug === slug);
-  $: slides = postsSlides[slug] ?? [];
-  $: if (slug !== loaded) { loaded = slug; i = resumeIndex('post', slug); }
+  $: post = findPost(slug);
+  // slides of content packs arrive on demand; show a placeholder meanwhile
+  let slides: PostSlide[] = [];
+  let ready = false;
+  $: if (slug !== loaded) {
+    loaded = slug; ready = false; cheered = false;
+    const want = slug;
+    loadPost(want).then((list) => { if (want !== loaded) return; slides = list; i = Math.min(resumeIndex('post', want), Math.max(list.length - 1, 0)); ready = true; });
+  }
+  onMount(() => lockScroll(true));
+  onDestroy(() => lockScroll(false));
   $: s = slides[i];
-  $: if (post) saveResume({ kind: 'post', slug, title: post.title, idx: i, total: slides.length });
+  $: if (post && ready && slides.length) saveResume({ kind: 'post', slug, title: post.title, idx: i, total: slides.length });
 
   const next = () => { if (i < slides.length - 1) { back = false; i++; } };
   const prev = () => { if (i > 0) { back = true; i--; } };
   $: if (slides.length > 1 && i === slides.length - 1 && !cheered) { cheered = true; confetti(); }
-  const exit = () => go('posts');
+  const exit = () => go(listHash('posts'));
   function key(e: KeyboardEvent) {
     if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
     else if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
@@ -30,12 +41,12 @@
       <button class="icon-btn" on:click={exit}>← <span class="wide">Posts</span></button>
       <span class="title">{post?.title}</span>
     </div>
-    <span class="mono muted">{i + 1} / {slides.length}</span>
+    <span class="mono muted">{ready ? `${i + 1} / ${slides.length}` : '…'}</span>
   </div>
 
   <div class="player-stage" class:back>
     <div class="swipe-stage">
-      {#if s}
+      {#if !ready}<div class="slide-wait" role="status" aria-label="Memuat"><i></i><i></i><i></i></div>{:else if s}
         {#key i}
           <div class="frame c{i % 4}" data-cursor="swipe" use:swipe={{ left: next, right: prev }}>
             <div class="top label"><span>khoirlabs</span><span>{s.label}</span></div>

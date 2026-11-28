@@ -3,7 +3,8 @@
   import { createEventDispatcher, tick } from 'svelte';
   import { fade, fly } from 'svelte/transition';
   import { backOut } from 'svelte/easing';
-  import { decksData, postsData, blogData, videosData, deckSlides, postsSlides } from './data';
+  import { videosData } from './data';
+  import { allDecks, allPosts, allNotes, slideCount } from './content';
 
   export let open = false;
 
@@ -14,9 +15,9 @@
     ...[['Home', 'home', 'Start page'], ['About', 'about', 'Experience, skills, contact'], ['Decks', 'decks', 'Slide decks'],
         ['Videos', 'videos', 'CodingSkuy on YouTube'], ['Posts', 'posts', 'Instagram carousels'], ['Blog', 'blog', 'Field notes']]
       .map(([title, hash, hint]) => ({ group: 'Pages', title, hint, hash, hay: '' })),
-    ...blogData.map((b) => ({ group: 'Blog', title: b.title, hint: `${b.mins} min`, hash: 'blog/' + b.slug, hay: b.excerpt + ' ' + b.tags.join(' ') })),
-    ...decksData.filter((d) => deckSlides[d.slug]).map((d) => ({ group: 'Decks', title: d.title, hint: `${deckSlides[d.slug].length} slides`, hash: 'decks/' + d.slug, hay: d.desc + ' ' + d.tags.join(' ') })),
-    ...postsData.filter((p) => postsSlides[p.slug]).map((p) => ({ group: 'Carousels', title: p.title, hint: '#' + p.tag, hash: 'posts/' + p.slug, hay: p.desc + ' ' + p.tag })),
+    ...allNotes.map((b) => ({ group: 'Blog', title: b.title, hint: `${b.mins} min`, hash: 'blog/' + b.slug, hay: b.excerpt + ' ' + b.tags.join(' ') })),
+    ...allDecks.map((d) => ({ group: 'Decks', title: d.title, hint: `${slideCount(d)} slides`, hash: 'decks/' + d.slug, hay: d.desc + ' ' + d.tags.join(' ') })),
+    ...allPosts.map((p) => ({ group: 'Carousels', title: p.title, hint: '#' + p.tag, hash: 'posts/' + p.slug, hay: p.desc + ' ' + p.tag })),
     ...videosData.map((v) => ({ group: 'Videos', title: v.title, hint: v.duration, hash: 'videos/' + v.id, hay: v.desc + ' ' + v.tag })),
     { group: 'Actions', title: 'Remix the colours', hint: 'C', hay: 'dark light mode theme palette color colour remix', action: 'theme' as const },
     { group: 'Actions', title: 'Email Khoiron', hint: 'mailto', hay: 'contact hire get in touch', action: 'email' as const }
@@ -36,7 +37,7 @@
       ? all.filter((i) => words.every((w) => i.hay.includes(w)))
           .sort((a, b) => order.indexOf(a.group) - order.indexOf(b.group) || inTitle(a, words) - inTitle(b, words))
       : all.filter((i) => i.group === 'Pages' || i.group === 'Actions')
-    ).slice(0, 14);
+    ).slice(0, 30);
   $: if (results) active = 0;
 
   $: if (open) onOpen(); else onClose();

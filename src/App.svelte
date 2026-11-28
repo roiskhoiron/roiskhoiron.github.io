@@ -3,7 +3,9 @@
   import { startFx, arm } from './lib/fx';
   import { remix, paletteName } from './lib/palette';
   import { route, pages, parentOf, go, startRouter } from './lib/router';
-  import { decksData, postsData, blogData, videosData } from './lib/data';
+  import { videosData } from './lib/data';
+  import { findDeck, findPost, findNote, prefetch } from './lib/content';
+  import { startSmoothScroll } from './lib/scroll';
   import { profile } from './lib/profile';
   import logo from './assets/logo-192.webp';
   import CommandPalette from './lib/CommandPalette.svelte';
@@ -23,9 +25,9 @@
 
   let ready = false;
   onMount(() => {
-    const stopRouter = startRouter(), stopFx = startFx();
+    const stopRouter = startRouter(), stopFx = startFx(), stopScroll = startSmoothScroll();
     ready = true;
-    return () => { stopRouter(); stopFx(); };
+    return () => { stopRouter(); stopFx(); stopScroll(); };
   });
   // re-arm scroll reveal whenever the view changes
   $: if (ready && $route) tick().then(arm);
@@ -52,9 +54,9 @@
   $: slug = $route.slug;
   $: section = parentOf[view] ?? view;
   // the tab title follows the content, so history entries and shared tabs stay readable
-  $: title = view === 'deck' ? decksData.find((d) => d.slug === slug)?.title
-    : view === 'post' ? postsData.find((d) => d.slug === slug)?.title
-    : view === 'article' ? blogData.find((d) => d.slug === slug)?.title
+  $: title = view === 'deck' ? findDeck(slug)?.title
+    : view === 'post' ? findPost(slug)?.title
+    : view === 'article' ? findNote(slug)?.title
     : view === 'video' ? videosData.find((d) => d.id === slug)?.title
     : view === 'home' ? '' : view[0].toUpperCase() + view.slice(1);
   $: if (typeof document !== 'undefined') document.title = title ? `${title} — khoirlabs` : 'Khoiron Rois — Software Engineer · khoirlabs';
@@ -69,7 +71,7 @@
   };
 </script>
 
-<svelte:window on:keydown={keys} on:scroll={onScroll} />
+<svelte:window on:keydown={keys} on:scroll={onScroll} on:pointerover={(e) => { const a = e.target instanceof Element && e.target.closest('a[href^="#"]'); if (a) prefetch(a.getAttribute('href') ?? ''); }} />
 <a class="skip" href="#main">Skip to content</a>
 <CommandPalette bind:open={paletteOpen} on:go={(e) => go(e.detail)} on:theme={() => deal()} />
 {#if view === 'article'}<div class="progress" style="transform:scaleX({progress})"></div>{/if}

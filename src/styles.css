@@ -421,3 +421,16 @@ footer { padding-bottom: 96px; }
   .marquee-track { animation: none !important; }
 }
 @media print { .site-head, .tabbar, footer, .progress, .cursor, .marquee { display: none; } body { background: #fff; color: #000; } }
+
+/* waiting for a content pack to arrive */
+.slide-wait { display: flex; gap: 10px; padding: 40px; }
+.slide-wait i { width: 16px; height: 16px; border-radius: 50%; background: var(--a1); border: 2px solid var(--fg); animation: wait 0.9s var(--spring) infinite; }
+.slide-wait i:nth-child(2) { background: var(--a2); animation-delay: 0.12s; } .slide-wait i:nth-child(3) { background: var(--a3); animation-delay: 0.24s; }
+@keyframes wait { 40% { transform: translateY(-14px) scale(1.15); } }
+
+/* a new page of results drops in, staggered */
+.page-flip > * > * { animation: flip-in 0.55s var(--spring) both; }
+.page-flip > * > :nth-child(2) { animation-delay: 40ms; } .page-flip > * > :nth-child(3) { animation-delay: 80ms; }
+.page-flip > * > :nth-child(4) { animation-delay: 120ms; } .page-flip > * > :nth-child(5) { animation-delay: 160ms; }
+.page-flip > * > :nth-child(6) { animation-delay: 200ms; } .page-flip > * > :nth-child(n + 7) { animation-delay: 240ms; }
+@keyframes flip-in { from { opacity: 0; transform: translateY(28px) rotate(-1.5deg) scale(0.97); } }

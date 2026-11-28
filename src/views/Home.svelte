@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { decksData, postsData, blogData, videosData } from '../lib/data';
+  import { videosData } from '../lib/data';
+  import { allDecks, allPosts, allNotes } from '../lib/content';
   import { buildFeed, fmtDate, kindLabel, kindRoute, type FeedKind } from '../lib/feed';
   import { profile, experience } from '../lib/profile';
   import { resume, clearResume } from '../lib/resume';
@@ -14,8 +15,8 @@
   // in "All", a topic published as both a deck and a carousel is listed once
   $: items = (kind === 'all' ? feed.filter((f, i) => feed.findIndex((g) => g.title === f.title) === i) : feed.filter((f) => f.kind === kind)).slice(0, 6);
   $: allHref = kind === 'all' || kind === 'blog' ? '#blog' : '#' + kindRoute[kind];
-  $: allText = kind === 'deck' ? `All ${decksData.length} decks` : kind === 'post' ? `All ${postsData.length} carousels` : `All ${blogData.length} notes`;
-  const pick = blogData.find((b) => b.featured) ?? blogData[0];
+  $: allText = kind === 'deck' ? `All ${allDecks.length} decks` : kind === 'post' ? `All ${allPosts.length} carousels` : `All ${allNotes.length} notes`;
+  const pick = allNotes.find((b) => b.featured) ?? allNotes[0];
   const cta = { blog: 'Read', post: 'Swipe', deck: 'Open' };
   // stickers land somewhere different on every visit
   const stickers = profile.stack.map((name) => ({ name, left: Math.random() * 68, top: 1 + Math.random() * 46 }));
@@ -87,14 +88,14 @@
       <span class="big" aria-hidden="true">B</span>
       <p class="label">Learning</p>
       <h3 class="h3"><a href="#decks"><span>Learn something in 5 minutes</span></a></h3>
-      <p class="muted small">{decksData.length} slide decks, {postsData.length} swipeable carousels and {videosData.length} CodingSkuy videos on Kotlin, TypeScript and mobile.</p>
+      <p class="muted small">{allDecks.length} slide decks, {allPosts.length} swipeable carousels and {videosData.length} CodingSkuy videos: history, theory and hands-on practice.</p>
       <span class="go">Open the library</span>
     </article>
     <article class="path" data-cursor="go">
       <span class="big" aria-hidden="true">C</span>
       <p class="label">Just curious</p>
       <h3 class="h3"><a href="#blog/{pick.slug}"><span>Read a field note</span></a></h3>
-      <p class="muted small">“{pick.title}” — {pick.mins} min. One of {blogData.length} notes on mobile, TypeScript and learning with AI.</p>
+      <p class="muted small">“{pick.title}” — {pick.mins} min. One of {allNotes.length} field notes on software, from history to AI.</p>
       <span class="go">Start reading</span>
     </article>
   </div>

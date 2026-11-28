@@ -1,23 +1,34 @@
 <script lang="ts">
-  import { decksData, deckSlides } from '../lib/data';
-  import { go } from '../lib/router';
+  import { onDestroy, onMount } from 'svelte';
+  import type { DeckSlide } from '../lib/data';
+  import { findDeck, loadDeck } from '../lib/content';
+  import { lockScroll } from '../lib/scroll';
+  import { go, listHash } from '../lib/router';
   import { saveResume, resumeIndex } from '../lib/resume';
   import { confetti, swipe } from '../lib/fx';
   export let slug: string;
 
   let i = 0, loaded = '', back = false, cheered = false;
   let stage: HTMLElement;
-  $: deck = decksData.find((d) => d.slug === slug);
-  $: slides = deckSlides[slug] ?? [];
-  $: if (slug !== loaded) { loaded = slug; i = resumeIndex('deck', slug); }
+  $: deck = findDeck(slug);
+  // slides of content packs arrive on demand; show a placeholder meanwhile
+  let slides: DeckSlide[] = [];
+  let ready = false;
+  $: if (slug !== loaded) {
+    loaded = slug; ready = false; cheered = false;
+    const want = slug;
+    loadDeck(want).then((list) => { if (want !== loaded) return; slides = list; i = Math.min(resumeIndex('deck', want), Math.max(list.length - 1, 0)); ready = true; });
+  }
+  onMount(() => lockScroll(true));
+  onDestroy(() => lockScroll(false));
   $: s = slides[i];
-  $: if (deck) saveResume({ kind: 'deck', slug, title: deck.title, idx: i, total: slides.length });
+  $: if (deck && ready && slides.length) saveResume({ kind: 'deck', slug, title: deck.title, idx: i, total: slides.length });
 
   const next = () => { if (i < slides.length - 1) { back = false; i++; } };
   const prev = () => { if (i > 0) { back = true; i--; } };
   // reaching the last slide earns a small celebration, once
   $: if (slides.length > 1 && i === slides.length - 1 && !cheered) { cheered = true; confetti(); }
-  const exit = () => go('decks');
+  const exit = () => go(listHash('decks'));
   const full = () => (document.fullscreenElement ? document.exitFullscreen() : stage?.requestFullscreen?.());
   function key(e: KeyboardEvent) {
     if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); next(); }
@@ -35,13 +46,13 @@
       <span class="title">{deck?.title}</span>
     </div>
     <div class="row" style="flex-wrap:nowrap">
-      <span class="mono muted">{i + 1} / {slides.length}</span>
+      <span class="mono muted">{ready ? `${i + 1} / ${slides.length}` : '…'}</span>
       <button class="icon-btn" on:click={full} aria-label="Toggle fullscreen"><kbd>F</kbd><span class="wide">Fullscreen</span></button>
     </div>
   </div>
 
   <div class="player-stage" class:back bind:this={stage} style="background:var(--bg)" use:swipe={{ left: next, right: prev, touchOnly: true }}>
-    {#if s}
+    {#if !ready}<div class="slide-wait" role="status" aria-label="Memuat"><i></i><i></i><i></i></div>{:else if s}
       {#key i}
         {#if s.layout === 'cover'}
           <div class="slide cover n{i % 3}"><div class="slide-body">
