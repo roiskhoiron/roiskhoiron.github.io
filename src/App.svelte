@@ -108,7 +108,7 @@
 <main id="main">
   {#key view + slug}
     <div class="wrap view">
-      {#if view === 'designsystem'}{#await loadDesignSystem()}<div class="slide-wait" role="status" aria-label="Memuat"><i></i><i></i><i></i></div>{:then m}<svelte:component this={m.default} />{/await}
+      {#if view === 'designsystem'}{#await loadDesignSystem()}<div class="slide-wait" role="status" aria-label="Memuat"><i></i><i></i><i></i></div>{:then m}{#if m}<svelte:component this={m.default} />{/if}{/await}
       {:else if view === 'about'}<About />
       {:else if view === 'decks'}<Decks />
       {:else if view === 'posts'}<Posts />
