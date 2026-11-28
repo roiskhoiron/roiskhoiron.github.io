@@ -83,7 +83,7 @@
   .pg-step:first-child { --nudge: -4px; }
   .pg-step[aria-disabled='true'] { opacity: .3; pointer-events: none; box-shadow: none; }
   .pg-track { position: relative; display: flex; align-items: center; gap: 4px; padding: 5px; border: var(--border-base) solid var(--fg); border-radius: var(--radius-pill); background: var(--card); }
-  .pg-blob { position: absolute; left: 0; top: 5px; bottom: 5px; border-radius: var(--radius-pill); background: var(--a1); border: var(--border-base) solid var(--ink); opacity: 0; transition: transform var(--dur-4) var(--spring), width var(--dur-4) var(--spring), opacity var(--dur-1) var(--ease); }
+  .pg-blob { position: absolute; left: 0; top: 5px; bottom: 5px; border-radius: var(--radius-pill); background: var(--a1); border: var(--border-base) solid var(--ink); opacity: 0; transition: transform var(--dur-4) var(--spring), opacity var(--dur-1) var(--ease); } /* width snaps (numbers are near-equal); only transform animates */
   .pg-blob.ready { opacity: 1; }
   .pg-num { position: relative; z-index: 1; display: grid; place-items: center; min-width: 40px; height: 40px; padding: 0 6px; border-radius: var(--radius-pill); font-weight: 800; font-variant-numeric: tabular-nums; transition: transform var(--dur-2) var(--spring), color var(--dur-1) var(--ease); }
   .pg-num:hover:not([aria-current]) { transform: translateY(-3px) rotate(-6deg); }

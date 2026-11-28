@@ -52,7 +52,7 @@
 
   // ── type ──
   const typeScale = [
-    ['display', 'Complete products', 'Hero halaman depan saja.'], ['h1', 'Judul halaman', 'Satu per halaman.'], ['h2', 'Kepala section', 'Didampingi nomor bulat.'],
+    ['display', 'Ngoding kuy', 'Hero halaman depan saja.'], ['h1', 'Judul halaman', 'Satu per halaman.'], ['h2', 'Kepala section', 'Didampingi nomor bulat.'],
     ['h3', 'Judul kartu dan item', 'Di dalam kartu, tile, entri.'], ['lead', 'Paragraf pembuka di bawah judul halaman, maksimal 54 karakter per baris.', ''],
     ['body', 'Teks isi biasa. Kalimat pendek, satu ide per kalimat.', ''], ['small', 'Teks pendukung dan catatan.', ''], ['label', 'Label metadata', 'Huruf kapital, spasi 0,1em.']
   ];
@@ -60,7 +60,8 @@
 
   // ── motion demos ──
   let ball: 'rest' | 'go' = 'rest';
-  const curves = [['spring', [0.34, 1.56, 0.64, 1]], ['out', [0.2, 0.8, 0.2, 1]]] as const;
+  // read from the tokens, so a new easing shows up here automatically
+  const curves = Object.entries<any>(tokens.ease).filter(([, t]) => isTok(t)).map(([k, t]) => [k, t.$value as number[]] as const);
   const path = (c: readonly number[]) => `M0 100 C ${c[0] * 100} ${100 - c[1] * 100}, ${c[2] * 100} ${100 - c[3] * 100}, 100 0`;
   const replay = (e: MouseEvent) => {
     const el = (e.currentTarget as HTMLElement).querySelector('.demo-target') as HTMLElement | null;
@@ -75,7 +76,7 @@
   const jump = (id: string) => glideTo(document.getElementById(id));
 
   // keep in step with the component table in docs/design/DESIGN_SYSTEM.md
-  const components = ['Button', 'Tab / filter', 'Field', 'Tag', 'Stabilo & tautan', 'Kepala section', 'Kartu deck', 'Tile carousel', 'Entri daftar', 'Pintu A/B/C', 'Statistik', 'Stiker', 'Pagination', 'Share', 'Player'];
+  const components = ['Button', 'Tab / filter', 'Field', 'Tag', 'Highlighter, link', 'Section head', 'Deck card', 'Carousel tile', 'List entry', 'Door', 'Stats', 'Sticker', 'Pager', 'Share', 'Player'];
   const demoItem = { section: 'decks' as const, slug: 'sejarah-apollo-11', title: 'Apollo 11: Alarm 1202 dan Software yang Tidak Panik', text: 'Contoh item untuk tombol share di halaman design system.', tags: ['sejarah'] };
 </script>
 
@@ -205,7 +206,7 @@
         {#each curves as [name, c]}
           <div class="ds-curve">
             <svg viewBox="-10 -30 120 140" aria-hidden="true"><path d="M0 100 L100 0" class="ds-guide" /><path d={path(c)} class="ds-bez" /></svg>
-            <code>--{name === 'out' ? 'ease' : name}</code><span class="mono muted">cubic-bezier({c.join(', ')})</span>
+            <code>{varName('ease', name)}</code><span class="mono muted">cubic-bezier({c.join(', ')})</span>
           </div>
         {/each}
         <div class="ds-race">
@@ -427,6 +428,7 @@
   @media (min-width: 760px) { .ds-type { grid-template-columns: 200px minmax(0, 1fr); align-items: baseline; } }
   .ds-type-meta { display: grid; gap: var(--space-1); justify-items: start; }
   .ds-type p { min-width: 0; overflow-wrap: anywhere; }
+  .ds-type p.display, .ds-type p.h1 { overflow-wrap: normal; } /* never split a headline mid-word */
 
   .ds-boxes { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
   .ds-box { display: grid; gap: var(--space-2); justify-items: start; }
@@ -441,6 +443,7 @@
   .ds-curve svg { width: 100%; height: 150px; overflow: visible; }
   .ds-guide { stroke: var(--line); stroke-width: 1.5; fill: none; stroke-dasharray: 4 4; }
   .ds-bez { stroke: var(--a1); stroke-width: 5; fill: none; stroke-linecap: round; }
+  .ds-race .btn { justify-self: start; }
   .ds-race { display: grid; gap: var(--space-3); align-content: start; grid-column: 1 / -1; }
   .ds-track { position: relative; height: 40px; container-type: inline-size; border-radius: var(--radius-pill); border: var(--border-base) solid var(--line); }
   .ds-track i { position: absolute; top: 3px; left: 3px; display: grid; place-items: center; height: 30px; padding: 0 var(--space-3); border-radius: var(--radius-pill); background: var(--a1); color: var(--ink); font-style: normal; font-weight: 800; font-size: 0.75rem; transition: translate var(--dur-7) var(--spring); }

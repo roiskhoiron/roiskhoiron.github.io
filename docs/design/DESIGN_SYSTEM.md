@@ -84,7 +84,9 @@ padding `--gutter`. Below 900 px the nav becomes the floating tab bar.
 
 Every `transition`/`animation` takes its duration from `--dur-*` and its easing from
 `--spring`, `--ease`, `--sway` (or `linear` for constant motion). `design:check` enforces
-this; delays written inside `calc()` (staggers) are allowed.
+this for the `transition` and `animation` shorthands. It does not see longhand
+properties (`animation-delay`, used for staggers) or a transition that names no easing
+at all; reviewers check those by eye.
 
 Named patterns (keyframes in `styles.css`): `pop` (active choice), `rise` (slide
 content), `hop` (tab bar icon), `wave`, `flip-in` (new page of items), `slide-in` /
