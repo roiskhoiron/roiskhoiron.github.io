@@ -3,7 +3,7 @@
   import { decksData, deckSlides } from '../lib/data';
   import { fmtDate } from '../lib/feed';
 
-  const all = decksData.filter((d) => deckSlides[d.slug]).sort((a, b) => (a.date < b.date ? 1 : -1));
+  const all = decksData.filter((d) => deckSlides[d.slug]).sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
   const kind = (t: string) => t.split(' ')[0].toLowerCase();
   const filters = [...new Set(all.map((d) => kind(d.type)))];
   let filter = 'all', query = '';

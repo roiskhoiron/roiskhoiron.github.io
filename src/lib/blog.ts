@@ -3,23 +3,18 @@
 // `blogData` and its body to `blogFull` under the same slug.
 import type { BlogPost } from './data';
 
-// Bodies are plain semantic HTML; all styling comes from `.prose` in styles.css.
-const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-const p = (...html: string[]) => html.map((h) => `<p>${h}</p>`).join('');
-const ul = (...items: string[]) => `<ul>${items.map((i) => `<li>${i}</li>`).join('')}</ul>`;
-const pre = (code: string) => `<pre>${esc(code)}</pre>`;
-const c = (code: string) => `<code>${esc(code)}</code>`;
-const b = (text: string) => `<strong>${text}</strong>`;
+import { p, ul, pre, c, b, type Full } from './blog-html';
+import { morePosts, moreFull } from './blog-more';
 
 export const blogData: BlogPost[] = [
+  ...morePosts,
   {
     title: 'Situs ini: dari 4,5 MB ke 190 KB',
     slug: 'situs-ini-dari-4-5-mb-ke-190-kb',
     date: '2026-11-27',
     mins: 5,
     tags: ['performance', 'web', 'ai-agent', 'svelte'],
-    excerpt: 'Saya mengaudit portofolio ini bersama AI coding agent. Empat keputusan memangkas lebih dari 95% ukuran halaman, lalu desainnya saya tulis ulang dari nol: lebih ramai, tapi tetap ringan.',
-    featured: true
+    excerpt: 'Saya mengaudit portofolio ini bersama AI coding agent. Empat keputusan memangkas lebih dari 95% ukuran halaman, lalu desainnya saya tulis ulang dari nol: lebih ramai, tapi tetap ringan.'
   },
   {
     title: 'CodingSchool: mentor AI yang tidak langsung memberi jawaban',
@@ -63,9 +58,9 @@ export const blogData: BlogPost[] = [
   }
 ];
 
-type Full = { lead: string; sections: { id: string; title: string; body: string }[] };
 
 export const blogFull: Record<string, Full> = {
+  ...moreFull,
   'situs-ini-dari-4-5-mb-ke-190-kb': {
     lead: 'Halaman depan portofolio ini dulu mengunduh 4,5 MB dalam 44 request. Sekarang 190 KB dalam 8 request.',
     sections: [

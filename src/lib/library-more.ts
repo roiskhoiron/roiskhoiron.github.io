@@ -1,7 +1,7 @@
 // Second batch of the teaching series: more history, theory and practice.
 import type { Deck, DeckSlide, Post, PostSlide } from './data';
 
-const DATE = '2026-11-29';
+const DATE = '2026-11-28';
 const deck = (slug: string, title: string, type: string, tags: string[], desc: string): Deck =>
   ({ slug, title, type, tags, desc, lang: 'ID', slides: 0, color: '', date: DATE });
 const post = (slug: string, title: string, tag: string, desc: string): Post =>

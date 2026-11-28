@@ -3,7 +3,7 @@
   import { postsData, postsSlides } from '../lib/data';
   import { fmtDate } from '../lib/feed';
 
-  const all = postsData.filter((p) => postsSlides[p.slug]).sort((a, b) => (a.date < b.date ? 1 : -1));
+  const all = postsData.filter((p) => postsSlides[p.slug]).sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
   const filters = [...new Set(all.map((p) => p.tag))];
   let filter = 'all', query = '';
   $: q = query.trim().toLowerCase();

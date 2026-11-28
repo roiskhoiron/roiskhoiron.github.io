@@ -3,8 +3,11 @@
   import { blogData } from '../lib/data';
   import { fmtDate } from '../lib/feed';
 
-  const all = [...blogData].sort((a, b) => (a.date < b.date ? 1 : -1));
-  const filters = [...new Set(all.flatMap((b) => b.tags))].slice(0, 7);
+  const all = [...blogData].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+  // the seven most used tags, most frequent first
+  const freq = new Map<string, number>();
+  for (const t of all.flatMap((b) => b.tags)) freq.set(t, (freq.get(t) ?? 0) + 1);
+  const filters = [...freq].sort((x, y) => y[1] - x[1]).slice(0, 7).map(([t]) => t);
   let filter = 'all', query = '';
   $: q = query.trim().toLowerCase();
   $: list = all.filter((b) => (filter === 'all' || b.tags.includes(filter)) && (!q || (b.title + b.excerpt + b.tags.join(' ')).toLowerCase().includes(q)));

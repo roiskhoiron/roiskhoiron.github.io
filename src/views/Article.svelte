@@ -4,7 +4,7 @@
   import { saveResume } from '../lib/resume';
   export let slug: string;
 
-  const sorted = [...blogData].sort((a, b) => (a.date < b.date ? 1 : -1));
+  const sorted = [...blogData].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
   $: i = sorted.findIndex((b) => b.slug === slug);
   $: post = sorted[i];
   $: full = blogFull[slug];
