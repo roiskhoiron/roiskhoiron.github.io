@@ -21,6 +21,8 @@
   import VideoDetail from './views/VideoDetail.svelte';
   import DeckPlayer from './views/DeckPlayer.svelte';
   import PostPlayer from './views/PostPlayer.svelte';
+  // documentation page: loaded only when someone opens it
+  const loadDesignSystem = () => import('./views/DesignSystem.svelte');
 
   let paletteOpen = false;
   let progress = 0;
@@ -61,6 +63,7 @@
     : view === 'post' ? findPost(slug)?.title
     : view === 'article' ? findNote(slug)?.title
     : view === 'video' ? videosData.find((d) => d.id === slug)?.title
+    : view === 'designsystem' ? 'Design System'
     : view === 'home' ? '' : view[0].toUpperCase() + view.slice(1);
   $: if (typeof document !== 'undefined') document.title = title ? `${title} — khoirlabs` : 'Khoiron Rois — Software Engineer · khoirlabs';
 
@@ -105,7 +108,8 @@
 <main id="main">
   {#key view + slug}
     <div class="wrap view">
-      {#if view === 'about'}<About />
+      {#if view === 'designsystem'}{#await loadDesignSystem()}<div class="slide-wait" role="status" aria-label="Memuat"><i></i><i></i><i></i></div>{:then m}<svelte:component this={m.default} />{/await}
+      {:else if view === 'about'}<About />
       {:else if view === 'decks'}<Decks />
       {:else if view === 'posts'}<Posts />
       {:else if view === 'blog'}<Blog />
@@ -130,7 +134,7 @@
         <p class="brand"><span>khoirlabs</span><span class="glyph" aria-hidden="true">&lt;|&gt;</span></p>
         <p class="muted small" style="margin-top:10px;max-width:38ch">{profile.name} builds mobile products end to end and teaches what he learns along the way.</p>
       </div>
-      <nav aria-label="Explore"><p class="label">Explore</p><ul><li><a class="link" href="#home">Home</a></li><li><a class="link" href="#about">About</a></li><li><a class="link" href="#blog">Blog</a></li></ul></nav>
+      <nav aria-label="Explore"><p class="label">Explore</p><ul><li><a class="link" href="#home">Home</a></li><li><a class="link" href="#about">About</a></li><li><a class="link" href="#blog">Blog</a></li><li><a class="link" href="#designsystem">Design system</a></li></ul></nav>
       <nav aria-label="Library"><p class="label">Library</p><ul><li><a class="link" href="#decks">Decks</a></li><li><a class="link" href="#posts">Carousels</a></li><li><a class="link" href="#videos">Videos</a></li></ul></nav>
       <nav aria-label="Connect"><p class="label">Connect</p><ul>
         <li><a class="link" href={profile.links.github} target="_blank" rel="noopener">GitHub</a></li>
@@ -153,5 +157,5 @@
 
 <style>
   .skip { position: absolute; left: -9999px; }
-  .skip:focus { left: 12px; top: 12px; z-index: 100; background: var(--ink); color: var(--paper); padding: 8px 14px; border-radius: 4px; }
+  .skip:focus { left: 12px; top: 12px; z-index: 100; background: var(--ink); color: var(--paper); padding: 8px 14px; border-radius: var(--radius-xs); }
 </style>

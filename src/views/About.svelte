@@ -5,7 +5,8 @@
 
   // Live numbers for the open-source project; cached for the session because the
   // unauthenticated GitHub API allows only 60 requests an hour per visitor.
-  let cs: { installs: number; stars: number; contributors: number } | null = null;
+  // a figure that failed to load is left out rather than shown as 0
+  let cs: { installs?: number; stars?: number; contributors?: number } | null = null;
   onMount(async () => {
     try { const c = sessionStorage.getItem('kl-cs-stats'); if (c) { cs = JSON.parse(c); return; } } catch {}
     const ctrl = new AbortController();
@@ -19,7 +20,7 @@
     ]);
     clearTimeout(to);
     if (!npm && !repo) return; // show nothing rather than zeros
-    cs = { installs: npm?.downloads ?? 0, stars: repo?.stargazers_count ?? 0, contributors: Array.isArray(con) ? con.length : 0 };
+    cs = { installs: npm?.downloads, stars: repo?.stargazers_count, contributors: Array.isArray(con) && con.length ? con.length : undefined };
     try { sessionStorage.setItem('kl-cs-stats', JSON.stringify(cs)); } catch {}
   });
 </script>
@@ -94,9 +95,9 @@
     </div>
     {#if cs}
       <dl class="mono" style="display:grid;grid-template-columns:auto auto;gap:6px 14px;align-content:center">
-        <dt class="muted">stars</dt><dd>{cs.stars.toLocaleString()}</dd>
-        <dt class="muted">contributors</dt><dd>{cs.contributors}</dd>
-        <dt class="muted">installs</dt><dd>{cs.installs.toLocaleString()}</dd>
+        {#if cs.stars != null}<dt class="muted">stars</dt><dd>{cs.stars.toLocaleString()}</dd>{/if}
+        {#if cs.contributors != null}<dt class="muted">contributors</dt><dd>{cs.contributors}</dd>{/if}
+        {#if cs.installs != null}<dt class="muted">installs</dt><dd>{cs.installs.toLocaleString()}</dd>{/if}
       </dl>
     {/if}
   </div>

@@ -98,4 +98,14 @@ for (const it of items) {
 </head><body><p><a href="${esc(app)}">${esc(it.title)}</a></p></body></html>
 `);
 }
+// /designsystem/ as a real path: the same app shell, with <base> so its relative assets resolve
+const shell = readFileSync(join(ROOT, 'build', 'index.html'), 'utf8')
+  .replace('<head>', '<head>\n    <base href="../">')
+  .replace(/<title>[^<]*<\/title>/, '<title>Design System — khoirlabs</title>')
+  .replace(/(<link rel="canonical" href=")[^"]*(")/, `$1${SITE}designsystem/$2`)
+  .replace(/(<meta property="og:url" content=")[^"]*(")/, `$1${SITE}designsystem/$2`)
+  .replace(/(<meta property="og:title" content=")[^"]*(")/, '$1khoirlabs Design System$2');
+mkdirSync(join(ROOT, 'build', 'designsystem'), { recursive: true });
+writeFileSync(join(ROOT, 'build', 'designsystem', 'index.html'), shell);
+
 console.log(`share pages + preview images: ${items.length} in ${((performance.now() - t0) / 1000).toFixed(1)}s`);

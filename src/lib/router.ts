@@ -5,7 +5,7 @@ import { videosData } from './data';
 import { findDeck, findPost, findNote } from './content';
 import { toTop } from './scroll';
 
-export type View = 'home' | 'about' | 'decks' | 'videos' | 'posts' | 'blog' | 'deck' | 'post' | 'article' | 'video';
+export type View = 'home' | 'about' | 'decks' | 'videos' | 'posts' | 'blog' | 'deck' | 'post' | 'article' | 'video' | 'designsystem';
 export type Route = { view: View; slug: string; page: number };
 
 export const pages = ['home', 'about', 'decks', 'videos', 'posts', 'blog'] as const;
@@ -20,6 +20,9 @@ export function parse(hash: string): Route {
     if (head === 'blog' && findNote(slug)) return { view: 'article', slug, page: 1 };
     if (head === 'videos' && videosData.some((v) => v.id === slug)) return { view: 'video', slug, page: 1 };
   }
+  // /designsystem is also served as a real path (see scripts/share-pages.ts)
+  const onDsPath = typeof location !== 'undefined' && /\/designsystem\/?$/.test(location.pathname) && !hash.replace(/^#/, '');
+  if (head === 'designsystem' || onDsPath) return { view: 'designsystem', slug: '', page: paged ? Math.max(1, +paged[1]) : 1 };
   const view = (pages as readonly string[]).includes(head) ? (head as View) : 'home';
   return { view, slug: '', page: paged ? Math.max(1, +paged[1]) : 1 };
 }

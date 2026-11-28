@@ -73,23 +73,23 @@
 <style>
   .pager-nav { display: grid; gap: 14px; justify-items: center; margin-top: clamp(36px, 6vw, 56px); }
   .pager-row { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
-  .pg-step { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 18px; border: 2px solid var(--fg); border-radius: 999px; background: var(--card); font-weight: 700; box-shadow: 4px 4px 0 var(--fg); translate: var(--mx, 0) var(--my, 0); transition: translate .35s var(--spring), background .2s, color .2s, box-shadow .2s, opacity .2s; }
+  .pg-step { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 18px; border: var(--border-base) solid var(--fg); border-radius: var(--radius-pill); background: var(--card); font-weight: 700; box-shadow: var(--lift-2) var(--fg); translate: var(--mx, 0) var(--my, 0); transition: translate var(--dur-3) var(--spring), background .2s, color .2s, box-shadow .2s, opacity .2s; }
   .pg-step:hover { background: var(--a1); color: var(--ink); }
   .pg-step:active { box-shadow: 0 0 0 var(--fg); transform: translate(4px, 4px); }
-  .pg-step span[aria-hidden] { display: inline-block; transition: transform .3s var(--spring); }
+  .pg-step span[aria-hidden] { display: inline-block; transition: transform var(--dur-2) var(--spring); }
   .pg-step:hover span[aria-hidden] { transform: translateX(var(--nudge, 4px)); }
   .pg-step:first-child { --nudge: -4px; }
   .pg-step[aria-disabled='true'] { opacity: .3; pointer-events: none; box-shadow: none; }
-  .pg-track { position: relative; display: flex; align-items: center; gap: 4px; padding: 5px; border: 2px solid var(--fg); border-radius: 999px; background: var(--card); }
-  .pg-blob { position: absolute; left: 0; top: 5px; bottom: 5px; border-radius: 999px; background: var(--a1); border: 2px solid var(--ink); opacity: 0; transition: transform .5s var(--spring), width .5s var(--spring), opacity .2s; }
+  .pg-track { position: relative; display: flex; align-items: center; gap: 4px; padding: 5px; border: var(--border-base) solid var(--fg); border-radius: var(--radius-pill); background: var(--card); }
+  .pg-blob { position: absolute; left: 0; top: 5px; bottom: 5px; border-radius: var(--radius-pill); background: var(--a1); border: var(--border-base) solid var(--ink); opacity: 0; transition: transform var(--dur-4) var(--spring), width var(--dur-4) var(--spring), opacity .2s; }
   .pg-blob.ready { opacity: 1; }
-  .pg-num { position: relative; z-index: 1; display: grid; place-items: center; min-width: 40px; height: 40px; padding: 0 6px; border-radius: 999px; font-weight: 800; font-variant-numeric: tabular-nums; transition: transform .3s var(--spring), color .2s; }
+  .pg-num { position: relative; z-index: 1; display: grid; place-items: center; min-width: 40px; height: 40px; padding: 0 6px; border-radius: var(--radius-pill); font-weight: 800; font-variant-numeric: tabular-nums; transition: transform var(--dur-2) var(--spring), color .2s; }
   .pg-num:hover:not([aria-current]) { transform: translateY(-3px) rotate(-6deg); }
   .pg-num[aria-current='page'] { color: var(--ink); }
   .pg-gap { min-width: 22px; text-align: center; color: var(--soft); font-weight: 800; }
   .pg-meta { display: grid; gap: 8px; justify-items: center; }
-  .pg-bar { width: min(260px, 70vw); height: 6px; border-radius: 999px; background: var(--line); overflow: hidden; }
-  .pg-bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--a1), var(--a2), var(--a3)); transform-origin: 0 50%; transition: transform .6s var(--spring); }
+  .pg-bar { width: min(260px, 70vw); height: 6px; border-radius: var(--radius-pill); background: var(--line); overflow: hidden; }
+  .pg-bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--a1), var(--a2), var(--a3)); transform-origin: 0 50%; transition: transform var(--dur-5) var(--spring); }
   @media (max-width: 560px) {
     .pg-word { display: none; }
     .pg-step { width: 48px; padding: 0; justify-content: center; }

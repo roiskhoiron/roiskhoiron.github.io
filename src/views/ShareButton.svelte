@@ -18,12 +18,12 @@
 </button>
 
 <style>
-  .share-btn { position: relative; z-index: 2; display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 42px; min-width: 42px; padding: 0 12px; border-radius: 999px; border: 2px solid var(--fg); background: var(--card); color: var(--fg); font-weight: 700; font-size: 0.85rem; translate: var(--mx, 0) var(--my, 0); transition: translate .35s var(--spring), background .2s, color .2s, transform .3s var(--spring); }
+  .share-btn { position: relative; z-index: 2; display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 42px; min-width: 42px; padding: 0 12px; border-radius: var(--radius-pill); border: var(--border-base) solid var(--fg); background: var(--card); color: var(--fg); font-weight: 700; font-size: 0.85rem; translate: var(--mx, 0) var(--my, 0); transition: translate var(--dur-3) var(--spring), background .2s, color .2s, transform var(--dur-2) var(--spring); }
   .share-btn:hover { background: var(--a2); color: var(--ink); }
   .share-btn:active { transform: scale(.9); }
-  .share-btn.pill { height: 46px; padding: 0 18px; box-shadow: 4px 4px 0 var(--fg); }
+  .share-btn.pill { height: 46px; padding: 0 18px; box-shadow: var(--lift-2) var(--fg); }
   .share-btn.mini { height: 34px; min-width: 34px; padding: 0; border-width: 1.5px; }
-  .share-btn svg { transition: transform .5s var(--spring); }
+  .share-btn svg { transition: transform var(--dur-4) var(--spring); }
   .share-btn:hover svg { transform: rotate(-14deg) scale(1.1); }
   .share-btn.spin svg { transform: rotate(360deg) scale(1.2); }
 </style>

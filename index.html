@@ -21,10 +21,11 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <script>
       // Palettes live here so the colour is chosen before first paint (no flash).
-      // Keep in sync with src/lib/palettes.ts (used for share images).
+      // The list below is generated from src/design/tokens.json (bun run tokens).
       // Every visit starts on a different one; the "remix" button deals the next.
       // Rules: fg on bg is AAA; accents a1-a3 are only ever fills behind dark ink.
       (function () {
+        /* tokens:palettes:start (generated) */
         var P = [
           { name: 'Pasar Malam', bg: '#17102b', fg: '#f6f0ff', card: '#241a40', a1: '#c6ff3d', a2: '#ff6fae', a3: '#5ee6ff' },
           { name: 'Es Krim', bg: '#fff4e0', fg: '#1d1433', card: '#ffffff', a1: '#ff6b4a', a2: '#b79bff', a3: '#3ddbc0' },
@@ -33,6 +34,7 @@
           { name: 'Permen', bg: '#ffd9ec', fg: '#2a0f3d', card: '#fff3f9', a1: '#9d7bff', a2: '#ff6b88', a3: '#2fd3a6' },
           { name: 'Senja', bg: '#2b0f1f', fg: '#ffeede', card: '#3d1a2e', a1: '#ff9f1c', a2: '#ff5c8a', a3: '#b8f2e6' }
         ];
+        /* tokens:palettes:end */
         var last = -1;
         try { last = parseInt(sessionStorage.getItem('kl-pal') || '-1', 10); } catch (e) {}
         var i = Math.floor(Math.random() * P.length);
