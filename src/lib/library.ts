@@ -2,6 +2,7 @@
 // history, theory and hands-on practice. Decks are slides, posts are swipeable cards.
 // To add one: append its entry to the list and its slides under the same slug.
 import type { Deck, DeckSlide, Post, PostSlide } from './data';
+import { decks2, deckSlides2, posts2, postSlides2 } from './library-more';
 
 const DATE = '2026-11-28';
 const deck = (slug: string, title: string, type: string, tags: string[], desc: string): Deck =>
@@ -14,23 +15,25 @@ const card = (label: string, title: string, body: string, extra: Partial<PostSli
 /* ───────────────────────── decks ───────────────────────── */
 
 export const moreDecks: Deck[] = [
+  ...decks2,
   deck('sejarah-software', 'Dari Kartu Berlubang ke AI Agent', 'History Deck', ['sejarah', 'software', 'ai'],
-    'Sejarah singkat pengembangan software: dari catatan Ada Lovelace tahun 1843 sampai coding agent, dan pola yang terus berulang.'),
+    'Program pertama ditulis seabad sebelum komputernya ada. Dari sana sampai AI agent, polanya ternyata selalu sama.'),
   deck('dari-waterfall-ke-devops', 'Dari Waterfall ke Agile ke DevOps', 'Theory Deck', ['proses', 'agile', 'devops'],
-    'Bagaimana cara tim membangun software berubah selama 50 tahun, dan kenapa setiap perubahan itu muncul.'),
+    'Orang yang mempopulerkan Waterfall sendiri menulis bahwa metodenya berisiko. Lalu kenapa dunia memakainya puluhan tahun?'),
   deck('paradigma-pemrograman', 'Paradigma Pemrograman: Prosedural, OOP, Fungsional', 'Theory Deck', ['teori', 'typescript', 'oop'],
-    'Satu masalah, tiga cara berpikir. Contoh keranjang belanja dalam TypeScript untuk membandingkan ketiganya.'),
+    'Tiga programmer, satu keranjang belanja, tiga kode yang sama sekali berbeda. Mana yang benar?'),
   deck('cara-kerja-llm', 'Cara Kerja LLM untuk Programmer', 'Theory Deck', ['ai', 'llm', 'teori'],
-    'Token, context window, halusinasi, RAG, tool use, dan agent, dijelaskan tanpa matematika.'),
+    'AI-mu tidak "tahu" apa-apa. Ia menebak kata berikutnya. Begitu paham ini, kamu berhenti tertipu jawabannya.'),
   deck('praktik-git-10-menit', 'Praktik: Git dalam 10 Menit', 'Tutorial Deck', ['git', 'tutorial', 'dasar'],
-    'Dari git init sampai push. Perintah yang benar-benar dipakai setiap hari, dengan urutan yang bisa langsung diikuti.'),
+    'Pernah kehilangan kode hasil begadang? Sepuluh menit ini memastikan itu tidak terulang.'),
   deck('praktik-test-pertama-bun', 'Praktik: Test Pertamamu dengan Bun', 'Tutorial Deck', ['testing', 'bun', 'typescript', 'tutorial'],
-    'Siklus red, green, refactor dengan bun test. Menulis tes dulu, baru kodenya.'),
+    'Tulis tes yang GAGAL dulu. Kedengarannya terbalik, tapi begini cara programmer bisa tidur nyenyak.'),
   deck('praktik-ngoding-dengan-ai-agent', 'Praktik: Ngoding Bareng AI Agent', 'Tutorial Deck', ['ai', 'agent', 'tutorial'],
-    'Alur kerja lima langkah, template prompt, dan empat pagar pengaman supaya AI agent membantu, bukan merusak.')
+    'Agent bisa menulis 500 baris dalam semenit. Termasuk 500 baris yang salah. Ini cara memegang kemudinya.')
 ];
 
 export const moreDeckSlides: Record<string, DeckSlide[]> = {
+  ...deckSlides2,
   'sejarah-software': [
     { layout: 'cover', subtitle: 'Sejarah singkat pengembangan software', title: 'Dari Kartu Berlubang ke AI Agent', message: 'Hampir dua abad dalam sepuluh slide. Alatnya berubah total, tapi beberapa pola terus berulang.', points: ['1843: algoritma pertama yang diterbitkan.', 'Sekarang: program yang menulis program.'] },
     { layout: 'bullets', subtitle: '1843 – 1949', title: 'Sebelum Ada "Programmer"', message: 'Program lahir lebih dulu daripada komputernya.', points: ['1843: Ada Lovelace menerbitkan catatan berisi algoritma untuk Analytical Engine milik Charles Babbage.', '1945–46: ENIAC diprogram dengan kabel dan sakelar oleh enam programmer perempuan.', '1948–49: komputer stored-program (Manchester Baby, EDSAC). Program menjadi data di dalam memori.'] },
@@ -114,17 +117,19 @@ export const moreDeckSlides: Record<string, DeckSlide[]> = {
 /* ─────────────────────── carousels ─────────────────────── */
 
 export const morePosts: Post[] = [
-  post('lima-era-software', '5 Era Software dalam 60 Detik', 'sejarah', 'Dari kabel dan sakelar sampai AI agent. Lima lompatan besar dalam cara manusia membuat software.'),
-  post('bug-pertama', 'Kisah "Bug" Pertama', 'sejarah', 'Tahun 1947, seekor ngengat terjepit di dalam komputer Harvard. Benarkah itu asal kata bug?'),
-  post('hukum-klasik-software', '5 Hukum Klasik Software', 'teori', 'Brooks, Conway, Knuth, YAGNI, dan Hyrum. Lima kalimat pendek yang menjelaskan banyak masalah proyek.'),
-  post('solid-bahasa-manusia', 'SOLID dalam Bahasa Manusia', 'teori', 'Lima prinsip desain berorientasi objek, masing-masing dalam satu kalimat yang mudah diingat.'),
-  post('big-o-tanpa-pusing', 'Big-O Tanpa Pusing', 'teori', 'Cara membaca O(1), O(log n), O(n), dan O(n²) lewat contoh sehari-hari.'),
-  post('git-6-perintah', 'Git: 6 Perintah Tiap Hari', 'tutorial', 'Enam perintah yang menutup sebagian besar pekerjaan harian dengan Git.'),
-  post('rest-api-6-kartu', 'REST API dalam 6 Kartu', 'tutorial', 'Resource, method, status code, dan satu contoh fetch. Cukup untuk mulai memanggil API.'),
-  post('anatomi-prompt-coding', 'Anatomi Prompt untuk Coding', 'tutorial', 'Empat bagian yang membuat permintaanmu ke AI menghasilkan kode yang bisa dipakai.')
+  ...posts2,
+  post('lima-era-software', '5 Era Software dalam 60 Detik', 'sejarah', 'Dulu mengganti program berarti mencabut dan memasang kabel berhari-hari. Sekarang cukup satu kalimat.'),
+  post('bug-pertama', 'Kisah "Bug" Pertama', 'sejarah', 'Bug pertama di dunia benar-benar seekor serangga. Tapi ceritanya tidak sesederhana yang sering diulang.'),
+  post('hukum-klasik-software', '5 Hukum Klasik Software', 'teori', 'Proyekmu telat? Jangan tambah orang. Lima hukum ini sudah memperingatkan sejak 1975.'),
+  post('solid-bahasa-manusia', 'SOLID dalam Bahasa Manusia', 'teori', 'Lima huruf yang hampir selalu ditanyakan saat interview, dijelaskan tanpa satu pun jargon.'),
+  post('big-o-tanpa-pusing', 'Big-O Tanpa Pusing', 'teori', 'Kodemu kencang dengan 10 data, lalu sekarat dengan 10.000. Big-O menjelaskan kenapa.'),
+  post('git-6-perintah', 'Git: 6 Perintah Tiap Hari', 'tutorial', 'Git punya ratusan perintah. Untuk kerja harian, kamu cuma butuh enam.'),
+  post('rest-api-6-kartu', 'REST API dalam 6 Kartu', 'tutorial', 'Hampir semua aplikasi di ponselmu ngobrol dengan cara yang sama. Enam kartu, dan kamu ikut paham.'),
+  post('anatomi-prompt-coding', 'Anatomi Prompt untuk Coding', 'tutorial', 'AI memberimu kode yang ngawur? Bisa jadi prompt-mu kehilangan empat bagian ini.')
 ];
 
 export const morePostSlides: Record<string, PostSlide[]> = {
+  ...postSlides2,
   'lima-era-software': [
     card('sejarah', '5 Era Software dalam 60 Detik', 'Cara manusia membuat software sudah berubah lima kali. Geser untuk melihat lompatannya.'),
     card('Era 1 · 1940-an', 'Kabel dan Sakelar', 'ENIAC diprogram dengan memindahkan kabel. Mengganti program berarti merakit ulang mesin.', { bullets: ['Program belum disimpan di memori.', 'Mengubahnya butuh waktu berhari-hari.'] }),
