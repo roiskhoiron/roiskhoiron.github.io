@@ -2,7 +2,10 @@
   import { tick } from 'svelte';
   import { fade, fly } from 'svelte/transition';
   import { backOut } from 'svelte/easing';
-  import { sharing, shareUrl, targets, copy, sectionLabel } from '../lib/share';
+  import { sharing, shareUrl, targets, copy, sectionLabel, canNativeShare, nativeShare } from '../lib/share';
+  import ShareStudio from './ShareStudio.svelte';
+
+  let tab: 'link' | 'studio' = 'link';
   import { confetti } from '../lib/fx';
   import { lockScroll } from '../lib/scroll';
 
@@ -13,7 +16,7 @@
   $: url = it ? shareUrl(it) : '';
   $: open(it);
   async function open(x: typeof it) {
-    copied = false;
+    copied = false; tab = 'link';
     if (x) { lastFocus = document.activeElement as HTMLElement; lockScroll(true); await tick(); panel?.querySelector<HTMLElement>('.sh-copy')?.focus(); }
     else { lockScroll(false); lastFocus?.focus?.(); lastFocus = null; }
   }
@@ -45,11 +48,17 @@
 {#if it}
   <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
   <div class="share-backdrop" transition:fade={{ duration: 160 }} on:click|self={close}>
-    <div class="sheet" bind:this={panel} role="dialog" aria-modal="true" aria-labelledby="sh-title" in:fly={{ y: 60, duration: 420, easing: backOut }} out:fly={{ y: 40, duration: 180 }}>
+    <div class="sheet" class:wide={tab === 'studio'} bind:this={panel} role="dialog" aria-modal="true" aria-labelledby="sh-title" in:fly={{ y: 60, duration: 420, easing: backOut }} out:fly={{ y: 40, duration: 180 }}>
       <div class="sh-head">
-        <p class="label">Bagikan {sectionLabel[it.section]}</p>
+        <div class="sh-tabs" role="tablist" aria-label="Cara berbagi">
+          <button role="tab" aria-selected={tab === 'link'} on:click={() => (tab = 'link')}>Kirim link</button>
+          <button role="tab" aria-selected={tab === 'studio'} on:click={() => (tab = 'studio')}>Studio posting</button>
+        </div>
         <button class="sh-x" on:click={close} aria-label="Tutup">✕</button>
       </div>
+      {#if tab === 'studio'}
+        <ShareStudio item={it} />
+      {:else}
       <div class="sh-preview">
         <span class="sh-kind">{sectionLabel[it.section]}</span>
         <h2 id="sh-title">{it.title}</h2>
@@ -67,12 +76,25 @@
           </a>
         {/each}
       </div>
+      <div class="sh-more">
+        <button class="sh-studio-cta" on:click={() => (tab = 'studio')}>Buat postingan LinkedIn, Story, Threads, X →</button>
+        {#if canNativeShare()}<button class="sh-native" on:click={() => it && nativeShare(it)}>Aplikasi lain…</button>{/if}
+      </div>
+      {/if}
     </div>
   </div>
 {/if}
 
 <style>
   .share-backdrop { position: fixed; inset: 0; z-index: 95; display: grid; place-items: center; padding: 16px; background: rgba(14, 16, 20, 0.55); }
+  .sheet.wide { width: min(100%, 940px); }
+  .sh-tabs { display: flex; gap: 4px; padding: 4px; border: 2px solid var(--fg); border-radius: 999px; }
+  .sh-tabs button { padding: 7px 14px; border-radius: 999px; font-weight: 700; font-size: .85rem; transition: background .2s, color .2s; }
+  .sh-tabs button[aria-selected='true'] { background: var(--fg); color: var(--bg); }
+  .sh-more { display: flex; flex-wrap: wrap; gap: 8px; }
+  .sh-studio-cta { flex: 1 1 100%; min-height: 48px; border-radius: 999px; border: 2px solid var(--fg); font-weight: 800; background: conic-gradient(from 90deg, var(--a1), var(--a2), var(--a3), var(--a1)); color: var(--ink); transition: transform .3s var(--spring); }
+  .sh-studio-cta:hover { transform: translateY(-2px) rotate(-1deg); }
+  .sh-native { flex: 1 1 auto; min-height: 44px; border-radius: 999px; border: 2px solid var(--line); font-weight: 700; }
   .sheet { width: min(100%, 460px); max-height: calc(100vh - 32px); overflow: auto; display: grid; gap: 16px; padding: 22px; background: var(--card); color: var(--fg); border: 2px solid var(--fg); border-radius: 28px; box-shadow: 10px 10px 0 var(--a1); }
   .sh-head { display: flex; justify-content: space-between; align-items: center; }
   .sh-x { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--fg); transition: transform .3s var(--spring), background .2s; }

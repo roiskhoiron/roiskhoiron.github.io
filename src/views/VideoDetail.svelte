@@ -14,6 +14,6 @@
     <p class="label">{v.isShort ? 'Short' : v.isLive ? 'Live' : 'Video'} · {v.duration} · {v.date} · {v.views} views</p>
     <h1 class="h2">{v.title}</h1>
     <p class="lead">{v.desc}</p>
-    <div class="row"><a class="btn btn-line" href="https://www.youtube.com/watch?v={v.id}" target="_blank" rel="noopener">Watch on YouTube ↗</a><ShareButton variant="pill" item={{ section: 'videos', slug: v.id, title: v.title, text: v.desc }} /></div>
+    <div class="row"><a class="btn btn-line" href="https://www.youtube.com/watch?v={v.id}" target="_blank" rel="noopener">Watch on YouTube ↗</a><ShareButton variant="pill" item={{ section: 'videos', slug: v.id, title: v.title, text: v.desc, tags: [v.tag] }} /></div>
   </div>
 {/if}

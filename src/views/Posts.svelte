@@ -21,7 +21,7 @@
         <p class="label">#{p.tag}</p>
         <h3><a href="#posts/{p.slug}"><span>{p.title}</span></a></h3>
         <p>{p.desc}</p>
-        <div class="foot label"><span>{fmtDate(p.date)}</span><ShareButton variant="mini" item={{ section: 'posts', slug: p.slug, title: p.title, text: p.desc }} /></div>
+        <div class="foot label"><span>{fmtDate(p.date)}</span><ShareButton variant="mini" item={{ section: 'posts', slug: p.slug, title: p.title, text: p.desc, tags: [p.tag] }} /></div>
       </article>
     {/each}
   </div>

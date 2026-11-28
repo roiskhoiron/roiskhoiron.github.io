@@ -29,7 +29,7 @@
         <h1 class="h1">{post.title}</h1>
         <p class="lead">{post.excerpt}</p>
         <div class="row" style="gap:6px">{#each post.tags as t}<span class="tag">{t}</span>{/each}</div>
-        <div><ShareButton variant="pill" item={{ section: 'blog', slug, title: post.title, text: post.excerpt }} /></div>
+        <div><ShareButton variant="pill" item={{ section: 'blog', slug, title: post.title, text: post.excerpt, tags: post.tags }} /></div>
       </header>
       <div class="prose">
         {#if !ready}
@@ -45,7 +45,7 @@
       {#if ready}
         <aside class="share-cta">
           <p><b>Bermanfaat?</b> Kirim ke teman yang sedang belajar hal yang sama.</p>
-          <ShareButton variant="pill" item={{ section: 'blog', slug, title: post.title, text: post.excerpt }} />
+          <ShareButton variant="pill" item={{ section: 'blog', slug, title: post.title, text: post.excerpt, tags: post.tags }} />
         </aside>
       {/if}
       <nav class="pager" aria-label="More notes">

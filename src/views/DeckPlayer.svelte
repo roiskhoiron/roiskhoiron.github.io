@@ -50,7 +50,7 @@
     </div>
     <div class="row" style="flex-wrap:nowrap">
       <span class="mono muted">{ready ? `${i + 1} / ${slides.length}` : '…'}</span>
-      {#if deck}<ShareButton item={{ section: 'decks', slug, title: deck.title, text: deck.desc }} />{/if}
+      {#if deck}<ShareButton item={{ section: 'decks', slug, title: deck.title, text: deck.desc, tags: deck.tags }} />{/if}
       <button class="icon-btn" on:click={full} aria-label="Toggle fullscreen"><kbd>F</kbd><span class="wide">Fullscreen</span></button>
     </div>
   </div>

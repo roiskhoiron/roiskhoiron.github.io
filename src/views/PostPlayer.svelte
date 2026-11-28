@@ -46,7 +46,7 @@
     </div>
     <div class="row" style="flex-wrap:nowrap">
       <span class="mono muted">{ready ? `${i + 1} / ${slides.length}` : '…'}</span>
-      {#if post}<ShareButton item={{ section: 'posts', slug, title: post.title, text: post.desc }} />{/if}
+      {#if post}<ShareButton item={{ section: 'posts', slug, title: post.title, text: post.desc, tags: [post.tag] }} />{/if}
     </div>
   </div>
 
