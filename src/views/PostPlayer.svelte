@@ -2,7 +2,7 @@
   import { postsData, postsSlides } from '../lib/data';
   import { go } from '../lib/router';
   import { saveResume, resumeIndex } from '../lib/resume';
-  import { confetti } from '../lib/fx';
+  import { confetti, swipe } from '../lib/fx';
   export let slug: string;
 
   let i = 0, loaded = '', back = false, cheered = false;
@@ -21,14 +21,6 @@
     else if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
     else if (e.key === 'Escape') exit();
   }
-  // swipe: a horizontal drag of 40px or more turns the card
-  let x0: number | null = null;
-  const down = (e: PointerEvent) => (x0 = e.clientX);
-  const up = (e: PointerEvent) => {
-    if (x0 === null) return;
-    const dx = e.clientX - x0; x0 = null;
-    if (dx < -40) next(); else if (dx > 40) prev();
-  };
 </script>
 
 <svelte:window on:keydown={key} />
@@ -45,8 +37,7 @@
     <div class="swipe-stage">
       {#if s}
         {#key i}
-          <!-- svelte-ignore a11y-no-static-element-interactions -->
-          <div class="frame c{i % 4}" data-cursor="swipe" on:pointerdown={down} on:pointerup={up} on:pointercancel={() => (x0 = null)}>
+          <div class="frame c{i % 4}" data-cursor="swipe" use:swipe={{ left: next, right: prev }}>
             <div class="top label"><span>khoirlabs</span><span>{s.label}</span></div>
             <div class="body" class:first={i === 0}>
               <h2>{s.title}</h2>

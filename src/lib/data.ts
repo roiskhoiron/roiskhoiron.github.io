@@ -10,15 +10,18 @@ export type Post = { title:string; slug:string; tag:string; date:string; desc:st
 export type PostSlide = { num:string; label:string; title:string; subtitle?:string; body:string; theme:'white'|'black'; bullets?:string[]; code?:string|null };
 export type BlogPost = { title:string; slug:string; date:string; mins:number; tags:string[]; excerpt:string; featured?:boolean };
 export { blogData, blogFull } from './blog';
+import { moreDecks, moreDeckSlides, morePosts, morePostSlides } from './library';
 export type Video = { id:string; title:string; desc:string; thumb:string; date:string; duration:string; views:string; isShort:boolean; isLive:boolean; tag:string };
 
 export const decksData: Deck[] = [
+  ...moreDecks,
   {title:"Kotlin Multiplatform: Leverage, Not Replacement", slug:"kmp-leverage", slides:7, type:"Editorial Deck", tags:["kotlin","kmp","mobile"], lang:"ID", desc:"Sesi bersama Iqbal Fauzi: Mengapa KMP bukan tentang menggantikan Flutter, melainkan tentang leverage native codebase yang sudah ada.", color:"from-purple-600/30 to-blue-500/20", date:"2026-09-11"},
   {title:"Proyek 1: CLI Mini — Kalkulator & Todo", slug:"cli-mini-bun-typescript", slides:7, type:"Editorial Deck", tags:["typescript","bun","backend","cli"], lang:"ID", desc:"Belajar bareng TypeScript CLI: Kalkulator pure functions + Todo dengan file persistence. Insight yang sering terlewat: type-casting runtime, IO defensif, logic pure vs side-effect.", color:"from-orange-600/30 to-amber-500/20", date:"2026-09-12"},
   {title:"Promise.all vs allSettled", slug:"promise-all-vs-settled-deck", slides:8, type:"Editorial Deck", tags:["js","typescript","backend"], lang:"ID", desc:"Analogi satpam galak (Promise.all) vs satpam sabar (allSettled). Kapan pakai yang mana di backend.", color:"from-sky-500/25 to-blue-600/20", date:"2026-09-13"},
 ];
 
 export const deckSlides: Record<string, DeckSlide[]> = {
+  ...moreDeckSlides,
   "kmp-leverage": [
     {layout:"cover", subtitle:"Catatan dari sesi Iqbal Fauzi (Bobobox)", title:"KMP: Leverage, Not Replacement", message:"Saya datang ingin tahu Kotlin Multiplatform. Pulang dengan satu kesimpulan: positioning-nya jauh berbeda dari yang saya bayangkan.", points:["Bukan pesaing Flutter.","Pengungkit untuk codebase native yang sudah ada."], gradient:"from-purple-600/30 to-blue-500/20"},
     {layout:"bullets", subtitle:"Dua pertanyaan", title:"Speed yang Sesungguhnya", message:"KMP didemo langsung di device low-end. Bukan slide, bukan klaim.", points:["Seberapa cepat kita menulis code?","Seberapa baik hasilnya saat dijalankan?","KMP mencoba menjawab keduanya sekaligus."], gradient:"from-zinc-800 to-zinc-900"},
@@ -50,6 +53,7 @@ export const deckSlides: Record<string, DeckSlide[]> = {
 };
 
 export const postsData: Post[] = [
+  ...morePosts,
   {title:"Kotlin Multiplatform: Leverage, Not Replacement", slug:"kmp-leverage-post", tag:"mobile", date:"2026-09-11", desc:"KMP bukan tentang menggantikan Flutter, melainkan leverage native codebase yang sudah ada. Sesi demo bersama Iqbal Fauzi.", color:"bg-white text-black", accent:"mobile"},
   {title:"Proyek 1: CLI Mini — Kalkulator & Todo", slug:"cli-mini-bun-typescript", tag:"tips", date:"2026-09-12", desc:"Belajar bareng TypeScript CLI: Kalkulator pure functions + Todo dengan file persistence. Insight yang sering terlewat: type-casting runtime, IO defensif, logic pure vs side-effect.", color:"bg-white text-black", accent:"tips"},
   {title:"TypeScript Template Literals", slug:"ts-template-literals", tag:"tips", date:"2026-09-12", desc:"Bedanya template string Kotlin vs JS/TS. Kapan pakai backtick dan ${} vs tanda kutip biasa.", color:"bg-white text-black", accent:"tips"},
@@ -57,6 +61,7 @@ export const postsData: Post[] = [
 ];
 
 export const postsSlides: Record<string, PostSlide[]> = {
+  ...morePostSlides,
   "promise-all-vs-settled":[
     {num:"", label:"tips", title:"Promise.all vs allSettled", body:"Pas ambil data dari beberapa API sekaligus, saya ketemu jebakan Promise.all: satu gagal, semuanya dianggap gagal.", theme:"black"},
     {num:"02", label:"Satpam galak", title:"Promise.all", body:"Menunggu semua selesai, tapi begitu satu reject, langsung error.", bullets:["Satu gagal → semua gagal.","Status masing-masing tidak ketahuan.","Cocok untuk operasi all-or-nothing."], theme:"black"},

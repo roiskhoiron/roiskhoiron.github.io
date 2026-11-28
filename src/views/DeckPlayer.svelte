@@ -2,7 +2,7 @@
   import { decksData, deckSlides } from '../lib/data';
   import { go } from '../lib/router';
   import { saveResume, resumeIndex } from '../lib/resume';
-  import { confetti } from '../lib/fx';
+  import { confetti, swipe } from '../lib/fx';
   export let slug: string;
 
   let i = 0, loaded = '', back = false, cheered = false;
@@ -40,7 +40,7 @@
     </div>
   </div>
 
-  <div class="player-stage" class:back bind:this={stage} style="background:var(--bg)">
+  <div class="player-stage" class:back bind:this={stage} style="background:var(--bg)" use:swipe={{ left: next, right: prev, touchOnly: true }}>
     {#if s}
       {#key i}
         {#if s.layout === 'cover'}

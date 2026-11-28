@@ -63,6 +63,29 @@ export function fling(node: HTMLElement) {
   return { destroy() { cancelAnimationFrame(raf); } };
 }
 
+/* ── horizontal swipe (carousel cards, deck slides) ──────────────── */
+export function swipe(node: HTMLElement, opts: { left: () => void; right: () => void; touchOnly?: boolean }) {
+  let x0 = 0, y0 = 0, on = false;
+  const down = (e: PointerEvent) => {
+    if (opts.touchOnly && e.pointerType === 'mouse') return;
+    on = true; x0 = e.clientX; y0 = e.clientY;
+  };
+  const up = (e: PointerEvent) => {
+    if (!on) return;
+    on = false;
+    const dx = e.clientX - x0, dy = e.clientY - y0;
+    // must be clearly horizontal, so vertical scrolling never turns the page
+    if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy) * 1.2) return;
+    dx < 0 ? opts.left() : opts.right();
+  };
+  const cancel = () => (on = false);
+  node.addEventListener('pointerdown', down); node.addEventListener('pointerup', up); node.addEventListener('pointercancel', cancel);
+  return {
+    update(o: typeof opts) { opts = o; },
+    destroy() { node.removeEventListener('pointerdown', down); node.removeEventListener('pointerup', up); node.removeEventListener('pointercancel', cancel); }
+  };
+}
+
 /* ── numbers count up when they scroll into view ──────────────────── */
 export function countUp(node: HTMLElement) {
   const m = (node.textContent ?? '').match(/^(\d+)(.*)$/);

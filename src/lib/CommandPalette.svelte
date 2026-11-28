@@ -15,7 +15,7 @@
         ['Videos', 'videos', 'CodingSkuy on YouTube'], ['Posts', 'posts', 'Instagram carousels'], ['Blog', 'blog', 'Field notes']]
       .map(([title, hash, hint]) => ({ group: 'Pages', title, hint, hash, hay: '' })),
     ...blogData.map((b) => ({ group: 'Blog', title: b.title, hint: `${b.mins} min`, hash: 'blog/' + b.slug, hay: b.excerpt + ' ' + b.tags.join(' ') })),
-    ...decksData.filter((d) => deckSlides[d.slug]).map((d) => ({ group: 'Decks', title: d.title, hint: `${d.slides} slides`, hash: 'decks/' + d.slug, hay: d.desc + ' ' + d.tags.join(' ') })),
+    ...decksData.filter((d) => deckSlides[d.slug]).map((d) => ({ group: 'Decks', title: d.title, hint: `${deckSlides[d.slug].length} slides`, hash: 'decks/' + d.slug, hay: d.desc + ' ' + d.tags.join(' ') })),
     ...postsData.filter((p) => postsSlides[p.slug]).map((p) => ({ group: 'Carousels', title: p.title, hint: '#' + p.tag, hash: 'posts/' + p.slug, hay: p.desc + ' ' + p.tag })),
     ...videosData.map((v) => ({ group: 'Videos', title: v.title, hint: v.duration, hash: 'videos/' + v.id, hay: v.desc + ' ' + v.tag })),
     { group: 'Actions', title: 'Remix the colours', hint: 'C', hay: 'dark light mode theme palette color colour remix', action: 'theme' as const },

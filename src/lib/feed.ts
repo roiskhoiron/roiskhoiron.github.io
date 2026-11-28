@@ -20,7 +20,11 @@ export function buildFeed(): FeedItem[] {
   const items: FeedItem[] = [
     ...blogData.map((b) => ({ kind: 'blog' as const, slug: b.slug, title: b.title, desc: b.excerpt, date: b.date, meta: `${b.mins} min read` })),
     ...postsData.filter((p) => postsSlides[p.slug]).map((p) => ({ kind: 'post' as const, slug: p.slug, title: p.title, desc: p.desc, date: p.date, meta: `#${p.tag}` })),
-    ...decksData.filter((d) => deckSlides[d.slug]).map((d) => ({ kind: 'deck' as const, slug: d.slug, title: d.title, desc: d.desc, date: d.date, meta: `${d.slides} slides` }))
+    ...decksData.filter((d) => deckSlides[d.slug]).map((d) => ({ kind: 'deck' as const, slug: d.slug, title: d.title, desc: d.desc, date: d.date, meta: `${deckSlides[d.slug].length} slides` }))
   ];
-  return items.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+  // newest first; items published on the same day alternate between kinds
+  const rank = new Map<FeedItem, number>();
+  const seen: Record<string, number> = {};
+  for (const it of items) { const k = it.kind + it.date; rank.set(it, (seen[k] = (seen[k] ?? -1) + 1)); }
+  return items.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : rank.get(a)! - rank.get(b)!));
 }

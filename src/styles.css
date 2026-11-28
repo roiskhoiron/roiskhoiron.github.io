@@ -332,7 +332,8 @@ footer { padding-bottom: 96px; }
 .pager a:last-child:not(:first-child) { text-align: right; }
 
 /* ── players ──────────────────────────────────────── */
-.player { position: fixed; inset: 0; z-index: 70; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr auto; background: var(--bg); animation: player-in 0.5s var(--ease) both; overflow: hidden; }
+/* overscroll-behavior: a sideways swipe must turn the card, never trigger the browser's back gesture */
+.player { overscroll-behavior: none; position: fixed; inset: 0; z-index: 70; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr auto; background: var(--bg); animation: player-in 0.5s var(--ease) both; overflow: hidden; }
 @keyframes player-in { from { clip-path: circle(0% at 50% 60%); } to { clip-path: circle(150% at 50% 60%); } }
 .player-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px var(--gutter); }
 .player-bar .title { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: var(--display); font-weight: 750; }
@@ -372,8 +373,8 @@ footer { padding-bottom: 96px; }
 .slide.cols { grid-template-columns: 1fr 1fr; }
 .slide.cols > * + * { border-left: 2px solid var(--fg); }
 .slide .dark { background: var(--ink); color: #f6f0ff; }
-.slide .dark p { color: rgba(246, 240, 255, 0.78); }
-.slide pre { font-family: var(--mono); font-size: clamp(0.62rem, 1.35cqi, 0.92rem); line-height: 1.6; white-space: pre-wrap; margin: 0; }
+.slide .dark p:not(.label) { color: rgba(246, 240, 255, 0.78); }
+.slide pre { font-family: var(--mono); font-size: clamp(0.72rem, 1.35cqi, 0.92rem); line-height: 1.6; white-space: pre-wrap; margin: 0; }
 .slide .cards { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(6px, 1.2cqi, 14px); }
 .slide .cards > div { padding: clamp(8px, 1.5cqi, 18px); border: 2px solid var(--ink); border-radius: 18px; background: var(--a1); color: var(--ink); font-size: clamp(0.72rem, 1.45cqi, 1rem); line-height: 1.35; transition: rotate 0.4s var(--spring), scale 0.4s var(--spring); }
 .slide .cards > div:nth-child(2) { background: var(--a2); } .slide .cards > div:nth-child(3) { background: var(--a3); } .slide .cards > div:nth-child(4) { background: var(--card); color: var(--fg); border-color: var(--fg); }
@@ -391,7 +392,9 @@ footer { padding-bottom: 96px; }
 .frame ul { display: grid; gap: 6px; font-size: 0.92rem; line-height: 1.4; }
 .frame li { padding-left: 20px; position: relative; }
 .frame li::before { content: '✦'; position: absolute; left: 0; font-size: 0.8em; top: 0.15em; }
-.frame pre { font-family: var(--mono); font-size: 0.72rem; line-height: 1.55; background: var(--ink); color: #f6f0ff; padding: 12px; border-radius: 14px; white-space: pre-wrap; margin: 0; overflow: auto; }
+.frame pre { font-family: var(--mono); font-size: 0.72rem; line-height: 1.55; background: var(--ink); color: #f6f0ff; padding: 12px; border-radius: 14px; white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; overflow: hidden; }
+/* horizontal drags belong to the swipe handler, even over code blocks and scrollable slides */
+.frame, .frame *, .player-stage, .slide, .slide * { touch-action: pan-y; }
 .frame .body { display: grid; gap: 12px; align-content: center; flex: 1; min-height: 0; }
 .frame .body > * { animation: rise 0.6s var(--spring) both; }
 .frame .body > :nth-child(2) { animation-delay: 80ms; } .frame .body > :nth-child(3) { animation-delay: 160ms; }
